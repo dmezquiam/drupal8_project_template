@@ -1,0 +1,277 @@
+@font-face {
+	font-family: 'Univers-Regular';
+	src: url('/sites/default/files/fontyourface/local_fonts/Univers_Regular-normal-normal/univers-regular.eot');
+	src: url('/sites/default/files/fontyourface/local_fonts/Univers_Regular-normal-normal/univers-regular.eot?#iefix') format('embedded-opentype'),
+			 url('/sites/default/files/fontyourface/local_fonts/Univers_Regular-normal-normal/univers-regular.woff') format('woff'),
+			 url('/sites/default/files/fontyourface/local_fonts/Univers_Regular-normal-normal/univers-regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Arial-Regular';
+	src: url('/sites/default/files/fontyourface/local_fonts/Arial_Regular-normal-normal/Arial_regular.eot');
+	src: url('/sites/default/files/fontyourface/local_fonts/Arial_Regular-normal-normal/Arial_regular.eot?#iefix') format('embedded-opentype'),
+			 url('/sites/default/files/fontyourface/local_fonts/Arial_Regular-normal-normal/Arial_regular.woff') format('woff'),
+			 url('/sites/default/files/fontyourface/local_fonts/Arial_Regular-normal-normal/Arial_regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+  font-family: "Arial-Regular", sans-serif;
+}
+
+input,
+select,
+textarea,
+body {
+  font-family: "Arial-Regular", sans-serif;
+  line-height: 17px;
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 0px;
+}
+p {
+  font-family: "Arial-Regular", sans-serif;
+  line-height: 17px;
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 10px;
+}
+h1 {
+  font-size: 24px;
+  line-height: 22px;
+  letter-spacing: -1px;
+  font-weight: normal;
+  color: #666666;
+}
+h1 a {
+  color: #666666;
+}
+h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #008ca9;
+  letter-spacing: -1px;
+  font-weight: normal;
+  line-height: 15px;
+  margin-bottom: 15px;
+}
+ul {
+  margin-left: 15px;
+}
+ul li.leaf {
+  list-style-image: url(/sites/all/themes/techinting/css/../img/li_pink.png);
+  list-style-type: none;
+}
+ul li.collapsed {
+  list-style-image: url(/sites/all/themes/techinting/css/../img/li_pink.png);
+  list-style-type: none;
+}
+li {
+  list-style-image: url(/sites/all/themes/techinting/css/../img/li_pink.png);
+  list-style-type: none;
+}
+li a.active {
+  color: #666666;
+}
+a {
+  color: #008ca9;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.heading-blue-small {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #008ca9;
+  letter-spacing: -1px;
+  font-weight: normal;
+  line-height: 15px;
+  margin-bottom: 15px;
+}
+.heading-blue-big {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #008ca9;
+  letter-spacing: -1px;
+  font-weight: normal;
+  line-height: 15px;
+  margin-bottom: 15px;
+}
+.heading-blue-small-univers {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: "Univers-Regular";
+  color: #008ca9;
+  letter-spacing: -1px;
+  font-weight: normal;
+  line-height: 15px;
+  margin-bottom: 15px;
+}
+.heading-blue-big-univers {
+  font-size: 15px;
+  letter-spacing: -1px;
+  font-family: "Univers-Regular";
+  color: #008ca9;
+  letter-spacing: -1px;
+  font-weight: normal;
+  line-height: 15px;
+  margin-bottom: 15px;
+}
+.heading-blue-medium-univers {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-family: "Univers-Regular";
+  color: #008ca9;
+  letter-spacing: -1px;
+  font-weight: normal;
+  line-height: 15px;
+  margin-bottom: 15px;
+}
+.mix-font-common-setings {
+  color: #008ca9;
+  letter-spacing: -1px;
+  font-weight: normal;
+  line-height: 15px;
+  margin-bottom: 15px;
+}
+.clean-list {
+  margin-left: 0px;
+}
+.clean-list li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+}
+.mix-no-item-list {
+  margin-left: 0px;
+}
+.mix-no-item-list li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+}
+.black-blue a {
+  color: #666666;
+}
+.black-blue a:hover {
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  color: #008ca9;
+}
+.blue-black a {
+  color: #008ca9;
+}
+.blue-black a:hover {
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  color: #666666;
+}
+.blue-black a {
+  color: #008ca9;
+}
+.blue-black a:hover {
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  color: #e60f64;
+}
+.black-pink a {
+  color: #666666;
+}
+.black-pink a:hover {
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  color: #e60f64;
+}
+.mix-black-blue a {
+  color: #666666;
+}
+.mix-black-blue a:hover {
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  color: #008ca9;
+}
+.mix-blue-black a {
+  color: #008ca9;
+}
+.mix-blue-black a:hover {
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  color: #666666;
+}
+.mix-blue-pink a {
+  color: #008ca9;
+}
+.mix-blue-pink a:hover {
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  color: #e60f64;
+}
+.mix-black-pink a {
+  color: #666666;
+}
+.mix-black-pink a:hover {
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  color: #e60f64;
+}
+.button-blue {
+  border: 1px solid #008ca9;
+  border-radius: 0px;
+  background: #008ca9;
+  text-shadow: 0px 0px 0px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 4px 4px 3px 4px;
+  font-size: 10px;
+  line-height: 14px;
+}
+.mix-button-blue {
+  border: 1px solid #008ca9;
+  border-radius: 0px;
+  background: #008ca9;
+  text-shadow: 0px 0px 0px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 4px 4px 3px 4px;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 1px dashed #bbb;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	font: inherit;
+}
