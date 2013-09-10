@@ -1,0 +1,10 @@
+// Filename = shinytech.info
+
+name = ShinyTech
+description = Customized Shiny Theme by Easytech.
+core = 7.x
+base theme = shiny
+
+// Override CSS
+stylesheets[all][] = css/shiny.css
+stylesheets[all][] = css/shinytech_override.css
