@@ -536,8 +536,8 @@ table {
 .at-panel .rounded-corner,
 .block-panels-mini > .block-title,
 div.messages {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 /*
@@ -547,8 +547,8 @@ div.messages {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003562}}
 #content .panel-display,
 #content .panel-flexible {
-  margin-left: -10px;
-  margin-right: -10px;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 /* =============================================================================
