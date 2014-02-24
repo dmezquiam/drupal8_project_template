@@ -7,7 +7,7 @@
  *   Base
  * ========================================================================== */
 
-/* 
+/*
  * To preserve theme settings never apply font properties to the HTML element.
  * This is critically important if you are using the Responsive JavaScript
  * feature as this relies on being able to set a pseudo font family on the HTML
@@ -15,77 +15,7 @@
  * element as these can be overridden using font theme settings.
  */
 
-html {
-  background: $page;
-}
 
-body {
-  font-family: $sans-serif-small; // Set from _custom.scss font variables
-  font-size: 87.5%;
-  background: url("#{$path-to-images}/bg.png") repeat 0 0;
-}
-
-/* =============================================================================
- *   HTML Elements
- * ========================================================================== */
-
-h1 {}
-h2 {}
-h3 {}
-h4 {}
-h5 {}
-h6 {}
-
-p {}
-
-b,
-strong {}
-
-i,
-em {}
-
-dfn {}
-
-sup {}
-
-sub {}
-
-del {}
-
-ins {}
-
-blockquote {}
-
-cite {}
-
-q {}
-
-address {}
-
-ul {}
-
-ol {}
-
-li {}
-
-dl {}
-
-dd {}
-
-dt {}
-
-abbr {}
-
-acronym {}
-
-pre,
-code,
-tt,
-samp,
-kbd,
-var {
-  font-family: $mono;
-}
 
 
 /* =============================================================================
@@ -98,7 +28,7 @@ var {
  */
 #page  {
   .container {
-   
+
   }
 }
 
@@ -217,7 +147,7 @@ var {
   .container {
     background: $color-bg-general;
     @include box-shadow (0px, 0px, 20px, $color-shadow);
-  } 
+  }
 }
 
 
@@ -283,7 +213,6 @@ var {
 
     &:hover,
     &:focus {
-      text-decoration: underline;
     }
   }
 }
@@ -457,25 +386,6 @@ ul.links {
 .region-footer {}
 
 
-/* =============================================================================
- *   Links
- * ========================================================================== */
-
-a {
-  text-decoration: none;
-
-  &:link,
-  &:visited {}
-
-  &:active,
-  &.active {}
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}
-
 
 /* =============================================================================
  *   Primary, Secondary and Menu Bar region menus
@@ -509,10 +419,12 @@ a {
     margin: 0;
     padding: 0;
     height: 52px;
+    border-bottom: 0px solid $color-transparent;
+    @include transition(all, 0.2s, ease-in-out);
     &:hover,
     &.active {
-        border-bottom: 3px solid $color-line-secondary;
         height: 49px;
+        border-bottom: 3px solid $color-line-secondary;
       a {
         color: $color-line-secondary;
       }
@@ -526,6 +438,7 @@ a {
     padding: 15px 15px 13px 15px;
     color: $color-txt-main-menu;
     text-transform: uppercase;
+    @include transition(all, 0.2s, ease-in-out);
     @include text-shadow (1px, 1px, 0px, #000);
     &:visited {}
     &:hover,
@@ -689,10 +602,10 @@ ul.menu {
 
 /* If li.content exists it's a problem, so reset the padding */
 .block .menu li.content {
-  padding: 0;   
+  padding: 0;
 }
 
- 
+
 /* =============================================================================
  *   Book navigation menu
  * ========================================================================== */
@@ -710,7 +623,7 @@ ul.menu {
     min-width: 2em;
     white-space: nowrap;
   }
-  
+
   .menu {
     margin-left: 0;
   }
@@ -980,7 +893,7 @@ ul.action-links {
 .field-label {
   font-size: 1em;
   font-weight: 700;
-  font-family: inherit;
+  font-family: $signika-Regular;
   line-height: inherit;
   margin-bottom: 0;
 }
@@ -1117,7 +1030,7 @@ ul.action-links {
 
 
 /*
- * Image Alignment Theme Settings - included here so you can easily override 
+ * Image Alignment Theme Settings - included here so you can easily override
  */
 
 /*
@@ -1572,7 +1485,7 @@ ul.action-links {
 /*
  * Wrapper for a form element (or group of form elements) and its label
  */
-.form-item { 
+.form-item {
 
   input.error,
   textarea.error,
@@ -1584,7 +1497,7 @@ ul.action-links {
     font-weight: 700;
   }
 
-  label.option { 
+  label.option {
   }
 
   .description {
@@ -1609,7 +1522,7 @@ ul.action-links {
 /*
  * The submit button
  */
-.form-submit { 
+.form-submit {
 }
 
 
@@ -1630,14 +1543,14 @@ fieldset {
 /*
  * Tips for Drupal's input formats
  */
-.tips { 
+.tips {
 }
 
 
 /*
  * Buttons used by contrib modules like Media
  */
-a.button { 
+a.button {
   @include appearance(button);
 }
 
@@ -1863,6 +1776,17 @@ tr.error {
  *   Misc overrides for contrib modules
  * ========================================================================== */
 
+.profile .user-picture {
+  float: left;
+  margin: 0 1em 1em 0;
+  width: 183px;
+  height: 172px;
+  border: 3px solid #eed466;
+  z-index: 99999;
+  position: relative;
+}
+
+
 /*
  * Admin menu overrides
  */
@@ -1888,7 +1812,7 @@ tr.error {
   padding: 0 10px;
 
   .item-list {
-    font-family: inherit;
+    font-family: $signika-Regular;
     margin: 0 20px 20px 0;
     min-height: 260px;
     width: auto;

@@ -85,7 +85,7 @@
   @mixin unpublished {
     color: pink; // target browsers that do not support rgba
     color: rgba(239, 170, 170, 0.4);
-    font-family: $impact;
+    font-family: $signika-Regular;
     font-size: 50px;
     font-weight: 700;
     line-height: 1.2;

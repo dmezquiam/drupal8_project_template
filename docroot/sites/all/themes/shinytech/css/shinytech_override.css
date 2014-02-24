@@ -27,9 +27,10 @@ ul.admin-list li.leaf,
 .admin-panel ul li.leaf {
   list-style-image: none;
   list-style-type: none;
-  background: url("../img/item_list.png") no-repeat 0px 3px;
+  background: url("../img/item_list.png") no-repeat 0px 1px;
   padding-left: 21px;
-}
+  padding-top: 4px;
+  }
 .admin-panel ul, .block ul {
 list-style-type: disc;
 list-style-image: none;
@@ -754,14 +755,6 @@ ul.action-links li {
   padding: 0;
 }
 
-ul.action-links li a {
-  background: transparent url("../img/add2.png") no-repeat 10px 10px;
-  color: #ffffff;
-  font-weight: 500;
-  padding: 4px 10px;
-  /* LTR */
-}
-
 ul.action-links li a:hover {
   text-decoration: none;
 }
@@ -933,7 +926,7 @@ html.js input.throbbing {
   -webkit-box-shadow: 0 1px 8px #666666, inset 0 1px 1px white;
   box-shadow: 0 1px 8px #666666, inset 0 1px 1px white;
 
-} 
+}
 .ui-datepicker th {
 	font-size: 10px;
 }
@@ -943,12 +936,12 @@ html.js input.throbbing {
   background: #E8EAEC;
 }
 
-.field-widget-inline-entity-form .ief-entity-table tr:hover, 
+.field-widget-inline-entity-form .ief-entity-table tr:hover,
 tr.even {
   background: #E8EAEC;
 }
 
-.field-widget-inline-entity-form .ief-entity-table tr:hover, 
+.field-widget-inline-entity-form .ief-entity-table tr:hover,
 tr.even:hover {
   background: #E8EAEC;
 }
@@ -984,7 +977,7 @@ ul.admin-list li a {
 }
 .pane-shortcut ul.menu li.last {
   padding-bottom: 0px;
-  border-bottom: 0px solid #CCC; 
+  border-bottom: 0px solid #CCC;
 }
 
 .pane-shortcut, ul.menu li {
@@ -1067,7 +1060,6 @@ ul.admin-list li a {
 }
 
 /* PANELS */
-
 .panels-flexible-column-2-4 {
   float: left;
   width: 100%;
