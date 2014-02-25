@@ -1,0 +1,22 @@
+/* @mixin tiny-bt {
+  float: left;
+  background: $color-bg-third-lvl;
+  padding: 0px 5px;
+  @include border-radius(3px);
+  font-size: $font-size-tiny;
+  @include secondary-link;
+} */
+/*
+ *   Important Information about this CSS File
+ *
+ * - Do not delete or rename this file, if you do not use it leave it blank (delete
+ *   everything) and the file will be skipped when you enable Production Mode in
+ *   the Global theme settings.
+ *
+ * - Read the _README file in this directory, it contains useful help and other information.
+ */
+/* Increase the default font size on small devices */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000316}}
+html {
+  font-size: 112.5%;
+}
