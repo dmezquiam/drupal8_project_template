@@ -1,0 +1,12 @@
+name = Videos
+description = Content type video related content
+core = 7.x
+package = IJNet
+version = 7.x-1.0
+project = fe_videos
+dependencies[] = features
+dependencies[] = video_embed_field
+features[features_api][] = api:2
+features[field_base][] = field_video
+features[field_instance][] = node-video-field_video
+features[node][] = video

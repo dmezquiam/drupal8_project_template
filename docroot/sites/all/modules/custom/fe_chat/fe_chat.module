@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Chat feature.
+ */
+
+include_once 'fe_chat.features.inc';
