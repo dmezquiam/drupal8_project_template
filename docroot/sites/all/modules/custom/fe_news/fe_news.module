@@ -5,3 +5,60 @@
  */
 
 include_once 'fe_news.features.inc';
+
+/*
+ * implements hook_preprocess_node
+ */
+
+function fe_news_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if ($node->type == 'news') {
+    $author = '';
+    if (!empty($node->field_attribution)) {
+      $author = $node->field_attribution[LANGUAGE_NONE][0]['value'];
+    }
+    else if (!empty($node->field_byline)) {
+      $user = user_load($node->field_byline[LANGUAGE_NONE][0]['uid']);
+      $author = $user->name;
+    }
+    else {
+      $user = user_load($node->uid);
+      $author = $user->name;
+    }
+    $variables['author'] = $author;
+  }
+}
+
+
+/*
+ * implements hook_theme
+ */
+
+function fe_news_theme() {
+  return array(
+    'node__news' => array(
+      'variables' => array('node' => array()),
+      'template' => 'theme/node--news',
+    ),
+  );
+}
+
+/*
+ * implements hook_block_info
+ */
+
+function fe_news_block_info() {
+  $blocks = array();
+  return $blocks;
+}
+
+/*
+ * implements hook_block_view
+ */
+
+function fe_news_block_view($delta = '') {
+  $block = array();
+  $vars = array();
+  return $block;
+}
+
