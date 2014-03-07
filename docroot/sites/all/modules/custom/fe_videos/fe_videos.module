@@ -5,3 +5,16 @@
  */
 
 include_once 'fe_videos.features.inc';
+
+/*
+ * implements hook_theme
+ */
+
+function fe_videos_theme() {
+  return array(
+    'node__video' => array(
+      'variables' => array('node' => array()),
+      'template' => 'theme/node--video',
+    ),
+  );
+}
