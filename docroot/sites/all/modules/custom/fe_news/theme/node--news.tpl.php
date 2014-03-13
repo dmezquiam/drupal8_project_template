@@ -84,12 +84,12 @@
 
 
   <div class="content"<?php print $content_attributes; ?>>
-    <?php print render($title_prefix); ?>
-      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-    <?php print render($title_suffix); ?>
     <?php hide($content['comments']);
       hide($content['links']); ?>
     <?php if (!$page) : ?>
+      <?php print render($title_prefix); ?>
+        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+      <?php print render($title_suffix); ?>
       <?php
         print render($content);
       ?>

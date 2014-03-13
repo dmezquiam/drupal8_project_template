@@ -62,3 +62,12 @@ function fe_news_block_view($delta = '') {
   return $block;
 }
 
+/*
+ * implements hook_form_alter
+ */
+
+function fe_news_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'comment_node_news_form') {
+    hide($form['author']);
+  }
+}
