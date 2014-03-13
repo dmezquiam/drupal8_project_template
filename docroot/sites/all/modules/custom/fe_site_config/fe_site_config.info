@@ -1,0 +1,7 @@
+name = Site Config
+description = Site configurations
+core = 7.x
+package = IJNET
+version = 7.x-1.0
+project = fe_site_config
+features[features_api][] = api:2
