@@ -16,5 +16,57 @@ function fe_videos_theme() {
       'variables' => array('node' => array()),
       'template' => 'theme/node--video',
     ),
+    'video_category_search' => array(
+      'variables' => array('categories' => array()),
+      'template' => 'theme/video_search',
+    ),
   );
 }
+
+/*
+ * Implements hook_block_info
+ */
+
+function fe_videos_block_info() {
+  $blocks = array(
+    'fe_videos_search' => array(
+      'info' => 'Videos Search Bar',
+    ),
+  );
+  return $blocks;
+}
+
+/*
+ * Implements hook_block_view
+ */
+
+function fe_videos_block_view($delta) {
+  $block = array();
+  if ($delta == 'fe_videos_search') {
+    $vocabulary = taxonomy_vocabulary_machine_name_load('topic');
+    $terms = taxonomy_get_tree($vocabulary->vid, 0, null, true);
+    $options = array();
+    global $language;
+    foreach ($terms as $term) {
+      if ($term->translations->original == $language->language)
+      $options[$term->tid] = $term->name;
+    }
+    $vars = array(
+      'categories' => $options,
+    );
+    $block['subject'] = '';
+    $block['content'] = theme('video_category_search', $vars);
+  }
+  return $block;
+}
+
+/*
+ * implements hook_form_alter
+ */
+ 
+ function fe_videos_form_alter(&$form, &$form_state, $form_id) {
+   if ($form_id == 'comment_node_video_form') {
+     hide($form['author']);
+   }
+ }
+
