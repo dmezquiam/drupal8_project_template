@@ -27,13 +27,25 @@ function ijnet_pager_first(&$variables) {
 	return theme_pager_first($variables);
 }
 
+function ijnet_pager_last(&$variables) {
+	$variables['text'] = '';
+	return theme_pager_last($variables);
+}
+
 function ijnet_pager_previous(&$variables) {
-	kpr($variables);
 	if (!is_numeric($variables['text'])) {
-		$variables['text'] = t('previous');
+		$variables['text'] = t('Prev');
 	}
 	return theme_pager_previous($variables);
 }
+
+function ijnet_pager_next(&$variables) {
+	if (!is_numeric($variables['text'])) {
+		$variables['text'] = t('Next');
+	}
+	return theme_pager_next($variables);
+}
+
 
 /**
  * Preprocess variables for the html template.
@@ -110,3 +122,23 @@ function ijnet_theme_pager_first(&$variables) {
 	kpr($variables);
 	die('xxxxxx');
 }
+
+function ijnet_preprocess_comment(&$variables) {
+  $variables['created'] = date('m/d/y', $variables['elements']['#node']->created);
+  $variables['changed'] = date('m/d/y', $variables['elements']['#node']->created);
+  if ($variables['comment']->pid == 0) {
+    $variables['submitted'] = 'Submitted by ' . $variables['author'] . ' on ' . $variables['created'];
+  }
+  else {
+    $parent = comment_load($variables['comment']->pid);
+    if ($parent) {
+      global $language;
+      $variables['submitted'] = 'Submitted by ' . $variables['author'] . ' on ' . $variables['created'] . ' in response to ';
+     $variables['submitted'] .= '<a href="/' . $language->language . '/user/' . $parent->cid . '" title="View user profile." rel="author" class="username" typeof="sioc:UserAccount" property="foaf:name" datatype>' . $parent->name . '</a>';
+    }
+    else {
+      $variables['submitted'] = 'Submitted by ' . $variables['author'] . ' on ' . $variables['created']; 
+    }
+  }
+}
+
