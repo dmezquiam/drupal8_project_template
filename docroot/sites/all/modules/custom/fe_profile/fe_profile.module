@@ -5,3 +5,4 @@
  */
 
 include_once 'fe_profile.features.inc';
+
