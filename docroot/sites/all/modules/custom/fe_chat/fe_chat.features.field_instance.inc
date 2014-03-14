@@ -10,6 +10,56 @@
 function fe_chat_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-chat-body'
+  $field_instances['node-chat-body'] = array(
+    'bundle' => 'chat',
+    'default_value' => array(
+      0 => array(
+        'summary' => '',
+        'value' => '<p>&lt;iframe src=\'http://embed.scribblelive.com/Embed/v5.aspx?Id=283779\' width=\'550\' height=\'600\' frameborder=\'0\' style=\'border: 1px solid #000\'&gt;&lt;/iframe&gt;</p>
+',
+        'format' => 'full_html',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 1,
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-chat-field_chat_description'
   $field_instances['node-chat-field_chat_description'] = array(
     'bundle' => 'chat',
@@ -18,35 +68,36 @@ function fe_chat_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_chat_description',
     'label' => 'Chat Description',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'rows' => 4,
       ),
-      'type' => 'text_textfield',
-      'weight' => 1,
+      'type' => 'text_textarea',
+      'weight' => 3,
     ),
   );
 
@@ -57,7 +108,7 @@ function fe_chat_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -67,12 +118,19 @@ function fe_chat_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
         'weight' => 0,
       ),
     ),
@@ -100,7 +158,7 @@ function fe_chat_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -112,19 +170,15 @@ function fe_chat_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 1,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -151,12 +205,13 @@ function fe_chat_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => -2,
+      'weight' => 2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Body');
   t('Chat Description');
   t('Date');
   t('Image');

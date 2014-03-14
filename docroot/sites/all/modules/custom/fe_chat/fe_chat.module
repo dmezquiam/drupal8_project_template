@@ -5,3 +5,31 @@
  */
 
 include_once 'fe_chat.features.inc';
+
+/*
+ * implements hook_preprocess_node
+ */
+
+function fe_chat_preprocess_node(&$vars) {
+  if ($vars['node']->type == 'chat') {
+    if (isset($vars['field_date'])) {
+      $start_date = date('M jS, Y g:ia', $vars['field_date'][0]['value']);
+      $end_date = date('g:ia', $vars['field_date'][0]['value2']);
+      $vars['date'] = $start_date . ' - ' . $end_date;
+    }
+  }
+}
+
+/*
+ * implements hook_theme
+ */
+
+function fe_chat_theme() {
+  return array(
+    'node__chat' => array(
+      'variables' => array('node' => array()),
+      'template' => 'theme/node--chat',
+    ),  
+  );  
+}
+

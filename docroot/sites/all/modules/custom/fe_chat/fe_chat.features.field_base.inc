@@ -34,10 +34,9 @@ function fe_chat_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'max_length' => 255,
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_date'
@@ -64,11 +63,11 @@ function fe_chat_field_default_field_bases() {
         'year' => 'year',
       ),
       'timezone_db' => 'UTC',
-      'todate' => '',
+      'todate' => 'optional',
       'tz_handling' => 'site',
     ),
     'translatable' => 0,
-    'type' => 'datetime',
+    'type' => 'datestamp',
   );
 
   return $field_bases;
