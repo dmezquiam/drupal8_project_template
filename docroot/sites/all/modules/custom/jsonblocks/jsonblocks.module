@@ -1,0 +1,92 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function jsonblocks_block_info() {
+  $blocks = _jsonblocks_get_block_info(_jsonblocks_get_json_blocks());
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function jsonblocks_block_view($delta = NULL) {
+
+  $function_name = 'json_blocks_view_' . $delta;
+  if (function_exists($function_name)) {
+    $block = $function_name();
+  }
+  else {
+    // dynamic blocks
+    $block_data = _jsonblocks_get_json_blocks();
+    if (isset($block_data[$delta])) {
+      if(isset($block_data[$delta]['css'])) {
+        drupal_add_css(drupal_get_path('module', 'jsonblocks') . '/css/' . $block_data[$delta]['css']);
+      }
+      if (isset($block_data[$delta]['js'])) {
+        drupal_add_js(drupal_get_path('module', 'jsonblocks') . '/js/' . $block_data[$delta]['js']);
+      }
+    }
+    $block = array('content' => theme($delta, NULL));
+  }
+
+  return $block;
+}
+
+/**
+ * hook_form_alter()
+ * Cleanup comments form.
+ */
+
+function jsonblocks_form_alter(&$form, &$form_state, $form_id) {
+  $forms = array(
+    'comment_node_video_form',
+    'comment_node_product_module_form',
+    'comment_node_event_form',
+    'comment_node_document_form',
+  );
+
+  if (in_array($form_id, $forms)) {
+    $form['comment_body'][LANGUAGE_NONE][0]['value']['#title'] = t('Your Comment');
+  }
+}
+
+/**
+ * hook_theme()
+ */
+function jsonblocks_theme() {
+  $blocks = _jsonblocks_get_json_blocks();
+  $theme_vars = array();
+
+  foreach ($blocks as $block_name => $block) {
+    $tpl_name = drupal_html_class($block_name);
+
+    $theme_vars[$block_name] = array(
+        'variables' => array(),
+        'template' => 'theme/' . $tpl_name,
+    );
+  }
+  return $theme_vars;
+}
+
+/*
+ * internal function "get json blocks"
+ */
+function _jsonblocks_get_json_blocks() {
+  $file_path = drupal_realpath( drupal_get_path('module', 'jsonblocks') ) . '/jsonblocks.json';
+  $json_file = file_get_contents($file_path);
+  $json_arr = json_decode($json_file, TRUE); // decode as assoc array
+  return $json_arr;
+}
+
+function _jsonblocks_get_block_info($blocks_data) {
+  $blocks = array();
+  foreach ($blocks_data as $delta => $block_data) {
+    $blocks[$delta] = array(
+      'info' => $block_data['info'],
+    );
+  }
+  return $blocks;
+}
+

@@ -1,0 +1,15 @@
+{
+    "test-json-block": {
+        "info": "JSON TEST BLOCL",
+        "js": "test-json-block"
+    },
+    "login-block": {
+        "info": "LOG IN block"
+    },
+    "support-ijnet": {
+        "info": "Support IJNET"
+    },
+    "top-header-menu": {
+        "info": "Top Header Menu"
+    }
+}
