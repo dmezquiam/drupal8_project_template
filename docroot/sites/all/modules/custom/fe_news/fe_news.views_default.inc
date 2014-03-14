@@ -195,30 +195,6 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  $translatables['news'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('News Landing List'),
-    t('<div class="landig-list-title"><h2> TOP IJNET STORIES </h2></div>'),
-    t('News Landing'),
-    t('Top Story'),
-    t('<div class="top-story-header"> <h3> TOP STORY ON IJNET </h3> </div>'),
-    t('Author latest stories'),
-    t('<div class="latest-stories"> <h2> LATEST STORIES </h2> </div>'),
-    t('All'),
-  );
   $export['news'] = $view;
 
   $view = new view();
@@ -268,6 +244,10 @@ function fe_news_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Taxonomy term: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
@@ -281,6 +261,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy vocabulary: Machine name */
@@ -290,16 +271,13 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'topic' => 'topic',
   );
-  $translatables['news_search_block'] = array(
-    t('Master'),
-    t('News Search Block'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Category'),
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $export['news_search_block'] = $view;
 
@@ -318,7 +296,6 @@ function fe_news_views_default_views() {
   $handler->display->display_options['title'] = 'News Search Block users';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -348,6 +325,8 @@ function fe_news_views_default_views() {
 
   /* Display: Browse Author */
   $handler = $view->new_display('block', 'Browse Author', 'browse_author');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Browse Author';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -359,6 +338,15 @@ function fe_news_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_type'] = '0';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'avatar_small_img';
   /* Field: Field: Screen Name */
   $handler->display->display_options['fields']['field_screen_name']['id'] = 'field_screen_name';
   $handler->display->display_options['fields']['field_screen_name']['table'] = 'field_data_field_screen_name';
@@ -395,6 +383,8 @@ function fe_news_views_default_views() {
 
   /* Display: About the Author */
   $handler = $view->new_display('block', 'About the Author', 'about_the_author');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'About the Author';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -414,10 +404,17 @@ function fe_news_views_default_views() {
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
   $handler->display->display_options['fields']['uid']['label'] = '';
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['uid']['element_type'] = '0';
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_class'] = 'avatar';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'avatar_small_img';
   /* Field: Field: Screen Name */
   $handler->display->display_options['fields']['field_screen_name']['id'] = 'field_screen_name';
   $handler->display->display_options['fields']['field_screen_name']['table'] = 'field_data_field_screen_name';
@@ -425,7 +422,8 @@ function fe_news_views_default_views() {
   $handler->display->display_options['fields']['field_screen_name']['label'] = '';
   $handler->display->display_options['fields']['field_screen_name']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_screen_name']['alter']['path'] = 'user/[uid]';
-  $handler->display->display_options['fields']['field_screen_name']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_screen_name']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_screen_name']['element_class'] = 'author-name';
   $handler->display->display_options['fields']['field_screen_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_screen_name']['element_default_classes'] = FALSE;
   /* Field: Field: Job Title */
@@ -433,22 +431,28 @@ function fe_news_views_default_views() {
   $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
   $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
   $handler->display->display_options['fields']['field_job_title']['label'] = '';
+  $handler->display->display_options['fields']['field_job_title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_job_title']['element_class'] = 'job-name';
   $handler->display->display_options['fields']['field_job_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_job_title']['element_default_classes'] = FALSE;
   /* Field: Field: Organization */
   $handler->display->display_options['fields']['field_organization_name']['id'] = 'field_organization_name';
   $handler->display->display_options['fields']['field_organization_name']['table'] = 'field_data_field_organization_name';
   $handler->display->display_options['fields']['field_organization_name']['field'] = 'field_organization_name';
   $handler->display->display_options['fields']['field_organization_name']['label'] = '';
-  $handler->display->display_options['fields']['field_organization_name']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_organization_name']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_organization_name']['element_class'] = 'organization';
   $handler->display->display_options['fields']['field_organization_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_organization_name']['element_default_classes'] = FALSE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'avatar_small_img';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="/user/[uid]" class="button-tiny">VIEW PROFILE</a>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = '0';
+  $handler->display->display_options['fields']['nothing']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: User: Bio */
   $handler->display->display_options['fields']['field_bio']['id'] = 'field_bio';
   $handler->display->display_options['fields']['field_bio']['table'] = 'field_data_field_bio';
@@ -456,18 +460,10 @@ function fe_news_views_default_views() {
   $handler->display->display_options['fields']['field_bio']['label'] = '';
   $handler->display->display_options['fields']['field_bio']['alter']['max_length'] = '60';
   $handler->display->display_options['fields']['field_bio']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_bio']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bio']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_bio']['element_class'] = 'bio';
   $handler->display->display_options['fields']['field_bio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_bio']['element_default_classes'] = FALSE;
-  /* Field: User: Link */
-  $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['table'] = 'users';
-  $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['label'] = '';
-  $handler->display->display_options['fields']['view_user']['element_type'] = '0';
-  $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'PROFILE';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: User: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -485,20 +481,6 @@ else {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  $translatables['view_search_block_user'] = array(
-    t('Master'),
-    t('News Search Block users'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Browse Author'),
-    t('PROFILE'),
-    t('About the Author'),
-    t('All'),
-  );
   $export['view_search_block_user'] = $view;
 
   return $export;
