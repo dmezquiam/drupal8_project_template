@@ -1,10 +1,7 @@
 /* @mixin tiny-bt {
-  float: left;
-  background: $color-bg-third-lvl;
-  padding: 0px 5px;
-  @include border-radius(3px);
-  font-size: $font-size-tiny;
-  @include secondary-link;
+  font-size: 14px;
+  padding: 2px 9px;
+  border-radius: 7px;
 } */
 /*
  *   Important Information about this CSS File

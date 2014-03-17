@@ -5,7 +5,7 @@
 /*
  *   Important Information about this CSS File
  *
- * - Do not delete or rename this file, if you do not use it leave it blank (delete 
+ * - Do not delete or rename this file, if you do not use it leave it blank (delete
  *   everything) and the file will be skipped when you enable Production Mode in
  *   the Global theme settings.
  *
@@ -13,3 +13,33 @@
  */
 
 
+//Author Block =================================================================
+.view-id-view_search_block_user {
+  .avatar {
+    img { width: 80px; }
+  }
+  .author-name {
+  	float: left;
+    width: 96px;
+    clear: left;
+  }
+  .job-name {
+    float: left;
+    width: 96px;
+    clear: left;
+  }
+  .organization {
+    float: left;
+    width: 96px;
+    clear: left;
+  }
+  .views-field-nothing {
+    float: left;
+    width: 96px;
+    clear: both;
+  }
+  .bio {
+    clear: both;
+    padding-top: 5px;
+  }
+}

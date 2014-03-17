@@ -1,17 +1,47 @@
 /* @mixin tiny-bt {
-  float: left;
-  background: $color-bg-third-lvl;
-  padding: 0px 5px;
-  @include border-radius(3px);
-  font-size: $font-size-tiny;
-  @include secondary-link;
+  font-size: 14px;
+  padding: 2px 9px;
+  border-radius: 7px;
 } */
 /*
  *   Important Information about this CSS File
  *
- * - Do not delete or rename this file, if you do not use it leave it blank (delete 
+ * - Do not delete or rename this file, if you do not use it leave it blank (delete
  *   everything) and the file will be skipped when you enable Production Mode in
  *   the Global theme settings.
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000319}}
+.view-id-view_search_block_user .avatar img {
+  width: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000321}}
+.view-id-view_search_block_user .author-name {
+  float: left;
+  width: 96px;
+  clear: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000326}}
+.view-id-view_search_block_user .job-name {
+  float: left;
+  width: 96px;
+  clear: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000331}}
+.view-id-view_search_block_user .organization {
+  float: left;
+  width: 96px;
+  clear: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000336}}
+.view-id-view_search_block_user .views-field-nothing {
+  float: left;
+  width: 96px;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000341}}
+.view-id-view_search_block_user .bio {
+  clear: both;
+  padding-top: 5px;
+}

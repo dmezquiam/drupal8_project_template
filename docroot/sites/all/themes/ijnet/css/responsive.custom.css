@@ -1,10 +1,7 @@
 /* @mixin tiny-bt {
-  float: left;
-  background: $color-bg-third-lvl;
-  padding: 0px 5px;
-  @include border-radius(3px);
-  font-size: $font-size-tiny;
-  @include secondary-link;
+  font-size: 14px;
+  padding: 2px 9px;
+  border-radius: 7px;
 } */
 /*
  * responsive.custom.css is for custom media queries that are not set via the
@@ -20,40 +17,41 @@
  * NOTE: this file loads by default, to disable got to your theme settings and
  * look under the "CSS" settings tab.
  */
-/*
- * Really small screens and up
- */
-/* @media only screen and (min-width: 220px) {} */
-/*
- * Smartphone sizes and up
- */
-/* @media only screen and (min-width: 320px) {} */
-/*
- * Smartphone sizes and down
- */
+/* Desktops/laptops and up ======================================= */
+/* @media only screen and (min-width:990px){} */
+/* Tablet sizes and up =========================================== */
+/* @media only screen and (min-width:769px) and (max-width:989px){} */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000328}}
+  .two-66-33 > .region-two-66-33-first,
+  .two-66-33 > .region-two-66-33-second {
+    float: none;
+    width: 100%;
+  }
+}
+/* Smartphone sizes and up ======================================= */
+/* @media only screen and (min-width:321px) and (max-width:480px){} */
+/* @media only screen and (max-width:320px){} */
+/* Smartphone sizes and down ===================================== */
 @media only screen and (max-width: 480px) {
-  /* 
+  /*
    * Float Region blocks example:
    * In smaller screen sizes we can remove the float and widths so all blocks
    * stack instead of displaying horizonally. The selector used here is an
    * "attribute selector" which will match on any float block class. Use your
    * inspector or Firebug to get the classes from the page output if you need
    * more granular control over block alignment and stacking.
-   * 
+   *
    * "Float Region blocks" is an extension for floating blocks in regions, see
    * your themes appearance settings, under the Extensions tab.
    */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/responsive\.custom\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000352}}
   .region[class*="float-blocks"] .block {
     float: none;
     width: 100%;
   }
 }
 /*
- * Tablet sizes and up
+ * Really small screens and up
  */
-/* @media only screen and (min-width: 768px) {} */
-/*
- * Desktops/laptops and up
- */
-/* @media only screen and (min-width: 1025px) {} */
+/* @media only screen and (min-width: 220px) {} */

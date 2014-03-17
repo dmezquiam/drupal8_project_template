@@ -3,7 +3,7 @@
 $path-to-images : 						"../images";
 $path-to-fonts : 						"../fonts";
 
-$color-bg-general:         							#fff;    // to match the page background, default is white
+$color-bg-general:         				#fff;    // to match the page background, default is white
 $border:      							#ccc;    // all borders set in global.styles - tables, fieldset, primary links
 $highlight:    							#c00;    // required mark, form error highlight, "new" label on comments
 $ultralight:   							#f5f5f5; // table row even, primary link inactive tabs
@@ -45,33 +45,46 @@ $signika-Semibold: 			'Signika-Semibold', Arial, Helvetica, sans-serif;
 // colors =======================================
 $color-transparent:						transparent;
 
+//background
+$color-bg-leaderboard:					#5b5836;
 $color-bg-general: 						#ffffff;
 $color-bg-dead-line: 					#b75f18;
 $color-bg-footer:  						#525146;
 
+//global headings
 $color-heading-primary: 				#c67b1a;
 $color-heading-secondary: 				#265775;
 
+//text
 $color-txt-primary: 					#2a2a2a;
 $color-txt-primary-darck: 				#000000;
 $color-txt-main-menu: 					#ffffff;
 
+//link
 $color-link-primary: 					#137a9a;
 
+//lines
 $color-line: 							#c2c2c2;
 $color-line-secondary:					#eed466;
 
+//bottons
 $color-bt-bg:	 						#bf6c29;
+$color-bt-bg-2:	 						#b86926;
 $color-bt-txt:	 						#ffffff;
 
 $color-txt-selected: 					#3c6e8f;
 
+//blocks
 $color-bg-box: 							#f5f5f5;
 $color-bg-box-hightlight: 				#deeff5;
 $color-bg-heading-box-primary: 			#3c6e8f;
 $color-bg-heading-box-secondary: 		#bf6c29;
+$color-bg-heading-box-txt:		 		#ffffff;
 $color-bg-box2:							#d5d5d5;
 $color-shadow: 							#DBDBDB;
+
+//tabs
+$color-heading-tabs:					#2c4f65;
 // ==============================================
 
 ///global font-size =============================
@@ -80,22 +93,28 @@ $font-size-xx-large: 					26px;
 $font-size-x-large: 					20px;
 $font-size-large: 						16px;
 $font-size-regular: 					13px;
+$font-size-tiny:	 					12px;
+
+//buttons
 $font-size-bt: 							20px;
+$font-size-bt-small:					15px;
+$font-size-bt-tiny:						14px;
 
 //Sidebar font-size
+$font-size-sidebar-xxx-large: 			20px;
 $font-size-sidebar-xx-large: 			18px;
 $font-size-sidebar-x-large: 			15px;
 $font-size-sidebar-regular: 			11px;
 $font-size-sidebar-secondary: 			14px;
 
 //tabs font-size
-//sidebar
 $font-size-sidebar-heading-tab:	 		15px;
 $font-size-sidebar-tab:	 				12px;
 $font-size-sidebar-item:				16px;
-//content
 $font-size-content-heading-tab:	 		17px;
 $font-size-content-tab:		 			13px;
+
+//conent
 $font-size-content-item-heading: 		21px;
 $font-size-content-txt: 				13px;
 
@@ -103,7 +122,9 @@ $font-size-content-txt: 				13px;
 $font-size-featured-large: 				29px;
 $font-size-featured-x-large:			14px;
 
-//line-height
+$font-support-bt:						22px;
+
+//global line-height
 $line-height-xxx-large: 				34px;
 $fline-height-xx-large: 				30px;
 $line-height-x-large: 					22px;

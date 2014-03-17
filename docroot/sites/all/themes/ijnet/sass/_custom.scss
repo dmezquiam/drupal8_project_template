@@ -105,8 +105,7 @@
   }
 // ==================================================================================
 
-
-//Clearfix =================================
+//Clearfix ==========================================================================
   @mixin clearfix {
     &:after {
       content: ".";
@@ -117,9 +116,9 @@
     }
     * html & { height: 1px }
   }
-//==========================================
+//===================================================================================
 
-//Headings =================================
+//Headings ==========================================================================
   @mixin font-headin-xxx-large {
     @include opensans-light;
     font-size: $font-size-xxx-large;
@@ -149,9 +148,9 @@
     font-size: $font-size-large;
     color: $color-secondary-heading;
   }
-//==========================================
+//===================================================================================
 
-// imputs ==================================
+// imputs ===========================================================================
   @mixin inputs ($input-height:22px, $margin-bottom:12px){
     height: $input-height;
     border: 1px solid $color-line;
@@ -165,40 +164,90 @@
   @mixin input-width-full {
     width: 547px;
   }
-//==========================================
+//===================================================================================
 
-  // buttons =================================
-  @mixin buttons {
-    font-size: $font-size-bt;
-    font-family: $signika-Regular;
-    text-transform: uppercase;
-    color: $color-bt-txt;
-    background: $color-bt-bg url("#{$path-to-images}/bg_bt.jpg") repeat-x 0 0;
-    border: 2px solid $color-bt-txt;
-     cursor: pointer;
-    -webkit-appearance: button;
-    @include border-radius (12px);
-    @include transition (all, 0.2s, ease-in-out);
-    @include box-shadow (1px, 1px, 1px, $color-shadow);
-    @include text-shadow (0px, 1px, 1px, #5E5C5C);
-    padding: 5px 26px;
-
-    &:hover {
-      background: lighten( $color-bt-bg, 10% ) url("#{$path-to-images}/bg_bt_hover.jpg") repeat-x 0 0;
+  // buttons ========================================================================
+  //color options: color-brown or color-black
+    @mixin buttons ($border-radius:12px, $color:color-brown, $size:normal){
+      font-family: $signika-Regular;
+      text-transform: uppercase;
+      color: $color-bt-txt;
+      border: 2px solid $color-bt-txt;
+      cursor: pointer;
+      display: inline;
+      @include box-shadow (1px, 1px, 1px, $color-shadow);
+      @include text-shadow (0px, 1px, 1px, #5E5C5C);
+      @include button-gradient ($color);
+      @include transition (all, 0.2s, ease-in-out);
+      &:hover {
+        color: $color-bt-txt;
+      }
+      @if $size == "normal" {
+        font-size: $font-size-bt;
+        padding: 5px 26px;
+        @include border-radius ($border-radius);
+      } @else if $size == "small" {
+        font-size: $font-size-bt-small;
+        padding: 3px 25px;
+        @include border-radius ($border-radius);
+      } @else if $size == "tiny" {
+        font-size: $font-size-bt-tiny;
+        padding: 2px 9px;
+        @include border-radius ($border-radius);
+      }
     }
-  }
+
+    @mixin button-gradient ($color) {
+      @if $color == "color-brown" {
+        background: $color-bt-bg; /* Old browsers */
+        background: -moz-linear-gradient(top,  $color-bt-bg 0%, #b75f18 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color-bt-bg), color-stop(100%,#b75f18)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  $color-bt-bg 0%,#b75f18 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  $color-bt-bg 0%,#b75f18 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  $color-bt-bg 0%,#b75f18 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  $color-bt-bg 0%,#b75f18 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-bt-bg', endColorstr='#b75f18',GradientType=0 ); /* IE6-9 */
+        &:hover {
+        background: lighten($color-bt-bg, 5% ); /* Old browsers */
+        background: -moz-linear-gradient(top,  lighten($color-bt-bg, 5% ), lighten(#b75f18, 5% ) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,lighten($color-bt-bg, 5% )), color-stop(100%,lighten(#b75f18, 5% ))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  lighten($color-bt-bg, 5% ) 0%,lighten(#b75f18, 5% ) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  lighten($color-bt-bg, 5% ) 0%,lighten(#b75f18, 5% ) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  lighten($color-bt-bg, 5% ) 0%,lighten(#b75f18, 5% ) 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  lighten($color-bt-bg, 5% ) 0%,lighten(#b75f18, 5% ) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 ); /* IE6-9 */
+        }
+      } @else if $color == "color-black" {
+        background: #6e6e6e; /* Old browsers */
+        background: -moz-linear-gradient(top,  #6e6e6e 0%, #605953 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6e6e6e), color-stop(100%,#605953)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #6e6e6e 0%,#605953 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #6e6e6e 0%,#605953 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #6e6e6e 0%,#605953 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #6e6e6e 0%,#605953 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #6e6e6e', endColorstr='#605953',GradientType=0 ); /* IE6-9 */
+        &:hover {
+        background: lighten(#6e6e6e, 5% ); /* Old browsers */
+        background: -moz-linear-gradient(top, lighten(#6e6e6e, 5% ) 0%, lighten(#605953, 5% ) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,lighten(#6e6e6e, 5% )), color-stop(100%,lighten(#605953, 5% ))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, lighten(#6e6e6e, 5% ) 0%, lighten(#605953, 5% ) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, lighten(#6e6e6e, 5% ) 0%, lighten(#605953, 5% ) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, lighten(#6e6e6e, 5% ) 0%, lighten(#605953, 5% ) 100%); /* IE10+ */
+        background: linear-gradient(to bottom, lighten(#6e6e6e, 5% ) 0%, lighten(#605953, 5% ) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(#6e6e6e, 5% )', endColorstr='lighten(#605953, 5% )',GradientType=0 ); /* IE6-9 */
+        }
+      }
+    }
+
 
   /* @mixin tiny-bt {
-    float: left;
-    background: $color-bg-third-lvl;
-    padding: 0px 5px;
-    @include border-radius(3px);
-    font-size: $font-size-tiny;
-    @include secondary-link;
+    font-size: 14px;
+    padding: 2px 9px;
+    border-radius: 7px;
   } */
-//==========================================
+//===================================================================================
 
-// Transitions =============================
+// Transitions ======================================================================
 // @include transition(all, 0.2s, ease-in-out);
   @mixin transition($transition-property:all, $transition-time:0.2s, $method:ease-in-out) {
       -webkit-transition: $transition-property $transition-time $method;
@@ -207,29 +256,186 @@
       -o-transition: $transition-property $transition-time $method;
       transition: $transition-property $transition-time $method;
   }
-//==========================================
+//===================================================================================
 
-// border radius ===========================
+// border radius ====================================================================
   @mixin border-radius($radius:6px) {
     -moz-border-radius: $radius;
     -webkit-border-radius: $radius;
     -ms-border-radius: $radius;
     border-radius: $radius;
   }
-//==========================================
+//===================================================================================
 
-// box-shadow ==============================
+// box-shadow =======================================================================
   @mixin box-shadow($top, $left, $blur, $color, $inset:"") {
       -webkit-box-shadow:$top $left $blur $color #{$inset};
       -moz-box-shadow:$top $left $blur $color #{$inset};
       box-shadow:$top $left $blur $color #{$inset};
   }
-// =========================================
+//===================================================================================
 
-// text-shadow ==============================
+// text-shadow ======================================================================
   @mixin text-shadow($top, $left, $blur, $color) {
       -webkit-text-shadow:$top $left $blur $color;
       -moz-text-shadow:$top $left $blur $color;
       text-shadow:$top $left $blur $color;
   }
-// =========================================
+//===================================================================================
+
+// block-skin =======================================================================
+
+// info:
+// Skins names: "skin-default" "skin-brown"
+  @mixin block-skin ($style, $border:true) {
+    .block-title {
+      text-align: center;
+      color: $color-bg-heading-box-txt;
+      text-transform: uppercase;
+      font-size: $font-size-sidebar-xx-large;
+      margin: 0;
+    }
+    .content {
+      padding: 10px;
+    }
+    @if $style == "skin-default" {
+      .block-title {
+        background: $color-bg-heading-box-primary;
+      }
+      .content {
+        border-top: 0px;
+        @include block-skin-border ($border);
+      }
+    } @else if $style == "skin-brown" {
+      .block-title {
+        background: $color-bg-heading-box-secondary;
+        border-radius: 5px 5px 0px 0px;
+        padding: 7px 0px;
+        font-size: $font-size-sidebar-xxx-large;
+      }
+      .content {
+        border-top: 0px;
+        border-left: 1px solid $color-bg-heading-box-secondary;
+        border-right: 1px solid $color-bg-heading-box-secondary;
+        border-bottom: 1px solid $color-bg-heading-box-secondary;
+      }
+    }
+  }
+    @mixin block-skin-border ($border) {
+      @if $border == true {
+        border-left: 1px solid $color-line;
+        border-right: 1px solid $color-line;
+        border-bottom: 1px solid $color-line;
+      } @else if $border == false {
+        border: 0px;
+      }
+    }
+//===================================================================================
+
+// quicktabs ========================================================================
+//info:
+//
+@mixin quicktabs ($section) {
+  position: relative;
+  .block-title {
+    color: $color-heading-tabs;
+    font-size: $font-size-sidebar-heading-tab;
+    position: absolute;
+    margin: 0px;
+    top: 0px;
+    left: 38px;
+    letter-spacing: 1px;
+  }
+  .quicktabs-wrapper {
+    .quicktabs-tabs {
+      text-align: right;
+      margin: 0px;
+      padding: 5px 0 2px 0px;
+      li {
+        padding: 5px 0px 4px 0px;
+        margin: 0px 5px 0px 0px;
+        a {
+          color: lighten($color-heading-primary, 30%);
+          background-color: $color-bg-box;
+          border-width: 1px;
+          border-color: $color-line;
+          border-style: solid solid none solid;
+          box-shadow: inset 0px 3px 7px -3px #CAC9C9;
+          padding: 5px 10px 4px 10px;
+          margin: 0px 0px 0px 0px;
+          &:hover {
+            background-color: $color-bg-box;
+            color: $color-heading-primary;
+          }
+        }
+        &.active {
+          a {
+            color:$color-heading-primary;
+            border-bottom-color: $color-bg-box;
+            background: $color-bg-box;
+            padding-bottom: 5px;
+          }
+          a {}
+        }
+        &.first {
+          a {}
+        }
+        &.last {
+          a {}
+        }
+      }
+    }
+    .quicktabs_main {
+      border-color: $color-line;
+      border-width: 1px;
+      margin-top: 0px;
+    }
+  }
+  @if $section == sidebar {
+    .quicktabs-wrapper {
+      .quicktabs-tabs {
+        li{
+          &.last {
+            margin: 0px -1px 0px 0px;
+          }
+        }
+      }
+    }
+    .quicktabs_main {
+      background: $color-bg-box;
+      border-style: solid solid solid solid;
+    }
+  } @else if $section == content {
+    .quicktabs-wrapper {
+      .quicktabs-tabs {
+        li{
+          &.last {
+            margin: 0px 5px 0px 0px;
+          }
+        }
+      }
+    }
+    .quicktabs_main {
+      border-style: solid none none none;
+      background: $color-transparent;
+    }
+
+  }
+}
+
+//===================================================================================
+// Category/Tags ====================================================================
+@mixin category() {
+  background: $color-txt-selected;
+  color: $color-bt-txt;
+  padding: 0 10px;
+  margin: 0 5px 0 0;
+  text-transform: uppercase;
+  @include border-radius(3px);
+  @include transition(all, 0.2s, ease-in-out);
+  &:hover {
+    background: lighten($color-txt-selected, 10% );
+  }
+}
+//===================================================================================
+

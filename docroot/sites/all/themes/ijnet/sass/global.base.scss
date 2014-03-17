@@ -15,6 +15,10 @@
  *   element-invisible and focusable styles.
  */
 
+/* DRUPAL ADMIN TOOL BAR */
+body #admin-menu { font-size: $font-size-regular; }
+body.admin-menu { margin-top: 26px !important; }
+#admin-menu .dropdown li ul { box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.72); }
 /* =============================================================================
     HTML5 display definitions
    ========================================================================== */
@@ -122,7 +126,7 @@ textarea {
 
 a {
   text-decoration: none;
-  @include transition(all, 0.2s, ease-in-out);
+  @include transition(color, 0.2s, ease-in-out);
   color: $color-link-primary;
 
   &:link,
@@ -466,6 +470,7 @@ figure {
     Forms
    ========================================================================== */
 
+input[type="password"],
 input[type="text"] {
   @include inputs (22px, 12px);
 }
@@ -535,9 +540,19 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  @include buttons;
+  @include buttons (12px, color-brown, normal);
 }
 
+.button-normal {
+  @include buttons (12px, color-brown, normal);
+}
+
+.button-small {
+  @include buttons (12px, color-brown, small);
+}
+.button-tiny {
+  @include buttons (7px, color-brown, tiny);
+}
 
 /*
  * Re-set default cursor for disabled elements

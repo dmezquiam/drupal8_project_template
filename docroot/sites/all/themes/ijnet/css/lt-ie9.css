@@ -1,10 +1,7 @@
 /* @mixin tiny-bt {
-  float: left;
-  background: $color-bg-third-lvl;
-  padding: 0px 5px;
-  @include border-radius(3px);
-  font-size: $font-size-tiny;
-  @include secondary-link;
+  font-size: 14px;
+  padding: 2px 9px;
+  border-radius: 7px;
 } */
 /*
  * Target IE 6, 7 and 8 (less than IE9)
@@ -13,7 +10,7 @@
  * Assuming a mobile first approach with respond.js OFF, we must reset the font
  * size for lt IE9
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/lt-ie9\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/lt-ie9\.scss}line{font-family:\0000313}}
 html {
   font-size: 81.3%;
 }

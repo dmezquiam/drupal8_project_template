@@ -1,10 +1,7 @@
 /* @mixin tiny-bt {
-  float: left;
-  background: $color-bg-third-lvl;
-  padding: 0px 5px;
-  @include border-radius(3px);
-  font-size: $font-size-tiny;
-  @include secondary-link;
+  font-size: 14px;
+  padding: 2px 9px;
+  border-radius: 7px;
 } */
 /*
  * @file
@@ -17,13 +14,29 @@
  * - Copies of the SCSS mixins for reference, which includes an improved
  *   element-invisible and focusable styles.
  */
+/* DRUPAL ADMIN TOOL BAR */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\0000319}}
+body #admin-menu {
+  font-size: 13px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\0000320}}
+body.admin-menu {
+  margin-top: 26px !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\0000321}}
+#admin-menu .dropdown li ul {
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.72);
+}
+
 /* =============================================================================
     HTML5 display definitions
    ========================================================================== */
 /*
  * Corrects block display not defined in IE6/7/8/9 & FF3
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\0000339}}
 article,
 aside,
 details,
@@ -41,7 +54,7 @@ summary {
 /*
  * Corrects inline-block display not defined in IE6/7/8/9 & FF3
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\0000349}}
 audio,
 canvas,
 video {
@@ -54,7 +67,7 @@ video {
  * Prevents modern browsers from displaying 'audio' without controls
  * Remove excess height in iOS5 devices
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\0000360}}
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -64,7 +77,7 @@ audio:not([controls]) {
  * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
  * Known issue: no IE6 support
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\0000370}}
 [hidden] {
   display: none;
 }
@@ -81,7 +94,7 @@ audio:not([controls]) {
  * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\0000388}}
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -94,7 +107,7 @@ html {
 /*
  * 1 . Addresses margins handled incorrectly in IE6/7
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003100}}
 body {
   font-size: 87.5%;
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
@@ -111,7 +124,7 @@ body {
 /*
  * Addresses font-family inconsistency between 'textarea' and other form elements.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003118}}
 button,
 input,
 select,
@@ -122,17 +135,17 @@ textarea {
 /* =============================================================================
  *   Links
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003127}}
 a {
   text-decoration: none;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
   color: #137a9a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003139}}
 a:hover, a:focus {
   outline: 0;
   text-decoration: none;
@@ -142,7 +155,7 @@ a:hover, a:focus {
 /*
  * Addresses outline displayed oddly in Chrome
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003149}}
 a:focus {
   outline: thin dotted;
 }
@@ -156,7 +169,7 @@ a:focus {
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003165}}
 h1 {
   font-size: 29px;
   line-height: 34px;
@@ -165,12 +178,12 @@ h1 {
   font-weight: bold;
   margin: 30px 0px 10px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003172}}
 h1 a {
   color: #b75f18;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003174}}
 h2 {
   font-size: 26px;
   line-height: 30px;
@@ -179,12 +192,12 @@ h2 {
   font-weight: bold;
   margin: 30px 0px 10px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003177}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003181}}
 h2 a {
   color: #b75f18;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003183}}
 h3 {
   font-size: 20px;
   line-height: 22px;
@@ -193,12 +206,12 @@ h3 {
   font-weight: bold;
   margin: 30px 0 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003186}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003190}}
 h3 a {
   color: #b75f18;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003188}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003192}}
 h4 {
   font-size: 16px;
   line-height: 15px;
@@ -207,12 +220,12 @@ h4 {
   font-weight: bold;
   margin: 30px 0 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003195}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003199}}
 h4 a {
   color: #b75f18;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003197}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003201}}
 h5 {
   font-size: 16px;
   line-height: 34px;
@@ -221,12 +234,12 @@ h5 {
   font-weight: bold;
   margin: 30px 0 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003204}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003208}}
 h5 a {
   color: #b75f18;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003210}}
 h6 {
   font-size: 16px;
   line-height: 22px;
@@ -235,7 +248,7 @@ h6 {
   font-weight: bold;
   margin: 30px 0 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003213}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003217}}
 h6 a {
   color: #b75f18;
 }
@@ -243,14 +256,14 @@ h6 a {
 /* =============================================================================
  *   HTML Elements
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003242}}
 blockquote {
   padding: 1em 60px;
   margin: 0px;
   background: url("../images/blockquote.png") no-repeat 0 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003275}}
 pre,
 code,
 tt,
@@ -263,7 +276,7 @@ var {
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003279}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003283}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -271,7 +284,7 @@ abbr[title] {
 /*
  * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003288}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003292}}
 b,
 strong {
   font-weight: bold;
@@ -280,7 +293,7 @@ strong {
 /*
  * Addresses styling not present in S5, Chrome
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003296}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003300}}
 dfn {
   font-style: italic;
 }
@@ -288,7 +301,7 @@ dfn {
 /*
  * Addresses styling not present in IE6/7/8/9
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003304}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003308}}
 mark {
   background: #ff0;
   color: #000;
@@ -297,7 +310,7 @@ mark {
 /*
  * Addresses margins set differently in IE6/7
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003318}}
 p,
 pre {
   font-size: 13px;
@@ -310,7 +323,7 @@ pre {
  * Corrects font family set oddly in IE6, S4/5, Chrome
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003333}}
 pre,
 code,
 kbd,
@@ -322,7 +335,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003342}}
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -333,19 +346,19 @@ pre {
  * 1. Addresses CSS quotes not supported in IE6/7
  * 2. Addresses quote property not supported in S4
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003354}}
 q {
   quotes: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003360}}
 q:before,
 q:after {
   content: '';
   content: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003366}}
 small {
   font-size: 75%;
 }
@@ -354,7 +367,7 @@ small {
  * Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003376}}
 sub,
 sup {
   font-size: 75%;
@@ -363,12 +376,12 @@ sup {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003384}}
 sup {
   top: -0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003389}}
 sub {
   bottom: -0.25em;
 }
@@ -379,7 +392,7 @@ sub {
 /*
  * Addresses margins set differently in IE6/7
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003400}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003404}}
 dl,
 menu,
 ol,
@@ -387,7 +400,7 @@ ul {
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003405}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003409}}
 dd {
   margin: 0 0 0 40px;
 }
@@ -395,7 +408,7 @@ dd {
 /*
  * Addresses paddings set differently in IE6/7
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003415}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003419}}
 menu,
 ol,
 ul {
@@ -405,7 +418,7 @@ ul {
 /*
  * Corrects list images handled incorrectly in IE7
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003424}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003428}}
 nav ul,
 nav ol {
   list-style: none;
@@ -420,7 +433,7 @@ nav ol {
  * 2. Improves image quality when scaled in IE7
  *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003439}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003443}}
 img {
   /* border: 0; */
   /* Drupal core already does this, uncomment if you need it */
@@ -430,7 +443,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE9
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003448}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003452}}
 svg:not(:root) {
   overflow: hidden;
 }
@@ -441,7 +454,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE6/7/8/9, S5, O11
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003460}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003464}}
 figure {
   margin: 0;
 }
@@ -449,7 +462,8 @@ figure {
 /* =============================================================================
     Forms
    ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003469}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003474}}
+input[type="password"],
 input[type="text"] {
   height: 22px;
   border: 1px solid #c2c2c2;
@@ -461,7 +475,7 @@ input[type="text"] {
 /*
  * Corrects margin displayed oddly in IE6/7
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003476}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003481}}
 form {
   margin: 0;
 }
@@ -469,7 +483,7 @@ form {
 /*
  * Define consistent margin, and padding
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003484}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003489}}
 fieldset {
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
@@ -480,7 +494,7 @@ fieldset {
  * 2. Corrects text not wrapping in FF3
  * 3. Corrects alignment displayed oddly in IE6/7
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003495}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003500}}
 legend {
   border: 0;
   padding: 0;
@@ -493,7 +507,7 @@ legend {
  * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
  * 3. Improves appearance and consistency in all browsers
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003511}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003516}}
 button,
 input,
 select,
@@ -507,7 +521,7 @@ textarea {
 /*
  * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003523}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003528}}
 button,
 input {
   line-height: normal;
@@ -519,48 +533,283 @@ input {
  * 3. Removes inner spacing in IE7 without affecting normal text inputs
  *    Known issue: inner spacing remains in IE6
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003537}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003542}}
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  font-size: 20px;
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   color: white;
-  background: #bf6c29 url("../images/bg_bt.jpg") repeat-x 0 0;
   border: 2px solid white;
   cursor: pointer;
-  -webkit-appearance: button;
-  -moz-border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -ms-border-radius: 12px;
-  border-radius: 12px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  display: inline;
   -webkit-box-shadow: 1px 1px 1px #dbdbdb ;
   -moz-box-shadow: 1px 1px 1px #dbdbdb ;
   box-shadow: 1px 1px 1px #dbdbdb ;
   -webkit-text-shadow: 0px 1px 1px #5e5c5c;
   -moz-text-shadow: 0px 1px 1px #5e5c5c;
   text-shadow: 0px 1px 1px #5e5c5c;
+  background: #bf6c29;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bf6c29), color-stop(100%, #b75f18));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #bf6c29 0%, #b75f18 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color-bt-bg', endColorstr='#b75f18',GradientType=0 );
+  /* IE6-9 */
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-size: 20px;
   padding: 5px 26px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -ms-border-radius: 12px;
+  border-radius: 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/_custom\.scss}line{font-family:\00003186}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003210}}
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background: #d78644 url("../images/bg_bt_hover.jpg") repeat-x 0 0;
+  background: #d2782f;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d2782f, #ce6b1b 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d2782f), color-stop(100%, #ce6b1b));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #d2782f 0%, #ce6b1b 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
+  /* IE6-9 */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003182}}
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003546}}
+.button-normal {
+  font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  display: inline;
+  -webkit-box-shadow: 1px 1px 1px #dbdbdb ;
+  -moz-box-shadow: 1px 1px 1px #dbdbdb ;
+  box-shadow: 1px 1px 1px #dbdbdb ;
+  -webkit-text-shadow: 0px 1px 1px #5e5c5c;
+  -moz-text-shadow: 0px 1px 1px #5e5c5c;
+  text-shadow: 0px 1px 1px #5e5c5c;
+  background: #bf6c29;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bf6c29), color-stop(100%, #b75f18));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #bf6c29 0%, #b75f18 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color-bt-bg', endColorstr='#b75f18',GradientType=0 );
+  /* IE6-9 */
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-size: 20px;
+  padding: 5px 26px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -ms-border-radius: 12px;
+  border-radius: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003210}}
+.button-normal:hover {
+  background: #d2782f;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d2782f, #ce6b1b 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d2782f), color-stop(100%, #ce6b1b));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #d2782f 0%, #ce6b1b 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
+  /* IE6-9 */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003182}}
+.button-normal:hover {
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003550}}
+.button-small {
+  font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  display: inline;
+  -webkit-box-shadow: 1px 1px 1px #dbdbdb ;
+  -moz-box-shadow: 1px 1px 1px #dbdbdb ;
+  box-shadow: 1px 1px 1px #dbdbdb ;
+  -webkit-text-shadow: 0px 1px 1px #5e5c5c;
+  -moz-text-shadow: 0px 1px 1px #5e5c5c;
+  text-shadow: 0px 1px 1px #5e5c5c;
+  background: #bf6c29;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bf6c29), color-stop(100%, #b75f18));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #bf6c29 0%, #b75f18 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color-bt-bg', endColorstr='#b75f18',GradientType=0 );
+  /* IE6-9 */
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-size: 15px;
+  padding: 3px 25px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -ms-border-radius: 12px;
+  border-radius: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003210}}
+.button-small:hover {
+  background: #d2782f;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d2782f, #ce6b1b 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d2782f), color-stop(100%, #ce6b1b));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #d2782f 0%, #ce6b1b 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
+  /* IE6-9 */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003182}}
+.button-small:hover {
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003553}}
+.button-tiny {
+  font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  display: inline;
+  -webkit-box-shadow: 1px 1px 1px #dbdbdb ;
+  -moz-box-shadow: 1px 1px 1px #dbdbdb ;
+  box-shadow: 1px 1px 1px #dbdbdb ;
+  -webkit-text-shadow: 0px 1px 1px #5e5c5c;
+  -moz-text-shadow: 0px 1px 1px #5e5c5c;
+  text-shadow: 0px 1px 1px #5e5c5c;
+  background: #bf6c29;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bf6c29), color-stop(100%, #b75f18));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #bf6c29 0%, #b75f18 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #bf6c29 0%, #b75f18 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color-bt-bg', endColorstr='#b75f18',GradientType=0 );
+  /* IE6-9 */
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+  padding: 2px 9px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -ms-border-radius: 7px;
+  border-radius: 7px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003210}}
+.button-tiny:hover {
+  background: #d2782f;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d2782f, #ce6b1b 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d2782f), color-stop(100%, #ce6b1b));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d2782f 0%, #ce6b1b 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #d2782f 0%, #ce6b1b 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
+  /* IE6-9 */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003182}}
+.button-tiny:hover {
+  color: white;
 }
 
 /*
  * Re-set default cursor for disabled elements
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003546}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003561}}
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -572,7 +821,7 @@ input[disabled] {
  * 3. Removes excess padding in IE7
  *    Known issue: excess padding remains in IE6
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003558}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003573}}
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -585,7 +834,7 @@ input[type="radio"] {
  * 1. Addresses appearance set to searchfield in S5, Chrome
  * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003570}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003585}}
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -596,7 +845,7 @@ input[type="search"] {
 /*
  * Removes inner padding and search cancel button in S5, Chrome on OS X
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003582}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003597}}
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -606,7 +855,7 @@ input[type="search"]::-webkit-search-cancel-button {
  * Removes inner padding and border in FF3+
  * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003592}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003607}}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -617,7 +866,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE6/7/8/9
  * 2. Improves readability and alignment in all browsers
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003602}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003617}}
 textarea {
   overflow: auto;
   vertical-align: top;
@@ -629,7 +878,7 @@ textarea {
 /*
  * 1. Remove most spacing between table cells
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003615}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003630}}
 table {
   border: 1px solid;
   border-spacing: 0;
@@ -646,7 +895,7 @@ table {
  * see Extensions > Modify Output > Design
  * $gutter-width is set in _base.scss
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003642}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003657}}
 #main-content,
 .block-inner,
 .pane-inner,
@@ -665,7 +914,7 @@ div.messages {
  * Panel pages need negative margin equal to the gutter width applied to #content,
  * this is taken care of in theme settings as per above for normal gutters
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003652}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003667}}
 #content .panel-display,
 #content .panel-flexible {
   margin-left: -20px;
@@ -682,14 +931,14 @@ div.messages {
  *   the "dissappering images" bug in IE8.
  * - Mapping services such as Google Maps may break also, see below for fixes.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003670}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003685}}
 img {
   height: auto;
   -ms-interpolation-mode: bicubic;
 }
 
 /* Ethan Marcotte - http://front.ie/l8rJaA */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003680}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003695}}
 img,
 embed,
 object,
@@ -698,7 +947,7 @@ video {
 }
 
 /* Disable flexiblity for IE8 and below */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003689}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003704}}
 .lt-ie9 img,
 .lt-ie9 object,
 .lt-ie9 embed,
@@ -707,7 +956,7 @@ video {
 }
 
 /* Override max-width 100% for map displays */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003702}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003717}}
 #map img,
 .gmap img,
 .view-gmap img,
@@ -723,7 +972,7 @@ video {
     Misc helpers, Accessibility classes etc
    ========================================================================== */
 /* Prevent overflowing content */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003719}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003734}}
 header[role=banner],
 .content-inner,
 .nav,
@@ -745,7 +994,7 @@ header[role=banner],
  * Kellum Method: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
  * Additional helpers from http://html5boilerplate.com/docs/css/
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003735}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003750}}
 .ir {
   /* Kellum Method */
   display: block !important;
@@ -765,7 +1014,7 @@ header[role=banner],
 }
 
 /* More robust element-invisible and element-focuable classes */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003755}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003770}}
 .element-invisible {
   border: 0;
   clip: rect(1px 1px 1px 1px);
@@ -778,7 +1027,7 @@ header[role=banner],
   width: 1px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003768}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003783}}
 .element-invisible.element-focusable:active,
 .element-invisible.element-focusable:focus {
   clip: auto;
@@ -789,7 +1038,7 @@ header[role=banner],
 }
 
 /* Shift content offscreen, can be usefull when you reall need to do this */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003778}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003793}}
 .offscreen {
   position: absolute;
   top: -99999em;
@@ -800,7 +1049,7 @@ header[role=banner],
 }
 
 /* Hide content from all users */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet_theme\/sass\/global\.base\.scss}line{font-family:\00003789}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003804}}
 .element-hidden {
   display: none;
 }
