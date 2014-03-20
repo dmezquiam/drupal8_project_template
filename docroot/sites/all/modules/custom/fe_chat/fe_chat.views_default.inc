@@ -42,6 +42,10 @@ function fe_chat_views_default_views() {
   UPCOMING CHAT
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -110,6 +114,14 @@ function fe_chat_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['default_date'] = 'now';
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Past Chats */
   $handler = $view->new_display('block', 'Past Chats', 'past_chats');
@@ -149,6 +161,14 @@ function fe_chat_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['operator'] = '<';
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_date_value']['default_date'] = 'now';
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Chats Landing Page */
   $handler = $view->new_display('page', 'Chats Landing Page', 'chats_landing');
@@ -189,6 +209,14 @@ function fe_chat_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['granularity'] = 'hour';
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_date_value']['default_date'] = 'now';
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['path'] = 'chats';
   $export['chats'] = $view;
 
