@@ -29,22 +29,22 @@ function fe_videos_views_api($module = NULL, $api = NULL) {
 function fe_videos_fe_nodequeue_export_fields() {
   $nodequeues = array();
 
-  // Exported nodequeues: video_landing_queue
-  $nodequeues['video_landing_queue'] = array(
-    'name' => 'video_landing_queue',
-    'title' => 'Video Landing Queue',
+  // Exported nodequeues: video_landing
+  $nodequeues['video_landing'] = array(
+    'name' => 'video_landing',
+    'title' => 'Video Landing',
     'subqueue_title' => '',
-    'size' => 3,
+    'size' => 0,
     'link' => '',
     'link_remove' => '',
-    'owner' => 'nodequeue',
+    'owner' => 'smartqueue_language',
     'show_in_ui' => 1,
     'show_in_tab' => 1,
     'show_in_links' => 0,
-    'reference' => 0,
+    'reference' => 'a:2:{s:9:"languages";s:7:"enabled";s:16:"language_neutral";i:0;}',
     'reverse' => 0,
     'i18n' => 0,
-    'subqueues' => 1,
+    'subqueues' => 14,
     'types' => array(
       0 => 'video',
     ),
