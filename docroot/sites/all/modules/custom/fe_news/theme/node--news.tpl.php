@@ -87,6 +87,7 @@
     <?php hide($content['comments']);
       hide($content['links']); ?>
     <?php if (!$page) : ?>
+      <?php print render($content['field_image']); hide($content['field_image']);?>
       <?php print render($title_prefix); ?>
         <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
       <?php print render($title_suffix); ?>
