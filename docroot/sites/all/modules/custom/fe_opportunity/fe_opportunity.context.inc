@@ -1,0 +1,87 @@
+<?php
+/**
+ * @file
+ * fe_opportunity.context.inc
+ */
+
+/**
+ * Implements hook_context_default_contexts().
+ */
+function fe_opportunity_context_default_contexts() {
+  $export = array();
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'fe_opportunities_detail';
+  $context->description = '';
+  $context->tag = 'fe_opportunity';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'training_opportunity' => 'training_opportunity',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-news-top_story' => array(
+          'module' => 'views',
+          'delta' => 'news-top_story',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'views-a66f88ddd5cdac2f4431afb3349ecc92' => array(
+          'module' => 'views',
+          'delta' => 'a66f88ddd5cdac2f4431afb3349ecc92',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('fe_opportunity');
+  $export['fe_opportunities_detail'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'fe_opportunities_landing';
+  $context->description = '';
+  $context->tag = 'fe_opportunity';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'opportunities*' => 'opportunities*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-15275b6301e5dc10a482387ea39a018c' => array(
+          'module' => 'views',
+          'delta' => '15275b6301e5dc10a482387ea39a018c',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('fe_opportunity');
+  $export['fe_opportunities_landing'] = $context;
+
+  return $export;
+}

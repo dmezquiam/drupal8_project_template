@@ -5,3 +5,31 @@
  */
 
 include_once 'fe_opportunity.features.inc';
+
+/**
+ * Implements hook_theme()
+ */
+
+function fe_opportunity_theme() {
+  return array(
+    'node__training_opportunity' => array(
+      'variables' => array('node' => array()),
+      'template' => 'theme/node--training_opportunity',
+    ),  
+  );  
+}
+
+/**
+ * Implements hook_preprocess_node()
+ */
+
+function fe_opportunity_preprocess_node(&$vars) {
+  if ($vars['node']->type == 'training_opportunity') {
+    $node = $vars['node'];
+    if ($node->field_deadline && isset($node->field_deadline)) {
+      $date = $node->field_deadline[LANGUAGE_NONE][0]['value'];
+      $vars['deadline'] = date('M jS, Y', $date);
+    }
+
+  }
+}
