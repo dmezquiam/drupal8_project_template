@@ -1,9 +1,3 @@
 <div class="log-in-block">
-  <div class="sign-in">
-    <a href='/user'> SIGN IN </a>
-  </div>
-  OR
-  <div class="register">
-    <a href='/user'> REGISTER </a>
-  </div>
+  <label class="sign-reg"><a href='/user'> SIGN IN </a><span>OR</span><a href='/user'> REGISTER </a></label>
 </div>
