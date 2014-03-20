@@ -113,6 +113,8 @@
       <div class="container clearfix">
         <header<?php print $header_attributes; ?>>
 
+          <?php print render($page['header']); ?>
+
           <?php if ($site_logo || $site_name || $site_slogan): ?>
             <!-- start: Branding -->
             <div<?php print $branding_attributes; ?>>
@@ -142,7 +144,6 @@
             </div><!-- /end #branding -->
           <?php endif; ?>
 
-        <?php print render($page['header']); ?>
 
         </header>
       </div>
