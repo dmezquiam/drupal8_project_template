@@ -34,6 +34,7 @@
  * @ingroup themeable
  */
 ?>
+<div class="profile"<?php print $attributes; ?>>
   <?php
      hide($user_profile['user_picture']);
      print render($user_profile); 
