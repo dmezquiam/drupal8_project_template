@@ -11,3 +11,13 @@
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
+
+
+ /* =============================================================================
+ *   Video Page Layout
+ * ========================================================================== */
+
+.article-item-list {
+  @include article-item-list-width (desktop);
+  @include article-item-list ();
+}

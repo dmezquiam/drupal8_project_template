@@ -1,5 +1,4 @@
 
-// _base.scss imports _custom.scss and other partials.
 @import "base";
 
 /*
@@ -14,5 +13,38 @@
 
 /* Increase the body font size on small devices */
 html {
-  font-size: 112.5%; 
+  font-size: 112.5%;
+}
+
+/* =============================================================================
+ *   Top BAR
+ * ========================================================================== */
+
+/* leaderboard-wrapper ====================================================== */
+#leaderboard-wrapper {
+	background: $color-bg-leaderboard;
+	border-bottom: 1px solid darken( $color-bg-leaderboard, 10% );
+	.block {
+		margin-bottom: 0px;
+	}
+}
+
+.block-top-header-menu {
+	ul.menu {
+		display: none;
+		li {
+			&:last-child {}
+			a {}
+		}
+	}
+}
+/* =========================================================================== */
+
+/* =============================================================================
+ *   Video Page Layout
+ * ========================================================================== */
+
+.article-item-list {
+  @include article-item-list-width (mobile-landscape);
+  @include article-item-list ();
 }

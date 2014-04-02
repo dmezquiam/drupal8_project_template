@@ -1,7 +1,6 @@
 
-// _base.scss imports _custom.scss and other partials.
+// _base.scss imports _custom.scss, _vars.scss and other partials.
 @import "base";
-@import "vars";
 
 /*
  * @file
@@ -167,7 +166,7 @@ h1 {
   line-height: $line-height-xxx-large;
   color: $color-heading-primary;
   font-family: $signika-Light;
-  font-weight: bold;
+  font-weight: normal;
   margin: 30px 0px 10px 0px;
     a { color: $color-bg-dead-line; }
 }
@@ -176,7 +175,7 @@ h2 {
   line-height: $fline-height-xx-large;
   color: $color-heading-primary;
   font-family: $signika-Light;
-  font-weight: bold;
+  font-weight: normal;
   margin: 30px 0px 10px 0px;
   a { color: $color-bg-dead-line; }
 }
@@ -470,6 +469,13 @@ figure {
     Forms
    ========================================================================== */
 
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="datetime"],
+input[type="month"],
+input[type="search"],
 input[type="password"],
 input[type="text"] {
   @include inputs (22px, 12px);
@@ -541,6 +547,11 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   @include buttons (12px, color-brown, normal);
+
+  &.button-normal { @include buttons (12px, color-brown, normal); }
+  &.button-small { @include buttons (12px, color-brown, small); }
+  &.button-tiny { @include buttons (7px, color-brown, tiny); }
+  &.button-clean-tiny { @include buttons-clean (); }
 }
 
 .button-normal {
@@ -552,6 +563,10 @@ input[type="submit"] {
 }
 .button-tiny {
   @include buttons (7px, color-brown, tiny);
+}
+
+.button-clean-tiny {
+  @include buttons-clean ();
 }
 
 /*

@@ -32,6 +32,13 @@ $primary_task_active: 					$color-bg-general;
 //
 $gutter-width: 20px;
 
+// Article-item-list with
+$article-item-list-width-desktop:		 		50%;
+$article-item-list-width-tablet-landscape: 		50%;
+$article-item-list-width-tablet-portrait: 		50%;
+$article-item-list-width-mobile-landscape: 		100%;
+$article-item-list-width-mobile-portrait: 		100%;
+
 // Font Variables ===============================
 $montserrat-Bold:		 	'Montserrat-Bold', Arial, Helvetica, sans-serif ;
 $montserrat-Regular: 		'Montserrat-Regular', Arial, Helvetica, sans-serif;
@@ -59,6 +66,7 @@ $color-heading-secondary: 				#265775;
 $color-txt-primary: 					#2a2a2a;
 $color-txt-primary-darck: 				#000000;
 $color-txt-main-menu: 					#ffffff;
+$color-txt-footer:  					#ffffff;
 
 //link
 $color-link-primary: 					#137a9a;
@@ -124,6 +132,11 @@ $font-size-featured-x-large:			14px;
 
 $font-support-bt:						22px;
 
+//article list
+$font-size-article-title: 				16px;
+$font-size-article-txt: 				$font-size-regular;
+$font-size-article-date: 				14px;
+
 //global line-height
 $line-height-xxx-large: 				34px;
 $fline-height-xx-large: 				30px;
@@ -131,3 +144,7 @@ $line-height-x-large: 					22px;
 $line-height-large: 					15px;
 $line-height-regular: 					20px;
 $line-height-bt: 						20px;
+
+//article list line-height
+$line-height-article-title: 			20px;
+$line-height-article-text:	 			16px;

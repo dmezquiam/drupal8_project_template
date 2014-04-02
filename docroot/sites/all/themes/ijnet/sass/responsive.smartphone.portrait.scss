@@ -1,5 +1,4 @@
 
-// _base.scss imports _custom.scss and other partials.
 @import "base";
 
 /*
@@ -14,5 +13,15 @@
 
 /* Increase the default font size on small devices */
 html {
-  font-size: 112.5%; 
+  font-size: 112.5%;
+}
+
+
+/* =============================================================================
+ *   Video Page Layout
+ * ========================================================================== */
+
+.article-item-list {
+  @include article-item-list-width (mobile-portrait);
+  @include article-item-list ();
 }

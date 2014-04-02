@@ -239,12 +239,49 @@
       }
     }
 
+  //clean button
+  @mixin buttons-clean () {
+    font-family: $signika-Regular;
+    font-size: $font-size-tiny;
+    text-transform: uppercase;
+    color: $color-bt-txt;
+    background-color: $color-bt-bg;
+    padding: 5px 10px;
+    display: inline;
+    cursor: pointer;
+    @include border-radius (2px);
+    @include transition(all, 0.2s, ease-in-out);
+    @include box-shadow (1px, 1px, 1px, $color-shadow);
+    @include text-shadow (0px, 1px, 1px, #5E5C5C);
 
-  /* @mixin tiny-bt {
-    font-size: 14px;
-    padding: 2px 9px;
-    border-radius: 7px;
-  } */
+    //clean styles
+    border: 0px;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    background-repeat: no-repeat;
+    filter: none;
+
+    //hover
+    &:hover {
+      color: $color-bt-txt;
+      background-color: lighten($color-bt-bg, 10% );
+
+      //clean styles
+      background-image: none;
+      background-image: none;
+      background-image: none;
+      background-image: none;
+      background-image: none;
+      background-image: none;
+      background-repeat: no-repeat;
+      filter: none;
+    }
+  }
+
 //===================================================================================
 
 // Transitions ======================================================================
@@ -334,108 +371,261 @@
 
 // quicktabs ========================================================================
 //info:
-//
-@mixin quicktabs ($section) {
-  position: relative;
-  .block-title {
-    color: $color-heading-tabs;
-    font-size: $font-size-sidebar-heading-tab;
-    position: absolute;
-    margin: 0px;
-    top: 0px;
-    left: 38px;
-    letter-spacing: 1px;
-  }
-  .quicktabs-wrapper {
-    .quicktabs-tabs {
-      text-align: right;
+//$section = sidebar or content
+  @mixin quicktabs ($section) {
+    position: relative;
+    .block-title {
+      color: $color-heading-tabs;
+      font-size: $font-size-sidebar-heading-tab;
+      position: absolute;
       margin: 0px;
-      padding: 5px 0 2px 0px;
-      li {
-        padding: 5px 0px 4px 0px;
-        margin: 0px 5px 0px 0px;
-        a {
-          color: lighten($color-heading-primary, 30%);
-          background-color: $color-bg-box;
-          border-width: 1px;
-          border-color: $color-line;
-          border-style: solid solid none solid;
-          box-shadow: inset 0px 3px 7px -3px #CAC9C9;
-          padding: 5px 10px 4px 10px;
-          margin: 0px 0px 0px 0px;
-          &:hover {
-            background-color: $color-bg-box;
-            color: $color-heading-primary;
-          }
-        }
-        &.active {
+      top: 0px;
+      left: 38px;
+      letter-spacing: 1px;
+    }
+    .quicktabs-wrapper {
+      .quicktabs-tabs {
+        text-align: right;
+        margin: 0px;
+        padding: 5px 0 2px 0px;
+        li {
+          padding: 5px 0px 4px 0px;
+          margin: 0px 5px 0px 0px;
           a {
-            color:$color-heading-primary;
-            border-bottom-color: $color-bg-box;
-            background: $color-bg-box;
-            padding-bottom: 5px;
+            color: lighten($color-heading-primary, 30%);
+            background-color: $color-bg-box;
+            border-width: 1px;
+            border-color: $color-line;
+            border-style: solid solid none solid;
+            box-shadow: inset 0px 3px 7px -3px #CAC9C9;
+            padding: 5px 10px 4px 10px;
+            margin: 0px 0px 0px 0px;
+            &:hover {
+              background-color: $color-bg-box;
+              color: $color-heading-primary;
+            }
           }
-          a {}
-        }
-        &.first {
-          a {}
-        }
-        &.last {
-          a {}
-        }
-      }
-    }
-    .quicktabs_main {
-      border-color: $color-line;
-      border-width: 1px;
-      margin-top: 0px;
-    }
-  }
-  @if $section == sidebar {
-    .quicktabs-wrapper {
-      .quicktabs-tabs {
-        li{
+          &.active {
+            a {
+              color:$color-heading-primary;
+              border-bottom-color: $color-bg-box;
+              background: $color-bg-box;
+              padding-bottom: 5px;
+            }
+            a {}
+          }
+          &.first {
+            a {}
+          }
           &.last {
-            margin: 0px -1px 0px 0px;
+            a {}
           }
         }
       }
+      .quicktabs_main {
+        border-color: $color-line;
+        border-width: 1px;
+        margin-top: 0px;
+      }
     }
-    .quicktabs_main {
-      background: $color-bg-box;
-      border-style: solid solid solid solid;
-    }
-  } @else if $section == content {
-    .quicktabs-wrapper {
-      .quicktabs-tabs {
-        li{
-          &.last {
-            margin: 0px 5px 0px 0px;
+    @if $section == sidebar {
+      .quicktabs-wrapper {
+        .quicktabs-tabs {
+          li{
+            &.last {
+              margin: 0px 0px 0px 0px;
+            }
           }
         }
       }
-    }
-    .quicktabs_main {
-      border-style: solid none none none;
-      background: $color-transparent;
-    }
+      .quicktabs_main {
+        background: $color-bg-box;
+        border-style: solid solid solid solid;
+      }
+    } @else if $section == content {
+      .quicktabs-wrapper {
+        .quicktabs-tabs {
+          li{
+            &.last {
+              margin: 0px 5px 0px 0px;
+            }
+          }
+        }
+      }
+      .quicktabs_main {
+        border-style: solid none none none;
+        background: $color-transparent;
+      }
 
+    }
   }
-}
 
 //===================================================================================
+// author-tabs-list =================================================================
+@mixin author-tabs-list () {
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+    li {
+      position: relative;
+      margin: 0px 0px 10px 0px;
+      &:first-child {}
+      &:last-child { margin: 0px 0px 0px 0px; }
+      .avatar {
+        margin-right: 10px;
+        float: left;
+        a { line-height: 0; display: block; }
+        img {}
+      }
+      .author-name {
+        margin-bottom: 5px;
+        padding-top: 7px;
+        a {
+          font-size: $font-size-sidebar-xxx-large;
+          color: $color-bg-heading-box-primary;
+        }
+      }
+      .job-name {
+        line-height: $line-height-large;
+        margin-bottom: 3px;
+      }
+      .organization {
+        @extend .job-name;
+      }
+      .buttons {
+        position: absolute;
+        bottom: 7px;
+        right: 16px;
+        a { margin-right: 5px; }
+      }
+    }
+  }
+}
+//===================================================================================
+
+// category-tabs-list ===============================================================
+@mixin category-tabs-list () {
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 15px;
+    li {
+      font-size: $font-size-sidebar-item;
+      text-transform: uppercase;
+      margin: 0px 0px 8px 0px;
+      &:first-child {}
+      &:last-child {}
+      a {
+        padding: 8px 13px;
+        display: block;
+        @include border-radius(10px);
+        @include transition(all, 0.2s, ease-in-out);
+        &:hover {
+          background: $color-bg-box2;
+        }
+      }
+      .active {
+        color: $color-bg-heading-box-txt;
+        background: $color-bg-heading-box-primary;
+        &:hover {
+          background: $color-bg-heading-box-primary;
+        }
+      }
+    }
+  }
+}
+//===================================================================================
+
+
 // Category/Tags ====================================================================
-@mixin category() {
-  background: $color-txt-selected;
-  color: $color-bt-txt;
-  padding: 0 10px;
-  margin: 0 5px 0 0;
-  text-transform: uppercase;
-  @include border-radius(3px);
-  @include transition(all, 0.2s, ease-in-out);
-  &:hover {
-    background: lighten($color-txt-selected, 10% );
+  @mixin category() {
+    background: $color-txt-selected;
+    color: $color-bt-txt;
+    padding: 0 10px;
+    margin: 0 5px 0 0;
+    text-transform: uppercase;
+    @include border-radius(3px);
+    @include transition(all, 0.2s, ease-in-out);
+    &:hover {
+      background: lighten($color-txt-selected, 10%);
+    }
   }
-}
 //===================================================================================
 
+// Article list width ===============================================================
+  @mixin article-item-list-width ($device) {
+    &:nth-child(odd) { clear: left; }
+    @if $device == "desktop" {
+      width: $article-item-list-width-desktop;
+      float: left;
+      height: 337px;
+      .content {
+        &:nth-child(odd) { margin-right: 10px; }
+        &:nth-child(even)  { margin-right: 0px; }
+      }
+
+    } @else if $device == "tablet-landscape" {
+      width: $article-item-list-width-tablet-landscape;
+      float: left;
+      height: auto;
+      .content {
+        &:nth-child(odd) { margin-right: 10px; }
+        &:nth-child(even)  { margin-right: 0px; }
+      }
+    } @else if $device == "tablet-portrait" {
+      width: $article-item-list-width-tablet-portrait;
+      float: left;
+      height: auto;
+      .content {
+        &:nth-child(odd) { margin-right: 10px; }
+        &:nth-child(even)  { margin-right: 0px; }
+      }
+    } @else if $device == "mobile-landscape" {
+      width: $article-item-list-width-mobile-landscape;
+      float: left;
+      height: auto;
+      .content {
+        &:nth-child(odd) { margin-right: 10px; }
+        &:nth-child(even)  { margin-right: 0px; }
+      }
+    } @else if $device == "mobile-portrait" {
+      width: $article-item-list-width-mobile-portrait;
+      float: left;
+      height: auto;
+      .content {
+        &:nth-child(odd) { margin-right: 0px; }
+        &:nth-child(even)  { margin-right: 0px; }
+      }
+    }
+  }
+
+// Article list =====================================================================
+  @mixin article-item-list () {
+
+    //img
+    img { width: 100%; }
+
+    //titles
+    .aricle-title,
+    .node-title {
+      font-size: $font-size-article-title;
+      color: $color-link-primary;
+      line-height: $line-height-article-title;
+      margin:5px 5px 7px 5px;
+      a { color: $color-link-primary; }
+    }
+
+    //text
+    .field-name-body {
+      margin:0px 5px 8px 5px;
+      line-height: $line-height-article-text;
+    }
+
+    //author
+    .author {
+      font-size: $font-size-article-date;
+      margin:0px 5px 0px 5px;
+    }
+  }
+//===================================================================================

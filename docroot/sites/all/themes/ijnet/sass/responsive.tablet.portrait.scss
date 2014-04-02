@@ -1,5 +1,4 @@
 
-// _base.scss imports _custom.scss and other partials.
 @import "base";
 
 /*
@@ -17,8 +16,11 @@ html {
   font-size: 81.3%;
 }
 
-.view-id-view_search_block_user {
-  .avatar {
-  	float: left;
-    }
- }
+/* =============================================================================
+ *   Video Page Layout
+ * ========================================================================== */
+
+.article-item-list {
+	@include article-item-list-width (tablet-portrait);
+	@include article-item-list ();
+}
