@@ -14,11 +14,12 @@ function fe_news_preprocess_node(&$variables) {
   $node = $variables['node'];
   if ($node->type == 'news') {
     $author = '';
+    global $language;
     if (!empty($node->field_attribution)) {
-      $author = $node->field_attribution[LANGUAGE_NONE][0]['value'];
+      $author = $node->field_attribution[$language->language][0]['value'];
     }
     else if (!empty($node->field_byline)) {
-      $user = user_load($node->field_byline[LANGUAGE_NONE][0]['uid']);
+      $user = user_load($node->field_byline[$language->language][0]['uid']);
       $author = $user->name;
     }
     else {
