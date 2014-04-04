@@ -84,9 +84,11 @@
 
 
   <?php if (!$page) :?>
-    <div class="opportunities-deadline">
-      <?php print "DEADLINE <span>" . $deadline . "</span>"; ?>
-    </div>
+    <a href="<?php print $path; ?>">
+      <div class="opportunities-deadline">
+        <?php print "<label class='deadline'>DEADLINE</label> <div class='opp-date'><label class='month'>" . (isset($deadline_month) ? $deadline_month : '') . "</label><label class='year'>" . (isset($deadline_year) ? $deadline_year : ''). "</label></div>"; ?>
+      </div>
+    </a>
   <?php endif ?>
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
@@ -104,12 +106,8 @@
     ?>
   </div>
   <?php if ($page): ?>
-    <div class="button-large">
-      <a href="/opportunities"> VIEW ALL OPPORTUNITIES </a>
+    <div>
+      <a href="/opportunities" class="button-normal"> VIEW ALL OPPORTUNITIES </a>
     </div>
   <?php endif ?>
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
-
 </div>

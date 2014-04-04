@@ -27,9 +27,26 @@ function fe_opportunity_preprocess_node(&$vars) {
   if ($vars['node']->type == 'training_opportunity') {
     $node = $vars['node'];
     if ($node->field_deadline && isset($node->field_deadline)) {
-      $date = $node->field_deadline[LANGUAGE_NONE][0]['value'];
-      $vars['deadline'] = date('M jS, Y', $date);
+      global $language;
+      $date = $node->field_deadline[$language->language][0]['value'];
+      $vars['deadline_month'] = date('M j', $date);
+      $vars['deadline_year'] = date('Y', $date);
     }
+    $vars['path'] = url('node/' . $node->nid);
+  }
+}
 
+/**
+ * Implements hook_form_alter
+ */
+
+function fe_opportunity_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'views_exposed_form') {
+    $form['field_category_tid']['#options']['All'] = t('Topic');
+    $form['field_region_tid']['#options']['All'] = t('Region');
+    $form['keys']['#attributes']['placeholder'] = t('Search term...');
+    $title = array('filter-search_title' => array("operator" => 'search_title_op', "value" => "search_title", "label" => '', "description" => ''));
+    $form['#info'] = $title + $form['#info'];
+    $form['search_title']['#markup'] = '<h3>' . t('SEARCH OPPORTUNITIES') . '</h3>';
   }
 }
