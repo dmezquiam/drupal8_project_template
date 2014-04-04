@@ -1,9 +1,7 @@
 @import "vars";
 
-
-
-// Markup free clearing ============================================================
-// http://www.stubbornella.org/content/2012/05/02/cross-browser-debugging-css/
+// Markup free clearing =============================================================
+  // http://www.stubbornella.org/content/2012/05/02/cross-browser-debugging-css/
   @mixin cf {
     overflow: hidden;   // New formatting context in better browsers
     *overflow: visible; // Protect IE7 and older from the overflow property
@@ -12,9 +10,9 @@
 // ==================================================================================
 
 // Image replacement ================================================================
-// Kellum Method: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
-// Additional helpers from http://html5boilerplate.com/docs/css/
-// This is also included as a SASS mixin, see: sass/custom.rb
+  // Kellum Method: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
+  // Additional helpers from http://html5boilerplate.com/docs/css/
+  // This is also included as a SASS mixin, see: sass/custom.rb
   @mixin ir {
     // Kellum Method
     display: block !important;
@@ -65,14 +63,14 @@
 // ==================================================================================
 
 // Shift content offscreen, can be usefull when you reall need to do this ===========
-@mixin offscreen {
-  position: absolute;
-  top: -99999em;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  outline: 0;
-}
+  @mixin offscreen {
+    position: absolute;
+    top: -99999em;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    outline: 0;
+  }
 // ==================================================================================
 
 // Hide content from all users ======================================================
@@ -148,6 +146,17 @@
     font-size: $font-size-large;
     color: $color-secondary-heading;
   }
+
+  //@include head-teaser-list ();
+  @mixin head-teaser-list () {
+    font-size: $font-size-large;
+    line-height: $line-height-regular;
+    margin: 0px;
+    a {
+      color: $color-heading-secondary;
+      &:hover { color: $color-heading-primary }
+    }
+  }
 //===================================================================================
 
 // imputs ===========================================================================
@@ -166,7 +175,7 @@
   }
 //===================================================================================
 
-  // buttons ========================================================================
+// buttons ==========================================================================
   //color options: color-brown or color-black
     @mixin buttons ($border-radius:12px, $color:color-brown, $size:normal){
       font-family: $signika-Regular;
@@ -281,11 +290,10 @@
       filter: none;
     }
   }
-
 //===================================================================================
 
 // Transitions ======================================================================
-// @include transition(all, 0.2s, ease-in-out);
+  // @include transition(all, 0.2s, ease-in-out);
   @mixin transition($transition-property:all, $transition-time:0.2s, $method:ease-in-out) {
       -webkit-transition: $transition-property $transition-time $method;
       -moz-transition: $transition-property $transition-time $method;
@@ -321,9 +329,8 @@
 //===================================================================================
 
 // block-skin =======================================================================
-
-// info:
-// Skins names: "skin-default" "skin-brown"
+  // info:
+  // Skins names: "skin-default" "skin-brown"
   @mixin block-skin ($style, $border:true) {
     .block-title {
       text-align: center;
@@ -332,14 +339,29 @@
       font-size: $font-size-sidebar-xx-large;
       margin: 0;
     }
-    .content {
+    .block-content,
+    .view-content {
       padding: 10px;
+      h3 {
+        @include head-teaser-list ();
+        margin: 0px 0px 10px 0;
+      }
+      .views-field-field-image {
+        a {
+          display: block;
+          line-height: 0;
+          img {
+            margin-bottom: 20px;
+          }
+        }
+      }
     }
     @if $style == "skin-default" {
       .block-title {
         background: $color-bg-heading-box-primary;
       }
-      .content {
+      .block-content,
+      .view-content {
         border-top: 0px;
         @include block-skin-border ($border);
       }
@@ -350,7 +372,8 @@
         padding: 7px 0px;
         font-size: $font-size-sidebar-xxx-large;
       }
-      .content {
+      .block-content,
+      .view-content {
         border-top: 0px;
         border-left: 1px solid $color-bg-heading-box-secondary;
         border-right: 1px solid $color-bg-heading-box-secondary;
@@ -370,13 +393,12 @@
 //===================================================================================
 
 // quicktabs ========================================================================
-//info:
-//$section = sidebar or content
+  //info:
+  //$section = sidebar or content
   @mixin quicktabs ($section) {
     position: relative;
     .block-title {
       color: $color-heading-tabs;
-      font-size: $font-size-sidebar-heading-tab;
       position: absolute;
       margin: 0px;
       top: 0px;
@@ -398,7 +420,6 @@
             border-color: $color-line;
             border-style: solid solid none solid;
             box-shadow: inset 0px 3px 7px -3px #CAC9C9;
-            padding: 5px 10px 4px 10px;
             margin: 0px 0px 0px 0px;
             &:hover {
               background-color: $color-bg-box;
@@ -409,7 +430,6 @@
             a {
               color:$color-heading-primary;
               border-bottom-color: $color-bg-box;
-              background: $color-bg-box;
               padding-bottom: 5px;
             }
             a {}
@@ -429,12 +449,15 @@
       }
     }
     @if $section == sidebar {
+      .block-title {
+        font-size: $font-size-sidebar-heading-tab;
+      }
       .quicktabs-wrapper {
         .quicktabs-tabs {
           li{
-            &.last {
-              margin: 0px 0px 0px 0px;
-            }
+            &.last { margin: 0px 0px 0px 0px; }
+            &.active { a { background: $color-bg-box; } }
+            a { padding: 5px 10px 4px 10px; }
           }
         }
       }
@@ -443,100 +466,103 @@
         border-style: solid solid solid solid;
       }
     } @else if $section == content {
+      .block-title {
+        font-size: $font-size-content-heading-tab;
+      }
       .quicktabs-wrapper {
         .quicktabs-tabs {
           li{
-            &.last {
-              margin: 0px 5px 0px 0px;
-            }
+            &.last { margin: 0px 5px 0px 0px; }
+            &.active { a { background: $color-bg-general; } }
+            a { padding: 5px 30px 4px 30px; }
           }
         }
       }
       .quicktabs_main {
         border-style: solid none none none;
         background: $color-transparent;
+        padding-top: 15px;
       }
 
     }
   }
-
 //===================================================================================
+
 // author-tabs-list =================================================================
-@mixin author-tabs-list () {
-  ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 10px;
-    li {
-      position: relative;
-      margin: 0px 0px 10px 0px;
-      &:first-child {}
-      &:last-child { margin: 0px 0px 0px 0px; }
-      .avatar {
-        margin-right: 10px;
-        float: left;
-        a { line-height: 0; display: block; }
-        img {}
-      }
-      .author-name {
-        margin-bottom: 5px;
-        padding-top: 7px;
-        a {
-          font-size: $font-size-sidebar-xxx-large;
-          color: $color-bg-heading-box-primary;
+  @mixin author-tabs-list () {
+    ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 10px;
+      li {
+        position: relative;
+        margin: 0px 0px 10px 0px;
+        &:first-child {}
+        &:last-child { margin: 0px 0px 0px 0px; }
+        .avatar {
+          margin-right: 10px;
+          float: left;
+          a { line-height: 0; display: block; }
+          img {}
+        }
+        .author-name {
+          margin-bottom: 5px;
+          padding-top: 7px;
+          a {
+            font-size: $font-size-sidebar-xxx-large;
+            color: $color-bg-heading-box-primary;
+          }
+        }
+        .job-name {
+          line-height: $line-height-large;
+          margin-bottom: 3px;
+        }
+        .organization {
+          @extend .job-name;
+        }
+        .buttons {
+          position: absolute;
+          bottom: 7px;
+          right: 16px;
+          a { margin-right: 5px; }
         }
       }
-      .job-name {
-        line-height: $line-height-large;
-        margin-bottom: 3px;
-      }
-      .organization {
-        @extend .job-name;
-      }
-      .buttons {
-        position: absolute;
-        bottom: 7px;
-        right: 16px;
-        a { margin-right: 5px; }
-      }
     }
   }
-}
 //===================================================================================
 
 // category-tabs-list ===============================================================
-@mixin category-tabs-list () {
-  ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 15px;
-    li {
-      font-size: $font-size-sidebar-item;
-      text-transform: uppercase;
-      margin: 0px 0px 8px 0px;
-      &:first-child {}
-      &:last-child {}
-      a {
-        padding: 8px 13px;
-        display: block;
-        @include border-radius(10px);
-        @include transition(all, 0.2s, ease-in-out);
-        &:hover {
-          background: $color-bg-box2;
+  @mixin category-tabs-list () {
+    ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 15px;
+      li {
+        font-size: $font-size-sidebar-item;
+        text-transform: uppercase;
+        margin: 0px 0px 8px 0px;
+        &:first-child {}
+        &:last-child {}
+        a {
+          padding: 8px 13px;
+          display: block;
+          @include border-radius(10px);
+          @include transition(all, 0.2s, ease-in-out);
+          &:hover {
+            background: $color-bg-box2;
+          }
         }
-      }
-      .active {
-        color: $color-bg-heading-box-txt;
-        background: $color-bg-heading-box-primary;
-        &:hover {
+        .active {
+          color: $color-bg-heading-box-txt;
           background: $color-bg-heading-box-primary;
+          &:hover {
+            background: $color-bg-heading-box-primary;
+          }
         }
       }
     }
   }
-}
 //===================================================================================
-
 
 // Category/Tags ====================================================================
   @mixin category() {
@@ -599,6 +625,7 @@
       }
     }
   }
+//===================================================================================
 
 // Article list =====================================================================
   @mixin article-item-list () {
@@ -626,6 +653,90 @@
     .author {
       font-size: $font-size-article-date;
       margin:0px 5px 0px 5px;
+    }
+  }
+//===================================================================================
+
+// Video list =======================================================================
+  @mixin video-list ($number-col:3) {
+    .video-item {
+      float: left;
+      width: (100%/$number-col);
+      text-align: center;
+      &.col-first {
+        text-align:left;
+        .node-video {
+          padding-right: 18%;
+          padding-left: 0px;
+        }
+      }
+      &.col-last {
+        text-align:right;
+        .node-video {
+          padding-left: 18%;
+          padding-right: 0px;
+        }
+      }
+      .node-video {
+        padding-right: (18%/2);
+        padding-left: (18%/2);
+        h2 {
+          @include head-teaser-list ();
+        }
+      }
+    }
+  }
+//===================================================================================
+
+// Opportunities list ===============================================================
+  @mixin opportunities-list () {
+    .opportunities-item {
+      .opportunities-deadline {
+        text-align: center;
+        float: left;
+        background: $color-bg-dead-line;
+        color: $color-bt-txt;
+        border: 2px solid lighten($color-bg-dead-line, 50%);
+        padding: 17px 0px;
+        margin-right: 20px;
+        width: 102px;
+
+        .deadline {
+          color: lighten($color-bg-dead-line, 50%);
+          border-bottom: 1px solid $color-bt-txt;
+          line-height: 10px;
+          margin: 0px auto 6px auto;
+          padding-bottom: 3px;
+          display: table;
+        }
+        .opp-date {
+          .month {
+            text-transform: uppercase;
+            font-size: $font-size-x-large;
+          }
+          .year {
+            font-size: 31px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    h2 {
+      font-size: $font-size-x-large;
+      margin: 0px 0px 10px 0px;
+      line-height: 26px;
+      a {
+        color: $color-link-primary;
+      }
+    }
+    .content {
+      p {
+        margin-bottom: 0px;
+      }
+    }
+    .buttons {
+      clear: both;
+      float: right;
     }
   }
 //===================================================================================
