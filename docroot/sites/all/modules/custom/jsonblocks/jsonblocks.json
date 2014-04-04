@@ -1,9 +1,5 @@
 {
-    "test-json-block": {
-        "info": "JSON TEST BLOCL",
-        "js": "test-json-block"
-    },
-    "login-block": {
+    "login_block": {
         "info": "LOG IN block"
     },
     "support-ijnet": {
@@ -11,5 +7,21 @@
     },
     "top-header-menu": {
         "info": "Top Header Menu"
+    },
+    "ijnet-footer": {
+        "info": "IJNET Footer"
+    },
+    "social-block": {
+        "info": "Social Block",
+        "js": "social-block.js"
+    },
+    "latest-posts": {
+        "info": "Read the latest Posts"
+    },
+    "contact-form": {
+        "info": "Contact Form"
+    },
+    "facebook-like": {
+        "info": "Facebook Like Button"
     }
 }

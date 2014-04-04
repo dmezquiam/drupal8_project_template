@@ -40,15 +40,13 @@ function jsonblocks_block_view($delta = NULL) {
  */
 
 function jsonblocks_form_alter(&$form, &$form_state, $form_id) {
-  $forms = array(
-    'comment_node_video_form',
-    'comment_node_product_module_form',
-    'comment_node_event_form',
-    'comment_node_document_form',
-  );
-
-  if (in_array($form_id, $forms)) {
-    $form['comment_body'][LANGUAGE_NONE][0]['value']['#title'] = t('Your Comment');
+  if ($form_id == 'contact_site_form') {
+    $form['subject']['#title'] = t('COUNTRY');
+    $form['name']['#title'] = t('NAME');
+    $form['mail']['#title'] = t('EMAIL ADDRESS');
+    $form['message']['#title'] = t('QUESTION OR COMMENT');
+    unset($form['copy']);
+    $form['actions']['submit']['#value'] = t('Submit');
   }
 }
 
@@ -88,5 +86,19 @@ function _jsonblocks_get_block_info($blocks_data) {
     );
   }
   return $blocks;
+}
+
+function json_blocks_view_login_block() {
+  $block_data = _jsonblocks_get_json_blocks();
+  global $user;
+  if ($user->uid) {
+    $logged = true;
+  }
+  else {
+    $logged = false;
+  }
+  $vars['logged'] = $logged;
+  $block = array('content' => theme('login_block', $vars));
+  return $block;
 }
 
