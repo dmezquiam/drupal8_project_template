@@ -34,17 +34,23 @@ function fe_chat_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'jsonblocks-social-block' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'social-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
         'views-chats-upcomming_chats' => array(
           'module' => 'views',
           'delta' => 'chats-upcomming_chats',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-chats-past_chats' => array(
           'module' => 'views',
           'delta' => 'chats-past_chats',
           'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
       ),
     ),
