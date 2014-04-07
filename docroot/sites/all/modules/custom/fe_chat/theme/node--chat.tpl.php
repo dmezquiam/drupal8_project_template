@@ -102,7 +102,7 @@
       hide($content['comments']);
       hide($content['links']);
       if (!$teaser) {
-        print $date;
+        print '<div class="chat-full-date">' . $date . '</div>';
       }
       else {
         print '<div class="chat-date">' . $date . '</div>';
