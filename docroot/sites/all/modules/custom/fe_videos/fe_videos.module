@@ -78,6 +78,9 @@ function fe_videos_form_alter(&$form, &$form_state, $form_id) {
 function fe_videos_preprocess_node(&$vars) {
   if ($vars['node']->type == 'video') {
     $vars['date'] = format_date($vars['node']->created, 'video_short_format');
+    if (strlen($vars['title']) > 100) {
+      $vars['title'] = substr($vars['title'], 0, 100) . '...';
+    }
   }
 }
 

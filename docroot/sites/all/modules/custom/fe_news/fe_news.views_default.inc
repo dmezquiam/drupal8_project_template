@@ -252,6 +252,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['fields']['field_attribution']['table'] = 'field_data_field_attribution';
   $handler->display->display_options['fields']['field_attribution']['field'] = 'field_attribution';
   $handler->display->display_options['fields']['field_attribution']['label'] = '';
+  $handler->display->display_options['fields']['field_attribution']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_attribution']['element_type'] = '0';
   $handler->display->display_options['fields']['field_attribution']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_attribution']['element_default_classes'] = FALSE;

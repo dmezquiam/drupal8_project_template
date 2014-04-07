@@ -56,7 +56,7 @@ function fe_opportunity_field_default_field_bases() {
       'todate' => '',
       'tz_handling' => 'site',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'datestamp',
   );
 
@@ -87,7 +87,7 @@ function fe_opportunity_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -122,7 +122,7 @@ function fe_opportunity_field_default_field_bases() {
       ),
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'taxonomy_term_reference',
   );
 

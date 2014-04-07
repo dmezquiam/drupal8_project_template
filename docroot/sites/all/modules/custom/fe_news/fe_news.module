@@ -27,6 +27,11 @@ function fe_news_preprocess_node(&$variables) {
       $author = $user->name;
     }
     $variables['author'] = $author;
+    if ($variables['teaser']) {
+      if (strlen($variables['title']) > 66) {
+        $variables['title'] = substr($variables['title'], 0, 66) . '...';
+      }
+    }
   }
 }
 

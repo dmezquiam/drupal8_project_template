@@ -67,7 +67,7 @@ function fe_news_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text',
   );
 
@@ -143,7 +143,7 @@ function fe_news_field_default_field_bases() {
         'view_name' => '',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'user_reference',
   );
 
@@ -177,7 +177,7 @@ function fe_news_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'file',
   );
 
@@ -210,7 +210,7 @@ function fe_news_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'image',
   );
 
@@ -258,8 +258,10 @@ function fe_news_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'referenceable_types' => array(
         'article' => 0,
+        'chat' => 0,
         'news' => 'news',
         'page' => 0,
+        'profile' => 0,
         'training_opportunity' => 0,
         'video' => 0,
       ),
@@ -269,7 +271,7 @@ function fe_news_field_default_field_bases() {
         'view_name' => '',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -304,7 +306,7 @@ function fe_news_field_default_field_bases() {
       ),
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'taxonomy_term_reference',
   );
 
@@ -334,8 +336,11 @@ function fe_news_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'referenceable_types' => array(
         'article' => 0,
+        'chat' => 0,
         'news' => 0,
         'page' => 0,
+        'profile' => 0,
+        'training_opportunity' => 0,
         'video' => 'video',
       ),
       'view' => array(
@@ -344,7 +349,7 @@ function fe_news_field_default_field_bases() {
         'view_name' => '',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
