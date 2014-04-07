@@ -440,6 +440,49 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
+  // Exported field_instance: 'node-news-title_field'
+  $field_instances['node-news-title_field'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Attribution');
@@ -452,6 +495,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
   t('Enter the user name for the author of this content.');
   t('Image');
   t('Related Content');
+  t('Title');
   t('Use this field to give attribution to an author that does not have a user account on IJNet.org. <br />
 Example: "John Doe, Editor at Global Publishing, Inc."');
   t('Video');

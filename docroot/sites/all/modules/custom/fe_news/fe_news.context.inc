@@ -29,21 +29,21 @@ function fe_news_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'jsonblocks-social-block' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'social-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
         'views-b24c105b349e450c23451f9278b6d44c' => array(
           'module' => 'views',
           'delta' => 'b24c105b349e450c23451f9278b6d44c',
           'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'block-1' => array(
-          'module' => 'block',
-          'delta' => '1',
-          'region' => 'sidebar_second',
           'weight' => '-9',
         ),
-        'block-2' => array(
-          'module' => 'block',
-          'delta' => '2',
+        'jsonblocks-latest-posts' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'latest-posts',
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
@@ -52,12 +52,6 @@ function fe_news_context_default_contexts() {
           'delta' => 'browse_by',
           'region' => 'sidebar_second',
           'weight' => '-7',
-        ),
-        'jsonblocks-test-json-block' => array(
-          'module' => 'jsonblocks',
-          'delta' => 'test-json-block',
-          'region' => 'sidebar_second',
-          'weight' => '-6',
         ),
       ),
     ),
@@ -78,30 +72,30 @@ function fe_news_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'news' => 'news',
+        'news*' => 'news*',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-6' => array(
-          'module' => 'block',
-          'delta' => '6',
+        'jsonblocks-social-block' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'social-block',
           'region' => 'sidebar_second',
-          'weight' => '-21',
+          'weight' => '-10',
         ),
-        'block-5' => array(
-          'module' => 'block',
-          'delta' => '5',
+        'jsonblocks-latest-posts' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'latest-posts',
           'region' => 'sidebar_second',
-          'weight' => '-20',
+          'weight' => '-9',
         ),
         'quicktabs-browse_by' => array(
           'module' => 'quicktabs',
           'delta' => 'browse_by',
           'region' => 'sidebar_second',
-          'weight' => '-19',
+          'weight' => '-8',
         ),
       ),
     ),
