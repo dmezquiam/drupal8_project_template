@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Site Config feature.
  */
+
+include_once 'fe_site_config.features.inc';
