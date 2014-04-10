@@ -11,10 +11,58 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 
+/* DRUPAL ADMIN TOOL BAR */
+body #admin-menu { font-size: 8px; }
+body.admin-menu { margin-top: 21px !important; }
+
+
 /* Increase the body font size on small devices */
 html {
   font-size: 112.5%;
+  background: red;
 }
+
+/* =============================================================================
+ *   Top BAR
+ * ========================================================================== */
+#leaderboard-wrapper {
+	.block-lang-dropdown {
+		.block-title { display: none; }
+		width: 215px;
+		float: right;
+		clear: none;
+	}
+	.block-top-header-menu {
+		width: 39px;
+		height: 38px;
+		float: left;
+		margin-left: 15px;
+		.menu { display: none; }
+	}
+}
+
+
+/* =============================================================================
+ *   Header
+ * ========================================================================== */
+//logo
+#branding {
+	width: inherit;
+	#logo {
+		padding: 20px 0px 21px 3px;
+	}
+}
+//search block
+#block-search-form  {
+	display: none;
+}
+
+//login and support block
+.block-support-ijnet,
+.block-login-block {
+	margin-bottom: 0px !important;
+}
+
 
 /* =============================================================================
  *   Top BAR

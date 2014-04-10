@@ -11,11 +11,65 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 
+/* DRUPAL ADMIN TOOL BAR */
+body #admin-menu { font-size: 8px; display: none; }
+body.admin-menu { margin-top: 0px !important; }
+
+
 /* Increase the default font size on small devices */
 html {
   font-size: 112.5%;
 }
 
+/* =============================================================================
+ *   Top BAR
+ * ========================================================================== */
+#leaderboard-wrapper {
+	.block-lang-dropdown {
+		.block-title { display: none; }
+		width: 204px;
+		.block-inner {
+			margin-right: 9px;
+		}
+	}
+	.block-top-header-menu {
+		width: 39px;
+		height: 38px;
+		margin-left: 13px;
+		.menu { display: none; }
+	}
+}
+
+
+
+
+/* =============================================================================
+ *   Header
+ * ========================================================================== */
+
+//logo
+#branding {
+	width: inherit;
+	#logo {
+		padding: 20px 0px 21px 3px;
+	}
+}
+//search block
+#block-search-form  {
+	display: none;
+}
+
+//login and support block
+.block-support-ijnet,
+.block-login-block {
+	margin-bottom: 0px !important;
+}
+.block-login-block {
+	width: 204px !important;
+	.block-inner {
+		margin-right: 0;
+	}
+}
 
 /* =============================================================================
  *   Video Page Layout

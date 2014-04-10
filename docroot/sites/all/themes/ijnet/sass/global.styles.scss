@@ -45,6 +45,7 @@
     background: url('#{$path-to-images}/logo_topbar.png') no-repeat left center;
     .block-content {
       padding: 10px 0 8px 24px;
+      @include clearfix ();
       ul.menu {
         margin: 0px;
         padding: 0px;
@@ -179,7 +180,10 @@
 
 /* Wraps all the branding elements, logo, name and slogan */
  /* Logo */
-#branding { float: left; }
+#branding {
+  float: left;
+  width: 50%;
+}
 
 #logo {
   padding: 68px 0px 21px 3px;
@@ -192,12 +196,14 @@
   float: right;
 }
 .block-login-block {
-  float: left;
+  float: left !important;
   margin-bottom: 38px !important;
   background: url('#{$path-to-images}/register_block_bg.png') no-repeat left center;
   font-family: $signika-Light;
   font-size: $font-size-sidebar-xx-large;
   letter-spacing: -1px;
+  width: 214px !important;
+  clear: none !important;
   .block-content {
     padding: 17px 10px 24px 10px;
     label {
@@ -222,10 +228,12 @@
   }
 }
 .block-support-ijnet {
-  float: left;
+  float: left !important;
   margin-bottom: 38px !important;
   background: url('#{$path-to-images}/suport_block_bg.png') no-repeat left center;
   height: 62px;
+  width: 100px !important;
+  clear: none !important;
   .block-inner {
     padding: 0px 20px;
     margin: 0px;
@@ -235,6 +243,7 @@
       margin-top: 8px;
       .support {
         line-height: 16px;
+        font-size: $font-size-regular;
       }
       .support-ijnet {
         font-size: $font-support-bt;
@@ -252,7 +261,7 @@
       float: left;
       margin: 0px;
       input {
-        padding: 8px 9px 7px 9px;
+        padding: 11px 9px 7px 9px;
         width: 224px;
       }
     }
@@ -901,7 +910,7 @@ ul.action-links {
           .form-item {
             margin: 0px 0px 10px 0px;
             label {}
-            input { width: 230px; }
+            input { width: 100%; }
           }
           input[type="submit"] {
             float: right;
@@ -1510,8 +1519,12 @@ tr.error {}
           margin-top: 0px;
         }
         #topic-dropdown {
+          width: 219px;
           float: left;
           margin-right: 10px;
+        }
+        .search {
+          margin-top: 18px;
         }
       }
     }
@@ -1571,6 +1584,39 @@ tr.error {}
 /* =============================================================================
  *   Opportunities LANDING
  * ========================================================================== */
+.views-exposed-widgets {
+  background: $color-bg-ligth;
+  padding: 15px;
+  margin-bottom: 40px;
+  #edit-search-title-wrapper {
+    clear: both;
+    float: none;
+    padding: 0;
+    h3 {
+      margin: 0;
+    }
+  }
+  #edit-field-category-tid-wrapper,
+  #edit-field-region-tid-wrapper {
+    width: 160px;
+    select {
+      width: 100%;
+    }
+  }
+  #edit-keys-wrapper {
+    padding-right: 0px;
+    width: 242px;
+    input { width: 100%; }
+  }
+  .views-submit-button {
+    float: right;
+    padding: 10px 0px 0px 0px;
+    .form-submit {
+      margin: 0;
+    }
+  }
+}
+
 .opportunities-list {
   @include opportunities-list ();
 }
@@ -1589,3 +1635,28 @@ tr.error {}
     margin-bottom: 10px;
   }
 }
+
+/* =============================================================================
+ *   Chat
+ * ========================================================================== */
+
+.section-chats { //body class
+  .content {
+    .chat-full-date {
+      margin-bottom: 2px;
+      font-size: $font-size-large;
+      font-weight: bold;
+    }
+  }
+  .field-name-field-chat-description {
+    margin-bottom: 30px;
+  }
+}
+
+/* =============================================================================
+ *   About
+ * ========================================================================== */
+
+ .staff-list {
+  @include staff-list ();
+ }

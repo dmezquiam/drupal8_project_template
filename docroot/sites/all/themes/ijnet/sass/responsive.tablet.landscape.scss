@@ -11,6 +11,37 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 
+/* =============================================================================
+ *   Top BAR
+ * ========================================================================== */
+#leaderboard-wrapper {
+  .block-lang-dropdown {
+    .block-title { display: none; }
+    width: 215px;
+    float: right;
+    clear: none;
+  }
+  .block-top-header-menu {
+    width: 457px;
+    height: 38px;
+    float: left;
+    margin-left: 15px;
+    .block-content {
+      ul.menu {
+        li a {
+          font-size: 11px;
+        }
+      }
+    }
+    //.menu { display: none; }
+  }
+}
+
+
+/* =============================================================================
+ *   Header
+ * ========================================================================== */
+
 
 //Author Block =================================================================
   .view-id-view_search_block_user {

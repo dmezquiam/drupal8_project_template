@@ -45,21 +45,33 @@
 .block-top-header-menu .block-content {
   padding: 10px 0 8px 24px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003108}}
+.block-top-header-menu .block-content:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003115}}
+* html .block-top-header-menu .block-content {
+  height: 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000349}}
 .block-top-header-menu .block-content ul.menu {
   margin: 0px;
   padding: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000352}}
 .block-top-header-menu .block-content ul.menu li {
   float: left;
   border-right: 1px solid #7b7749;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000355}}
 .block-top-header-menu .block-content ul.menu li:last-child {
   border-right: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000358}}
 .block-top-header-menu .block-content ul.menu li a {
   color: white;
   font-size: 13px;
@@ -69,13 +81,13 @@
 
 /* =========================================================================== */
 /* language-dropdown ========================================================= */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000371}}
 .block-lang-dropdown {
   width: 290px;
   float: right;
   background: url("../images/world_icon.png") no-repeat left center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000375}}
 .block-lang-dropdown .block-title {
   float: left;
   margin: 0;
@@ -86,38 +98,38 @@
   margin-top: 13px;
   margin-left: 6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000385}}
 .block-lang-dropdown .ijnet-language-dropdown {
   margin: 5px 0;
   float: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000388}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000391}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-select {
   background: #FFF !important;
   border: 0px;
   border-radius: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000395}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-select .dd-selected {
   padding: 4px 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\0000397}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-select .dd-selected .dd-selected-image {
   margin-top: 3px;
   margin-left: 3px;
   width: 23px;
   height: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003103}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-select .dd-selected .dd-selected-text {
   line-height: 20px !important;
   font-weight: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003109}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-options {
   width: 164px !important;
   box-shadow: 0px 0px 0px #c2c2c2;
@@ -127,7 +139,7 @@
   overflow: visible;
   margin-left: -1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003117}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-options:after {
   content: "";
   width: 0;
@@ -139,7 +151,7 @@
   top: -6px;
   right: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003128}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-options:before {
   content: "";
   width: 0;
@@ -151,30 +163,30 @@
   top: -8px;
   right: 19px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003141}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-options li a.dd-option {
   cursor: pointer;
   padding: 2px 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003145}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-options li a.dd-option.dd-option-selected .dd-option-image {
   margin-top: 3px;
   margin-left: 3px;
   width: 23px;
   height: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003151}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-options li a.dd-option.dd-option-selected .dd-option-text {
   font-weight: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003155}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-options li a.dd-option .dd-option-image {
   margin-top: 3px;
   margin-left: 3px;
   width: 23px;
   height: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003161}}
 .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-options li a.dd-option .dd-option-text {
   font-weight: normal;
 }
@@ -186,112 +198,118 @@
  * ========================================================================== */
 /* Wraps all the branding elements, logo, name and slogan */
 /* Logo */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003182}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003183}}
 #branding {
   float: left;
+  width: 50%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003188}}
 #logo {
   padding: 68px 0px 21px 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003186}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003190}}
 #logo img {
   vertical-align: bottom;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003191}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003195}}
 #header-wrapper .region-header {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003198}}
 .block-login-block {
-  float: left;
+  float: left !important;
   margin-bottom: 38px !important;
   background: url("../images/register_block_bg.png") no-repeat left center;
   font-family: "Signika-Light", Arial, Helvetica, sans-serif;
   font-size: 18px;
   letter-spacing: -1px;
+  width: 214px !important;
+  clear: none !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003207}}
 .block-login-block .block-content {
   padding: 17px 10px 24px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003209}}
 .block-login-block .block-content label {
   font-weight: normal;
   color: #137a9a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003213}}
 .block-login-block .block-content span {
   font-size: 12px;
   margin: 0 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003217}}
 .block-login-block .block-content a {
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003221}}
 .block-login-block .block-content .logged-block a {
   font-size: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003217}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003223}}
 .block-login-block .block-content .logged-block a:first-child {
   margin-right: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003224}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003230}}
 .block-support-ijnet {
-  float: left;
+  float: left !important;
   margin-bottom: 38px !important;
   background: url("../images/suport_block_bg.png") no-repeat left center;
   height: 62px;
+  width: 100px !important;
+  clear: none !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003237}}
 .block-support-ijnet .block-inner {
   padding: 0px 20px;
   margin: 0px;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003241}}
 .block-support-ijnet .block-inner .support-button {
   color: white;
   margin-top: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003236}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003244}}
 .block-support-ijnet .block-inner .support-button .support {
   line-height: 16px;
+  font-size: 13px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003239}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003248}}
 .block-support-ijnet .block-inner .support-button .support-ijnet {
   font-size: 22px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003245}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003254}}
 #block-search-form {
   float: right;
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003248}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003257}}
 #block-search-form .block-inner {
   margin: 0px 7px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003250}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003259}}
 #block-search-form .block-inner .search-form {
   margin: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003260}}
 #block-search-form .block-inner .form-item-search-block-form {
   float: left;
   margin: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003263}}
 #block-search-form .block-inner .form-item-search-block-form input {
-  padding: 8px 9px 7px 9px;
+  padding: 11px 9px 7px 9px;
   width: 224px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003259}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003268}}
 #block-search-form .block-inner #edit-actions {
   float: left;
 }
@@ -299,23 +317,23 @@
 /* =============================================================================
  *   Footer
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003280}}
 .region-footer {
   float: left;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003283}}
 .region-footer .footer {
   color: white;
   padding: 44px 0px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003277}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003286}}
 .region-footer .footer .top-text {
   border-bottom: 1px solid #6e6c5d;
   padding-bottom: 5px;
   margin-bottom: 6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003284}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003293}}
 .region-footer .footer .bottom-text a {
   color: white;
 }
@@ -326,14 +344,14 @@
 /*
  * Aggregator feed source
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003297}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003306}}
 #aggregator .feed-source .feed-icon {
   display: inline;
   float: none;
   margin-right: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003305}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003314}}
 .feed-details dt,
 .feed-details dd {
   display: inline;
@@ -346,16 +364,16 @@
 /*
  * Generic styles for links. See the ul.links declaration in node and comment stylesheets
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003329}}
 ul.links {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003333}}
 ul.links.inline {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003337}}
 ul.links li {
   display: inline;
   list-style: none;
@@ -365,7 +383,7 @@ ul.links li {
 /*
  * Search results are an ordered list so reset the margin
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003348}}
 .search-results {
   margin: 0;
 }
@@ -380,20 +398,20 @@ ul.links li {
  *  - #secondary-menu (secondary/user menu)
  * You can target all of these with .nav or div[id$="menu-bar"]
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003365}}
 .nav {
   clear: both;
   margin: 0;
   background: url("../images/bg_main_menu.png") repeat 0 0;
   border-bottom: 2px solid #eed466;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003372}}
 .nav ul,
 .nav ul.menu {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003378}}
 .nav li,
 .nav ul.menu li {
   display: inline;
@@ -411,20 +429,20 @@ ul.links li {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003390}}
 .nav li:hover, .nav li.active,
 .nav ul.menu li:hover,
 .nav ul.menu li.active {
   height: 49px;
   border-bottom: 3px solid #eed466;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003393}}
 .nav li:hover a, .nav li.active a,
 .nav ul.menu li:hover a,
 .nav ul.menu li.active a {
   color: #eed466;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003400}}
 .nav li a,
 .nav ul.menu li a {
   display: block;
@@ -441,14 +459,14 @@ ul.links li {
   -moz-text-shadow: 1px 1px 0px black;
   text-shadow: 1px 1px 0px black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003401}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003410}}
 .nav li a:hover, .nav li a:focus,
 .nav ul.menu li a:hover,
 .nav ul.menu li a:focus {
   padding-bottom: 12px;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003407}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003416}}
 .nav .block {
   margin-bottom: 0;
 }
@@ -456,21 +474,21 @@ ul.links li {
 /* =============================================================================
  *   Menus, usually blocks
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003416}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003425}}
 ul.menu {
   padding-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003419}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003428}}
 ul.menu ul {
   padding-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003427}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003436}}
 ul.menu li {
   margin: 0;
 }
 
 /* If li.content exists it's a problem, so reset the padding */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003456}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003465}}
 .block .menu li.content {
   padding: 0;
 }
@@ -478,13 +496,13 @@ ul.menu li {
 /* =============================================================================
  *   Book navigation menu
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003473}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003482}}
 .book-navigation .page-up {
   /* Prevent text wrapping to a new line, assumes English "up" is used (two characters) */
   min-width: 2em;
   white-space: nowrap;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003479}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003488}}
 .book-navigation .menu {
   margin-left: 0;
 }
@@ -492,31 +510,31 @@ ul.menu li {
 /* =============================================================================
  *   Breadcrumbs
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003489}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003498}}
 #breadcrumb {
   margin: 10px 0;
   /* If the label is set to show in theme settings the label class is added */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003493}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003502}}
 #breadcrumb .breadcrumb-label {
   font-size: 1em;
   display: inline;
   padding-right: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003498}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003507}}
 #breadcrumb .breadcrumb-label:after {
   content: ":";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003503}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003512}}
 #breadcrumb ol {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003508}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003517}}
 #breadcrumb .with-breadcrumb-label ol {
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003512}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003521}}
 #breadcrumb li {
   list-style: none;
   display: inline;
@@ -525,27 +543,27 @@ ul.menu li {
 /* =============================================================================
  *   Pagers
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003539}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003548}}
 ul.pager {
   clear: both;
   margin: 0;
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003545}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003554}}
 .item-list ul.pager li {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003547}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003556}}
 .item-list ul.pager li.pager-ellipsis {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003550}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003559}}
 .item-list ul.pager li.pager-item a {
   color: #c67b1a;
   font-size: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003555}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003564}}
 .item-list ul.pager li.pager-previous a, .item-list ul.pager li.pager-next a {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -587,7 +605,7 @@ ul.pager {
   -ms-border-radius: 100px;
   border-radius: 100px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003219}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003218}}
 .item-list ul.pager li.pager-previous a:hover, .item-list ul.pager li.pager-next a:hover {
   background: #d2782f;
   /* Old browsers */
@@ -606,11 +624,11 @@ ul.pager {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
   /* IE6-9 */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003191}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003190}}
 .item-list ul.pager li.pager-previous a:hover, .item-list ul.pager li.pager-next a:hover {
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003558}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003567}}
 .item-list ul.pager li.pager-current {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -653,7 +671,7 @@ ul.pager {
   border-radius: 100px;
   padding: 3px 9px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003237}}
 .item-list ul.pager li.pager-current:hover {
   background: #7b7b7b;
   /* Old browsers */
@@ -672,12 +690,12 @@ ul.pager {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten(#6e6e6e, 5% )', endColorstr='lighten(#605953, 5% )',GradientType=0 );
   /* IE6-9 */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003191}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003190}}
 .item-list ul.pager li.pager-current:hover {
   color: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003565}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003574}}
 ul.pager li {
   background-image: none;
   display: inline;
@@ -685,7 +703,7 @@ ul.pager li {
   padding: .5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003573}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003582}}
 .block ul.pager li {
   margin: 0;
 }
@@ -693,7 +711,7 @@ ul.pager li {
 /* =============================================================================
  *   Skip Navigation
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003581}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003590}}
 #skip-link {
   left: 50%;
   margin-left: -6.5em;
@@ -703,7 +721,7 @@ ul.pager li {
   width: 12em;
   z-index: 50;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003590}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003599}}
 #skip-link a {
   background: #444;
   background: rgba(0, 0, 0, 0.6);
@@ -714,7 +732,7 @@ ul.pager li {
   text-align: center;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003601}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003610}}
 #skip-link a:link, #skip-link a:visited {
   background: #444;
   background: rgba(0, 0, 0, 0.6);
@@ -725,7 +743,7 @@ ul.pager li {
   text-align: center;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003613}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003622}}
 #skip-link a:hover, #skip-link a:focus, #skip-link a:active {
   outline: 0;
 }
@@ -733,35 +751,35 @@ ul.pager li {
 /* =============================================================================
  *   Tabs (local tasks)
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003624}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003633}}
 #tasks {
   margin-bottom: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003629}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003638}}
 ul.primary {
   border-bottom-color: #c2c2c2;
   margin: 20px 0;
   padding: 0 0 0 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003634}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003643}}
 ul.primary li {
   display: block;
   float: left;
   margin: 0 1px -1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003639}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003648}}
 ul.primary li.active a {
   color: #c67b1a;
   border-bottom-color: whitesmoke;
   background: whitesmoke;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003643}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003652}}
 ul.primary li.active a:hover {
   border-bottom-color: whitesmoke;
   background: whitesmoke;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003648}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003657}}
 ul.primary li a {
   color: #f0c389;
   background-color: whitesmoke;
@@ -775,25 +793,25 @@ ul.primary li a {
   height: 1.5em;
   line-height: 1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003662}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003671}}
 ul.primary li a:hover, ul.primary li a:focus {
   background-color: whitesmoke;
   color: #c67b1a;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003678}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003687}}
 ul.secondary {
   border-bottom: 1px solid #c2c2c2;
   margin: 1em 0 0;
   padding: 0 .3em 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003683}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003692}}
 ul.secondary li {
   border-right: 0;
   list-style: none;
   padding: 0 10px 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003690}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003699}}
 ul.secondary li a:hover, ul.secondary li a.active {
   border-bottom: none;
   text-decoration: underline;
@@ -802,11 +820,11 @@ ul.secondary li a:hover, ul.secondary li a.active {
 /* =============================================================================
  *   Tabs (quicktabs)
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003701}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003710}}
 .sidebar-tabs {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003400}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003429}}
 .sidebar-tabs .block-title {
   color: #2c4f65;
   position: absolute;
@@ -815,18 +833,18 @@ ul.secondary li a:hover, ul.secondary li a.active {
   left: 38px;
   letter-spacing: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003409}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003438}}
 .sidebar-tabs .quicktabs-wrapper .quicktabs-tabs {
   text-align: right;
   margin: 0px;
   padding: 5px 0 2px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003413}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003442}}
 .sidebar-tabs .quicktabs-wrapper .quicktabs-tabs li {
   padding: 5px 0px 4px 0px;
   margin: 0px 5px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003416}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003445}}
 .sidebar-tabs .quicktabs-wrapper .quicktabs-tabs li a {
   color: #f0c389;
   background-color: whitesmoke;
@@ -836,57 +854,57 @@ ul.secondary li a:hover, ul.secondary li a.active {
   box-shadow: inset 0px 3px 7px -3px #CAC9C9;
   margin: 0px 0px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003424}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003453}}
 .sidebar-tabs .quicktabs-wrapper .quicktabs-tabs li a:hover {
   background-color: whitesmoke;
   color: #c67b1a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003430}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003459}}
 .sidebar-tabs .quicktabs-wrapper .quicktabs-tabs li.active a {
   color: #c67b1a;
   border-bottom-color: whitesmoke;
   padding-bottom: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003445}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003474}}
 .sidebar-tabs .quicktabs-wrapper .quicktabs_main {
   border-color: #c2c2c2;
   border-width: 1px;
   margin-top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003452}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003481}}
 .sidebar-tabs .block-title {
   font-size: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003458}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003487}}
 .sidebar-tabs .quicktabs-wrapper .quicktabs-tabs li.last {
   margin: 0px 0px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003459}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003488}}
 .sidebar-tabs .quicktabs-wrapper .quicktabs-tabs li.active a {
   background: whitesmoke;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003460}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003489}}
 .sidebar-tabs .quicktabs-wrapper .quicktabs-tabs li a {
   padding: 5px 10px 4px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003464}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003493}}
 .sidebar-tabs .quicktabs_main {
   background: whitesmoke;
   border-style: solid solid solid solid;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003536}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003565}}
 .sidebar-tabs .category-tabs-list ul {
   list-style-type: none;
   margin: 0px;
   padding: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003540}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003569}}
 .sidebar-tabs .category-tabs-list ul li {
   font-size: 16px;
   text-transform: uppercase;
   margin: 0px 0px 8px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003546}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003575}}
 .sidebar-tabs .category-tabs-list ul li a {
   padding: 8px 13px;
   display: block;
@@ -900,75 +918,75 @@ ul.secondary li a:hover, ul.secondary li a.active {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003551}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003580}}
 .sidebar-tabs .category-tabs-list ul li a:hover {
   background: #d5d5d5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003555}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003584}}
 .sidebar-tabs .category-tabs-list ul li .active {
   color: white;
   background: #3c6e8f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003558}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003587}}
 .sidebar-tabs .category-tabs-list ul li .active:hover {
   background: #3c6e8f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003493}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003522}}
 .sidebar-tabs .author-tabs-list ul {
   list-style-type: none;
   margin: 0px;
   padding: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003497}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003526}}
 .sidebar-tabs .author-tabs-list ul li {
   position: relative;
   margin: 0px 0px 10px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003501}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003530}}
 .sidebar-tabs .author-tabs-list ul li:last-child {
   margin: 0px 0px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003502}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003531}}
 .sidebar-tabs .author-tabs-list ul li .avatar {
   margin-right: 10px;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003505}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003534}}
 .sidebar-tabs .author-tabs-list ul li .avatar a {
   line-height: 0;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003508}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003537}}
 .sidebar-tabs .author-tabs-list ul li .author-name {
   margin-bottom: 5px;
   padding-top: 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003511}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003540}}
 .sidebar-tabs .author-tabs-list ul li .author-name a {
   font-size: 20px;
   color: #3c6e8f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003516}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003545}}
 .sidebar-tabs .author-tabs-list ul li .job-name, .sidebar-tabs .author-tabs-list ul li .organization, .sidebar-tabs .author-tabs-list ul li .block-about-author .author-name, .block-about-author .sidebar-tabs .author-tabs-list ul li .author-name, .sidebar-tabs .author-tabs-list ul li .block-about-author .views-field-nothing, .block-about-author .sidebar-tabs .author-tabs-list ul li .views-field-nothing {
   line-height: 15px;
   margin-bottom: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003523}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003552}}
 .sidebar-tabs .author-tabs-list ul li .buttons {
   position: absolute;
   bottom: 7px;
   right: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003527}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003556}}
 .sidebar-tabs .author-tabs-list ul li .buttons a {
   margin-right: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003706}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003715}}
 .content-tabs {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003400}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003429}}
 .content-tabs .block-title {
   color: #2c4f65;
   position: absolute;
@@ -977,18 +995,18 @@ ul.secondary li a:hover, ul.secondary li a.active {
   left: 38px;
   letter-spacing: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003409}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003438}}
 .content-tabs .quicktabs-wrapper .quicktabs-tabs {
   text-align: right;
   margin: 0px;
   padding: 5px 0 2px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003413}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003442}}
 .content-tabs .quicktabs-wrapper .quicktabs-tabs li {
   padding: 5px 0px 4px 0px;
   margin: 0px 5px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003416}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003445}}
 .content-tabs .quicktabs-wrapper .quicktabs-tabs li a {
   color: #f0c389;
   background-color: whitesmoke;
@@ -998,40 +1016,40 @@ ul.secondary li a:hover, ul.secondary li a.active {
   box-shadow: inset 0px 3px 7px -3px #CAC9C9;
   margin: 0px 0px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003424}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003453}}
 .content-tabs .quicktabs-wrapper .quicktabs-tabs li a:hover {
   background-color: whitesmoke;
   color: #c67b1a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003430}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003459}}
 .content-tabs .quicktabs-wrapper .quicktabs-tabs li.active a {
   color: #c67b1a;
   border-bottom-color: whitesmoke;
   padding-bottom: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003445}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003474}}
 .content-tabs .quicktabs-wrapper .quicktabs_main {
   border-color: #c2c2c2;
   border-width: 1px;
   margin-top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003469}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003498}}
 .content-tabs .block-title {
   font-size: 17px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003475}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003504}}
 .content-tabs .quicktabs-wrapper .quicktabs-tabs li.last {
   margin: 0px 5px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003476}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003505}}
 .content-tabs .quicktabs-wrapper .quicktabs-tabs li.active a {
   background: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003477}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003506}}
 .content-tabs .quicktabs-wrapper .quicktabs-tabs li a {
   padding: 5px 30px 4px 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003481}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003510}}
 .content-tabs .quicktabs_main {
   border-style: solid none none none;
   background: transparent;
@@ -1041,7 +1059,7 @@ ul.secondary li a:hover, ul.secondary li a.active {
 /* =============================================================================
  *   Action links
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003719}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003728}}
 ul.action-links {
   margin: 20px 0 0;
   list-style: none;
@@ -1062,7 +1080,7 @@ ul.action-links {
 /*
  * Labels are h2 in Adaptivetheme. Use a strong selector to mitigate unwanted ineritance issues
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003752}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003761}}
 .field-label {
   font-size: 1em;
   font-weight: 700;
@@ -1081,12 +1099,12 @@ ul.action-links {
  *   Block Styling
  * ========================================================================== */
 /* Main wrapper for most blocks, block_system_main does not have it */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003780}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003789}}
 .block {
   margin-bottom: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003334}}
 .block-default .block-title {
   text-align: center;
   color: white;
@@ -1095,11 +1113,6 @@ ul.action-links {
   margin: 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003343}}
-.block-default .block-content,
-.block-default .view-content {
-  padding: 10px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003345}}
 .block-default .block-content h3,
 .block-default .view-content h3 {
   font-size: 16px;
@@ -1117,31 +1130,84 @@ ul.action-links {
 .block-default .view-content h3 a:hover {
   color: #c67b1a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003348}}
 .block-default .block-content .views-field-field-image a,
 .block-default .view-content .views-field-field-image a {
   display: block;
   line-height: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003351}}
 .block-default .block-content .views-field-field-image a img,
 .block-default .view-content .views-field-field-image a img {
   margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003357}}
+.block-default .block-content .partner-list-block,
+.block-default .block-content .date-list-block,
+.block-default .view-content .partner-list-block,
+.block-default .view-content .date-list-block {
+  border-bottom: 1px solid #c2c2c2;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003361}}
+.block-default .block-content .partner-list-block:last-child,
+.block-default .block-content .date-list-block:last-child,
+.block-default .view-content .partner-list-block:last-child,
+.block-default .view-content .date-list-block:last-child {
+  border-bottom: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003366}}
+.block-default .block-content .partner-list-block img,
+.block-default .block-content .date-list-block img,
+.block-default .view-content .partner-list-block img,
+.block-default .view-content .date-list-block img {
+  width: 140px;
+  margin: 0 auto 10px auto;
+  display: table;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003371}}
+.block-default .block-content .partner-list-block h3,
+.block-default .block-content .date-list-block h3,
+.block-default .view-content .partner-list-block h3,
+.block-default .view-content .date-list-block h3 {
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003374}}
+.block-default .block-content .partner-list-block p,
+.block-default .block-content .date-list-block p,
+.block-default .view-content .partner-list-block p,
+.block-default .view-content .date-list-block p {
+  margin-bottom: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003377}}
+.block-default .block-content .partner-list-block .highlighted-item,
+.block-default .block-content .date-list-block .highlighted-item,
+.block-default .view-content .partner-list-block .highlighted-item,
+.block-default .view-content .date-list-block .highlighted-item {
+  background: url("../images/iitem.png") no-repeat left 4px;
+  text-transform: uppercase;
+  color: #b75f18;
+  padding-left: 15px;
+  margin-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003387}}
 .block-default .block-title {
   background: #3c6e8f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003391}}
 .block-default .block-content,
 .block-default .view-content {
+  padding: 15px;
   border-top: 0px;
   border-left: 1px solid #c2c2c2;
   border-right: 1px solid #c2c2c2;
   border-bottom: 1px solid #c2c2c2;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003334}}
 .block-default-no-border .block-title {
   text-align: center;
   color: white;
@@ -1150,11 +1216,6 @@ ul.action-links {
   margin: 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003343}}
-.block-default-no-border .block-content,
-.block-default-no-border .view-content {
-  padding: 10px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003345}}
 .block-default-no-border .block-content h3,
 .block-default-no-border .view-content h3 {
   font-size: 16px;
@@ -1172,29 +1233,82 @@ ul.action-links {
 .block-default-no-border .view-content h3 a:hover {
   color: #c67b1a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003348}}
 .block-default-no-border .block-content .views-field-field-image a,
 .block-default-no-border .view-content .views-field-field-image a {
   display: block;
   line-height: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003351}}
 .block-default-no-border .block-content .views-field-field-image a img,
 .block-default-no-border .view-content .views-field-field-image a img {
   margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003357}}
+.block-default-no-border .block-content .partner-list-block,
+.block-default-no-border .block-content .date-list-block,
+.block-default-no-border .view-content .partner-list-block,
+.block-default-no-border .view-content .date-list-block {
+  border-bottom: 1px solid #c2c2c2;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003361}}
+.block-default-no-border .block-content .partner-list-block:last-child,
+.block-default-no-border .block-content .date-list-block:last-child,
+.block-default-no-border .view-content .partner-list-block:last-child,
+.block-default-no-border .view-content .date-list-block:last-child {
+  border-bottom: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003366}}
+.block-default-no-border .block-content .partner-list-block img,
+.block-default-no-border .block-content .date-list-block img,
+.block-default-no-border .view-content .partner-list-block img,
+.block-default-no-border .view-content .date-list-block img {
+  width: 140px;
+  margin: 0 auto 10px auto;
+  display: table;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003371}}
+.block-default-no-border .block-content .partner-list-block h3,
+.block-default-no-border .block-content .date-list-block h3,
+.block-default-no-border .view-content .partner-list-block h3,
+.block-default-no-border .view-content .date-list-block h3 {
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003374}}
+.block-default-no-border .block-content .partner-list-block p,
+.block-default-no-border .block-content .date-list-block p,
+.block-default-no-border .view-content .partner-list-block p,
+.block-default-no-border .view-content .date-list-block p {
+  margin-bottom: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003377}}
+.block-default-no-border .block-content .partner-list-block .highlighted-item,
+.block-default-no-border .block-content .date-list-block .highlighted-item,
+.block-default-no-border .view-content .partner-list-block .highlighted-item,
+.block-default-no-border .view-content .date-list-block .highlighted-item {
+  background: url("../images/iitem.png") no-repeat left 4px;
+  text-transform: uppercase;
+  color: #b75f18;
+  padding-left: 15px;
+  margin-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003387}}
 .block-default-no-border .block-title {
   background: #3c6e8f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003391}}
 .block-default-no-border .block-content,
 .block-default-no-border .view-content {
+  padding: 15px;
   border-top: 0px;
   border: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003334}}
 .block-skin-brown .block-title {
   text-align: center;
   color: white;
@@ -1203,11 +1317,6 @@ ul.action-links {
   margin: 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003343}}
-.block-skin-brown .block-content,
-.block-skin-brown .view-content {
-  padding: 10px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003345}}
 .block-skin-brown .block-content h3,
 .block-skin-brown .view-content h3 {
   font-size: 16px;
@@ -1225,73 +1334,126 @@ ul.action-links {
 .block-skin-brown .view-content h3 a:hover {
   color: #c67b1a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003348}}
 .block-skin-brown .block-content .views-field-field-image a,
 .block-skin-brown .view-content .views-field-field-image a {
   display: block;
   line-height: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003351}}
 .block-skin-brown .block-content .views-field-field-image a img,
 .block-skin-brown .view-content .views-field-field-image a img {
   margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003357}}
+.block-skin-brown .block-content .partner-list-block,
+.block-skin-brown .block-content .date-list-block,
+.block-skin-brown .view-content .partner-list-block,
+.block-skin-brown .view-content .date-list-block {
+  border-bottom: 1px solid #c2c2c2;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003361}}
+.block-skin-brown .block-content .partner-list-block:last-child,
+.block-skin-brown .block-content .date-list-block:last-child,
+.block-skin-brown .view-content .partner-list-block:last-child,
+.block-skin-brown .view-content .date-list-block:last-child {
+  border-bottom: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003366}}
+.block-skin-brown .block-content .partner-list-block img,
+.block-skin-brown .block-content .date-list-block img,
+.block-skin-brown .view-content .partner-list-block img,
+.block-skin-brown .view-content .date-list-block img {
+  width: 140px;
+  margin: 0 auto 10px auto;
+  display: table;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003371}}
+.block-skin-brown .block-content .partner-list-block h3,
+.block-skin-brown .block-content .date-list-block h3,
+.block-skin-brown .view-content .partner-list-block h3,
+.block-skin-brown .view-content .date-list-block h3 {
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003374}}
+.block-skin-brown .block-content .partner-list-block p,
+.block-skin-brown .block-content .date-list-block p,
+.block-skin-brown .view-content .partner-list-block p,
+.block-skin-brown .view-content .date-list-block p {
+  margin-bottom: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003377}}
+.block-skin-brown .block-content .partner-list-block .highlighted-item,
+.block-skin-brown .block-content .date-list-block .highlighted-item,
+.block-skin-brown .view-content .partner-list-block .highlighted-item,
+.block-skin-brown .view-content .date-list-block .highlighted-item {
+  background: url("../images/iitem.png") no-repeat left 4px;
+  text-transform: uppercase;
+  color: #b75f18;
+  padding-left: 15px;
+  margin-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003397}}
 .block-skin-brown .block-title {
   background: #bf6c29;
   border-radius: 5px 5px 0px 0px;
   padding: 7px 0px;
   font-size: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003404}}
 .block-skin-brown .block-content,
 .block-skin-brown .view-content {
+  padding: 10px;
   border-top: 0px;
   border-left: 1px solid #bf6c29;
   border-right: 1px solid #bf6c29;
   border-bottom: 1px solid #bf6c29;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003795}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003804}}
 .block-about-author .avatar {
   float: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003797}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003806}}
 .block-about-author .avatar img {
   border: solid 3px #3c6e8f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003801}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003810}}
 .block-about-author .author-name {
   margin-bottom: 5px;
   padding-top: 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003805}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003814}}
 .block-about-author .author-name a {
   font-size: 20px;
   color: #3c6e8f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003810}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003819}}
 .block-about-author .job-name, .block-about-author .sidebar-tabs .author-tabs-list ul li .organization, .sidebar-tabs .author-tabs-list ul li .block-about-author .organization, .sidebar-tabs .author-tabs-list ul li .block-about-author .author-name, .block-about-author .sidebar-tabs .author-tabs-list ul li .author-name, .sidebar-tabs .author-tabs-list ul li .block-about-author .job-name, .block-about-author .sidebar-tabs .author-tabs-list ul li .job-name, .sidebar-tabs .author-tabs-list ul li .block-about-author .views-field-nothing, .block-about-author .sidebar-tabs .author-tabs-list ul li .views-field-nothing {
   line-height: 15px;
   margin-bottom: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003815}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003824}}
 .block-about-author .organization, .block-about-author .author-name, .block-about-author .job-name, .block-about-author .sidebar-tabs .author-tabs-list ul li .organization, .sidebar-tabs .author-tabs-list ul li .block-about-author .organization, .block-about-author .views-field-nothing {
   float: left;
   width: 147px;
   clear: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003820}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003829}}
 .block-about-author .views-field-nothing {
   margin-top: 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003824}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003833}}
 .block-about-author .bio {
   clear: both;
   padding-top: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003832}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003841}}
 .pane-jsonblocks-social-block .block-title {
   font-size: 20px;
   line-height: 22px;
@@ -1301,12 +1463,12 @@ ul.action-links {
   margin: 0px 0px 14px 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003841}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003850}}
 .social-icons {
   margin: 0 auto;
   display: table;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003844}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003853}}
 .social-icons .social-icon {
   width: 37px;
   height: 37px;
@@ -1318,46 +1480,46 @@ ul.action-links {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003850}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003859}}
 .social-icons .social-icon:hover {
   opacity: 0.8;
   filter: alpha(opacity=80);
   /*IE*/
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003851}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003860}}
 .social-icons .social-icon:last-child {
   margin-right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003853}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003862}}
 .social-icons .social-icon-facebook {
   background: url("../images/icon_fb.png") no-repeat 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003854}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003863}}
 .social-icons .social-icon-twitter {
   background: url("../images/icon_tw.png") no-repeat 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003855}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003864}}
 .social-icons .social-icon-youtube {
   background: url("../images/icon_yt.png") no-repeat 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003856}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003865}}
 .social-icons .social-icon-in {
   background: url("../images/icon_in.png") no-repeat 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003857}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003866}}
 .social-icons .social-icon-gplus {
   background: url("../images/icon_g.png") no-repeat 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003858}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003867}}
 .social-icons .social-icon-rss {
   background: url("../images/icon_rss.png") no-repeat 0 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003862}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003871}}
 .mail-subscribe .dropdown {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003864}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003873}}
 .mail-subscribe .dropdown .clicker {
   padding: 5px 0;
   margin-top: 25px;
@@ -1365,11 +1527,11 @@ ul.action-links {
   background: url("../images/arrow_down.png") no-repeat 251px center;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003870}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003879}}
 .mail-subscribe .dropdown .clicker.active {
   background: url("../images/bt_close.png") no-repeat 251px center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003871}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003880}}
 .mail-subscribe .dropdown .clicker h4 {
   color: black;
   margin: 0px;
@@ -1377,7 +1539,7 @@ ul.action-links {
   letter-spacing: 1px;
   margin-right: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003879}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003888}}
 .mail-subscribe .dropdown .inner-dropdown {
   background: #deeff5;
   margin-top: 3px;
@@ -1393,7 +1555,7 @@ ul.action-links {
   -ms-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003888}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003897}}
 .mail-subscribe .dropdown .inner-dropdown:before {
   content: "";
   width: 0;
@@ -1405,41 +1567,41 @@ ul.action-links {
   top: -6px;
   right: 24px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003899}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003908}}
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form {
   padding: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003901}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003910}}
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form .form-item {
   margin: 0px 0px 10px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003904}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003913}}
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form .form-item input {
-  width: 230px;
+  width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003906}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003915}}
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
   float: right;
   margin-top: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003916}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003925}}
 .latest-posts-block {
   background: url("../images/bg_latest_post.jpg") no-repeat left center;
   height: 241px;
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003920}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003929}}
 .latest-posts-block .inner-block {
   margin-right: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003923}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003932}}
 .latest-posts-block .inner-block .top-txt label {
   background: #cf2106;
   float: left;
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003930}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003939}}
 .latest-posts-block .inner-block a {
   background: url("../images/bt_bg_latest_post.png") no-repeat left center;
   display: block;
@@ -1455,7 +1617,7 @@ ul.action-links {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003940}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003949}}
 .latest-posts-block .inner-block a:hover {
   background: url("../images/bt_bg_latest_post_hover.png") no-repeat left center;
 }
@@ -1463,34 +1625,34 @@ ul.action-links {
 /* =============================================================================
  *   Node Styling
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003952}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003961}}
 #panel-page-title,
 #page-title {
   margin: 10px 0px 20px 0px;
   border-bottom: 1px solid #c2c2c2;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003956}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003965}}
 .node {
   margin-bottom: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003990}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003999}}
 .content {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003992}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031001}}
 .content .author {
   margin-bottom: 49px;
   font-size: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\00003995}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031004}}
 .content .author span {
   color: #2a2a2a;
 }
 
 /* News ===================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031003}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031012}}
 .node-type-news .field-name-field-image {
   float: right;
   margin-left: 20px;
@@ -1498,34 +1660,34 @@ ul.action-links {
 }
 
 /* Category ================================================================= */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031011}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031020}}
 .field-type-taxonomy-term-reference {
   margin: 40px 0 34px 0;
   float: left;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031015}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031024}}
 .field-type-taxonomy-term-reference h2.field-label {
   float: left;
   margin: 0px;
   text-transform: uppercase;
   color: #2a2a2a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031021}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031030}}
 .field-type-taxonomy-term-reference ul.field-items {
   margin: 0px;
   padding: 0px;
   float: none;
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031026}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031035}}
 .field-type-taxonomy-term-reference ul.field-items li {
   margin: 0px;
   padding: 0px;
   float: left;
   list-style-type: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031040}}
 .field-type-taxonomy-term-reference ul.field-items li a {
   background: #3c6e8f;
   color: white;
@@ -1542,7 +1704,7 @@ ul.action-links {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003576}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003605}}
 .field-type-taxonomy-term-reference ul.field-items li a:hover {
   background: #4b8ab3;
 }
@@ -1554,18 +1716,18 @@ ul.action-links {
 /*
  * Wrapper for the list of comments and its titles
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031046}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031055}}
 #comments {
   margin: 1.5em 0;
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031051}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031060}}
 #comments h2.comment-title {
   margin: 0 0 26px 0;
   font-size: 29px;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031057}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031066}}
 #comments h2.comment-form {
   margin: 0;
 }
@@ -1573,7 +1735,7 @@ ul.action-links {
 /*
  * Wrapper for a single comment
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031067}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031076}}
 .comment {
   border: 1px solid #c2c2c2;
   padding: 19px 26px;
@@ -1584,22 +1746,22 @@ ul.action-links {
   color: #2a2a2a;
   margin-bottom: 32px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031073}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031082}}
 .comment .comment-title {
   line-height: 17px;
   margin: 0 0 6px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031076}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031085}}
 .comment .comment-title a {
   color: #3c6e8f;
   font-size: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031092}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031101}}
 .comment .submitted {
   font-style: italic;
   margin: 5px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031097}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031106}}
 .comment .submitted .username {
   color: black;
 }
@@ -1613,7 +1775,7 @@ ul.action-links {
 /*
  * "New" marker for comments that are new for the current user
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031146}}
 .new {
   color: #cc0000;
 }
@@ -1621,11 +1783,11 @@ ul.action-links {
 /*
  * Nested comments are indented
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031154}}
 .indented {
   margin-left: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031156}}
 .indented .comment {
   margin-left: 40px;
 }
@@ -1636,17 +1798,17 @@ ul.action-links {
 /*
  * Wrapper for a form element (or group of form elements) and its label
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031164}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031173}}
 .form-item input.error,
 .form-item textarea.error,
 .form-item select.error {
   border: 1px solid #cc0000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031177}}
 .form-item label {
   font-weight: 700;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031184}}
 .form-item .description {
   font-size: 0.85em;
 }
@@ -1654,7 +1816,7 @@ ul.action-links {
 /*
  * Highlight marks and form required mark
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031198}}
 .marker,
 .form-required {
   color: #cc0000;
@@ -1663,7 +1825,7 @@ ul.action-links {
 /*
  * The submit button
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031212}}
 .container-inline div,
 .container-inline label {
   display: inline;
@@ -1672,7 +1834,7 @@ ul.action-links {
 /*
  * Define consistent borders
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031220}}
 fieldset {
   border: 1px solid #c2c2c2;
 }
@@ -1683,7 +1845,7 @@ fieldset {
 /*
  * Buttons used by contrib modules like Media
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031224}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031233}}
 a.button {
   -webkit-appearance: button;
   -moz-appearance: button;
@@ -1693,7 +1855,7 @@ a.button {
 /*
  * Password confirmation
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031242}}
 .password-parent,
 .confirm-parent {
   margin: 0;
@@ -1702,18 +1864,18 @@ a.button {
 /* =============================================================================
  *   Tables
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031242}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031251}}
 table {
   margin: 10px 0;
   padding: 0;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031256}}
 table.sticky-header {
   z-index: 10;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031258}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031267}}
 table,
 thead,
 tbody,
@@ -1723,27 +1885,27 @@ td {
   border-color: #c2c2c2;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031265}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031274}}
 table,
 td,
 th {
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031272}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031281}}
 caption,
 th,
 td {
   text-align: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031277}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031286}}
 thead tr {
   font-weight: 700;
   background-color: #e5e5e5;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031284}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031293}}
 td,
 th {
   border-bottom: 0;
@@ -1751,29 +1913,29 @@ th {
   padding: 5px 7px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031294}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031303}}
 tbody tr {
   border-top: 1px solid #c2c2c2;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031299}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031308}}
 tr {
   /* Table row striping */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031301}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031310}}
 tr.odd {
   background: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031308}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031317}}
 tr.info, tr.even, tr:nth-child(2n+2) {
   border-bottom: 0;
   background-color: whitesmoke;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031326}}
 tr.odd td.active {
   background-color: #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031330}}
 tr.even td.active {
   background-color: #ebebeb;
 }
@@ -1782,7 +1944,7 @@ tr.even td.active {
  * Forum tables
  * Core sets white-space to nowrap, which makes no sense
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031356}}
 #forum td .created,
 #forum td .posts,
 #forum td .topics,
@@ -1795,11 +1957,11 @@ tr.even td.active {
 /* =============================================================================
  *   Messages
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031367}}
 div.messages {
   margin: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031371}}
 div.messages ul {
   margin-top: 0;
   margin-bottom: 0;
@@ -1808,7 +1970,7 @@ div.messages ul {
 /*
  * Unpublished nodes
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031402}}
 .node-unpublished p.unpublished,
 .comment-unpublished p.unpublished {
   color: pink;
@@ -1834,28 +1996,28 @@ div.messages ul {
 /* =============================================================================
  *    Maintenance pages
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031404}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031413}}
 .maintenance-page .container {
   padding: 40px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031409}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031418}}
 .maintenance-page #site-name,
 .maintenance-page #page-title {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031416}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031425}}
 .db-offline .container {
   margin: 0 auto;
   padding: 40px 0;
   width: 100%;
   max-width: 960px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031423}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031432}}
 .db-offline div.messages {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031427}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031436}}
 .db-offline #content {
   padding: 20px 0;
 }
@@ -1863,7 +2025,7 @@ div.messages ul {
 /* =============================================================================
  *   Misc overrides for contrib modules
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031437}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031446}}
 .profile .user-picture {
   float: left;
   margin: 0 1em 1em 0;
@@ -1874,23 +2036,23 @@ div.messages ul {
   position: relative;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031448}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031457}}
 #admin-menu {
   margin: 0;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031454}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031463}}
 .dev-query {
   background: #eeeeee;
   padding: 30px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031460}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031469}}
 #styleguide-header {
   padding: 0 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031462}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031471}}
 #styleguide-header .item-list {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   margin: 0 20px 20px 0;
@@ -1901,26 +2063,26 @@ div.messages ul {
 /* =============================================================================
  *   Video Page Layout
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031475}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031484}}
 #main-content-header #page-title {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031480}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031489}}
 .page-videos .region + .region + .region.region-two-66-33-first {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031481}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031490}}
 .page-videos .region + .region + .region + .region.region-two-66-33-second {
   width: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031482}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031491}}
 .page-videos .pane-views-videos-related-videos-landing .block-inner {
   margin-left: 0;
   padding-left: 20px;
   margin-top: 67px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031483}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031492}}
 .page-videos .view-display-id-featured_video {
   margin-right: -20px;
 }
@@ -1928,68 +2090,73 @@ div.messages ul {
 /* =============================================================================
  *   Video LANDING
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031490}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031499}}
 .pane-page-title.block {
   margin-bottom: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031493}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031502}}
 .pane-fe-videos-fe-videos-search {
   margin-bottom: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031495}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031504}}
 .pane-fe-videos-fe-videos-search .videos-landing-header {
   margin-bottom: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031497}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031506}}
 .pane-fe-videos-fe-videos-search .videos-landing-header .header {
   float: left;
   width: 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031500}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031509}}
 .pane-fe-videos-fe-videos-search .videos-landing-header .header .header-inner {
   margin: 0px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031504}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031513}}
 .pane-fe-videos-fe-videos-search .videos-landing-header .topic-select {
   float: left;
   width: 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031507}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031516}}
 .pane-fe-videos-fe-videos-search .videos-landing-header .topic-select .topic-select-inner {
   margin: 0px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031509}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031518}}
 .pane-fe-videos-fe-videos-search .videos-landing-header .topic-select .topic-select-inner h3 {
   margin-top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031512}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031521}}
 .pane-fe-videos-fe-videos-search .videos-landing-header .topic-select .topic-select-inner #topic-dropdown {
+  width: 219px;
   float: left;
   margin-right: 10px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031526}}
+.pane-fe-videos-fe-videos-search .videos-landing-header .topic-select .topic-select-inner .search {
+  margin-top: 18px;
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031523}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031536}}
 .pane-views-videos-related-videos-landing .block-inner,
 .view-display-id-featured_video {
   background: #f8f6ec;
   height: 680px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031526}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031539}}
 .pane-views-videos-related-videos-landing .block-inner .video-title,
 .view-display-id-featured_video .video-title {
   margin-top: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031530}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031543}}
 .view-display-id-featured_video {
   padding: 0px 0px 15px 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031532}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031545}}
 .view-display-id-featured_video .view-header {
   padding-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031534}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031547}}
 .view-display-id-featured_video .view-content .video-title {
   font-size: 20px;
   line-height: 22px;
@@ -1997,25 +2164,25 @@ div.messages ul {
   font-weight: bold;
   margin: 10px 0 5px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031540}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031553}}
 .view-display-id-featured_video .view-content .video-title a {
   color: #265775;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031544}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031557}}
 .view-display-id-related_videos_landing {
   margin: 0 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031547}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031560}}
 .pane-views-videos-related-videos-landing .block-inner {
   padding-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031549}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031562}}
 .pane-views-videos-related-videos-landing .block-inner .views-row {
   margin-bottom: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031551}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031564}}
 .pane-views-videos-related-videos-landing .block-inner .views-row h2 {
   font-size: 16px;
   line-height: 20px;
@@ -2030,42 +2197,43 @@ div.messages ul {
   color: #c67b1a;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031558}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031571}}
 .pane-quicktabs-top-stories-on-ijnet {
   margin-bottom: 80px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003662}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003691}}
 .video-list .video-item {
   float: left;
   width: 33.33333%;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003666}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003695}}
 .video-list .video-item.col-first {
   text-align: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003668}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003697}}
 .video-list .video-item.col-first .node-video {
   padding-right: 18%;
   padding-left: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003673}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003702}}
 .video-list .video-item.col-last {
   text-align: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003675}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003704}}
 .video-list .video-item.col-last .node-video {
   padding-left: 18%;
   padding-right: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003680}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003709}}
 .video-list .video-item .node-video {
   padding-right: 9%;
   padding-left: 9%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003683}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003712}}
 .video-list .video-item .node-video h2 {
+  text-align: left;
   font-size: 16px;
   line-height: 20px;
   margin: 0px;
@@ -2079,7 +2247,7 @@ div.messages ul {
   color: #c67b1a;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031565}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031578}}
 .view-display-id-news_teaser_list .buttons {
   clear: both;
   float: right;
@@ -2088,7 +2256,52 @@ div.messages ul {
 /* =============================================================================
  *   Opportunities LANDING
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003694}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031587}}
+.views-exposed-widgets {
+  background: #f8f6ec;
+  padding: 15px;
+  margin-bottom: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031591}}
+.views-exposed-widgets #edit-search-title-wrapper {
+  clear: both;
+  float: none;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031595}}
+.views-exposed-widgets #edit-search-title-wrapper h3 {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031600}}
+.views-exposed-widgets #edit-field-category-tid-wrapper,
+.views-exposed-widgets #edit-field-region-tid-wrapper {
+  width: 160px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031602}}
+.views-exposed-widgets #edit-field-category-tid-wrapper select,
+.views-exposed-widgets #edit-field-region-tid-wrapper select {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031606}}
+.views-exposed-widgets #edit-keys-wrapper {
+  padding-right: 0px;
+  width: 242px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031609}}
+.views-exposed-widgets #edit-keys-wrapper input {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031611}}
+.views-exposed-widgets .views-submit-button {
+  float: right;
+  padding: 10px 0px 0px 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031614}}
+.views-exposed-widgets .views-submit-button .form-submit {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003724}}
 .opportunities-list .opportunities-item .opportunities-deadline {
   text-align: center;
   float: left;
@@ -2099,7 +2312,7 @@ div.messages ul {
   margin-right: 20px;
   width: 102px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003704}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003734}}
 .opportunities-list .opportunities-item .opportunities-deadline .deadline {
   color: #f9e5d5;
   border-bottom: 1px solid white;
@@ -2108,31 +2321,31 @@ div.messages ul {
   padding-bottom: 3px;
   display: table;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003713}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003743}}
 .opportunities-list .opportunities-item .opportunities-deadline .opp-date .month {
   text-transform: uppercase;
   font-size: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003717}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003747}}
 .opportunities-list .opportunities-item .opportunities-deadline .opp-date .year {
   font-size: 31px;
   line-height: 24px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003724}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003754}}
 .opportunities-list h2 {
   font-size: 20px;
   margin: 0px 0px 10px 0px;
   line-height: 26px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003728}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003758}}
 .opportunities-list h2 a {
   color: #137a9a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003733}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003763}}
 .opportunities-list .content p {
   margin-bottom: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003737}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003767}}
 .opportunities-list .buttons {
   clear: both;
   float: right;
@@ -2141,14 +2354,52 @@ div.messages ul {
 /* =============================================================================
  *   Latest story
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031582}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031628}}
 .latest-story h2 {
   margin-top: 0px;
   padding: 0 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031587}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031633}}
 .latest-story .author,
 .latest-story p {
   padding: 0 15px;
   margin-bottom: 10px;
+}
+
+/* =============================================================================
+ *   Chat
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031645}}
+.section-chats .content .chat-full-date {
+  margin-bottom: 2px;
+  font-size: 16px;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031651}}
+.section-chats .field-name-field-chat-description {
+  margin-bottom: 30px;
+}
+
+/* =============================================================================
+ *   About
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031660}}
+.staff-list {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003779}}
+.staff-list li {
+  margin: 0px 0px 20px 0;
+  padding: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003782}}
+.staff-list li .avatar {
+  float: left;
+  width: 110px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003786}}
+.staff-list li p {
+  margin-left: 130px;
 }

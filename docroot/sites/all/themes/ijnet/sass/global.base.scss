@@ -225,7 +225,12 @@ h6 {
  * ========================================================================== */
 
 b,
-strong {}
+strong {
+  &.big {
+    color: $color-link-primary;
+    font-size: $font-size-large;
+  }
+}
 
 i,
 em {}
