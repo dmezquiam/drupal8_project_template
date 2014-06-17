@@ -18,6 +18,8 @@
 
 User-agent: *
 Crawl-delay: 10
+# TODO REMOVE WHEN LIVE
+Disallow: /
 # Directories
 Disallow: /includes/
 Disallow: /misc/

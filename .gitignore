@@ -4,3 +4,7 @@
 # Ignore paths that contain user-generated content.
 docroot/sites/*/files
 docroot/sites/*/private
+
+# Ignore Sass cache
+.sass-cache
+*.swp
