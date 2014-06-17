@@ -23,5 +23,8 @@
     },
     "facebook-like": {
         "info": "Facebook Like Button"
+    },
+    "winship-legacy": {
+        "info": "Winship Legacy"
     }
 }
