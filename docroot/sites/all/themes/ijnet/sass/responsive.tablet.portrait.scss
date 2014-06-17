@@ -76,3 +76,37 @@ html {
 	@include article-item-list-width (tablet-portrait);
 	@include article-item-list ();
 }
+
+/* =============================================================================
+ *   TABS
+ * ========================================================================== */
+.content-tabs .block-title { font-size: 9px; }
+
+/* =============================================================================
+ *   Video landing page
+ * ========================================================================== */
+.pane-jsonblocks-social-block { display: none !important; }
+
+//FEATURED VIDEO
+.pane-views-videos-featured-video { margin-bottom: 0px; }
+.view-display-id-featured_video { height: 100%; }
+.page-videos .view-display-id-featured_video {	margin-right: 0px; }
+.view-display-id-featured_video { padding-right: 15px; }
+
+//RELATED VIDEOS
+.page-videos .pane-views-videos-related-videos-landing .block-inner {
+	margin-top: 0px;
+	margin-left: 20px;
+	padding-left: 0px;
+	padding-bottom: 20px;
+	height: auto;
+}
+.pane-views-videos-related-videos-landing .block-inner .views-row {
+	width: 50%;
+	float: left;
+	margin-bottom: 0px;
+	.node-video {
+		margin: 0 5px;
+	}
+
+}

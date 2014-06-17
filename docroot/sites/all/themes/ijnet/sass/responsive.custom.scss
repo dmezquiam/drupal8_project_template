@@ -18,10 +18,26 @@
  */
 
 /* Desktops/laptops and up ======================================= */
-/* @media only screen and (min-width:990px){} */
+$sidebar-width: 330px;
+@media only screen and (min-width:769px){
+  .two-66-33 > .region-two-66-33-first {
+    width: 100%;
+    .region-inner { margin-right: $sidebar-width; }
+  }
+  .two-66-33 > .region-two-66-33-second {
+    width: $sidebar-width;
+    margin-left: -$sidebar-width;
+  }
+}
 
 
 /* Tablet sizes and up =========================================== */
+@media only screen and (min-width:480px) and (max-width:691px){
+  //top var
+  #leaderboard-wrapper .block-top-header-menu { width: 39px !important; }
+  #leaderboard-wrapper .block-top-header-menu .menu { display: none; }
+}
+
 /* @media only screen and (min-width:769px) and (max-width:989px){} */
 @media only screen and (min-width:481px) and (max-width:768px){
   .two-66-33 > .region-two-66-33-first,
@@ -30,6 +46,7 @@
     width: 100%;
   }
 }
+
 
 /* Smartphone sizes and up ======================================= */
 /* @media only screen and (min-width:321px) and (max-width:480px){} */

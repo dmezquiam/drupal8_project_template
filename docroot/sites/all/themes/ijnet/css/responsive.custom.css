@@ -13,11 +13,37 @@
  * look under the "CSS" settings tab.
  */
 /* Desktops/laptops and up ======================================= */
-/* @media only screen and (min-width:990px){} */
+@media only screen and (min-width: 769px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000323}}
+  .two-66-33 > .region-two-66-33-first {
+    width: 100%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000325}}
+  .two-66-33 > .region-two-66-33-first .region-inner {
+    margin-right: 330px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000327}}
+  .two-66-33 > .region-two-66-33-second {
+    width: 330px;
+    margin-left: -330px;
+  }
+}
 /* Tablet sizes and up =========================================== */
+@media only screen and (min-width: 480px) and (max-width: 691px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000337}}
+  #leaderboard-wrapper .block-top-header-menu {
+    width: 39px !important;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000338}}
+  #leaderboard-wrapper .block-top-header-menu .menu {
+    display: none;
+  }
+}
 /* @media only screen and (min-width:769px) and (max-width:989px){} */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000344}}
   .two-66-33 > .region-two-66-33-first,
   .two-66-33 > .region-two-66-33-second {
     float: none;
@@ -40,7 +66,7 @@
    * "Float Region blocks" is an extension for floating blocks in regions, see
    * your themes appearance settings, under the Extensions tab.
    */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.custom\.scss}line{font-family:\0000369}}
   .region[class*="float-blocks"] .block {
     float: none;
     width: 100%;

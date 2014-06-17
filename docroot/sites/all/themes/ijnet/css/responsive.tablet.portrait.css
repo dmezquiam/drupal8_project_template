@@ -120,3 +120,59 @@ html {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
 }
+
+/* =============================================================================
+ *   TABS
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000383}}
+.content-tabs .block-title {
+  font-size: 9px;
+}
+
+/* =============================================================================
+ *   Video landing page
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000388}}
+.pane-jsonblocks-social-block {
+  display: none !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000391}}
+.pane-views-videos-featured-video {
+  margin-bottom: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000392}}
+.view-display-id-featured_video {
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000393}}
+.page-videos .view-display-id-featured_video {
+  margin-right: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000394}}
+.view-display-id-featured_video {
+  padding-right: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000397}}
+.page-videos .pane-views-videos-related-videos-landing .block-inner {
+  margin-top: 0px;
+  margin-left: 20px;
+  padding-left: 0px;
+  padding-bottom: 20px;
+  height: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\00003104}}
+.pane-views-videos-related-videos-landing .block-inner .views-row {
+  width: 50%;
+  float: left;
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\00003108}}
+.pane-views-videos-related-videos-landing .block-inner .views-row .node-video {
+  margin: 0 5px;
+}

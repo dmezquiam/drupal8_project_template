@@ -19,7 +19,10 @@ body.admin-menu { margin-top: 21px !important; }
 /* Increase the body font size on small devices */
 html {
   font-size: 112.5%;
-  background: red;
+}
+
+div.messages {
+	font-size: $font-size-tiny;
 }
 
 /* =============================================================================
@@ -62,7 +65,15 @@ html {
 .block-login-block {
 	margin-bottom: 0px !important;
 }
-
+.block-login-block {
+	width: 208px !important;
+	.block-inner {
+		margin-right: 0;
+		.block-content {
+			padding: 17px 6px 24px 5px;
+		}
+	}
+}
 
 /* =============================================================================
  *   Top BAR
@@ -95,4 +106,46 @@ html {
 .article-item-list {
   @include article-item-list-width (mobile-landscape);
   @include article-item-list ();
+}
+
+
+/* =============================================================================
+ *   TABS
+ * ========================================================================== */
+.content-tabs .block-title { display: none; }
+
+
+/* =============================================================================
+ *   Video landing page
+ * ========================================================================== */
+.pane-jsonblocks-social-block { display: none !important; }
+.pane-fe-videos-fe-videos-search .videos-landing-header { height: 222px; }
+.pane-fe-videos-fe-videos-search .videos-landing-header .header,
+.pane-fe-videos-fe-videos-search .videos-landing-header .topic-select {
+ 	width: 100%;
+ }
+
+//FEATURED VIDEO
+.pane-views-videos-featured-video { margin-bottom: 0px; }
+.view-display-id-featured_video { height: 100%; }
+.view-display-id-featured_video iframe { height: 280px; }
+.page-videos .view-display-id-featured_video { margin-right: 0px; }
+.view-display-id-featured_video { padding-right: 15px; }
+
+//RELATED VIDEOS
+.page-videos .pane-views-videos-related-videos-landing .block-inner {
+	margin-top: 0px;
+	margin-left: 20px;
+	padding-left: 0px;
+	padding-bottom: 20px;
+	height: auto;
+}
+.pane-views-videos-related-videos-landing .block-inner .views-row {
+	width: 50%;
+	float: left;
+	margin-bottom: 0px;
+	.node-video {
+		margin: 0 5px;
+	}
+
 }
