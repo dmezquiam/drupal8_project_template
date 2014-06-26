@@ -5,5 +5,5 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 
-# Ignore sublime tmp files
-.subl*.tmp
+# Ignore databases backups
+database
