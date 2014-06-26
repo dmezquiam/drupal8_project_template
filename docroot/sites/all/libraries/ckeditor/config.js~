@@ -36,7 +36,6 @@ CKEDITOR.editorConfig = function( config ) {
 	// Make dialogs simpler.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
-	// Embed tweets, videos, etc.
-	config.extraPlugins = 'oembed, widget, lineutils, dialog, dialogui, clipboard';
-	//config.allowedContent = true;
+	// According to WYSIWYG_MEDIAEMBED Module -> plugin installed, this line added
+	//config.extraPlugins = 'MediaEmbed';
 };
