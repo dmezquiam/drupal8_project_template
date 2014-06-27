@@ -24,7 +24,7 @@ function fe_news_preprocess_node(&$variables) {
     }
     else {
       $user = user_load($node->uid);
-      $author = $user->name;
+      $author = $user->field_screen_name[LANGUAGE_NONE][0]['value'];
     }
     $variables['author'] = $author;
     if ($variables['teaser']) {
