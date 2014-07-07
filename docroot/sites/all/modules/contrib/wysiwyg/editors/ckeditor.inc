@@ -628,14 +628,6 @@ function wysiwyg_ckeditor_plugins($editor) {
       ),
       'internal' => TRUE,
     ),
-    'oembed' => array(
-      'path' => $editor['library path'] . '/plugins/oembed',
-      'buttons' => array(
-        'oembed' => 'OEmbed',
-      ),
-    'internal' => TRUE,
-    'load' => TRUE
-   )
   );
 
   if (version_compare($editor['installed version'], '3.1.0.4885', '<')) {
