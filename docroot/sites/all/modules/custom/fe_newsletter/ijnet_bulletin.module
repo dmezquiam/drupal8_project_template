@@ -1,0 +1,125 @@
+<?php
+
+/**
+ * Implementation fo hook_nodeapi().
+ */
+function ijnet_bulletin_nodeapi(&$node, $op, $a3, $a4) {
+  global $language;
+
+  if ($op == 'presave' && $node->type == 'bulletin_email' && !$node->nid) {
+
+    // First, attach all non-advertiser content:
+
+    $from = strtotime($node->field_date[0]['value']);
+    $to = strtotime($node->field_date[0]['value2']);
+    $l = $node->language ? db_escape_string($node->language) : $language->language;
+
+    $sql = "SELECT nid FROM {node} n WHERE n.type = '%s' AND (n.created > $from AND n.created < $to OR n.sticky) AND n.status = 1 AND n.language = '$l' ORDER BY n.sticky DESC, n.created DESC";
+
+    $field_type_map = array(
+      'story' => 'field_related_feature',
+      'ijnet_discussion_post' => 'field_related_discussion',
+      'training_opportunity' => 'field_related_opportunities',
+      'post' => 'field_related_feature',
+			'video'	=> 'field_related_feature'
+    );
+
+    foreach ($field_type_map as $type => $field) {
+      $query = db_query($sql, $type);
+      $i = count($node->{$field}) - 1;
+      if ($node->{$field}[$i]['nid']) {
+        $i ++;
+      }
+      while ($row = db_fetch_object($query)) {
+        $node->{$field}[$i]['nid'] = $row->nid;
+        $i ++;
+      }
+    }
+
+
+    // Now attach ads:
+
+    $sql = "SELECT nid FROM {node} n WHERE n.type = 'advertisement' AND n.status = 1 AND n.language = '$l' ORDER BY n.sticky DESC, n.created DESC limit %d";
+    $query = db_query($sql, $node->field_ads[0]['value']);
+    $i = 0;
+    while ($row = db_fetch_object($query)) {
+      $node->field_related_advertisements[$i]['nid'] = $row->nid;
+      $i ++;
+    }
+
+  }
+}
+
+/**
+ *  Implements hook_form_alter().
+ *  Sets constant contact list id for site language
+ **/
+function ijnet_bulletin_form_alter(&$form, &$form_state, $form_id) {
+  global $language;
+
+  // list ids from constant contact
+  $list_id = array(
+    'und' => 1316537398,
+    'en' =>  1316537398,
+    'es' =>  1265529464,
+    'ru' =>  1833122425,
+    'pt-br' => 1485709704,
+    'zh-hans' => 1876266686,
+    'ar' =>  1385780866,
+    'fa' =>  1321747649,
+  );
+  switch ($form_id) {
+    case 'webform_client_form_68184':
+    case 'webform_client_form_69921':
+    case 'webform_client_form_69923':
+    case 'webform_client_form_69584':
+    case 'webform_client_form_69915':
+    case 'webform_client_form_69907':
+    case 'webform_client_form_69938':
+      $form_state['#storage']['list_id'] = $list_id[$language->language];
+      $form['#submit'][] = 'ijnet_bulletin_contact_update';
+      break;
+    default:
+  }
+}
+
+/**
+ * custom submit handler to update constant contact lists
+ **/
+function ijnet_bulletin_contact_update($form, &$form_state) {
+  global $language;
+
+  $lists[] = $form_state['#storage']['list_id'];
+  if ($language->language === 'es') {
+    $user_email = $form_state['values']['submitted'][2];
+    $name = $form_state['values']['submitted'][4];
+  }
+  else {
+    $user_email = $form_state['values']['submitted'][1];
+    $name = $form_state['values']['submitted'][2];
+  }
+
+  $cc = constant_contact_create_object();
+  $cc->set_action_type('contact');
+  $contact = $cc->query_contacts($user_email);
+  if ($contact) {
+  	form_set_error($form_state['values']['form_id'],
+  	  t('Your email address is already subscribed'));
+  }
+  else {
+    // todo: figure out how to get constant contact to accept some
+    // version of name field, this one does nothing
+    $fields = array(
+      'EmailType' => 'HTML',
+      'FirstName' => $name,
+    );
+  	$status = $cc->create_contact($user_email, $lists, $fields);
+    if ($status) {
+      drupal_set_message(t('Success, you are now subscribed to our mailing list'));
+    }
+    else {
+  		form_set_error($form_state['values']['form_id'],
+  		  t('Sorry, there was a problem, please ensure your details are valid and try again'));
+    }
+  }
+}

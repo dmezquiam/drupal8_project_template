@@ -7,3 +7,6 @@ sites/*/private
 
 # Ignore sublime tmp files
 .subl*.tmp
+
+# ignore db backups
+database

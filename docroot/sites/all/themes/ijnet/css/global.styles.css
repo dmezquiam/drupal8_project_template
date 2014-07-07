@@ -445,7 +445,7 @@ ul.links li {
 .nav li a,
 .nav ul.menu li a {
   display: block;
-  margin: 0 30px;
+  margin: 0 15px;
   white-space: nowrap;
   padding: 18px 15px 13px 15px;
   color: white;

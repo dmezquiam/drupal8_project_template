@@ -1,0 +1,165 @@
+<?php
+/**
+ * @file
+ * Code for the Newsletter feature.
+ */
+
+include_once 'fe_newsletter.features.inc';
+
+
+define('FE_NEWSLETTER_MAX_ARTICLES',    20);
+
+/**
+ * Subscribe to newsletter form
+ */
+function fe_newsletter_subscribe_form($form, &$form_state) {
+  // Make these fields required.
+  $form['#attributes']['class'][] = 'subscribe-form';
+  $form['name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Your name'),
+    '#required' => TRUE,
+  );
+  $form['email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Email address'),
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Submit',
+    '#attributes' => array('class'=>array('button-tiny')),
+  );
+  return $form;
+}
+
+function fe_newsletter_subscribe_form_submit($form, &$form_state) {
+
+  global $language;
+
+  // list ids from constant contact
+  // TODO: make configurable
+  $list_id = array(
+    'und' => 1316537398,
+    'en' =>  1316537398,
+    'es' =>  1265529464,
+    'ru' =>  1833122425,
+    'pt-br' => 1485709704,
+    'zh-hans' => 1876266686,
+    'ar' =>  1385780866,
+    'fa' =>  1321747649,
+  );
+
+  $user_email = $form_state['values']['email'];
+  $name       = $form_state['values']['name'];
+
+  $cc = constant_contact_create_object();
+  $cc->set_action_type('contact');
+  $contact = $cc->query_contacts($user_email);
+  if ($contact) {
+    form_set_error($form_state['values']['form_id'],
+      t('Your email address is already subscribed'));
+  }
+  else {
+    // todo: figure out how to get constant contact to accept some
+    // version of name field, this one does nothing
+    $lists = array($list_id[$language->language]);
+    // TODO: sacar hardcode
+    $lists = array(1215755656);
+    $fields = array(
+      'EmailType' => 'HTML',
+      'FirstName' => $name,
+    );
+    $status = $cc->create_contact($user_email, $lists, $fields);
+    if ($status) {
+      drupal_set_message(t('Success, you are now subscribed to our mailing list'));
+    }   
+    else {
+      form_set_error($form_state['values']['form_id'],
+        t('Sorry, there was a problem, please ensure your details are valid and try again'));
+    }   
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ *
+ * Add node news, videos and avertisements to newsletter on save.
+ */
+function fe_newsletter_node_presave($node) {
+
+  // Only handle bulletin emails
+  if ($node->type != 'bulletin_email') {
+    return;
+  }
+
+  $newsletter_lang = $node->language;
+
+  $from_date = isset($node->field_from_date[LANGUAGE_NONE][0]['value']) 
+    ? strtotime($node->field_from_date[LANGUAGE_NONE][0]['value']) : NULL;
+  $to_date  = isset($node->field_to_date[LANGUAGE_NONE][0]['value']) 
+    ? strtotime($node->field_to_date[LANGUAGE_NONE][0]['value']) : NULL;
+
+  $to_date += 24*60*60; // Add a day.
+
+  // query news articles and videos
+  if (TRUE || ! isset($node->nid)) {
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', array('news', 'video'), 'IN')
+      ->propertyCondition('status', 1)
+      ->propertyCondition('language', $newsletter_lang)
+      ->propertyCondition('created', $to_date, '<=')
+      ->propertyCondition('created', $from_date, '>=')
+      ->propertyOrderBy('created', 'DESC')
+      ->range(0, FE_NEWSLETTER_MAX_ARTICLES);
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      // get nids which were specified
+      $last_item = count($node->field_other_content[LANGUAGE_NONE]);
+      $nids = array();
+      if ($last_item > 0) {
+        foreach($node->field_other_content[LANGUAGE_NONE] as $existing_content) {
+          $nids[$existing_content['nid']] = $existing_content['nid'];
+        }
+      }
+
+      // Add other nids
+      $item_nids = array_keys($result['node']);
+      foreach($item_nids as $nid) {
+        $nids[$nid] = $nid;
+      }
+
+      // Overwrite nids
+      $field_content = array();
+      foreach($nids as $nid) {
+        $field_content[] = array('nid' => $nid);
+      }
+      $node->field_other_content[LANGUAGE_NONE] = $field_content;
+    }
+
+    // add advertisements
+    $num_ads = isset($node->field_number_of_advertisements[0]['value']) ? $node->field_number_of_advertisements[0]['value'] : 0;
+
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', array('news', 'video'), 'IN')
+      ->propertyCondition('status', 1)
+      ->propertyCondition('language', $newsletter_lang)
+      ->propertyOrderBy('sticky', 'DESC')
+      ->propertyOrderBy('created', 'DESC')
+      ->range(0, num_ads);
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      // Add other nids
+      $item_nids = array_keys($result['node']);
+      $i = 0;
+      foreach($item_nids as $nid) {
+        $node->field_advertisements[LANGUAGE_NONE][$i++]['nid'] = $nid;
+      }
+    }
+  }
+}
