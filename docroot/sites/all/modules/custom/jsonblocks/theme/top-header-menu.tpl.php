@@ -10,7 +10,7 @@
       <a href="http://icfjanywhere.org" title target="_blank"> ICFJAnywhere.org </a>
     </li>
     <li>
-      <a href="http://www.icfj.org/awards-dinner" title targe="_blank"> ICFJ Awards Dinner </a>
+      <a href="http://www.icfj.org/awards-dinner" title targe="_blank"><?php print t('ICFJ AWARDS DINNER'); ?> </a>
     </li>
   </ul>
 </div>
