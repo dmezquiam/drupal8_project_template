@@ -8,16 +8,17 @@
   </div>
   <div class="topic-select">
     <div class="topic-select-inner">
-      <h3>SEARCH VIDEOS</h3>
+      <h3><?php print t('SEARCH VIDEOS'); ?></h3>
       <select id="topic-dropdown">
-        <option value="" disabled selected style="display:none;">Select a video topic</option>
+        <option value="" disabled selected style="display:none;"><?php print t('Select a video topic'); ?></option>
         <?php foreach ($categories as $id => $category): ?>
           <option value="<?php print $id; ?>"> <?php print $category; ?> </option>
         <?php endforeach ?>
       </select>
       <div class="search">
-        <a href="#" class="button-clean-tiny"> SEARCH </a>
+        <a href="#" class="button-clean-tiny"><?php print t(' SEARCH '); ?></a>
       </div>
     </div>
   </div>
 </div>
+
