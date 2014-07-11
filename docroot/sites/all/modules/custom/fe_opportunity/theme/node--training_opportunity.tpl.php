@@ -107,7 +107,7 @@
   </div>
   <?php if ($page): ?>
     <div>
-      <a href="/opportunities" class="button-normal"> VIEW ALL OPPORTUNITIES </a>
+      <a href="/opportunities" class="button-normal"><?php print t(' VIEW ALL OPPORTUNITIES '); ?></a>
     </div>
   <?php endif ?>
 </div>
