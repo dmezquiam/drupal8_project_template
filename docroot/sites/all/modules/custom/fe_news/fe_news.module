@@ -19,12 +19,13 @@ function fe_news_preprocess_node(&$variables) {
     }
     else if (!empty($node->field_byline)) {
       $user = user_load($node->field_byline[$node->language][0]['uid']);
-      $author = $user->field_screen_name[LANGUAGE_NONE][0]['value'];//$user->name;
+      $author = _fe_news_get_author($user);
     }
     else {
       $user = user_load($node->uid);
-      $author = $user->field_screen_name[LANGUAGE_NONE][0]['value'];
+      $author = _fe_news_get_author($user);
     }
+
     $variables['author'] = $author;
     if ($variables['teaser']) {
       if (strlen($variables['title']) > 66) {
@@ -32,6 +33,13 @@ function fe_news_preprocess_node(&$variables) {
       }
     }
   }
+}
+
+/**
+ * Returns the author name linked to it's profile
+ */
+function _fe_news_get_author($user) {
+  return l($user->field_screen_name[LANGUAGE_NONE][0]['value'],'user/'.$user->uid);
 }
 
 
