@@ -127,7 +127,7 @@ function ijnet_preprocess_comment(&$variables) {
   $variables['created'] = date('m/d/y', $variables['elements']['#node']->created);
   $variables['changed'] = date('m/d/y', $variables['elements']['#node']->created);
 
-  $user = _ijnet_preprocess_comment(user_load($variables['comment']->uid));
+  $user = _ijnet_preprocess_comment_get_user(user_load($variables['comment']->uid));
 
   if ($variables['comment']->pid == 0) {
     $variables['submitted'] = 'Submitted by ' . $user . ' on ' . $variables['created'];
@@ -139,7 +139,7 @@ function ijnet_preprocess_comment(&$variables) {
 
       $variables['submitted'] = 'Submitted by ' . $user . ' on ' . $variables['created'] . ' in response to ';
 
-      $parent_user = _ijnet_preprocess_comment(user_load($parent->uid));
+      $parent_user = _ijnet_preprocess_comment_get_user(user_load($parent->uid));
       $variables['submitted'] .= '<a href="/' . $language->language . '/user/' . $parent->cid . '" title="View user profile." rel="author" class="username" typeof="sioc:UserAccount" property="foaf:name" datatype>' . $parent_user . '</a>';
     }
     else {
@@ -151,7 +151,7 @@ function ijnet_preprocess_comment(&$variables) {
 /**
  * Returns the author name linked to it's profile in a string equal to $variables['author'], only that instead of returning it with the username it does it with the screen name
  */
-function _ijnet_preprocess_comment($user) {
+function _ijnet_preprocess_comment_get_user($user) {
 
   return l($user->field_screen_name[LANGUAGE_NONE][0]['value'],'user/'.$user->uid, array('attributes' =>
             array(
