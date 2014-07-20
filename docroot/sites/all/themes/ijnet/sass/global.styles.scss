@@ -859,12 +859,21 @@ ul.action-links {
   @include block-skin (skin-brown);
 }
 
+.block-skin-light {
+  @include block-skin (skin-light);
+}
+
 // Author Block ================================================================
   .block-about-author {
     .avatar {
       float: right;
-      img {
-        border: solid 3px $color-bg-heading-box-primary;
+      width: 41%;
+      a {
+        display: block;
+        img {
+          width: 100%;
+          border: solid 3px $color-bg-heading-box-primary;
+        }
       }
     }
     .author-name {
@@ -893,6 +902,102 @@ ul.action-links {
     .bio {
       clear: both;
       padding-top: 5px;
+    }
+  }
+
+// Advertusements ==============================================================
+  .view-advertisement {
+    .view-header {
+      h3 {
+        text-align: center;
+        margin: 0;
+        padding: 0px;
+        color: $color-txt-primary;
+        font-size: $font-size-sidebar-x-large;
+        font-weight: normal;
+      }
+      p {
+        margin-bottom: 0px;
+        line-height: $line-height-large;
+        margin-top: 3px;
+      }
+    }
+    .view-content {
+      .advertusement-item-list {
+        margin: 0 17px 20px 17px;
+        border-bottom: 1px solid $color-line;
+        padding-bottom: 20px;
+        p {
+          margin-bottom: 0px;
+        }
+        .views-field-field-image-ad {
+          text-align: center;
+        }
+        .views-field-title {
+          a {
+            font-weight: bold;
+            color: $color-txt-primary;
+          }
+        }
+        .views-field-body {
+          p {
+            color: $color-link-primary;
+          }
+        }
+        &.views-row-first {
+          margin-top: 10px;
+        }
+        &.views-row-last {
+          border-bottom: 0px;
+          padding-bottom: 0px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+// view-cima Block =============================================================
+  .view-id-cima {
+    border: 1px solid $color-line;
+    .view-header {
+      height: 46px;
+      border-bottom: 1px solid $color-line;
+      p { margin-bottom: 0px; }
+    }
+    .cima-item-list {
+      padding: 10px 12px;
+      border-bottom: 1px solid $color-line;
+      .view-content {
+        .views-field-title {}
+      }
+      &.views-row-last {
+        border-bottom: 0px;
+      } 
+    }
+    .view-footer {
+      border-top: 1px solid $color-line;
+      padding: 10px;
+      p {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+// twitter Block ================================================================
+  .view-display-id-tweets_home_block {
+    .view-header {
+      position: relative;
+      p {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        top: 40px;
+        font-size: 17px;
+      }     
+    }
+    .view-content {
+      padding-top: 40px;
     }
   }
 
@@ -1069,6 +1174,9 @@ ul.action-links {
     span {
       color: $color-txt-primary;
     }
+  }
+  img {
+    margin: 0px 10px 10px 10px; 
   }
 }
 
