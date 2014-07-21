@@ -400,7 +400,7 @@ function fe_user_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter your Twitter username here: <em>@yourUserName</em>.',
+    'description' => 'Enter your Twitter username here: <em>yourUserName</em> (do not include the <em>@</em> symbol).',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -440,7 +440,7 @@ function fe_user_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Bio');
-  t('Enter your Twitter username here: <em>@yourUserName</em>.');
+  t('Enter your Twitter username here: <em>yourUserName</em> (do not include the <em>@</em> symbol).');
   t('Job Title');
   t('Languages Spoken');
   t('Organization');
