@@ -42,12 +42,8 @@
      hide($user_profile['twitter']);
      print render($user_profile['user_picture']);
      print render($user_profile);
-     if ($user_profile['field_screen_name']['#object']->field_twitter){
-		print "<b>".t('FOLLOW ON TWITTER') . "</b> ";
-	    print l( drupal_strtoupper($user_profile['field_screen_name']['#object']->field_twitter['und'][0]['value']), 
-	     	"http://www.twitter.com/".$user_profile['field_screen_name']['#object']->field_twitter['und'][0]['value'],
-	     	array('attributes' => array('target'=>'_blank'))
-	     	);
-     }
   ?>
+  <?php if ($twitter_link): ?>
+  	<div class="twitter_link"><?php print t('FOLLOW ON TWITTER'); ?><?php print $twitter_link ?></div>
+  <?php endif; ?>
 </div>
