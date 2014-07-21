@@ -1,8 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Profile feature.
- */
-
-include_once 'fe_profile.features.inc';
-
