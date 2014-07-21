@@ -272,7 +272,7 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_guidelines';
-  $strongarm->value = '';
+  $strongarm->value = 'The picture can not exceed 1024x1024 pixels.';
   $export['user_picture_guidelines'] = $strongarm;
 
   $strongarm = new stdClass();
