@@ -35,9 +35,19 @@
  */
 ?>
 <div class="profile"<?php print $attributes; ?>>
+  <h1 class="title"><?php print render($user_profile['field_screen_name']) ?></h1>
   <?php
      hide($user_profile['user_picture']);
-     print render($user_profile); 
+     hide($user_profile['field_twitter']);
+     hide($user_profile['twitter']);
      print render($user_profile['user_picture']);
+     print render($user_profile);
+     if ($user_profile['field_screen_name']['#object']->field_twitter){
+		print "<b>".t('FOLLOW ON TWITTER') . "</b> ";
+	    print l( drupal_strtoupper($user_profile['field_screen_name']['#object']->field_twitter['und'][0]['value']), 
+	     	"http://www.twitter.com/".$user_profile['field_screen_name']['#object']->field_twitter['und'][0]['value'],
+	     	array('attributes' => array('target'=>'_blank'))
+	     	);
+     }
   ?>
 </div>
