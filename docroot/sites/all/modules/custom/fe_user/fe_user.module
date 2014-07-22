@@ -11,10 +11,11 @@ function fe_user_preprocess_user_profile(&$vars) {
 	$user_profile = $vars['user_profile'];
 	if ($user_profile['field_screen_name']['#object']->field_twitter){
 		
-	    $twitter_link =  l( " @" . drupal_strtoupper($user_profile['field_screen_name']['#object']->field_twitter['und'][0]['value']), 
-	     	"http://www.twitter.com/@".$user_profile['field_screen_name']['#object']->field_twitter['und'][0]['value'],
-	     	array('attributes' => array('target'=>'_blank'))
-	     	);
+    $twitter_link =  l( " @" . drupal_strtoupper($user_profile['field_screen_name']['#object']->field_twitter['und'][0]['value']), 
+     	"http://www.twitter.com/@".$user_profile['field_screen_name']['#object']->field_twitter['und'][0]['value'],
+     	array('attributes' => array('target'=>'_blank'))
+     	);
 	}
 	$vars['twitter_link'] = $twitter_link;
 }
+

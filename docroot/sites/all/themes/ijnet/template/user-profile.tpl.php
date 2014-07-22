@@ -40,10 +40,14 @@
      hide($user_profile['user_picture']);
      hide($user_profile['field_twitter']);
      hide($user_profile['twitter']);
-     print render($user_profile['user_picture']);
      print render($user_profile);
   ?>
   <?php if ($twitter_link): ?>
   	<div class="twitter_link"><?php print t('FOLLOW ON TWITTER'); ?><?php print $twitter_link ?></div>
   <?php endif; ?>
+
+  <?php
+	print render($user_profile['user_picture']);
+  ?>
+
 </div>
