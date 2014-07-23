@@ -15,6 +15,7 @@ define('FE_NEWSLETTER_MAX_ARTICLES',    20);
 function fe_newsletter_subscribe_form($form, &$form_state) {
   // Make these fields required.
   $form['#attributes']['class'][] = 'subscribe-form';
+  $form['#prefix'] = '<div id="form-register-message"></div>';
   $form['name'] = array(
     '#type' => 'textfield',
     '#title' => t('Your name'),
@@ -30,6 +31,11 @@ function fe_newsletter_subscribe_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => 'Submit',
     '#attributes' => array('class'=>array('button-tiny')),
+    '#ajax' => array(
+      'callback' => 'fe_newsletter_subscribe_form_submit',
+      'wrapper' => 'form-register-message'
+    ),
+    '#submit' => array('fe_newsletter_subscribe_form_submit'),
   );
   return $form;
 }
@@ -58,8 +64,7 @@ function fe_newsletter_subscribe_form_submit($form, &$form_state) {
   $cc->set_action_type('contact');
   $contact = $cc->query_contacts($user_email);
   if ($contact) {
-    form_set_error($form_state['values']['form_id'],
-      t('Your email address is already subscribed'));
+    $msg = t('Your email address is already subscribed');
   }
   else {
     // todo: figure out how to get constant contact to accept some
@@ -71,15 +76,21 @@ function fe_newsletter_subscribe_form_submit($form, &$form_state) {
       'EmailType' => 'HTML',
       'FirstName' => $name,
     );
-    $status = $cc->create_contact($user_email, $lists, $fields);
+    //$status = $cc->create_contact($user_email, $lists, $fields);
+    $status = TRUE;
     if ($status) {
-      drupal_set_message(t('Success, you are now subscribed to our mailing list'));
+      $msg = t('Success, you are now subscribed to our mailing list');
     }   
     else {
-      form_set_error($form_state['values']['form_id'],
-        t('Sorry, there was a problem, please ensure your details are valid and try again'));
-    }   
+      $msg = t('Sorry, there was a problem, please ensure your details are valid and try again');
+    }
   }
+  // Process form submission.
+  $commands = array(
+    ajax_command_replace('#form-register-message', $msg),
+  );
+  $replace = array('#type' => 'ajax', '#commands' => $commands);
+  return $replace;
 }
 
 /**
