@@ -87,16 +87,29 @@
     <?php hide($content['comments']);
       hide($content['links']); ?>
     <?php if (!$page) : ?>
+
       <?php print render($content['field_image']); hide($content['field_image']);?>
-      <?php print render($title_prefix); ?>
-        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-      <?php print render($title_suffix); ?>
-      <?php
-        print render($content);
-      ?>
-      <div class="author">
-        <?php print $author; ?> | <?php print $date; ?>
-      </div>
+
+      <?php if ($view_mode == 'short_teaser') : ?>
+        <div class="author">
+          <?php print $author; ?> | <?php print $date; ?>
+        </div>
+        <?php print render($title_prefix); ?>
+          <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+        <?php print render($title_suffix); ?>
+      <?php endif ?>
+      <?php if ($view_mode == 'teaser') : ?>
+        <?php print render($title_prefix); ?>
+          <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+        <?php print render($title_suffix); ?>
+        <?php
+          print render($content);
+        ?>
+        <div class="author">
+          <?php print $author; ?> | <?php print $date; ?>
+        </div>
+      <?php endif ?>
+
     <?php else : ?>
       <div class="author">
         <?php print $author; ?> | <?php print $date; ?>
