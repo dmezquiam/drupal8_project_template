@@ -41,7 +41,7 @@ function fe_opportunity_preprocess_node(&$vars) {
  */
 
 function fe_opportunity_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'views_exposed_form') {
+  if ($form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-opportunities-views-opportunities-landing') {
     $form['field_category_tid']['#options']['All'] = t('Topic');
     $form['field_region_tid']['#options']['All'] = t('Region');
     $form['keys']['#attributes']['placeholder'] = t('Search term...');
