@@ -703,6 +703,11 @@
 
 // Video list =======================================================================
   @mixin video-list ($number-col:3) {
+    .row-first,
+    .row-last {
+      margin: 0 -1.8% 20px -1.8%; 
+      @include clearfix;
+    }
     .video-item {
       float: left;
       width: (100%/$number-col);
@@ -710,20 +715,17 @@
       &.col-first {
         text-align:left;
         .node-video {
-          padding-right: 18%;
-          padding-left: 0px;
         }
       }
       &.col-last {
         text-align:right;
         .node-video {
-          padding-left: 18%;
-          padding-right: 0px;
         }
       }
       .node-video {
-        padding-right: (18%/2);
-        padding-left: (18%/2);
+        padding-right: 5%;
+        padding-left: 5%;
+        img { margin: 0; }
         h2 {
           text-align: left;
           @include head-teaser-list ();

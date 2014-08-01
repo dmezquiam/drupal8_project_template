@@ -1176,7 +1176,7 @@ ul.action-links {
     }
   }
   img {
-    margin: 0px 10px 10px 10px; 
+    //margin: 0px 10px 10px 10px; 
   }
 }
 
@@ -1838,3 +1838,30 @@ div.messages {
  .staff-list {
   @include staff-list ();
  }
+
+
+
+.view-display-id-opportunities_landing {
+  .view-header {
+    margin-bottom: 30px;
+  }  
+}
+
+// ====================================================
+body.i18n-ar {
+  .field-type-taxonomy-term-reference ul.field-items {
+    width: 88%;
+    li { float: right; }
+  }
+  .field-type-taxonomy-term-reference h2.field-label { width: 12%; }
+  
+  .nav li, .nav ul.menu li,
+  .block-login-block,
+  .block-support-ijnet,
+   #branding,
+  .field-type-taxonomy-term-reference ul.field-items,
+  .field-type-taxonomy-term-reference h2.field-label { float: right; }
+
+  #header-wrapper .region-header { float: left; }
+}
+// ====================================================
