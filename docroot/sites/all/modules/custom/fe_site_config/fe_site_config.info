@@ -23,7 +23,6 @@ dependencies[] = taxonomy
 dependencies[] = twitter
 dependencies[] = variable_realm
 dependencies[] = views
-dependencies[] = wysiwyg_filter
 features[context][] = default
 features[context][] = home
 features[context][] = title
