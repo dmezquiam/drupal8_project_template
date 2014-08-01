@@ -224,6 +224,19 @@ $databases = array (
       'prefix' => '',
     ),
   ),
+  'legacy' =>
+  array (
+    'default' =>
+    array (
+      'database' => 'ijnet_legacy',
+      'username' => 'ijnet',
+      'password' => '1jn3tp4$$',
+      'host' => 'localhost',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
 );
 
 /**
