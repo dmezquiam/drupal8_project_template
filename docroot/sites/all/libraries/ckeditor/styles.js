@@ -86,6 +86,12 @@ CKEDITOR.stylesSet.add( 'default', [
 	},
 
 	{
+		name: 'Styled image (center)',
+		element: 'img',
+		attributes: { 'class': 'center' }
+	},
+
+	{
 		name: 'Styled image (right)',
 		element: 'img',
 		attributes: { 'class': 'right' }
