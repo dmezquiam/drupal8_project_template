@@ -1,0 +1,78 @@
+<?php
+
+require_once('ijnet_migrate.terms.inc');
+require_once('ijnet_migrate.users.inc');
+require_once('ijnet_migrate.nodes.inc');
+require_once('ijnet_migrate.comments.inc');
+require_once('parsedown/Parsedown.php');
+
+/**
+* Implementation of hook_flush_caches()
+*/
+function ijnet_migrate_flush_caches() {
+  ijnet_migreate_register_migrations();
+}
+
+/**
+ * Register all D6->D7 migrations
+ */
+function ijnet_migreate_register_migrations() {
+
+  $connection_args = array(
+    'source_connection' => 'legacy',
+    'source_version' => 6,
+  );
+
+  _ijnet_migrate_register_term_migrations($connection_args);
+  _ijnet_migrate_register_user_migrations($connection_args);
+  _ijnet_migrate_register_node_migrations($connection_args);
+  _ijnet_migrate_register_comments_migrations($connection_args);
+}
+
+
+/* The following function makes it easier to define the mappings for
+ * taxonomy term reference fields.
+ * The pre_parent function can't be taken out of the classes, and I don't
+ * want to hack DrupalMigration
+ *
+ * $obj: the DrupalMigration object
+ * $newfield: name of the destination field
+ * $old_vid: vocabulary ID of the legacy vocabulary
+ * $term_migration: machine_name of the source term migration
+ * $defaults: default values for create_term and ignore_case
+ */
+function _ijnet_migrate_post_parent_tax_ref($obj, $newfield, $old_vid, $term_migration, $defaults=array(FALSE, FALSE)) {
+  $obj->addFieldMapping($newfield, $old_vid)
+    ->sourceMigration($term_migration)
+    ->description(t("Maps terms"));
+  $obj->addFieldMapping("${newfield}:source_type", "${newfield}_source_type")
+    ->defaultValue('tid')
+    ->description(t("tid means taxonomy term migration"));
+  $obj->addFieldMapping("${newfield}:create_term", "${newfield}_create_term")
+    ->defaultValue($defaults[0])
+    ->description(t("FALSE to avoid new term creation"));
+  $obj->addFieldMapping("${newfield}:ignore_case", "${newfield}_ignore_case")
+    ->defaultValue($defaults[1])
+    ->description(t("FALSE to take case into account"));
+}
+
+// Users only can use the filters 1 and 5 (filtered html and filterd html embed)
+function _ijnet_migrate_map_format_callback($format_id) {
+  switch ($format_id) {
+    case 1: // filtered html
+    case 5: // filtered html - embed
+      return 'filtered_html';
+    default: // plain text and php code
+      return 'filtered_html';
+  }
+}
+
+/**
+ * Implements hook_migrate_api().
+ */
+function ijnet_migrate_migrate_api() {
+  $api = array(
+    'api' => 2,
+  );
+  return $api;
+}

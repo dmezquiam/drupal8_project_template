@@ -1,0 +1,12 @@
+name = "IJNet Migration"
+core = "7.x"
+description = "IJNet site migration Drupal 6 to Drupal 7"
+package = "IJNet"
+
+dependencies[] = migrate
+dependencies[] = migrate_d2d
+dependencies[] = migrate_extras
+dependencies[] = migrate_ui
+<!-- dependencies[] = migrate_extras_pathauto -->
+dependencies[] = taxonomy
+dependencies[] = i18n
