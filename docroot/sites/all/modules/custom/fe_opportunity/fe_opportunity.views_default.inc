@@ -13,7 +13,7 @@ function fe_opportunity_views_default_views() {
   $view = new view();
   $view->name = 'opportunities_views';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'fe_opportunity';
   $view->base_table = 'node';
   $view->human_name = 'Opportunities Views';
   $view->core = 7;
@@ -32,10 +32,6 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
-  /* Relationship: Content: Entity translation: translations */
-  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
-  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
-  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -61,6 +57,20 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'training_opportunity' => 'training_opportunity',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
+  $handler->display->display_options['filters']['language_1']['table'] = 'node';
+  $handler->display->display_options['filters']['language_1']['field'] = 'language';
+  $handler->display->display_options['filters']['language_1']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
 
   /* Display: Opportunities Landing Block */
@@ -94,11 +104,10 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'training_opportunity' => 'training_opportunity',
   );
-  /* Filter criterion: Entity translation: Language */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
@@ -112,6 +121,12 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'opportunities-item clearfix';
@@ -146,11 +161,10 @@ eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril del
   $handler->display->display_options['filters']['type']['value'] = array(
     'training_opportunity' => 'training_opportunity',
   );
-  /* Filter criterion: Entity translation: Language */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
@@ -160,43 +174,57 @@ eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril del
   $handler->display->display_options['filters']['field_category_tid']['field'] = 'field_category_tid';
   $handler->display->display_options['filters']['field_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_category_tid']['expose']['operator_id'] = 'field_category_tid_op';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['label'] = 'Topic';
   $handler->display->display_options['filters']['field_category_tid']['expose']['operator'] = 'field_category_tid_op';
   $handler->display->display_options['filters']['field_category_tid']['expose']['identifier'] = 'field_category_tid';
   $handler->display->display_options['filters']['field_category_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
+    4 => 0,
+    5 => 0,
   );
   $handler->display->display_options['filters']['field_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_category_tid']['vocabulary'] = 'topic';
+  $handler->display->display_options['filters']['field_category_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_category_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Region (field_region) */
   $handler->display->display_options['filters']['field_region_tid']['id'] = 'field_region_tid';
   $handler->display->display_options['filters']['field_region_tid']['table'] = 'field_data_field_region';
   $handler->display->display_options['filters']['field_region_tid']['field'] = 'field_region_tid';
   $handler->display->display_options['filters']['field_region_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_region_tid']['expose']['operator_id'] = 'field_region_tid_op';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['label'] = 'Region';
   $handler->display->display_options['filters']['field_region_tid']['expose']['operator'] = 'field_region_tid_op';
   $handler->display->display_options['filters']['field_region_tid']['expose']['identifier'] = 'field_region_tid';
   $handler->display->display_options['filters']['field_region_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
+    4 => 0,
+    5 => 0,
   );
+  $handler->display->display_options['filters']['field_region_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'region';
   $handler->display->display_options['filters']['field_region_tid']['hierarchy'] = 1;
-  /* Filter criterion: Search: Search Terms */
-  $handler->display->display_options['filters']['keys']['id'] = 'keys';
-  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
-  $handler->display->display_options['filters']['keys']['field'] = 'keys';
-  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
-  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
-  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
-  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['field_region_tid']['error_message'] = FALSE;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search term...';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
+    4 => 0,
+    5 => 0,
   );
   $handler->display->display_options['path'] = 'opportunities';
 
@@ -287,11 +315,10 @@ eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril del
   $handler->display->display_options['filters']['type']['value'] = array(
     'training_opportunity' => 'training_opportunity',
   );
-  /* Filter criterion: Entity translation: Language */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
@@ -379,11 +406,10 @@ eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril del
   $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
   $handler->display->display_options['filters']['field_deadline_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_deadline_value']['default_date'] = 'now';
-  /* Filter criterion: Entity translation: Language */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
@@ -412,6 +438,29 @@ eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril del
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<div class="buttons"> <a href="/opportunities" class="button-small"> VIEW ALL </a> </div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'training_opportunity' => 'training_opportunity',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Ending soon opportunities home */
   $handler = $view->new_display('block', 'Ending soon opportunities home', 'opportunities_ending_soon_block');
@@ -464,6 +513,13 @@ eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril del
   $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
   $handler->display->display_options['filters']['field_deadline_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_deadline_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $export['opportunities_views'] = $view;
 
   return $export;

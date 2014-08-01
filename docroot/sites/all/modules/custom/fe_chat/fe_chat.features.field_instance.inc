@@ -16,7 +16,7 @@ function fe_chat_field_default_field_instances() {
     'default_value' => array(
       0 => array(
         'summary' => '',
-        'value' => '<p>&lt;iframe src=\'http://embed.scribblelive.com/Embed/v5.aspx?Id=283779\' width=\'550\' height=\'600\' frameborder=\'0\' style=\'border: 1px solid #000\'&gt;&lt;/iframe&gt;</p>
+        'value' => '<p><iframe frameborder="0" height="600" src="http://embed.scribblelive.com/Embed/v5.aspx?Id=351315" width="100%"></iframe></p>
 ',
         'format' => 'full_html',
       ),
@@ -151,8 +151,8 @@ function fe_chat_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
-        'input_format_custom' => '',
+        'input_format' => 'custom',
+        'input_format_custom' => 'M dS, Y - h:i',
         'label_position' => 'above',
         'text_parts' => array(),
         'year_range' => '-3:+3',
@@ -201,6 +201,16 @@ function fe_chat_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'exclude',
+        'manualcrop_thumblist' => FALSE,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),

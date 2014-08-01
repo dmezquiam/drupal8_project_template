@@ -83,10 +83,11 @@ function fe_user_field_group_info() {
     'weight' => '25',
     'children' => array(
       0 => 'field_subscribe',
-      1 => 'timezone',
-      2 => 'contact',
-      3 => 'locale',
-      4 => 'wysiwyg',
+      1 => 'field_topic',
+      2 => 'timezone',
+      3 => 'contact',
+      4 => 'locale',
+      5 => 'wysiwyg',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -115,7 +116,8 @@ function fe_user_field_group_info() {
     'children' => array(
       0 => 'field_screen_name',
       1 => 'field_twitter',
-      2 => 'picture',
+      2 => 'field_location',
+      3 => 'picture',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

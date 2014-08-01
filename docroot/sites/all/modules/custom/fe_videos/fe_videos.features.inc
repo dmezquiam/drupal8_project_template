@@ -39,7 +39,7 @@ function fe_videos_fe_nodequeue_export_fields() {
   $nodequeues['video_landing'] = array(
     'name' => 'video_landing',
     'title' => 'Video Landing',
-    'subqueue_title' => '',
+    'subqueue_title' => 'Video Landing %subqueue',
     'size' => 0,
     'link' => '',
     'link_remove' => '',
@@ -54,7 +54,9 @@ function fe_videos_fe_nodequeue_export_fields() {
     'types' => array(
       0 => 'video',
     ),
-    'roles' => array(),
+    'roles' => array(
+      0 => 'editor',
+    ),
     'count' => 0,
   );
 

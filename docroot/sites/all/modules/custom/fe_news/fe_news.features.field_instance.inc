@@ -24,6 +24,12 @@ function fe_news_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'short_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'smart_trim',
@@ -59,7 +65,7 @@ function fe_news_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 8,
     ),
   );
 
@@ -75,7 +81,13 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
+      ),
+      'short_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -100,7 +112,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 11,
     ),
   );
 
@@ -116,6 +128,12 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 2,
+      ),
+      'short_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -143,7 +161,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 7,
+      'weight' => 11,
     ),
   );
 
@@ -152,13 +170,19 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the user name for the author of this content.',
+    'description' => 'Enter the user name for the author of this content to make the "About the author" block display next to the content.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 10,
+      ),
+      'short_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -184,7 +208,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'user_reference_autocomplete',
-      'weight' => 1,
+      'weight' => 10,
     ),
   );
 
@@ -200,6 +224,12 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 3,
+      ),
+      'short_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -227,7 +257,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 8,
+      'weight' => 12,
     ),
   );
 
@@ -242,7 +272,17 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'news_square',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'short_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'news_wide',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -252,7 +292,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'item_list_img',
+          'image_style' => 'news_wide',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -265,7 +305,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -278,51 +318,83 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 1,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => 0,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_require_cropping' => array(
+          'banner_advertisement' => 0,
+          'banner_home' => 0,
+          'banner_partners' => 0,
+          'news_square' => 'news_square',
+          'news_wide' => 'news_wide',
+        ),
+        'manualcrop_styles_list' => array(
+          'banner_advertisement' => 0,
+          'banner_home' => 0,
+          'banner_partners' => 0,
+          'news_square' => 'news_square',
+          'news_wide' => 'news_wide',
+        ),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 9,
     ),
   );
 
   // Exported field_instance: 'node-news-field_image_show'
   $field_instances['node-news-field_image_show'] = array(
     'bundle' => 'news',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 11,
+      ),
+      'short_teaser' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image_show',
-    'label' => 'Display First Image Automatically',
-    'required' => FALSE,
+    'label' => 'Display Image Automatically',
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 6,
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 10,
     ),
   );
 
@@ -339,6 +411,12 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'settings' => array(),
         'type' => 'node_reference_default',
         'weight' => 4,
+      ),
+      'short_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -364,7 +442,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 3,
+      'weight' => 12,
     ),
   );
 
@@ -381,6 +459,12 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 6,
+      ),
+      'short_teaser' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -400,7 +484,11 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
       'type' => 'options_select',
       'weight' => 12,
     ),
@@ -419,6 +507,12 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'settings' => array(),
         'type' => 'node_reference_default',
         'weight' => 5,
+      ),
+      'short_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -444,7 +538,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 9,
+      'weight' => 13,
     ),
   );
 
@@ -459,7 +553,13 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
+      ),
+      'short_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -498,9 +598,9 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
   t('Body');
   t('By line');
   t('Category');
-  t('Display First Image Automatically');
+  t('Display Image Automatically');
   t('Document');
-  t('Enter the user name for the author of this content.');
+  t('Enter the user name for the author of this content to make the "About the author" block display next to the content.');
   t('Image');
   t('Related Content');
   t('Title');

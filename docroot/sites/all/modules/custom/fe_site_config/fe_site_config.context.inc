@@ -104,6 +104,7 @@ function fe_site_config_context_default_contexts() {
     'path' => array(
       'values' => array(
         '~*videos*' => '~*videos*',
+        '~user/*' => '~user/*',
       ),
     ),
   );
@@ -145,29 +146,29 @@ function fe_site_config_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-news-author_latest_stories' => array(
+          'module' => 'views',
+          'delta' => 'news-author_latest_stories',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'jsonblocks-social-block' => array(
           'module' => 'jsonblocks',
           'delta' => 'social-block',
           'region' => 'sidebar_second',
-          'weight' => NULL,
+          'weight' => '-46',
         ),
         'jsonblocks-latest-posts' => array(
           'module' => 'jsonblocks',
           'delta' => 'latest-posts',
           'region' => 'sidebar_second',
-          'weight' => NULL,
+          'weight' => '-46',
         ),
         'quicktabs-browse_by' => array(
           'module' => 'quicktabs',
           'delta' => 'browse_by',
           'region' => 'sidebar_second',
           'weight' => '-33',
-        ),
-        'views-news-author_latest_stories' => array(
-          'module' => 'views',
-          'delta' => 'news-author_latest_stories',
-          'region' => 'tertiary_content',
-          'weight' => '-10',
         ),
       ),
     ),
