@@ -40,9 +40,11 @@ class IJNetFileMigration extends DrupalFile6Migration {
     $this->fidColumn = $arguments['fid_column'];
     parent::__construct($arguments);
 
-    //We don't want to respect the old directory structure
+    // We don't want to respect the old directory structure
     $this->removeFieldMapping('destination_file');
-    $this->addFieldMapping('destination_file', NULL);
+    $this->removeFieldMapping(NULL, 'filename');
+    $this->addFieldMapping('destination_file', 'filename');
+
     // We should import the files before the users.
     $this->addUnmigratedSources(array('uid'));
   }
@@ -60,6 +62,14 @@ class IJNetFileMigration extends DrupalFile6Migration {
     $query->innerJoin('content_type_profile', 'p', $join_on);
 
     return $query;
+  }
+
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+
+    $row->filename = date('Y-m-d', $row->timestamp) . '/' . $row->filename;
   }
 }
 
@@ -143,8 +153,6 @@ class IJNetUserMigration extends DrupalUser6Migration {
     if (parent::prepareRow($row) === FALSE) {
       return FALSE;
     }
-
-    // drush_print_r($row);die();
 
     if (empty($row->field_screen_name)) {
       $row->field_screen_name = $row->name;

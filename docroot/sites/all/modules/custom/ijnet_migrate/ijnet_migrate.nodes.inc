@@ -130,7 +130,8 @@ class IJNetImageMigration extends DrupalFile6Migration {
     );
 
     $this->removeFieldMapping('destination_file');
-    $this->addFieldMapping('destination_file', NULL);
+    $this->removeFieldMapping(NULL, 'filename');
+    $this->addFieldMapping('destination_file', 'filename');
   }
 
   protected function query() {
@@ -141,10 +142,18 @@ class IJNetImageMigration extends DrupalFile6Migration {
 
     $query->join('content_field_image', 'fi', 'n.nid = fi.nid');
     $query->join('files', 'f', 'fi.field_image_fid = f.fid');
-    $query->fields('f', array('fid', 'uid', 'filepath', 'timestamp'));
+    $query->fields('f', array('fid', 'uid', 'filepath', 'timestamp', 'filename'));
     $query->condition('fi.delta', 0); // Added this becuase some images have multiple values
 
     return $query;
+  }
+
+  public function prepareRow($row) {
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
+
+    $row->filename = date('Y-m-d', $row->timestamp) . '/' . $row->filename;
   }
 
   public static function get_destination_fid($sourceid) {
@@ -274,6 +283,7 @@ class IJNetAdvertisementMigration extends IJNetNodeMigration {
       ->defaultValue('MigrateFileFid');
     $this->addFieldMapping('field_image_ad:preserve_files')
       ->defaultValue(TRUE);
+    $this->addFieldMapping('field_image_show', "field_image_show");
 
     // "3" for taxonomy region and "5" for taxonomy tags
     $this->addUnmigratedSources(array('field_image_show'));
@@ -319,6 +329,7 @@ class IJNetNewsMigration extends IJNetNodeMigration {
       ->defaultValue('MigrateFileFid');
     $this->addFieldMapping('field_image:preserve_files')
       ->defaultValue(TRUE);
+    $this->addFieldMapping('field_image_show', "field_image_show");
 
     $this->pre_parent_tax_ref("field_topic");
     _ijnet_migrate_post_parent_tax_ref($this, "field_topic", 1, "TermsTopic");
@@ -334,6 +345,11 @@ class IJNetNewsMigration extends IJNetNodeMigration {
 
     if (isset($row->field_image_reference[0])) { // If have at least one image
       $row->field_image_reference = array($row->field_image_reference[0]); // Only keep the first image
+    }
+
+    // If the user in field_byline is 1 (admin), change to user 100 (IJNet)
+    if (isset($row->field_byline) && $row->field_byline[0] == 1) {
+      $row->field_byline = 100;
     }
 
     // Replace in the body string the old media string [image: ...]
