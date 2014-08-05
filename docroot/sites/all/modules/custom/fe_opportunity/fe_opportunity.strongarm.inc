@@ -90,13 +90,16 @@ function fe_opportunity_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => 0,
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => 11,
+          'weight' => '11',
         ),
         'language' => array(
-          'weight' => 10,
+          'weight' => '1',
+        ),
+        'locations' => array(
+          'weight' => '12',
         ),
       ),
       'display' => array(
@@ -119,14 +122,17 @@ function fe_opportunity_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_extended_training_opportunity';
-  $strongarm->value = 1;
+  $strongarm->value = '1';
   $export['i18n_node_extended_training_opportunity'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_options_training_opportunity';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'current',
+    1 => 'required',
+  );
   $export['i18n_node_options_training_opportunity'] = $strongarm;
 
   $strongarm = new stdClass();

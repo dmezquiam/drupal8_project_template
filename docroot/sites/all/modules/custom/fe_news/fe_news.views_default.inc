@@ -420,7 +420,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h4 class="block-title"> Latest Stories </h4> ';
+  $handler->display->display_options['header']['area']['content'] = '<h3 class="block-title"> Latest Stories </h3> ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: By line (field_byline) */
@@ -1037,6 +1037,10 @@ if (!empty($node->field_attribution)) {
 else if (!empty($node->field_byline)) {
 	$author = $node->field_byline[$node->language][0][\'uid\'];
 }
+else {
+	$author = $node->uid;
+}
+
 return $author;';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
