@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Admin Dashboards feature.
+ */
+
+include_once 'fe_admin_dashboards.features.inc';
