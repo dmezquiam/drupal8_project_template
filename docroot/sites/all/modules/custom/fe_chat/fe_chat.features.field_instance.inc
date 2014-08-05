@@ -56,7 +56,7 @@ function fe_chat_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 8,
     ),
   );
 
@@ -97,7 +97,7 @@ function fe_chat_field_default_field_instances() {
         'rows' => 4,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 7,
     ),
   );
 
@@ -158,7 +158,7 @@ function fe_chat_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -215,7 +215,7 @@ function fe_chat_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 2,
+      'weight' => 6,
     ),
   );
 
