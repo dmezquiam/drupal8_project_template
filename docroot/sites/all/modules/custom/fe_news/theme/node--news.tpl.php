@@ -88,7 +88,7 @@
       hide($content['links']); ?>
     <?php if (!$page) : ?>
 
-      <?php print render($content['field_image']); hide($content['field_image']);?>
+      <a href="<?php print $node_url; ?>"><?php print render($content['field_image']); hide($content['field_image']);?></a>
 
       <?php if ($view_mode == 'short_teaser') : ?>
         <div class="author">
