@@ -1,0 +1,28 @@
+// ====================================================
+  .field-type-taxonomy-term-reference ul.field-items {
+    width: 88%;
+    li { float: right; }
+  }
+  .field-type-taxonomy-term-reference h2.field-label { width: 12%; }
+  
+
+
+  //FLOAT RIGHT =====>
+  .block-top-header-menu,
+  .nav li, .nav ul.menu li,
+  .block-login-block,
+  .block-support-ijnet,
+   #branding,
+  .field-type-taxonomy-term-reference ul.field-items,
+  .field-type-taxonomy-term-reference h2.field-label { float: right; }
+
+  //FLOAT LEFT <=====
+  .block-lang-dropdown,
+  #header-wrapper .region-header { float: left; }
+// ====================================================
+  
+
+  .block-top-header-menu {
+  	margin-left: 0px;
+  	margin-right: 23px;
+  }

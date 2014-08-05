@@ -1,5 +1,36 @@
 @import "vars";
 
+//  breakpoint
+
+
+  @mixin breakpoint($breakpoint) {
+    @if $breakpoint == "tablet-landscape" {
+      @media (min-width:769px) and (max-width:989px) {
+        @content;
+      }
+    }
+    @if $breakpoint == "tablet-portrait" {
+      @media (min-width:481px) and (max-width:768px) {
+        @content;
+      }
+    }
+    @if $breakpoint == "mobile-landscape" {
+      @media (min-width:0px) and (max-width:480px) {
+        @content;
+      }
+    }
+    @if $breakpoint == "mobile-portrait" {
+      @media (max-width:320px) {
+        @content;
+      }
+    }
+  }
+  @include breakpoint("tablet-landscape") {}
+  @include breakpoint("tablet-portrait") {}
+  @include breakpoint("mobile-landscape") {}
+  @include breakpoint("mobile-portrait") {}
+
+
 // Markup free clearing =============================================================
   // http://www.stubbornella.org/content/2012/05/02/cross-browser-debugging-css/
   @mixin cf {
@@ -777,6 +808,7 @@
       }
     }
     .content {
+      margin-left: 126px;
       p {
         margin-bottom: 0px;
       }
@@ -784,6 +816,17 @@
     .buttons {
       clear: both;
       float: right;
+    }
+    @include breakpoint("mobile-landscape") {
+      .node {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+      }
+      .content {
+        clear: both;
+        padding-top: 12px;
+        margin-left: 0;
+      }
     }
   }
 //===================================================================================

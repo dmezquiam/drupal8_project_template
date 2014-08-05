@@ -830,3 +830,24 @@ header[role=banner],
 .element-hidden {
   display: none;
 }
+
+/* chosen */
+.chosen-container-single {
+  width: 100% !important;
+  .chosen-single {
+    border-radius: 0px;
+    height: 32px;
+    box-shadow: 0px 0px 0px;
+    background: #fff;
+    line-height: 32px;
+    div b { background-position: 0px 7px; }
+  }
+
+  &.chosen-with-drop {
+    .chosen-single {
+      div b {
+        background-position: -18px 7px;
+      }
+    }
+  }
+}

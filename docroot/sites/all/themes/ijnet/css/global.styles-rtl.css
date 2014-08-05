@@ -1,0 +1,36 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\000032}}
+.field-type-taxonomy-term-reference ul.field-items {
+  width: 88%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\000034}}
+.field-type-taxonomy-term-reference ul.field-items li {
+  float: right;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\000036}}
+.field-type-taxonomy-term-reference h2.field-label {
+  width: 12%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\0000317}}
+.block-top-header-menu,
+.nav li, .nav ul.menu li,
+.block-login-block,
+.block-support-ijnet,
+#branding,
+.field-type-taxonomy-term-reference ul.field-items,
+.field-type-taxonomy-term-reference h2.field-label {
+  float: right;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\0000321}}
+.block-lang-dropdown,
+#header-wrapper .region-header {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\0000325}}
+.block-top-header-menu {
+  margin-left: 0px;
+  margin-right: 23px;
+}

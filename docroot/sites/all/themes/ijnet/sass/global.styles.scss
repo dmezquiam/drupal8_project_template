@@ -987,17 +987,72 @@ ul.action-links {
   .view-display-id-tweets_home_block {
     .view-header {
       position: relative;
-      p {
-        position: absolute;
-        width: 100%;
-        text-align: center;
+      .tw-follow {
         margin: 0;
+        text-align: center;
         top: 40px;
         font-size: 17px;
-      }     
+        position: absolute;
+        width: 100%;
+        color: #3c6e8f;
+        a {
+          color: #479FDD;
+        }
+      }
     }
     .view-content {
-      padding-top: 40px;
+      padding: 40px 15px 0px 15px;
+
+      .twitter-status {
+        padding: 0px;
+        margin-bottom: 20px;
+        .avatar {}
+
+        .content-tweet {
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          margin-left: 63px;
+          padding: 10px;
+          position: relative;
+          box-shadow: 0px 1px 2px #ccc;
+
+          &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 13px solid #fff;
+            position: absolute;
+            top: 15px;
+            left: -12px;
+          }
+
+          &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 12px solid #ccc;
+            position: absolute;
+            top: 15px;
+            left: -13px;
+          }
+
+          .timestamp { display: none; }
+          .name-handle { display: none; }
+          .text {
+            margin: 0px;
+            font-size: 13px;
+            line-height: 16px;
+            a { color: #479FDD; }
+          }
+          .actions { display: none; }
+        }
+      }
+
+
     }
   }
 
@@ -1181,6 +1236,12 @@ ul.action-links {
 }
 
 /* News ===================================================================== */
+.view-display-id-news_popular,
+.view-display-id-news_teaser_list {
+  .view-content { @include clearfix; }
+  .view-footer { text-align: right; }
+}
+
 .node-type-news {
   .field-name-field-image {
     float: right;
@@ -1612,7 +1673,7 @@ tr.error {}
 }
 div.messages {
   word-wrap:break-word;
-  display: none; //BORRAAAAAAAAAAAAAAAAAAAAAAR!!!!
+  //display: none; //BORRAAAAAAAAAAAAAAAAAAAAAAR!!!!
 }
 
 /* =============================================================================
@@ -1776,10 +1837,14 @@ div.messages {
   }
   #edit-field-category-tid-wrapper,
   #edit-field-region-tid-wrapper {
-    width: 160px;
-    select {
-      width: 100%;
-    }
+    width: 32%;
+    padding-right: 3%;
+  }
+
+  #edit-title-wrapper {
+    width: 67%;
+    padding: 2% 2% 0 0;
+    input { width: 100%; }
   }
   #edit-keys-wrapper {
     padding-right: 0px;
@@ -1788,7 +1853,9 @@ div.messages {
   }
   .views-submit-button {
     float: right;
-    padding: 10px 0px 0px 0px;
+    padding: 28px 0px 0px 0px;
+    width: 31%;
+    text-align: right;
     .form-submit {
       margin: 0;
     }
@@ -1847,21 +1914,37 @@ div.messages {
   }  
 }
 
-// ====================================================
-body.i18n-ar {
-  .field-type-taxonomy-term-reference ul.field-items {
-    width: 88%;
-    li { float: right; }
-  }
-  .field-type-taxonomy-term-reference h2.field-label { width: 12%; }
-  
-  .nav li, .nav ul.menu li,
-  .block-login-block,
-  .block-support-ijnet,
-   #branding,
-  .field-type-taxonomy-term-reference ul.field-items,
-  .field-type-taxonomy-term-reference h2.field-label { float: right; }
 
-  #header-wrapper .region-header { float: left; }
+/* =============================================================================
+ *   User Profile
+ * ========================================================================== */
+
+.section-users {
+  #content {
+    .profile {
+      @include clearfix;
+      .field-name-field-bio {
+        width: 100%;
+        .field-items { 
+          margin-right: 183px;
+          padding-right: 20px;
+        }
+      }
+      .user-picture {
+        margin: 0px 0 0 -183px;
+        border: 0px;
+        float: right;
+        width: 183px;
+        a { 
+          display: block;
+          line-height: 0em;
+          border: 2px solid;
+        }
+      }
+      .twitter_link {
+        float: left;
+        width: 64%;
+      }
+    }
+  }
 }
-// ====================================================

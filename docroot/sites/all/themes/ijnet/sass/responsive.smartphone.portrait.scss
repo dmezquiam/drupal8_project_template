@@ -124,3 +124,53 @@ div.messages {
 		margin: 0 5px;
 	}
 }
+
+/* =============================================================================
+ *   Opportunities LANDING
+ * ========================================================================== */
+.views-exposed-widgets {
+  #edit-field-category-tid-wrapper,
+  #edit-field-region-tid-wrapper {
+    width: 100%;
+    padding-right: 0%;
+  }
+
+  #edit-title-wrapper {
+    width: 100%;
+    padding: 2% 0% 0 0;
+  }
+  #edit-keys-wrapper {
+    padding-right: 0px;
+    width: 242px;
+  }
+  .views-submit-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =============================================================================
+ *   User Profile
+ * ========================================================================== */
+
+.section-users {
+  #content {
+    .profile {
+      @include clearfix;
+      .field-name-field-bio {
+        width: 100%;
+		clear: both;
+        .field-items { 
+          margin-right: 0px;
+          padding-right: 0px;
+        }
+      }
+      .user-picture {
+        margin: 0px auto 15px auto;
+        float: none;
+        a {}
+      }
+      .twitter_link {}
+    }
+  }
+}
