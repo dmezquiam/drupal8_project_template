@@ -137,6 +137,18 @@ function fe_videos_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2>RECENT VIDEO</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Nodequeue: Queue */
+  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+    'featured_videos' => 'featured_videos',
+    'video_landing' => 0,
+    'advertisements' => 0,
+    'our_partners' => 0,
+    'staff' => 0,
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -160,6 +172,12 @@ function fe_videos_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  /* Filter criterion: Nodequeue: In queue */
+  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filters']['in_queue']['value'] = '0';
 
   /* Display: Featured Video */
   $handler = $view->new_display('block', 'Featured Video', 'featured_video');
@@ -192,8 +210,11 @@ function fe_videos_views_default_views() {
   $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
   $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
   $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-    'video_landing' => 'video_landing',
-    'video_landing_queue' => 0,
+    'featured_videos' => 'featured_videos',
+    'video_landing' => 0,
+    'advertisements' => 0,
+    'our_partners' => 0,
+    'staff' => 0,
   );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Video */
@@ -285,8 +306,11 @@ function fe_videos_views_default_views() {
   $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
   $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
   $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-    'video_landing' => 'video_landing',
-    'video_landing_queue' => 0,
+    'featured_videos' => 'featured_videos',
+    'video_landing' => 0,
+    'advertisements' => 0,
+    'our_partners' => 0,
+    'staff' => 0,
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;

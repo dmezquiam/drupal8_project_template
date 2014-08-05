@@ -30,40 +30,6 @@ function fe_videos_views_api($module = NULL, $api = NULL) {
 }
 
 /**
- * Implements hook_fe_nodequeue_export_fields().
- */
-function fe_videos_fe_nodequeue_export_fields() {
-  $nodequeues = array();
-
-  // Exported nodequeues: video_landing
-  $nodequeues['video_landing'] = array(
-    'name' => 'video_landing',
-    'title' => 'Video Landing',
-    'subqueue_title' => 'Video Landing %subqueue',
-    'size' => 0,
-    'link' => '',
-    'link_remove' => '',
-    'owner' => 'smartqueue_language',
-    'show_in_ui' => 1,
-    'show_in_tab' => 1,
-    'show_in_links' => 0,
-    'reference' => 'a:2:{s:9:"languages";s:7:"enabled";s:16:"language_neutral";i:0;}',
-    'reverse' => 0,
-    'i18n' => 0,
-    'subqueues' => 14,
-    'types' => array(
-      0 => 'video',
-    ),
-    'roles' => array(
-      0 => 'editor',
-    ),
-    'count' => 0,
-  );
-
-  return $nodequeues;
-}
-
-/**
  * Implements hook_node_info().
  */
 function fe_videos_node_info() {
