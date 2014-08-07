@@ -21,29 +21,13 @@
  * 2. Uncomment the required function to use.
  */
 
-
-function ijnet_pager_first(&$variables) {
-	$variables['text'] = '';
-	return theme_pager_first($variables);
-}
-
-function ijnet_pager_last(&$variables) {
-	$variables['text'] = '';
-	return theme_pager_last($variables);
-}
-
-function ijnet_pager_previous(&$variables) {
-	if (!is_numeric($variables['text'])) {
-		$variables['text'] = t('Prev');
-	}
-	return theme_pager_previous($variables);
-}
-
-function ijnet_pager_next(&$variables) {
-	if (!is_numeric($variables['text'])) {
-		$variables['text'] = t('Next');
-	}
-	return theme_pager_next($variables);
+function ijnet_pager(&$variables) {
+  // This way keep the first and last with empty text
+  $variables['tags'][0] = '';
+  $variables['tags'][1] = t('Prev');
+  $variables['tags'][3] = t('Next');
+  $variables['tags'][4] = '';
+  return theme_pager($variables);
 }
 
 function ijnet_preprocess_page(&$vars) {
@@ -70,25 +54,32 @@ function ijnet_preprocess_comment(&$variables) {
       $variables['submitted'] .= '<a href="/' . $language->language . '/user/' . $parent->cid . '" title="View user profile." rel="author" class="username" typeof="sioc:UserAccount" property="foaf:name" datatype>' . $parent_user . '</a>';
     }
     else {
-      $variables['submitted'] = 'Submitted by ' . $user . ' on ' . $variables['created']; 
+      $variables['submitted'] = 'Submitted by ' . $user . ' on ' . $variables['created'];
     }
   }
 }
 
 /**
- * Returns the author name linked to it's profile in a string equal to $variables['author'], only that instead of returning it with the username it does it with the screen name
+ * Returns the author name linked to it's profile in a string equal to
+ * $variables['author'], only that instead of returning it with the
+ * username it does it with the screen name.
  */
 function _ijnet_preprocess_comment_get_user($user) {
 
-  return l($user->field_screen_name[LANGUAGE_NONE][0]['value'],'user/'.$user->uid, array('attributes' =>
-            array(
-              'title' => "View user profile.",
-              'rel' => "author",
-              'class' => "username",
-              'xml:lang' => "",
-              'about'=> 'user/'.$user->uid, 
-              'typeof' => "sioc:UserAccount",
-              'property' => "foaf:name",
-              'datatype' => '',
-            )));
+  $username = $user->name;
+  if (isset($user->field_screen_name[LANGUAGE_NONE][0]['value'])) {
+    $username = $user->field_screen_name[LANGUAGE_NONE][0]['value'];
+  }
+
+  $attributes = array(
+    'title' => "View user profile.",
+    'rel' => "author",
+    'class' => "username",
+    'xml:lang' => "",
+    'about'=> 'user/'.$user->uid,
+    'typeof' => "sioc:UserAccount",
+    'property' => "foaf:name",
+    'datatype' => '',
+  );
+  return l($username, 'user/'.$user->uid, array('attributes' => $attributes));
 }
