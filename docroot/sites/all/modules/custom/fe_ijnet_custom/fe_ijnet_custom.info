@@ -1,0 +1,6 @@
+name = IJNet Custom
+core = 7.x
+package = IJNet
+version = 7.x-1.0
+project = fe_ijnet_custom
+features[features_api][] = api:2
