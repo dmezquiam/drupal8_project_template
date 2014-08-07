@@ -37,6 +37,36 @@ function fe_opportunity_preprocess_node(&$vars) {
 }
 
 /**
+ * Implements hook_options_list().
+ */
+function fe_opportunity_field_widget_form_alter(&$element, &$form_state, $context) {
+  if ($context['field']['type'] == 'taxonomy_term_reference' && $context['field']['settings']['allowed_values'][0]['vocabulary'] == 'topic') {
+    // kpr($element);
+    // kpr($form_state);
+    // kpr($context);
+  }
+}
+
+/**
+ * Implementation of hook_query_term_access_alter().
+ *
+ * Rewrite taxonomy term queries so language selection options are enforced.
+ */
+function fe_opportunity_query_term_access_alter(QueryAlterableInterface $query) {
+  if (module_exists('i18n_taxonomy') && i18n_select_mode('taxonomy') && i18n_select_check_query($query, 'tid') &&
+    ($table_alias = i18n_select_check_table($query, 'taxonomy_term_data', 'tid'))) {
+    $node = menu_get_object();
+    $language = i18n_select_langcodes();
+    if (isset($node)) {
+      $language = $node->language;
+    }
+    $query->condition($table_alias . '.language', $language);
+    // Mark query as altered
+    $query->addTag('i18n_select');
+  }
+}
+
+/**
  * Implements hook_form_alter
  */
 
