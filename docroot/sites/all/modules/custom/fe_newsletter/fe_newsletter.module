@@ -109,43 +109,27 @@ function template_preprocess_ijnet_newsletter(&$vars) {
   $node = $vars['node'];
   $newsletter_fields = array();
 
-  if (empty($node->field_other_content)) {
-    $featured_contents = array();
-  } else {
-    $featured_contents_nids = isset($node->field_other_content[$node->language]) ?
-      $node->field_other_content[$node->language] :
+  $vars['featured_contents'] = _fe_newsletter_get_featured_contents($node);
+  $vars['advertisements'] = _fe_newsletter_get_advertisements($node);
+  $vars['opportunities'] =_fe_newsletter_get_opportunities($node);
+
+  //$vars['newsletter_date'] = _fe_newsletter_get_newsletter_date();
+}
+
+function _fe_newsletter_get_featured_contents($node) {
+  $language = $node->language;
+
+  $featured_contents = array();
+  if (!empty($node->field_other_content)) {
+    $featured_contents_nids = isset($node->field_other_content[$language]) ?
+      $node->field_other_content[$language] :
       $node->field_other_content[LANGUAGE_NONE];
     foreach ($featured_contents_nids as $nid) {
       $featured_contents[] = _fe_newsletter_get_featured_content($nid['nid']);
     }
   }
-  $newsletter_fields['featured_contents'] = $featured_contents;
 
-  if (empty($node->field_advertisements)) {
-    $advertisements = array();
-  } else {
-    $advertisements_nids = isset($node->field_advertisements[$node->language]) ?
-      $node->field_advertisements[$node->language] :
-      $node->field_advertisements[LANGUAGE_NONE];
-    foreach ($advertisements_nids as $nid) {
-      $advertisements[] = _fe_newsletter_get_advertisement($nid['nid']);
-    }
-  }
-  $newsletter_fields['advertisements'] = $advertisements;
-
-  if (empty($node->field_opportunities)) {
-    $opportunities = array();
-  } else {
-    $opportunities_nids = isset($node->field_opportunities[$node->language]) ?
-      $node->field_opportunities[$node->language] :
-      $node->field_opportunities[LANGUAGE_NONE];
-    foreach ($opportunities_nids as $nid) {
-      $opportunities[] = _fe_newsletter_get_opportunity($nid['nid']);
-    }
-  }
-  $newsletter_fields['opportunities'] = _fe_newsletter_classify_opportunities($opportunities);
-
-  $vars['newsletter'] = $newsletter_fields;
+  return $featured_contents;
 }
 
 function _fe_newsletter_get_featured_content($nid) {
@@ -202,29 +186,63 @@ function _fe_newsletter_get_author($nid) {
   return $author;
 }
 
+function _fe_newsletter_get_advertisements($node) {
+  $language = $node->language;
+
+  $advertisements = array();
+  if (empty($node->field_advertisements)) {
+  } else {
+    $advertisements_nids = isset($node->field_advertisements[$language]) ?
+      $node->field_advertisements[$language] :
+      $node->field_advertisements[LANGUAGE_NONE];
+    foreach ($advertisements_nids as $nid) {
+      $advertisements[] = _fe_newsletter_get_advertisement($nid['nid']);
+    }
+  }
+  
+  return $advertisements;
+}
+
 function _fe_newsletter_get_advertisement($nid) {
   $node = node_load($nid);
-  $node_lang = $node->language;
+  $language = $node->language;
 
   $advertisement = new stdClass();
   if (empty($node->field_image)) {
     $advertisement->image = NULL;
   } else {
-    $advertisement->image = isset($node->field_image[$node_lang]) ?
-      $node->field_image[$node_lang][0]['uri'] :
+    $advertisement->image = isset($node->field_image[$language]) ?
+      $node->field_image[$language][0]['uri'] :
       $node->field_image[LANGUAGE_NONE][0]['uri'];
   }
   $advertisement->title = $node->title;
   if (empty($node->body)) {
     $advertisement->summary = NULL;
   } else {
-    $advertisement->summary = isset($node->body[$node_lang]) ?
-      $node->body[$node_lang][0]['safe_summary'] :
+    $advertisement->summary = isset($node->body[$language]) ?
+      $node->body[$language][0]['safe_summary'] :
       $node->body[LANGUAGE_NONE][0]['safe_summary'];
   }
-  $advertisement->link = '/'.$node_lang.'/' . drupal_get_path_alias('node/'.$nid, $node_lang);
+  $advertisement->link = '/'.$node_lang.'/' . drupal_get_path_alias('node/'.$nid, $language);
 
   return $advertisement;
+}
+
+function _fe_newsletter_get_opportunities($node) {
+  $language = $node->language;
+
+  $opportunities = array();
+  if (!empty($node->field_opportunities)) {
+    $opportunities_nids = isset($node->field_opportunities[$language]) ?
+      $node->field_opportunities[$language] :
+      $node->field_opportunities[LANGUAGE_NONE];
+    foreach ($opportunities_nids as $nid) {
+      $opportunities[] = _fe_newsletter_get_opportunity($nid['nid']);
+    }
+  }
+  $classified_opportunities = _fe_newsletter_classify_opportunities($opportunities);
+
+  return $classified_opportunities;
 }
 
 function _fe_newsletter_get_opportunity($nid) {
@@ -262,7 +280,8 @@ function _fe_newsletter_get_opportunity($nid) {
 function _fe_newsletter_classify_opportunities($opportunities) {
   $classified_opportunities = array();
   $region_vocabulary = taxonomy_vocabulary_machine_name_load('region');
-  $worldwide = taxonomy_get_tree($region_vocabulary->vid, $parent = 0, $max_depth = 1)[0];
+  $taxonomy_tree = taxonomy_get_tree($region_vocabulary->vid, $parent = 0, $max_depth = 1);
+  $worldwide = $taxonomy_tree[0];
   $continents = taxonomy_get_tree($region_vocabulary->vid, $worldwide->tid, $max_depth = 1);
 
   $classified_opportunities[$worldwide->name] = array();
