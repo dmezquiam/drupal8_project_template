@@ -15,7 +15,7 @@ function fe_newsletter_field_default_field_instances() {
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This is an optional text that can be added to the top of the newsletter. Leave blank if you don\'t want to use it.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -39,7 +39,7 @@ function fe_newsletter_field_default_field_instances() {
     'label' => 'Intro',
     'required' => 0,
     'settings' => array(
-      'display_summary' => 1,
+      'display_summary' => 0,
       'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -48,7 +48,7 @@ function fe_newsletter_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -68,7 +68,7 @@ function fe_newsletter_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 2,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -94,7 +94,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -115,7 +115,7 @@ function fe_newsletter_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 4,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -126,8 +126,8 @@ function fe_newsletter_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_from_date',
-    'label' => 'From date',
-    'required' => 0,
+    'label' => 'Dates',
+    'required' => 1,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',
@@ -141,19 +141,19 @@ function fe_newsletter_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - g:i:sa',
+        'input_format' => 'Y-m-d H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-bulletin_email-field_news'
-  $field_instances['node-bulletin_email-field_news'] = array(
+  // Exported field_instance: 'node-bulletin_email-field_number_of_advertisements'
+  $field_instances['node-bulletin_email-field_number_of_advertisements'] = array(
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
     'deleted' => 0,
@@ -161,10 +161,15 @@ function fe_newsletter_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'node_reference',
-        'settings' => array(),
-        'type' => 'node_reference_default',
-        'weight' => 1,
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -174,22 +179,22 @@ function fe_newsletter_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_news',
-    'label' => 'News',
+    'field_name' => 'field_number_of_advertisements',
+    'label' => 'Number of Advertisements to display',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'max' => 20,
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'node_reference',
-      'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'node_reference_autocomplete',
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
       'weight' => 3,
     ),
   );
@@ -232,28 +237,23 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-bulletin_email-field_to_date'
-  $field_instances['node-bulletin_email-field_to_date'] = array(
+  // Exported field_instance: 'node-bulletin_email-field_other_content'
+  $field_instances['node-bulletin_email-field_other_content'] = array(
     'bundle' => 'bulletin_email',
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'News articles and videos you wouuld like to include in this newsletter. If you do not specify anything here then only articles and videos created in the specified time period will be added to the newsletter.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 5,
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -263,41 +263,36 @@ function fe_newsletter_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_to_date',
-    'label' => 'To date',
+    'field_name' => 'field_other_content',
+    'label' => 'Featured Content',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'date',
+      'module' => 'node_reference',
       'settings' => array(
-        'increment' => 15,
-        'input_format' => 'm/d/Y - g:i:sa',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
       ),
-      'type' => 'date_popup',
-      'weight' => 8,
+      'type' => 'node_reference_autocomplete',
+      'weight' => 2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Advertisements');
-  t('From date');
+  t('Dates');
+  t('Featured Content');
   t('Intro');
-  t('News');
+  t('News articles and videos you wouuld like to include in this newsletter. If you do not specify anything here then only articles and videos created in the specified time period will be added to the newsletter.');
+  t('Number of Advertisements to display');
   t('Opportunities');
-  t('To date');
+  t('This is an optional text that can be added to the top of the newsletter. Leave blank if you don\'t want to use it.');
 
   return $field_instances;
 }

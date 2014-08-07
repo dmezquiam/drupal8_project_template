@@ -21,7 +21,7 @@ function fe_newsletter_node_info() {
     'bulletin_email' => array(
       'name' => t('Bulletin email'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Use this content type to create newsletters that will be sent to IJNET user.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

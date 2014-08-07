@@ -10,7 +10,307 @@ include_once 'fe_newsletter.features.inc';
 define('FE_NEWSLETTER_MAX_ARTICLES',    20);
 
 /**
+ * Implements hook_menu()
+ */
+function fe_newsletter_menu() {
+  $items['email-bulletin/%'] = array(
+    'page callback' => 'ijnet_newsletter_callback',
+    'page arguments' => array(1),
+    'access arguments' => TRUE,
+  );
+  $items['email-bulletin-content/%'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('fe_newsletter_content_form'),
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+function ijnet_newsletter_callback($nid) {
+  $node = node_load($nid);
+
+  if ($node->type != 'bulletin_email') {
+    drupal_goto('<front>');
+  }
+
+  // TODO: delivery callback
+  print theme('ijnet_newsletter', array('node' => node_load($nid)));
+}
+
+
+/**
+ * Implements hook_theme()
+ */
+function fe_newsletter_theme() {
+  $themes = array(
+
+    'ijnet_newsletter' => array(
+      'variables' => array(
+        'node' => NULL,
+      ),
+      'template' => 'ijnet-newsletter',
+      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+    ),
+
+    'ijnet_newsletter_featured_contents' => array(
+      'variables' => array(
+        'featured_contents' => NULL
+      ),
+      'template' => 'ijnet-newsletter-featured-contents',
+      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+    ),
+    'ijnet_newsletter_featured_content' => array(
+      'variables' => array(
+        'featured_content' => NULL
+      ),
+      'template' => 'ijnet-newsletter-featured-content',
+      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+    ),
+
+    'ijnet_newsletter_advertisements' => array(
+      'variables' => array(
+        'advertisements' => NULL
+      ),
+      'template' => 'ijnet-newsletter-advertisements',
+      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+    ),
+    'ijnet_newsletter_advertisement' => array(
+      'variables' => array(
+        'advertisement' => NULL
+      ),
+      'template' => 'ijnet-newsletter-advertisement',
+      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+    ),
+
+    'ijnet_newsletter_opportunities' => array(
+      'variables' => array(
+        'opportunities' => NULL
+      ),
+      'template' => 'ijnet-newsletter-opportunities',
+      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+    ),
+    'ijnet_newsletter_opportunity' => array(
+      'variables' => array(
+        'opportunity' => NULL
+      ),
+      'template' => 'ijnet-newsletter-opportunity',
+      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+    ),
+  );
+
+  return $themes;
+}
+
+/**
+ * Implements template_preprocess_hook()
+ */
+function template_preprocess_ijnet_newsletter(&$vars) {
+  $node = $vars['node'];
+  $newsletter_fields = array();
+
+  if (empty($node->field_other_content)) {
+    $featured_contents = array();
+  } else {
+    $featured_contents_nids = isset($node->field_other_content[$node->language]) ?
+      $node->field_other_content[$node->language] :
+      $node->field_other_content[LANGUAGE_NONE];
+    foreach ($featured_contents_nids as $nid) {
+      $featured_contents[] = _fe_newsletter_get_featured_content($nid['nid']);
+    }
+  }
+  $newsletter_fields['featured_contents'] = $featured_contents;
+
+  if (empty($node->field_advertisements)) {
+    $advertisements = array();
+  } else {
+    $advertisements_nids = isset($node->field_advertisements[$node->language]) ?
+      $node->field_advertisements[$node->language] :
+      $node->field_advertisements[LANGUAGE_NONE];
+    foreach ($advertisements_nids as $nid) {
+      $advertisements[] = _fe_newsletter_get_advertisement($nid['nid']);
+    }
+  }
+  $newsletter_fields['advertisements'] = $advertisements;
+
+  if (empty($node->field_opportunities)) {
+    $opportunities = array();
+  } else {
+    $opportunities_nids = isset($node->field_opportunities[$node->language]) ?
+      $node->field_opportunities[$node->language] :
+      $node->field_opportunities[LANGUAGE_NONE];
+    foreach ($opportunities_nids as $nid) {
+      $opportunities[] = _fe_newsletter_get_opportunity($nid['nid']);
+    }
+  }
+  $newsletter_fields['opportunities'] = _fe_newsletter_classify_opportunities($opportunities);
+
+  $vars['newsletter'] = $newsletter_fields;
+}
+
+function _fe_newsletter_get_featured_content($nid) {
+  $node = node_load($nid);
+  $node_lang = $node->language;
+
+  $featured_content = new stdClass();
+  if (empty($node->field_image)) {
+    $featured_content->image = NULL;
+  } else {
+    $featured_content->image = isset($node->field_image[$node_lang]) ?
+      $node->field_image[$node_lang][0]['uri'] :
+      $node->field_image[LANGUAGE_NONE][0]['uri'];
+  }
+  if (empty($node->title_field)) {
+    $featured_content->title = NULL;
+  } else {
+    $featured_content->title = isset($node->title_field[$node_lang]) ?
+      $node->title_field[$node_lang][0]['safe_value'] :
+      $node->title_field[LANGUAGE_NONE][0]['safe_value'];
+  }
+  if (empty($node->summary)) {
+    $featured_content->summary = NULL;
+  } else {
+    $featured_content->title = isset($node->body[$node_lang]) ?
+      $node->body[$node_lang][0]['safe_summary'] :
+      $node->body[LANGUAGE_NONE][0]['safe_summary'];
+  }
+  $featured_content->author = _fe_newsletter_get_author($nid);
+  $featured_content->link = '/'.$node_lang.'/' . drupal_get_path_alias('node/'.$nid, $node_lang);
+
+  return $featured_content;
+}
+
+function _fe_newsletter_get_author($nid) {
+  $node = node_load($nid);
+  $node_lang = $node->language;
+
+  if (!empty($node->field_attribution)) {
+    $author = (isset($node->field_attribution[$node_lang])) ?
+      $node->field_attribution[$node_lang][0]['safe_value'] :
+      $node->field_attribution[LANGUAGE_NONE][0]['safe_value'];
+  } else {
+    if (!empty($node->field_byline)) {
+      $user = (isset($node->field_byline[$node_lang])) ?
+      user_load($node->field_byline[$node_lang][0]['uid']) :
+      user_load($node->field_byline[LANGUAGE_NONE][0]['uid']);
+    } else {
+      $user = user_load($node->uid);
+    }
+    $author = l($user->field_screen_name[LANGUAGE_NONE][0]['safe_value'],'user/'.$user->uid);
+  }
+
+  return $author;
+}
+
+function _fe_newsletter_get_advertisement($nid) {
+  $node = node_load($nid);
+  $node_lang = $node->language;
+
+  $advertisement = new stdClass();
+  if (empty($node->field_image)) {
+    $advertisement->image = NULL;
+  } else {
+    $advertisement->image = isset($node->field_image[$node_lang]) ?
+      $node->field_image[$node_lang][0]['uri'] :
+      $node->field_image[LANGUAGE_NONE][0]['uri'];
+  }
+  $advertisement->title = $node->title;
+  if (empty($node->body)) {
+    $advertisement->summary = NULL;
+  } else {
+    $advertisement->summary = isset($node->body[$node_lang]) ?
+      $node->body[$node_lang][0]['safe_summary'] :
+      $node->body[LANGUAGE_NONE][0]['safe_summary'];
+  }
+  $advertisement->link = '/'.$node_lang.'/' . drupal_get_path_alias('node/'.$nid, $node_lang);
+
+  return $advertisement;
+}
+
+function _fe_newsletter_get_opportunity($nid) {
+  $node = node_load($nid);
+  $node_lang = $node->language;
+
+  $opportunity = new stdClass();
+  $opportunity->title = $node->title;
+  if (empty($node->body)) {
+    $opportunity->summary = NULL;
+  } else {
+    $opportunity->summary = isset($node->body[$node_lang]) ?
+      $node->body[$node_lang][0]['safe_summary'] :
+      $node->body[LANGUAGE_NONE][0]['safe_summary'];
+  }
+  if (empty($node->deadline_date)) {
+    $opportunity->deadline_date = NULL;
+  } else {
+    $opportunity->deadline_date = isset($node->deadline_date[$node_lang]) ?
+      $node->deadline_date[$node_lang][0]['value'] :
+      $node->deadline_date[LANGUAGE_NONE][0]['value'];
+  }
+  if (empty($node->field_region)) {
+    $opportunity->tid = NULL;
+  } else {
+    $opportunity->tid = isset($node->field_region[$node_lang]) ?
+      $node->field_region[$node_lang][0]['tid'] :
+      $node->field_region[LANGUAGE_NONE][0]['tid'];
+  }
+  $opportunity->link = '/'.$node_lang.'/' . drupal_get_path_alias('node/'.$nid, $node_lang);
+
+  return $opportunity;
+}
+
+function _fe_newsletter_classify_opportunities($opportunities) {
+  $classified_opportunities = array();
+  $region_vocabulary = taxonomy_vocabulary_machine_name_load('region');
+  $worldwide = taxonomy_get_tree($region_vocabulary->vid, $parent = 0, $max_depth = 1)[0];
+  $continents = taxonomy_get_tree($region_vocabulary->vid, $worldwide->tid, $max_depth = 1);
+
+  $classified_opportunities[$worldwide->name] = array();
+  foreach ($continents as $continent) {
+    $classified_opportunities[$continent->name] = array();
+  }
+
+  foreach ($opportunities as $opportunity) {
+    $opportunity->tid = isset($opportunity->tid) ? 
+      $opportunity->tid :
+      $worldwide->tid;
+    $opportunities_parents = taxonomy_get_parents_all($opportunity->tid);
+    $index = 0;
+    if (sizeof($opportunities_parents) > 1) {
+      $index = sizeof($opportunities_parents) - 2;
+    }
+    $classified_opportunities[$opportunities_parents[$index]->name][] = $opportunity;
+  }
+
+  return $classified_opportunities;
+}
+
+function fe_newsletter_content_form($form, &$form_state) {
+  $nid = arg(1);
+  $node = node_load($nid);
+  $node_lang = $node->language;
+  $newsletter_content = theme('ijnet_newsletter', array('node' => $node));
+  $newsletter_link = 
+    '<div id="newsletter-link"><a href="' . 
+    '/'. $node_lang .'/email-bulletin/' .  $nid . 
+    '" target="_blank">' . t("View the Newsletter") . '</a></div>';
+
+  $form['newsletter_content'] = array(
+    '#type' => 'textarea',
+    '#title' => t(''),
+    '#description' => t(''),
+    '#default_value' => $newsletter_content,
+    '#rows' => 20,
+    '#field_prefix' => $newsletter_link,
+  );
+
+  return $form;
+}
+
+/**
  * Subscribe to newsletter form
+ *
+ * Form submits via AJAX. See: https://www.drupal.org/node/2081275
  */
 function fe_newsletter_subscribe_form($form, &$form_state) {
   // Make these fields required.
@@ -174,3 +474,4 @@ function fe_newsletter_node_presave($node) {
     }
   }
 }
+
