@@ -27,8 +27,12 @@ function fe_opportunity_preprocess_node(&$vars) {
     if ($node->field_deadline && isset($node->field_deadline)) {
       global $language;
       $date = $node->field_deadline[$language->language][0]['value'];
+      //kpr(date('M j', $date));
       $vars['deadline_month'] = date('M j', $date);
       $vars['deadline_year'] = date('Y', $date);
+    }else{
+      $vars['deadline_month'] = t('ROLLING');
+      $vars['deadline_year'] = '';
     }
     $vars['path'] = url('node/' . $node->nid);
   }
