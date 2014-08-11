@@ -34,13 +34,11 @@ function fe_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'smart_trim',
         'settings' => array(
-          'more_link' => 0,
+          'more_link' => FALSE,
           'more_text' => 'Read more',
-          'summary_handler' => 'trim',
+          'summary_handler' => 'full',
           'trim_length' => 125,
-          'trim_options' => array(
-            'text' => 'text',
-          ),
+          'trim_options' => array(),
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),
