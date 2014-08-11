@@ -361,7 +361,7 @@ function fe_videos_views_default_views() {
   $handler->display->display_options['arguments']['field_category_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_category_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_category_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'videos/category';
+  $handler->display->display_options['path'] = 'videos/topic';
   $export['videos'] = $view;
 
   return $export;
