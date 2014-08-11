@@ -60,6 +60,38 @@ function fe_opportunity_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'fe_opportunities_ending_soon';
+  $context->description = '';
+  $context->tag = 'fe_opportunity';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'opportunities/ending-soon' => 'opportunities/ending-soon',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-5a74a557add7142cb4c834387df35b61' => array(
+          'module' => 'views',
+          'delta' => '5a74a557add7142cb4c834387df35b61',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('fe_opportunity');
+  $export['fe_opportunities_ending_soon'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'fe_opportunities_landing';
   $context->description = '';
   $context->tag = 'fe_opportunity';
@@ -67,12 +99,19 @@ function fe_opportunity_context_default_contexts() {
     'path' => array(
       'values' => array(
         'opportunities*' => 'opportunities*',
+        '~opportunities/ending-soon' => '~opportunities/ending-soon',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-7ac668674197309dfe2ee4f316d2672d' => array(
+          'module' => 'views',
+          'delta' => '7ac668674197309dfe2ee4f316d2672d',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
         'jsonblocks-social-block' => array(
           'module' => 'jsonblocks',
           'delta' => 'social-block',
