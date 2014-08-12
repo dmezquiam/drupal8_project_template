@@ -44,7 +44,7 @@
                         <tr>
                           <td valign="top">
 
-                            <p style="margin:10px 0 13px;font-family:Arial,sans-serif;font-size:13px;line-height:20px;text-transform:uppercase;color:#ffffff;-webkit-text-size-adjust:none;">Weekly Bulletin<br /><span style="font-size:14px;font-weight:bold;"><?php print $newsletter_date; ?></p>
+                            <p style="margin:10px 0 13px;font-family:Arial,sans-serif;font-size:13px;line-height:20px;text-transform:uppercase;color:#ffffff;-webkit-text-size-adjust:none;">Weekly Bulletin<br /><span style="font-size:14px;font-weight:bold;"><?php print $newsletter_date; ?></span></p>
 
                           </td>
                         </tr>
