@@ -31,7 +31,6 @@ function ijnet_pager(&$variables) {
 }
 
 function ijnet_preprocess_page(&$vars) {
-//  kpr($vars);
 }
 
 function ijnet_preprocess_comment(&$variables) {
