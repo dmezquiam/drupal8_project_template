@@ -12,6 +12,111 @@ function fe_admin_dashboards_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-dashboard_content_header'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'machine_name' => 'dashboard_content_header',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ijnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ijnet',
+        'weight' => 0,
+      ),
+      'shiny' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shiny',
+        'weight' => 0,
+      ),
+      'shinytech' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shinytech',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Content Header',
+    'visibility' => 0,
+  );
+
+  $export['block-dashboard_staff_member_header'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'machine_name' => 'dashboard_staff_member_header',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ijnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ijnet',
+        'weight' => 0,
+      ),
+      'shiny' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shiny',
+        'weight' => 0,
+      ),
+      'shinytech' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shinytech',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Staff member header',
+    'visibility' => 0,
+  );
+
+  $export['block-dashboard_taxonomies_header'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'machine_name' => 'dashboard_taxonomies_header',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'admin/dashboard/taxonomies',
+    'roles' => array(),
+    'themes' => array(
+      'ijnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ijnet',
+        'weight' => 0,
+      ),
+      'shiny' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shiny',
+        'weight' => 0,
+      ),
+      'shinytech' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shinytech',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Taxonomies',
+    'visibility' => 1,
+  );
+
   $export['menu-menu-dashboard'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -90,6 +195,41 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ijnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ijnet',
+        'weight' => 0,
+      ),
+      'shiny' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shiny',
+        'weight' => 0,
+      ),
+      'shinytech' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shinytech',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['quicktabs-dashboard_taxonomies_quicktab'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'dashboard_taxonomies_quicktab',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'quicktabs',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
