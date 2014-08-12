@@ -62,9 +62,6 @@ function fe_videos_block_view($delta) {
     $options = array();
     foreach ($result as $term) {
       $options[$term->tid] = $term->name;
-      //if ($term->language == $language->language) {
-      //  $options[$term->tid] = $term->name;
-      //}
       asort($options);
     }
     $vars = array(
