@@ -41,6 +41,20 @@ function fe_videos_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => 'videos/topic*',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'brick_66_33';
@@ -62,6 +76,13 @@ function fe_videos_default_page_manager_pages() {
       'brick_66_33_second' => NULL,
       'brick_66_33_left_below' => NULL,
       'brick_66_33_right_below' => NULL,
+      'two_brick_top' => NULL,
+      'two_brick_left_above' => NULL,
+      'two_brick_right_above' => NULL,
+      'two_brick_middle' => NULL,
+      'two_brick_left_below' => NULL,
+      'two_brick_right_below' => NULL,
+      'two_brick_bottom' => NULL,
     ),
   );
   $display->cache = array();

@@ -29,15 +29,15 @@ function fe_videos_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-news-top_story' => array(
-          'module' => 'views',
-          'delta' => 'news-top_story',
+        'jsonblocks-social-block' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'social-block',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'views-videos-block_1' => array(
+        'views-news-top_story' => array(
           'module' => 'views',
-          'delta' => 'videos-block_1',
+          'delta' => 'news-top_story',
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
