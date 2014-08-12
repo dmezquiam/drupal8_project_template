@@ -188,6 +188,43 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_location'
+  $field_instances['user-user-field_location'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'location_cck',
+        'settings' => array(),
+        'type' => 'location_default',
+        'weight' => 12,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_location',
+    'label' => 'Location',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'location_cck',
+      'settings' => array(),
+      'type' => 'location',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_organization_name'
   $field_instances['user-user-field_organization_name'] = array(
     'bundle' => 'user',
@@ -352,6 +389,45 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_short_bio'
+  $field_instances['user-user-field_short_bio'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This information will be displayed next to your news articles.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_short_bio',
+    'label' => 'Short bio',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 25,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_subscribe'
   $field_instances['user-user-field_subscribe'] = array(
     'bundle' => 'user',
@@ -392,6 +468,46 @@ function fe_user_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_topic'
+  $field_instances['user-user-field_topic'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_topic',
+    'label' => 'Area of Interest',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 24,
     ),
   );
 
@@ -439,16 +555,20 @@ function fe_user_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Area of Interest');
   t('Bio');
   t('Enter your Twitter username here: <em>yourUserName</em> (do not include the <em>@</em> symbol).');
   t('Job Title');
   t('Languages Spoken');
+  t('Location');
   t('Organization');
   t('Organization Website');
   t('Personal website, blog, or other ways to connect online');
   t('Resume');
   t('Screen Name');
+  t('Short bio');
   t('Subscribe to Weekly Bulletin');
+  t('This information will be displayed next to your news articles.');
   t('Twitter username');
 
   return $field_instances;

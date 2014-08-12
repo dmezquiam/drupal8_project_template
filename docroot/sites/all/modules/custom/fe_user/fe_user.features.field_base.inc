@@ -130,6 +130,92 @@ function fe_user_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_location'
+  $field_bases['field_location'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_location',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'lid' => array(
+        0 => 'lid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'location_cck',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'gmap_macro' => '[gmap ]',
+      'gmap_marker' => 'drupal',
+      'location_settings' => array(
+        'display' => array(
+          'hide' => array(
+            'additional' => 0,
+            'city' => 0,
+            'coords' => 0,
+            'country' => 0,
+            'country_name' => 0,
+            'locpick' => 0,
+            'map_link' => 0,
+            'name' => 0,
+            'postal_code' => 0,
+            'province' => 0,
+            'province_name' => 0,
+            'street' => 0,
+          ),
+        ),
+        'form' => array(
+          'fields' => array(
+            'additional' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => -98,
+            ),
+            'city' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => -95,
+            ),
+            'country' => array(
+              'collect' => 1,
+              'default' => 'us',
+              'weight' => -97,
+            ),
+            'locpick' => array(
+              'collect' => 0,
+              'weight' => -93,
+            ),
+            'name' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => -100,
+            ),
+            'postal_code' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => -94,
+            ),
+            'province' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => -96,
+              'widget' => 'autocomplete',
+            ),
+            'street' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => -99,
+            ),
+          ),
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'location',
+  );
+
   // Exported field_base: 'field_organization_name'
   $field_bases['field_organization_name'] = array(
     'active' => 1,
@@ -252,6 +338,33 @@ function fe_user_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_short_bio'
+  $field_bases['field_short_bio'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_short_bio',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_subscribe'
