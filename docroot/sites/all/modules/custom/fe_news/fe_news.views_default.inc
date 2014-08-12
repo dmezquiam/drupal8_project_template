@@ -28,6 +28,10 @@ function fe_news_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '7';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   /* Field: Content: Title */
@@ -1014,12 +1018,26 @@ function fe_news_views_default_views() {
   $handler->display->display_options['fields']['field_bio']['table'] = 'field_data_field_bio';
   $handler->display->display_options['fields']['field_bio']['field'] = 'field_bio';
   $handler->display->display_options['fields']['field_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_bio']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_bio']['alter']['max_length'] = '60';
   $handler->display->display_options['fields']['field_bio']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_bio']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_bio']['element_class'] = 'bio';
   $handler->display->display_options['fields']['field_bio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_bio']['element_default_classes'] = FALSE;
+  /* Field: User: Short bio */
+  $handler->display->display_options['fields']['field_short_bio']['id'] = 'field_short_bio';
+  $handler->display->display_options['fields']['field_short_bio']['table'] = 'field_data_field_short_bio';
+  $handler->display->display_options['fields']['field_short_bio']['field'] = 'field_short_bio';
+  $handler->display->display_options['fields']['field_short_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_short_bio']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_short_bio']['alter']['text'] = '[field_short_bio][field_twitter]';
+  $handler->display->display_options['fields']['field_short_bio']['alter']['max_length'] = '60';
+  $handler->display->display_options['fields']['field_short_bio']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_short_bio']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_short_bio']['element_class'] = 'bio';
+  $handler->display->display_options['fields']['field_short_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_short_bio']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: User: Uid */

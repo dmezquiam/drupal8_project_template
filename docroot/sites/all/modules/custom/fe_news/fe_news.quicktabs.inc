@@ -23,13 +23,13 @@ function fe_news_quicktabs_default_quicktabs() {
       'vid' => 'news_search_block',
       'display' => 'browse_by_category',
       'args' => '',
-      'title' => 'CATEGORY',
+      'title' => 'TOPIC',
       'weight' => '-100',
       'type' => 'view',
     ),
     1 => array(
-      'vid' => 'view_search_block_user',
-      'display' => 'browse_author',
+      'vid' => 'last_posts_authors',
+      'display' => 'block',
       'args' => '',
       'title' => 'AUTHOR',
       'weight' => '-99',
@@ -44,7 +44,7 @@ function fe_news_quicktabs_default_quicktabs() {
   // Included for use with string extractors like potx.
   t('AUTHOR');
   t('BROWSE BY');
-  t('CATEGORY');
+  t('TOPIC');
 
   $export['browse_by'] = $quicktabs;
 
