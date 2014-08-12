@@ -86,19 +86,17 @@ function fe_opportunity_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_category',
-    'label' => 'Category',
+    'label' => 'Topic',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 10,
@@ -188,7 +186,7 @@ function fe_opportunity_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_text',
+      'type' => 'date_popup',
       'weight' => 4,
     ),
   );
@@ -224,11 +222,10 @@ function fe_opportunity_field_default_field_instances() {
     'label' => 'Deadline',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
-      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -242,7 +239,7 @@ function fe_opportunity_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_text',
+      'type' => 'date_popup',
       'weight' => 3,
     ),
   );
@@ -427,7 +424,6 @@ Begin typing the title of the the related content to see a list of matching arti
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Category');
   t('Cost');
   t('Date');
   t('Deadline');
@@ -437,6 +433,7 @@ Begin typing the title of the the related content to see a list of matching arti
   t('Organization');
   t('Region');
   t('Related Content');
+  t('Topic');
 
   return $field_instances;
 }

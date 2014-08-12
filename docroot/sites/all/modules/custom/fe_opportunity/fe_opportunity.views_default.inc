@@ -39,11 +39,6 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -112,8 +107,8 @@ function fe_opportunity_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
 
-  /* Display: Opportunities Landing */
-  $handler = $view->new_display('page', 'Opportunities Landing', 'opportunities_landing');
+  /* Display: Opportunities Landing (page - borrar) */
+  $handler = $view->new_display('page', 'Opportunities Landing (page - borrar)', 'opportunities_landing');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'RECENT OPPORTUNITIES FOR JOURNALISTS';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
@@ -729,17 +724,7 @@ eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril del
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="buttons"> <a href="/opportunities" class="button-small"> VIEW ALL </a> </div>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Deadline (field_deadline) */
-  $handler->display->display_options['sorts']['field_deadline_value']['id'] = 'field_deadline_value';
-  $handler->display->display_options['sorts']['field_deadline_value']['table'] = 'field_data_field_deadline';
-  $handler->display->display_options['sorts']['field_deadline_value']['field'] = 'field_deadline_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -756,12 +741,6 @@ eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril del
   $handler->display->display_options['filters']['type']['value'] = array(
     'training_opportunity' => 'training_opportunity',
   );
-  /* Filter criterion: Content: Deadline (field_deadline) */
-  $handler->display->display_options['filters']['field_deadline_value']['id'] = 'field_deadline_value';
-  $handler->display->display_options['filters']['field_deadline_value']['table'] = 'field_data_field_deadline';
-  $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
-  $handler->display->display_options['filters']['field_deadline_value']['operator'] = '>';
-  $handler->display->display_options['filters']['field_deadline_value']['default_date'] = 'now';
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
