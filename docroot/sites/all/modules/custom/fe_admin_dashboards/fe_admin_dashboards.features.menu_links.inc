@@ -30,22 +30,22 @@ function fe_admin_dashboards_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: menu-dashboard_edit-queues:admin/dashboard
-  $menu_links['menu-dashboard_edit-queues:admin/dashboard'] = array(
+  // Exported menu link: menu-dashboard_nodequeues:admin/dashboard/nodequeues
+  $menu_links['menu-dashboard_nodequeues:admin/dashboard/nodequeues'] = array(
     'menu_name' => 'menu-dashboard',
-    'link_path' => 'admin/dashboard',
-    'router_path' => 'admin/dashboard',
-    'link_title' => 'Edit queues',
+    'link_path' => 'admin/dashboard/nodequeues',
+    'router_path' => 'admin/dashboard/nodequeues',
+    'link_title' => 'Nodequeues',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-dashboard_edit-queues:admin/dashboard',
+      'identifier' => 'menu-dashboard_nodequeues:admin/dashboard/nodequeues',
     ),
     'module' => 'menu',
-    'hidden' => 0,
+    'hidden' => 1,
     'external' => 0,
-    'has_children' => 1,
+    'has_children' => 0,
     'expanded' => 1,
     'weight' => -49,
     'customized' => 1,
@@ -53,7 +53,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Create content');
-  t('Edit queues');
+  t('Nodequeues');
 
 
   return $menu_links;
