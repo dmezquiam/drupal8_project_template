@@ -13,7 +13,10 @@
       <h4><?php print t("Subscribe to our email bulletin"); ?></h4>
 			</div>
 			<div class="inner-dropdown">
-        <?php print drupal_render(drupal_get_form('fe_newsletter_subscribe_form')) ?>
+        <?php
+          $form = drupal_get_form('fe_newsletter_subscribe_form');
+          print drupal_render($form);
+        ?>
 			</div>
 		</div>
 	</div>

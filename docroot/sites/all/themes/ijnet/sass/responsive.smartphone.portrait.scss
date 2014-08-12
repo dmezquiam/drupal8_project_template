@@ -73,11 +73,16 @@ div.messages {
 }
 
 /* =============================================================================
- *   Video Page Layout
+ *   Item list
  * ========================================================================== */
 
 .article-item-list {
   @include article-item-list-width (mobile-portrait);
+  @include article-item-list ();
+}
+
+.article-item-list-no-body {
+  @include article-item-list-width-no-body (mobile-portrait);
   @include article-item-list ();
 }
 

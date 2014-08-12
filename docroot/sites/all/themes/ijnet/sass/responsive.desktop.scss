@@ -14,10 +14,15 @@
 
 
  /* =============================================================================
- *   Video Page Layout
+ *   Item list
  * ========================================================================== */
 
 .article-item-list {
   @include article-item-list-width (desktop);
+  @include article-item-list ();
+}
+
+.article-item-list-no-body {
+  @include article-item-list-width-no-body (desktop);
   @include article-item-list ();
 }

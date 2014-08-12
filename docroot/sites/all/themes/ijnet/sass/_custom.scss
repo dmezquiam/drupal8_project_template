@@ -207,7 +207,7 @@
 
 // buttons ==========================================================================
   //color options: color-brown or color-black
-    @mixin buttons ($border-radius:12px, $color:color-brown, $size:normal){
+    @mixin buttons ($border-radius:12px, $color:"color-brown", $size:"normal"){
       font-family: $signika-Regular;
       text-transform: uppercase;
       color: $color-bt-txt;
@@ -412,6 +412,16 @@
           padding-left: 15px;
           margin-top: 10px
         }
+      }
+    }
+    .view-footer {
+      text-align: right;
+      background: $color-line;
+      .read-more {
+        text-transform: uppercase;
+        padding: 1px 10px;
+        color: #fff;
+        &:hover { color: $color-heading-secondary; }
       }
     }
     @if $style == "skin-default" {
@@ -660,12 +670,58 @@
     @if $device == "desktop" {
       width: $article-item-list-width-desktop;
       float: left;
-      height: 337px;
+      height: 370px;
       .content {
         &:nth-child(odd) { margin-right: 10px; }
         &:nth-child(even)  { margin-right: 0px; }
       }
+    } @else if $device == "tablet-landscape" {
+      width: $article-item-list-width-tablet-landscape;
+      float: left;
+      height: auto;
+      .content {
+        &:nth-child(odd) { margin-right: 10px; }
+        &:nth-child(even)  { margin-right: 0px; }
+      }
+    } @else if $device == "tablet-portrait" {
+      width: $article-item-list-width-tablet-portrait;
+      float: left;
+      height: auto;
+      .content {
+        &:nth-child(odd) { margin-right: 10px; }
+        &:nth-child(even)  { margin-right: 0px; }
+      }
+    } @else if $device == "mobile-landscape" {
+      width: $article-item-list-width-mobile-landscape;
+      float: left;
+      height: auto;
+      .content {
+        &:nth-child(odd) { margin-right: 10px; }
+        &:nth-child(even)  { margin-right: 0px; }
+      }
+    } @else if $device == "mobile-portrait" {
+      width: $article-item-list-width-mobile-portrait;
+      float: left;
+      height: auto;
+      .content {
+        &:nth-child(odd) { margin-right: 0px; }
+        &:nth-child(even)  { margin-right: 0px; }
+      }
+    }
+  }
+//===================================================================================
 
+// Article list width no body =======================================================
+  @mixin article-item-list-width-no-body ($device) {
+    &:nth-child(odd) { clear: left; }
+    @if $device == "desktop" {
+      width: $article-item-list-width-desktop;
+      float: left;
+      height: 270px;
+      .content {
+        &:nth-child(odd) { margin-right: 10px; }
+        &:nth-child(even)  { margin-right: 0px; }
+      }
     } @else if $device == "tablet-landscape" {
       width: $article-item-list-width-tablet-landscape;
       float: left;
@@ -715,6 +771,8 @@
       color: $color-link-primary;
       line-height: $line-height-article-title;
       margin:5px 5px 7px 5px;
+      max-height: 60px;
+      overflow: hidden;
       a { color: $color-link-primary; }
     }
 
@@ -722,6 +780,8 @@
     .field-name-body {
       margin:0px 5px 8px 5px;
       line-height: $line-height-article-text;
+      max-height: 95px;
+      overflow: hidden;
     }
 
     //author

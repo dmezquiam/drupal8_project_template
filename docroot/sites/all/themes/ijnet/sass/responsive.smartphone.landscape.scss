@@ -100,7 +100,7 @@ div.messages {
 /* =========================================================================== */
 
 /* =============================================================================
- *   Video Page Layout
+ *   Item list
  * ========================================================================== */
 
 .article-item-list {
@@ -108,6 +108,10 @@ div.messages {
   @include article-item-list ();
 }
 
+.article-item-list-no-body {
+  @include article-item-list-width-no-body (mobile-landscape);
+  @include article-item-list ();
+}
 
 /* =============================================================================
  *   TABS
