@@ -56,6 +56,7 @@ function fe_user_field_group_info() {
       1 => 'field_bio',
       2 => 'field_blog',
       3 => 'field_languages_spoken',
+      4 => 'field_short_bio',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

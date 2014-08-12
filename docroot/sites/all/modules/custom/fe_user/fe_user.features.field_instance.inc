@@ -50,7 +50,7 @@ function fe_user_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 13,
+      'weight' => 26,
     ),
   );
 
@@ -104,7 +104,7 @@ function fe_user_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 15,
+      'weight' => 28,
     ),
   );
 
@@ -184,7 +184,7 @@ function fe_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 29,
     ),
   );
 
@@ -306,7 +306,7 @@ function fe_user_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 14,
+      'weight' => 27,
     ),
   );
 
