@@ -1,4 +1,3 @@
-
   <!-- // Begin Module: Top Image with Content \\ -->
   <table border="0" cellpadding="20" cellspacing="0" width="100%">
     <tr>
@@ -16,4 +15,3 @@
     </tr>
   </table>
   <!-- // End Module: Top Image with Content \\ -->
-
