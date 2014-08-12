@@ -32,9 +32,9 @@ function fe_site_config_context_default_contexts() {
           'region' => 'leaderboard',
           'weight' => '-10',
         ),
-        'lang_dropdown-language_content' => array(
+        'lang_dropdown-language' => array(
           'module' => 'lang_dropdown',
-          'delta' => 'language_content',
+          'delta' => 'language',
           'region' => 'leaderboard',
           'weight' => '-9',
         ),
