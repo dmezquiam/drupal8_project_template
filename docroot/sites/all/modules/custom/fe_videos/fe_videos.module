@@ -45,12 +45,26 @@ function fe_videos_block_view($delta) {
   if ($delta == 'fe_videos_search') {
     $vocabulary = taxonomy_vocabulary_machine_name_load('topic');
     $terms = taxonomy_get_tree($vocabulary->vid, 0, null, true);
-    $options = array();
     global $language;
-    foreach ($terms as $term) {
-      if ($term->language == $language->language) {
-        $options[$term->tid] = $term->name;
-      }
+
+    $query = db_select('taxonomy_term_data', 'd');
+    $query->join('taxonomy_index', 'i', 'd.tid = i.tid');
+    $query->join('node', 'n', 'i.nid = n.nid');
+    $query
+      ->condition('d.vid', 3)
+      ->condition('n.type', 'video')
+      ->condition('n.language', $language->language)
+      ->fields('d', array('tid', 'name'))
+      ->groupBy('d.tid');
+
+    $result = $query->execute()->fetchAll();
+
+    $options = array();
+    foreach ($result as $term) {
+      $options[$term->tid] = $term->name;
+      //if ($term->language == $language->language) {
+      //  $options[$term->tid] = $term->name;
+      //}
       asort($options);
     }
     $vars = array(
