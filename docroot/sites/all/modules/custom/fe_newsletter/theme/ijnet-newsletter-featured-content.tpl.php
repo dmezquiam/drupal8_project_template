@@ -3,7 +3,7 @@
     <tr>
       <td valign="top">
 <?php if (isset($featured_content->image)) : ?>
-        <?php print(theme('image_style', array('style_name' => 'featured_small_img', 'path' => $featured_content->image)))?>
+        <?php print theme('image_style', array('style_name' => 'featured_newsletter_img', 'path' => $featured_content->image)); ?>
 <?php endif; ?>
         <h4 style="color:#265775;font-size: 14px; margin:0;padding:10px 0 2px;"><a href="<?php print($featured_content->link)?>"><?php print($featured_content->title)?></a></h4>
         <p style="padding:0;margin:0;"><?php print($featured_content->summary)?></p>
