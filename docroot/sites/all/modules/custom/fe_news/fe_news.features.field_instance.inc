@@ -473,7 +473,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topic',
-    'label' => 'Category',
+    'label' => 'Topic',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -484,8 +484,6 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
       ),
       'type' => 'options_select',
       'weight' => 12,
@@ -595,13 +593,13 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
   t('Audio Files');
   t('Body');
   t('By line');
-  t('Category');
   t('Display Image Automatically');
   t('Document');
   t('Enter the user name for the author of this content to make the "About the author" block display next to the content.');
   t('Image');
   t('Related Content');
   t('Title');
+  t('Topic');
   t('Use this field to give attribution to an author that does not have a user account on IJNet.org. <br />
 Example: "John Doe, Editor at Global Publishing, Inc."');
   t('Video');
