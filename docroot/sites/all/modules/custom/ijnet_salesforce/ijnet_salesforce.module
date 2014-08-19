@@ -1,0 +1,112 @@
+<?php
+/**
+ * @file
+ * Code for the Contact form.
+ */
+ 
+function ijnet_salesforce_menu() {
+  $items['contact-ijnet'] = array(
+    'title' => 'IJNET Contact',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ijnet_salesforce_contact_form'),
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+
+function ijnet_salesforce_contact_form($form, &$form_state) {
+  $form['first_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('First Name'),
+    '#size' => 60,
+    '#required' => TRUE,
+  );
+  $form['last_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Last Name'),
+    '#size' => 60,
+    '#required' => TRUE,
+  );
+  $form['organization_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Organiztion Name'),
+    '#size' => 60,
+    '#required' => TRUE,
+  );
+  $form['position'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Position'),
+    '#size' => 60,
+    '#required' => TRUE,
+  );
+  $form['personal_email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Personal Email'),
+    '#size' => 60,
+    '#required' => TRUE,
+  );
+  $form['work_email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Work Email'),
+    '#size' => 60,
+    '#required' => FALSE,
+  );
+  $form['mobile'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mobile'),
+    '#size' => 60,
+    '#required' => FALSE,
+  );
+  $form['twitter_handle'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Twitter Handle'),
+    '#size' => 60,
+    '#required' => FALSE,
+  );
+  $form['mailing_address'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mailing Address'),
+    '#size' => 60,
+    '#required' => FALSE,
+  );
+  $form['city'] = array(
+    '#type' => 'textfield',
+    '#title' => t('City'),
+    '#size' => 60,
+    '#required' => TRUE,
+  );
+  $form['country'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Country'),
+    '#size' => 60,
+    '#required' => TRUE,
+  );
+  $form['receive_updates'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Receive updates'),
+    '#required' => TRUE,
+    '#description' => t("Yes! I would like to receive updates and information from IJNet's producing organization, the International Center for Journalists. &nbsp;Do not check this box if you only want your information shared with IJNet.")
+  );
+  $form['terms'] = array(
+    '#type' => 'item',
+    '#title' => t('**The International Center for Journalists (ICFJ) is committed to safeguarding your privacy. ICFJ does not share information collected on the Web site with third parties.*')
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+
+  return $form;
+}
+
+function ijnet_salesforce_contact_form_submit($form, &$form_state) {
+}
+
+function ijnet_salesforce_preprocess_page(&$vars, $hook) {
+  global $language;
+  if ($language->language == 'en') {
+    drupal_add_js(drupal_get_path('module', 'ijnet_salesforce') . '/js/ijnet_salesforce.js');
+  }
+}
