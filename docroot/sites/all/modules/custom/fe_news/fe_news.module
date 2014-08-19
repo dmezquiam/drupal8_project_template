@@ -19,11 +19,11 @@ function fe_news_preprocess_node(&$variables) {
     }
     else if (!empty($node->field_byline)) {
       $user = user_load($node->field_byline[$node->language][0]['uid']);
-      $author = _fe_news_get_author($user);
+      $author = _fe_news_get_author_link($user);
     }
     else {
       $user = user_load($node->uid);
-      $author = _fe_news_get_author($user);
+      $author = _fe_news_get_author_link($user);
     }
 
     $variables['author'] = $author;
@@ -33,7 +33,7 @@ function fe_news_preprocess_node(&$variables) {
 /**
  * Returns the author name linked to it's profile
  */
-function _fe_news_get_author($user) {
+function _fe_news_get_author_link($user) {
   return l($user->field_screen_name[LANGUAGE_NONE][0]['value'],'user/'.$user->uid);
 }
 
@@ -43,12 +43,21 @@ function _fe_news_get_author($user) {
  */
 
 function fe_news_theme() {
-  return array(
+  $themes = array(
     'node__news' => array(
       'variables' => array('node' => array()),
       'template' => 'theme/node--news',
     ),
+    'last_posts_authors' => array(
+      'variables' => array(
+        'authors' => NULL,
+      ),
+      'template' => 'last-posts-authors',
+      'path' => drupal_get_path('module', 'fe_news') . '/theme',
+    ),
   );
+
+  return $themes;
 }
 
 /**
@@ -57,6 +66,9 @@ function fe_news_theme() {
 
 function fe_news_block_info() {
   $blocks = array();
+
+  $blocks['last_posts_authors']  = array('info' => 'Gets authors for the last 10 posts.');
+
   return $blocks;
 }
 
@@ -67,7 +79,63 @@ function fe_news_block_info() {
 function fe_news_block_view($delta = '') {
   $block = array();
   $vars = array();
+
+  if ($delta == 'last_posts_authors') {
+    $block = array(
+      'subjet' => NULL,
+      'content' => _fe_news_get_last_posts_authors(),
+    );
+  }
+
   return $block;
+}
+
+function _fe_news_get_last_posts_authors() {
+  $authors = array();
+
+  $view = views_get_view('last_posts');
+  if ($view) {
+    $view->set_display('block');
+    $view->execute();
+    foreach($view->result as $content){
+      $authors[] = _fe_news_get_author($content->nid);
+    }
+  }
+
+  return theme('last_posts_authors', array('authors' => $authors));
+}
+
+function _fe_news_get_author($nid) {
+  $node = node_load($nid);
+  $language = $node->language;
+
+  $author = new stdClass();
+  if (!empty($node->field_attribution)) {
+    $author->name = (isset($node->field_attribution[$language])) ?
+      $node->field_attribution[$language][0]['safe_value'] :
+      $node->field_attribution[LANGUAGE_NONE][0]['safe_value'];
+  } else {
+    if (!empty($node->field_byline)) {
+      $user = (isset($node->field_byline[$language])) ?
+      user_load($node->field_byline[$language][0]['uid']) :
+      user_load($node->field_byline[LANGUAGE_NONE][0]['uid']);
+    } else {
+      $user = user_load($node->uid);
+    }
+    $author->uid = $user->uid;
+    $author->name = $user->field_screen_name[LANGUAGE_NONE][0]['safe_value'];
+    //$author->link = l($user->field_screen_name[LANGUAGE_NONE][0]['value'],'user/'.$user->uid);
+    $author->link = '';
+    $author->avatar = isset($user->picture) ? $user->picture->uri : null ;
+    $author->job = isset($user->field_job_title[LANGUAGE_NONE]) ?
+      $user->field_job_title[LANGUAGE_NONE][0]['safe_value'] : null;
+    $author->organization = isset($user->field_organization_name[LANGUAGE_NONE]) ?
+      $user->field_organization_name[LANGUAGE_NONE][0]['safe_value'] : null;
+  }
+
+  //kpr($author);
+
+  return $author;
 }
 
 /**

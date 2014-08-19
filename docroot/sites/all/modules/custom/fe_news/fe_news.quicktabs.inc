@@ -28,12 +28,11 @@ function fe_news_quicktabs_default_quicktabs() {
       'type' => 'view',
     ),
     1 => array(
-      'vid' => 'last_posts_authors',
-      'display' => 'block',
-      'args' => '',
+      'bid' => 'fe_news_delta_last_posts_authors',
+      'hide_title' => 1,
       'title' => 'AUTHOR',
       'weight' => '-99',
-      'type' => 'view',
+      'type' => 'block',
     ),
   );
   $quicktabs->renderer = 'quicktabs';

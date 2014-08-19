@@ -114,14 +114,6 @@ function fe_news_context_default_contexts() {
   $context->description = '';
   $context->tag = 'Video';
   $context->conditions = array(
-    'node' => array(
-      'values' => array(
-        'video' => 'video',
-      ),
-      'options' => array(
-        'node_form' => '0',
-      ),
-    ),
     'path' => array(
       'values' => array(
         'videos/topic*' => 'videos/topic*',
