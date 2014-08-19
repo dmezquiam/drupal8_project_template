@@ -373,7 +373,7 @@ function fe_videos_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['empty']['area_text_custom']['content'] = 'There are no videos in this category.';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Category (field_category) */
+  /* Contextual filter: Content: Topic (field_category) */
   $handler->display->display_options['arguments']['field_category_tid']['id'] = 'field_category_tid';
   $handler->display->display_options['arguments']['field_category_tid']['table'] = 'field_data_field_category';
   $handler->display->display_options['arguments']['field_category_tid']['field'] = 'field_category_tid';

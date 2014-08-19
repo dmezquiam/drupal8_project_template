@@ -76,7 +76,7 @@ function fe_videos_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_category',
-    'label' => 'Category',
+    'label' => 'Topic',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -189,8 +189,8 @@ function fe_videos_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Category');
   t('Title');
+  t('Topic');
   t('Video');
 
   return $field_instances;
