@@ -5,12 +5,19 @@
  */
 
 /**
+ * Implements hook_menu_alter()
+ */
+function fe_ijnet_custom_menu_alter(&$items) {
+  $items['user/%user']['title callback'] = '_fe_ijnet_custom_menu_user_custom_title';
+}
+
+/**
  * Implements hook_query_term_access_alter().
  *
  * Rewrite taxonomy term queries so language selection options are enforced.
  * Override the behaviour of module i18n_select
  */
-function fe_opportunity_query_term_access_alter(QueryAlterableInterface $query) {
+function fe_ijnet_custom_query_term_access_alter(QueryAlterableInterface $query) {
   if (module_exists('i18n_taxonomy') && i18n_select_mode('taxonomy') && i18n_select_check_query($query, 'tid') &&
     ($table_alias = i18n_select_check_table($query, 'taxonomy_term_data', 'tid'))) {
     $language = i18n_select_langcodes();
@@ -26,4 +33,19 @@ function fe_opportunity_query_term_access_alter(QueryAlterableInterface $query) 
     // Mark query as altered
     $query->addTag('i18n_select');
   }
+}
+
+function _fe_ijnet_custom_menu_user_custom_title($account) {
+  if (is_object($account)) {
+    // Call the default user module function format_username
+    // Take in account that this perform a drupal_alter, so if needed rewrite his behaviour too
+    $name = format_username($account);
+    if (!empty($account->field_screen_name)) {
+      // Update the user name with the screen user name
+      $name = $account->field_screen_name[LANGUAGE_NONE][0]['value'];
+    }
+    return $name;
+  }
+
+  return '';
 }
