@@ -51,5 +51,37 @@ function fe_basic_page_context_default_contexts() {
   t('Basic Pages');
   $export['fe_basic_pages_detail'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'knight_media_innovators';
+  $context->description = '';
+  $context->tag = 'Basic Pages';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'knight-media-innovators' => 'knight-media-innovators',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-news-block_1' => array(
+          'module' => 'views',
+          'delta' => 'news-block_1',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Basic Pages');
+  $export['knight_media_innovators'] = $context;
+
   return $export;
 }
