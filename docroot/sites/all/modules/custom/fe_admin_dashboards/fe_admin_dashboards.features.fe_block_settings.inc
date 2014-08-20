@@ -257,6 +257,183 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['views-64f0e23d3fe27a31b7c1ae60f305b693'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => '64f0e23d3fe27a31b7c1ae60f305b693',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ijnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ijnet',
+        'weight' => 0,
+      ),
+      'shiny' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shiny',
+        'weight' => 0,
+      ),
+      'shinytech' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shinytech',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-f930ac3e5ff3b8d26889295145938d8d'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'f930ac3e5ff3b8d26889295145938d8d',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(
+      'blogger' => 5,
+    ),
+    'themes' => array(
+      'ijnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ijnet',
+        'weight' => 0,
+      ),
+      'shiny' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shiny',
+        'weight' => 0,
+      ),
+      'shinytech' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shinytech',
+        'weight' => -39,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['views-last_content-block_1'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'last_content-block_1',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ijnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ijnet',
+        'weight' => 0,
+      ),
+      'shiny' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shiny',
+        'weight' => 0,
+      ),
+      'shinytech' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shinytech',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-last_content-block_2'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'last_content-block_2',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ijnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ijnet',
+        'weight' => 0,
+      ),
+      'shiny' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shiny',
+        'weight' => 0,
+      ),
+      'shinytech' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shinytech',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-last_content-block_3'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'last_content-block_3',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ijnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ijnet',
+        'weight' => 0,
+      ),
+      'shiny' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shiny',
+        'weight' => 0,
+      ),
+      'shinytech' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shinytech',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-user_information-block'] = array(
     'cache' => -1,
     'css_class' => '',
