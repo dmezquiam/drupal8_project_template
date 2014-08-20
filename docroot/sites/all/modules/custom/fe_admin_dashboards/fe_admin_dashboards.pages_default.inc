@@ -711,28 +711,6 @@ function fe_admin_dashboards_default_page_manager_pages() {
     $display->content['new-8e5df2de-013a-40f8-82de-618a5460c46c'] = $pane;
     $display->panels['center'][1] = 'new-8e5df2de-013a-40f8-82de-618a5460c46c';
     $pane = new stdClass();
-    $pane->pid = 'new-27337b74-742b-4c4f-8279-5a77d9062e88';
-    $pane->panel = 'center';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-toolbar';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '27337b74-742b-4c4f-8279-5a77d9062e88';
-    $display->content['new-27337b74-742b-4c4f-8279-5a77d9062e88'] = $pane;
-    $display->panels['center'][2] = 'new-27337b74-742b-4c4f-8279-5a77d9062e88';
-    $pane = new stdClass();
     $pane->pid = 'new-6b4a7258-67bf-4c75-95af-ceb7beda4dcc';
     $pane->panel = 'side';
     $pane->type = 'block';

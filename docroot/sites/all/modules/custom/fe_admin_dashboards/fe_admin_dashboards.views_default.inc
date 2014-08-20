@@ -1288,12 +1288,11 @@ function fe_admin_dashboards_views_default_views() {
     'timestamp' => 'timestamp',
     'title' => 'title',
     'field_screen_name' => 'field_screen_name',
-    'field_attribution' => 'field_attribution',
-    'field_screen_name_1' => 'field_screen_name_1',
-    'type' => 'type',
     'language' => 'language',
     'changed' => 'changed',
     'status' => 'status',
+    'nid' => 'nid',
+    'nothing' => 'nothing',
     'edit_node' => 'edit_node',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
@@ -1322,27 +1321,6 @@ function fe_admin_dashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_attribution' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_screen_name_1' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'type' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
     'language' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
@@ -1364,8 +1342,20 @@ function fe_admin_dashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'edit_node' => array(
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
       'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => 'views-align-right',
       'separator' => '',
       'empty_column' => 0,
     ),
@@ -1731,6 +1721,9 @@ function fe_admin_dashboards_views_default_views() {
     'language' => 'language',
     'changed' => 'changed',
     'status' => 'status',
+    'nid' => 'nid',
+    'nothing' => 'nothing',
+    'nothing_1' => 'nothing_1',
     'edit_node' => 'edit_node',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
@@ -1785,8 +1778,25 @@ function fe_admin_dashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'edit_node' => array(
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
       'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => 'views-align-right',
       'separator' => '',
       'empty_column' => 0,
     ),
@@ -2250,7 +2260,7 @@ function fe_admin_dashboards_views_default_views() {
       'empty_column' => 0,
     ),
     'edit_node' => array(
-      'align' => '',
+      'align' => 'views-align-right',
       'separator' => '',
       'empty_column' => 0,
     ),
