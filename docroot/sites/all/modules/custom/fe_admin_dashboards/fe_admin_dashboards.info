@@ -39,6 +39,7 @@ features[menu_links][] = menu-dashboard_staff-members:admin/dashboard/staff
 features[menu_links][] = menu-dashboard_taxonomies:admin/dashboard/taxonomies
 features[page_manager_pages][] = curstomized_dashboard
 features[page_manager_pages][] = dashboard_nodes
+features[page_manager_pages][] = dashboard_staff_members
 features[page_manager_pages][] = dashboard_taxonomies
 features[panels_layout][] = dashboard
 features[quicktabs][] = dashboard_taxonomies_quicktab
