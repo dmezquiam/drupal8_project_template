@@ -1277,6 +1277,52 @@ ul.action-links {
     }
   }
 }
+
+
+/* Category ================================================================= */
+.region-highlighted {
+  .field-type-taxonomy-term-reference {
+    margin: 0px 0px -12px 0px;
+    float: left;
+    width: 100%;
+    h2.field-label {
+      float: left;
+      margin: 0px;
+      @include category;
+      padding: 0px 6px 0px 10px;
+      height: 18px;
+      font-weight: normal;
+    }
+    ul.field-items {
+      float: none;
+      display: inline;
+      li{
+        margin: 6px 5px 5px 0;
+        padding: 0 5px 0 0;
+        float: left;
+        list-style-type: none;
+        border-right: 1px solid #000;
+        line-height: 7px;
+        font-size: 11px;
+
+        a {
+          text-transform: uppercase;
+          color: #4D4D4D;
+          background: transparent;
+          padding: 0;
+          margin: 0;
+          @include border-radius(0px);
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -ms-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+          &:hover { color: $color-txt-primary-darck; }
+        }
+      }
+    }
+  }
+}
 /* ========================================================================== */
 
 /* =============================================================================
