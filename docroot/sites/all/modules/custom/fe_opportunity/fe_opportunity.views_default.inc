@@ -84,11 +84,10 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Updated date */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  /* Sort criterion: Content: Deadline (field_deadline) */
+  $handler->display->display_options['sorts']['field_deadline_value']['id'] = 'field_deadline_value';
+  $handler->display->display_options['sorts']['field_deadline_value']['table'] = 'field_data_field_deadline';
+  $handler->display->display_options['sorts']['field_deadline_value']['field'] = 'field_deadline_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

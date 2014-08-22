@@ -8,6 +8,7 @@ dependencies[] = date
 dependencies[] = fe_chat
 dependencies[] = fe_news
 dependencies[] = fe_site_config
+dependencies[] = fe_social
 dependencies[] = fe_videos
 dependencies[] = features
 dependencies[] = field_group

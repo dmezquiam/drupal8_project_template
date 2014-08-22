@@ -47,6 +47,12 @@ function fe_opportunity_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
+        'fe_social-fe_social_sharethis' => array(
+          'module' => 'fe_social',
+          'delta' => 'fe_social_sharethis',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
       ),
     ),
   );
