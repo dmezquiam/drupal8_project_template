@@ -3112,3 +3112,9 @@ div.messages {
 .winship-legacy .winship-legacy-inner .content a:hover {
   color: white;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000032044}}
+.article-item-list .item-list-topic .field-type-taxonomy-term-reference,
+#block-node-fields-block-1 {
+  display: none;
+}
