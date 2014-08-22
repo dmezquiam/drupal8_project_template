@@ -83,7 +83,6 @@ function fe_staff_member_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 93,
-      'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -103,15 +102,15 @@ function fe_staff_member_field_default_field_instances() {
         'manualcrop_instant_crop' => 0,
         'manualcrop_instant_preview' => 1,
         'manualcrop_require_cropping' => array(
-          'advertisement' => 'advertisement',
+          'advertisement' => 0,
           'banner_home' => 0,
           'banner_partners' => 0,
           'news_square' => 0,
           'news_wide' => 0,
-          'staff_picture' => 0,
+          'staff_picture' => 'staff_picture',
         ),
         'manualcrop_styles_list' => array(
-          'advertisement' => 'advertisement',
+          'advertisement' => 0,
           'banner_home' => 0,
           'banner_partners' => 0,
           'news_square' => 0,
