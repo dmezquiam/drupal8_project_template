@@ -873,11 +873,20 @@ ul.action-links {
         img {
           width: 100%;
           border: solid 3px $color-bg-heading-box-primary;
+          margin-left: -6px;
         }
       }
     }
+    .author-name,
+    .job-name,
+    .organization,
+    .views-field-nothing {
+      float: left;
+      width: 147px;
+      clear: left;
+    }
+
     .author-name {
-      @extend .organization;
       margin-bottom: 5px;
       padding-top: 7px;
       a {
@@ -886,23 +895,20 @@ ul.action-links {
       }
     }
     .job-name {
-      @extend .organization;
       line-height: $line-height-large;
       margin-bottom: 3px;
     }
     .organization {
-      float: left;
-      width: 147px;
-      clear: left;
+      margin-bottom: 10px;
     }
     .views-field-nothing {
       margin-top: 12px;
-      @extend .organization;
     }
     .bio {
       clear: both;
       padding-top: 5px;
     }
+    .button-tiny {}
   }
 
 // Advertusements ==============================================================

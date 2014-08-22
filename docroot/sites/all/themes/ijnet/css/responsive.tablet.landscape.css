@@ -81,10 +81,7 @@
   padding-top: 5px;
 }
 
-/* =============================================================================
- *   Item list
- * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000386}}
 .article-item-list {
   width: 50%;
   float: left;
@@ -177,7 +174,7 @@
   margin: 0px 5px 0px 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000391}}
 .article-item-list-no-body {
   width: 50%;
   float: left;

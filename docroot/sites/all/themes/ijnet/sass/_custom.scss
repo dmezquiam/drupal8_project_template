@@ -213,7 +213,7 @@
       color: $color-bt-txt;
       border: 2px solid $color-bt-txt;
       cursor: pointer;
-      display: inline;
+      display: inline-block;
       @include box-shadow (1px, 1px, 1px, $color-shadow);
       @include text-shadow (0px, 1px, 1px, #5E5C5C);
       @include button-gradient ($color);
@@ -947,5 +947,16 @@
       }
     }
   }
+//===================================================================================
 
+// tablet sidebar 50% ===============================================================
+// este mixin genera el comportamiento del bloque para tablet
+  @mixin sidebar-block-table {
+    width: 50%;
+    clear: none;
+    float: left;
+    .block-inner {
+      margin: 0;
+    }
+  }
 //===================================================================================

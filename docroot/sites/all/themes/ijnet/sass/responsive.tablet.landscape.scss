@@ -14,28 +14,28 @@
 /* =============================================================================
  *   Top BAR
  * ========================================================================== */
-#leaderboard-wrapper {
-  .block-lang-dropdown {
-    .block-title { display: none; }
-    width: 215px;
-    float: right;
-    clear: none;
-  }
-  .block-top-header-menu {
-    width: 457px;
-    height: 38px;
-    float: left;
-    margin-left: 15px;
-    .block-content {
-      ul.menu {
-        li a {
-          font-size: 11px;
+  #leaderboard-wrapper {
+    .block-lang-dropdown {
+      .block-title { display: none; }
+      width: 215px;
+      float: right;
+      clear: none;
+    }
+    .block-top-header-menu {
+      width: 457px;
+      height: 38px;
+      float: left;
+      margin-left: 15px;
+      .block-content {
+        ul.menu {
+          li a {
+            font-size: 11px;
+          }
         }
       }
+      //.menu { display: none; }
     }
-    //.menu { display: none; }
   }
-}
 
 
 /* =============================================================================
@@ -82,16 +82,14 @@
   }
 
 
-/* =============================================================================
- *   Item list
- * ========================================================================== */
+//Item list=============================================================================
+  .article-item-list {
+    @include article-item-list-width (tablet-landscape);
+    @include article-item-list ();
+  }
 
-.article-item-list {
-  @include article-item-list-width (tablet-landscape);
-  @include article-item-list ();
+  .article-item-list-no-body {
+    @include article-item-list-width-no-body (tablet-landscape);
+    @include article-item-list ();
 }
 
-.article-item-list-no-body {
-  @include article-item-list-width-no-body (tablet-landscape);
-  @include article-item-list ();
-}
