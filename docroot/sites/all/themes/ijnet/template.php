@@ -31,6 +31,19 @@ function ijnet_pager(&$variables) {
 }
 
 function ijnet_preprocess_page(&$vars) {
+  global $language;
+
+  // replace logo with the localized version
+  $localized_logo = drupal_get_path('theme', 'ijnet') . '/logo_' . $language->language . '.png';
+  if (file_exists($localized_logo)) {
+    $vars['logo'] = file_create_url($localized_logo);
+  }
+  $logo_path = check_url($vars['logo']);
+  $logo_alt = check_plain(variable_get('site_name', t('Site logo')));
+  $logo_vars = array('path' => $logo_path, 'alt' => $logo_alt, 'attributes' => array('class' => 'site-logo'));
+  $vars['logo_img'] = theme('image', $logo_vars);
+  $vars['site_logo'] = $vars['logo_img'] ? l($vars['logo_img'], '<front>', array('attributes' => array('title' => t('Home page')), 'html' => TRUE)) : '';
+
 }
 
 function ijnet_preprocess_comment(&$variables) {
