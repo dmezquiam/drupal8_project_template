@@ -56,7 +56,7 @@ function fe_social_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'twitter_search';
-  $strongarm->value = 'http://search.twitter.com';
+  $strongarm->value = 'http://twitter.com';
   $export['twitter_search'] = $strongarm;
 
   $strongarm = new stdClass();
