@@ -86,7 +86,7 @@
   <?php if (!$page) :?>
     <a href="<?php print $path; ?>">
       <div class="opportunities-deadline">
-        <?php print "<label class='deadline'>DEADLINE</label> <div class='opp-date'><label class='month'>" . (isset($deadline_month) ? $deadline_month : '') . "</label><label class='year'>" . (isset($deadline_year) ? $deadline_year : ''). "</label></div>"; ?>
+        <?php print "<label class='deadline'>" . t('DEADLINE') . "</label> <div class='opp-date'><label class='month'>" . (isset($deadline_month) ? $deadline_month : '') . "</label><label class='year'>" . (isset($deadline_year) ? $deadline_year : ''). "</label></div>"; ?>
       </div>
     </a>
   <?php endif ?>
