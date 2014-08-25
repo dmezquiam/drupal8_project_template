@@ -143,10 +143,15 @@ class Twitter {
       return $response->data;
     }
     else {
+      // Extract response error.
       $error = $response->error;
-      $data = $this->parse_response($response->data);
-      if (isset($data['error'])) {
-        $error = $data['error'];
+      // See if there is an error message in the response's data.
+      // This will be an error message from the Twitter API.
+      if (isset($response->data)) {
+        $data = $this->parse_response($response->data);
+        if (isset($data['error'])) {
+          $error .= "\n" . $data['error'];
+        }
       }
       throw new TwitterException($error);
     }
@@ -1226,7 +1231,7 @@ class Twitter {
     }
     catch (TwitterException $e) {
       watchdog('twitter', '!message', array('!message' => $e->__toString()), WATCHDOG_ERROR);
-      return FALSE;
+      throw $e;
     }
 
     if (!$response) {
@@ -1264,6 +1269,8 @@ class TwitterStatus {
 
   public $user;
 
+  public $entities;
+
   /**
    * Constructor for TwitterStatus
    */
@@ -1277,9 +1284,23 @@ class TwitterStatus {
     $this->in_reply_to_status_id = $values['in_reply_to_status_id'];
     $this->in_reply_to_user_id = $values['in_reply_to_user_id'];
     $this->in_reply_to_screen_name = $values['in_reply_to_screen_name'];
+    $this->entities = $values['entities'];
     if (isset($values['user'])) {
       $this->user = new TwitterUser($values['user']);
     }
+  }
+
+  /**
+   * Returns the status URL at Twitter.com
+   *
+   * @return
+   *   String URL or FALSE if no user object is present.
+   */
+  public function getURL() {
+    if (empty($this->user->screen_name)) {
+      return FALSE;
+    }
+    return TWITTER_HOST . '/' . $this->user->screen_name . '/status/' . $this->id;
   }
 }
 
