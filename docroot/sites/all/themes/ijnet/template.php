@@ -34,7 +34,7 @@ function ijnet_preprocess_page(&$vars) {
   global $language;
 
   // replace logo with the localized version
-  $localized_logo = drupal_get_path('theme', 'ijnet') . '/logo_' . $language->language . '.png';
+  $localized_logo = drupal_get_path('theme', 'ijnet') . '/logo_' . str_replace('-', '_', $language->language) . '.png';
   if (file_exists($localized_logo)) {
     $vars['logo'] = file_create_url($localized_logo);
   }
