@@ -1,36 +1,36 @@
-<div id="last-post-authors">
-  <div class="item-list">
+<div id="author-tabs-list">
+  <div class="author-tabs-list">
     <ul>
 
 <?php foreach($authors as $author): ?>
       <li class="clearfix">
-  <?php if (isset($author->avatar)): ?>
         <div class="avatar">
-          <a href="" class="image-style-avatar-small-img" width="110" height="110" alt>
-    <?php print theme_image_style(array('style_name' => 'avatar_small_img', 'path' => $author->avatar, 'width' => null, 'height' => null)); ?>
-          </a>
-        </div>
+  <?php if (isset($author->avatar)): ?>
+    <?php print(l($author->avatar, 'user/' . $author->uid, array('html' => true, 'attributes' => array('class' => array("image-style-avatar-small-img"))))); ?>
   <?php endif; ?>
-  <?php if (isset($author->name)): ?>
+        </div>
         <div class="author-name">
-          <a href=""><?php print($author->name) ?> </a>
-        </div>
+  <?php if (isset($author->uid)): ?>
+    <?php print(l($author->name, 'user/'.$author->uid)); ?>
+  <?php else: ?>
+          <?php print($author->name); ?>
   <?php endif; ?>
-  <?php if (isset($author->job)): ?>
+        </div>
         <div class="job-name">
+  <?php if (isset($author->job)): ?>
     <?php print($author->job) ?>
-        </div>
   <?php endif; ?>
-  <?php if (isset($author->organization)): ?>
+        </div>
         <div class="organization">
+  <?php if (isset($author->organization)): ?>
     <?php print($author->organization) ?>
-        </div>
   <?php endif; ?>
-  <?php if (isset($author->link)): ?>
+        </div>
         <div class="buttons">
-          <a href="" class="button-clean-tiny">PROFILE POSTS</a>
-        </div>
+  <?php if (isset($author->uid)): ?>
+    <?php print(l(t('PROFILE POSTS'), 'user/' . $author->uid, array('attributes' => array('class' => array("button-clean-tiny"))))); ?>
   <?php endif; ?>
+        </div>
       </li>
 <?php endforeach; ?>
 
