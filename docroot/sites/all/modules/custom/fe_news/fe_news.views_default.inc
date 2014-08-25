@@ -661,6 +661,58 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+
+  /* Display: Tagged news */
+  $handler = $view->new_display('block', 'Tagged news', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Latest News ';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'article-item-list-no-body';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'short_teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Field: Area of Interest (field_topic) */
+  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
+    247 => '247',
+  );
+  $handler->display->display_options['filters']['field_topic_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
   $export['news'] = $view;
 
   $view = new view();

@@ -90,6 +90,11 @@ function fe_social_views_default_views() {
   $handler->display->display_options['filters']['protected']['value'] = 0;
   $handler->display->display_options['filters']['protected']['group'] = 1;
   $handler->display->display_options['filters']['protected']['expose']['operator'] = FALSE;
+  /* Filter criterion: Twitter: Login name */
+  $handler->display->display_options['filters']['screen_name']['id'] = 'screen_name';
+  $handler->display->display_options['filters']['screen_name']['table'] = 'twitter';
+  $handler->display->display_options['filters']['screen_name']['field'] = 'screen_name';
+  $handler->display->display_options['filters']['screen_name']['value'] = 'IJNet';
 
   /* Display: All Tweets */
   $handler = $view->new_display('page', 'All Tweets', 'all_tweets');

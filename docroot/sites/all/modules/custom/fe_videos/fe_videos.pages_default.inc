@@ -95,7 +95,7 @@ function fe_videos_default_page_manager_pages() {
     $pane->panel = 'brick_66_33_first';
     $pane->type = 'page_title';
     $pane->subtype = 'page_title';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'markup' => 'h1',

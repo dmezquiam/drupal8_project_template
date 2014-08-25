@@ -92,13 +92,27 @@ function fe_news_block_view($delta = '') {
 
 function _fe_news_get_last_posts_authors() {
   $authors = array();
+  $authors_uid = array();
 
   $view = views_get_view('last_posts');
   if ($view) {
     $view->set_display('block');
     $view->execute();
     foreach($view->result as $content){
-      $authors[] = _fe_news_get_author($content->nid);
+      if (sizeof($authors) < 10) {
+        $author = _fe_news_get_author($content->nid);
+        if (isset($author->uid)) {
+          if (!in_array($author->uid, $authors_uid)) {
+            $authors_uid[] = $author->uid;
+            $authors[] = $author;
+          }
+        } else {
+          if (!in_array($author->name, $authors_uid)) {
+            $authors_uid[] = $author->name;
+            $authors[] = $author;
+          }
+        }
+      }
     }
   }
 
@@ -124,16 +138,19 @@ function _fe_news_get_author($nid) {
     }
     $author->uid = $user->uid;
     $author->name = $user->field_screen_name[LANGUAGE_NONE][0]['safe_value'];
-    //$author->link = l($user->field_screen_name[LANGUAGE_NONE][0]['value'],'user/'.$user->uid);
-    $author->link = '';
-    $author->avatar = isset($user->picture) ? $user->picture->uri : null ;
+    $author->profile_link = drupal_get_path_alias(t('PROFILE POSTS'), '/user/'.$user->uid);
+    $author->avatar = isset($user->picture) ? 
+      theme_image_style(array(
+        'path' => $user->picture->uri, 
+        'style_name' => 'avatar_small_img', 
+        'width' => '110', 
+        'height' => '110')
+        ) :  null;
     $author->job = isset($user->field_job_title[LANGUAGE_NONE]) ?
       $user->field_job_title[LANGUAGE_NONE][0]['safe_value'] : null;
     $author->organization = isset($user->field_organization_name[LANGUAGE_NONE]) ?
       $user->field_organization_name[LANGUAGE_NONE][0]['safe_value'] : null;
   }
-
-  //kpr($author);
 
   return $author;
 }
