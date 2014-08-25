@@ -108,7 +108,7 @@ function fe_news_strongarm() {
       'display' => array(
         'language' => array(
           'teaser' => array(
-            'weight' => '0',
+            'weight' => '4',
             'visible' => FALSE,
           ),
           'default' => array(
