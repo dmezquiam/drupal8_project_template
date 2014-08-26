@@ -1,9 +1,17 @@
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
+  var lang = jQuery('html').attr('lang');
+  var locales = {
+    'en': 'en_US',
+    'es': 'es_LA'
+  };
+  var currentLocale = locales[lang] ? locales[lang] : 'en_US';
+  console.log(lang);
+  console.log(currentLocale);
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  js.src = "//connect.facebook.net/" + currentLocale + "/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
   
