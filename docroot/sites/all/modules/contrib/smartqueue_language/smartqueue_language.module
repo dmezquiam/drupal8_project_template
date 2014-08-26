@@ -124,6 +124,12 @@ function smartqueue_language_nodequeue_autocomplete($queue, $subqueue, $string, 
     $where_args[':language'] = $subqueue->reference;
   }
 
+  //filter by content type
+  if (!empty($queue->types)) {
+    $where .= " AND n.type IN (:types)";
+    $where_args[':types'] = $queue->types;
+  }
+
   $result = db_query_range("SELECT n.nid, n.title FROM {node} n WHERE " . $where, 0, 10, $where_args);
   while ($node = $result->fetchObject()) {
     $matches[$node->nid] = check_plain($node->title) . " [nid: $node->nid]";
