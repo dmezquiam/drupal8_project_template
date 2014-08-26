@@ -498,6 +498,7 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['filters']['field_deadline_value']['table'] = 'field_data_field_deadline';
   $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
   $handler->display->display_options['filters']['field_deadline_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_deadline_value']['granularity'] = 'hour';
   $handler->display->display_options['filters']['field_deadline_value']['default_date'] = 'now';
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
@@ -561,7 +562,7 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['filters']['field_deadline_value']['table'] = 'field_data_field_deadline';
   $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
   $handler->display->display_options['filters']['field_deadline_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_deadline_value']['granularity'] = 'second';
+  $handler->display->display_options['filters']['field_deadline_value']['granularity'] = 'hour';
   $handler->display->display_options['filters']['field_deadline_value']['default_date'] = 'now';
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
@@ -689,7 +690,7 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['filters']['field_deadline_value']['table'] = 'field_data_field_deadline';
   $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
   $handler->display->display_options['filters']['field_deadline_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_deadline_value']['granularity'] = 'second';
+  $handler->display->display_options['filters']['field_deadline_value']['granularity'] = 'hour';
   $handler->display->display_options['filters']['field_deadline_value']['default_date'] = 'now';
   $export['opportunities_views'] = $view;
 
