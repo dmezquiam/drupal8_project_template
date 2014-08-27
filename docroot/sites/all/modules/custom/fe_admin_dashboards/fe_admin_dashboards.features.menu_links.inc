@@ -47,7 +47,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 1,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -45,
     'customized' => 1,
   );
   // Exported menu link: menu-dashboard_other-content:<nolink>

@@ -505,6 +505,40 @@ function fe_admin_dashboards_default_page_manager_pages() {
     $display->content['new-0056204b-3fad-41ac-95d0-ec216833fbda'] = $pane;
     $display->panels['center'][3] = 'new-0056204b-3fad-41ac-95d0-ec216833fbda';
     $pane = new stdClass();
+    $pane->pid = 'new-535d73b7-74ef-46c3-bf00-5940a828312e';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'views-last_content-block_4';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'admin/dashboard/content/advertisements',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '535d73b7-74ef-46c3-bf00-5940a828312e';
+    $display->content['new-535d73b7-74ef-46c3-bf00-5940a828312e'] = $pane;
+    $display->panels['center'][4] = 'new-535d73b7-74ef-46c3-bf00-5940a828312e';
+    $pane = new stdClass();
     $pane->pid = 'new-86919b4e-dc99-4604-8396-4042a317178a';
     $pane->panel = 'side';
     $pane->type = 'block';
