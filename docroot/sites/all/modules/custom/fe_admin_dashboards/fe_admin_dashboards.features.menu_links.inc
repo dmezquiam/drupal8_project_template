@@ -30,6 +30,26 @@ function fe_admin_dashboards_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
+  // Exported menu link: menu-dashboard_banners:admin/dashboard/content/banners
+  $menu_links['menu-dashboard_banners:admin/dashboard/content/banners'] = array(
+    'menu_name' => 'menu-dashboard',
+    'link_path' => 'admin/dashboard/content/banners',
+    'router_path' => 'admin/dashboard/content',
+    'link_title' => 'Banners',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-dashboard_banners:admin/dashboard/content/banners',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+  );
   // Exported menu link: menu-dashboard_basic-pages:admin/dashboard/content/basic-pages
   $menu_links['menu-dashboard_basic-pages:admin/dashboard/content/basic-pages'] = array(
     'menu_name' => 'menu-dashboard',
@@ -47,7 +67,48 @@ function fe_admin_dashboards_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 1,
     'expanded' => 0,
-    'weight' => -42,
+    'weight' => -50,
+    'customized' => 1,
+    'parent_identifier' => 'menu-dashboard_other-content:<nolink>',
+  );
+  // Exported menu link: menu-dashboard_bulletin-emails:admin/dashboard/content/bulletins
+  $menu_links['menu-dashboard_bulletin-emails:admin/dashboard/content/bulletins'] = array(
+    'menu_name' => 'menu-dashboard',
+    'link_path' => 'admin/dashboard/content/bulletins',
+    'router_path' => 'admin/dashboard/content',
+    'link_title' => 'Bulletin Emails',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-dashboard_bulletin-emails:admin/dashboard/content/bulletins',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-dashboard_chats:admin/dashboard/content/chats
+  $menu_links['menu-dashboard_chats:admin/dashboard/content/chats'] = array(
+    'menu_name' => 'menu-dashboard',
+    'link_path' => 'admin/dashboard/content/chats',
+    'router_path' => 'admin/dashboard/content',
+    'link_title' => 'Chats',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-dashboard_chats:admin/dashboard/content/chats',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: menu-dashboard_news:admin/dashboard/content/news
@@ -70,6 +131,26 @@ function fe_admin_dashboards_menu_default_menu_links() {
     'weight' => -45,
     'customized' => 1,
   );
+  // Exported menu link: menu-dashboard_opportunities:admin/dashboard/content/opportunities
+  $menu_links['menu-dashboard_opportunities:admin/dashboard/content/opportunities'] = array(
+    'menu_name' => 'menu-dashboard',
+    'link_path' => 'admin/dashboard/content/opportunities',
+    'router_path' => 'admin/dashboard/content',
+    'link_title' => 'Opportunities',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-dashboard_opportunities:admin/dashboard/content/opportunities',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => -44,
+    'customized' => 1,
+  );
   // Exported menu link: menu-dashboard_other-content:<nolink>
   $menu_links['menu-dashboard_other-content:<nolink>'] = array(
     'menu_name' => 'menu-dashboard',
@@ -87,7 +168,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 1,
     'expanded' => 1,
-    'weight' => -41,
+    'weight' => -42,
     'customized' => 1,
   );
   // Exported menu link: menu-dashboard_staff-members:admin/dashboard/staff
@@ -107,7 +188,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 1,
     'expanded' => 0,
-    'weight' => -50,
+    'weight' => -49,
     'customized' => 1,
     'parent_identifier' => 'menu-dashboard_other-content:<nolink>',
   );
@@ -128,7 +209,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 1,
-    'weight' => -49,
+    'weight' => -48,
     'customized' => 1,
     'parent_identifier' => 'menu-dashboard_other-content:<nolink>',
   );
@@ -155,8 +236,12 @@ function fe_admin_dashboards_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Advertisements');
+  t('Banners');
   t('Basic Pages');
+  t('Bulletin Emails');
+  t('Chats');
   t('News');
+  t('Opportunities');
   t('Other content');
   t('Staff Members');
   t('Taxonomies');
