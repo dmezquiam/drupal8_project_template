@@ -27,3 +27,111 @@ function fe_social_preprocess_page(&$vars) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function fe_social_preprocess_node(&$vars) {
+
+  // Solo agrego los meta en la pagina de detalle
+  if ($vars['page'] != TRUE)  {
+    return;
+  }
+
+  $node = $vars['node'];
+
+  if ($node->type == 'news') {
+    fe_social_get_news_og_meta($node);
+  }
+  elseif ($node->type == 'training_opportunity') {
+    fe_social_get_training_opportunity_og_meta($node);
+  }
+}
+
+function fe_social_get_news_og_meta($node) {
+  $lang = $node->language;
+  $title = isset($node->title_field[$lang]) ?
+    $node->title_field[$lang][0]['safe_value'] :
+    $node->title_field[LANGUAGE_NONE][0]['safe_value'];
+  $url = url('node/' . $node->nid, array('absolute' => TRUE));
+  $description = isset($node->body[$lang]) ?
+    strip_tags($node->body[$lang][0]['safe_summary']) :
+    strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
+  $image = isset($node->field_image[$lang]) ?
+    file_create_url($node->field_image[$lang][0]['uri']) :
+    file_create_url($node->field_image[LANGUAGE_NONE][0]['uri']);
+  
+  fe_social_add_og_meta_tags($title, $url, $description, $image);
+}
+
+function fe_social_get_training_opportunity_og_meta($node) {
+  $lang = $node->language;
+  $title = $node->title;
+  $url = url('node/' . $node->nid, array('absolute' => TRUE));
+  $description = isset($node->body[$lang]) ?
+    strip_tags($node->body[$lang][0]['safe_summary']) :
+    strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
+  $image = null;//file_create_url($node->field_imagen['und'][0]['uri']);
+
+  fe_social_add_og_meta_tags($title, $url, $description, $image);
+}
+
+function fe_social_add_og_meta_tags($title, $url, $description, $image) {
+  $og_meta = array(
+    'fe_social_og_title' => array(
+      'property' => 'og:title',
+      'content' => $title,
+    ),
+    'fe_social_og_url' => array(
+      'property' => 'og:url',
+      'content' => $url,
+    ),
+    'fe_social_og_desc' => array(
+      'property' => 'og:description',
+      'content' => $description,
+    ),
+    'fe_social_og_img' => array(
+      'property' => 'og:image',
+      'content' => $image,
+    ),
+   );
+  foreach($og_meta as $key => $hdr) {
+    $og_tag = array(
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => $hdr['property'],
+        'content' => $hdr['content']
+      ),
+    );
+    drupal_add_html_head($og_tag, $key);
+  }
+}
+
+/**
+ * Implements hook_views_query_alter()
+ */
+function fe_social_views_query_alter(&$view, &$query) {
+  //IJNetArabic
+  //@ijnetEs 
+  //@IJNetPersian  
+  //@IJNetPortugues    
+  //@IJNet_Russian
+  $twitter_accounts = array(
+    'pt-br' => 'IJNetPortugues',
+  );
+  if ($view->name == 'twitter' && $view->current_display == 'tweets_home_block') {
+    global $language;
+    $lang = $language->language;
+    if ($lang != 'en') {
+      foreach($query->where[1]['conditions'] as $condition) {
+        kpr($condition);
+        if ($condition['field'] == 'twitter.screen_name') {
+          $condition['value'] = $twitter_accounts[$lang];
+          kpr($condtion['value']);
+        }
+      }
+      kpr($lang);
+      kpr($query);
+    }
+  }
+}

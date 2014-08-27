@@ -20,20 +20,6 @@ function fe_social_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'twitter_consumer_key';
-  $strongarm->value = 'vPhQwMUUdYosnFYlu9dKoQ';
-  $export['twitter_consumer_key'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'twitter_consumer_secret';
-  $strongarm->value = 'XzT6ECeRISWdDLIfmtt0lmUroMPqRU1IK9x7S6X1I';
-  $export['twitter_consumer_secret'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'twitter_expire';
   $strongarm->value = '0';
   $export['twitter_expire'] = $strongarm;
