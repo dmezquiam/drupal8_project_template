@@ -3,7 +3,12 @@
   var lang = jQuery('html').attr('lang');
   var locales = {
     'en': 'en_US',
-    'es': 'es_LA'
+    'es': 'es_LA',
+    'fa' : 'fa_IR',
+    'ar': 'ar_AR',
+    'pt-br' : 'pt_BR',
+    'ru' : 'ru_RU',
+    'zh-hans' : 'zh_CN'
   };
   var currentLocale = locales[lang] ? locales[lang] : 'en_US';
   console.log(lang);
