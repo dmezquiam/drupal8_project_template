@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the ijnet_salesforce feature.
+ */
+
+include_once 'ijnet_salesforce.features.inc';
+/**
+ * @file
  * Code for the Contact form.
  */
  

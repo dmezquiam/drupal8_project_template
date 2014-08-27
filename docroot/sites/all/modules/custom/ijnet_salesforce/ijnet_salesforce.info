@@ -1,5 +1,12 @@
-name = "Formulario de contacto"
-description = "Implementacion del formulario de contacto que se conecta con SalesForce."
+name = Formulario de contacto
+description = Implementacion del formulario de contacto que se conecta con SalesForce.
 core = 7.x
-package = "IJNet"
+package = IJNet
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = jsonblocks
+dependencies[] = views
+features[context][] = ijnet_salesforce
+features[ctools][] = context:context:3
+features[features_api][] = api:2
 files[] = ijnet_salesforce.module
