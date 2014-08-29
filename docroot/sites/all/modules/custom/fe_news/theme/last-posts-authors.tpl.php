@@ -26,7 +26,7 @@
     <?php print($author->organization) ?>
   <?php endif; ?>
         </div>
-        <div class="buttons">
+        <div class="button">
   <?php if (isset($author->uid)): ?>
     <?php print(l(t('PROFILE POSTS'), 'user/' . $author->uid, array('attributes' => array('class' => array("button-clean-tiny"))))); ?>
   <?php endif; ?>

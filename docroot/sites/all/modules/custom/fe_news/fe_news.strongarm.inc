@@ -96,13 +96,16 @@ function fe_news_strongarm() {
           'weight' => 0,
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '4',
         ),
         'language' => array(
           'weight' => '1',
         ),
         'locations' => array(
-          'weight' => '30',
+          'weight' => '5',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '4',
         ),
       ),
       'display' => array(
