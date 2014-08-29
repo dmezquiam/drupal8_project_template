@@ -21,7 +21,7 @@ function fe_opportunity_field_group_info() {
   $field_group->parent_name = 'group_tabs';
   $field_group->data = array(
     'label' => 'Categorization',
-    'weight' => '17',
+    'weight' => '3',
     'children' => array(
       0 => 'field_category',
       1 => 'field_region',
@@ -49,7 +49,7 @@ function fe_opportunity_field_group_info() {
   $field_group->parent_name = 'group_tabs';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '16',
+    'weight' => '2',
     'children' => array(
       0 => 'body',
       1 => 'field_organization',
@@ -78,7 +78,7 @@ function fe_opportunity_field_group_info() {
   $field_group->parent_name = 'group_tabs';
   $field_group->data = array(
     'label' => 'Date',
-    'weight' => '15',
+    'weight' => '1',
     'children' => array(
       0 => 'field_date',
       1 => 'field_deadline',
@@ -106,7 +106,7 @@ function fe_opportunity_field_group_info() {
   $field_group->parent_name = 'group_tabs';
   $field_group->data = array(
     'label' => 'Related content',
-    'weight' => '18',
+    'weight' => '4',
     'children' => array(
       0 => 'field_related_content',
       1 => 'field_document',
@@ -136,10 +136,11 @@ function fe_opportunity_field_group_info() {
     'label' => 'Tabs',
     'weight' => '2',
     'children' => array(
-      0 => 'group_date',
-      1 => 'group_content',
-      2 => 'group_categorization',
-      3 => 'group_related_content',
+      0 => 'scheduler_settings',
+      1 => 'group_date',
+      2 => 'group_content',
+      3 => 'group_categorization',
+      4 => 'group_related_content',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
