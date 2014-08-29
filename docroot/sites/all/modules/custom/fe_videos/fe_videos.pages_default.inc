@@ -86,7 +86,7 @@ function fe_videos_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'VIDEOS';
+  $display->title = '';
   $display->uuid = '4d3b63d4-61d4-49d7-9224-8962fdcd05c8';
   $display->content = array();
   $display->panels = array();
@@ -167,7 +167,7 @@ function fe_videos_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -228,8 +228,8 @@ function fe_videos_default_page_manager_pages() {
     $pane->uuid = '700b1553-84c2-42ed-8b4e-f824902d8e61';
     $display->content['new-700b1553-84c2-42ed-8b4e-f824902d8e61'] = $pane;
     $display->panels['brick_66_33_second'][1] = 'new-700b1553-84c2-42ed-8b4e-f824902d8e61';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
+  $display->hide_title = PANELS_TITLE_PANE;
+  $display->title_pane = 'new-1cc5726e-2501-45a1-b620-f3e2b82f5f14';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['videos_landing'] = $page;

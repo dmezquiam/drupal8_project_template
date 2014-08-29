@@ -119,6 +119,7 @@ function fe_videos_views_default_views() {
   /* Display: Videos Landing List */
   $handler = $view->new_display('block', 'Videos Landing List', 'video_landing_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'VIDEOS';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'video-list';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
