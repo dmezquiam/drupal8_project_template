@@ -196,6 +196,8 @@ function fe_news_views_default_views() {
 
   /* Display: News Landing */
   $handler = $view->new_display('page', 'News Landing', 'news_landing');
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'article-item-list';

@@ -486,7 +486,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 31,
+      'weight' => 6,
     ),
   );
 

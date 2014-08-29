@@ -101,6 +101,9 @@ function fe_opportunity_strongarm() {
         'locations' => array(
           'weight' => '12',
         ),
+        'scheduler_settings' => array(
+          'weight' => '5',
+        ),
       ),
       'display' => array(
         'language' => array(

@@ -21,7 +21,7 @@ function fe_news_field_group_info() {
   $field_group->parent_name = 'group_news_tabs';
   $field_group->data = array(
     'label' => 'Categorization',
-    'weight' => '5',
+    'weight' => '3',
     'children' => array(
       0 => 'field_topic',
     ),
@@ -48,7 +48,7 @@ function fe_news_field_group_info() {
   $field_group->parent_name = 'group_news_tabs';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '3',
+    'weight' => '1',
     'children' => array(
       0 => 'body',
       1 => 'field_attribution',
@@ -81,9 +81,10 @@ function fe_news_field_group_info() {
     'label' => 'Tabs',
     'weight' => '2',
     'children' => array(
-      0 => 'group_news_content',
-      1 => 'group_other_content',
-      2 => 'group_categorization',
+      0 => 'scheduler_settings',
+      1 => 'group_news_content',
+      2 => 'group_other_content',
+      3 => 'group_categorization',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -106,7 +107,7 @@ function fe_news_field_group_info() {
   $field_group->parent_name = 'group_news_tabs';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '4',
+    'weight' => '2',
     'children' => array(
       0 => 'field_audio_files',
       1 => 'field_document',
