@@ -221,7 +221,6 @@
       a {
         font-size: 15px;
         &:first-child {
-          margin-right: 15px;
         }
       }
     }
@@ -255,7 +254,7 @@
   float: right;
   clear: both;
   .block-inner {
-    margin: 0px 7px 0px 0px;
+    margin: 0px 9px 0px 0px;
     .search-form { margin: 0px; }
     .form-item-search-block-form {
       float: left;
@@ -1008,54 +1007,47 @@ ul.action-links {
     }
     .view-content {
       padding: 40px 15px 0px 15px;
+      &>div { 
+        &:last-child { 
+          .twitter-status { 
+            border: 0px; 
+          } 
+        }
+      }
 
       .twitter-status {
-        padding: 0px;
-        margin-bottom: 20px;
-        .avatar {}
-
-        .content-tweet {
-          border: 1px solid #ccc;
-          border-radius: 10px;
-          margin-left: 63px;
-          padding: 10px;
-          position: relative;
-          box-shadow: 0px 1px 2px #ccc;
-
-          &:after {
-            content: "";
-            width: 0;
-            height: 0;
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-right: 13px solid #fff;
-            position: absolute;
-            top: 15px;
-            left: -12px;
+        padding: 0px 0px 10px 0;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #F1F1F1;
+        
+        .avatar {
+          a { 
+            display: block;
+            line-height: 0;
+            border: 1px solid #ccc;
           }
-
-          &:before {
-            content: "";
-            width: 0;
-            height: 0;
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-right: 12px solid #ccc;
-            position: absolute;
-            top: 15px;
-            left: -13px;
-          }
-
-          .timestamp { display: none; }
-          .name-handle { display: none; }
-          .text {
-            margin: 0px;
-            font-size: 13px;
-            line-height: 16px;
-            a { color: #479FDD; }
-          }
-          .actions { display: none; }
         }
+
+        .timestamp {
+          margin-top: 4px;
+        }
+        .name-handle {
+          .name {
+            padding-top: 6px;
+            display: block;
+          }
+          .handle {
+            line-height: 14px;
+            display: block;
+          }
+        }
+        .text {
+          margin: 7px 0px 0px 0px;
+          font-size: 13px;
+          line-height: 16px;
+          a { color: #479FDD; }
+        }
+        .actions { display: none; }
       }
 
 
@@ -1677,6 +1669,25 @@ tr.error {}
 /*
  * Unpublished nodes
  */
+.node-unpublished {
+  color: transparent;
+  position: relative;
+  
+  &:before {
+    content: "Unpublished";
+    position: absolute;
+    color: #FFF;
+    background: red;
+    font-size: 23px;
+    right: 0;
+    padding: 10px 10px;
+  }
+  .content {
+    filter: alpha(opacity=50); // IE 5-7
+    opacity: 0.5;
+  }
+
+}
 .node-unpublished,
 .comment-unpublished {
 }
@@ -1946,6 +1957,7 @@ div.messages {
       font-weight: bold;
     }
   }
+  .field-name-body iframe {width: 100%;}
   .field-name-field-chat-description {
     margin-bottom: 30px;
   }
@@ -2020,7 +2032,10 @@ div.messages {
     .content {
       background: #3f525e;
       position: relative;
-      img {}
+      img {
+        display: table;
+        margin: 0 auto;
+      }
       p {
         position: absolute;
         bottom: 60px;
@@ -2041,4 +2056,34 @@ div.messages {
 
 
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference,
-#block-node-fields-block-1 { display: none; }
+#block-node-fields-block-1 {  }
+
+
+/* =============================================================================
+ *   Contact form
+ * ========================================================================== */
+ .page-contact-ijnet #block-blockify-blockify-page-title {
+  margin-bottom: 10px;
+ }
+#ijnet-salesforce-contact-form {
+  padding: 4px 20% 20px 20px;
+  background: #f8f6ec;
+  .form-item-first-name,
+  .form-item-last-name,
+  .form-item-organization-name,
+  .form-item-position { @include form-width (50%); }
+  .form-item-personal-email { @include form-width (100%); }
+  .form-item-work-email { @include form-width (100%); }
+
+  .form-item-mobile,
+  .form-item-twitter-handle { @include form-width (50%); }
+
+  .form-item-mailing-address { @include form-width (100%); }
+  .form-item-city { @include form-width (100%); }
+  .form-item-country { @include form-width (100%); }
+  
+  .description,
+  .form-item-receive-updates {
+    clear: both;
+  }
+}
