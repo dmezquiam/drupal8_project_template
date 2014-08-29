@@ -34,6 +34,12 @@ function fe_chat_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-chats-chats_landing_block' => array(
+          'module' => 'views',
+          'delta' => 'chats-chats_landing_block',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'jsonblocks-social-block' => array(
           'module' => 'jsonblocks',
           'delta' => 'social-block',
