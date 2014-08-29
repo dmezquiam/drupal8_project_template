@@ -528,6 +528,7 @@
         }
       }
       .quicktabs_main {
+        .block-inner { margin: 0; }
         border-color: $color-line;
         border-width: 1px;
         margin-top: 0px;
@@ -605,10 +606,10 @@
         .organization {
           @extend .job-name;
         }
-        .buttons {
+        .button {
           position: absolute;
           bottom: 7px;
-          right: 16px;
+          left: 120px;
           a { margin-right: 5px; }
         }
       }
@@ -767,21 +768,21 @@
     //topic
     .item-list-topic {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 6px;
+      left: 6px;
       .field-type-taxonomy-term-reference {
         margin: 0px 10px 0 0;
         background: rgba(0, 0, 0, 0.52);
-        padding: 7px;
+        padding: 6px 6px;
         width: auto;
         border: 1px solid #C0C0C0;
         ul {
           li {
-            line-height: 7px;
+            line-height: 10px;
             margin: 0;
             position: relative;
             a {
-              font-size: 10px;
+              font-size: 12px;
               background: transparent;
               color: #C0C0C0;
               padding: 0;
@@ -959,4 +960,14 @@
       margin: 0;
     }
   }
+//===================================================================================
+
+// Item width =======================================================================
+@mixin form-width( $width-item:100%) {
+  float: left;
+  width: $width-item - 2%;
+  padding-right: 2%; 
+  label {}
+  input { width: 100%; }
+}
 //===================================================================================
