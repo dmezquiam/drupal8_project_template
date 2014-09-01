@@ -47,6 +47,41 @@ function fe_news_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['node_fields_block-1'] = array(
+    'cache' => 4,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 1,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'node_fields_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ijnet' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ijnet',
+        'weight' => 0,
+      ),
+      'shiny' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shiny',
+        'weight' => 0,
+      ),
+      'shinytech' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'shinytech',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-news-author_latest_stories'] = array(
     'cache' => -1,
     'css_class' => '',

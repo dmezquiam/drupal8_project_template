@@ -40,6 +40,7 @@ features[ctools][] = quicktabs:quicktabs:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[fe_block_settings][] = fe_news-last_posts_authors
+features[fe_block_settings][] = node_fields_block-1
 features[fe_block_settings][] = views-news-author_latest_stories
 features[fe_block_settings][] = views-news-news_popular
 features[fe_block_settings][] = views-news-news_teaser_list
