@@ -20,7 +20,10 @@ function fe_staff_member_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 3,
       ),
@@ -63,6 +66,8 @@ function fe_staff_member_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'image_link' => '',
           'image_style' => 'staff_picture',
         ),
@@ -137,7 +142,10 @@ function fe_staff_member_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 4,
       ),

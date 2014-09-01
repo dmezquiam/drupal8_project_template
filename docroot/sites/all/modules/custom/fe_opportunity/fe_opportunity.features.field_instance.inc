@@ -20,7 +20,10 @@ function fe_opportunity_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 1,
       ),
@@ -28,6 +31,8 @@ function fe_opportunity_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'smart_trim',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -73,7 +78,10 @@ function fe_opportunity_field_default_field_instances() {
       'default' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 2,
       ),
@@ -201,6 +209,8 @@ function fe_opportunity_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',

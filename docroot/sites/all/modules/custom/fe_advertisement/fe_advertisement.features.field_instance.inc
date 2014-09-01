@@ -20,6 +20,8 @@ function fe_advertisement_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'image_link' => '',
           'image_style' => 'advertisement',
         ),
@@ -97,7 +99,10 @@ function fe_advertisement_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'list_default',
         'weight' => 2,
       ),

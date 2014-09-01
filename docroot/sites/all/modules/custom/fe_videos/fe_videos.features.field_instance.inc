@@ -20,7 +20,10 @@ function fe_videos_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -63,7 +66,10 @@ function fe_videos_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 2,
       ),
@@ -106,6 +112,8 @@ function fe_videos_field_default_field_instances() {
         'settings' => array(
           'description' => 1,
           'description_position' => 'bottom',
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'video_style' => 'normal',
         ),
         'type' => 'video_embed_field',
@@ -117,6 +125,8 @@ function fe_videos_field_default_field_instances() {
         'settings' => array(
           'description' => 1,
           'description_position' => 'bottom',
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'image_link' => '',
           'image_style' => 'item_video_list_img',
         ),

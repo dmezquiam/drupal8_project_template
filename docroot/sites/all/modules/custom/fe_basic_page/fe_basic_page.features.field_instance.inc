@@ -20,7 +20,10 @@ function fe_basic_page_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -28,6 +31,8 @@ function fe_basic_page_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',

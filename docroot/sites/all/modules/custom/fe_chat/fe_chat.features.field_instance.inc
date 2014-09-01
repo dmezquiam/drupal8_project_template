@@ -27,7 +27,10 @@ function fe_chat_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 2,
       ),
@@ -70,7 +73,10 @@ function fe_chat_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 1,
       ),
@@ -111,6 +117,8 @@ function fe_chat_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -124,6 +132,8 @@ function fe_chat_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',

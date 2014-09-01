@@ -20,7 +20,10 @@ function fe_newsletter_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -28,6 +31,8 @@ function fe_newsletter_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -66,7 +71,10 @@ function fe_newsletter_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'node_reference',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'node_reference_default',
         'weight' => 8,
       ),
@@ -108,6 +116,8 @@ function fe_newsletter_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -164,6 +174,8 @@ function fe_newsletter_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -209,7 +221,10 @@ function fe_newsletter_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'node_reference',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'node_reference_default',
         'weight' => 3,
       ),
@@ -251,7 +266,10 @@ function fe_newsletter_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'node_reference',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'node_reference_default',
         'weight' => 7,
       ),
