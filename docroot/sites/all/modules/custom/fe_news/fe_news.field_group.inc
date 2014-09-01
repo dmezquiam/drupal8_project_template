@@ -24,6 +24,7 @@ function fe_news_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'field_topic',
+      1 => 'field_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

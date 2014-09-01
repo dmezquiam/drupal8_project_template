@@ -89,6 +89,9 @@ function fe_news_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'node_fields_block' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -115,11 +118,15 @@ function fe_news_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '0',
+            'weight' => '9',
             'visible' => FALSE,
           ),
           'short_teaser' => array(
             'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'node_fields_block' => array(
+            'weight' => '9',
             'visible' => FALSE,
           ),
         ),
@@ -175,6 +182,7 @@ function fe_news_strongarm() {
   $strongarm->value = array(
     0 => 'status',
     1 => 'promote',
+    2 => 'revision',
   );
   $export['node_options_news'] = $strongarm;
 
