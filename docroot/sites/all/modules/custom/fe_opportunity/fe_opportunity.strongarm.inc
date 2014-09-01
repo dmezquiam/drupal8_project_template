@@ -168,6 +168,7 @@ function fe_opportunity_strongarm() {
   $strongarm->value = array(
     0 => 'status',
     1 => 'promote',
+    2 => 'revision',
   );
   $export['node_options_training_opportunity'] = $strongarm;
 
