@@ -81,7 +81,7 @@
  */
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php print $user_picture; ?>
+  <a href="<?php print $node_url; ?>"><?php print $user_picture; ?>
 
   <?php if (!$page): ?>
     <div class="content"<?php print $content_attributes; ?>>
