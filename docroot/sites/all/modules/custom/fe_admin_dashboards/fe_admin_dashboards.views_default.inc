@@ -1095,6 +1095,7 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: User: Screen Name */
   $handler->display->display_options['fields']['field_screen_name']['id'] = 'field_screen_name';
@@ -3237,7 +3238,7 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<a href="/node/add/opportunity" class="button">Add an opportunity</a>';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<a href="/node/add/training-opportunity" class="button">Add an opportunity</a>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
