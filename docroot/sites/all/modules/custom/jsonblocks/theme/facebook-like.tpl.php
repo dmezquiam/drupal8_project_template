@@ -11,8 +11,6 @@
     'zh-hans' : 'zh_CN'
   };
   var currentLocale = locales[lang] ? locales[lang] : 'en_US';
-  console.log(lang);
-  console.log(currentLocale);
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
@@ -28,7 +26,7 @@
   </div>
   <div class="view-content">
     <div class="logo">
-      <img/> <a href="https://www.facebook.com/IJNet"> <?php print t('International Journalist\'s Network (IJNET)'); ?> </a>
+      <img src="sites/all/themes/ijnet/images/logo_fb.png" alt=""/> <a href="https://www.facebook.com/IJNet"> <?php print t('International Journalist\'s Network (IJNET)'); ?> </a>
     </div>
     <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="https://www.facebook.com/IJNet" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
   </div>

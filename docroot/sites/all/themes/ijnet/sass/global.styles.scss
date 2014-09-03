@@ -1128,6 +1128,20 @@ ul.action-links {
           top: -6px;
           right: 18px;
         }
+        .msj-submit {
+          position: absolute;
+          bottom: 7px;
+          font-size: 12px;
+          left: 24px;
+          right: 104px;
+          line-height: 15px;
+          &.success { 
+          }
+          &.sorry {
+            font-size: 9px;
+            color: #F00;
+          }
+        }
         .subscribe-form {
           padding: 20px;
           .form-item {
@@ -1137,7 +1151,8 @@ ul.action-links {
           }
           input[type="submit"] {
             float: right;
-            margin-top: 10px;
+            margin-top: 0px;
+            margin-bottom: 10px;
           }
         }
       }

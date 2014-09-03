@@ -132,14 +132,23 @@ function fe_newsletter_theme() {
 function template_preprocess_ijnet_newsletter(&$vars) {
   $node = $vars['node'];
   $newsletter_fields = array();
-  
-  //$vars['newsletter_date'] = date("m/d/Y", _fe_newsletter_get_newsletter_date());
-  $vars['newsletter_date'] = '';
+
+  $vars['newsletter_date'] = _fe_newsletter_get_newsletter_date($node);
   $vars['newsletter_images_path'] = drupal_get_path('module', 'fe_newsletter') . '/theme/images/';
 
   $vars['featured_contents'] = _fe_newsletter_get_featured_contents($node);
   $vars['advertisements'] = _fe_newsletter_get_advertisements($node);
   $vars['opportunities'] =_fe_newsletter_get_opportunities($node);
+}
+
+function _fe_newsletter_get_newsletter_date($node) {
+  $date = format_date(
+    $node->created, 
+    $type = 'custom', 
+    $format = t('d F Y'), 
+    $timezone = null, 
+    $langcode = $node->language);
+  return $date;
 }
 
 function _fe_newsletter_get_featured_contents($node) {
@@ -424,10 +433,10 @@ function fe_newsletter_subscribe_form_submit($form, &$form_state) {
     //$status = $cc->create_contact($user_email, $lists, $fields);
     $status = TRUE;
     if ($status) {
-      $msg = t('Success, you are now subscribed to our mailing list');
+      $msg = '<div class="msj-submit success">' . t('Success, you are now subscribed to our mailing list') . '</div>';
     }   
     else {
-      $msg = t('Sorry, there was a problem, please ensure your details are valid and try again');
+      $msg = '<div class="msj-submit sorry">' . t('Sorry, there was a problem, please ensure your details are valid and try again') . '</div>';
     }
   }
   // Process form submission.

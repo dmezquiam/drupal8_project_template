@@ -62,6 +62,7 @@ body.sidebar-second .content-inner {
   .field-type-taxonomy-term-reference h2.field-label { float: right !important; }
 
   //FLOAT LEFT <=====
+  .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"],
   .block-lang-dropdown,
   #header-wrapper .region-header { float: left; }
 // ====================================================
@@ -77,7 +78,9 @@ body.sidebar-second .content-inner {
   .mail-subscribe .dropdown .clicker {
     background: url("../images/arrow_down.png") no-repeat 0px center;
   }
-
+  .mail-subscribe .dropdown .clicker.active {
+    background: url("../images/bt_close.png") no-repeat 0px center;
+  }
   .mail-subscribe .dropdown .clicker h4 { 
     margin-left: 18px;
     margin-right: 0px;
@@ -202,5 +205,26 @@ body .dd-pointer {
   margin-right: 0px;
 }
 .opportunities-list .buttons {
+  float: left;
+}
+
+//videos
+.page-videos .view-display-id-featured_video {
+  margin-right: 0px;
+  margin-left: -20px;
+}
+.page-videos .pane-views-videos-related-videos-landing .block-inner {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.view-display-id-featured_video {
+  padding: 0px 15px 15px 0px;
+}
+
+.videos-landing-header .header {
+  float: right;
+}
+.videos-landing-header .topic-select .topic-select-inner .search {
   float: left;
 }
