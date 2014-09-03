@@ -122,6 +122,88 @@ function fe_news_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'tags';
+  $context->description = '';
+  $context->tag = 'taxonomies';
+  $context->conditions = array(
+    'taxonomy_term' => array(
+      'values' => array(
+        'tags' => 'tags',
+      ),
+      'options' => array(
+        'term_form' => '1',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'jsonblocks-social-block' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'social-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'views-news-top_story' => array(
+          'module' => 'views',
+          'delta' => 'news-top_story',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('taxonomies');
+  $export['tags'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'topics';
+  $context->description = '';
+  $context->tag = 'taxonomies';
+  $context->conditions = array(
+    'taxonomy_term' => array(
+      'values' => array(
+        'topic' => 'topic',
+      ),
+      'options' => array(
+        'term_form' => '1',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'jsonblocks-social-block' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'social-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'views-news-top_story' => array(
+          'module' => 'views',
+          'delta' => 'news-top_story',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('taxonomies');
+  $export['topics'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'video_search';
   $context->description = '';
   $context->tag = 'Video';
