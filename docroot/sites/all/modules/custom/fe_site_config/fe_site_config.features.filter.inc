@@ -10,10 +10,10 @@
 function fe_site_config_filter_default_formats() {
   $formats = array();
 
-  // Exported format: Filtered HTML.
+  // Exported format: Filtered HTML - extended.
   $formats['filtered_html'] = array(
     'format' => 'filtered_html',
-    'name' => 'Filtered HTML',
+    'name' => 'Filtered HTML - extended',
     'cache' => 1,
     'status' => 1,
     'weight' => -10,
@@ -97,7 +97,7 @@ function fe_site_config_filter_default_formats() {
     'name' => 'Plain text',
     'cache' => 1,
     'status' => 1,
-    'weight' => -8,
+    'weight' => -6,
     'filters' => array(
       'filter_html_escape' => array(
         'weight' => 0,
