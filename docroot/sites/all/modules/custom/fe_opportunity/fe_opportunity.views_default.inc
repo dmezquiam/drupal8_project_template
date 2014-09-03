@@ -151,8 +151,7 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'IJNet curates the latest, low-cost opportunities from around the world to satisfy the training needs of professional and aspiring journalists alike. Filter our collection of fellowships, workshops, online courses and media jobs by region, topic or deadline. 
-';
+  $handler->display->display_options['header']['area']['content'] = 'IJNet curates the latest opportunities from around the world to satisfy the training needs of professional and aspiring journalists alike. Filter our collection of fellowships, workshops, online courses and media jobs by region, topic or deadline.';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Post date */
@@ -659,6 +658,11 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="buttons"> <a href="/opportunities/ending-soon" class="button-small"> VIEW ALL </a> </div>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Deadline (field_deadline) */
   $handler->display->display_options['sorts']['field_deadline_value']['id'] = 'field_deadline_value';
