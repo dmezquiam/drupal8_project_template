@@ -14,7 +14,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
   $menu_links['menu-dashboard_advertisements:admin/dashboard/content/advertisements'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'admin/dashboard/content/advertisements',
-    'router_path' => 'admin/dashboard/content',
+    'router_path' => 'admin/dashboard/content/advertisements',
     'link_title' => 'Advertisements',
     'options' => array(
       'attributes' => array(
@@ -34,7 +34,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
   $menu_links['menu-dashboard_banners:admin/dashboard/content/banners'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'admin/dashboard/content/banners',
-    'router_path' => 'admin/dashboard/content',
+    'router_path' => 'admin/dashboard/content/banners',
     'link_title' => 'Banners',
     'options' => array(
       'attributes' => array(
@@ -54,7 +54,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
   $menu_links['menu-dashboard_basic-pages:admin/dashboard/content/basic-pages'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'admin/dashboard/content/basic-pages',
-    'router_path' => 'admin/dashboard/content',
+    'router_path' => 'admin/dashboard/content/basic-pages',
     'link_title' => 'Basic Pages',
     'options' => array(
       'attributes' => array(
@@ -75,7 +75,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
   $menu_links['menu-dashboard_bulletin-emails:admin/dashboard/content/bulletins'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'admin/dashboard/content/bulletins',
-    'router_path' => 'admin/dashboard/content',
+    'router_path' => 'admin/dashboard/content/bulletins',
     'link_title' => 'Bulletin Emails',
     'options' => array(
       'attributes' => array(
@@ -95,7 +95,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
   $menu_links['menu-dashboard_chats:admin/dashboard/content/chats'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'admin/dashboard/content/chats',
-    'router_path' => 'admin/dashboard/content',
+    'router_path' => 'admin/dashboard/content/chats',
     'link_title' => 'Chats',
     'options' => array(
       'attributes' => array(
@@ -115,7 +115,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
   $menu_links['menu-dashboard_news:admin/dashboard/content/news'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'admin/dashboard/content/news',
-    'router_path' => 'admin/dashboard/content',
+    'router_path' => 'admin/dashboard/content/news',
     'link_title' => 'News',
     'options' => array(
       'attributes' => array(
@@ -135,7 +135,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
   $menu_links['menu-dashboard_opportunities:admin/dashboard/content/opportunities'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'admin/dashboard/content/opportunities',
-    'router_path' => 'admin/dashboard/content',
+    'router_path' => 'admin/dashboard/content/opportunities',
     'link_title' => 'Opportunities',
     'options' => array(
       'attributes' => array(
@@ -217,7 +217,7 @@ function fe_admin_dashboards_menu_default_menu_links() {
   $menu_links['menu-dashboard_videos:admin/dashboard/content/videos'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'admin/dashboard/content/videos',
-    'router_path' => 'admin/dashboard/content',
+    'router_path' => 'admin/dashboard/content/videos',
     'link_title' => 'Videos',
     'options' => array(
       'attributes' => array(
