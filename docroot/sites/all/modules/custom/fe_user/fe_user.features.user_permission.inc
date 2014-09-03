@@ -1757,6 +1757,7 @@ function fe_user_user_default_permissions() {
     'name' => 'translate admin strings',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'i18n_string',
   );
@@ -1776,6 +1777,7 @@ function fe_user_user_default_permissions() {
     'name' => 'translate interface',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'locale',
   );
@@ -1785,6 +1787,7 @@ function fe_user_user_default_permissions() {
     'name' => 'translate user-defined strings',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'i18n_string',
   );

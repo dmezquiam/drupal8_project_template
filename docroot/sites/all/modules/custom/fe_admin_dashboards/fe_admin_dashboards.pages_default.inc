@@ -41,6 +41,10 @@ function fe_admin_dashboards_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Dashboard',
+    'panels_breadcrumbs_paths' => 'admin/dashboard',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
