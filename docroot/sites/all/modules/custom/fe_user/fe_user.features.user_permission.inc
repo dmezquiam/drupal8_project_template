@@ -1954,19 +1954,6 @@ function fe_user_user_default_permissions() {
     'module' => 'panels',
   );
 
-  // Exported permission: 'use text format filtered_comments'.
-  $permissions['use text format filtered_comments'] = array(
-    'name' => 'use text format filtered_comments',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'blogger' => 'blogger',
-      'editor' => 'editor',
-    ),
-    'module' => 'filter',
-  );
-
   // Exported permission: 'use text format filtered_html'.
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
