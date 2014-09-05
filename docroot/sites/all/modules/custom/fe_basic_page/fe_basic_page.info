@@ -8,6 +8,7 @@ dependencies[] = context
 dependencies[] = ctools
 dependencies[] = fe_news
 dependencies[] = features
+dependencies[] = jsonblocks
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = views
