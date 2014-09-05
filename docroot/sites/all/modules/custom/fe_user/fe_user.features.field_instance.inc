@@ -53,6 +53,7 @@ function fe_user_field_default_field_instances() {
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
+        'summary_display' => 'default',
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',

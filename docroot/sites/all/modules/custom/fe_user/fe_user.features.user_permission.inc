@@ -392,6 +392,15 @@ function fe_user_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'administer google analytics'.
+  $permissions['administer google analytics'] = array(
+    'name' => 'administer google analytics',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'googleanalytics',
+  );
+
   // Exported permission: 'administer image styles'.
   $permissions['administer image styles'] = array(
     'name' => 'administer image styles',
@@ -565,6 +574,15 @@ function fe_user_user_default_permissions() {
     'module' => 'responsive_menus',
   );
 
+  // Exported permission: 'administer scheduler'.
+  $permissions['administer scheduler'] = array(
+    'name' => 'administer scheduler',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'scheduler',
+  );
+
   // Exported permission: 'administer search'.
   $permissions['administer search'] = array(
     'name' => 'administer search',
@@ -599,6 +617,15 @@ function fe_user_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'administer stage_file_proxy settings'.
+  $permissions['administer stage_file_proxy settings'] = array(
+    'name' => 'administer stage_file_proxy settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'stage_file_proxy',
   );
 
   // Exported permission: 'administer statistics'.
@@ -1621,6 +1648,15 @@ function fe_user_user_default_permissions() {
     'module' => 'oauth_common',
   );
 
+  // Exported permission: 'opt-in or out of tracking'.
+  $permissions['opt-in or out of tracking'] = array(
+    'name' => 'opt-in or out of tracking',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'googleanalytics',
+  );
+
   // Exported permission: 'paste from clipboard'.
   $permissions['paste from clipboard'] = array(
     'name' => 'paste from clipboard',
@@ -1638,6 +1674,215 @@ function fe_user_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'comment',
+  );
+
+  // Exported permission: 'publish any advertisement content'.
+  $permissions['publish any advertisement content'] = array(
+    'name' => 'publish any advertisement content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish any banner content'.
+  $permissions['publish any banner content'] = array(
+    'name' => 'publish any banner content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish any bulletin_email content'.
+  $permissions['publish any bulletin_email content'] = array(
+    'name' => 'publish any bulletin_email content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish any chat content'.
+  $permissions['publish any chat content'] = array(
+    'name' => 'publish any chat content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish any content'.
+  $permissions['publish any content'] = array(
+    'name' => 'publish any content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish any news content'.
+  $permissions['publish any news content'] = array(
+    'name' => 'publish any news content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish any page content'.
+  $permissions['publish any page content'] = array(
+    'name' => 'publish any page content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish any staff_member content'.
+  $permissions['publish any staff_member content'] = array(
+    'name' => 'publish any staff_member content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish any training_opportunity content'.
+  $permissions['publish any training_opportunity content'] = array(
+    'name' => 'publish any training_opportunity content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish any video content'.
+  $permissions['publish any video content'] = array(
+    'name' => 'publish any video content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable advertisement content'.
+  $permissions['publish editable advertisement content'] = array(
+    'name' => 'publish editable advertisement content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable banner content'.
+  $permissions['publish editable banner content'] = array(
+    'name' => 'publish editable banner content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable bulletin_email content'.
+  $permissions['publish editable bulletin_email content'] = array(
+    'name' => 'publish editable bulletin_email content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable chat content'.
+  $permissions['publish editable chat content'] = array(
+    'name' => 'publish editable chat content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable content'.
+  $permissions['publish editable content'] = array(
+    'name' => 'publish editable content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable news content'.
+  $permissions['publish editable news content'] = array(
+    'name' => 'publish editable news content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable page content'.
+  $permissions['publish editable page content'] = array(
+    'name' => 'publish editable page content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable staff_member content'.
+  $permissions['publish editable staff_member content'] = array(
+    'name' => 'publish editable staff_member content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable training_opportunity content'.
+  $permissions['publish editable training_opportunity content'] = array(
+    'name' => 'publish editable training_opportunity content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable video content'.
+  $permissions['publish editable video content'] = array(
+    'name' => 'publish editable video content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish own advertisement content'.
+  $permissions['publish own advertisement content'] = array(
+    'name' => 'publish own advertisement content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish own banner content'.
+  $permissions['publish own banner content'] = array(
+    'name' => 'publish own banner content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish own bulletin_email content'.
+  $permissions['publish own bulletin_email content'] = array(
+    'name' => 'publish own bulletin_email content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish own chat content'.
+  $permissions['publish own chat content'] = array(
+    'name' => 'publish own chat content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish own news content'.
+  $permissions['publish own news content'] = array(
+    'name' => 'publish own news content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish own page content'.
+  $permissions['publish own page content'] = array(
+    'name' => 'publish own page content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish own staff_member content'.
+  $permissions['publish own staff_member content'] = array(
+    'name' => 'publish own staff_member content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish own training_opportunity content'.
+  $permissions['publish own training_opportunity content'] = array(
+    'name' => 'publish own training_opportunity content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish own video content'.
+  $permissions['publish own video content'] = array(
+    'name' => 'publish own video content',
+    'roles' => array(),
+    'module' => 'publishcontent',
   );
 
   // Exported permission: 'rename files and directories'.
@@ -1806,6 +2051,224 @@ function fe_user_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'unpublish any advertisement content'.
+  $permissions['unpublish any advertisement content'] = array(
+    'name' => 'unpublish any advertisement content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish any banner content'.
+  $permissions['unpublish any banner content'] = array(
+    'name' => 'unpublish any banner content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish any bulletin_email content'.
+  $permissions['unpublish any bulletin_email content'] = array(
+    'name' => 'unpublish any bulletin_email content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish any chat content'.
+  $permissions['unpublish any chat content'] = array(
+    'name' => 'unpublish any chat content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish any content'.
+  $permissions['unpublish any content'] = array(
+    'name' => 'unpublish any content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish any news content'.
+  $permissions['unpublish any news content'] = array(
+    'name' => 'unpublish any news content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish any page content'.
+  $permissions['unpublish any page content'] = array(
+    'name' => 'unpublish any page content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish any staff_member content'.
+  $permissions['unpublish any staff_member content'] = array(
+    'name' => 'unpublish any staff_member content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish any training_opportunity content'.
+  $permissions['unpublish any training_opportunity content'] = array(
+    'name' => 'unpublish any training_opportunity content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish any video content'.
+  $permissions['unpublish any video content'] = array(
+    'name' => 'unpublish any video content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable advertisement content'.
+  $permissions['unpublish editable advertisement content'] = array(
+    'name' => 'unpublish editable advertisement content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable banner content'.
+  $permissions['unpublish editable banner content'] = array(
+    'name' => 'unpublish editable banner content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable bulletin_email content'.
+  $permissions['unpublish editable bulletin_email content'] = array(
+    'name' => 'unpublish editable bulletin_email content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable chat content'.
+  $permissions['unpublish editable chat content'] = array(
+    'name' => 'unpublish editable chat content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable content'.
+  $permissions['unpublish editable content'] = array(
+    'name' => 'unpublish editable content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable news content'.
+  $permissions['unpublish editable news content'] = array(
+    'name' => 'unpublish editable news content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable page content'.
+  $permissions['unpublish editable page content'] = array(
+    'name' => 'unpublish editable page content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable staff_member content'.
+  $permissions['unpublish editable staff_member content'] = array(
+    'name' => 'unpublish editable staff_member content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable training_opportunity content'.
+  $permissions['unpublish editable training_opportunity content'] = array(
+    'name' => 'unpublish editable training_opportunity content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable video content'.
+  $permissions['unpublish editable video content'] = array(
+    'name' => 'unpublish editable video content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish own advertisement content'.
+  $permissions['unpublish own advertisement content'] = array(
+    'name' => 'unpublish own advertisement content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish own banner content'.
+  $permissions['unpublish own banner content'] = array(
+    'name' => 'unpublish own banner content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish own bulletin_email content'.
+  $permissions['unpublish own bulletin_email content'] = array(
+    'name' => 'unpublish own bulletin_email content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish own chat content'.
+  $permissions['unpublish own chat content'] = array(
+    'name' => 'unpublish own chat content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish own news content'.
+  $permissions['unpublish own news content'] = array(
+    'name' => 'unpublish own news content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish own page content'.
+  $permissions['unpublish own page content'] = array(
+    'name' => 'unpublish own page content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish own staff_member content'.
+  $permissions['unpublish own staff_member content'] = array(
+    'name' => 'unpublish own staff_member content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish own training_opportunity content'.
+  $permissions['unpublish own training_opportunity content'] = array(
+    'name' => 'unpublish own training_opportunity content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish own video content'.
+  $permissions['unpublish own video content'] = array(
+    'name' => 'unpublish own video content',
+    'roles' => array(),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'use PHP for tracking visibility'.
+  $permissions['use PHP for tracking visibility'] = array(
+    'name' => 'use PHP for tracking visibility',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'googleanalytics',
+  );
+
   // Exported permission: 'use advanced search'.
   $permissions['use advanced search'] = array(
     'name' => 'use advanced search',
@@ -1889,6 +2352,19 @@ function fe_user_user_default_permissions() {
     'module' => 'panels',
   );
 
+  // Exported permission: 'use text format filtered_comments'.
+  $permissions['use text format filtered_comments'] = array(
+    'name' => 'use text format filtered_comments',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: 'use text format filtered_html'.
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
@@ -1911,6 +2387,13 @@ function fe_user_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'use text format full_html_custom'.
+  $permissions['use text format full_html_custom'] = array(
+    'name' => 'use text format full_html_custom',
+    'roles' => array(),
+    'module' => 'filter',
+  );
+
   // Exported permission: 'view all user locations'.
   $permissions['view all user locations'] = array(
     'name' => 'view all user locations',
@@ -1918,6 +2401,126 @@ function fe_user_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'location_user',
+  );
+
+  // Exported permission: 'view any unpublished advertisement content'.
+  $permissions['view any unpublished advertisement content'] = array(
+    'name' => 'view any unpublished advertisement content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished banner content'.
+  $permissions['view any unpublished banner content'] = array(
+    'name' => 'view any unpublished banner content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished bulletin_email content'.
+  $permissions['view any unpublished bulletin_email content'] = array(
+    'name' => 'view any unpublished bulletin_email content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished chat content'.
+  $permissions['view any unpublished chat content'] = array(
+    'name' => 'view any unpublished chat content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished content'.
+  $permissions['view any unpublished content'] = array(
+    'name' => 'view any unpublished content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished feed content'.
+  $permissions['view any unpublished feed content'] = array(
+    'name' => 'view any unpublished feed content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished feed_item content'.
+  $permissions['view any unpublished feed_item content'] = array(
+    'name' => 'view any unpublished feed_item content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished news content'.
+  $permissions['view any unpublished news content'] = array(
+    'name' => 'view any unpublished news content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished page content'.
+  $permissions['view any unpublished page content'] = array(
+    'name' => 'view any unpublished page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished staff_member content'.
+  $permissions['view any unpublished staff_member content'] = array(
+    'name' => 'view any unpublished staff_member content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished training_opportunity content'.
+  $permissions['view any unpublished training_opportunity content'] = array(
+    'name' => 'view any unpublished training_opportunity content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished video content'.
+  $permissions['view any unpublished video content'] = array(
+    'name' => 'view any unpublished video content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
   );
 
   // Exported permission: 'view location directory'.
