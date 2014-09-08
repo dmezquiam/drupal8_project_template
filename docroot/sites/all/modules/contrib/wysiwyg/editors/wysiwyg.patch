@@ -1,0 +1,19 @@
+diff --git a/docroot/sites/all/modules/custom/wysiwyg/editors/ckeditor.inc b/docroot/sites/all/modules/custom/wysiwyg/editors/ckeditor.inc
+index f2f0a3b..206d658 100644
+--- a/docroot/sites/all/modules/custom/wysiwyg/editors/ckeditor.inc
++++ b/docroot/sites/all/modules/custom/wysiwyg/editors/ckeditor.inc
+@@ -447,6 +447,14 @@ function wysiwyg_ckeditor_plugins($editor) {
+       ),
+       'internal' => TRUE,
+     ),
++    'oembed' => array(
++      'path' => $editor['library path'] . '/plugins/oembed',
++      'buttons' => array(
++        'oembed' => 'OEmbed',
++      ),
++      'internal' => TRUE,
++      'load' => TRUE,
++    ),
+   );
+ 
+   if (version_compare($editor['installed version'], '3.1.0.4885', '<')) {
