@@ -1994,6 +1994,27 @@ div.messages {
 }
 
 /* =============================================================================
+ *   Opportunities Detail
+ * ========================================================================== */
+.field-name-field-deadline {
+  background: #F8F6EC url('#{$path-to-images}/calendar_icon.jpg') no-repeat 10px center;
+  padding: 12px 61px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  h2.field-label {
+    margin: 0;
+    float: none;
+    font-size: $font-size-large;
+    margin-left: 5px;
+  }
+  .field-items {
+    margin-left: 5px;
+    span { text-transform: uppercase; }
+  }
+}
+
+
+/* =============================================================================
  *   Latest story
  * ========================================================================== */
 .view-display-id-top_story_home {
