@@ -2,7 +2,7 @@ diff --git a/docroot/sites/all/modules/custom/wysiwyg/editors/ckeditor.inc b/doc
 index f2f0a3b..206d658 100644
 --- a/docroot/sites/all/modules/custom/wysiwyg/editors/ckeditor.inc
 +++ b/docroot/sites/all/modules/custom/wysiwyg/editors/ckeditor.inc
-@@ -447,6 +447,14 @@ function wysiwyg_ckeditor_plugins($editor) {
+@@ -628,6 +628,14 @@ function wysiwyg_ckeditor_plugins($editor) {
        ),
        'internal' => TRUE,
      ),
