@@ -107,12 +107,69 @@ function ijnet_salesforce_contact_form($form, &$form_state) {
   return $form;
 }
 
-function ijnet_salesforce_contact_form_submit($form, &$form_state) {
-}
-
 function ijnet_salesforce_preprocess_page(&$vars, $hook) {
   global $language;
   if ($language->language == 'en') {
     drupal_add_js(drupal_get_path('module', 'ijnet_salesforce') . '/js/ijnet_salesforce.js');
   }
+}
+
+function ijnet_salesforce_contact_form_submit($form, &$form_state) {
+  $values = $form_state['values'];
+
+  _ijnet_salesforce_set_library();
+  try {
+    $soapclient = _ijnet_salesforce_get_client();
+    $describe = $soapclient->describeSObjects(array('Lead'));
+    $lead = _ijnet_salesforce_get_lead($values);
+    $response = $soapclient->create($lead);
+  } catch (Exception $e) {
+    drupal_set_message(t('Houston, we have a  problem.'), 'error');
+  }
+  $response[0]->success ?
+    drupal_set_message(t('Thank you for subscribing to the newsletter.'), 'status') :
+    drupal_set_message(t('Houston, we have a  problem.'), 'error');
+}
+
+function _ijnet_salesforce_set_library() {
+  module_load_include('php', 'ijnet_salesforce', 'soapclient/SforcePartnerClient');
+}
+
+function _ijnet_salesforce_get_client() {
+  $username = variable_get('ijnet_salesforce_ws_username', 'mlooney@icfj.org');
+  $password = variable_get('ijnet_salesforce_ws_password', 'ijnet1234');
+  $security_token = variable_get('ijnet_salesforce_ws_security_token', 'ExlEfUTf8KySovlrLjph7pk1u');
+
+  try {
+    $mySforceConnection = new SforcePartnerClient();
+    $mySforceConnection->createConnection(drupal_get_path('module', 'ijnet_salesforce') . '/soapclient/partner.wsdl.xml');
+    $mySforceConnection->login($username, $password.$security_token);
+  } catch (Exception $e) {
+    throw $e;
+  }
+
+  return $mySforceConnection;
+}
+
+function _ijnet_salesforce_get_lead($fields) {
+  $leads = array();
+  $lead = new SObject();
+
+  $lead->fields = array(
+    'FirstName' => $fields['first_name'],
+    'LastName' => $fields['last_name'],
+    'Company' => $fields['organization_name'],
+    'Title' => $fields['position'],
+    'Email' => $fields['personal_email'],
+    //'WorkEmail' => $fields['work_email'], // TODO
+    'MobilePhone' => $fields['mobile'],
+    //'TwitterHandle' => $fields['twitter_handle'], // TODO
+    //'MailingAddress' => $fields['mailing_address'], // TODO
+    'City' => $fields['city'],
+    'Country' => $fields['country']
+  );
+  $lead->type = 'Lead';
+  $leads[] = $lead;
+
+  return $leads;
 }
