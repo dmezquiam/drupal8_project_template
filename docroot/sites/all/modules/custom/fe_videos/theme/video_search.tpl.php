@@ -2,7 +2,8 @@
   <div class="header">
     <div class="header-inner">
       <p>
-        <?php print t('Are you ready to tell stories on video, conduct computer-assited investigations or become a blackpack journalist? Check out videos on this topics and more.'); ?>
+        <?php print t('These short video tutorials and expert interviews will help
+ you learn to tell multimedia stories, use data in your investigations, become a backpack journalist and more.'); ?>
       </p>
     </div>
   </div>
