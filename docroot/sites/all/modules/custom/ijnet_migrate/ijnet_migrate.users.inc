@@ -11,7 +11,7 @@ function _ijnet_migrate_register_user_migrations($connection_args) {
       'group_name' => 'UsersLegacyToDrupal7',
       'default_uid' => 1,
       'source_dir' => 'https://ijnet.org/sites/default/files/',
-      'destination_dir' => './sites/default/files/user-pictures',
+      'destination_dir' => 'public://user-pictures',
       'fid_column' => 'field_profile_image_fid'
     )
   );
