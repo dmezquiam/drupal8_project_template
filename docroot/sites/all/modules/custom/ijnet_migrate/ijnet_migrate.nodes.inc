@@ -183,6 +183,7 @@ class IJNetNodeMigration extends DrupalNode6Migration {
   public function __construct(array $arguments) {
     // Add custom mappings for the format filters
     $arguments['format_mappings'] = array(
+      '0' => 'filtered_html', // Special case for source nodes with format = 0, so by default map to "filtered_html"
       '1' => 'filtered_html',
       '2' => 'filtered_html',
       '3' => 'full_html',
@@ -218,6 +219,31 @@ class IJNetNodeMigration extends DrupalNode6Migration {
     $parsedown = new Parsedown();
     $row->body = $parsedown->text($row->body);
     $row->teaser = $parsedown->text($row->teaser);
+  }
+
+  /**
+   * Implementation of Migration::createStub().
+   * Extends the DrupalNodeMigration::createStub implementation
+   *
+   * @param $migration
+   * @return array|bool
+   */
+  protected function createStub($migration) {
+    migrate_instrument_start('DrupalNodeMigration::createStub');
+    $node = new stdClass;
+    $node->title = t('Stub');
+    $node->body = array(LANGUAGE_NONE => array(array("value" => t('Stub body'))));
+    $node->type = $this->destination->getBundle();
+    $node->uid = 1;
+    $node->path['pathauto'] = FALSE; // Added pathauto FALSE to the parent implementation
+    node_save($node);
+    migrate_instrument_stop('DrupalNodeMigration::createStub');
+    if (isset($node->nid)) {
+      return array($node->nid);
+    }
+    else {
+      return FALSE;
+    }
   }
 
   /**
