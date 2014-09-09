@@ -3685,11 +3685,11 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['filters']['field_deadline_value']['id'] = 'field_deadline_value';
   $handler->display->display_options['filters']['field_deadline_value']['table'] = 'field_data_field_deadline';
   $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
+  $handler->display->display_options['filters']['field_deadline_value']['operator'] = '<=';
   $handler->display->display_options['filters']['field_deadline_value']['group'] = 1;
   $handler->display->display_options['filters']['field_deadline_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_deadline_value']['expose']['operator_id'] = 'field_deadline_value_op';
-  $handler->display->display_options['filters']['field_deadline_value']['expose']['label'] = 'deadline';
-  $handler->display->display_options['filters']['field_deadline_value']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_deadline_value']['expose']['label'] = 'deadline up to ';
   $handler->display->display_options['filters']['field_deadline_value']['expose']['operator'] = 'field_deadline_value_op';
   $handler->display->display_options['filters']['field_deadline_value']['expose']['identifier'] = 'field_deadline_value';
   $handler->display->display_options['filters']['field_deadline_value']['expose']['remember_roles'] = array(
@@ -3699,6 +3699,7 @@ function fe_admin_dashboards_views_default_views() {
     4 => 0,
     5 => 0,
   );
+  $handler->display->display_options['filters']['field_deadline_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -4142,8 +4143,7 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'start date';
-  $handler->display->display_options['filters']['field_date_value']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'is between ';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
@@ -4153,6 +4153,26 @@ function fe_admin_dashboards_views_default_views() {
     4 => 0,
     5 => 0,
   );
+  $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
+  /* Filter criterion: Content: Date - end date (field_date:value2) */
+  $handler->display->display_options['filters']['field_date_value2']['id'] = 'field_date_value2';
+  $handler->display->display_options['filters']['field_date_value2']['table'] = 'field_data_field_date';
+  $handler->display->display_options['filters']['field_date_value2']['field'] = 'field_date_value2';
+  $handler->display->display_options['filters']['field_date_value2']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_date_value2']['group'] = 1;
+  $handler->display->display_options['filters']['field_date_value2']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_date_value2']['expose']['operator_id'] = 'field_date_value2_op';
+  $handler->display->display_options['filters']['field_date_value2']['expose']['label'] = 'and';
+  $handler->display->display_options['filters']['field_date_value2']['expose']['operator'] = 'field_date_value2_op';
+  $handler->display->display_options['filters']['field_date_value2']['expose']['identifier'] = 'field_date_value2';
+  $handler->display->display_options['filters']['field_date_value2']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_date_value2']['form_type'] = 'date_popup';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -5124,7 +5144,7 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['filters']['field_from_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_from_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_from_date_value']['expose']['operator_id'] = 'field_from_date_value_op';
-  $handler->display->display_options['filters']['field_from_date_value']['expose']['label'] = 'start date';
+  $handler->display->display_options['filters']['field_from_date_value']['expose']['label'] = 'is between';
   $handler->display->display_options['filters']['field_from_date_value']['expose']['operator'] = 'field_from_date_value_op';
   $handler->display->display_options['filters']['field_from_date_value']['expose']['identifier'] = 'field_from_date_value';
   $handler->display->display_options['filters']['field_from_date_value']['expose']['remember_roles'] = array(
@@ -5134,6 +5154,7 @@ function fe_admin_dashboards_views_default_views() {
     4 => 0,
     5 => 0,
   );
+  $handler->display->display_options['filters']['field_from_date_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: Dates - end date (field_from_date:value2) */
   $handler->display->display_options['filters']['field_from_date_value2']['id'] = 'field_from_date_value2';
   $handler->display->display_options['filters']['field_from_date_value2']['table'] = 'field_data_field_from_date';
@@ -5142,7 +5163,7 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['filters']['field_from_date_value2']['group'] = 1;
   $handler->display->display_options['filters']['field_from_date_value2']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_from_date_value2']['expose']['operator_id'] = 'field_from_date_value2_op';
-  $handler->display->display_options['filters']['field_from_date_value2']['expose']['label'] = 'end date';
+  $handler->display->display_options['filters']['field_from_date_value2']['expose']['label'] = 'and ';
   $handler->display->display_options['filters']['field_from_date_value2']['expose']['operator'] = 'field_from_date_value2_op';
   $handler->display->display_options['filters']['field_from_date_value2']['expose']['identifier'] = 'field_from_date_value2';
   $handler->display->display_options['filters']['field_from_date_value2']['expose']['remember_roles'] = array(
@@ -5152,6 +5173,7 @@ function fe_admin_dashboards_views_default_views() {
     4 => 0,
     5 => 0,
   );
+  $handler->display->display_options['filters']['field_from_date_value2']['form_type'] = 'date_popup';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';

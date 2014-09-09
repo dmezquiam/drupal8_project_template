@@ -32,8 +32,7 @@ function fe_admin_dashboards_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Header of the Taxonomies page from the editor\'s Dashboard';
   $fe_block_boxes->format = 'filtered_html';
   $fe_block_boxes->machine_name = 'dashboard_taxonomies_header';
-  $fe_block_boxes->body = '<p>Here you can add or edit terms. Use the filters to get quicker access to what you&#39;re looking for, &nbsp;or go back to the <a href="../dashboard">Dashboard</a>.&nbsp;</p>
-';
+  $fe_block_boxes->body = '<p>Here you can add or edit terms. Use the filters to get quicker access to what you&#39;re looking for, &nbsp;or go back to the <a href="/admin/dashboard">Dashboard</a>.&nbsp;</p>';
 
   $export['dashboard_taxonomies_header'] = $fe_block_boxes;
 
