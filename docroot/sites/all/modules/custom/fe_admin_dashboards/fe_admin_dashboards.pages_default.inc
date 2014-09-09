@@ -17,7 +17,18 @@ function fe_admin_dashboards_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'admin/dashboard';
   $page->access = array();
-  $page->menu = array();
+  $page->menu = array(
+    'type' => 'none',
+    'title' => '',
+    'name' => 'menu-dashboard-nodequeues',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'normal',
+      'title' => '',
+      'name' => 'menu-dashboard-nodequeues',
+      'weight' => '0',
+    ),
+  );
   $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,
@@ -113,6 +124,30 @@ function fe_admin_dashboards_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-ac97258c-11b6-4473-8816-2269291a8451';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'views-0b8eb32e244af934a935b767f4e4e03f';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(),
+    );
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Latest content overview',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ac97258c-11b6-4473-8816-2269291a8451';
+    $display->content['new-ac97258c-11b6-4473-8816-2269291a8451'] = $pane;
+    $display->panels['center'][0] = 'new-ac97258c-11b6-4473-8816-2269291a8451';
+    $pane = new stdClass();
     $pane->pid = 'new-da16754d-ad0f-4ef7-8be3-347ab674a45d';
     $pane->panel = 'center';
     $pane->type = 'block';
@@ -152,35 +187,11 @@ function fe_admin_dashboards_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'da16754d-ad0f-4ef7-8be3-347ab674a45d';
     $display->content['new-da16754d-ad0f-4ef7-8be3-347ab674a45d'] = $pane;
-    $display->panels['center'][0] = 'new-da16754d-ad0f-4ef7-8be3-347ab674a45d';
-    $pane = new stdClass();
-    $pane->pid = 'new-ac97258c-11b6-4473-8816-2269291a8451';
-    $pane->panel = 'center';
-    $pane->type = 'block';
-    $pane->subtype = 'views-0b8eb32e244af934a935b767f4e4e03f';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(),
-    );
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'ac97258c-11b6-4473-8816-2269291a8451';
-    $display->content['new-ac97258c-11b6-4473-8816-2269291a8451'] = $pane;
-    $display->panels['center'][1] = 'new-ac97258c-11b6-4473-8816-2269291a8451';
+    $display->panels['center'][1] = 'new-da16754d-ad0f-4ef7-8be3-347ab674a45d';
     $pane = new stdClass();
     $pane->pid = 'new-68cd379d-89e8-4342-9cbd-e9b6b2689736';
     $pane->panel = 'sidebar';
@@ -284,6 +295,46 @@ function fe_admin_dashboards_default_page_manager_pages() {
     $pane->uuid = '302f6c21-94cd-46c6-867e-0733642b7eda';
     $display->content['new-302f6c21-94cd-46c6-867e-0733642b7eda'] = $pane;
     $display->panels['sidebar'][2] = 'new-302f6c21-94cd-46c6-867e-0733642b7eda';
+    $pane = new stdClass();
+    $pane->pid = 'new-d8567772-2692-4eb4-a823-5ccacf9874db';
+    $pane->panel = 'sidebar';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-dashboard-nodequeues';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+              1 => 4,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'View nodequeues',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'style' => 'default',
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'primary-menu-bar',
+      'css_class' => 'nav clearfix responsive-menus-simple',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'd8567772-2692-4eb4-a823-5ccacf9874db';
+    $display->content['new-d8567772-2692-4eb4-a823-5ccacf9874db'] = $pane;
+    $display->panels['sidebar'][3] = 'new-d8567772-2692-4eb4-a823-5ccacf9874db';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-da16754d-ad0f-4ef7-8be3-347ab674a45d';
   $handler->conf['display'] = $display;
