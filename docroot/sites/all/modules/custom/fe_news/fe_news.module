@@ -27,6 +27,13 @@ function fe_news_preprocess_node(&$variables) {
     }
 
     $variables['author'] = $author;
+
+    global $base_url;
+    $href = $base_url.$variables['node_url'];
+    drupal_add_html_head_link(
+        array('rel' => 'canonical', 'href' => $href),
+        true
+    );
   }
 }
 
