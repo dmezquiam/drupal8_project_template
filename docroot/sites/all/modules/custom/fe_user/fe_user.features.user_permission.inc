@@ -1990,6 +1990,7 @@ function fe_user_user_default_permissions() {
     'name' => 'view any unpublished content',
     'roles' => array(
       'administrator' => 'administrator',
+      'blogger' => 'blogger',
       'editor' => 'editor',
     ),
     'module' => 'view_unpublished',
