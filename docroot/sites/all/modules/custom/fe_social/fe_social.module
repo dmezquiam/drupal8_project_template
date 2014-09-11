@@ -9,23 +9,63 @@ include_once 'fe_social.features.inc';
 function fe_social_preprocess_page(&$vars) {
   if (isset($vars['node'])) {
     if ($vars['node']->type == 'news') {
+      $twitter_handle = _fe_social_get_twitter_handle();
+      //drupal_add_js('var switchTo5x=true', array('type' => 'inline', 'scope' => 'header'));
+      //drupal_add_js('http://w.sharethis.com/button/buttons.js', 'external');
+      //drupal_add_js('http://w.sharethis.com/loader.js', 'external');
       $header_js = '
         <script type="text/javascript">var switchTo5x=true;</script>
         <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
         <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
         ';
       drupal_add_js($header_js, array('type' => 'inline', 'scope' => 'header'));
-
       $footer_js = '
-        <script type="text/javascript">stLight.options({publisher: "ur-d73e831-ed94-5abd-edb-77472e6cac2e", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+        <script type="text/javascript">
+            stLight.options({
+                publisher: "ur-d73e831-ed94-5abd-edb-77472e6cac2e", 
+                doNotHash: false, 
+                doNotCopy: false, 
+                hashAddressBar: false
+            });
+        </script>
         <script>
-          var options={ "publisher": "ur-d73e831-ed94-5abd-edb-77472e6cac2e", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "email"]}};
+          var options={ "publisher": "ur-d73e831-ed94-5abd-edb-77472e6cac2e", 
+                "position": "left",
+                "ad": { "visible": false,
+                        "openDelay": 5,
+                        "closeDelay": 0},
+                "chicklets": { "items": ["facebook", "twitter", "email"]},
+                "chicklets_params": { "twitter" : { "st_via" : "' . $twitter_handle . '" } }
+                };
           var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
         </script>
         ';
       drupal_add_js($footer_js, array('type' => 'inline', 'scope' => 'footer'));
     }
   }
+}
+
+function _fe_social_get_twitter_handle() {
+  global $language;
+  $twitter_accounts = _fe_social_get_twitter_accounts();
+  $twitter_handle = array_key_exists($language->language, $twitter_accounts) ?
+    $twitter_accounts[$language->language] :
+    $twitter_accounts['en'];
+
+  return $twitter_handle;
+}
+
+function _fe_social_get_twitter_accounts() {
+  $twitter_accounts = array(
+    'en' => 'IJNet',
+    'ar' => 'IJNetArabic',
+    'es' => 'ijnetEs',
+    'fa' => 'IJNetPersian',
+    'pt-br' => 'IJNetPortugues',
+    'ru' => 'IJNet_Russian',
+  );
+
+  return $twitter_accounts;
 }
 
 /**
@@ -60,7 +100,7 @@ function fe_social_get_news_og_meta($node) {
   $image = isset($node->field_image[$lang]) ?
     file_create_url($node->field_image[$lang][0]['uri']) :
     file_create_url($node->field_image[LANGUAGE_NONE][0]['uri']);
-  
+
   fe_social_add_og_meta_tags($title, $url, $description, $image);
 }
 
@@ -121,13 +161,7 @@ function fe_social_add_og_meta_tags($title, $url, $description, $image) {
  * Implements hook_views_query_alter()
  */
 function fe_social_views_query_alter(&$view, &$query) {
-  $twitter_accounts = array(
-    'ar' => 'IJNetArabic',
-    'es' => 'ijnetEs',
-    'fa' => 'IJNetPersian',
-    'pt-br' => 'IJNetPortugues',
-    'ru' => 'IJNet_Russian',
-  );
+  $twitter_accounts = _fe_social_get_twitter_accounts();
 
   if ($view->name == 'twitter' && $view->current_display == 'tweets_home_block') {
     global $language;
