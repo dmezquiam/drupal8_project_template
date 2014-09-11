@@ -124,11 +124,11 @@ function ijnet_salesforce_contact_form_submit($form, &$form_state) {
     $lead = _ijnet_salesforce_get_lead($values);
     $response = $soapclient->create($lead);
   } catch (Exception $e) {
-    drupal_set_message(t('Houston, we have a  problem.'), 'error');
+    drupal_set_message(t('Something went wrong, please try again later.'), 'error');
   }
   $response[0]->success ?
     drupal_set_message(t('Thank you for subscribing to the newsletter.'), 'status') :
-    drupal_set_message(t('Houston, we have a  problem.'), 'error');
+    drupal_set_message(t('Something went wrong, please try again later.'), 'error');
 }
 
 function _ijnet_salesforce_set_library() {
@@ -136,6 +136,7 @@ function _ijnet_salesforce_set_library() {
 }
 
 function _ijnet_salesforce_get_client() {
+  _ijnet_salesforce_set_library();
   $username = variable_get('ijnet_salesforce_ws_username', 'mlooney@icfj.org');
   $password = variable_get('ijnet_salesforce_ws_password', 'ijnet1234');
   $security_token = variable_get('ijnet_salesforce_ws_security_token', 'ExlEfUTf8KySovlrLjph7pk1u');
@@ -161,10 +162,10 @@ function _ijnet_salesforce_get_lead($fields) {
     'Company' => $fields['organization_name'],
     'Title' => $fields['position'],
     'Email' => $fields['personal_email'],
-    //'WorkEmail' => $fields['work_email'], // TODO
+    'Secondary_Email__c' => $fields['work_email'], // TODO SecondaryEmail
     'MobilePhone' => $fields['mobile'],
-    //'TwitterHandle' => $fields['twitter_handle'], // TODO
-    //'MailingAddress' => $fields['mailing_address'], // TODO
+    'Twitter__c' => $fields['twitter_handle'], // TODO Twitter
+    'Google_c_' => $fields['mailing_address'], // TODO Google+
     'City' => $fields['city'],
     'Country' => $fields['country']
   );
