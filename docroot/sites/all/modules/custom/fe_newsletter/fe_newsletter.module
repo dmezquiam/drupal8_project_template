@@ -18,6 +18,10 @@ function fe_newsletter_menu() {
     'page arguments' => array(1),
     'access arguments' => TRUE,
   );
+  $items['email-bulletin-archive'] = array(
+    'page callback' => 'ijnet_newsletter_archive_callback',
+    'access arguments' => TRUE,
+  );
   $items['node/%/bulletin'] = array(
     'title' => 'Newsletter markup',
     'page callback' => 'drupal_get_form',
@@ -50,9 +54,30 @@ function ijnet_newsletter_callback($nid) {
   }
 
   // TODO: delivery callback
-  print theme('ijnet_newsletter', array('node' => node_load($nid)));
+  print(theme('ijnet_newsletter', array('node' => node_load($nid))));
 }
 
+function ijnet_newsletter_archive_callback() {
+  $nid = _ijnet_newsletter_get_last_newsletter_nid();
+
+  return theme('ijnet_newsletter_content', array('node' => node_load($nid)));
+}
+
+function _ijnet_newsletter_get_last_newsletter_nid() {
+  global $language;
+  $newsletter_lang = $language->language;
+  $result = db_select('node', 'n')
+    ->condition('n.type', 'bulletin_email')
+    ->condition('n.language', $newsletter_lang)
+    ->fields('n', array('nid'))
+    ->orderBy('created', 'DESC')
+    ->extend('PagerDefault')->limit(1)
+    ->execute()
+    ->fetch();
+  $nid = $result->nid;
+
+  return $nid;
+}
 
 function ijnet_newsletter_access_callback($nid) {
   $node = node_load($nid);
@@ -67,6 +92,7 @@ function ijnet_newsletter_access_callback($nid) {
  * Implements hook_theme()
  */
 function fe_newsletter_theme() {
+  $theme_path = drupal_get_path('module', 'fe_newsletter') . '/theme';
   $themes = array(
 
     'ijnet_newsletter' => array(
@@ -74,7 +100,15 @@ function fe_newsletter_theme() {
         'node' => NULL,
       ),
       'template' => 'ijnet-newsletter',
-      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_content' => array(
+      'variables' => array(
+        'node' => NULL,
+      ),
+      'template' => 'ijnet-newsletter-content',
+      'path' => $theme_path,
     ),
 
     'ijnet_newsletter_featured_contents' => array(
@@ -82,14 +116,14 @@ function fe_newsletter_theme() {
         'featured_contents' => NULL
       ),
       'template' => 'ijnet-newsletter-featured-contents',
-      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+      'path' => $theme_path,
     ),
     'ijnet_newsletter_featured_content' => array(
       'variables' => array(
         'featured_content' => NULL
       ),
       'template' => 'ijnet-newsletter-featured-content',
-      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+      'path' => $theme_path,
     ),
 
     'ijnet_newsletter_advertisements' => array(
@@ -97,14 +131,14 @@ function fe_newsletter_theme() {
         'advertisements' => NULL
       ),
       'template' => 'ijnet-newsletter-advertisements',
-      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+      'path' => $theme_path,
     ),
     'ijnet_newsletter_advertisement' => array(
       'variables' => array(
         'advertisement' => NULL
       ),
       'template' => 'ijnet-newsletter-advertisement',
-      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+      'path' => $theme_path,
     ),
 
     'ijnet_newsletter_opportunities' => array(
@@ -112,14 +146,14 @@ function fe_newsletter_theme() {
         'opportunities' => NULL
       ),
       'template' => 'ijnet-newsletter-opportunities',
-      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+      'path' => $theme_path,
     ),
     'ijnet_newsletter_opportunity' => array(
       'variables' => array(
         'opportunity' => NULL
       ),
       'template' => 'ijnet-newsletter-opportunity',
-      'path' => drupal_get_path('module', 'fe_newsletter') . '/theme',
+      'path' => $theme_path,
     ),
   );
 
@@ -129,9 +163,8 @@ function fe_newsletter_theme() {
 /**
  * Implements template_preprocess_hook()
  */
-function template_preprocess_ijnet_newsletter(&$vars) {
+function template_preprocess_ijnet_newsletter_content(&$vars) {
   $node = $vars['node'];
-  $newsletter_fields = array();
 
   $vars['newsletter_date'] = _fe_newsletter_get_newsletter_date($node);
   $vars['newsletter_images_path'] = drupal_get_path('module', 'fe_newsletter') . '/theme/images/';
@@ -139,6 +172,16 @@ function template_preprocess_ijnet_newsletter(&$vars) {
   $vars['featured_contents'] = _fe_newsletter_get_featured_contents($node);
   $vars['advertisements'] = _fe_newsletter_get_advertisements($node);
   $vars['opportunities'] =_fe_newsletter_get_opportunities($node);
+}
+
+/**
+ * Implements hook_preprocess_page(&$vars)
+ */
+function fe_newsletter_preprocess_page(&$vars) {
+  //drupal_add_js(
+  //  drupal_get_path('module', 'fe_newsletter') . '/js/fe_newsletter.js',
+  //  'file'
+  //);
 }
 
 function _fe_newsletter_get_newsletter_date($node) {
