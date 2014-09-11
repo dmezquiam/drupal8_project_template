@@ -14,13 +14,17 @@ define('FE_NEWSLETTER_MAX_ARTICLES',    20);
  */
 function fe_newsletter_menu() {
   $items['email-bulletin/%'] = array(
+    'title' => t('Email bulletin'),
     'page callback' => 'ijnet_newsletter_callback',
     'page arguments' => array(1),
     'access arguments' => TRUE,
+    'type' => MENU_CALLBACK,
   );
   $items['email-bulletin-archive'] = array(
+    'title' => t('Email bulletin archive'),
     'page callback' => 'ijnet_newsletter_archive_callback',
     'access arguments' => TRUE,
+    'type' => MENU_CALLBACK,
   );
   $items['node/%/bulletin'] = array(
     'title' => 'Newsletter markup',
@@ -258,7 +262,7 @@ function _fe_newsletter_get_author($nid) {
     } else {
       $user = user_load($node->uid);
     }
-    $author = l($user->field_screen_name[LANGUAGE_NONE][0]['safe_value'],'user/'.$user->uid);
+    $author = l($user->field_screen_name[$user->language][0]['safe_value'],'user/'.$user->uid);
   }
 
   return $author;
@@ -315,7 +319,10 @@ function _fe_newsletter_get_opportunities($node) {
       $node->field_opportunities[$language] :
       $node->field_opportunities[LANGUAGE_NONE];
     foreach ($opportunities_nids as $nid) {
-      $opportunities[] = _fe_newsletter_get_opportunity($nid['nid']);
+      $opportunity = _fe_newsletter_get_opportunity($nid['nid']);
+      if ($opportunity) {
+        $opportunities[] = $opportunity;
+      }
     }
   }
   $classified_opportunities = _fe_newsletter_classify_opportunities($opportunities);
@@ -325,6 +332,9 @@ function _fe_newsletter_get_opportunities($node) {
 
 function _fe_newsletter_get_opportunity($nid) {
   $node = node_load($nid);
+  if (empty($node)) {
+    return FALSE;
+  }
   $language = $node->language;
 
   $opportunity = new stdClass();
