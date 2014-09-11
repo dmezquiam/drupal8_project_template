@@ -34,7 +34,7 @@ function fe_social_preprocess_page(&$vars) {
                 "ad": { "visible": false,
                         "openDelay": 5,
                         "closeDelay": 0},
-                "chicklets": { "items": ["facebook", "twitter", "email"]},
+                "chicklets": { "items": ["facebook", "twitter", "email", "sharethis"]},
                 "chicklets_params": { "twitter" : { "st_via" : "' . $twitter_handle . '" } }
                 };
           var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
