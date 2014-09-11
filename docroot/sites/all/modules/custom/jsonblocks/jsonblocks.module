@@ -252,9 +252,6 @@ function json_blocks_view_social_block() {
     )
   );
   global $language;
-  kpr($language->language);
-  if ($language->language == 'en') {
-  }
   $block = array('content' => theme('social-block', array('urls' => $all_items[$language->language])));
   return $block;
 }
