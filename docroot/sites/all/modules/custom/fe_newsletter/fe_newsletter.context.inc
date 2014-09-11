@@ -32,11 +32,11 @@ function fe_newsletter_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-62',
         ),
-        'views-167d34de22fffccd471bb9531deb1687' => array(
+        'views-7425eddb505641c7704c002db7c1bdc0' => array(
           'module' => 'views',
-          'delta' => '167d34de22fffccd471bb9531deb1687',
+          'delta' => '7425eddb505641c7704c002db7c1bdc0',
           'region' => 'sidebar_second',
-          'weight' => '-61',
+          'weight' => '-10',
         ),
       ),
     ),
