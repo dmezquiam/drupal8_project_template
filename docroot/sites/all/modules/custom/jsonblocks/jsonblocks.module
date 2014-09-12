@@ -14,21 +14,21 @@ function jsonblocks_block_info() {
 function jsonblocks_block_view($delta = NULL) {
 
   $function_name = 'json_blocks_view_' . str_replace('-', '_', $delta);
+  $block_data = _jsonblocks_get_json_blocks();
   if (function_exists($function_name)) {
     $block = $function_name();
   }
   else {
     // dynamic blocks
-    $block_data = _jsonblocks_get_json_blocks();
-    if (isset($block_data[$delta])) {
-      if(isset($block_data[$delta]['css'])) {
-        drupal_add_css(drupal_get_path('module', 'jsonblocks') . '/css/' . $block_data[$delta]['css']);
-      }
-      if (isset($block_data[$delta]['js'])) {
-        drupal_add_js(drupal_get_path('module', 'jsonblocks') . '/js/' . $block_data[$delta]['js']);
-      }
-    }
     $block = array('content' => theme($delta, NULL));
+  }
+  if (isset($block_data[$delta])) {
+    if(isset($block_data[$delta]['css'])) {
+      drupal_add_css(drupal_get_path('module', 'jsonblocks') . '/css/' . $block_data[$delta]['css']);
+    }
+    if (isset($block_data[$delta]['js'])) {
+      drupal_add_js(drupal_get_path('module', 'jsonblocks') . '/js/' . $block_data[$delta]['js']);
+    }
   }
 
   return $block;
@@ -207,7 +207,7 @@ function json_blocks_view_social_block() {
       ),
       array(
           'url' => 'http://weibo.com/ijnet',
-          'class' => '',
+          'class' => 'social-icon-weibo',
       ),
     array(
           'url' => '/rss.xml',
