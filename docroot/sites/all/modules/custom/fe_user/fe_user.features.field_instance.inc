@@ -224,6 +224,7 @@ function fe_user_field_default_field_instances() {
     'label' => 'Location',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -430,6 +431,7 @@ function fe_user_field_default_field_instances() {
     'label' => 'Short bio',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => 0,
     ),
