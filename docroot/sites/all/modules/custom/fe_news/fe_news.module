@@ -98,6 +98,7 @@ function fe_news_block_view($delta = '') {
 }
 
 function _fe_news_get_last_posts_authors() {
+  global $language;
   $authors = array();
   $authors_uid = array();
 
@@ -108,9 +109,15 @@ function _fe_news_get_last_posts_authors() {
     foreach($view->result as $content){
       if (sizeof($authors) < 10) {
         $author = _fe_news_get_author($content->nid);
+        if (!isset($author->uid)) {
+          continue;
+        }
 
         $user = user_load($author->uid);
-        if ($user->field_show_profile != NULL) {
+        $show_profile = isset($user->field_show_profile[$language->language][0]['value']) ?
+          $user->field_show_profile[$language->language][0]['value'] :
+          FALSE;
+        if ( $show_profile ) {
 
           if (isset($author->uid)) {
             if (!in_array($author->uid, $authors_uid)) {
