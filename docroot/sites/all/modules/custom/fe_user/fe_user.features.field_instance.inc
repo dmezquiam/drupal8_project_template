@@ -444,6 +444,53 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_show_profile'
+  $field_instances['user-user-field_show_profile'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Check this box if you want your profile information to be previewed in the site.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_show_profile',
+    'label' => 'Allow profile preview',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 25,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_subscribe'
   $field_instances['user-user-field_subscribe'] = array(
     'bundle' => 'user',
@@ -580,8 +627,10 @@ function fe_user_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Allow profile preview');
   t('Area of Interest');
   t('Bio');
+  t('Check this box if you want your profile information to be previewed in the site.');
   t('Enter your Twitter username here: <em>yourUserName</em> (do not include the <em>@</em> symbol).');
   t('Job Title');
   t('Languages Spoken');
