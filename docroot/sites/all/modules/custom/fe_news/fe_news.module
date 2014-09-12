@@ -41,7 +41,8 @@ function fe_news_preprocess_node(&$variables) {
  * Returns the author name linked to it's profile
  */
 function _fe_news_get_author_link($user) {
-  return l($user->field_screen_name[$user->language][0]['value'],'user/'.$user->uid);
+  global $language;
+  return l($user->field_screen_name[$language->language][0]['value'], 'user/'.$user->uid);
 }
 
 
