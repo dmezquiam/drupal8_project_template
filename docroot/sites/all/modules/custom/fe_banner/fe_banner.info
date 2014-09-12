@@ -1,4 +1,4 @@
-name = fe_banner
+name = Banner
 core = 7.x
 package = IJNet
 version = 7.x-1.0
