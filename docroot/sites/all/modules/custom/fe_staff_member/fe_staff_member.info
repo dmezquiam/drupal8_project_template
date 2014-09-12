@@ -47,3 +47,4 @@ features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][image] = image
 features_exclude[dependencies][strongarm] = strongarm
+features_exclude[user_role][editor] = editor
