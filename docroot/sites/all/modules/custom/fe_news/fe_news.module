@@ -11,38 +11,21 @@ include_once 'fe_news.features.inc';
  */
 
 function fe_news_preprocess_node(&$variables) {
+  global $base_url;
+
   $node = $variables['node'];
   if ($node->type == 'news') {
-    $author = '';
-    if (!empty($node->field_attribution)) {
-      $author = $node->field_attribution[$node->language][0]['value'];
-    }
-    else if (!empty($node->field_byline)) {
-      $user = user_load($node->field_byline[$node->language][0]['uid']);
-      $author = _fe_news_get_author_link($user);
-    }
-    else {
-      $user = user_load($node->uid);
-      $author = _fe_news_get_author_link($user);
-    }
+    $author = _fe_news_get_author($node->nid);
+    $variables['author'] = $author->profile_link ?
+      l($author->name, $author->profile_link) :
+      $author->name;
 
-    $variables['author'] = $author;
-
-    global $base_url;
-    $href = $base_url.$variables['node_url'];
+    $href = $base_url . $variables['node_url'];
     drupal_add_html_head_link(
         array('rel' => 'canonical', 'href' => $href),
         true
     );
   }
-}
-
-/**
- * Returns the author name linked to it's profile
- */
-function _fe_news_get_author_link($user) {
-  global $language;
-  return l($user->field_screen_name[$language->language][0]['value'], 'user/'.$user->uid);
 }
 
 
@@ -144,6 +127,7 @@ function _fe_news_get_author($nid) {
   $language = $node->language;
 
   $author = new stdClass();
+  $author->profile_link = FALSE;
   if (!empty($node->field_attribution)) {
     $author->name = (isset($node->field_attribution[$language])) ?
       $node->field_attribution[$language][0]['safe_value'] :
@@ -152,15 +136,15 @@ function _fe_news_get_author($nid) {
   else {
     if (!empty($node->field_byline)) {
       $user = (isset($node->field_byline[$language])) ?
-      user_load($node->field_byline[$language][0]['uid']) :
-      user_load($node->field_byline[LANGUAGE_NONE][0]['uid']);
+        user_load($node->field_byline[$language][0]['uid']) :
+        user_load($node->field_byline[LANGUAGE_NONE][0]['uid']);
     }
     else {
       $user = user_load($node->uid);
     }
     $author->uid = $user->uid;
     $author->name = $user->field_screen_name[$user->language][0]['safe_value'];
-    $author->profile_link = drupal_get_path_alias(t('PROFILE POSTS'), '/user/'.$user->uid);
+    $author->profile_link = drupal_get_path_alias('user/' . $user->uid);
     $author->avatar = isset($user->picture) ? 
       theme_image_style(array(
         'path' => $user->picture->uri, 
