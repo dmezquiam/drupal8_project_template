@@ -255,6 +255,10 @@
       }
     }
   }
+  .i18n-ru .block-support-ijnet .block-inner .support-button .support {
+    font-size: 10px;
+  }
+
   #block-search-form {
     float: right;
     clear: both;
@@ -1081,12 +1085,13 @@ ul.action-links {
       &:hover { opacity: 0.8; filter: alpha(opacity = 80);/*IE*/ }
       &:last-child { margin-right: 0; }
     }
-    .social-icon-facebook { background: url("#{$path-to-images}/icon_fb.png")  no-repeat 0 0; }
-    .social-icon-twitter  { background: url("#{$path-to-images}/icon_tw.png")  no-repeat 0 0; }
-    .social-icon-youtube  { background: url("#{$path-to-images}/icon_yt.png")  no-repeat 0 0; }
-    .social-icon-in       { background: url("#{$path-to-images}/icon_in.png")  no-repeat 0 0; }
-    .social-icon-gplus    { background: url("#{$path-to-images}/icon_g.png")   no-repeat 0 0; }
-    .social-icon-rss      { background: url("#{$path-to-images}/icon_rss.png") no-repeat 0 0; }
+    .social-icon-facebook { background: url("#{$path-to-images}/icon_fb.png")     no-repeat 0 0; }
+    .social-icon-twitter  { background: url("#{$path-to-images}/icon_tw.png")     no-repeat 0 0; }
+    .social-icon-youtube  { background: url("#{$path-to-images}/icon_yt.png")     no-repeat 0 0; }
+    .social-icon-in       { background: url("#{$path-to-images}/icon_in.png")     no-repeat 0 0; }
+    .social-icon-gplus    { background: url("#{$path-to-images}/icon_g.png")      no-repeat 0 0; }
+    .social-icon-rss      { background: url("#{$path-to-images}/icon_rss.png")    no-repeat 0 0; }
+    .social-icon-weibo    { background: url("#{$path-to-images}/icon_weibo.png")  no-repeat 0 0; }
   }
 
   .mail-subscribe {
@@ -1105,7 +1110,8 @@ ul.action-links {
           margin: 0px;
           line-height: 20px;
           letter-spacing: 1px;
-          margin-right: 18px;
+          margin-right: 32px;
+          height: 20px;
         }
       }
       .inner-dropdown {
@@ -2212,3 +2218,63 @@ div.messages {
     }
   }
  }
+
+/* =============================================================================
+ *   Email bulletin archive
+ * ========================================================================== */
+.page-email-bulletin-archive {
+  table, thead, tbody, tr, th, td {
+    border: 0px;
+    padding: 0;
+    margin: 0;
+    h4 {
+      margin-top: 10px !important;
+    }
+  }
+  table table table>tbody>tr>td{
+    padding: 0 10px;
+  }
+}
+//BUELLETIN EMAIL ARCHIVE LIST
+.view-newsletter-archive {
+  .view-grouping {
+    .view-grouping-header {
+      background: $color-bg-box;
+      padding: 6px 15px;
+      font-size: 19px;
+      color: #686868;
+      margin: 30px -15px 9px -15px;
+      border-bottom: 1px solid $color-line;
+      border-top: 1px solid $color-line;
+
+
+    }
+    .view-grouping-content {
+      .item-list {
+        border-bottom: 1px solid $color-line;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        &:last-child { 
+          border: 0px; 
+          margin: 0;
+          padding: 0;
+        }
+        h3 { 
+          text-transform: uppercase;
+          margin-bottom: 0;
+          background: url('#{$path-to-images}/iitem.png') no-repeat left 4px;
+          padding-left: 15px;
+        }
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          li {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
