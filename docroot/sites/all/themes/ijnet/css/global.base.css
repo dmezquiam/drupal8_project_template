@@ -1,3 +1,42 @@
+@media (max-width: 989px) and (min-width: 769px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_lenguage_fix\.scss}line{font-family:\000038}}
+  .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
+    top: -23px !important;
+    left: 29px;
+    line-height: normal;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_lenguage_fix\.scss}line{font-family:\0000318}}
+.i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
+  font-size: 13px;
+  top: 5px;
+  left: 29px;
+  line-height: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_lenguage_fix\.scss}line{font-family:\0000333}}
+.i18n-ru .block-top-header-menu {
+  width: 65%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_lenguage_fix\.scss}line{font-family:\0000334}}
+.i18n-ru .block-lang-dropdown {
+  width: 30%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_lenguage_fix\.scss}line{font-family:\0000335}}
+.i18n-ru .block-top-header-menu .block-content ul.menu li a {
+  display: block;
+  line-height: 12px;
+  margin: 0 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_lenguage_fix\.scss}line{font-family:\0000343}}
+.i18n-ru .pane-quicktabs-opportunities-for-journalists .block-title {
+  font-size: 13px;
+  width: 130px;
+  top: -7px;
+  left: 29px;
+  line-height: normal;
+}
+
 /*
  * @file
  * global.base
