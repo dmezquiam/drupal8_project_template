@@ -1,83 +1,465 @@
-/*
-Syntax error: File to import not found or unreadable: language_fix.
-              Load paths:
-                /home/drupal/sites/ijnet/docroot/sites/all/themes/ijnet/sass
-                /home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/frameworks/blueprint/stylesheets
-                /home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/frameworks/compass/stylesheets
-                Compass::SpriteImporter
-        on line 26 of /home/drupal/sites/ijnet/docroot/sites/all/themes/ijnet/sass/_base.scss
-        from line 2 of /home/drupal/sites/ijnet/docroot/sites/all/themes/ijnet/sass/responsive.smartphone.landscape.scss
+@media (max-width: 989px) and (min-width: 769px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\000038}}
+  .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
+    top: -23px !important;
+    left: 29px;
+    line-height: normal;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000318}}
+.i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
+  font-size: 13px;
+  top: 5px;
+  left: 29px;
+  line-height: normal;
+}
 
-Backtrace:
-/home/drupal/sites/ijnet/docroot/sites/all/themes/ijnet/sass/_base.scss:26
-/home/drupal/sites/ijnet/docroot/sites/all/themes/ijnet/sass/responsive.smartphone.landscape.scss:2
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:45:in `import'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:28:in `imported_file'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:37:in `css_import?'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:217:in `visit_import'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:37:in `visit'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:227:in `block in visit_import'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:227:in `map'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:227:in `visit_import'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:37:in `visit'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:53:in `map'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:37:in `visit'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/root_node.rb:20:in `render'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/engine.rb:315:in `_render'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/engine.rb:262:in `render'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/compiler.rb:139:in `block (2 levels) in compile'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/compiler.rb:126:in `timed'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/compiler.rb:138:in `block in compile'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/logger.rb:45:in `red'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/compiler.rb:137:in `compile'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/compiler.rb:118:in `compile_if_required'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/compiler.rb:101:in `each'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/compiler.rb:101:in `block in run'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/compiler.rb:126:in `timed'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/compiler.rb:100:in `run'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/commands/watch_project.rb:147:in `recompile'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `each'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block in run'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `loop'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `run'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/commands/watch_project.rb:87:in `perform'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/commands/base.rb:18:in `execute'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/commands/project_base.rb:19:in `execute'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/bin/compass:30:in `block in <top (required)>'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/bin/compass:44:in `call'
-/home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/bin/compass:44:in `<top (required)>'
-/home/drupal/.rvm/gems/ruby-2.1.1/bin/compass:23:in `load'
-/home/drupal/.rvm/gems/ruby-2.1.1/bin/compass:23:in `<main>'
-/home/drupal/.rvm/gems/ruby-2.1.1/bin/ruby_executable_hooks:15:in `eval'
-/home/drupal/.rvm/gems/ruby-2.1.1/bin/ruby_executable_hooks:15:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: language_fix.\A               Load paths:\A                 /home/drupal/sites/ijnet/docroot/sites/all/themes/ijnet/sass\A                 /home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/frameworks/blueprint/stylesheets\A                 /home/drupal/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 26 of /home/drupal/sites/ijnet/docroot/sites/all/themes/ijnet/sass/_base.scss\A         from line 2 of /home/drupal/sites/ijnet/docroot/sites/all/themes/ijnet/sass/responsive.smartphone.landscape.scss"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000333}}
+.i18n-ru .block-top-header-menu {
+  width: 65%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000334}}
+.i18n-ru .block-lang-dropdown {
+  width: 30%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000335}}
+.i18n-ru .block-top-header-menu .block-content ul.menu li a {
+  display: block;
+  line-height: 12px;
+  margin: 0 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000343}}
+.i18n-ru .pane-quicktabs-opportunities-for-journalists .block-title {
+  font-size: 13px;
+  width: 130px;
+  top: -7px;
+  left: 29px;
+  line-height: normal;
+}
+
+/*
+ *   Important Information about this CSS File
+ *
+ * - Do not delete or rename this file, if you do not use it leave it blank (delete
+ *   everything) and the file will be skipped when you enable Production Mode in
+ *   the Global theme settings.
+ *
+ * - Read the _README file in this directory, it contains useful help and other information.
+ */
+/* DRUPAL ADMIN TOOL BAR */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000315}}
+body #admin-menu {
+  font-size: 8px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000316}}
+body.admin-menu {
+  margin-top: 21px !important;
+}
+
+/* Increase the body font size on small devices */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000320}}
+html {
+  font-size: 112.5%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000324}}
+div.messages {
+  font-size: 12px;
+}
+
+/* =============================================================================
+ *   Top BAR
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000332}}
+#leaderboard-wrapper .block-lang-dropdown {
+  width: 215px;
+  float: right;
+  clear: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000333}}
+#leaderboard-wrapper .block-lang-dropdown .block-title {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000338}}
+#leaderboard-wrapper .block-top-header-menu {
+  width: 39px;
+  height: 38px;
+  float: left;
+  margin-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000343}}
+#leaderboard-wrapper .block-top-header-menu .menu {
+  display: none;
+}
+
+/* =============================================================================
+ *   Header
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000352}}
+#branding {
+  width: inherit;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000354}}
+#branding #logo {
+  padding: 20px 0px 21px 3px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000359}}
+#block-search-form {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000365}}
+.block-support-ijnet,
+.block-login-block {
+  margin-bottom: 0px !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000368}}
+.block-login-block {
+  width: 208px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000370}}
+.block-login-block .block-inner {
+  margin-right: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000372}}
+.block-login-block .block-inner .block-content {
+  padding: 17px 6px 24px 5px;
+}
+
+/* =============================================================================
+ *   Top BAR
+ * ========================================================================== */
+/* leaderboard-wrapper ====================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000383}}
+#leaderboard-wrapper {
+  background: #5b5836;
+  border-bottom: 1px solid #3b3923;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000386}}
+#leaderboard-wrapper .block {
+  margin-bottom: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\0000392}}
+.block-top-header-menu ul.menu {
+  display: none;
+}
+
+/* =========================================================================== */
+/* =============================================================================
+ *   Item list
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003106}}
+.article-item-list {
+  width: 100%;
+  float: left;
+  height: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003674}}
+.article-item-list:nth-child(odd) {
+  clear: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003704}}
+.article-item-list .content:nth-child(odd) {
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003705}}
+.article-item-list .content:nth-child(even) {
+  margin-right: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003768}}
+.article-item-list .content {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003770}}
+.article-item-list img {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003773}}
+.article-item-list .item-list-topic {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003777}}
+.article-item-list .item-list-topic .field-type-taxonomy-term-reference {
+  margin: 0px 10px 0 0;
+  background: rgba(0, 0, 0, 0.52);
+  padding: 6px 6px;
+  width: auto;
+  border: 1px solid #C0C0C0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003784}}
+.article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li {
+  line-height: 10px;
+  margin: 0;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003788}}
+.article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a {
+  font-size: 12px;
+  background: transparent;
+  color: #C0C0C0;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003799}}
+.article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003811}}
+.article-item-list .aricle-title,
+.article-item-list .node-title {
+  font-size: 18px;
+  color: #137a9a;
+  line-height: 20px;
+  margin: 5px 5px 7px 5px;
+  max-height: 60px;
+  overflow: hidden;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003819}}
+.article-item-list .aricle-title a,
+.article-item-list .node-title a {
+  color: #137a9a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003823}}
+.article-item-list .field-name-body {
+  margin: 0px 5px 8px 5px;
+  line-height: 16px;
+  max-height: 95px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003831}}
+.article-item-list .author {
+  font-size: 14px;
+  margin: 0px 5px 0px 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003111}}
+.article-item-list-no-body {
+  width: 100%;
+  float: left;
+  height: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003721}}
+.article-item-list-no-body:nth-child(odd) {
+  clear: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003751}}
+.article-item-list-no-body .content:nth-child(odd) {
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003752}}
+.article-item-list-no-body .content:nth-child(even) {
+  margin-right: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003768}}
+.article-item-list-no-body .content {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003770}}
+.article-item-list-no-body img {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003773}}
+.article-item-list-no-body .item-list-topic {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003777}}
+.article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference {
+  margin: 0px 10px 0 0;
+  background: rgba(0, 0, 0, 0.52);
+  padding: 6px 6px;
+  width: auto;
+  border: 1px solid #C0C0C0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003784}}
+.article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li {
+  line-height: 10px;
+  margin: 0;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003788}}
+.article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a {
+  font-size: 12px;
+  background: transparent;
+  color: #C0C0C0;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003799}}
+.article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003811}}
+.article-item-list-no-body .aricle-title,
+.article-item-list-no-body .node-title {
+  font-size: 18px;
+  color: #137a9a;
+  line-height: 20px;
+  margin: 5px 5px 7px 5px;
+  max-height: 60px;
+  overflow: hidden;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003819}}
+.article-item-list-no-body .aricle-title a,
+.article-item-list-no-body .node-title a {
+  color: #137a9a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003823}}
+.article-item-list-no-body .field-name-body {
+  margin: 0px 5px 8px 5px;
+  line-height: 16px;
+  max-height: 95px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003831}}
+.article-item-list-no-body .author {
+  font-size: 14px;
+  margin: 0px 5px 0px 5px;
+}
+
+/* =============================================================================
+ *   TABS
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003119}}
+.content-tabs .block-title {
+  display: none;
+}
+
+/* =============================================================================
+ *   Video landing page
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003125}}
+.pane-jsonblocks-social-block {
+  display: none !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003126}}
+.pane-fe-videos-fe-videos-search .videos-landing-header {
+  height: 222px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003128}}
+.pane-fe-videos-fe-videos-search .videos-landing-header .header,
+.pane-fe-videos-fe-videos-search .videos-landing-header .topic-select {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003133}}
+.pane-views-videos-featured-video {
+  margin-bottom: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003134}}
+.view-display-id-featured_video {
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003135}}
+.view-display-id-featured_video iframe {
+  height: 280px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003136}}
+.page-videos .view-display-id-featured_video {
+  margin-right: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003137}}
+.view-display-id-featured_video {
+  padding-right: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003140}}
+.page-videos .pane-views-videos-related-videos-landing .block-inner {
+  margin-top: 0px;
+  margin-left: 20px;
+  padding-left: 0px;
+  padding-bottom: 20px;
+  height: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003147}}
+.pane-views-videos-related-videos-landing .block-inner .views-row {
+  width: 50%;
+  float: left;
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003151}}
+.pane-views-videos-related-videos-landing .block-inner .views-row .node-video {
+  margin: 0 5px;
+}
+
+/* =============================================================================
+ *   Opportunities LANDING
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003163}}
+.views-exposed-widgets #edit-field-category-tid-wrapper,
+.views-exposed-widgets #edit-field-region-tid-wrapper {
+  width: 100%;
+  padding-right: 0%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003168}}
+.views-exposed-widgets #edit-title-wrapper {
+  width: 100%;
+  padding: 2% 0% 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003172}}
+.views-exposed-widgets #edit-keys-wrapper {
+  padding-right: 0px;
+  width: 242px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003176}}
+.views-exposed-widgets .views-submit-button {
+  width: 100%;
+  text-align: center;
+}
+
+/* =============================================================================
+ *   User Profile
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003139}}
+.section-users #content .profile:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003146}}
+* html .section-users #content .profile {
+  height: 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003190}}
+.section-users #content .profile .field-name-field-bio {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003192}}
+.section-users #content .profile .field-name-field-bio .field-items {
+  margin-right: 0px;
+  padding-right: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.landscape\.scss}line{font-family:\00003197}}
+.section-users #content .profile .user-picture {
+  margin: 0px 0 0 15px;
+}
