@@ -109,7 +109,6 @@ function fe_newsletter_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['created']['alter']['text'] = '<span class="collapse-icon">►</span> [created]';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
@@ -121,11 +120,10 @@ function fe_newsletter_views_default_views() {
   $handler->display->display_options['fields']['created_1']['field'] = 'created';
   $handler->display->display_options['fields']['created_1']['label'] = '';
   $handler->display->display_options['fields']['created_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['created_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['created_1']['alter']['text'] = '<span class="collapse-icon">►</span> [created_1]';
   $handler->display->display_options['fields']['created_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created_1']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['created_1']['custom_date_format'] = 'M';
+  $handler->display->display_options['fields']['created_1']['custom_date_format'] = 'F';
   $handler->display->display_options['fields']['created_1']['second_date_format'] = 'long';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
