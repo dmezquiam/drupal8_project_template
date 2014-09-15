@@ -41,7 +41,7 @@ function fe_advertisement_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<h3>ADVERTISEMENTS</h3>
-<p>For rates or to place your advertisement here, call +1 202-349-7636 or email us.</p>';
+<p>For rates or to place your advertisement here, call +1 202-349-7628 or email us.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Relationship: Nodequeue: Queue */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
