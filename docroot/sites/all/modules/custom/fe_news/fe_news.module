@@ -80,7 +80,7 @@ function fe_news_block_view($delta = '') {
   return $block;
 }
 
-function _fe_news_get_last_posts_authors() {
+function _fe_news_get_last_posts_authors($tid = '') {
   global $language;
   $authors = array();
   $authors_uid = array();
@@ -88,6 +88,9 @@ function _fe_news_get_last_posts_authors() {
   $view = views_get_view('last_posts');
   if ($view) {
     $view->set_display('block');
+    if ($tid) {
+      $view->set_arguments(array($tid));
+    }
     $view->execute();
     foreach($view->result as $content){
       if (sizeof($authors) < 10) {

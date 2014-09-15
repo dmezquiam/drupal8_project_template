@@ -314,6 +314,67 @@ function fe_social_views_default_views() {
   $handler->display->display_options['fields']['formatted_tweet']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['formatted_tweet']['element_default_classes'] = FALSE;
   $handler->display->display_options['block_description'] = 'Tweets Home';
+
+  /* Display: Tweets knight foundation */
+  $handler = $view->new_display('block', 'Tweets knight foundation', 'knight_foundation_tweets');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'block-default';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h2 class="pane-title block-title">Recent tweets</h2>
+<div class="tw-follow">Follow [screen_name] on Twitter</div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Twitter: Login name */
+  $handler->display->display_options['fields']['screen_name']['id'] = 'screen_name';
+  $handler->display->display_options['fields']['screen_name']['table'] = 'twitter';
+  $handler->display->display_options['fields']['screen_name']['field'] = 'screen_name';
+  $handler->display->display_options['fields']['screen_name']['label'] = '';
+  $handler->display->display_options['fields']['screen_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['screen_name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['screen_name']['alter']['text'] = '@[screen_name] ';
+  $handler->display->display_options['fields']['screen_name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['screen_name']['alter']['path'] = 'https://twitter.com/[screen_name] ';
+  $handler->display->display_options['fields']['screen_name']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['screen_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['screen_name']['element_default_classes'] = FALSE;
+  /* Field: Twitter: Twitter status message ID */
+  $handler->display->display_options['fields']['twitter_id']['id'] = 'twitter_id';
+  $handler->display->display_options['fields']['twitter_id']['table'] = 'twitter';
+  $handler->display->display_options['fields']['twitter_id']['field'] = 'twitter_id';
+  $handler->display->display_options['fields']['twitter_id']['label'] = '';
+  $handler->display->display_options['fields']['twitter_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['twitter_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['twitter_id']['element_default_classes'] = FALSE;
+  /* Field: Twitter: Formatted tweet */
+  $handler->display->display_options['fields']['formatted_tweet']['id'] = 'formatted_tweet';
+  $handler->display->display_options['fields']['formatted_tweet']['table'] = 'twitter';
+  $handler->display->display_options['fields']['formatted_tweet']['field'] = 'formatted_tweet';
+  $handler->display->display_options['fields']['formatted_tweet']['label'] = '';
+  $handler->display->display_options['fields']['formatted_tweet']['alter']['text'] = '<div class="partner-list-block">[formatted_tweet]</div>';
+  $handler->display->display_options['fields']['formatted_tweet']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['formatted_tweet']['element_default_classes'] = FALSE;
+  $handler->display->display_options['block_description'] = 'Tweets Home';
   $export['twitter'] = $view;
 
   return $export;
