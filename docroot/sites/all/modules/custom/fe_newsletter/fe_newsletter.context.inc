@@ -20,6 +20,7 @@ function fe_newsletter_context_default_contexts() {
     'path' => array(
       'values' => array(
         'email-bulletin-archive' => 'email-bulletin-archive',
+        'email-bulletin-archive/*' => 'email-bulletin-archive/*',
       ),
     ),
   );
@@ -30,13 +31,13 @@ function fe_newsletter_context_default_contexts() {
           'module' => 'jsonblocks',
           'delta' => 'social-block',
           'region' => 'sidebar_second',
-          'weight' => '-62',
+          'weight' => '-10',
         ),
         'views-7425eddb505641c7704c002db7c1bdc0' => array(
           'module' => 'views',
           'delta' => '7425eddb505641c7704c002db7c1bdc0',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
       ),
     ),
