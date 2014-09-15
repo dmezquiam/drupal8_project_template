@@ -10,6 +10,43 @@
 function fe_site_config_filter_default_formats() {
   $formats = array();
 
+  // Exported format: Filtered HTML.
+  $formats['filtered_comments'] = array(
+    'format' => 'filtered_comments',
+    'name' => 'Filtered HTML',
+    'cache' => 1,
+    'status' => 1,
+    'weight' => -7,
+    'filters' => array(
+      'filter_html' => array(
+        'weight' => -10,
+        'status' => 1,
+        'settings' => array(
+          'allowed_html' => '<a> <em> <strong> <br> <p>',
+          'filter_html_help' => 1,
+          'filter_html_nofollow' => 1,
+        ),
+      ),
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(
+          'filter_url_length' => 72,
+        ),
+      ),
+      'twitter_hashtag' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'twitter_username' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(),
+      ),
+    ),
+  );
+
   // Exported format: Filtered HTML - extended.
   $formats['filtered_html'] = array(
     'format' => 'filtered_html',

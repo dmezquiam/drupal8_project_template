@@ -12,67 +12,21 @@ include_once 'fe_news.features.inc';
 
 function fe_news_preprocess_node(&$variables) {
   global $base_url;
+
   $node = $variables['node'];
   if ($node->type == 'news') {
-    $user = _fe_news_get_author($node->nid);
-    if (isset($user->uid)) {
-      $author = _fe_news_get_author_link($user);
-    } else {
-      $author = $user->name;
-    }
-    $variables['author'] = $author;
-    $href = $base_url.$variables['node_url'];
+    $author = _fe_news_get_author($node->nid);
+    $variables['author'] = $author->profile_link ?
+      l($author->name, $author->profile_link) :
+      $author->name;
+
+    $href = $base_url . $variables['node_url'];
     drupal_add_html_head_link(
       array('rel' => 'canonical', 'href' => $href),
       TRUE
     );
   }
 }
-
-function _fe_news_get_author($nid) {
-  $node = node_load($nid);
-  $language = $node->language;
-
-  $author = new stdClass();
-  if (!empty($node->field_attribution)) {
-    $author->name = (isset($node->field_attribution[$language])) ?
-      $node->field_attribution[$language][0]['safe_value'] :
-      $node->field_attribution[LANGUAGE_NONE][0]['safe_value'];
-  } else {
-    if (!empty($node->field_byline)) {
-      $user = (isset($node->field_byline[$language])) ?
-      user_load($node->field_byline[$language][0]['uid']) :
-      user_load($node->field_byline[LANGUAGE_NONE][0]['uid']);
-    } else {
-      $user = user_load($node->uid);
-    }
-    $author->uid = $user->uid;
-    $author->name = $user->field_screen_name[LANGUAGE_NONE][0]['safe_value'];
-    $author->profile_link = drupal_get_path_alias(t('PROFILE POSTS'), '/user/'.$user->uid);
-    $author->avatar = isset($user->picture) ? 
-      theme_image_style(array(
-        'path' => $user->picture->uri, 
-        'style_name' => 'avatar_small_img', 
-        'width' => '110', 
-        'height' => '110')
-        ) :  null;
-    $author->job = isset($user->field_job_title[LANGUAGE_NONE]) ?
-      $user->field_job_title[LANGUAGE_NONE][0]['safe_value'] : null;
-    $author->organization = isset($user->field_organization_name[LANGUAGE_NONE]) ?
-      $user->field_organization_name[LANGUAGE_NONE][0]['safe_value'] : null;
-  }
-
-  return $author;
-}
-
-
-/**
- * Returns the author name linked to it's profile
- */
-function _fe_news_get_author_link($user) {
-  return l($user->name, 'user/'.$user->uid);
-}
-
 
 /**
  * Implements hook_theme()
@@ -127,6 +81,7 @@ function fe_news_block_view($delta = '') {
 }
 
 function _fe_news_get_last_posts_authors() {
+  global $language;
   $authors = array();
   $authors_uid = array();
 
@@ -137,15 +92,26 @@ function _fe_news_get_last_posts_authors() {
     foreach($view->result as $content){
       if (sizeof($authors) < 10) {
         $author = _fe_news_get_author($content->nid);
-        if (isset($author->uid)) {
-          if (!in_array($author->uid, $authors_uid)) {
-            $authors_uid[] = $author->uid;
-            $authors[] = $author;
-          }
-        } else {
-          if (!in_array($author->name, $authors_uid)) {
-            $authors_uid[] = $author->name;
-            $authors[] = $author;
+        if (!isset($author->uid)) {
+          continue;
+        }
+
+        $user = user_load($author->uid);
+        $show_profile = isset($user->field_show_profile[$language->language][0]['value']) ?
+          $user->field_show_profile[$language->language][0]['value'] :
+          FALSE;
+        if ( $show_profile ) {
+
+          if (isset($author->uid)) {
+            if (!in_array($author->uid, $authors_uid)) {
+              $authors_uid[] = $author->uid;
+              $authors[] = $author;
+            }
+          } else {
+            if (!in_array($author->name, $authors_uid)) {
+              $authors_uid[] = $author->name;
+              $authors[] = $author;
+            }
           }
         }
       }
@@ -155,6 +121,45 @@ function _fe_news_get_last_posts_authors() {
   return theme('last_posts_authors', array('authors' => $authors));
 }
 
+function _fe_news_get_author($nid) {
+  $node = node_load($nid);
+  $language = $node->language;
+
+  $author = new stdClass();
+  $author->profile_link = FALSE;
+  if (!empty($node->field_attribution)) {
+    $author->name = (isset($node->field_attribution[$language])) ?
+      $node->field_attribution[$language][0]['safe_value'] :
+      $node->field_attribution[LANGUAGE_NONE][0]['safe_value'];
+  }
+  else {
+    if (!empty($node->field_byline)) {
+      $user = (isset($node->field_byline[$language])) ?
+        user_load($node->field_byline[$language][0]['uid']) :
+        user_load($node->field_byline[LANGUAGE_NONE][0]['uid']);
+    }
+    else {
+      $user = user_load($node->uid);
+    }
+    $author->uid = $user->uid;
+    $user_lang = isset($user->field_screen_name[LANGUAGE_NONE]) ? LANGUAGE_NONE : $user->language;
+    $author->name = $user->field_screen_name[$user_lang][0]['safe_value'];
+    $author->profile_link = drupal_get_path_alias('user/' . $user->uid);
+    $author->avatar = isset($user->picture) ? 
+      theme_image_style(array(
+        'path' => $user->picture->uri, 
+        'style_name' => 'avatar_small_img', 
+        'width' => '110', 
+        'height' => '110')
+        ) :  null;
+    $author->job = isset($user->field_job_title[LANGUAGE_NONE]) ?
+      $user->field_job_title[LANGUAGE_NONE][0]['safe_value'] : null;
+    $author->organization = isset($user->field_organization_name[LANGUAGE_NONE]) ?
+      $user->field_organization_name[LANGUAGE_NONE][0]['safe_value'] : null;
+  }
+
+  return $author;
+}
 /**
  * Implements hook_form_alter()
  */

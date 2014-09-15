@@ -719,7 +719,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Field: Topic (field_topic) */
+  /* Filter criterion: Field: Area of Interest (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -1104,6 +1104,16 @@ function fe_news_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Allow profile preview (field_show_profile) */
+  $handler->display->display_options['filters']['field_show_profile_value']['id'] = 'field_show_profile_value';
+  $handler->display->display_options['filters']['field_show_profile_value']['table'] = 'field_data_field_show_profile';
+  $handler->display->display_options['filters']['field_show_profile_value']['field'] = 'field_show_profile_value';
+  $handler->display->display_options['filters']['field_show_profile_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_show_profile_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: About the Author */
   $handler = $view->new_display('block', 'About the Author', 'about_the_author');
@@ -1239,6 +1249,14 @@ return $author;';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filter criterion: User: Allow profile preview (field_show_profile) */
+  $handler->display->display_options['filters']['field_show_profile_value']['id'] = 'field_show_profile_value';
+  $handler->display->display_options['filters']['field_show_profile_value']['table'] = 'field_data_field_show_profile';
+  $handler->display->display_options['filters']['field_show_profile_value']['field'] = 'field_show_profile_value';
+  $handler->display->display_options['filters']['field_show_profile_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_show_profile_value']['value'] = array(
+    0 => '0',
+  );
   $export['view_search_block_user'] = $view;
 
   return $export;

@@ -16,7 +16,7 @@ function fe_site_config_strongarm() {
   $strongarm->name = 'language_types';
   $strongarm->value = array(
     'language' => TRUE,
-    'language_content' => FALSE,
+    'language_content' => TRUE,
     'language_url' => FALSE,
   );
   $export['language_types'] = $strongarm;

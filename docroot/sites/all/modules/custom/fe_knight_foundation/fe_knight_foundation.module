@@ -1,0 +1,96 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function fe_knight_foundation_block_info() {
+  return array(
+    'knight_authors_tab' => array(
+      'info' => 'Tab de knights foundation para autores.',
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function fe_knight_foundation_block_view($delta = '') {
+  $block = array();
+  if ($delta == 'knight_authors_tab') {
+    $block['content']  = fe_knight_foundation_get_authors(); 
+    $block['subject'] = '';
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function fe_knight_foundation_views_query_alter(&$view, &$query) {
+  if ($view->name == 'twitter' && $view->current_display == 'knight_foundation_tweets') {
+    foreach($query->where[1]['conditions'] as $index => $condition) {
+      if ($query->where[1]['conditions'][$index]['field'] == 'twitter.screen_name') {
+        $accounts = variable_get('fe_knight_foundation_tweets', 'IJNet');
+        kpr(explode(',', $accounts));
+        $query->where[1]['conditions'][$index]['value'] = explode(',', $accounts);
+        $query->where[1]['conditions'][$index]['operator'] = 'IN';
+      }   
+    }  
+  }
+}
+
+function fe_knight_foundation_get_authors() {
+  $tid = taxonomy_get_term_by_name('Citizen journalism') ;
+  $query = db_select('field_data_field_topic', 't');
+  $query->join('node', 'n', 'n.nid = t.entity_id');
+  $query->fields('t', array('entity_id'));
+  $query->fields('n', array('uid'));
+  $query->condition('t.field_topic_tid', array_shift($tid)->tid,'=');
+  $query->condition('t.bundle', 'news','=');
+  $query->distinct();
+  $query->range(0, 10);
+  $results = $query->execute()->fetchAll();
+  $authors = array();
+  foreach ($results as $result) {
+    $authors[] = _fe_news_get_author($result->entity_id);
+  }
+  return theme('last_posts_authors', array('authors' => $authors));
+}
+
+/**
+ * Implements hook_menu().
+ */
+function fe_knight_foundation_menu() {
+  $items = array();
+  $items['admin/config/administration/knight-tweets'] = array(
+    'title'           => t('Admin for Knight Foundation Twitter accounts'),
+    'description'  => t('Knight Foundation\'s twitter accounts admin page'),
+    'page callback'   => 'drupal_get_form',
+    'page arguments' => array('fe_knight_foundation_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+  );  
+  return $items;
+}
+
+
+function fe_knight_foundation_form() {
+  $form['twitters'] = array(
+    '#title' => t('Twitter list'),
+    '#type' => 'textarea',
+    '#description' => t('Write down all the twitter acounts that you want to get listed on knight foundation\'s twitter block, separated by a comma'),
+    '#default_value' => variable_get('fe_knight_foundation_tweets', 'IJNet'),
+  );
+  $form['submit'] = array(                                                                                                                                                      
+    '#type' => 'submit',
+    '#value' => 'Submit',
+  );
+  return $form;
+}
+
+function fe_knight_foundation_form_submit($form, &$form_state) {
+  $accounts = $form_state['input']['twitters'];
+  variable_set('fe_knight_foundation_tweets', $accounts);
+  drupal_set_message(t('Your configuration has been succesfully saved.'), 'status');
+  return;
+}

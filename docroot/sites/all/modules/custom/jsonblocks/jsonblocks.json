@@ -26,5 +26,8 @@
     },
     "winship-legacy": {
         "info": "Winship Legacy"
+    },
+    "knight-foundation": {
+      "info": "knight foundation sidebar block"
     }
 }
