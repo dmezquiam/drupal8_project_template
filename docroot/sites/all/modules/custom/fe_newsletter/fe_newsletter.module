@@ -16,7 +16,7 @@ function fe_newsletter_menu() {
   $items['email-bulletin/%'] = array(
     'page callback' => 'ijnet_newsletter_callback',
     'page arguments' => array(1),
-    'access arguments' => TRUE,
+    'access arguments' => array('access content'),
   );
   $items['email-bulletin-archive'] = array(
     'page callback' => 'ijnet_newsletter_archive_callback',
@@ -510,13 +510,12 @@ function fe_newsletter_node_presave($node) {
   if ($node->type != 'bulletin_email') {
     return;
   }
-
   $newsletter_lang = $node->language;
 
   $from_date = isset($node->field_from_date[LANGUAGE_NONE][0]['value']) 
     ? strtotime($node->field_from_date[LANGUAGE_NONE][0]['value']) : NULL;
-  $to_date  = isset($node->field_to_date[LANGUAGE_NONE][0]['value']) 
-    ? strtotime($node->field_to_date[LANGUAGE_NONE][0]['value']) : NULL;
+  $to_date  = isset($node->field_from_date[LANGUAGE_NONE][0]['value2']) 
+    ? strtotime($node->field_from_date[LANGUAGE_NONE][0]['value2']) : NULL;
 
   $to_date += 24*60*60; // Add a day.
 
@@ -567,7 +566,7 @@ function fe_newsletter_node_presave($node) {
       ->propertyCondition('language', $newsletter_lang)
       ->propertyOrderBy('sticky', 'DESC')
       ->propertyOrderBy('created', 'DESC')
-      ->range(0, num_ads);
+      ->range(0, $num_ads);
     $result = $query->execute();
 
     if (isset($result['node'])) {
