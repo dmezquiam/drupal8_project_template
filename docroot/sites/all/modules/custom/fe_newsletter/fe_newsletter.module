@@ -14,17 +14,18 @@ define('FE_NEWSLETTER_MAX_ARTICLES',    20);
  */
 function fe_newsletter_menu() {
   $items['email-bulletin/%'] = array(
-    'title' => t('Email bulletin'),
     'page callback' => 'ijnet_newsletter_callback',
     'page arguments' => array(1),
     'access arguments' => TRUE,
-    'type' => MENU_CALLBACK,
   );
   $items['email-bulletin-archive'] = array(
-    'title' => t('Email bulletin archive'),
     'page callback' => 'ijnet_newsletter_archive_callback',
     'access arguments' => TRUE,
-    'type' => MENU_CALLBACK,
+  );
+  $items['email-bulletin-archive/%'] = array(
+    'page callback' => 'ijnet_newsletter_archive_by_nid_callback',
+    'page arguments' => array(1),
+    'access arguments' => TRUE,
   );
   $items['node/%/bulletin'] = array(
     'title' => 'Newsletter markup',
@@ -65,6 +66,13 @@ function ijnet_newsletter_archive_callback() {
   $nid = _ijnet_newsletter_get_last_newsletter_nid();
 
   return theme('ijnet_newsletter_content', array('node' => node_load($nid)));
+}
+
+function ijnet_newsletter_archive_by_nid_callback($nid = null) {
+  if (node_load($nid)) {
+    return theme('ijnet_newsletter_content', array('node' => node_load($nid)));
+  }
+  drupal_goto('email-bulletin-archive');
 }
 
 function _ijnet_newsletter_get_last_newsletter_nid() {
@@ -182,10 +190,12 @@ function template_preprocess_ijnet_newsletter_content(&$vars) {
  * Implements hook_preprocess_page(&$vars)
  */
 function fe_newsletter_preprocess_page(&$vars) {
-  //drupal_add_js(
-  //  drupal_get_path('module', 'fe_newsletter') . '/js/fe_newsletter.js',
-  //  'file'
-  //);
+  if (arg(0) == 'email-bulletin-archive') {
+    drupal_add_js(
+      drupal_get_path('module', 'fe_newsletter') . '/js/fe_newsletter.js',
+      'file'
+    );
+  }
 }
 
 function _fe_newsletter_get_newsletter_date($node) {
@@ -262,7 +272,7 @@ function _fe_newsletter_get_author($nid) {
     } else {
       $user = user_load($node->uid);
     }
-    $author = l($user->field_screen_name[$user->language][0]['safe_value'],'user/'.$user->uid);
+    $author = l($user->field_screen_name[LANGUAGE_NONE][0]['safe_value'],'user/'.$user->uid);
   }
 
   return $author;
@@ -319,10 +329,7 @@ function _fe_newsletter_get_opportunities($node) {
       $node->field_opportunities[$language] :
       $node->field_opportunities[LANGUAGE_NONE];
     foreach ($opportunities_nids as $nid) {
-      $opportunity = _fe_newsletter_get_opportunity($nid['nid']);
-      if ($opportunity) {
-        $opportunities[] = $opportunity;
-      }
+      $opportunities[] = _fe_newsletter_get_opportunity($nid['nid']);
     }
   }
   $classified_opportunities = _fe_newsletter_classify_opportunities($opportunities);
@@ -332,9 +339,6 @@ function _fe_newsletter_get_opportunities($node) {
 
 function _fe_newsletter_get_opportunity($nid) {
   $node = node_load($nid);
-  if (empty($node)) {
-    return FALSE;
-  }
   $language = $node->language;
 
   $opportunity = new stdClass();

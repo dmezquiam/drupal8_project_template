@@ -22,12 +22,11 @@ function fe_news_preprocess_node(&$variables) {
 
     $href = $base_url . $variables['node_url'];
     drupal_add_html_head_link(
-        array('rel' => 'canonical', 'href' => $href),
-        true
+      array('rel' => 'canonical', 'href' => $href),
+      TRUE
     );
   }
 }
-
 
 /**
  * Implements hook_theme()
@@ -161,7 +160,6 @@ function _fe_news_get_author($nid) {
 
   return $author;
 }
-
 /**
  * Implements hook_form_alter()
  */
