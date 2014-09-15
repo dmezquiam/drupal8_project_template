@@ -46,6 +46,7 @@ features[page_manager_pages][] = dashboard_nodes_opportunities
 features[page_manager_pages][] = dashboard_nodes_videos
 features[page_manager_pages][] = dashboard_staff_members
 features[page_manager_pages][] = dashboard_taxonomies
+features[page_manager_pages][] = dashboard_users
 features[panels_layout][] = dashboard
 features[quicktabs][] = dashboard_taxonomies_quicktab
 features[views_view][] = last_content
