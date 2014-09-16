@@ -352,8 +352,54 @@ ul.links {
 /*
  * Search results are an ordered list so reset the margin
  */
+.page-search {
+  .search-form {
+    @include clearfix;
+    background: $color-bg-ligth;
+    padding: 20px;
+    margin-top: -60px;
+    .form-wrapper {
+      width: 60%;
+      margin: 0 20%;
+      .form-item-keys {
+        @include clearfix;
+        display: block;
+        label { 
+          margin-top: 10px;
+          font-size: $font-size-large;
+          margin-bottom: 5px;
+          display: block;
+        }
+        input { width: 100%; }
+      }
+      input {
+        float: right;
+      }
+    }
+  }
+}
 .search-results {
   margin: 0;
+  padding: 0;
+  li {
+    border-bottom: 1px solid $color-line;
+    &:last-child {
+      border-bottom: 0px;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+    h3 {
+      margin-top: 20px;
+      padding-left: 15px;
+      background: url('#{$path-to-images}/iitem.png') no-repeat left 4px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    .search-snippet-info {
+      .search-snippet {}
+      .search-info {}
+    }
+  }
 }
 
 
@@ -889,13 +935,13 @@ ul.action-links {
     .organization,
     .views-field-nothing {
       float: left;
-      width: 147px;
+      width: 56%;
       clear: left;
     }
 
     .author-name {
       margin-bottom: 5px;
-      padding-top: 7px;
+      padding-top: 0px;
       a {
         font-size: $font-size-sidebar-xxx-large;
         color: $color-bg-heading-box-primary;
@@ -914,8 +960,12 @@ ul.action-links {
     .bio {
       clear: both;
       padding-top: 5px;
+      p { margin-bottom: 0; }
     }
-    .button-tiny {}
+    .button-tiny {
+      margin-bottom: 9px;
+      border: 0;
+    }
   }
 
 // Advertusements ==============================================================
@@ -997,7 +1047,8 @@ ul.action-links {
   }
 
 // twitter Block ================================================================
-  .view-display-id-tweets_home_block {
+
+  .view-id-twitter {
     .view-header {
       position: relative;
       .tw-follow {
@@ -1099,7 +1150,7 @@ ul.action-links {
       position: relative;
       .clicker {
         padding: 5px 0;
-        margin: 25px auto 0px auto;
+        margin: 25px auto 10px auto;
         width: 277px;
         text-align: center;
         background: url("#{$path-to-images}/arrow_down.png") no-repeat 251px center;
@@ -1254,6 +1305,20 @@ ul.action-links {
   margin: 10px 0px 20px 0px;
   border-bottom: 1px solid $color-line;
 }
+//block title
+#block-blockify-blockify-page-title { 
+  margin-bottom: 0;
+  min-height: 122px;
+  .block-content {
+    border-bottom: 1px solid $color-line;
+    margin-bottom: 20px;
+    h1 {
+      margin-bottom: 0px;
+      border: 0px;
+
+    }
+  }
+}
 .node {
   margin-bottom: 20px;
 
@@ -1291,7 +1356,7 @@ ul.action-links {
 .content {
   color: $color-txt-primary-darck;
   .author {
-    margin-bottom: 49px;
+    margin-bottom: 27px;
     font-size: $font-size-large;
     span {
       color: $color-txt-primary;
@@ -1857,7 +1922,7 @@ div.messages {
  .page-videos {
     .region+.region+.region.region-two-66-33-first { width: 100%; }
     .region+.region+.region+.region.region-two-66-33-second { width: 0px }
-    .pane-views-videos-related-videos-landing .block-inner { margin-left: 0; padding-left: 20px; margin-top: 79px; }
+    .pane-views-videos-related-videos-landing .block-inner { margin-left: 0; padding-left: 20px; margin-top: 68px; }
     .view-display-id-featured_video { margin-right: -20px; }
     .page-videos .frist-block {  }
  }
@@ -2006,7 +2071,7 @@ div.messages {
   background: #F8F6EC url('#{$path-to-images}/calendar_icon.jpg') no-repeat 10px center;
   padding: 12px 61px;
   margin-bottom: 20px;
-  margin-top: -20px;
+  margin-top: 26px;
   h2.field-label {
     margin: 0;
     float: none;
@@ -2166,9 +2231,10 @@ div.messages {
  * ========================================================================== */
  .page-contact-ijnet #block-blockify-blockify-page-title {
   margin-bottom: 10px;
+  min-height: initial;
  }
 #ijnet-salesforce-contact-form {
-  padding: 4px 20% 20px 20px;
+  padding: 14px 20% 20px 20px;
   background: #f8f6ec;
   .form-item-first-name,
   .form-item-last-name,
@@ -2272,6 +2338,69 @@ div.messages {
           li {
             padding: 0;
             margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//section-knight-media-innovators 
+.section-knight-media-innovators {
+  #block-blockify-blockify-page-title {
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+  #main-content {
+    margin-top: -110px;
+    #block-system-main {
+      h3 {
+        font-weight: normal;
+      }
+    }
+  }  
+}
+#block-jsonblocks-knight-foundation {
+  .knight-foundation {
+    background: url('#{$path-to-images}/stripes.png') repeat left top;
+    padding: 20px;
+    .logo {
+      background: url('#{$path-to-images}/logo_kf.png') no-repeat center top;
+      height: 100px;
+      width: 100%;
+    }
+    p {
+      color: #FFF;
+      margin-bottom: 0;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.37);
+    }
+  }
+}
+#block-quicktabs-knight-foundation {
+  .block-title {
+    left: 22px;
+  }
+
+
+
+  //tab twitter
+  #quicktabs-tabpage-knight_foundation-1 {
+    .tw-follow,
+    .block-title { display: none; }
+    .view-content {
+      border: 0px;
+      padding-top: 15px;
+      &>div {
+        .twitter-status {
+          background: transparent;
+          border-bottom: 1px solid $color-line;
+        }
+        &:last-child {
+          .twitter-status {
+            border-bottom: 0px;
           }
         }
       }

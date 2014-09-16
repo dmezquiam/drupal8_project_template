@@ -115,3 +115,28 @@ html {
 	}
 
 }
+//category-tabs-list
+	.category-tabs-list {
+	  li.category-item {
+	  	width: 50%;
+	  	float: left;
+	  	margin-bottom: 0 !important;
+	  }
+	}
+
+
+
+//Search results are an ordered list so reset the margin
+.page-search {
+  .search-form {
+    .form-wrapper {
+      width: 80%;
+      margin: 0 10%;
+      .form-item-keys {
+        label {}
+        input {}
+      }
+      input {}
+    }
+  }
+}

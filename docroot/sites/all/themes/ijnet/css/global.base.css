@@ -209,7 +209,7 @@ a:focus {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003166}}
 h1 {
   font-size: 29px;
-  line-height: 34px;
+  line-height: 33px;
   color: #c67b1a;
   font-family: "Signika-Light", Arial, Helvetica, sans-serif;
   font-weight: normal;
@@ -265,7 +265,7 @@ h4 a {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.base\.scss}line{font-family:\00003202}}
 h5 {
   font-size: 16px;
-  line-height: 34px;
+  line-height: 33px;
   color: #c67b1a;
   font-family: "Signika-Light", Arial, Helvetica, sans-serif;
   font-weight: bold;
