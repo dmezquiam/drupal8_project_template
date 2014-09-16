@@ -102,21 +102,45 @@ function fe_chat_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
-  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['label'] = '';
-  $handler->display->display_options['fields']['field_date']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_date']['element_class'] = 'highlighted-item';
-  $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_date']['settings'] = array(
-    'format_type' => 'chat_format',
-    'fromto' => 'both',
+  $handler->display->display_options['fields']['field_date_1']['id'] = 'field_date_1';
+  $handler->display->display_options['fields']['field_date_1']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date_1']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_1']['settings'] = array(
+    'format_type' => 'chat_short_end',
+    'fromto' => 'value2',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_date_2']['id'] = 'field_date_2';
+  $handler->display->display_options['fields']['field_date_2']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date_2']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date_2']['label'] = '';
+  $handler->display->display_options['fields']['field_date_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_2']['settings'] = array(
+    'format_type' => 'chat_short_start',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_date_2] - [field_date_1] ';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'highlighted-item';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -183,17 +207,41 @@ function fe_chat_views_default_views() {
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['label'] = '';
-  $handler->display->display_options['fields']['field_date']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_date']['element_class'] = 'highlighted-item';
+  $handler->display->display_options['fields']['field_date']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_date']['settings'] = array(
-    'format_type' => 'chat_format',
-    'fromto' => 'both',
+    'format_type' => 'chat_short_start',
+    'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_date_1']['id'] = 'field_date_1';
+  $handler->display->display_options['fields']['field_date_1']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date_1']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_1']['settings'] = array(
+    'format_type' => 'chat_short_end',
+    'fromto' => 'value2',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_date] - [field_date_1]';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'highlighted-item';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
