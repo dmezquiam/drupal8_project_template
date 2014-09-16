@@ -45,7 +45,7 @@ function jsonblocks_form_alter(&$form, &$form_state, $form_id) {
     $form['name']['#title'] = t('NAME');
     $form['mail']['#title'] = t('EMAIL ADDRESS');
     $form['message']['#title'] = t('QUESTION OR COMMENT');
-    unset($form['copy']);
+    $form['copy']['#type'] = 'hidden';
     $form['actions']['submit']['#value'] = t('Submit');
   }
 }
@@ -254,4 +254,19 @@ function json_blocks_view_social_block() {
   global $language;
   $block = array('content' => theme('social-block', array('urls' => $all_items[$language->language])));
   return $block;
+}
+
+/**
+ * Implements hook_mail_alter().
+ */
+
+function jsonblocks_mail_alter(&$message) {
+  if ($message['id'] == 'contact_page_mail') {
+    $email = array(
+      'en' => 'recheconea@gmail.com',
+      'es' => 'rodrigo@easytech.com.ar',
+    );
+    global $language;
+    $message['to'] = $email[$language->language];
+  }
 }
