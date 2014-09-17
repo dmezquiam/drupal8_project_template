@@ -85,8 +85,7 @@
   <?php print render($title_prefix); ?>
   <?php if (!$page && $teaser): ?>
     <h3<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-  <?php elseif (!$teaser) : ?>
-    <h1 id='page-title'> <?php print $title; ?> </h1>
+
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
