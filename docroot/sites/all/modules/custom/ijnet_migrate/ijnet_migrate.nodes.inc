@@ -321,7 +321,7 @@ class IJNetVideoMigration extends IJNetNodeMigration {
     parent::__construct($arguments);
 
     $this->pre_parent_tax_ref("field_category");
-    _ijnet_migrate_post_parent_tax_ref($this, "field_category", 1, "TermsTopic");
+    _ijnet_migrate_post_parent_tax_ref($this, "field_category", 1, "Topic");
 
     $this->addFieldMapping('field_video', 'field_video:value');
 
@@ -343,6 +343,7 @@ class IJNetVideoMigration extends IJNetNodeMigration {
 
 class IJNetNewsMigration extends IJNetNodeMigration {
   public function __construct(array $arguments) {
+    $this->sourceFields['11'] = t('Custom source tag vocabulary');
     parent::__construct($arguments);
 
     $this->addFieldMapping('field_byline', "field_byline")
@@ -358,7 +359,9 @@ class IJNetNewsMigration extends IJNetNodeMigration {
     $this->addFieldMapping('field_image_show', "field_image_show");
 
     $this->pre_parent_tax_ref("field_topic");
-    _ijnet_migrate_post_parent_tax_ref($this, "field_topic", 1, "TermsTopic");
+    _ijnet_migrate_post_parent_tax_ref($this, "field_topic", 1, "Topic");
+    $this->pre_parent_tax_ref("field_tags");
+    _ijnet_migrate_post_parent_tax_ref($this, "field_tags", 11, 'Tags');
 
     // "3" for taxonomy region and "5" for taxonomy tags
     $this->addUnmigratedSources(array('field_video_reference', '3', '5'));
@@ -395,6 +398,27 @@ class IJNetNewsMigration extends IJNetNodeMigration {
       $row->body = str_replace($image_string, $new_string, $row->body);
 
       $body_string = substr($body_string, $last_pos); // Update the cicled string
+    }
+
+    // Need filter and set the terms for field_tags
+    $field_topic = 1; // Source vocabulary for field topics
+    if (!empty($row->$field_topic)) {
+      $term_translations = i18nTermMigration::getTermsTranslations();
+      $term_mapping = i18nTermMigration::getTermsMapping();
+      $field_tags = 11; // Custom source vocabulary fo field tags
+      $row->$field_tags = $row->$field_topic;
+      $tags = array();
+      foreach ($row->$field_tags as $tag) {
+        if (isset($term_translations[$tag])) {
+          $ref = $term_translations[$tag]; // Get the translation reference
+          if (isset($term_mapping[$ref])) {
+            if (isset($term_mapping[$ref][$row->language][2])) {
+              $tags[] = $tag;
+            }
+          }
+        }
+      }
+      $row->$field_tags = $tags;
     }
   }
 }
@@ -464,10 +488,10 @@ class IJNetOpportunityMigration extends IJNetNodeMigration {
       ->sourceMigration(array('Opportunity', 'BlogPost', 'Story'));
 
     $this->pre_parent_tax_ref('field_category');
-    _ijnet_migrate_post_parent_tax_ref($this, 'field_category', 1, 'TermsTopic');
+    _ijnet_migrate_post_parent_tax_ref($this, 'field_category', 1, 'Topic');
 
     $this->pre_parent_tax_ref('field_region');
-    _ijnet_migrate_post_parent_tax_ref($this, 'field_region', 3, 'TermsRegion');
+    _ijnet_migrate_post_parent_tax_ref($this, 'field_region', 3, 'Region');
 
     // "2" for taxonomy training type
     $this->addUnmigratedSources(array('field_document', 'field_cost:currency', '2'));

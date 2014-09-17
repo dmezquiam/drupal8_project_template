@@ -88,7 +88,7 @@ class IJNetUserMigration extends DrupalUser6Migration {
     $this->pictureMigration = $arguments['picture_migration'];
 
     $this->pre_parent_tax_ref('field_topic');
-    _ijnet_migrate_post_parent_tax_ref($this, 'field_topic', 1, 'TermsTopic');
+    _ijnet_migrate_post_parent_tax_ref($this, 'field_topic', 1, 'Topic');
 
     // ========================================
     // Your profile
