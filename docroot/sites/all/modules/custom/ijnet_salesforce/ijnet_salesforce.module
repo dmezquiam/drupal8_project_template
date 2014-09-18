@@ -37,7 +37,7 @@ function ijnet_salesforce_contact_form($form, &$form_state) {
   );
   $form['organization_name'] = array(
     '#type' => 'textfield',
-    '#title' => t('Organiztion Name'),
+    '#title' => t('Organization Name'),
     '#size' => 60,
     '#required' => TRUE,
   );
