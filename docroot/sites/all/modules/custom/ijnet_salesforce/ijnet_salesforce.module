@@ -117,6 +117,21 @@ function ijnet_salesforce_preprocess_page(&$vars, $hook) {
 function ijnet_salesforce_contact_form_submit($form, &$form_state) {
   $values = $form_state['values'];
 
+  $new_contact = new stdClass();
+  $new_contact->name = $values['first_name'] . ' ' . $values['last_name'];
+  $new_contact->email = $values['personal_email'];
+  $cc = _fe_newsletter_cc_get_connection();
+  $contact = $cc->query_contacts($new_contact->email);
+  if($contact) {
+    _fe_newsletter_cc_update_list($new_contact) ?
+      drupal_set_message(t('Success, you are now subscribed to our mailing list.'), 'status') :
+      drupal_set_message(t('Sorry, you are subscribed to our mailing list.'), 'error');
+  } else {
+    _fe_newsletter_cc_subscribe_list($new_contact) ?
+      drupal_set_message(t('Success, you are now subscribed to our mailing list.'), 'status') :
+      drupal_set_message(t('Sorry, there was a problem, please ensure your details are valid and try again.'), 'error');
+  }
+
   _ijnet_salesforce_set_library();
   try {
     $soapclient = _ijnet_salesforce_get_client();
