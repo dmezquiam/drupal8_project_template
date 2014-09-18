@@ -272,6 +272,7 @@ function jsonblocks_mail_alter(&$message) {
       'pt-br' => 'globaljournalist2004@yahoo.com',
     );
     global $language;
-    $message['to'] = $email[$language->language];
+    $message['to'] = isset($email[$language->language]) ?
+      $email[$language->language] : $email['en'];
   }
 }
