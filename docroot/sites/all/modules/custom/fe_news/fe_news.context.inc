@@ -122,6 +122,44 @@ function fe_news_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'news_topics';
+  $context->description = '';
+  $context->tag = 'News';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'topics' => 'topics',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'jsonblocks-social-block' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'social-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'jsonblocks-latest-posts' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'latest-posts',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('News');
+  $export['news_topics'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'tags';
   $context->description = '';
   $context->tag = 'taxonomies';
