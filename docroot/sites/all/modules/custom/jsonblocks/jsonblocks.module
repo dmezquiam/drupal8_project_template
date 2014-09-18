@@ -263,8 +263,13 @@ function json_blocks_view_social_block() {
 function jsonblocks_mail_alter(&$message) {
   if ($message['id'] == 'contact_page_mail') {
     $email = array(
-      'en' => 'recheconea@gmail.com',
-      'es' => 'rodrigo@easytech.com.ar',
+      'en' => 'ijneteditor@icfj.org',
+      'es' => 'santiagosanchez86@gmail.com',
+      'ru' => 'IJNetRussian@icfj.org',
+      'ar' => 'madonna.khafaja@gmail.com',
+      'zh-hans' => 'jhuang@icfj.org',
+      'fa' => 'persianeditor@icfj.org',
+      'pt-br' => 'globaljournalist2004@yahoo.com',
     );
     global $language;
     $message['to'] = $email[$language->language];
