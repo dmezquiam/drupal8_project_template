@@ -202,3 +202,19 @@ div.messages {
     }
   }
 }
+
+
+//Search results are an ordered list so reset the margin
+.page-search {
+  .search-form {
+    .form-wrapper {
+    	width: 100%;
+		margin: 0;
+     	.form-item-keys {
+        label {}
+        input {}
+    }
+    	input { width: 100%; }
+    }
+  }
+}

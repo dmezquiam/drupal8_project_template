@@ -25,6 +25,11 @@ function fe_basic_page_context_default_contexts() {
         'node_form' => '1',
       ),
     ),
+    'path' => array(
+      'values' => array(
+        '~knight-media-innovators' => '~knight-media-innovators',
+      ),
+    ),
   );
   $context->reactions = array(
     'block' => array(
@@ -44,7 +49,7 @@ function fe_basic_page_context_default_contexts() {
       ),
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -72,6 +77,24 @@ function fe_basic_page_context_default_contexts() {
           'delta' => 'news-block_1',
           'region' => 'content',
           'weight' => '-10',
+        ),
+        'jsonblocks-social-block' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'social-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'jsonblocks-knight-foundation' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'knight-foundation',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'quicktabs-knight_foundation' => array(
+          'module' => 'quicktabs',
+          'delta' => 'knight_foundation',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
         ),
       ),
     ),

@@ -221,7 +221,19 @@ function fe_news_views_default_views() {
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['code'] = '$tid = arg(3);
+if ($tid && is_numeric($tid)) {
+  return $tid;
+}
+else if ($tid) {
+  $term = taxonomy_get_term_by_name($tid);
+  if (!empty($term)) {
+    $tid = array_shift($term)->tid;
+    return $tid;
+  }
+}
+return;';
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
@@ -725,6 +737,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
     247 => '247',
+    310 => '310',
   );
   $handler->display->display_options['filters']['field_topic_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
@@ -1272,9 +1285,8 @@ function fe_news_views_default_views() {
   $handler->display->display_options['fields']['field_short_bio']['field'] = 'field_short_bio';
   $handler->display->display_options['fields']['field_short_bio']['label'] = '';
   $handler->display->display_options['fields']['field_short_bio']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_short_bio']['alter']['text'] = '[field_short_bio][field_twitter]';
+  $handler->display->display_options['fields']['field_short_bio']['alter']['text'] = '[field_short_bio]';
   $handler->display->display_options['fields']['field_short_bio']['alter']['max_length'] = '60';
-  $handler->display->display_options['fields']['field_short_bio']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_short_bio']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_short_bio']['element_class'] = 'bio';
   $handler->display->display_options['fields']['field_short_bio']['element_label_colon'] = FALSE;

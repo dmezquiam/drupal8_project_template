@@ -31,7 +31,6 @@ function fe_knight_foundation_views_query_alter(&$view, &$query) {
     foreach($query->where[1]['conditions'] as $index => $condition) {
       if ($query->where[1]['conditions'][$index]['field'] == 'twitter.screen_name') {
         $accounts = variable_get('fe_knight_foundation_tweets', 'IJNet');
-        kpr(explode(',', $accounts));
         $query->where[1]['conditions'][$index]['value'] = explode(',', $accounts);
         $query->where[1]['conditions'][$index]['operator'] = 'IN';
       }   
@@ -40,21 +39,13 @@ function fe_knight_foundation_views_query_alter(&$view, &$query) {
 }
 
 function fe_knight_foundation_get_authors() {
-  $tid = taxonomy_get_term_by_name('Citizen journalism') ;
-  $query = db_select('field_data_field_topic', 't');
-  $query->join('node', 'n', 'n.nid = t.entity_id');
-  $query->fields('t', array('entity_id'));
-  $query->fields('n', array('uid'));
-  $query->condition('t.field_topic_tid', array_shift($tid)->tid,'=');
-  $query->condition('t.bundle', 'news','=');
-  $query->distinct();
-  $query->range(0, 10);
-  $results = $query->execute()->fetchAll();
-  $authors = array();
-  foreach ($results as $result) {
-    $authors[] = _fe_news_get_author($result->entity_id);
-  }
-  return theme('last_posts_authors', array('authors' => $authors));
+  $topic = array(
+    'en' => 'Citizen journalism',
+    'es' => 'Periodismo Ciudadano',
+  );
+  global $language;
+  $tid = taxonomy_get_term_by_name($topic[$language->language]);
+  return _fe_news_get_last_posts_authors(array_shift($tid)->tid);
 }
 
 /**
