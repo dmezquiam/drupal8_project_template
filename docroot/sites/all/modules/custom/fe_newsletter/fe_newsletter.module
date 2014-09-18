@@ -440,12 +440,77 @@ function fe_newsletter_subscribe_form($form, &$form_state) {
 }
 
 function fe_newsletter_subscribe_form_submit($form, &$form_state) {
+  $new_contact = new stdClass();
+  $new_contact->name = $form_state['values']['name'];
+  $new_contact->email = $form_state['values']['email'];
 
+  $cc = _fe_newsletter_cc_get_connection();
+  $contact = $cc->query_contacts($new_contact->email);
+  if($contact) {
+    _fe_newsletter_cc_update_list($new_contact) ?
+      $msg = '<div class="msj-submit success">' . t('Success, you are now subscribed to our mailing list') . '</div>' :
+      $msg = '<div class="msj-submit sorry">' . t('Sorry, you are subscribed to our mailing list') . '</div>';
+  } else {
+    _fe_newsletter_cc_subscribe_list($new_contact) ?
+      $msg = '<div class="msj-submit success">' . t('Success, you are now subscribed to our mailing list') . '</div>' :
+      $msg = '<div class="msj-submit sorry">' . t('Sorry, there was a problem, please ensure your details are valid and try again') . '</div>';
+  }
+
+  // Process form submission.
+  $commands = array(
+    ajax_command_replace('#form-register-message', $msg),
+  );
+  $replace = array('#type' => 'ajax', '#commands' => $commands);
+  return $replace;
+}
+
+function _fe_newsletter_cc_get_connection() {
+  $action_type = 'contact';
+
+  $cc_object = constant_contact_create_object();
+  $cc_object->set_action_type($action_type);
+
+  return $cc_object;
+}
+
+function _fe_newsletter_cc_subscribe_list($contact) {
+  $cc = _fe_newsletter_cc_get_connection();
+  $list_id = _fe_newsletter_get_cc_list_id();
+  $fields = array(
+    'EmailType' => 'HTML',
+    'FirstName' => $contact->name,
+  );
+  $success = $cc->create_contact($contact->email, array($list_id), $fields);
+
+  return $success;
+}
+
+function _fe_newsletter_cc_update_list($contact) {
+  $action_type = 'contact';
+
+  $cc = constant_contact_create_object();
+  $cc->set_action_type($action_type);
+  $cc_contact = $cc->query_contacts($contact->email);
+  $cc_contact = $cc->get_contact($cc_contact['id']);
+  $list_id = _fe_newsletter_get_cc_list_id();
+  if (in_array($list_id, $cc_contact['lists'])) {
+    $success = false;
+  } else {
+    $lists = array_merge(array($list_id), $cc_contact['lists']);
+    $fields = array(
+      'EmailType' => 'HTML',
+      'FirstName' => $contact->name,
+    );
+    $success = $cc->update_contact($cc_contact['id'], $contact->email, $lists, $fields);
+  }
+
+  return $success;
+}
+
+function _fe_newsletter_get_cc_list_id() {
   global $language;
 
-  // list ids from constant contact
-  // TODO: make configurable
-  $list_id = array(
+  $cc_lists = array(
     'und' => 1316537398,
     'en' =>  1316537398,
     'es' =>  1265529464,
@@ -455,41 +520,9 @@ function fe_newsletter_subscribe_form_submit($form, &$form_state) {
     'ar' =>  1385780866,
     'fa' =>  1321747649,
   );
+  $list_id = $cc_lists[$language->language];
 
-  $user_email = $form_state['values']['email'];
-  $name       = $form_state['values']['name'];
-
-  $cc = constant_contact_create_object();
-  $cc->set_action_type('contact');
-  $contact = $cc->query_contacts($user_email);
-  if ($contact) {
-    $msg = t('Your email address is already subscribed');
-  }
-  else {
-    // todo: figure out how to get constant contact to accept some
-    // version of name field, this one does nothing
-    $lists = array($list_id[$language->language]);
-    // TODO: sacar hardcode
-    $lists = array(1215755656);
-    $fields = array(
-      'EmailType' => 'HTML',
-      'FirstName' => $name,
-    );
-    //$status = $cc->create_contact($user_email, $lists, $fields);
-    $status = TRUE;
-    if ($status) {
-      $msg = '<div class="msj-submit success">' . t('Success, you are now subscribed to our mailing list') . '</div>';
-    }   
-    else {
-      $msg = '<div class="msj-submit sorry">' . t('Sorry, there was a problem, please ensure your details are valid and try again') . '</div>';
-    }
-  }
-  // Process form submission.
-  $commands = array(
-    ajax_command_replace('#form-register-message', $msg),
-  );
-  $replace = array('#type' => 'ajax', '#commands' => $commands);
-  return $replace;
+  return $list_id;
 }
 
 /**
