@@ -57,9 +57,17 @@
             <tr>
               <td align="center" valign="top">
 
-  <?php print theme('ijnet_newsletter_featured_contents', array('featured_contents' => $featured_contents))?>
-  <?php print theme('ijnet_newsletter_advertisements', array('advertisements' => $advertisements))?>
-  <?php print theme('ijnet_newsletter_opportunities', array('opportunities' => $opportunities))?>
+<?php
+  if (count($featured_contents)) {
+    print(theme('ijnet_newsletter_featured_contents', array('featured_contents' => $featured_contents)));
+  }
+  if (count($advertisements)) {
+    print(theme('ijnet_newsletter_advertisements', array('advertisements' => $advertisements)));
+  }
+  if (count($opportunities)) {
+    print(theme('ijnet_newsletter_opportunities', array('opportunities' => $opportunities)));
+  }
+?>
 
                 <!-- // Begin Body \\ -->
                 <table border="0" cellpadding="0" cellspacing="20" width="600">
