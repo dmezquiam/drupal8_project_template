@@ -67,7 +67,6 @@ function fe_news_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'display_summary' => 1,
-      'entity_translation_sync' => FALSE,
       'summary_display' => 'visible',
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -377,7 +376,6 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
-      'entity_translation_sync' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -583,7 +581,6 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     'label' => 'Tags',
     'required' => 0,
     'settings' => array(
-      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
