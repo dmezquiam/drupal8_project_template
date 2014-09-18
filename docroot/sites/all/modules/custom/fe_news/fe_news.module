@@ -145,8 +145,8 @@ function _fe_news_get_author($nid) {
       $user = user_load($node->uid);
     }
     $author->uid = $user->uid;
-    $user_lang = isset($user->field_screen_name[LANGUAGE_NONE]) ? LANGUAGE_NONE : $user->language;
-    $author->name = $user->field_screen_name[$user_lang][0]['safe_value'];
+    $screen_name = array_pop($user->field_screen_name);
+    $author->name = $screen_name[0]['safe_value'];
     $author->profile_link = drupal_get_path_alias('user/' . $user->uid);
     $author->avatar = isset($user->picture) ? 
       theme_image_style(array(
