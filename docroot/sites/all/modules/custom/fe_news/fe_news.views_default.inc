@@ -1319,9 +1319,8 @@ return $author;';
   $handler->display->display_options['filters']['field_show_profile_value']['id'] = 'field_show_profile_value';
   $handler->display->display_options['filters']['field_show_profile_value']['table'] = 'field_data_field_show_profile';
   $handler->display->display_options['filters']['field_show_profile_value']['field'] = 'field_show_profile_value';
-  $handler->display->display_options['filters']['field_show_profile_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_show_profile_value']['value'] = array(
-    0 => '0',
+    1 => '1',
   );
   $export['view_search_block_user'] = $view;
 
