@@ -577,7 +577,18 @@ function fe_newsletter_node_presave($node) {
       }
 
       // Add other nids
-      $item_nids = array_keys($result['node']);
+      $item_nids = array();
+      $op_nids = array();
+      kpr($result['node']);
+      foreach ($result['node'] as $key => $content) {
+        if ($content->type != 'training_opportunity') {
+          $item_nids[] = $key;
+        }
+        else {
+          $op_nids[] = $key;
+        }
+      }
+      //$item_nids = array_keys($result['node']);
       foreach($item_nids as $nid) {
         $nids[$nid] = $nid;
       }
@@ -588,6 +599,10 @@ function fe_newsletter_node_presave($node) {
         $field_content[] = array('nid' => $nid);
       }
       $node->field_other_content[LANGUAGE_NONE] = $field_content;
+
+      if (!empty($op_nids)) {
+        
+      }
     }
 
     // add advertisements
