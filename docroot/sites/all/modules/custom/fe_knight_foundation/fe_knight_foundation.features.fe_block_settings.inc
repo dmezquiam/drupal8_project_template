@@ -113,7 +113,7 @@ function fe_knight_foundation_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => ' ',
     'visibility' => 0,
   );
 
