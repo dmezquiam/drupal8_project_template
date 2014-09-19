@@ -557,7 +557,7 @@ function fe_newsletter_node_presave($node) {
   if (TRUE || ! isset($node->nid)) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', array('news', 'video'), 'IN')
+      ->entityCondition('bundle', array('news', 'video', 'training_opportunity'), 'IN')
       ->propertyCondition('status', 1)
       ->propertyCondition('language', $newsletter_lang)
       ->propertyCondition('created', $to_date, '<=')
