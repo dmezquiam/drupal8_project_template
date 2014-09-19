@@ -5693,16 +5693,24 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'users/[name]';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   /* Field: User: Screen Name */
   $handler->display->display_options['fields']['field_screen_name']['id'] = 'field_screen_name';
   $handler->display->display_options['fields']['field_screen_name']['table'] = 'field_data_field_screen_name';
   $handler->display->display_options['fields']['field_screen_name']['field'] = 'field_screen_name';
   $handler->display->display_options['fields']['field_screen_name']['label'] = 'Name';
   $handler->display->display_options['fields']['field_screen_name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_screen_name']['alter']['path'] = 'user/[name]';
+  $handler->display->display_options['fields']['field_screen_name']['alter']['path'] = 'user/[uid]';
   $handler->display->display_options['fields']['field_screen_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_screen_name']['empty'] = '[name]';
   /* Field: User: Roles */
