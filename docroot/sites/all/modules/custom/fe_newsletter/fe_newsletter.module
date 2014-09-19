@@ -554,7 +554,7 @@ function fe_newsletter_node_presave($node) {
   $to_date += 24*60*60; // Add a day.
 
   // query news articles and videos
-  if (TRUE || ! isset($node->nid)) {
+  if ($node->is_new || ! isset($node->nid)) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', array('news', 'video', 'training_opportunity'), 'IN')
@@ -601,7 +601,21 @@ function fe_newsletter_node_presave($node) {
       $node->field_other_content[LANGUAGE_NONE] = $field_content;
 
       if (!empty($op_nids)) {
-        
+        $nids = array();
+        $has_op = count($node->field_opportunities[LANGUAGE_NONE]);
+        if ($has_op > 0) {
+          foreach ($node->field_opportunities[LANGUAGE_NONE] as $existing_op) {
+            $nids[$existing_op['nid']] = $existing_op['nid'];
+          }
+        }
+        foreach ($op_nids as $nid) {
+          $nids[$nid] = $nid;
+        }
+        $field_content = array();
+        foreach ($nids as $nid) {
+          $field_content[] = array('nid' => $nid);
+        }
+        $node->field_opportunities[LANGUAGE_NONE] = $field_content;
       }
     }
 
