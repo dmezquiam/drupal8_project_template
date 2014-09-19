@@ -1,3 +1,4 @@
+
 <?php
 /**
  * @file
@@ -456,7 +457,7 @@ function fe_newsletter_subscribe_form_submit($form, &$form_state) {
   if($contact) {
     _fe_newsletter_cc_update_list($new_contact) ?
       $msg = '<div class="msj-submit success">' . t('Success, you are now subscribed to our mailing list') . '</div>' :
-      $msg = '<div class="msj-submit sorry">' . t('Sorry, you are subscribed to our mailing list') . '</div>';
+      $msg = '<div class="msj-submit sorry">' . t('Sorry, there was a problem subscribing you to our mailing list') . '</div>';
   } else {
     _fe_newsletter_cc_subscribe_list($new_contact) ?
       $msg = '<div class="msj-submit success">' . t('Success, you are now subscribed to our mailing list') . '</div>' :
