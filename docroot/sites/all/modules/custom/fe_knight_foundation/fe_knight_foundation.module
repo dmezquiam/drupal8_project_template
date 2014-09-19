@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file
+ * Code for the Knight Foundation feature.
+ */
+
+include_once 'fe_knight_foundation.features.inc';
 
 /**
  * Implements hook_block_info().
