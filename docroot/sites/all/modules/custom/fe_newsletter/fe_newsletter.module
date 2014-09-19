@@ -20,12 +20,12 @@ function fe_newsletter_menu() {
   );
   $items['email-bulletin-archive'] = array(
     'page callback' => 'ijnet_newsletter_archive_callback',
-    'access arguments' => TRUE,
+    'access arguments' => array('access content'),
   );
   $items['email-bulletin-archive/%'] = array(
     'page callback' => 'ijnet_newsletter_archive_by_nid_callback',
     'page arguments' => array(1),
-    'access arguments' => TRUE,
+    'access arguments' => array('access content'),
   );
   $items['node/%/bulletin'] = array(
     'title' => 'Newsletter markup',
