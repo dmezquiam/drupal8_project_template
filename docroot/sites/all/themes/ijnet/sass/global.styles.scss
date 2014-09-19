@@ -965,6 +965,7 @@ ul.action-links {
     .button-tiny {
       margin-bottom: 9px;
       border: 0;
+      clear: both;
     }
   }
 
@@ -1383,78 +1384,42 @@ ul.action-links {
 }
 
 /* Category ================================================================= */
-.field-type-taxonomy-term-reference {
-  margin: 40px 0 34px 0;
-  float: left;
-  width: 100%;
-  h2.field-label {
-    float: left;
-    margin: 0px;
-    text-transform: uppercase;
-    color: $color-txt-primary;
-  }
-  ul.field-items {
-    margin: 0px;
-    padding: 0px;
-    float: none;
-    display: inline;
-    li{
-      margin: 0px;
-      padding: 0px;
-      float: left;
-      list-style-type: none;
-      a {
-        @include category;
-      }
-    }
-  }
-}
-
-
-/* Category ================================================================= */
-.region-highlighted {
   .field-type-taxonomy-term-reference {
-    margin: 0px 0px -12px 0px;
+    margin: 40px 0 34px 0;
     float: left;
     width: 100%;
     h2.field-label {
       float: left;
       margin: 0px;
-      @include category;
-      padding: 0px 6px 0px 10px;
-      height: 18px;
-      font-weight: normal;
+      text-transform: uppercase;
+      color: $color-txt-primary;
     }
     ul.field-items {
+      margin: 0px;
+      padding: 0px;
       float: none;
       display: inline;
       li{
-        margin: 6px 5px 5px 0;
-        padding: 0 5px 0 0;
+        margin: 0px;
+        padding: 0px;
         float: left;
         list-style-type: none;
-        //border-right: 1px solid #000;
-        line-height: 7px;
-        font-size: 11px;
-
         a {
-          text-transform: uppercase;
-          color: #4D4D4D;
-          background: transparent;
-          padding: 0;
-          margin: 0;
-          @include border-radius(0px);
-          -webkit-transition: all 0.2s ease-in-out;
-          -moz-transition: all 0.2s ease-in-out;
-          -ms-transition: all 0.2s ease-in-out;
-          -o-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
-          &:hover { color: $color-txt-primary-darck; }
+          @include category;
         }
       }
     }
   }
-}
+
+
+/* Category ================================================================= */
+  .region-highlighted {
+    .field-type-taxonomy-term-reference {
+      margin: 0px 0px -12px 0px;
+      float: left;
+      width: 100%;
+    }
+  }
 /* ========================================================================== */
 
 /* =============================================================================
@@ -2303,38 +2268,50 @@ div.messages {
 }
 //BUELLETIN EMAIL ARCHIVE LIST
 .view-newsletter-archive {
+  margin: -16px 0;
   .view-grouping {
     .view-grouping-header {
-      background: $color-bg-box;
+      background: #E6E6E6;
       padding: 6px 15px;
       font-size: 19px;
       color: #686868;
-      margin: 30px -15px 9px -15px;
+      margin: 0px -15px -1px -15px;
       border-bottom: 1px solid $color-line;
       border-top: 1px solid $color-line;
-
-
+      cursor: pointer;
+      @include transition(all, 0.2s, ease-in-out);
+      &:hover,
+      &.open {
+        background: #303030;
+        color: #C7C7C7;
+        border-bottom: 1px solid #303030;
+        border-top: 1px solid #303030;
+        border-left: 1px solid #303030;
+        margin: 0px -16px -1px -16px;
+      }
     }
     .view-grouping-content {
+      margin: 0 -15px;
       .item-list {
         border-bottom: 1px solid $color-line;
-        margin-bottom: 10px;
-        padding-bottom: 10px;
+        padding: 0px;
         &:last-child { 
           border: 0px; 
-          margin: 0;
-          padding: 0;
         }
         h3 { 
           text-transform: uppercase;
           margin-bottom: 0;
-          background: url('#{$path-to-images}/iitem.png') no-repeat left 4px;
-          padding-left: 15px;
+          background: #F7F7F7 url("../images/iitem.png") no-repeat 15px 11px;
+          cursor: pointer;
+          font-size: 14px;
+          padding: 8px 30px 5px 30px;
+          text-shadow: 0px 0px 0px;
+          font-weight: normal;
         }
         ul {
           list-style-type: none;
-          padding: 0;
-          margin: 0;
+          padding: 0px 0px 0px 28px;
+          margin: 5px 0px 5px 0px;
           li {
             padding: 0;
             margin: 0;
@@ -2354,7 +2331,7 @@ div.messages {
     }
   }
   #main-content {
-    margin-top: -110px;
+    //margin-top: -110px;
     #block-system-main {
       h3 {
         font-weight: normal;
@@ -2366,16 +2343,16 @@ div.messages {
   .knight-foundation {
     background: url('#{$path-to-images}/stripes.png') repeat left top;
     padding: 20px;
-    .logo {
+    /* .logo {
       background: url('#{$path-to-images}/logo_kf.png') no-repeat center top;
       height: 100px;
       width: 100%;
-    }
+    } */
     p {
       color: #FFF;
       margin-bottom: 0;
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.37);
+      padding: 0px;
+      //background: rgba(0, 0, 0, 0.37);
     }
   }
 }
