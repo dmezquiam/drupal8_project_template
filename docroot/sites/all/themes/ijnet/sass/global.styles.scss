@@ -2341,7 +2341,8 @@ div.messages {
 }
 #block-jsonblocks-knight-foundation {
   .knight-foundation {
-    background: url('#{$path-to-images}/stripes.png') repeat left top;
+    //background: url('#{$path-to-images}/stripes.png') repeat left top;
+    background-color: #416e88;
     padding: 20px;
     /* .logo {
       background: url('#{$path-to-images}/logo_kf.png') no-repeat center top;
