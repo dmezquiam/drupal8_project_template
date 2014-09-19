@@ -28,6 +28,7 @@ function fe_basic_page_context_default_contexts() {
     'path' => array(
       'values' => array(
         '~knight-media-innovators' => '~knight-media-innovators',
+        '~chats' => '~chats',
       ),
     ),
   );
