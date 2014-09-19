@@ -53,6 +53,7 @@ function fe_opportunity_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'display_summary' => 1,
+      'entity_translation_sync' => FALSE,
       'summary_display' => 'visible',
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -61,6 +62,10 @@ function fe_opportunity_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 20,
         'summary_display' => 'default',
         'summary_rows' => 5,
@@ -238,6 +243,7 @@ function fe_opportunity_field_default_field_instances() {
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
