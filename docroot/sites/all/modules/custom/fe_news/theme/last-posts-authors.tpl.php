@@ -28,7 +28,7 @@
         </div>
         <div class="button">
   <?php if (isset($author->uid)): ?>
-    <?php print(l(t('PROFILE POSTS'), 'user/' . $author->uid, array('attributes' => array('class' => array("button-clean-tiny"))))); ?>
+    <?php print(l(t('VIEW PROFILE'), 'user/' . $author->uid, array('attributes' => array('class' => array("button-clean-tiny"))))); ?>
   <?php endif; ?>
         </div>
       </li>
