@@ -121,6 +121,7 @@ function _fe_news_get_last_posts_authors($tid = '') {
     }
   }
 
+
   return theme('last_posts_authors', array('authors' => $authors));
 }
 
@@ -145,8 +146,7 @@ function _fe_news_get_author($nid) {
       $user = user_load($node->uid);
     }
     $author->uid = $user->uid;
-    $screen_name = array_pop($user->field_screen_name);
-    $author->name = $screen_name[0]['safe_value'];
+    $author->name = _fe_news_get_safe_value($user, 'field_screen_name');
     $author->profile_link = drupal_get_path_alias('user/' . $user->uid);
     $author->avatar = isset($user->picture) ? 
       theme_image_style(array(
@@ -155,10 +155,8 @@ function _fe_news_get_author($nid) {
         'width' => '110', 
         'height' => '110')
         ) :  null;
-    $author->job = isset($user->field_job_title[LANGUAGE_NONE]) ?
-      $user->field_job_title[LANGUAGE_NONE][0]['safe_value'] : null;
-    $author->organization = isset($user->field_organization_name[LANGUAGE_NONE]) ?
-      $user->field_organization_name[LANGUAGE_NONE][0]['safe_value'] : null;
+    $author->job = _fe_news_get_safe_value($user, 'field_job_title');
+    $author->organization = _fe_news_get_safe_value($user, 'field_organization_name');
   }
 
   return $author;
@@ -171,4 +169,35 @@ function fe_news_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'comment_node_news_form') {
     hide($form['author']);
   }
+}
+
+/**
+ * Helper to pull value regardless of language
+ */
+function _fe_news_get_safe_value($entity, $field_name) {
+	global $language;
+
+  if (!isset($entity->$field_name) || !is_array($entity->$field_name)) {
+    return '';
+  }
+
+  // try to use value for current language
+  $lang_code = $language->language;
+	if (isset($entity->$field_name[$lang_code])) {
+		$item = $entity->$field_name[$lang_code];
+	}
+	else if (isset($entity->$field_name['en'])) {
+		// try english if available
+    $item = $entity->$field_name['en'];
+	}
+	else {
+    // use whatever we have.
+    $keys = array_keys($entity->$field_name);
+    $item = $entity->{$field_name}[$keys[0]];
+	}
+  $value = isset($item[0]['safe_value']) ?
+    $item[0]['safe_value'] :
+    '';
+
+  return $value;
 }
