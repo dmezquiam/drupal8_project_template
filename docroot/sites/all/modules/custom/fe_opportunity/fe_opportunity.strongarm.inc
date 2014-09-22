@@ -86,6 +86,12 @@ function fe_opportunity_strongarm() {
       'short_teaser' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'node_fields_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -108,7 +114,7 @@ function fe_opportunity_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '0',
+            'weight' => '3',
             'visible' => FALSE,
           ),
           'teaser' => array(
