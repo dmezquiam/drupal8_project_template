@@ -550,12 +550,8 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-        ),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 6,
       ),
       'node_fields_block' => array(

@@ -3,7 +3,7 @@
     <h2 class="field-label"><?php print t('TOPIC');?>:&nbsp;</h2>
     <ul class="field-items">
       <li>
-      <a href="/<?php print $lang;?>/news/<?php print $tid;?>"><?php print $name;?></a>
+      <a href="<?php print $url;?>"><?php print $name;?></a>
       </li>
     </ul>
   </section>

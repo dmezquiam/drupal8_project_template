@@ -731,7 +731,7 @@ return;';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Field: Topic (field_topic) */
+  /* Filter criterion: Field: Area of Interest (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -821,6 +821,7 @@ return;';
 
   /* Display: News for terms Page */
   $handler = $view->new_display('page', 'News for terms Page', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['field_language_add_to_query'] = 0;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';

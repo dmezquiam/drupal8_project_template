@@ -47,7 +47,7 @@ function fe_news_theme() {
     ),
     'news_topic_block' => array(
       'template' => 'theme/topic-block',
-      'variables' => array('name' => '', 'tid' => '', 'lang' => 'en'),
+      'variables' => array('name' => '', 'url' => ''),
     ),
   );
 
@@ -210,8 +210,8 @@ function _fe_news_get_safe_value($entity, $field_name) {
   return $value;
 }
 
-function _fe_news_get_topics() {
-  $nid = arg(1);
+function _fe_news_get_topics($nid = '') {
+  $nid = $nid ? $nid : arg(1);
   $node = node_load($nid);
   $exclusion_list = array(913, 914, 915, 916, 917, 918, 919);
   global $language;
@@ -223,12 +223,29 @@ function _fe_news_get_topics() {
         break;
       }
     }
-    if ($tid) {
-      $term = taxonomy_term_load($tid);
-      $name = $term->name;
-      $content = theme('news_topic_block', array('name' => $name, 'tid' => $tid));
-      return theme('news_topic_block', array('name' => $name, 'tid' => $tid, 'lang' => $language->language));
+  }
+  else if (!empty($node->field_category[LANGUAGE_NONE])) {
+    $tid = ''; 
+    foreach ($node->field_category[LANGUAGE_NONE] as $topic) {
+      if (!in_array($topic['tid'], $exclusion_list)) {
+        $tid = $topic['tid'];
+        break;
+      }   
     }
   }
+
+  if ($tid) {
+    $term = taxonomy_term_load($tid);
+    $name = $term->name;
+    $type = ''; 
+    if ($node->type == 'news') {
+      $type = 'news';
+    }   
+    else if ($node->type == 'training_opportunity') {
+      $type = 'opportunities';
+    }   
+    $url = '/' . $language->language . '/' . $type . '/' . $tid;
+    return theme('news_topic_block', array('name' => $name, 'url' => $url));
+  } 
   return '';
 }
