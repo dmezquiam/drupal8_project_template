@@ -218,6 +218,7 @@
       @include text-shadow (0px, 1px, 1px, #5E5C5C);
       @include button-gradient ($color);
       @include transition (all, 0.2s, ease-in-out);
+      &.active { color: $color-bt-txt; }
       &:hover {
         color: $color-bt-txt;
       }
@@ -597,22 +598,24 @@
         }
         .author-name {
           margin-bottom: 5px;
-          padding-top: 7px;
+          padding-top: 0px;
+          line-height: 16px;
           a {
-            font-size: $font-size-sidebar-xxx-large;
+            font-size: $font-size-sidebar-xx-large;
             color: $color-bg-heading-box-primary;
           }
         }
         .job-name {
-          line-height: $line-height-large;
+          line-height: 13px;
           margin-bottom: 3px;
+          font-size: 13px;
         }
         .organization {
           @extend .job-name;
         }
         .button {
           position: absolute;
-          bottom: 7px;
+          bottom: 2px;
           left: 120px;
           a { margin-right: 5px; }
         }

@@ -202,7 +202,7 @@
   .block-login-block {
     float: left !important;
     margin-bottom: 38px !important;
-    background: url('#{$path-to-images}/register_block_bg.png') no-repeat left center;
+    background: url('#{$path-to-images}/register_block_bg.png') no-repeat 2px center;
     font-family: $signika-Light;
     font-size: $font-size-sidebar-xx-large;
     letter-spacing: -1px;
@@ -1253,49 +1253,7 @@ ul.action-links {
     }
   }
 
-  //I18N 
-  .i18n-en {
-    .latest-posts-block { 
-      background: url('#{$path-to-images}/bg_latest_post_en.jpg') no-repeat left center;
-      a:hover {  }
-    }
-  }
-  .i18n-es {
-    .latest-posts-block { 
-      background: url('#{$path-to-images}/bg_latest_post_es.jpg') no-repeat left center;
-      a:hover {  }
-    }
-  }
-  .i18n-ru {
-    .latest-posts-block { 
-      background: url('#{$path-to-images}/bg_latest_post_ru.jpg') no-repeat left center;
-      a:hover {  }
-    }
-  }
-  .i18n-ar {
-    .latest-posts-block { 
-      background: url('#{$path-to-images}/bg_latest_post_ar.jpg') no-repeat left center;
-      a:hover {  }
-    }
-  }
-  .i18n-zh-hans {
-    .latest-posts-block { 
-      background: url('#{$path-to-images}/bg_latest_post_zh-hans.jpg') no-repeat left center;
-      a:hover {  }
-    }
-  }
-  .i18n-fa {
-    .latest-posts-block { 
-      background: url('#{$path-to-images}/bg_latest_post_fa.jpg') no-repeat left center;
-      a:hover {  }
-    }
-  }
-  .i18n-pt-br {
-    .latest-posts-block { 
-      background: url('#{$path-to-images}/bg_latest_post_pt.jpg') no-repeat left center;
-      a:hover {  }
-    }
-  }
+ 
 
 /* =============================================================================
  *   Node Styling
@@ -1309,7 +1267,7 @@ ul.action-links {
 //block title
 #block-blockify-blockify-page-title { 
   margin-bottom: 0;
-  min-height: 122px;
+  //min-height: 122px;
   .block-content {
     border-bottom: 1px solid $color-line;
     margin-bottom: 20px;
@@ -2002,6 +1960,7 @@ div.messages {
   #edit-field-region-tid-wrapper {
     width: 32%;
     padding-right: 3%;
+    select { width: 100%; }
   }
 
   #edit-title-wrapper {
@@ -2328,6 +2287,7 @@ div.messages {
   #block-blockify-blockify-page-title {
     h1 {
       text-transform: uppercase;
+      font-size: 27px;
     }
   }
   #main-content {
@@ -2335,6 +2295,8 @@ div.messages {
     #block-system-main {
       h3 {
         font-weight: normal;
+        margin-top: 0;
+        margin-bottom: 2px;
       }
     }
   }  
