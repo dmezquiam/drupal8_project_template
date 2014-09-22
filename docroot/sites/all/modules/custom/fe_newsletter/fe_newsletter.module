@@ -421,7 +421,6 @@ function fe_newsletter_content_form($form, &$form_state) {
 function fe_newsletter_subscribe_form($form, &$form_state) {
   // Make these fields required.
   $form['#attributes']['class'][] = 'subscribe-form';
-  $form['#prefix'] = '<div id="form-register-message"></div>';
   $form['name'] = array(
     '#type' => 'textfield',
     '#title' => t('Your name'),
@@ -438,46 +437,76 @@ function fe_newsletter_subscribe_form($form, &$form_state) {
     '#value' => t('Submit'),
     '#attributes' => array('class'=>array('button-tiny')),
     '#ajax' => array(
-      'callback' => 'fe_newsletter_subscribe_form_submit',
+      'callback' => 'fe_newsletter_subscribe_form_ajax_submit',
       'wrapper' => 'form-register-message'
     ),
-    '#submit' => array('fe_newsletter_subscribe_form_submit'),
   );
+  $form['#suffix'] = '<div id="form-register-message"></div>';
   return $form;
 }
 
-function fe_newsletter_subscribe_form_submit($form, &$form_state) {
-  $new_contact = new stdClass();
-  $new_contact->name = $form_state['values']['name'];
-  $new_contact->email = $form_state['values']['email'];
+function fe_newsletter_subscribe_form_ajax_submit($form, $form_state) {
+  $contact = new stdClass();
+  $contact->name = $form_state['values']['name'];
+  $contact->email = $form_state['values']['email'];
 
-  $cc = _fe_newsletter_cc_get_connection();
-  $contact = $cc->query_contacts($new_contact->email);
-  if($contact) {
-    _fe_newsletter_cc_update_list($new_contact) ?
-      $msg = '<div class="msj-submit success">' . t('Success, you are now subscribed to our mailing list') . '</div>' :
-      $msg = '<div class="msj-submit sorry">' . t('Sorry, there was a problem subscribing you to our mailing list') . '</div>';
-  } else {
-    _fe_newsletter_cc_subscribe_list($new_contact) ?
-      $msg = '<div class="msj-submit success">' . t('Success, you are now subscribed to our mailing list') . '</div>' :
-      $msg = '<div class="msj-submit sorry">' . t('Sorry, there was a problem, please ensure your details are valid and try again') . '</div>';
+  $success_code = _fe_newsletter_cc_subscribe_contact($contact);
+  $cc_message = _fe_newsletter_cc_get_message($success_code);
+
+  $message = $cc_message;
+  $commands = array();
+  if ($success_code == 200 or $success_code == 210) {
+    $commands[] = ajax_command_remove('.subscribe-form .form-item');
+    $commands[] = ajax_command_remove('.subscribe-form .button-tiny');
+    global $language;
+    if ($language->language == 'en') {
+      $sf_message = "<div class=\"msj-submit success\">"
+        . "You've subscribed to IJNet's bulletin. "
+        . "If you also want to receive ICFJ news, click "
+        . l(t('here'), 'contact-ijnet')
+        . ".</div>";
+      $message .= $sf_message;
+    }
   }
+  $commands[] = ajax_command_replace('#form-register-message', $message);
 
   // Process form submission.
-  $commands = array(
-    ajax_command_replace('#form-register-message', $msg),
-  );
-  $replace = array('#type' => 'ajax', '#commands' => $commands);
-  return $replace;
+  $output = array('#type' => 'ajax', '#commands' => $commands);
+  return $output;
+}
+
+function _fe_newsletter_cc_subscribe_contact($contact) {
+  if(_fe_newsletter_cc_contact_exist($contact->email)) {
+    $success_code = _fe_newsletter_cc_update_list($contact) ? 210 : 211;
+  } else {
+    $success_code = _fe_newsletter_cc_subscribe_list($contact) ? 200 : 201;
+  }
+
+  return $success_code;
 }
 
 function _fe_newsletter_cc_get_connection() {
   $action_type = 'contact';
-
   $cc_object = constant_contact_create_object();
   $cc_object->set_action_type($action_type);
 
   return $cc_object;
+}
+
+function _fe_newsletter_cc_contact_exist($email) {
+  $cc = _fe_newsletter_cc_get_connection();
+  $contact = $cc->query_contacts($email);
+  $exist = $contact && ($contact['Status'] == 'Active');
+
+  return $exist;
+}
+
+function _fe_newsletter_cc_get_contact($email) {
+  $cc = _fe_newsletter_cc_get_connection();
+  $contact = $cc->query_contacts($email);
+  $contact = $cc->get_contact($contact['id']);
+
+  return $contact;
 }
 
 function _fe_newsletter_cc_subscribe_list($contact) {
@@ -487,18 +516,17 @@ function _fe_newsletter_cc_subscribe_list($contact) {
     'EmailType' => 'HTML',
     'FirstName' => $contact->name,
   );
-  $success = $cc->create_contact($contact->email, array($list_id), $fields);
+  $cc_contact = $cc->query_contacts($contact->email);
+  $cc_contact && ($cc_contact['Status'] == 'Removed') ?
+    $success = $cc->update_contact($cc_contact['id'], $contact->email, array($list_id), $fields) :
+    $success = $cc->create_contact($contact->email, array($list_id), $fields) ;
 
   return $success;
 }
 
 function _fe_newsletter_cc_update_list($contact) {
-  $action_type = 'contact';
-
-  $cc = constant_contact_create_object();
-  $cc->set_action_type($action_type);
-  $cc_contact = $cc->query_contacts($contact->email);
-  $cc_contact = $cc->get_contact($cc_contact['id']);
+  $cc = _fe_newsletter_cc_get_connection();
+  $cc_contact = _fe_newsletter_cc_get_contact($contact->email);
   $list_id = _fe_newsletter_get_cc_list_id();
   if (in_array($list_id, $cc_contact['lists'])) {
     $success = false;
@@ -530,6 +558,33 @@ function _fe_newsletter_get_cc_list_id() {
   $list_id = $cc_lists[$language->language];
 
   return $list_id;
+}
+
+function _fe_newsletter_cc_get_message($success_code) {
+  $messages = array(
+    200 => array(
+      'type' => 'success',
+      'message' => 'Success, you are now subscribed to our mailing list.',
+    ),
+    201 => array(
+      'type' => 'sorry',
+      'message' => 'Sorry, there was a problem, please ensure your details are valid and try again.',
+    ),
+    210 => array(
+      'type' => 'success',
+      'message' => 'Success, you are now subscribed to our mailing list.',
+    ),
+    211 => array(
+      'type' => 'sorry',
+      'message' => 'Sorry, you are subscribed to our mailing list.',
+    ),
+  );
+
+  $message = "<div class=\"msj-submit {$messages[$success_code]['type']}\">"
+    .t($messages[$success_code]['message'])
+    ."</div>";
+
+  return $message;
 }
 
 /**
@@ -578,7 +633,6 @@ function fe_newsletter_node_presave($node) {
       // Add other nids
       $item_nids = array();
       $op_nids = array();
-      kpr($result['node']);
       foreach ($result['node'] as $key => $content) {
         if ($content->type != 'training_opportunity') {
           $item_nids[] = $key;

@@ -719,6 +719,11 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Deadline (field_deadline) */
+  $handler->display->display_options['sorts']['field_deadline_value']['id'] = 'field_deadline_value';
+  $handler->display->display_options['sorts']['field_deadline_value']['table'] = 'field_data_field_deadline';
+  $handler->display->display_options['sorts']['field_deadline_value']['field'] = 'field_deadline_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -753,6 +758,12 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['filters']['language_1']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  /* Filter criterion: Content: Deadline (field_deadline) */
+  $handler->display->display_options['filters']['field_deadline_value']['id'] = 'field_deadline_value';
+  $handler->display->display_options['filters']['field_deadline_value']['table'] = 'field_data_field_deadline';
+  $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
+  $handler->display->display_options['filters']['field_deadline_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_deadline_value']['default_date'] = 'now';
   $handler->display->display_options['path'] = 'opportunities/%';
   $export['opportunities_views'] = $view;
 

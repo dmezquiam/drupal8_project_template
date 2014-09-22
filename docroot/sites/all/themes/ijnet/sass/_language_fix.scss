@@ -53,13 +53,17 @@
 
 	.latest-posts-block .inner-block a {
 		line-height: 14px;
-		font-size: 14px;
+		font-size: 12px;
+		padding: 13px 44px 13px 16px;
 	}
 }
 
 
 //Russia
 .i18n-ru {
+	.content-tabs .block-title {
+		left: 22px;
+	}
 	//Top BAR
 	.block-top-header-menu { width: 65%; }
 	.block-lang-dropdown { width: 30%; }
@@ -91,9 +95,9 @@
       a:hover {  }
     }
 	.latest-posts-block .inner-block a {
-		padding: 10px 44px 10px 22px;
+		padding: 13px 44px 13px 22px;
 		line-height: 14px;
-		font-size: 13px;
+		font-size: 11px;
 	}
 }
 
