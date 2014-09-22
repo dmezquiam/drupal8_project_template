@@ -45,6 +45,10 @@ function fe_news_theme() {
       'template' => 'last-posts-authors',
       'path' => drupal_get_path('module', 'fe_news') . '/theme',
     ),
+    'news_topic_block' => array(
+      'template' => 'theme/topic-block',
+      'variables' => array('name' => '', 'tid' => '', 'lang' => 'en'),
+    ),
   );
 
   return $themes;
@@ -58,6 +62,7 @@ function fe_news_block_info() {
   $blocks = array();
 
   $blocks['last_posts_authors']  = array('info' => 'Gets authors for the last 10 posts.');
+  $blocks['field_topic_block'] = array('info' => 'Bloque para los topics en el header');
 
   return $blocks;
 }
@@ -76,7 +81,10 @@ function fe_news_block_view($delta = '') {
       'content' => _fe_news_get_last_posts_authors(),
     );
   }
-
+  else if ($delta == 'field_topic_block') {
+    $block['subject'] = '';
+    $block['content'] = _fe_news_get_topics();
+  }
   return $block;
 }
 
@@ -177,18 +185,18 @@ function fe_news_form_alter(&$form, &$form_state, $form_id) {
 function _fe_news_get_safe_value($entity, $field_name) {
 	global $language;
 
-  if (!isset($entity->$field_name) || !is_array($entity->$field_name)) {
+  if (!isset($entity->$field_name) || !is_array($entity->$field_name) || empty($entity->$field_name)) {
     return '';
   }
 
   // try to use value for current language
   $lang_code = $language->language;
-	if (isset($entity->$field_name[$lang_code])) {
-		$item = $entity->$field_name[$lang_code];
+	if (isset($entity->{$field_name}[$lang_code])) {
+		$item = $entity->{$field_name}[$lang_code];
 	}
-	else if (isset($entity->$field_name['en'])) {
+	else if (isset($entity->{$field_name}['en'])) {
 		// try english if available
-    $item = $entity->$field_name['en'];
+    $item = $entity->{$field_name}['en'];
 	}
 	else {
     // use whatever we have.
@@ -200,4 +208,27 @@ function _fe_news_get_safe_value($entity, $field_name) {
     '';
 
   return $value;
+}
+
+function _fe_news_get_topics() {
+  $nid = arg(1);
+  $node = node_load($nid);
+  $exclusion_list = array(913, 914, 915, 916, 917, 918, 919);
+  global $language;
+  if (!empty($node->field_topic[$language->language])) {
+    $tid = '';
+    foreach ($node->field_topic[$language->language] as $topic) {
+      if (!in_array($topic['tid'], $exclusion_list)) {
+        $tid = $topic['tid'];
+        break;
+      }
+    }
+    if ($tid) {
+      $term = taxonomy_term_load($tid);
+      $name = $term->name;
+      $content = theme('news_topic_block', array('name' => $name, 'tid' => $tid));
+      return theme('news_topic_block', array('name' => $name, 'tid' => $tid, 'lang' => $language->language));
+    }
+  }
+  return '';
 }
