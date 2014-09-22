@@ -16,7 +16,10 @@ function fe_admin_dashboards_default_page_manager_pages() {
   $page->admin_title = 'Dashboard ';
   $page->admin_description = '';
   $page->path = 'admin/dashboard';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => '',
@@ -349,7 +352,10 @@ function fe_admin_dashboards_default_page_manager_pages() {
   $page->admin_title = 'Dashboard: Nodes - Advertisements';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/content/advertisements';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -546,7 +552,10 @@ admin/dashboard/content/advertisements
   $page->admin_title = 'Dashboard: Nodes - Banners';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/content/banners';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -743,7 +752,10 @@ admin/dashboard/content/banners
   $page->admin_title = 'Dashboard: Nodes - Basic Pages';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/content/basic-pages';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -940,7 +952,10 @@ admin/dashboard/content/basic-pages
   $page->admin_title = 'Dashboard: Nodes - Bulletin emails';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/content/bulletins';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -1137,7 +1152,10 @@ admin/dashboard/content/bulletins
   $page->admin_title = 'Dashboard: Nodes - Chats';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/content/chats';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -1334,7 +1352,10 @@ admin/dashboard/content/chats
   $page->admin_title = 'Dashboard: Nodes - News';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/content/news';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -1759,7 +1780,10 @@ admin/dashboard/content/news
   $page->admin_title = 'Dashboard: Nodes - Opportunities';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/content/opportunities';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -1956,7 +1980,10 @@ admin/dashboard/content/opportunities
   $page->admin_title = 'Dashboard: Nodes - Videos';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/content/videos';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -2153,7 +2180,10 @@ admin/dashboard/content/videos
   $page->admin_title = 'Dashboard: Staff Members';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/staff';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -2365,7 +2395,10 @@ admin/dashboard/staff',
   $page->admin_title = 'Dashboard: Taxonomies';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/taxonomies';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -2578,7 +2611,10 @@ admin/dashboard/taxonomies',
   $page->admin_title = 'Dashboard: Users';
   $page->admin_description = '';
   $page->path = 'admin/dashboard/users';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => '',

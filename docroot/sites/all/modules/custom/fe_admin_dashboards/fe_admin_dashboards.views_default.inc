@@ -5543,6 +5543,80 @@ function fe_admin_dashboards_views_default_views() {
     4 => 0,
     5 => 0,
   );
+
+  /* Display: Tags */
+  $handler = $view->new_display('block', 'Tags', 'block_2');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="/en/admin/structure/taxonomy/tags/add" class="button">Add tag</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy term: Vocabulary */
+  $handler->display->display_options['filters']['vid']['id'] = 'vid';
+  $handler->display->display_options['filters']['vid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['vid']['field'] = 'vid';
+  $handler->display->display_options['filters']['vid']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['vid']['expose']['operator_id'] = 'vid_op';
+  $handler->display->display_options['filters']['vid']['expose']['label'] = 'Vocabulary';
+  $handler->display->display_options['filters']['vid']['expose']['operator'] = 'vid_op';
+  $handler->display->display_options['filters']['vid']['expose']['identifier'] = 'vid';
+  $handler->display->display_options['filters']['vid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  /* Filter criterion: Taxonomy term: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    'en' => 'en',
+    'es' => 'es',
+    'ru' => 'ru',
+    'ar' => 'ar',
+    'zh-hans' => 'zh-hans',
+    'fa' => 'fa',
+    'pt-br' => 'pt-br',
+  );
+  $handler->display->display_options['filters']['language']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['language']['expose']['operator_id'] = 'language_op';
+  $handler->display->display_options['filters']['language']['expose']['label'] = 'Filter by language';
+  $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
+  $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
+  $handler->display->display_options['filters']['language']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['language']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'and/or name';
+  $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
   $export['taxonomies_editor'] = $view;
 
   $view = new view();

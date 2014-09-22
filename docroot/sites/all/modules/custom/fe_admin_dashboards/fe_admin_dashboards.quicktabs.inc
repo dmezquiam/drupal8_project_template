@@ -35,6 +35,14 @@ function fe_admin_dashboards_quicktabs_default_quicktabs() {
       'weight' => '-99',
       'type' => 'view',
     ),
+    2 => array(
+      'vid' => 'taxonomies_editor',
+      'display' => 'block_2',
+      'args' => '',
+      'title' => 'Tags',
+      'weight' => '-98',
+      'type' => 'view',
+    ),
   );
   $quicktabs->renderer = 'ui_tabs';
   $quicktabs->style = 'nostyle';
@@ -46,6 +54,7 @@ function fe_admin_dashboards_quicktabs_default_quicktabs() {
   // Included for use with string extractors like potx.
   t('Dashboard: Taxonomies quicktab');
   t('Regions');
+  t('Tags');
   t('Topics');
 
   $export['dashboard_taxonomies_quicktab'] = $quicktabs;
