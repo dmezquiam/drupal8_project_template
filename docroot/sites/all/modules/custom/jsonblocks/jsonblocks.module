@@ -184,14 +184,6 @@ function json_blocks_view_social_block() {
             'class' => 'social-icon-youtube',
         ),
         array(
-            'url' => '',
-            'class' => 'social-icon-in',
-        ),
-        array(
-            'url' => '',
-            'class' => 'social-icon-gplus',
-        ),
-        array(
             'url' => '/rss.xml',
             'class' => 'social-icon-rss',
         )
