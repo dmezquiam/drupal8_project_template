@@ -456,17 +456,7 @@ function fe_newsletter_subscribe_form_ajax_submit($form, $form_state) {
   $message = $cc_message;
   $commands = array();
   if ($success_code == 200 or $success_code == 210) {
-    $commands[] = ajax_command_remove('.subscribe-form .form-item');
-    $commands[] = ajax_command_remove('.subscribe-form .button-tiny');
-    global $language;
-    if ($language->language == 'en') {
-      $sf_message = "<div class=\"msj-submit success\">"
-        . "You've subscribed to IJNet's bulletin. "
-        . "If you also want to receive ICFJ news, click "
-        . l(t('here'), 'contact-ijnet')
-        . ".</div>";
-      $message .= $sf_message;
-    }
+    $commands[] = ajax_command_remove('.subscribe-form');
   }
   $commands[] = ajax_command_replace('#form-register-message', $message);
 
@@ -561,28 +551,35 @@ function _fe_newsletter_get_cc_list_id() {
 }
 
 function _fe_newsletter_cc_get_message($success_code) {
-  $messages = array(
+  $cc_messages = array(
     200 => array(
       'type' => 'success',
-      'message' => 'Success, you are now subscribed to our mailing list.',
+      'message' => 'Success, you are now subscribed to our mailing list. ',
     ),
     201 => array(
       'type' => 'sorry',
-      'message' => 'Sorry, there was a problem, please ensure your details are valid and try again.',
+      'message' => 'Sorry, there was a problem, please ensure your details are valid and try again. ',
     ),
     210 => array(
       'type' => 'success',
-      'message' => 'Success, you are now subscribed to our mailing list.',
+      'message' => 'Success, you are now subscribed to our mailing list. ',
     ),
     211 => array(
       'type' => 'sorry',
-      'message' => 'Sorry, you are subscribed to our mailing list.',
+      'message' => 'Sorry, you are subscribed to our mailing list. ',
     ),
   );
-
-  $message = "<div class=\"msj-submit {$messages[$success_code]['type']}\">"
-    .t($messages[$success_code]['message'])
-    ."</div>";
+  $message = "<div class=\"{$cc_messages[$success_code]['type']}\">"
+    .t($cc_messages[$success_code]['message']);
+  global $language;
+  $success_message = $cc_messages[$success_code]['type'] == 'success';
+  if ($success_message && ($language->language == 'en')) {
+    $sf_message = "You've subscribed to IJNet's bulletin. "
+      . "If you also want to receive ICFJ news, click "
+      . l(t('here'), 'contact-ijnet');
+      $message .= $sf_message;
+    }
+  $message .= "</div>";
 
   return $message;
 }
