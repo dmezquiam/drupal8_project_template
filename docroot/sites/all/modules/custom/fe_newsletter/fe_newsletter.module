@@ -431,6 +431,9 @@ function fe_newsletter_subscribe_form($form, &$form_state) {
     '#title' => t('Email address'),
     '#required' => TRUE,
   );
+  $form['archive'] = array(
+    '#markup' => '<a href="/email-bulletin-archive" class="archive-link">' . t('Bulletin Archive') . '</a>',
+  );
 
   $form['submit'] = array(
     '#type' => 'submit',
