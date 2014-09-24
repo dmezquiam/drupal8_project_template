@@ -108,8 +108,9 @@ function _fe_news_get_last_posts_authors($tid = '') {
         }
 
         $user = user_load($author->uid);
-        $show_profile = isset($user->field_show_profile[$language->language][0]['value']) ?
-          $user->field_show_profile[$language->language][0]['value'] :
+        $keys = array_keys($user->field_show_profile);
+        $show_profile = isset($user->field_show_profile[$keys[0]][0]['value']) ?
+          $user->field_show_profile[$keys[0]][0]['value'] :
           FALSE;
         if ( $show_profile ) {
 
