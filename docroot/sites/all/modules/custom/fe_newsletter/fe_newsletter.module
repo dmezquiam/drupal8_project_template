@@ -345,12 +345,12 @@ function _fe_newsletter_get_opportunity($nid) {
       $node->body[$language][0]['safe_summary'] :
       $node->body[LANGUAGE_NONE][0]['safe_summary'];
   }
-  if (empty($node->deadline_date)) {
-    $opportunity->deadline_date = NULL;
+  if (empty($node->field_deadline)) {
+    $opportunity->field_deadline = NULL;
   } else {
-    $opportunity->deadline_date = isset($node->deadline_date[$language]) ?
-      $node->deadline_date[$language][0]['value'] :
-      $node->deadline_date[LANGUAGE_NONE][0]['value'];
+    $opportunity->field_deadline = isset($node->field_deadline[$language]) ?
+      $node->field_deadline[$language][0]['value'] :
+      $node->field_deadline[LANGUAGE_NONE][0]['value'];
   }
   if (empty($node->field_region)) {
     $opportunity->tid = NULL;
