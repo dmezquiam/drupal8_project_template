@@ -2175,6 +2175,182 @@ admin/dashboard/content/videos
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'dashboard_scheduled_content';
+  $page->task = 'page';
+  $page->admin_title = 'Dashboard: Scheduled content';
+  $page->admin_description = '';
+  $page->path = 'admin/dashboard/content/scheduled';
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_dashboard_scheduled_content_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'dashboard_scheduled_content';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Nodes Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Dashboard
+Scheduled',
+    'panels_breadcrumbs_paths' => 'admin/dashboard
+admin/dashboard/content/scheduled
+',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 'main-row',
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+          1 => 'side',
+        ),
+        'parent' => 'main',
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Center',
+        'width' => '74.96751965502874',
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => '',
+      ),
+      'side' => array(
+        'type' => 'region',
+        'title' => 'Side',
+        'width' => '25.03248034497126',
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => '',
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'side' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'd320a1b0-81f3-4133-b44f-be1ed2a67dd4';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-c318b74a-0002-42c3-8d48-b7e4855e4be4';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'views-last_content-block_9';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c318b74a-0002-42c3-8d48-b7e4855e4be4';
+    $display->content['new-c318b74a-0002-42c3-8d48-b7e4855e4be4'] = $pane;
+    $display->panels['center'][0] = 'new-c318b74a-0002-42c3-8d48-b7e4855e4be4';
+    $pane = new stdClass();
+    $pane->pid = 'new-86919b4e-dc99-4604-8396-4042a317178a';
+    $pane->panel = 'side';
+    $pane->type = 'block';
+    $pane->subtype = 'views-user_information-block';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Your information',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '86919b4e-dc99-4604-8396-4042a317178a';
+    $display->content['new-86919b4e-dc99-4604-8396-4042a317178a'] = $pane;
+    $display->panels['side'][0] = 'new-86919b4e-dc99-4604-8396-4042a317178a';
+    $pane = new stdClass();
+    $pane->pid = 'new-df6e07d7-533a-403a-a037-0d66af4daa6e';
+    $pane->panel = 'side';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-dashboard';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Available actions',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'df6e07d7-533a-403a-a037-0d66af4daa6e';
+    $display->content['new-df6e07d7-533a-403a-a037-0d66af4daa6e'] = $pane;
+    $display->panels['side'][1] = 'new-df6e07d7-533a-403a-a037-0d66af4daa6e';
+  $display->hide_title = PANELS_TITLE_PANE;
+  $display->title_pane = 'new-c318b74a-0002-42c3-8d48-b7e4855e4be4';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['dashboard_scheduled_content'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'dashboard_staff_members';
   $page->task = 'page';
   $page->admin_title = 'Dashboard: Staff Members';
