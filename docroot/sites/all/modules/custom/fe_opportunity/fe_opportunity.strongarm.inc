@@ -108,7 +108,10 @@ function fe_opportunity_strongarm() {
           'weight' => '12',
         ),
         'scheduler_settings' => array(
-          'weight' => '5',
+          'weight' => '6',
+        ),
+        'redirect' => array(
+          'weight' => '30',
         ),
       ),
       'display' => array(

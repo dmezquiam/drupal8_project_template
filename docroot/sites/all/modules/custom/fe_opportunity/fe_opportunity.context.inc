@@ -29,6 +29,12 @@ function fe_opportunity_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'fe_news-field_topic_block' => array(
+          'module' => 'fe_news',
+          'delta' => 'field_topic_block',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
         'jsonblocks-social-block' => array(
           'module' => 'jsonblocks',
           'delta' => 'social-block',
@@ -46,12 +52,6 @@ function fe_opportunity_context_default_contexts() {
           'delta' => 'a66f88ddd5cdac2f4431afb3349ecc92',
           'region' => 'sidebar_second',
           'weight' => '-8',
-        ),
-        'fe_social-fe_social_sharethis' => array(
-          'module' => 'fe_social',
-          'delta' => 'fe_social_sharethis',
-          'region' => 'sidebar_second',
-          'weight' => '-7',
         ),
       ),
     ),

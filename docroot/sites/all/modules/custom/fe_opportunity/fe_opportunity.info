@@ -43,6 +43,7 @@ features[field_instance][] = node-training_opportunity-field_document
 features[field_instance][] = node-training_opportunity-field_organization
 features[field_instance][] = node-training_opportunity-field_region
 features[field_instance][] = node-training_opportunity-field_related_content
+features[field_instance][] = node-training_opportunity-field_tags
 features[node][] = training_opportunity
 features[quicktabs][] = opportunities_for_journalists
 features[variable][] = comment_anonymous_training_opportunity

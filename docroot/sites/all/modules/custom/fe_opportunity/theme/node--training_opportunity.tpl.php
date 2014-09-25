@@ -104,7 +104,6 @@
       hide($content['comments']);
       hide($content['links']);
       print render($content);
-      print $topics;
     ?>
   </div>
   <?php if ($page): ?>

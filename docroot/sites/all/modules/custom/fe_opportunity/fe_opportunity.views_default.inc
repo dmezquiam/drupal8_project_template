@@ -159,6 +159,7 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
   $handler->display->display_options['sorts']['created']['granularity'] = 'day';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -241,13 +242,6 @@ function fe_opportunity_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  /* Filter criterion: Content: Deadline (field_deadline) */
-  $handler->display->display_options['filters']['field_deadline_value']['id'] = 'field_deadline_value';
-  $handler->display->display_options['filters']['field_deadline_value']['table'] = 'field_data_field_deadline';
-  $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
-  $handler->display->display_options['filters']['field_deadline_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_deadline_value']['granularity'] = 'second';
-  $handler->display->display_options['filters']['field_deadline_value']['default_date'] = 'now';
   $handler->display->display_options['path'] = 'opportunities';
 
   /* Display: Related Opportunity */
@@ -636,13 +630,6 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Deadline (field_deadline) */
-  $handler->display->display_options['filters']['field_deadline_value']['id'] = 'field_deadline_value';
-  $handler->display->display_options['filters']['field_deadline_value']['table'] = 'field_data_field_deadline';
-  $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
-  $handler->display->display_options['filters']['field_deadline_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_deadline_value']['granularity'] = 'second';
-  $handler->display->display_options['filters']['field_deadline_value']['default_date'] = 'now';
 
   /* Display: Ending soon opportunities home */
   $handler = $view->new_display('block', 'Ending soon opportunities home', 'opportunities_ending_soon_block');
