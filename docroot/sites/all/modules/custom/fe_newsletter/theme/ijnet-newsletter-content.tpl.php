@@ -74,7 +74,7 @@
                   <tr>
                     <td valign="top" width="600">
                       <p>Published by the <a href="http://ijnet.org">International Center for Journalists</a>. For questions or concerns, <a href="http://ijnet.org/about/#contact">contact us</a>.</p>
-                      <p>Copyright © <?print date('Y');?> International Center for Journalists. All rights reserved. IJNet material may not be reproduced or republished without express written permission.</p>
+                      <p>Copyright © <?php print date('Y');?> International Center for Journalists. All rights reserved. IJNet material may not be reproduced or republished without express written permission.</p>
                     </td>
                   </tr>
 
