@@ -549,9 +549,13 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 6,
       ),
       'node_fields_block' => array(
