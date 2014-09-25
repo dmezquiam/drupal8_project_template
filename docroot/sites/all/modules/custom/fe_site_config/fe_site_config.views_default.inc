@@ -103,6 +103,7 @@ function fe_site_config_views_default_views() {
   $handler->display->display_options['sorts']['imported']['table'] = 'feeds_item';
   $handler->display->display_options['sorts']['imported']['field'] = 'imported';
   $handler->display->display_options['sorts']['imported']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['imported']['granularity'] = 'hour';
   $export['cima'] = $view;
 
   $view = new view();
