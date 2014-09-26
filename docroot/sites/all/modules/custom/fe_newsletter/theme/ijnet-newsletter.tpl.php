@@ -8,7 +8,7 @@
     td a:hover{text-decoration: underline;}
   </style>
 
-  <title>IJNet Bulletin</title>
+  <title><?php print t('IJNet Bulletin');?></title>
 </head>
 
 <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="margin:0px auto; padding:0px;background:#eae9e9; font-family: verdana, arial;font-size:12px;line-height:17px;color: #2a2a2a; -webkit-text-size-adjust:none;">

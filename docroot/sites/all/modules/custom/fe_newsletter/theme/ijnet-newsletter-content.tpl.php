@@ -27,7 +27,7 @@
                         <tr>
                           <td valign="top">
 
-                            <p style="margin:10px 0 13px;font-family:Arial,sans-serif;font-size:13px;line-height:20px;text-transform:uppercase;color:#ffffff;-webkit-text-size-adjust:none;">Weekly Bulletin<br /><span style="font-size:14px;font-weight:bold;"><?php print $newsletter_date; ?></span></p>
+                            <p style="margin:10px 0 13px;font-family:Arial,sans-serif;font-size:13px;line-height:20px;text-transform:uppercase;color:#ffffff;-webkit-text-size-adjust:none;"><?php print t('Weekly Bulletin');?><br /><span style="font-size:14px;font-weight:bold;"><?php print $newsletter_date; ?></span></p>
 
                           </td>
                         </tr>
@@ -73,8 +73,8 @@
                 <table border="0" cellpadding="0" cellspacing="20" width="600">
                   <tr>
                     <td valign="top" width="600">
-                      <p>Published by the <a href="http://ijnet.org">International Center for Journalists</a>. For questions or concerns, <a href="http://ijnet.org/about/#contact">contact us</a>.</p>
-                      <p>Copyright © <?php print date('Y');?> International Center for Journalists. All rights reserved. IJNet material may not be reproduced or republished without express written permission.</p>
+                      <p><?php print t('Published by the <a href="http://ijnet.org">International Center for Journalists</a>. For questions or concerns, <a href="http://ijnet.org/about/#contact">contact us</a>.');?></p>
+                      <p><?php print t('Copyright © ' . date('Y') . ' International Center for Journalists. All rights reserved. IJNet material may not be reproduced or republished without express written permission.');?></p>
                     </td>
                   </tr>
 
