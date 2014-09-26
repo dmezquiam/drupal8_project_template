@@ -1730,6 +1730,9 @@ function fe_user_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
     ),
     'module' => 'search',
   );
@@ -1876,6 +1879,8 @@ function fe_user_user_default_permissions() {
     'name' => 'use advanced search',
     'roles' => array(
       'administrator' => 'administrator',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
     ),
     'module' => 'search',
   );
