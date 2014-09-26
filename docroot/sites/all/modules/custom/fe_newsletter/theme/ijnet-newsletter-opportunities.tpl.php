@@ -59,7 +59,7 @@
   <table border="0" cellpadding="0" cellspacing="0" width="600">
     <tr>
       <td valign="top" width="600">
-        <p style="padding: 10px 20px 10px; margin:0;font-size:15px;font-weight:bold;line-height:26px;color:#bf6c2a;text-align:right;"><a href="/<?php global $language; print($language->language)?>/opportunities" style="color: #ffffff;text-align:right;background:#b9601a;padding:10px 20px;border-radius:10px;"><?php print t('Browse Opportunities');?><img src="<?php print(file_create_url(drupal_get_path('module', 'fe_newsletter') . '/theme/images/arrow.png'))?>" alt="arrow" style="padding:9px 0 0 10px;margin:-2px;"/></a></p>
+        <p style="padding: 10px 20px 10px; margin:0;font-size:15px;font-weight:bold;line-height:26px;color:#bf6c2a;text-align:right;"><a href="<?php global $language; print url('opportunities', array('absolute' => TRUE, 'language' => $language)); ?>" style="color: #ffffff;text-align:right;background:#b9601a;padding:10px 20px;border-radius:10px;"><?php print t('Browse Opportunities');?><img src="<?php print(file_create_url(drupal_get_path('module', 'fe_newsletter') . '/theme/images/arrow.png'))?>" alt="arrow" style="padding:9px 0 0 10px;margin:-2px;"/></a></p>
       </td>
     </tr>
   </table>

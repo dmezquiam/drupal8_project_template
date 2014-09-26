@@ -225,8 +225,11 @@ function _fe_newsletter_get_featured_contents($node) {
 }
 
 function _fe_newsletter_get_featured_content($nid) {
+
   $node = node_load($nid);
+
   $language = $node->language;
+  $installed_languages = language_list();
 
   $featured_content = new stdClass();
   if (empty($node->field_image)) {
@@ -251,7 +254,7 @@ function _fe_newsletter_get_featured_content($nid) {
       $node->body[LANGUAGE_NONE][0]['safe_summary'];
   }
   $featured_content->author = _fe_newsletter_get_author($nid);
-  $featured_content->link = '/'.$language.'/' . drupal_get_path_alias('node/'.$nid, $language);
+  $featured_content->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
 
   return $featured_content;
 }
@@ -286,6 +289,7 @@ function _fe_newsletter_get_advertisements($node) {
 function _fe_newsletter_get_advertisement($nid) {
   $node = node_load($nid);
   $language = $node->language;
+  $installed_languages = language_list();
 
   $advertisement = new stdClass();
   if (empty($node->field_image)) {
@@ -303,7 +307,7 @@ function _fe_newsletter_get_advertisement($nid) {
       $node->body[$language][0]['safe_summary'] :
       $node->body[LANGUAGE_NONE][0]['safe_summary'];
   }
-  $advertisement->link = '/'.$language.'/' . drupal_get_path_alias('node/'.$nid, $language);
+  $advertisement->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
 
   return $advertisement;
 }
@@ -335,6 +339,7 @@ function _fe_newsletter_get_opportunity($nid) {
   }
 
   $language = $node->language;
+  $installed_languages = language_list();
 
   $opportunity = new stdClass();
   $opportunity->title = $node->title;
@@ -359,7 +364,7 @@ function _fe_newsletter_get_opportunity($nid) {
       $node->field_region[$language][0]['tid'] :
       $node->field_region[LANGUAGE_NONE][0]['tid'];
   }
-  $opportunity->link = '/'.$language.'/' . drupal_get_path_alias('node/'.$nid, $language);
+  $opportunity->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
 
   return $opportunity;
 }
