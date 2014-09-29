@@ -5913,10 +5913,14 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'name' => 'name',
+    'uid' => 'uid',
     'field_screen_name' => 'field_screen_name',
+    'mail' => 'mail',
     'rid' => 'rid',
     'login' => 'login',
     'edit_node' => 'edit_node',
+    'status' => 'status',
+    'views_bulk_operations' => 'views_bulk_operations',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -5927,7 +5931,21 @@ function fe_admin_dashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'uid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'field_screen_name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -5947,6 +5965,18 @@ function fe_admin_dashboards_views_default_views() {
       'empty_column' => 0,
     ),
     'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'views_bulk_operations' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -5990,6 +6020,12 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['fields']['field_screen_name']['alter']['path'] = 'user/[uid]';
   $handler->display->display_options['fields']['field_screen_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_screen_name']['empty'] = '[name]';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
   /* Field: User: Roles */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
@@ -6129,6 +6165,24 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'name' => 'name',
     'field_screen_name' => 'field_screen_name',
+  );
+  /* Filter criterion: User: E-mail */
+  $handler->display->display_options['filters']['mail']['id'] = 'mail';
+  $handler->display->display_options['filters']['mail']['table'] = 'users';
+  $handler->display->display_options['filters']['mail']['field'] = 'mail';
+  $handler->display->display_options['filters']['mail']['operator'] = 'contains';
+  $handler->display->display_options['filters']['mail']['group'] = 1;
+  $handler->display->display_options['filters']['mail']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['mail']['expose']['operator_id'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['label'] = 'e-mail';
+  $handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
+  $handler->display->display_options['filters']['mail']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
   );
   /* Filter criterion: User: Roles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
