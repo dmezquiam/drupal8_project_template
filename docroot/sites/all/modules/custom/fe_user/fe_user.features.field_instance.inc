@@ -491,6 +491,7 @@ function fe_user_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'display_label' => 1,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_onoff',
       'weight' => 25,

@@ -86,6 +86,12 @@ function fe_opportunity_strongarm() {
       'short_teaser' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'node_fields_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -102,13 +108,16 @@ function fe_opportunity_strongarm() {
           'weight' => '12',
         ),
         'scheduler_settings' => array(
-          'weight' => '5',
+          'weight' => '6',
+        ),
+        'redirect' => array(
+          'weight' => '30',
         ),
       ),
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '0',
+            'weight' => '3',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -149,9 +158,7 @@ function fe_opportunity_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_training_opportunity';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_training_opportunity'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -183,6 +190,76 @@ function fe_opportunity_strongarm() {
   $strongarm->name = 'node_submitted_training_opportunity';
   $strongarm->value = 0;
   $export['node_submitted_training_opportunity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_expand_fieldset_training_opportunity';
+  $strongarm->value = '1';
+  $export['scheduler_expand_fieldset_training_opportunity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_enable_training_opportunity';
+  $strongarm->value = 1;
+  $export['scheduler_publish_enable_training_opportunity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_past_date_training_opportunity';
+  $strongarm->value = 'schedule';
+  $export['scheduler_publish_past_date_training_opportunity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_training_opportunity';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_training_opportunity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_revision_training_opportunity';
+  $strongarm->value = 0;
+  $export['scheduler_publish_revision_training_opportunity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_training_opportunity';
+  $strongarm->value = 1;
+  $export['scheduler_publish_touch_training_opportunity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_enable_training_opportunity';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_enable_training_opportunity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_training_opportunity';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_training_opportunity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_training_opportunity';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_revision_training_opportunity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_use_vertical_tabs_training_opportunity';
+  $strongarm->value = '0';
+  $export['scheduler_use_vertical_tabs_training_opportunity'] = $strongarm;
 
   return $export;
 }

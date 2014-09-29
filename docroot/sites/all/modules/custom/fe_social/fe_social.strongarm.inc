@@ -21,7 +21,7 @@ function fe_social_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'twitter_expire';
-  $strongarm->value = '0';
+  $strongarm->value = '2592000';
   $export['twitter_expire'] = $strongarm;
 
   $strongarm = new stdClass();

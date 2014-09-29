@@ -695,9 +695,11 @@ return;';
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Latest News ';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'article-item-list-no-body';
@@ -736,8 +738,13 @@ return;';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    247 => '247',
-    310 => '310',
+    913 => '913',
+    914 => '914',
+    915 => '915',
+    916 => '916',
+    917 => '917',
+    918 => '918',
+    919 => '919',
   );
   $handler->display->display_options['filters']['field_topic_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
@@ -816,6 +823,7 @@ return;';
 
   /* Display: News for terms Page */
   $handler = $view->new_display('page', 'News for terms Page', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['field_language_add_to_query'] = 0;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
@@ -1318,9 +1326,8 @@ return $author;';
   $handler->display->display_options['filters']['field_show_profile_value']['id'] = 'field_show_profile_value';
   $handler->display->display_options['filters']['field_show_profile_value']['table'] = 'field_data_field_show_profile';
   $handler->display->display_options['filters']['field_show_profile_value']['field'] = 'field_show_profile_value';
-  $handler->display->display_options['filters']['field_show_profile_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_show_profile_value']['value'] = array(
-    0 => '0',
+    1 => '1',
   );
   $export['view_search_block_user'] = $view;
 

@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file
+ * Code for the Knight Foundation feature.
+ */
+
+include_once 'fe_knight_foundation.features.inc';
 
 /**
  * Implements hook_block_info().
@@ -40,12 +46,16 @@ function fe_knight_foundation_views_query_alter(&$view, &$query) {
 
 function fe_knight_foundation_get_authors() {
   $topic = array(
-    'en' => 'Citizen journalism',
-    'es' => 'Periodismo Ciudadano',
+    'en' => '913',
+    'es' => '914',
+    'ru' => '915',
+    'ar' => '916',
+    'zh-hans' => '917',
+    'fa' => '919',
+    'pt-br' => '918',
   );
   global $language;
-  $tid = taxonomy_get_term_by_name($topic[$language->language]);
-  return _fe_news_get_last_posts_authors(array_shift($tid)->tid);
+  return _fe_news_get_last_posts_authors($topic[$language->language]);
 }
 
 /**

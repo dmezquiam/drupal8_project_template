@@ -130,7 +130,7 @@ function _fe_social_get_social_media_items($language = 'en') {
   $images_path = drupal_get_path('module', 'fe_newsletter') . '/theme/images/';
   $items = array(
     'en' => array(
-      array(
+      'facebook' => array(
         'url' => 'https://www.facebook.com/IJNet',
         'class' => 'social-icon-facebook',
         'image' => array(
@@ -138,7 +138,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'facebook',
         ),
       ),
-      array(
+      'twitter' => array(
         'url' => 'http://twitter.com/ijnet',
         'class' => 'social-icon-twitter',
         'image' => array(
@@ -146,7 +146,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'twitter',
         ),
       ),
-      array(
+      'youtube' => array(
         'url' => 'http://www.youtube.com/ijnetvideo',
         'class' => 'social-icon-youtube',
         'image' => array(
@@ -154,7 +154,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'youtube',
         ),
       ),
-      array(
+      'linkedin' => array(
         'url' => 'http://www.linkedin.com/groups/International-Journalists-Network-IJNet-3734352',
         'class' => 'social-icon-in',
         'image' => array(
@@ -162,7 +162,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'linkedin',
         ),
       ),
-      array(
+      'google+' => array(
         'url' => 'https://plus.google.com/109438369213951959896/posts',
         'class' => 'social-icon-gplus',
         'image' => array(
@@ -170,7 +170,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'google+',
         ),
       ),
-      array(
+      'rss' => array(
         'url' => '/rss.xml',
         'class' => 'social-icon-rss',
         'image' => array(
@@ -180,7 +180,7 @@ function _fe_social_get_social_media_items($language = 'en') {
       )
     ),
     'es' => array(
-      array(
+      'facebook' => array(
         'url' => 'https://www.facebook.com/pages/IJNet-Espa%C3%B1ol/120641331286811',
         'class' => 'social-icon-facebook',
         'image' => array(
@@ -188,7 +188,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'facebook',
         ),
       ),
-      array(
+      'twitter' => array(
         'url' => 'https://twitter.com/ijnetEs',
         'class' => 'social-icon-twitter',
         'image' => array(
@@ -196,7 +196,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'twitter',
         ),
       ),
-      array(
+      'youtube' => array(
         'url' => 'https://www.youtube.com/user/IJNetEspanol',
         'class' => 'social-icon-youtube',
         'image' => array(
@@ -204,7 +204,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'youtube',
         ),
       ),
-      array(
+      'google+' => array(
         'url' => 'https://plus.google.com/100360709746549610122/posts',
         'class' => 'social-icon-gplus',
         'image' => array(
@@ -212,7 +212,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'google+',
         ),
       ),
-      array(
+      'rss' => array(
         'url' => '/rss.xml',
         'class' => 'social-icon-rss',
         'image' => array(
@@ -222,7 +222,7 @@ function _fe_social_get_social_media_items($language = 'en') {
       )
     ),
     'ru' => array(
-      array(
+      'facebook' => array(
         'url' => 'https://www.facebook.com/RussianIJNet?ref=ts',
         'class' => 'social-icon-facebook',
         'image' => array(
@@ -230,7 +230,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'facebook',
         ),
       ),
-      array(
+      'twitter' => array(
         'url' => 'https://twitter.com/IJNet_Russian',
         'class' => 'social-icon-twitter',
         'image' => array(
@@ -238,7 +238,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'twitter',
         ),
       ),
-      array(
+      'youtube' => array(
         'url' => 'https://www.youtube.com/user/IJNetVideo',
         'class' => 'social-icon-youtube',
         'image' => array(
@@ -246,7 +246,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'youtube',
         ),
       ),
-      array(
+      'rss' => array(
         'url' => '/rss.xml',
         'class' => 'social-icon-rss',
         'image' => array(
@@ -256,7 +256,7 @@ function _fe_social_get_social_media_items($language = 'en') {
       )
     ),
     'ar' => array(
-      array(
+      'facebook' => array(
         'url' => 'https://www.facebook.com/IJNetArabic',
         'class' => 'social-icon-facebook',
         'image' => array(
@@ -264,7 +264,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'facebook',
         ),
       ),
-      array(
+      'twitter' => array(
         'url' => 'https://twitter.com/ijnetarabic',
         'class' => 'social-icon-twitter',
         'image' => array(
@@ -272,7 +272,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'twitter',
         ),
       ),
-      array(
+      'youtube' => array(
         'url' => 'https://www.youtube.com/user/ijnetarabic',
         'class' => 'social-icon-youtube',
         'image' => array(
@@ -280,7 +280,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'youtube',
         ),
       ),
-      array(
+      'rss' => array(
         'url' => '/rss.xml',
         'class' => 'social-icon-rss',
         'image' => array(
@@ -290,7 +290,7 @@ function _fe_social_get_social_media_items($language = 'en') {
       ),
     ),
     'zh-hans' => array(
-      array(
+      'facebook' => array(
         'url' => 'https://www.facebook.com/IJNet',
         'class' => 'social-icon-facebook',
         'image' => array(
@@ -298,7 +298,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'facebook',
         ),
       ),
-      array(
+      'twitter' => array(
         'url' => 'https://twitter.com/IJNET',
         'class' => 'social-icon-twitter',
         'image' => array(
@@ -306,7 +306,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'twitter',
         ),
       ),
-      array(
+      'weibo' => array(
         'url' => 'http://weibo.com/ijnet',
         'class' => 'social-icon-weibo',
         'image' => array(
@@ -314,7 +314,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'webio',
         ),
       ),
-      array(
+      'rss' => array(
         'url' => '/rss.xml',
         'class' => 'social-icon-rss',
         'image' => array(
@@ -324,7 +324,7 @@ function _fe_social_get_social_media_items($language = 'en') {
       ),
     ),
     'fa' => array(
-      array(
+      'facebook' => array(
         'url' => 'https://www.facebook.com/IJNetPersian',
         'class' => 'social-icon-facebook',
         'image' => array(
@@ -332,7 +332,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'facebook',
         ),
       ),
-      array(
+      'twitter' => array(
         'url' => 'https://twitter.com/IJNetPersian',
         'class' => 'social-icon-twitter',
         'image' => array(
@@ -340,7 +340,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'twitter',
         ),
       ),
-      array(
+      'youtube' => array(
         'url' => 'https://www.youtube.com/user/IJNetVideo',
         'class' => 'social-icon-youtube',
         'image' => array(
@@ -348,7 +348,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'youtube',
         ),
       ),
-      array(
+      'rss' => array(
         'url' => '/rss.xml',
         'class' => 'social-icon-rss',
         'image' => array(
@@ -358,7 +358,7 @@ function _fe_social_get_social_media_items($language = 'en') {
       ),
     ),
     'pt-br' => array(
-      array(
+      'facebook' => array(
         'url' => 'https://www.facebook.com/pages/Rede-de-Jornalistas-Internacionais-IJNet/117673284936246?ref=ts',
         'class' => 'social-icon-facebook',
         'image' => array(
@@ -366,7 +366,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'facebook',
         ),
       ),
-      array(
+      'twitter' => array(
         'url' => 'https://twitter.com/IJNetPortugues',
         'class' => 'social-icon-twitter',
         'image' => array(
@@ -374,7 +374,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'twitter',
         ),
       ),
-      array(
+      'youtube' => array(
         'url' => 'https://www.youtube.com/user/IJNetVideo',
         'class' => 'social-icon-youtube',
         'image' => array(
@@ -382,7 +382,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'youtube',
         ),
       ),
-      array(
+      'rss' => array(
         'url' => '/rss.xml',
         'class' => 'social-icon-rss',
         'image' => array(

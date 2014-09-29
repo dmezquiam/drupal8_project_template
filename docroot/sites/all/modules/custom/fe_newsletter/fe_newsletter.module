@@ -20,12 +20,12 @@ function fe_newsletter_menu() {
   );
   $items['email-bulletin-archive'] = array(
     'page callback' => 'ijnet_newsletter_archive_callback',
-    'access arguments' => array('access content'),
+    'access callback' => TRUE,
   );
   $items['email-bulletin-archive/%'] = array(
     'page callback' => 'ijnet_newsletter_archive_by_nid_callback',
     'page arguments' => array(1),
-    'access arguments' => array('access content'),
+    'access callback' => TRUE,
   );
   $items['node/%/bulletin'] = array(
     'title' => 'Newsletter markup',
@@ -246,8 +246,11 @@ function _fe_newsletter_get_featured_contents($node) {
 }
 
 function _fe_newsletter_get_featured_content($nid) {
+
   $node = node_load($nid);
+
   $language = $node->language;
+  $installed_languages = language_list();
 
   $featured_content = new stdClass();
   if (empty($node->field_image)) {
@@ -272,7 +275,7 @@ function _fe_newsletter_get_featured_content($nid) {
       $node->body[LANGUAGE_NONE][0]['safe_summary'];
   }
   $featured_content->author = _fe_newsletter_get_author($nid);
-  $featured_content->link = '/'.$language.'/' . drupal_get_path_alias('node/'.$nid, $language);
+  $featured_content->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
 
   return $featured_content;
 }
@@ -307,6 +310,7 @@ function _fe_newsletter_get_advertisements($node) {
 function _fe_newsletter_get_advertisement($nid) {
   $node = node_load($nid);
   $language = $node->language;
+  $installed_languages = language_list();
 
   $advertisement = new stdClass();
   if (empty($node->field_image)) {
@@ -324,7 +328,7 @@ function _fe_newsletter_get_advertisement($nid) {
       $node->body[$language][0]['safe_summary'] :
       $node->body[LANGUAGE_NONE][0]['safe_summary'];
   }
-  $advertisement->link = '/'.$language.'/' . drupal_get_path_alias('node/'.$nid, $language);
+  $advertisement->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
 
   return $advertisement;
 }
@@ -356,6 +360,7 @@ function _fe_newsletter_get_opportunity($nid) {
   }
 
   $language = $node->language;
+  $installed_languages = language_list();
 
   $opportunity = new stdClass();
   $opportunity->title = $node->title;
@@ -380,7 +385,7 @@ function _fe_newsletter_get_opportunity($nid) {
       $node->field_region[$language][0]['tid'] :
       $node->field_region[LANGUAGE_NONE][0]['tid'];
   }
-  $opportunity->link = '/'.$language.'/' . drupal_get_path_alias('node/'.$nid, $language);
+  $opportunity->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
 
   return $opportunity;
 }
@@ -452,10 +457,13 @@ function fe_newsletter_subscribe_form($form, &$form_state) {
     '#title' => t('Email address'),
     '#required' => TRUE,
   );
+  $form['archive'] = array(
+    '#markup' => '<a href="' . url('email-bulletin-archive') . '" " class="archive-link">' . t('Bulletin Archive') . '</a>',
+  );
 
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => 'Submit',
+    '#value' => t('Submit'),
     '#attributes' => array('class'=>array('button-tiny')),
     '#ajax' => array(
       'callback' => 'fe_newsletter_subscribe_form_ajax_submit',
@@ -626,10 +634,10 @@ function fe_newsletter_node_presave($node) {
   $to_date += 24*60*60; // Add a day.
 
   // query news articles and videos
-  if (TRUE || ! isset($node->nid)) {
+  if ($node->is_new || ! isset($node->nid)) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', array('news', 'video'), 'IN')
+      ->entityCondition('bundle', array('news', 'video', 'training_opportunity'), 'IN')
       ->propertyCondition('status', 1)
       ->propertyCondition('language', $newsletter_lang)
       ->propertyCondition('created', $to_date, '<=')
@@ -649,7 +657,17 @@ function fe_newsletter_node_presave($node) {
       }
 
       // Add other nids
-      $item_nids = array_keys($result['node']);
+      $item_nids = array();
+      $op_nids = array();
+      foreach ($result['node'] as $key => $content) {
+        if ($content->type != 'training_opportunity') {
+          $item_nids[] = $key;
+        }
+        else {
+          $op_nids[] = $key;
+        }
+      }
+      //$item_nids = array_keys($result['node']);
       foreach($item_nids as $nid) {
         $nids[$nid] = $nid;
       }
@@ -660,6 +678,24 @@ function fe_newsletter_node_presave($node) {
         $field_content[] = array('nid' => $nid);
       }
       $node->field_other_content[LANGUAGE_NONE] = $field_content;
+
+      if (!empty($op_nids)) {
+        $nids = array();
+        $has_op = count($node->field_opportunities[LANGUAGE_NONE]);
+        if ($has_op > 0) {
+          foreach ($node->field_opportunities[LANGUAGE_NONE] as $existing_op) {
+            $nids[$existing_op['nid']] = $existing_op['nid'];
+          }
+        }
+        foreach ($op_nids as $nid) {
+          $nids[$nid] = $nid;
+        }
+        $field_content = array();
+        foreach ($nids as $nid) {
+          $field_content[] = array('nid' => $nid);
+        }
+        $node->field_opportunities[LANGUAGE_NONE] = $field_content;
+      }
     }
 
     // add advertisements

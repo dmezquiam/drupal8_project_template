@@ -128,3 +128,11 @@ function jsonblocks_mail_alter(&$message) {
       $email[$language->language] : $email['en'];
   }
 }
+
+function json_blocks_view_facebook_like() {
+  global $language;
+  $all_items = _fe_social_get_social_media_items($language->language);
+  $url = $all_items['facebook']['url'];
+  return array('content' => theme('facebook-like', array('url' => $url)));
+}
+

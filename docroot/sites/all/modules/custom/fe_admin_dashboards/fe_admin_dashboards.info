@@ -44,6 +44,7 @@ features[page_manager_pages][] = dashboard_nodes_chats
 features[page_manager_pages][] = dashboard_nodes_news
 features[page_manager_pages][] = dashboard_nodes_opportunities
 features[page_manager_pages][] = dashboard_nodes_videos
+features[page_manager_pages][] = dashboard_scheduled_content
 features[page_manager_pages][] = dashboard_staff_members
 features[page_manager_pages][] = dashboard_taxonomies
 features[page_manager_pages][] = dashboard_users

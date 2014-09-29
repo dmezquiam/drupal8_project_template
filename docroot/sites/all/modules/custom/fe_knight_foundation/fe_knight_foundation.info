@@ -1,13 +1,16 @@
-name = Knight Foundation 
+name = Knight Foundation
 description = Contenido relacionado ala pagina de knight foundation.
 core = 7.x
 package = IJNet
 version = 7.x-1.0
 project = fe_knight_foundation
+dependencies[] = ctools
 dependencies[] = fe_block
 dependencies[] = jsonblocks
 dependencies[] = quicktabs
+features[ctools][] = quicktabs:quicktabs:1
 features[fe_block_settings][] = fe_knight_foundation-knight_authors_tab
 features[fe_block_settings][] = jsonblocks-knight-foundation
 features[fe_block_settings][] = quicktabs-knight_foundation
 features[features_api][] = api:2
+features[quicktabs][] = knight_foundation

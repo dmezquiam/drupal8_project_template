@@ -62,7 +62,7 @@ function fe_newsletter_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cc_password';
-  $strongarm->value = 'qwerty123';
+  $strongarm->value = 'ijnet1234';
   $export['cc_password'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -76,7 +76,7 @@ function fe_newsletter_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cc_username';
-  $strongarm->value = 'miquel@easytech.com.ar';
+  $strongarm->value = 'ijnet.org';
   $export['cc_username'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -212,9 +212,7 @@ function fe_newsletter_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_bulletin_email';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_bulletin_email'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -45,6 +45,10 @@ function fe_news_theme() {
       'template' => 'last-posts-authors',
       'path' => drupal_get_path('module', 'fe_news') . '/theme',
     ),
+    'news_topic_block' => array(
+      'template' => 'theme/topic-block',
+      'variables' => array('name' => '', 'url' => ''),
+    ),
   );
 
   return $themes;
@@ -58,6 +62,7 @@ function fe_news_block_info() {
   $blocks = array();
 
   $blocks['last_posts_authors']  = array('info' => 'Gets authors for the last 10 posts.');
+  $blocks['field_topic_block'] = array('info' => 'Bloque para los topics en el header');
 
   return $blocks;
 }
@@ -76,7 +81,10 @@ function fe_news_block_view($delta = '') {
       'content' => _fe_news_get_last_posts_authors(),
     );
   }
-
+  else if ($delta == 'field_topic_block') {
+    $block['subject'] = '';
+    $block['content'] = _fe_news_get_topics();
+  }
   return $block;
 }
 
@@ -100,8 +108,9 @@ function _fe_news_get_last_posts_authors($tid = '') {
         }
 
         $user = user_load($author->uid);
-        $show_profile = isset($user->field_show_profile[$language->language][0]['value']) ?
-          $user->field_show_profile[$language->language][0]['value'] :
+        $keys = array_keys($user->field_show_profile);
+        $show_profile = isset($user->field_show_profile[$keys[0]][0]['value']) ?
+          $user->field_show_profile[$keys[0]][0]['value'] :
           FALSE;
         if ( $show_profile ) {
 
@@ -120,6 +129,7 @@ function _fe_news_get_last_posts_authors($tid = '') {
       }
     }
   }
+
 
   return theme('last_posts_authors', array('authors' => $authors));
 }
@@ -145,8 +155,7 @@ function _fe_news_get_author($nid) {
       $user = user_load($node->uid);
     }
     $author->uid = $user->uid;
-    $screen_name = array_pop($user->field_screen_name);
-    $author->name = $screen_name[0]['safe_value'];
+    $author->name = _fe_news_get_safe_value($user, 'field_screen_name');
     $author->profile_link = drupal_get_path_alias('user/' . $user->uid);
     $author->avatar = isset($user->picture) ? 
       theme_image_style(array(
@@ -155,10 +164,8 @@ function _fe_news_get_author($nid) {
         'width' => '110', 
         'height' => '110')
         ) :  null;
-    $author->job = isset($user->field_job_title[LANGUAGE_NONE]) ?
-      $user->field_job_title[LANGUAGE_NONE][0]['safe_value'] : null;
-    $author->organization = isset($user->field_organization_name[LANGUAGE_NONE]) ?
-      $user->field_organization_name[LANGUAGE_NONE][0]['safe_value'] : null;
+    $author->job = _fe_news_get_safe_value($user, 'field_job_title');
+    $author->organization = _fe_news_get_safe_value($user, 'field_organization_name');
   }
 
   return $author;
@@ -171,4 +178,75 @@ function fe_news_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'comment_node_news_form') {
     hide($form['author']);
   }
+}
+
+/**
+ * Helper to pull value regardless of language
+ */
+function _fe_news_get_safe_value($entity, $field_name) {
+	global $language;
+
+  if (!isset($entity->$field_name) || !is_array($entity->$field_name) || empty($entity->$field_name)) {
+    return '';
+  }
+
+  // try to use value for current language
+  $lang_code = $language->language;
+	if (isset($entity->{$field_name}[$lang_code])) {
+		$item = $entity->{$field_name}[$lang_code];
+	}
+	else if (isset($entity->{$field_name}['en'])) {
+		// try english if available
+    $item = $entity->{$field_name}['en'];
+	}
+	else {
+    // use whatever we have.
+    $keys = array_keys($entity->$field_name);
+    $item = $entity->{$field_name}[$keys[0]];
+	}
+  $value = isset($item[0]['safe_value']) ?
+    $item[0]['safe_value'] :
+    '';
+
+  return $value;
+}
+
+function _fe_news_get_topics($nid = '') {
+  $nid = $nid ? $nid : arg(1);
+  $node = node_load($nid);
+  $exclusion_list = array(913, 914, 915, 916, 917, 918, 919);
+  global $language;
+  if (!empty($node->field_topic[$language->language])) {
+    $tid = '';
+    foreach ($node->field_topic[$language->language] as $topic) {
+      if (!in_array($topic['tid'], $exclusion_list)) {
+        $tid = $topic['tid'];
+        break;
+      }
+    }
+  }
+  else if (!empty($node->field_category[LANGUAGE_NONE])) {
+    $tid = ''; 
+    foreach ($node->field_category[LANGUAGE_NONE] as $topic) {
+      if (!in_array($topic['tid'], $exclusion_list)) {
+        $tid = $topic['tid'];
+        break;
+      }   
+    }
+  }
+
+  if ($tid) {
+    $term = taxonomy_term_load($tid);
+    $name = $term->name;
+    $type = ''; 
+    if ($node->type == 'news') {
+      $type = 'news';
+    }   
+    else if ($node->type == 'training_opportunity') {
+      $type = 'opportunities';
+    }   
+    $url = '/' . $language->language . '/' . $type . '/' . $tid;
+    return theme('news_topic_block', array('name' => $name, 'url' => $url));
+  } 
+  return '';
 }
