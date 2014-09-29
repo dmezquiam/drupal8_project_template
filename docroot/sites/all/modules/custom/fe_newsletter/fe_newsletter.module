@@ -59,18 +59,38 @@ function ijnet_newsletter_callback($nid) {
   }
 
   // TODO: delivery callback
-  print(theme('ijnet_newsletter', array('node' => node_load($nid))));
+  global $language;
+  $social_media_items = jsonblocks_get_social_media_info($language->language);
+  print(theme('ijnet_newsletter',
+    array(
+      'node' => node_load($nid),
+      'social_media_items' => $social_media_items,
+    )
+  ));
 }
 
 function ijnet_newsletter_archive_callback() {
   $nid = _ijnet_newsletter_get_last_newsletter_nid();
+  global $language;
+  $social_media_items = jsonblocks_get_social_media_info($language->language);
 
-  return theme('ijnet_newsletter_content', array('node' => node_load($nid)));
+  return theme('ijnet_newsletter_content',
+    array(
+      'node' => node_load($nid),
+      'social_media_items' => $social_media_items,
+    ));
 }
 
 function ijnet_newsletter_archive_by_nid_callback($nid = null) {
   if (node_load($nid)) {
-    return theme('ijnet_newsletter_content', array('node' => node_load($nid)));
+    global $language;
+    $social_media_items = jsonblocks_get_social_media_info($language->language);
+    return theme('ijnet_newsletter_content',
+      array(
+        'node' => node_load($nid),
+        'social_media_items' => $social_media_items,
+      )
+    );
   }
   drupal_goto('email-bulletin-archive');
 }
@@ -99,7 +119,6 @@ function ijnet_newsletter_access_callback($nid) {
   return TRUE;
 }
 
-
 /**
  * Implements hook_theme()
  */
@@ -110,6 +129,7 @@ function fe_newsletter_theme() {
     'ijnet_newsletter' => array(
       'variables' => array(
         'node' => NULL,
+        'social_media_items' => null,
       ),
       'template' => 'ijnet-newsletter',
       'path' => $theme_path,
@@ -118,6 +138,7 @@ function fe_newsletter_theme() {
     'ijnet_newsletter_content' => array(
       'variables' => array(
         'node' => NULL,
+        'social_media_items' => null,
       ),
       'template' => 'ijnet-newsletter-content',
       'path' => $theme_path,
