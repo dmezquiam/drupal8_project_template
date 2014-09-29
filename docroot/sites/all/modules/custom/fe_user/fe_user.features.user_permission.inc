@@ -556,15 +556,6 @@ function fe_user_user_default_permissions() {
     'module' => 'quicktabs',
   );
 
-  // Exported permission: 'administer recaptcha'.
-  $permissions['administer recaptcha'] = array(
-    'name' => 'administer recaptcha',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'recaptcha',
-  );
-
   // Exported permission: 'administer responsive menus'.
   $permissions['administer responsive menus'] = array(
     'name' => 'administer responsive menus',
