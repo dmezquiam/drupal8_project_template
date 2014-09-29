@@ -21,13 +21,12 @@ function fe_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'General',
-    'weight' => '0',
+    'weight' => '1',
     'children' => array(
-      0 => 'account',
-      1 => 'group_your_background',
-      2 => 'group_your_preferences',
-      3 => 'group_your_profile',
-      4 => 'group_your_work',
+      0 => 'group_your_background',
+      1 => 'group_your_preferences',
+      2 => 'group_your_profile',
+      3 => 'group_your_work',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
