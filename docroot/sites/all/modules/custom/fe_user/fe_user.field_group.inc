@@ -23,11 +23,11 @@ function fe_user_field_group_info() {
     'label' => 'General',
     'weight' => '0',
     'children' => array(
-      0 => 'group_your_profile',
-      1 => 'group_your_work',
-      2 => 'group_your_background',
-      3 => 'group_your_preferences',
-      4 => 'group_login_information',
+      0 => 'account',
+      1 => 'group_your_background',
+      2 => 'group_your_preferences',
+      3 => 'group_your_profile',
+      4 => 'group_your_work',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -50,7 +50,7 @@ function fe_user_field_group_info() {
   $field_group->parent_name = 'group_general';
   $field_group->data = array(
     'label' => 'Your Background',
-    'weight' => '24',
+    'weight' => '4',
     'children' => array(
       0 => 'field_resume',
       1 => 'field_bio',
@@ -81,11 +81,11 @@ function fe_user_field_group_info() {
   $field_group->parent_name = 'group_general';
   $field_group->data = array(
     'label' => 'Your Preferences',
-    'weight' => '25',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_show_profile',
-      1 => 'field_subscribe',
-      2 => 'field_topic',
+      0 => 'field_subscribe',
+      1 => 'field_topic',
+      2 => 'field_show_profile',
       3 => 'timezone',
       4 => 'contact',
       5 => 'locale',
@@ -114,7 +114,7 @@ function fe_user_field_group_info() {
   $field_group->parent_name = 'group_general';
   $field_group->data = array(
     'label' => 'Your profile settings',
-    'weight' => '22',
+    'weight' => '2',
     'children' => array(
       0 => 'field_screen_name',
       1 => 'field_twitter',
@@ -145,7 +145,7 @@ function fe_user_field_group_info() {
   $field_group->parent_name = 'group_general';
   $field_group->data = array(
     'label' => 'Your Work',
-    'weight' => '23',
+    'weight' => '3',
     'children' => array(
       0 => 'field_job_title',
       1 => 'field_organization_name',
