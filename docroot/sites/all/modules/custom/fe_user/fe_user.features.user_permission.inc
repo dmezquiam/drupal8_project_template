@@ -202,6 +202,15 @@ function fe_user_user_default_permissions() {
     'module' => 'fontyourface',
   );
 
+  // Exported permission: 'administer BOTCHA settings'.
+  $permissions['administer BOTCHA settings'] = array(
+    'name' => 'administer BOTCHA settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'botcha',
+  );
+
   // Exported permission: 'administer CAPTCHA settings'.
   $permissions['administer CAPTCHA settings'] = array(
     'name' => 'administer CAPTCHA settings',
@@ -1744,6 +1753,15 @@ function fe_user_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'location_user',
+  );
+
+  // Exported permission: 'skip BOTCHA'.
+  $permissions['skip BOTCHA'] = array(
+    'name' => 'skip BOTCHA',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'botcha',
   );
 
   // Exported permission: 'skip CAPTCHA'.
