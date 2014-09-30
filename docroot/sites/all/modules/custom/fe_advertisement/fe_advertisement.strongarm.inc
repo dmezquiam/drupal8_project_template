@@ -89,6 +89,9 @@ function fe_advertisement_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'node_fields_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -108,7 +111,7 @@ function fe_advertisement_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '2',
+            'weight' => '3',
             'visible' => FALSE,
           ),
         ),
