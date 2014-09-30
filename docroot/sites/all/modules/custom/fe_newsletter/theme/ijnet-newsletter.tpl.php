@@ -15,7 +15,7 @@
 
   <center>
 
-    <?php print(theme('ijnet_newsletter_content', array('node' => $node)));?>
+    <?php print(theme('ijnet_newsletter_content', array('node' => $node, 'social_media_items' => $social_media_items, 'logo' => $logo)));?>
 
   </center>
 

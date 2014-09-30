@@ -10,8 +10,11 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#eae9e9">
                   <tr>
                     <td>
+
                       <!-- // Begin Module: Standard Header Image \\ -->
-                      <a href="http://ijnet.org"><img src="<?php print(file_create_url($newsletter_images_path.'ijnet-logo.jpg'))?>" style="display:block;max-width:600px;padding:10px 0;" border="0" alt="" /></a>
+                      <a href="http://ijnet.org">
+                        <img src="<?php print(file_create_url($logo['path']))?>" style="display:block;max-width:600px;padding:10px 0;" border="0" alt="<?php print($logo['alt'])?>"/>
+                      </a>
                       <!-- // End Module: Standard Header Image \\ -->
 
                     </td>
@@ -41,7 +44,15 @@
                         <tr>
                           <td valign="middle" style="padding-top: 15px;">
 
-                            <a href="https://www.facebook.com/IJNet"><img src="<?php print(file_create_url($newsletter_images_path . 'social_01.png'))?>" alt="facebook" width="37" height="32" border="0" /></a><a href="http://twitter.com/ijnet"><img src="<?php print(file_create_url($newsletter_images_path . 'social_02.png'))?>" alt="twitter" width="41" height="32" border="0" /></a><a href="http://www.youtube.com/ijnetvideo"><img src="<?php print(file_create_url($newsletter_images_path . 'social_03.png'))?>" alt="youtube" width="41" height="32" border="0" /></a><a href="http://www.linkedin.com/groups/International-Journalists-Network-IJNet-3734352"><img src="<?php print(file_create_url($newsletter_images_path . 'social_04.png'))?>" alt="linkedin" width="41" height="32" border="0" /></a><a href="https://plus.google.com/109438369213951959896/posts"><img src="<?php print(file_create_url($newsletter_images_path . 'social_05.png'))?>" alt="google+" width="41" height="32" border="0" /></a><a href="http://ijnet.org/rss.xml"><img src="<?php print(file_create_url($newsletter_images_path . 'social_06.png'))?>" alt="IJNet RSS" width="37" height="32" border="0" /></a>
+<?php foreach ($social_media_items as $item) :?>
+
+                            <a href="<?php print($item['url'])?>">
+                                <img src="<?php print(file_create_url($item['image']['path']))?>"
+                                alt="<?php print($item['image']['alt'])?>"
+                                width="37" height="32" border="0" />
+                            </a>
+
+<?php endforeach;?>
 
                           </td>
                         </tr>
