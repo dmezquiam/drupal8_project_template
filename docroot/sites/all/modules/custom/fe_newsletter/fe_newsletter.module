@@ -59,40 +59,41 @@ function ijnet_newsletter_callback($nid) {
   }
 
   // TODO: delivery callback
-  global $language;
-  $social_media_items = jsonblocks_get_social_media_info($language->language);
-  print(theme('ijnet_newsletter',
-    array(
-      'node' => node_load($nid),
-      'social_media_items' => $social_media_items,
-    )
-  ));
+  $parameters = _ijnet_newsletter_archive_theme_parameters($nid);
+  $theme = theme('ijnet_newsletter', $parameters);
+
+  print($theme);
 }
 
 function ijnet_newsletter_archive_callback() {
   $nid = _ijnet_newsletter_get_last_newsletter_nid();
-  global $language;
-  $social_media_items = jsonblocks_get_social_media_info($language->language);
+  $parameters = _ijnet_newsletter_archive_theme_parameters($nid);
+  $theme = theme('ijnet_newsletter_content', $parameters);
 
-  return theme('ijnet_newsletter_content',
-    array(
-      'node' => node_load($nid),
-      'social_media_items' => $social_media_items,
-    ));
+  return $theme;
 }
 
 function ijnet_newsletter_archive_by_nid_callback($nid = null) {
   if (node_load($nid)) {
-    global $language;
-    $social_media_items = jsonblocks_get_social_media_info($language->language);
-    return theme('ijnet_newsletter_content',
-      array(
-        'node' => node_load($nid),
-        'social_media_items' => $social_media_items,
-      )
-    );
+    $parameters = _ijnet_newsletter_archive_theme_parameters($nid);
+    $theme = theme('ijnet_newsletter_content', $parameters);
+
+    return $theme;
   }
   drupal_goto('email-bulletin-archive');
+}
+
+function _ijnet_newsletter_archive_theme_parameters($nid) {
+  $node = node_load($nid);
+  $logo = _fe_social_get_ijnet_logo_by_lang($node->language);
+  $social_media_items = _fe_social_get_social_media_items($node->language);
+  $parameters = array(
+    'node' => $node,
+    'social_media_items' => $social_media_items,
+    'logo' => $logo,
+  );
+
+  return $parameters;
 }
 
 function _ijnet_newsletter_get_last_newsletter_nid() {
@@ -128,8 +129,9 @@ function fe_newsletter_theme() {
 
     'ijnet_newsletter' => array(
       'variables' => array(
-        'node' => NULL,
+        'node' => null,
         'social_media_items' => null,
+        'logo' => null,
       ),
       'template' => 'ijnet-newsletter',
       'path' => $theme_path,
@@ -137,8 +139,9 @@ function fe_newsletter_theme() {
 
     'ijnet_newsletter_content' => array(
       'variables' => array(
-        'node' => NULL,
+        'node' => null,
         'social_media_items' => null,
+        'logo' => null,
       ),
       'template' => 'ijnet-newsletter-content',
       'path' => $theme_path,
@@ -146,14 +149,14 @@ function fe_newsletter_theme() {
 
     'ijnet_newsletter_featured_contents' => array(
       'variables' => array(
-        'featured_contents' => NULL
+        'featured_contents' => null,
       ),
       'template' => 'ijnet-newsletter-featured-contents',
       'path' => $theme_path,
     ),
     'ijnet_newsletter_featured_content' => array(
       'variables' => array(
-        'featured_content' => NULL
+        'featured_content' => null,
       ),
       'template' => 'ijnet-newsletter-featured-content',
       'path' => $theme_path,
@@ -161,14 +164,14 @@ function fe_newsletter_theme() {
 
     'ijnet_newsletter_advertisements' => array(
       'variables' => array(
-        'advertisements' => NULL
+        'advertisements' => null,
       ),
       'template' => 'ijnet-newsletter-advertisements',
       'path' => $theme_path,
     ),
     'ijnet_newsletter_advertisement' => array(
       'variables' => array(
-        'advertisement' => NULL
+        'advertisement' => null,
       ),
       'template' => 'ijnet-newsletter-advertisement',
       'path' => $theme_path,
@@ -176,14 +179,14 @@ function fe_newsletter_theme() {
 
     'ijnet_newsletter_opportunities' => array(
       'variables' => array(
-        'opportunities' => NULL
+        'opportunities' => null,
       ),
       'template' => 'ijnet-newsletter-opportunities',
       'path' => $theme_path,
     ),
     'ijnet_newsletter_opportunity' => array(
       'variables' => array(
-        'opportunity' => NULL
+        'opportunity' => null,
       ),
       'template' => 'ijnet-newsletter-opportunity',
       'path' => $theme_path,

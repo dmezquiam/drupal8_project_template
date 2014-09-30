@@ -10,8 +10,11 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#eae9e9">
                   <tr>
                     <td>
+
                       <!-- // Begin Module: Standard Header Image \\ -->
-                      <a href="http://ijnet.org"><img src="<?php print(file_create_url($newsletter_images_path.'ijnet-logo.jpg'))?>" style="display:block;max-width:600px;padding:10px 0;" border="0" alt="" /></a>
+                      <a href="http://ijnet.org">
+                        <img src="<?php print(file_create_url($logo['path']))?>" style="display:block;max-width:600px;padding:10px 0;" border="0" alt="<?php print($logo['alt'])?>"/>
+                      </a>
                       <!-- // End Module: Standard Header Image \\ -->
 
                     </td>

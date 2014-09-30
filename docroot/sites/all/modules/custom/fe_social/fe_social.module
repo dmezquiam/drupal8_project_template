@@ -111,19 +111,23 @@ function fe_social_get_training_opportunity_og_meta($node) {
   $description = isset($node->body[$lang]) ?
     strip_tags($node->body[$lang][0]['safe_summary']) :
     strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
-  $image = _fe_social_get_ijnet_logo_by_lang($node);
+  $logo = _fe_social_get_ijnet_logo_by_lang($lang);
+  $image = drupal_realpath($logo['path']);
 
   fe_social_add_og_meta_tags($title, $url, $description, $image);
 }
 
-function _fe_social_get_ijnet_logo_by_lang($node) {
-  $lang = $node->language;
-  $ijnet_logo_name = ($lang == 'en') ?
+function _fe_social_get_ijnet_logo_by_lang($language = 'en') {
+  $ijnet_logo_name = ($language == 'en') ?
     'logo.png' :
-    'logo' . str_replace('-', '_', $lang) . 'png';
+    'logo_' . str_replace('-', '_', $language) . '.png';
   $ijnet_logo_path = drupal_get_path('theme', 'ijnet') . '/' . $ijnet_logo_name;
+  $logo = array(
+    'path' => $ijnet_logo_path,
+    'alt' => 'ijnet_logo',
+  );
 
-  return drupal_realpath($ijnet_logo_path);
+  return $logo;
 }
 
 function _fe_social_get_social_media_items($language = 'en') {
