@@ -8,22 +8,21 @@
   </table>
   <!-- // End Body \\ -->
 
-<?php foreach ($opportunities as $region => $opportunities_by_region) : ?>
+<?php foreach ($opportunities as $region_tid => $opportunities_by_region) : ?>
 
-  <?php if (!empty($opportunities_by_region)) : ?>
+  <?php if ((!empty($opportunities_by_region)) && ($region_tid != 0)) : ?>
 
   <!-- // Begin Body \\ -->
   <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#3c6e8f" style="margin-top:15px;">
     <tr>
       <td valign="top" width="600">
-      <p style="margin:5px 20px; padding:0;font-size:15px;line-height:26px;color: #ffffff;"><?php print $region?></p>
+      <p style="margin:5px 20px; padding:0;font-size:15px;line-height:26px;color: #ffffff;"><?php print($opportunities[0][$region_tid])?></p>
       </td>
     </tr>
 
   </table>
   <!-- // End Body \\ -->
 
-  <?php endif; ?>
 
   <?php foreach ($opportunities_by_region as $index => $opportunity) : ?>
 
@@ -36,7 +35,7 @@
       <td valign="top" width="280">
     <?php print theme('ijnet_newsletter_opportunity', array('opportunity' => $opportunity))?>
       </td>
-    
+
     <?php if (($index % 2) == 1 ) : ?>
     </tr>
   </table>
@@ -45,12 +44,13 @@
 
   <?php endforeach; ?>
 
-  
   <?php if (!empty($opportunities_by_region) && ($index % 2) == 0 ) : ?>
     <td style="width:280px"></td>
     </tr>
   </table>
   <!-- // End Module: Top Image with Content \\ -->
+  <?php endif; ?>
+
   <?php endif; ?>
 
 <?php endforeach; ?>
