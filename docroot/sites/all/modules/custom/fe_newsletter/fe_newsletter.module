@@ -398,15 +398,18 @@ function _fe_newsletter_classify_opportunities($opportunities) {
   $region_vocabulary = taxonomy_vocabulary_machine_name_load('region');
   $taxonomy_tree = taxonomy_get_tree($region_vocabulary->vid, $parent = 0, $max_depth = 1);
   $worldwide = $taxonomy_tree[0];
-  $continents = taxonomy_get_tree($region_vocabulary->vid, $worldwide->tid, $max_depth = 1);
+  $regions_tid = taxonomy_get_tree($region_vocabulary->vid, $worldwide->tid, $max_depth = 1);
 
-  $classified_opportunities[$worldwide->name] = array();
-  foreach ($continents as $continent) {
-    $classified_opportunities[$continent->name] = array();
+  $classified_opportunities[$worldwide->tid] = array();
+  $regions = array();
+  $regions[$worldwide->tid] = t($worldwide->name);
+  foreach ($regions_tid as $region) {
+    $classified_opportunities[$region->tid] = array();
+    $regions[$region->tid] = t($region->name);
   }
 
   foreach ($opportunities as $opportunity) {
-    $opportunity->tid = isset($opportunity->tid) ? 
+    $opportunity->tid = isset($opportunity->tid) ?
       $opportunity->tid :
       $worldwide->tid;
     $opportunities_parents = taxonomy_get_parents_all($opportunity->tid);
@@ -414,8 +417,9 @@ function _fe_newsletter_classify_opportunities($opportunities) {
     if (sizeof($opportunities_parents) > 1) {
       $index = sizeof($opportunities_parents) - 2;
     }
-    $classified_opportunities[$opportunities_parents[$index]->name][] = $opportunity;
+    $classified_opportunities[$opportunities_parents[$index]->tid][] = $opportunity;
   }
+  $classified_opportunities[0] = $regions;
 
   return $classified_opportunities;
 }
