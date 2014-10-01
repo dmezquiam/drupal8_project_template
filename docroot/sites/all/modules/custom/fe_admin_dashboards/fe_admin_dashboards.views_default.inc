@@ -6092,15 +6092,15 @@ function fe_admin_dashboards_views_default_views() {
       'label' => '',
     ),
     'action::views_bulk_operations_modify_action' => array(
-      'selected' => 0,
+      'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
+      'override_label' => 1,
+      'label' => 'Unblock current user',
       'settings' => array(
-        'show_all_tokens' => 1,
+        'show_all_tokens' => 0,
         'display_values' => array(
-          '_all_' => '_all_',
+          'status' => 'status',
         ),
       ),
     ),
@@ -6120,13 +6120,6 @@ function fe_admin_dashboards_views_default_views() {
         'url' => '',
       ),
     ),
-    'rules_component::rules_link_set_un_block_selected_user' => array(
-      'selected' => 1,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
     'action::system_send_email_action' => array(
       'selected' => 0,
       'postpone_processing' => 0,
@@ -6135,7 +6128,7 @@ function fe_admin_dashboards_views_default_views() {
       'label' => '',
     ),
     'action::pathauto_user_update_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
