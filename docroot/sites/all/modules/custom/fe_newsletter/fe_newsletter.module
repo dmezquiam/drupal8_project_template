@@ -202,7 +202,7 @@ function fe_newsletter_theme() {
 function template_preprocess_ijnet_newsletter_content(&$vars) {
   $node = $vars['node'];
 
-  $vars['newsletter_date'] = _fe_newsletter_get_newsletter_date($node);
+  $vars['newsletter_date'] = _fe_newsletter_format_date($node->created, $node->language);
   $vars['newsletter_images_path'] = drupal_get_path('module', 'fe_newsletter') . '/theme/images/';
 
   $vars['featured_contents'] = _fe_newsletter_get_featured_contents($node);
@@ -222,14 +222,17 @@ function fe_newsletter_preprocess_page(&$vars) {
   }
 }
 
-function _fe_newsletter_get_newsletter_date($node) {
-  $date = format_date(
-    $node->created, 
-    $type = 'custom', 
-    $format = t('d F Y'), 
+function _fe_newsletter_format_date($date, $language = 'en') {
+  $format = ($language == 'en') ? 'm/d/Y' : 'd/m/Y';
+  $formated_date = format_date(
+    $date,
+    $type = 'custom',
+    $format,
     $timezone = null, 
-    $langcode = $node->language);
-  return $date;
+    $langcode = $language
+  );
+
+  return $formated_date;
 }
 
 function _fe_newsletter_get_featured_contents($node) {
@@ -375,11 +378,14 @@ function _fe_newsletter_get_opportunity($nid) {
       $node->body[LANGUAGE_NONE][0]['safe_summary'];
   }
   if (empty($node->field_deadline)) {
-    $opportunity->field_deadline = NULL;
+    $deadline = NULL;
   } else {
-    $opportunity->field_deadline = isset($node->field_deadline[$language]) ?
+    $deadline = isset($node->field_deadline[$language]) ?
       $node->field_deadline[$language][0]['value'] :
       $node->field_deadline[LANGUAGE_NONE][0]['value'];
+  }
+  if ($deadline) {
+    $opportunity->deadline = _fe_newsletter_format_date($deadline, $language);
   }
   if (empty($node->field_region)) {
     $opportunity->tid = NULL;
@@ -637,7 +643,6 @@ function fe_newsletter_node_presave($node) {
     ? strtotime($node->field_from_date[LANGUAGE_NONE][0]['value']) : NULL;
   $to_date  = isset($node->field_from_date[LANGUAGE_NONE][0]['value2']) 
     ? strtotime($node->field_from_date[LANGUAGE_NONE][0]['value2']) : NULL;
-
   $to_date += 24*60*60; // Add a day.
 
   // query news articles and videos

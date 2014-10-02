@@ -8,8 +8,11 @@
   <?php if (isset($opportunity->summary)) : ?>
     <?php print($opportunity->summary)?>
   <?php endif; ?>
-  <?php if (isset($opportunity->field_deadline)) : ?>
-          <p style="color:#b55a13;margin:0;padding:5px 0;"><b><?php print(t('Deadline:'));?> </b><?php print(date("m/d/Y", $opportunity->field_deadline))?></p>
+  <?php if (isset($opportunity->deadline)) : ?>
+          <p style="color:#b55a13;margin:0;padding:5px 0;">
+            <b><?php print(t('Deadline:'));?> </b>
+            <?php print($opportunity->deadline)?>
+          </p>
   <?php endif; ?>
       </td>
     </tr>
