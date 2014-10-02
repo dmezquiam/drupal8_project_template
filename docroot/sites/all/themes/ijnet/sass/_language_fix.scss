@@ -36,6 +36,10 @@
       a:hover {  }
     }
 
+    &.section-knight-media-innovators #block-blockify-blockify-page-title h1 {
+		font-size: 25px;
+	}
+
 }
 
 //Portugues
@@ -55,6 +59,14 @@
 		line-height: 14px;
 		font-size: 12px;
 		padding: 13px 44px 13px 16px;
+	}
+
+	.pane-quicktabs-opportunities-for-journalists .block-title {
+		font-size: 13px;
+		width: 270px;
+		top: 7px;
+		left: 29px;
+		line-height: normal;
 	}
 }
 
@@ -98,6 +110,10 @@
 		padding: 13px 44px 13px 22px;
 		line-height: 14px;
 		font-size: 11px;
+	}
+
+	.block-about-author .button-tiny {
+		margin-top: 10px;
 	}
 }
 
