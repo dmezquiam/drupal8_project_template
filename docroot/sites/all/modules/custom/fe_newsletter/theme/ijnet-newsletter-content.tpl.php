@@ -42,14 +42,14 @@
 
                       <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-left: 35px;">
                         <tr>
-                          <td valign="middle" style="padding-top: 15px;">
+                          <td class="news-social" valign="middle" style="padding-top: 15px; padding-right: 15px; text-align: right;">
 
 <?php foreach ($social_media_items as $item) :?>
 
-                            <a href="<?php print($item['url'])?>">
+                            <a href="<?php print($item['url'])?>" style="margin-left: 5px;">
                                 <img src="<?php print(file_create_url($item['image']['path']))?>"
                                 alt="<?php print($item['image']['alt'])?>"
-                                width="37" height="32" border="0" />
+                                width="32" height="32" border="0" />
                             </a>
 
 <?php endforeach;?>

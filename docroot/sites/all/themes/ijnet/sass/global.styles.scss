@@ -2220,7 +2220,7 @@ div.messages {
  }
 
 /* =============================================================================
- *   Email bulletin archive
+ *   Email bulletin archive (newsletter)
  * ========================================================================== */
 .page-email-bulletin-archive {
   table, thead, tbody, tr, th, td {
@@ -2229,6 +2229,13 @@ div.messages {
     margin: 0;
     h4 {
       margin-top: 10px !important;
+    }
+  }
+  .news-social {
+    padding: 0 !important;
+    a {
+      display: inline-block;
+      line-height: 0;
     }
   }
   table table table>tbody>tr>td{
