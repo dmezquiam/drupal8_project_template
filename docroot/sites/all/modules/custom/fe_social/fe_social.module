@@ -212,7 +212,7 @@ function _fe_social_get_social_media_items($language = 'en') {
         'url' => 'https://plus.google.com/100360709746549610122/posts',
         'class' => 'social-icon-gplus',
         'image' => array(
-          'path' => $images_path . 'social_04.png',
+          'path' => $images_path . 'social_05.png',
           'alt' => 'google+',
         ),
       ),
