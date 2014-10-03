@@ -711,26 +711,27 @@ function fe_newsletter_node_presave($node) {
     }
 
     // add advertisements
-    $num_ads = isset($node->field_number_of_advertisements[0]['value']) ? $node->field_number_of_advertisements[0]['value'] : 0;
+    $num_advs = isset($node->field_number_of_advertisements[0]['value']) ? $node->field_number_of_advertisements[0]['value'] : 4;
 
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', array('news', 'video'), 'IN')
-      ->propertyCondition('status', 1)
-      ->propertyCondition('language', $newsletter_lang)
-      ->propertyOrderBy('sticky', 'DESC')
-      ->propertyOrderBy('created', 'DESC')
-      ->range(0, $num_ads);
-    $result = $query->execute();
+    $advs_nids = _fe_newsletter_query_advertisements($newsletter_lang, $num_advs);
 
-    if (isset($result['node'])) {
-      // Add other nids
-      $item_nids = array_keys($result['node']);
-      $i = 0;
-      foreach($item_nids as $nid) {
-        $node->field_advertisements[LANGUAGE_NONE][$i++]['nid'] = $nid;
-      }
+    foreach($advs_nids as $nid) {
+      $node->field_advertisements[LANGUAGE_NONE][$i++]['nid'] = $nid;
     }
   }
 }
 
+function _fe_newsletter_query_advertisements($language = 'en', $limit = 4) {
+  $query = db_select('node', n)
+    ->fields('n', array('nid'))
+    ->condition('n.type', 'advertisement')
+    ->condition('n.status', 1)
+    ->condition('n.language', $language)
+    ->orderBy('n.sticky', "DESC")
+    ->orderBy('n.created', "DESC")
+    ->range(0,$limit);
+  $result = $query->execute()->fetchAllAssoc('nid');
+  $advertisements = array_keys($result);
+
+  return $advertisements;
+}
