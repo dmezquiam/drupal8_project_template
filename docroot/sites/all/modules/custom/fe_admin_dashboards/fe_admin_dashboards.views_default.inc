@@ -5332,7 +5332,7 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['fields']['publish_on']['table'] = 'scheduler';
   $handler->display->display_options['fields']['publish_on']['field'] = 'publish_on';
   $handler->display->display_options['fields']['publish_on']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['publish_on']['date_format'] = 'comment_format';
+  $handler->display->display_options['fields']['publish_on']['date_format'] = 'chat_long_start';
   $handler->display->display_options['fields']['publish_on']['second_date_format'] = 'long';
   /* Field: Scheduler: Unpublish on */
   $handler->display->display_options['fields']['unpublish_on']['id'] = 'unpublish_on';
