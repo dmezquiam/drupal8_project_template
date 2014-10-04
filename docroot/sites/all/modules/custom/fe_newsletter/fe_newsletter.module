@@ -715,6 +715,7 @@ function fe_newsletter_node_presave($node) {
 
     $advs_nids = _fe_newsletter_query_advertisements($newsletter_lang, $num_advs);
 
+    $i = 0;
     foreach($advs_nids as $nid) {
       $node->field_advertisements[LANGUAGE_NONE][$i++]['nid'] = $nid;
     }
@@ -722,7 +723,7 @@ function fe_newsletter_node_presave($node) {
 }
 
 function _fe_newsletter_query_advertisements($language = 'en', $limit = 4) {
-  $query = db_select('node', n)
+  $query = db_select('node', 'n')
     ->fields('n', array('nid'))
     ->condition('n.type', 'advertisement')
     ->condition('n.status', 1)
