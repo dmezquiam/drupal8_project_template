@@ -59,7 +59,7 @@ function ijnet_newsletter_callback($nid) {
   }
 
   // TODO: delivery callback
-  $parameters = _ijnet_newsletter_archive_theme_parameters($nid);
+  $parameters = _ijnet_newsletter_content_theme_parameters($nid);
   $theme = theme('ijnet_newsletter', $parameters);
 
   print($theme);
@@ -67,7 +67,7 @@ function ijnet_newsletter_callback($nid) {
 
 function ijnet_newsletter_archive_callback() {
   $nid = _ijnet_newsletter_get_last_newsletter_nid();
-  $parameters = _ijnet_newsletter_archive_theme_parameters($nid);
+  $parameters = _ijnet_newsletter_content_theme_parameters($nid);
   $theme = theme('ijnet_newsletter_content', $parameters);
 
   return $theme;
@@ -75,7 +75,7 @@ function ijnet_newsletter_archive_callback() {
 
 function ijnet_newsletter_archive_by_nid_callback($nid = null) {
   if (node_load($nid)) {
-    $parameters = _ijnet_newsletter_archive_theme_parameters($nid);
+    $parameters = _ijnet_newsletter_content_theme_parameters($nid);
     $theme = theme('ijnet_newsletter_content', $parameters);
 
     return $theme;
@@ -83,7 +83,7 @@ function ijnet_newsletter_archive_by_nid_callback($nid = null) {
   drupal_goto('email-bulletin-archive');
 }
 
-function _ijnet_newsletter_archive_theme_parameters($nid) {
+function _ijnet_newsletter_content_theme_parameters($nid) {
   $node = node_load($nid);
   $logo = _fe_social_get_ijnet_logo_by_lang($node->language);
   $social_media_items = _fe_social_get_social_media_items($node->language);
@@ -434,7 +434,8 @@ function fe_newsletter_content_form($form, &$form_state) {
   $nid = arg(1);
   $node = node_load($nid);
   $language = $node->language;
-  $newsletter_content = theme('ijnet_newsletter', array('node' => $node));
+  $parameters = _ijnet_newsletter_content_theme_parameters($nid);
+  $newsletter_content = theme('ijnet_newsletter_content', $parameters);
   $newsletter_link = 
     '<div id="newsletter-link"><a href="' . 
     url('email-bulletin/' .  $nid) . 
