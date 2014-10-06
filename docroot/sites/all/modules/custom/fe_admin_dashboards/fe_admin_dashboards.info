@@ -41,6 +41,7 @@ features[page_manager_pages][] = dashboard_nodes_banners
 features[page_manager_pages][] = dashboard_nodes_basic_pages
 features[page_manager_pages][] = dashboard_nodes_bulletin_emails
 features[page_manager_pages][] = dashboard_nodes_chats
+features[page_manager_pages][] = dashboard_nodes_comments
 features[page_manager_pages][] = dashboard_nodes_news
 features[page_manager_pages][] = dashboard_nodes_opportunities
 features[page_manager_pages][] = dashboard_nodes_videos
