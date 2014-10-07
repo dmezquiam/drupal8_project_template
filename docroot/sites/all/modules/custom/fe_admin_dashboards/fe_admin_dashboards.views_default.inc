@@ -6280,7 +6280,7 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['fields']['field_screen_name']['field'] = 'field_screen_name';
   $handler->display->display_options['fields']['field_screen_name']['label'] = '';
   $handler->display->display_options['fields']['field_screen_name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_screen_name']['alter']['path'] = 'user/[name]';
+  $handler->display->display_options['fields']['field_screen_name']['alter']['path'] = 'users/[name]';
   $handler->display->display_options['fields']['field_screen_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_screen_name']['empty'] = '[name]';
   /* Field: User: Edit link */
