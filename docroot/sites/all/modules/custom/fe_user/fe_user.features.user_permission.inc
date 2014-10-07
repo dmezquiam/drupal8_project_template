@@ -1765,6 +1765,8 @@ function fe_user_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
     ),
     'module' => 'comment',
   );
