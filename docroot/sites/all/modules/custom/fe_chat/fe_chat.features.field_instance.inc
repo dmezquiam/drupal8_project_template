@@ -218,6 +218,8 @@ function fe_chat_field_default_field_instances() {
         'manualcrop_inline_crop' => FALSE,
         'manualcrop_instant_crop' => FALSE,
         'manualcrop_instant_preview' => TRUE,
+        'manualcrop_keyboard' => TRUE,
+        'manualcrop_maximize_default_crop_area' => FALSE,
         'manualcrop_require_cropping' => array(),
         'manualcrop_styles_list' => array(),
         'manualcrop_styles_mode' => 'exclude',

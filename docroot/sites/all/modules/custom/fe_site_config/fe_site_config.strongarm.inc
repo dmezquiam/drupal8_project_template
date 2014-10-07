@@ -91,5 +91,21 @@ function fe_site_config_strongarm() {
   );
   $export['lang_dropdown_language_content'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'manualcrop';
+  $strongarm->value = array(
+    'cache_control' => 1,
+  );
+  $export['manualcrop'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'manualcrop_cache_control';
+  $strongarm->value = TRUE;
+  $export['manualcrop_cache_control'] = $strongarm;
+
   return $export;
 }

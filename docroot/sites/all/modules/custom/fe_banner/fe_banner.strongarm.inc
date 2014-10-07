@@ -121,6 +121,20 @@ function fe_banner_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_banner';
+  $strongarm->value = '1';
+  $export['i18n_node_extended_banner'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_banner';
+  $strongarm->value = array();
+  $export['i18n_node_options_banner'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_banner';
   $strongarm->value = '1';
   $export['language_content_type_banner'] = $strongarm;
