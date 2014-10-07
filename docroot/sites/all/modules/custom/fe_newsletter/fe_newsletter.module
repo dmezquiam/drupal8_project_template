@@ -435,8 +435,8 @@ function fe_newsletter_content_form($form, &$form_state) {
   $node = node_load($nid);
   $language = $node->language;
   $parameters = _ijnet_newsletter_content_theme_parameters($nid);
-  $newsletter_content = theme('ijnet_newsletter_content', $parameters);
-  $newsletter_link = 
+  $newsletter_content = theme('ijnet_newsletter', $parameters);
+  $newsletter_link =
     '<div id="newsletter-link"><a href="' . 
     url('email-bulletin/' .  $nid) . 
     '" target="_blank">' . t("View the Newsletter") . '</a></div>';
