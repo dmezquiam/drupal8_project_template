@@ -28,6 +28,6 @@
     <div class="logo">
       <img src="sites/all/themes/ijnet/images/logo_fb.png" alt=""/> <a href="<?php print $url;?>"> <?php print t('International Journalist\'s Network (IJNET)'); ?> </a>
     </div>
-    <div class="fb-like" data-href="https://www.facebook.com/IJNet" data-width="<?php print $url;?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+    <div class="fb-like" data-href="<?php print $url;?>" data-width="<?php print $url;?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
   </div>
 </div>

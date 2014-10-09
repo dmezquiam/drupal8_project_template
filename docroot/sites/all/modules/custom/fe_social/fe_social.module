@@ -97,9 +97,10 @@ function fe_social_get_news_og_meta($node) {
   $description = isset($node->body[$lang]) ?
     strip_tags($node->body[$lang][0]['safe_summary']) :
     strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
+  $image_keys = array_keys($node->field_image);
   $image = isset($node->field_image[$lang]) ?
     file_create_url($node->field_image[$lang][0]['uri']) :
-    file_create_url($node->field_image[LANGUAGE_NONE][0]['uri']);
+    file_create_url($node->field_image[$image_keys[0]][0]['uri']);
 
   fe_social_add_og_meta_tags($title, $url, $description, $image);
 }

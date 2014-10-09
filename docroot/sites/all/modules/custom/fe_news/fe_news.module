@@ -216,8 +216,8 @@ function _fe_news_get_topics($nid = '') {
   $node = node_load($nid);
   $exclusion_list = array(913, 914, 915, 916, 917, 918, 919);
   global $language;
+  $tid = '';
   if (!empty($node->field_topic[$language->language])) {
-    $tid = '';
     foreach ($node->field_topic[$language->language] as $topic) {
       if (!in_array($topic['tid'], $exclusion_list)) {
         $tid = $topic['tid'];
