@@ -102,12 +102,14 @@
       // We hide the comments and links now so that we can render them later.
       hide($content['field_category']);
       hide($content['comments']);
+      hide($content['field_tags']);
       hide($content['links']);
       print render($content);
     ?>
   </div>
   <?php if ($page): ?>
     <div>
+      <?php print render($url_tags); ?>
       <a href="<?php print url('opportunities');?>" class="button-normal"><?php print t(' VIEW ALL OPPORTUNITIES '); ?></a>
     </div>
   <?php endif ?>

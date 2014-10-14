@@ -25,7 +25,67 @@ function fe_news_preprocess_node(&$variables) {
       array('rel' => 'canonical', 'href' => $href),
       TRUE
     );
+
+    $tags_url = redirect_tags($node->nid);
+    $variables['url_tags'] = $tags_url;
   }
+}
+
+
+function redirect_tags($nid = ''){
+  if ($nid == '') {
+    return '';
+  }
+
+  $tags = return_tags_array($nid);
+
+  if ($tags == '') {
+    return '';
+  }
+
+  $tags_markup = '<section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-inline clearfix view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items">';
+
+  $node = node_load($nid);
+
+  if ($node->type == 'news') {
+    $type = 'news';
+  }   
+  else if ($node->type == 'training_opportunity') {
+    $type = 'opportunities';
+  }  
+
+  foreach ($tags as $tid => $name) {
+    $url = '/' . $type . '/' . $tid ;
+    $tags_markup .=  '<li class="field-item-odd">' . '<a href="' . $url . '" >' . $name . '</a>';
+  }
+
+  $tags_markup  .= '</ul></section>';
+  
+  return $tags_markup;
+}
+
+
+//Devuelve un array con los tags del nodo: tid, name
+function return_tags_array($nid = ''){
+//  if ($nid == '') {
+//    return '';
+//  }
+
+  $node = node_load($nid);
+
+  if (isset($language->language)){
+    $array_original = $node->field_tags[$language->language];
+  } else {
+    $array_original = $node->field_tags[LANGUAGE_NONE];
+  }
+
+  foreach ($array_original as $tag) {
+    $term = taxonomy_term_load($tag['tid']);
+    $array_tags[$tag['tid']] = $term->name;
+  }
+
+  return $array_tags;
+
 }
 
 /**

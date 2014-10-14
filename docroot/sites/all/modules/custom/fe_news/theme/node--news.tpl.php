@@ -85,7 +85,8 @@
 
   <div class="content"<?php print $content_attributes; ?>>
     <?php hide($content['comments']);
-      hide($content['links']); ?>
+      hide($content['links']);
+      hide($content['field_tags']); ?>
     <?php if (!$page) : ?>
 
       <a href="<?php print $node_url; ?>"><?php print render($content['field_image']); hide($content['field_image']);?></a>
@@ -116,6 +117,7 @@
         <?php print $author; ?> | <?php print $date; ?>
       </div>
       <?php print render($content); ?>
+      <?php print render($url_tags); ?>
     <?php endif ?>
   </div>
 
