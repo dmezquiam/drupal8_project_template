@@ -6008,7 +6008,8 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<a href="/en/admin/structure/taxonomy/region/add" class="button">Add region</a>';
+  $handler->display->display_options['header']['area']['content'] = '<a href="/en/admin/structure/taxonomy/region/add" class="button">Add region</a>
+<a href="/en/admin/dashboard/taxonomies/manager" class="button">Taxonomy manager</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Taxonomy term: Parent term */
@@ -6089,7 +6090,8 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<a href="/en/admin/structure/taxonomy/topic/add" class="button">Add topic</a>';
+  $handler->display->display_options['header']['area']['content'] = '<a href="/en/admin/structure/taxonomy/topic/add" class="button">Add topic</a>
+<a href="/en/admin/dashboard/taxonomies/manager/topics" class="button">Taxonomy manager</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -6163,7 +6165,8 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<a href="/en/admin/structure/taxonomy/tags/add" class="button">Add tag</a>';
+  $handler->display->display_options['header']['area']['content'] = '<a href="/en/admin/structure/taxonomy/tags/add" class="button">Add tag</a>
+<a href="/en/admin/dashboard/taxonomies/manager/tags" class="button">Taxonomy manager</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
