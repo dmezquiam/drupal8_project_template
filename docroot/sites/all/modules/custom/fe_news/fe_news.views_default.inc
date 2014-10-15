@@ -733,7 +733,7 @@ return;';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Field: Area of Interest (field_topic) */
+  /* Filter criterion: Field: Topic (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -1258,7 +1258,7 @@ return;';
   /* Display: About the Author */
   $handler = $view->new_display('block', 'About the Author', 'about_the_author');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'About the Author';
+  $handler->display->display_options['title'] = 'About the author';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'block-about-author';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1326,7 +1326,7 @@ return;';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="/user/[uid]" class="button-tiny">VIEW PROFILE</a>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="../user/[uid]" class="button-tiny">VIEW PROFILE</a>';
   $handler->display->display_options['fields']['nothing']['element_type'] = '0';
   $handler->display->display_options['fields']['nothing']['element_label_type'] = '0';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
