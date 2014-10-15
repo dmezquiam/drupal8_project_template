@@ -107,5 +107,40 @@ function fe_site_config_strongarm() {
   $strongarm->value = TRUE;
   $export['manualcrop_cache_control'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_advertisement_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_advertisement_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_chat_pattern';
+  $strongarm->value = 'chat/[node:title]';
+  $export['pathauto_node_chat_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_news_pattern';
+  $strongarm->value = 'blog/[node:title]';
+  $export['pathauto_node_news_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_training_opportunity_pattern';
+  $strongarm->value = 'opportunities/[node:title]';
+  $export['pathauto_node_training_opportunity_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_video_pattern';
+  $strongarm->value = 'video/[node:title]';
+  $export['pathauto_node_video_pattern'] = $strongarm;
+
   return $export;
 }
