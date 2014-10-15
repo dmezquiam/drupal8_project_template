@@ -420,6 +420,15 @@ function fe_user_user_default_permissions() {
     'module' => 'locale',
   );
 
+  // Exported permission: 'administer manualcrop settings'.
+  $permissions['administer manualcrop settings'] = array(
+    'name' => 'administer manualcrop settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'manualcrop',
+  );
+
   // Exported permission: 'administer media'.
   $permissions['administer media'] = array(
     'name' => 'administer media',
@@ -1909,6 +1918,19 @@ function fe_user_user_default_permissions() {
     'name' => 'use ipe with page manager',
     'roles' => array(),
     'module' => 'panels',
+  );
+
+  // Exported permission: 'use manualcrop'.
+  $permissions['use manualcrop'] = array(
+    'name' => 'use manualcrop',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
+    ),
+    'module' => 'manualcrop',
   );
 
   // Exported permission: 'use page manager'.
