@@ -25,10 +25,21 @@ function fe_videos_context_default_contexts() {
         'node_form' => '0',
       ),
     ),
+    'path' => array(
+      'values' => array(
+        'videos/*' => 'videos/*',
+      ),
+    ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'fe_news-field_topic_block' => array(
+          'module' => 'fe_news',
+          'delta' => 'field_topic_block',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
         'jsonblocks-social-block' => array(
           'module' => 'jsonblocks',
           'delta' => 'social-block',

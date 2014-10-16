@@ -129,7 +129,7 @@ function fe_videos_field_default_field_instances() {
           'description_position' => 'bottom',
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'item_video_list_img',
         ),
         'type' => 'video_embed_field_thumbnail',
