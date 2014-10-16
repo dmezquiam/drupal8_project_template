@@ -43,6 +43,7 @@ features[field_instance][] = node-video-field_video
 features[field_instance][] = node-video-title_field
 features[node][] = video
 features[page_manager_pages][] = videos_landing
+features[user_role][] = editor
 features[variable][] = comment_anonymous_video
 features[variable][] = comment_default_mode_video
 features[variable][] = comment_default_per_page_video

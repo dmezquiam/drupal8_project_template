@@ -39,8 +39,9 @@ function fe_videos_field_default_field_instances() {
     'label' => 'Body',
     'required' => 0,
     'settings' => array(
-      'display_summary' => 0,
+      'display_summary' => 1,
       'entity_translation_sync' => FALSE,
+      'summary_display' => 'default',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -48,6 +49,10 @@ function fe_videos_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 20,
         'summary_display' => 'default',
         'summary_rows' => 5,
@@ -65,13 +70,9 @@ function fe_videos_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-        ),
-        'type' => 'taxonomy_term_reference_link',
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -165,7 +166,7 @@ function fe_videos_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',

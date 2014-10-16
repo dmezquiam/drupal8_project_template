@@ -37,7 +37,7 @@ function fe_opportunity_preprocess_node(&$vars) {
     $topics = module_invoke('fe_news', 'block_view', 'field_topic_block');
     $vars['topics'] = $topics['content'];
     
-    $tags_url = redirect_tags($node->nid);
+    $tags_url = fe_news_redirect_tags($node->nid);
     $vars['url_tags'] = $tags_url;
   }
 }

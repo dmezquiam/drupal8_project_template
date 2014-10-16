@@ -94,6 +94,10 @@ function fe_videos_preprocess_node(&$vars) {
     if (strlen($vars['title']) > 100) {
       $vars['title'] = substr($vars['title'], 0, 100) . '...';
     }
+
+    ///////////////
+    $topics = module_invoke('fe_news', 'block_view', 'field_topic_block');
+    $vars['topics'] = $topics['content'];
   }
 }
 

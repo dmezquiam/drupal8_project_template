@@ -26,20 +26,20 @@ function fe_news_preprocess_node(&$variables) {
       TRUE
     );
 
-    $tags_url = redirect_tags($node->nid);
+    $tags_url = fe_news_redirect_tags($node->nid);
     $variables['url_tags'] = $tags_url;
   }
 }
 
 
-function redirect_tags($nid = ''){
+function fe_news_redirect_tags($nid = ''){
   if ($nid == '') {
     return '';
   }
 
-  $tags = return_tags_array($nid);
+  $tags = _fe_news_return_tags_array($nid);
 
-  if ($tags == '') {
+  if (empty($tags)) {
     return '';
   }
 
@@ -52,7 +52,7 @@ function redirect_tags($nid = ''){
   }   
   else if ($node->type == 'training_opportunity') {
     $type = 'opportunities';
-  }  
+  } else return '';
 
   foreach ($tags as $tid => $name) {
     $url = '/' . $type . '/' . $tid ;
@@ -66,26 +66,26 @@ function redirect_tags($nid = ''){
 
 
 //Devuelve un array con los tags del nodo: tid, name
-function return_tags_array($nid = ''){
-//  if ($nid == '') {
-//    return '';
-//  }
+function _fe_news_return_tags_array($nid = ''){
+  global $language;
 
   $node = node_load($nid);
 
-  if (isset($language->language)){
-    $array_original = $node->field_tags[$language->language];
-  } else {
-    $array_original = $node->field_tags[LANGUAGE_NONE];
+  $tags = array();
+  if (isset($node->field_tags[$language->language])) {
+    $tags = $node->field_tags[$language->language];
+  }
+  elseif (isset($node->field_tags[LANGUAGE_NONE])) {
+    $tags = $node->field_tags[LANGUAGE_NONE];
   }
 
-  foreach ($array_original as $tag) {
+  $result = array();
+  foreach ($tags as $tag) {
     $term = taxonomy_term_load($tag['tid']);
-    $array_tags[$tag['tid']] = $term->name;
+    $result[$tag['tid']] = $term->name;
   }
 
-  return $array_tags;
-
+  return $result;
 }
 
 /**
@@ -230,14 +230,39 @@ function _fe_news_get_author($nid) {
 
   return $author;
 }
+
 /**
  * Implements hook_form_alter()
  */
-
 function fe_news_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'comment_node_news_form') {
     hide($form['author']);
+  } elseif ($form_id == 'lang_dropdown_form') {
+    $path = explode('/', current_path());
+    if (($path[0] == 'news') && (is_numeric($path[1]))) {
+      $tid = $path[1];
+      $tids_by_language = _fe_news_get_tids_by_language($tid);
+      $languages = language_list();
+      foreach ($languages as $lang_code => $language) {
+        $form[$lang_code]['#default_value'] = 
+          '/' . $lang_code . '/news/' . $tids_by_language[$lang_code];
+      }
+    }
   }
+}
+
+/**
+ */
+function _fe_news_get_tids_by_language($tid) {
+  $tids_by_language = array();
+  $languages = language_list();
+  foreach($languages as $lang_code => $language) {
+    $term = taxonomy_term_load($tid);
+    $term_by_language = i18n_taxonomy_term_get_translation($term, $lang_code);
+    $tids_by_language[$lang_code] = $term_by_language->tid;
+  }
+
+  return $tids_by_language;
 }
 
 /**
@@ -304,7 +329,10 @@ function _fe_news_get_topics($nid = '') {
     }   
     else if ($node->type == 'training_opportunity') {
       $type = 'opportunities';
-    }   
+    }
+    else if ($node->type == 'video') {
+      $type = 'videos';
+    }
     $url = '/' . $language->language . '/' . $type . '/' . $tid;
     return theme('news_topic_block', array('name' => $name, 'url' => $url));
   } 
