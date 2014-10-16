@@ -217,32 +217,6 @@ function fe_news_views_default_views() {
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Has taxonomy term ID */
-  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['tid']['default_argument_options']['code'] = '$tid = arg(3);
-if ($tid && is_numeric($tid)) {
-  return $tid;
-}
-else if ($tid) {
-  $term = taxonomy_get_term_by_name($tid);
-  if (!empty($term)) {
-    $tid = array_shift($term)->tid;
-    return $tid;
-  }
-}
-return;';
-  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
-    'topic' => 'topic',
-  );
-  $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = TRUE;
-  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -311,7 +285,7 @@ return;';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'item_list_img',
+    'image_style' => 'news_wide',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
@@ -733,7 +707,7 @@ return;';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Field: Topic (field_topic) */
+  /* Filter criterion: Field: Area of Interest (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
