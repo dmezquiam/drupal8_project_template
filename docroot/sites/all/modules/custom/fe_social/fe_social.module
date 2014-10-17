@@ -399,10 +399,47 @@ function fe_social_add_og_meta_tags($title, $url, $description, $image) {
       '#tag' => 'meta',
       '#attributes' => array(
         'property' => $hdr['property'],
-        'content' => $hdr['content']
+        'content' => trim($hdr['content'])
       ),
     );
     drupal_add_html_head($og_tag, $key);
+  }
+
+  $tw_meta = array(
+    'fe_social_tw_card' => array(
+      'name' => 'twitter:card',
+      'content' => 'summary',
+    ),
+    'fe_social_tw_site'=> array(
+      'name' =>'twitter:site',
+      'content' => t('@IJNet'),
+    ),
+    'fe_social_tw_title' => array(
+      'name' => 'twitter:title',
+      'content' => $title,
+    ),
+    'fe_social_tw_url' => array(
+      'name' => 'twitter:url',
+      'content' => $url,
+    ),
+    'fe_social_tw_desc' => array(
+      'name' => 'twitter:description',
+      'content' => $description,
+    ),
+    'fe_social_tw_img' => array(
+      'name' => 'twitter:image',
+      'content' => $image,
+    ),
+  );
+  foreach($tw_meta as $key => $hdr) {
+    $tw_tag = array(
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'name' => $hdr['name'],
+        'content' => trim($hdr['content'])
+      ),
+    );
+    drupal_add_html_head($tw_tag, $key);
   }
 }
 
