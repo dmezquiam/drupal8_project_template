@@ -195,7 +195,7 @@ function fe_staff_member_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<li class="clearfix">
   <div class="avatar">[field_image]</div>
-  <p><strong class="big">[title]</strong>, <em>[field_job_title]</em> - [field_bio]</p>
+  <p><strong class="big">[title]</strong>, <em>[field_job_title]</em> [field_bio]</p>
 </li>';
   $handler->display->display_options['fields']['nothing']['alter']['preserve_tags'] = '<p><li><div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
