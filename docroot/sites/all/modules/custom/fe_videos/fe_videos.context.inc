@@ -25,11 +25,6 @@ function fe_videos_context_default_contexts() {
         'node_form' => '0',
       ),
     ),
-    'path' => array(
-      'values' => array(
-        'videos/*' => 'videos/*',
-      ),
-    ),
   );
   $context->reactions = array(
     'block' => array(
@@ -61,6 +56,44 @@ function fe_videos_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Video');
   $export['video_detail'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'video_topics';
+  $context->description = '';
+  $context->tag = 'Video';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'videos/*' => 'videos/*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'jsonblocks-social-block' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'social-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'views-news-top_story' => array(
+          'module' => 'views',
+          'delta' => 'news-top_story',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Video');
+  $export['video_topics'] = $context;
 
   return $export;
 }

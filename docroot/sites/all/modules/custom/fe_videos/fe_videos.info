@@ -20,6 +20,7 @@ dependencies[] = text
 dependencies[] = video_embed_field
 dependencies[] = views
 features[context][] = video_detail
+features[context][] = video_topics
 features[ctools][] = context:context:3
 features[ctools][] = field_group:field_group:1
 features[ctools][] = page_manager:pages_default:1
