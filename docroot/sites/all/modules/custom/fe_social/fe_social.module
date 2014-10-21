@@ -469,5 +469,50 @@ function fe_social_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_block_form') {
     $form['search_block_form']['#attributes']['placeholder'] =
       t('Search the site...');
+  } elseif ($form_id == 'lang_dropdown_form') {
+    $path = explode('/', current_path());
+    $tid = isset($path[1]) ? $path[1] : null;
+    $languages = language_list();
+    if (($path[0] == 'news') && (is_numeric($tid))) {
+      $content_type = 'news';
+      _fe_social_update_language_form_redirects($form, $content_type, $tid);
+    } elseif (($path[0] == 'opportunities') && (is_numeric($tid))) {
+      $content_type = 'opportunities';
+      _fe_social_update_language_form_redirects($form, $content_type, $tid);
+    } elseif (($path[0] == 'videos') && (is_numeric($tid))) {
+      $content_type = 'videos';
+      _fe_social_update_language_form_redirects($form, $content_type, $tid);
+    }
   }
 }
+
+/**
+ */
+function _fe_social_update_language_form_redirects(&$form, $content_type, $tid) {
+  $tids_by_language = _fe_social_get_tids_by_language($tid);
+  $languages = language_list();
+  $content_type = $content_type == 'videos' ?
+    $content_type . 'topic' :
+    $content_type;
+  foreach ($languages as $lang_code => $language) {
+    $form[$lang_code]['#default_value'] =
+      '/' . $lang_code . '/' . $content_type . '/' . $tids_by_language[$lang_code];
+  }
+}
+
+/**
+ */
+function _fe_social_get_tids_by_language($tid) {
+  $tids_by_language = array();
+  $languages = language_list();
+  $term = taxonomy_term_load($tid);
+  foreach($languages as $lang_code => $language) {
+    $term_by_language = i18n_taxonomy_term_get_translation($term, $lang_code);
+    $tids_by_language[$lang_code] = $term_by_language ?
+      $term_by_language->tid :
+      $term->tid;
+  }
+
+  return $tids_by_language;
+}
+
