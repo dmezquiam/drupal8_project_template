@@ -7,7 +7,7 @@
 include_once 'fe_newsletter.features.inc';
 
 
-define('FE_NEWSLETTER_MAX_ARTICLES',    20);
+define('FE_NEWSLETTER_MAX_ARTICLES',    100);
 
 /**
  * Implements hook_menu()
