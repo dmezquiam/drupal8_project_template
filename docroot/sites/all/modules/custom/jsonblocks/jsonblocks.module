@@ -136,3 +136,11 @@ function json_blocks_view_facebook_like() {
   return array('content' => theme('facebook-like', array('url' => $url)));
 }
 
+function jsonblocks_preprocess_page(&$vars) {
+  drupal_add_js(
+    drupal_get_path('module', 'jsonblocks') . '/js/latest-post.js',
+    'file'
+  );
+
+}
+
