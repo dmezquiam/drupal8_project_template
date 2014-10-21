@@ -237,32 +237,7 @@ function _fe_news_get_author($nid) {
 function fe_news_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'comment_node_news_form') {
     hide($form['author']);
-  } elseif ($form_id == 'lang_dropdown_form') {
-    $path = explode('/', current_path());
-    if (($path[0] == 'news') && (is_numeric($path[1]))) {
-      $tid = $path[1];
-      $tids_by_language = _fe_news_get_tids_by_language($tid);
-      $languages = language_list();
-      foreach ($languages as $lang_code => $language) {
-        $form[$lang_code]['#default_value'] = 
-          '/' . $lang_code . '/news/' . $tids_by_language[$lang_code];
-      }
-    }
   }
-}
-
-/**
- */
-function _fe_news_get_tids_by_language($tid) {
-  $tids_by_language = array();
-  $languages = language_list();
-  foreach($languages as $lang_code => $language) {
-    $term = taxonomy_term_load($tid);
-    $term_by_language = i18n_taxonomy_term_get_translation($term, $lang_code);
-    $tids_by_language[$lang_code] = $term_by_language->tid;
-  }
-
-  return $tids_by_language;
 }
 
 /**
