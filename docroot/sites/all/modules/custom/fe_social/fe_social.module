@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Social feature.
@@ -6,16 +7,81 @@
 
 include_once 'fe_social.features.inc';
 
-function fe_social_preprocess_page(&$vars) {
-  if (isset($vars['node'])) {
-    if ($vars['node']->type == 'news') {
+/**
+ * Implements hook_preprocess_node().
+ */
+function fe_social_preprocess_node(&$vars) {
 
-      $script = array(
-        '#type' => 'markup',
-        '#markup' => '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-543e9b6e138d6797" async></script>',
-      );
-      drupal_add_html_head($script, 'fe_social_addthis_script');
+  // Solo agrego los meta en la pagina de detalle
+  if ($vars['page'] != TRUE) {
+    return;
+  }
 
+  $node = $vars['node'];
+
+  if ($node->type == 'news') {
+    fe_social_get_news_og_meta($node);
+  }
+  elseif ($node->type == 'training_opportunity') {
+    fe_social_get_training_opportunity_og_meta($node);
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function fe_social_node_view($node, $view_mode, $langcode) {
+  $a = array('news', 'video', 'training_opportunity');
+  if ((in_array($node->type, $a)) && ($view_mode == 'full')) {
+    $script = array(
+      '#type' => 'markup',
+      '#markup' => '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-543e9b6e138d6797" async></script>',
+    );
+    drupal_add_html_head($script, 'fe_social_addthis_script');
+  }
+}
+
+/**
+ * Implements hook_views_query_alter()
+ */
+function fe_social_views_query_alter(&$view, &$query) {
+  $twitter_accounts = _fe_social_get_twitter_accounts();
+
+  if ($view->name == 'twitter' && $view->current_display == 'tweets_home_block') {
+    global $language;
+    $lang = $language->language;
+    if (($lang != 'en') && (array_key_exists($lang, $twitter_accounts))) {
+      foreach ($query->where[1]['conditions'] as $index => $condition) {
+        if ($query->where[1]['conditions'][$index]['field'] == 'twitter.screen_name') {
+          $query->where[1]['conditions'][$index]['value'] = $twitter_accounts[$lang];
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter()
+ */
+function fe_social_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'search_block_form') {
+    $form['search_block_form']['#attributes']['placeholder'] = t('Search the site...');
+  }
+  elseif ($form_id == 'lang_dropdown_form') {
+    $path = explode('/', current_path());
+    $tid = isset($path[1]) ? $path[1] : NULL;
+    if (($path[0] == 'news') && (is_numeric($tid))) {
+      $content_type = 'news';
+      _fe_social_update_language_form_redirects($form, $content_type, $tid);
+    }
+    elseif (($path[0] == 'opportunities') && (is_numeric($tid))) {
+      $content_type = 'opportunities';
+      _fe_social_update_language_form_redirects($form, $content_type, $tid);
+    }
+    elseif (($path[0] == 'videos') && (is_numeric($path[2]))) {
+      $tid = $path[2];
+      $content_type = 'videos';
+      _fe_social_update_language_form_redirects($form, $content_type, $tid);
     }
   }
 }
@@ -23,9 +89,7 @@ function fe_social_preprocess_page(&$vars) {
 function _fe_social_get_twitter_handle() {
   global $language;
   $twitter_accounts = _fe_social_get_twitter_accounts();
-  $twitter_handle = array_key_exists($language->language, $twitter_accounts) ?
-    $twitter_accounts[$language->language] :
-    $twitter_accounts['en'];
+  $twitter_handle = array_key_exists($language->language, $twitter_accounts) ? $twitter_accounts[$language->language] : $twitter_accounts['en'];
 
   return $twitter_handle;
 }
@@ -43,39 +107,13 @@ function _fe_social_get_twitter_accounts() {
   return $twitter_accounts;
 }
 
-/**
- * Implements hook_preprocess_node().
- */
-function fe_social_preprocess_node(&$vars) {
-
-  // Solo agrego los meta en la pagina de detalle
-  if ($vars['page'] != TRUE)  {
-    return;
-  }
-
-  $node = $vars['node'];
-
-  if ($node->type == 'news') {
-    fe_social_get_news_og_meta($node);
-  }
-  elseif ($node->type == 'training_opportunity') {
-    fe_social_get_training_opportunity_og_meta($node);
-  }
-}
-
 function fe_social_get_news_og_meta($node) {
   $lang = $node->language;
-  $title = isset($node->title_field[$lang]) ?
-    $node->title_field[$lang][0]['safe_value'] :
-    $node->title_field[LANGUAGE_NONE][0]['safe_value'];
+  $title = isset($node->title_field[$lang]) ? $node->title_field[$lang][0]['safe_value'] : $node->title_field[LANGUAGE_NONE][0]['safe_value'];
   $url = url('node/' . $node->nid, array('absolute' => TRUE));
-  $description = isset($node->body[$lang]) ?
-    strip_tags($node->body[$lang][0]['safe_summary']) :
-    strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
+  $description = isset($node->body[$lang]) ? strip_tags($node->body[$lang][0]['safe_summary']) : strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
   $image_keys = array_keys($node->field_image);
-  $image = isset($node->field_image[$lang]) ?
-    file_create_url($node->field_image[$lang][0]['uri']) :
-    file_create_url($node->field_image[$image_keys[0]][0]['uri']);
+  $image = isset($node->field_image[$lang]) ? file_create_url($node->field_image[$lang][0]['uri']) : file_create_url($node->field_image[$image_keys[0]][0]['uri']);
 
   fe_social_add_og_meta_tags($title, $url, $description, $image);
 }
@@ -84,9 +122,7 @@ function fe_social_get_training_opportunity_og_meta($node) {
   $lang = $node->language;
   $title = $node->title;
   $url = url('node/' . $node->nid, array('absolute' => TRUE));
-  $description = isset($node->body[$lang]) ?
-    strip_tags($node->body[$lang][0]['safe_summary']) :
-    strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
+  $description = isset($node->body[$lang]) ? strip_tags($node->body[$lang][0]['safe_summary']) : strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
   $logo = _fe_social_get_ijnet_logo_by_lang($lang);
   $image = drupal_realpath($logo['path']);
 
@@ -94,9 +130,7 @@ function fe_social_get_training_opportunity_og_meta($node) {
 }
 
 function _fe_social_get_ijnet_logo_by_lang($language = 'en') {
-  $ijnet_logo_name = ($language == 'en') ?
-    'logo.png' :
-    'logo_' . str_replace('-', '_', $language) . '.png';
+  $ijnet_logo_name = ($language == 'en') ? 'logo.png' : 'logo_' . str_replace('-', '_', $language) . '.png';
   $ijnet_logo_path = drupal_get_path('theme', 'ijnet') . '/' . $ijnet_logo_name;
   $logo = array(
     'path' => $ijnet_logo_path,
@@ -122,7 +156,7 @@ function _fe_social_get_social_media_items($language = 'en') {
         'url' => 'http://twitter.com/ijnet',
         'class' => 'social-icon-twitter',
         'image' => array(
-          'path'=> $images_path . 'social_02.png',
+          'path' => $images_path . 'social_02.png',
           'alt' => 'twitter',
         ),
       ),
@@ -135,7 +169,7 @@ function _fe_social_get_social_media_items($language = 'en') {
         ),
       ),
       'linkedin' => array(
-        'url' => 'http://www.linkedin.com/groups/International-Journalists-Network-IJNet-3734352',
+        'url' => 'https://www.linkedin.com/company/5326144?trk=tyah&trkInfo=tarId%3A1409937031161%2Ctas%3Ainternational%20journalists%27%20%2Cidx%3A3-1-4',
         'class' => 'social-icon-in',
         'image' => array(
           'path' => $images_path . 'social_04.png',
@@ -157,7 +191,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'path' => $images_path . 'social_06.png',
           'alt' => 'rss',
         ),
-      )
+      ),
     ),
     'es' => array(
       'facebook' => array(
@@ -199,7 +233,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'path' => $images_path . 'social_06.png',
           'alt' => 'rss',
         ),
-      )
+      ),
     ),
     'ru' => array(
       'facebook' => array(
@@ -233,7 +267,7 @@ function _fe_social_get_social_media_items($language = 'en') {
           'path' => $images_path . 'social_06.png',
           'alt' => 'rss',
         ),
-      )
+      ),
     ),
     'ar' => array(
       'facebook' => array(
@@ -375,6 +409,7 @@ function _fe_social_get_social_media_items($language = 'en') {
 
   return $items[$language];
 }
+
 function fe_social_add_og_meta_tags($title, $url, $description, $image) {
   $og_meta = array(
     'fe_social_og_title' => array(
@@ -393,13 +428,13 @@ function fe_social_add_og_meta_tags($title, $url, $description, $image) {
       'property' => 'og:image',
       'content' => $image,
     ),
-   );
-  foreach($og_meta as $key => $hdr) {
+  );
+  foreach ($og_meta as $key => $hdr) {
     $og_tag = array(
       '#tag' => 'meta',
       '#attributes' => array(
         'property' => $hdr['property'],
-        'content' => trim($hdr['content'])
+        'content' => trim($hdr['content']),
       ),
     );
     drupal_add_html_head($og_tag, $key);
@@ -410,8 +445,8 @@ function fe_social_add_og_meta_tags($title, $url, $description, $image) {
       'name' => 'twitter:card',
       'content' => 'summary',
     ),
-    'fe_social_tw_site'=> array(
-      'name' =>'twitter:site',
+    'fe_social_tw_site' => array(
+      'name' => 'twitter:site',
       'content' => t('@IJNet'),
     ),
     'fe_social_tw_title' => array(
@@ -431,72 +466,25 @@ function fe_social_add_og_meta_tags($title, $url, $description, $image) {
       'content' => $image,
     ),
   );
-  foreach($tw_meta as $key => $hdr) {
+  foreach ($tw_meta as $key => $hdr) {
     $tw_tag = array(
       '#tag' => 'meta',
       '#attributes' => array(
         'name' => $hdr['name'],
-        'content' => trim($hdr['content'])
+        'content' => trim($hdr['content']),
       ),
     );
     drupal_add_html_head($tw_tag, $key);
   }
 }
-
-/**
- * Implements hook_views_query_alter()
- */
-function fe_social_views_query_alter(&$view, &$query) {
-  $twitter_accounts = _fe_social_get_twitter_accounts();
-
-  if ($view->name == 'twitter' && $view->current_display == 'tweets_home_block') {
-    global $language;
-    $lang = $language->language;
-    if (($lang != 'en') && (array_key_exists($lang, $twitter_accounts))) {
-      foreach($query->where[1]['conditions'] as $index => $condition) {
-        if ($query->where[1]['conditions'][$index]['field'] == 'twitter.screen_name') {
-          $query->where[1]['conditions'][$index]['value'] = $twitter_accounts[$lang];
-        }
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_form_alter()
- */
-function fe_social_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'search_block_form') {
-    $form['search_block_form']['#attributes']['placeholder'] =
-      t('Search the site...');
-  } elseif ($form_id == 'lang_dropdown_form') {
-    $path = explode('/', current_path());
-    $tid = isset($path[1]) ? $path[1] : null;
-    $languages = language_list();
-    if (($path[0] == 'news') && (is_numeric($tid))) {
-      $content_type = 'news';
-      _fe_social_update_language_form_redirects($form, $content_type, $tid);
-    } elseif (($path[0] == 'opportunities') && (is_numeric($tid))) {
-      $content_type = 'opportunities';
-      _fe_social_update_language_form_redirects($form, $content_type, $tid);
-    } elseif (($path[0] == 'videos') && (is_numeric($tid))) {
-      $content_type = 'videos';
-      _fe_social_update_language_form_redirects($form, $content_type, $tid);
-    }
-  }
-}
-
 /**
  */
 function _fe_social_update_language_form_redirects(&$form, $content_type, $tid) {
   $tids_by_language = _fe_social_get_tids_by_language($tid);
   $languages = language_list();
-  $content_type = $content_type == 'videos' ?
-    $content_type . 'topic' :
-    $content_type;
+  $content_type = $content_type == 'videos' ? $content_type . 'topic' : $content_type;
   foreach ($languages as $lang_code => $language) {
-    $form[$lang_code]['#default_value'] =
-      '/' . $lang_code . '/' . $content_type . '/' . $tids_by_language[$lang_code];
+    $form[$lang_code]['#default_value'] = '/' . $lang_code . '/' . $content_type . '/' . $tids_by_language[$lang_code];
   }
 }
 
@@ -506,13 +494,12 @@ function _fe_social_get_tids_by_language($tid) {
   $tids_by_language = array();
   $languages = language_list();
   $term = taxonomy_term_load($tid);
-  foreach($languages as $lang_code => $language) {
+  foreach ($languages as $lang_code => $language) {
     $term_by_language = i18n_taxonomy_term_get_translation($term, $lang_code);
-    $tids_by_language[$lang_code] = $term_by_language ?
-      $term_by_language->tid :
-      $term->tid;
+    $tids_by_language[$lang_code] = $term_by_language ? $term_by_language->tid : $term->tid;
   }
 
   return $tids_by_language;
 }
+
 
