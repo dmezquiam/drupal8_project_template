@@ -306,7 +306,7 @@ function _fe_news_get_topics($nid = '') {
       $type = 'opportunities';
     }
     else if ($node->type == 'video') {
-      $type = 'videos';
+      $type = 'videos/topic';
     }
     $url = '/' . $language->language . '/' . $type . '/' . $tid;
     return theme('news_topic_block', array('name' => $name, 'url' => $url));
