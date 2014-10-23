@@ -482,7 +482,7 @@ function fe_social_add_og_meta_tags($title, $url, $description, $image) {
 function _fe_social_update_language_form_redirects(&$form, $content_type, $tid) {
   $tids_by_language = _fe_social_get_tids_by_language($tid);
   $languages = language_list();
-  $content_type = $content_type == 'videos' ? $content_type . 'topic' : $content_type;
+  $content_type = $content_type == 'videos' ? $content_type . '/topic' : $content_type;
   foreach ($languages as $lang_code => $language) {
     $form[$lang_code]['#default_value'] = '/' . $lang_code . '/' . $content_type . '/' . $tids_by_language[$lang_code];
   }
