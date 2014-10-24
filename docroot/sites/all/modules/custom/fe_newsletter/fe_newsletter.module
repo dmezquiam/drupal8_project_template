@@ -550,7 +550,8 @@ function _fe_newsletter_cc_subscribe_list($contact) {
     'FirstName' => $contact->name,
   );
   $cc_contact = $cc->query_contacts($contact->email);
-  $cc_contact && ($cc_contact['Status'] == 'Removed') ?
+  $status = array('Removed', 'Do Not Mail');
+  $cc_contact && (in_array($cc_contact['Status'], $status)) ?
     $success = $cc->update_contact($cc_contact['id'], $contact->email, array($list_id), $fields) :
     $success = $cc->create_contact($contact->email, array($list_id), $fields) ;
 
@@ -736,4 +737,28 @@ function _fe_newsletter_query_advertisements($language = 'en', $limit = 4) {
   $advertisements = array_keys($result);
 
   return $advertisements;
+}
+
+/**
+ * Implements hook_user_update(&$edit, $account, $category)
+ */
+
+function fe_newsletter_user_update(&$edit, $account, $category) {
+  $new_select_subscribe = $edit['field_subscribe']['und'][0];
+  $contact = array(
+    'name' => $edit['name'],
+    'email' => $edit['mail'],
+  );
+  if ($new_select_subscribe['value'] == 1) {
+    $code_success = _fe_newsletter_cc_subscribe_contact((object)$contact);
+  }
+  elseif ($new_select_subscribe['value'] == 0) {
+    $code_success = _fe_newsletter_unsubscribed($contact['email']);
+  }
+}
+
+function _fe_newsletter_unsubscribed($email) {
+  $cc = _fe_newsletter_cc_get_connection();
+  $contact = $cc->query_contacts($email);
+  $success = $cc->delete_contact($contact['id']);
 }
