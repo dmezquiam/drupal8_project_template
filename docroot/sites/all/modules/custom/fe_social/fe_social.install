@@ -1,0 +1,13 @@
+<?php
+
+function fe_social_install() {}
+
+/**
+ * Updates module weight to get executed after custom_search module.
+ */
+function fe_social_update_7001() {
+  db_update('system')
+    ->fields(array('weight' => 110))
+    ->condition('name', 'fe_social')
+    ->execute();
+}
