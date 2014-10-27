@@ -7,13 +7,13 @@
               <td align="center" valign="top">
 
                 <!-- // Begin Template Header \\ -->
-                <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#eae9e9">
+                <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#eae9e9" >
                   <tr>
                     <td>
 
                       <!-- // Begin Module: Standard Header Image \\ -->
                       <a href="http://ijnet.org">
-                        <img src="<?php print(file_create_url($logo['path']))?>" style="display:block;max-width:600px;padding:10px 0;" border="0" alt="<?php print($logo['alt'])?>"/>
+                        <img src="<?php print(file_create_url($logo['path']))?>" style="display:block;max-width:600px;padding:10px 20px;" border="0" alt="<?php print($logo['alt'])?>"/>
                       </a>
                       <!-- // End Module: Standard Header Image \\ -->
 
@@ -22,11 +22,11 @@
                 </table>
                 <!-- // End Template Header \\ -->
 
-                <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#265775" style="background: #265775 url(<?php print(file_create_url($newsletter_images_path.'bar.jpg'))?>) bottom center repeat-x;">
+                <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#265775" style="background: #265775 url(<?php print(file_create_url($newsletter_images_path.'bar.jpg'))?>) bottom center repeat-x;"> 
                   <tr>
                     <td valign="top" width="280">
 
-                      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-left: 20px;">
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-left: 20px; padding-top: 10px;">
                         <tr>
                           <td valign="top">
 
