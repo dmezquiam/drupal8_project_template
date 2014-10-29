@@ -395,7 +395,9 @@ function _fe_newsletter_get_opportunity($nid) {
       $node->field_region[LANGUAGE_NONE][0]['tid'];
   }
   $opportunity->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
-
+  if ($opportunity->summary != NULL) {
+      $opportunity->summary = strip_tags($opportunity->summary);
+  }
   return $opportunity;
 }
 
