@@ -46,7 +46,7 @@
 
 <?php foreach ($social_media_items as $item) :?>
 
-                            <a href="<?php print($item['url'])?>" style="margin-left: 5px;">
+                            <a href="<?php print($item['url'])?>" style="margin-left: 5px; text-decoration: none; font-family: verdana, arial,sans-serif;">
                                 <img src="<?php print(file_create_url($item['image']['path']))?>"
                                 alt="<?php print($item['image']['alt'])?>"
                                 width="32" height="32" border="0" />
@@ -84,8 +84,8 @@
                 <table border="0" cellpadding="0" cellspacing="20" width="600">
                   <tr>
                     <td valign="top" width="600">
-                      <p  style="font-family: verdana, arial,sans-serif;"><?php print t('Published by the <a href="http://ijnet.org" style="font-family: verdana, arial,sans-serif; text-decoration: none;">International Center for Journalists</a>. For questions or concerns, <a href="http://ijnet.org/about/#contact">contact us</a>.');?></p>
-                      <p  style="font-family: verdana, arial,sans-serif;"><?php print t('Copyright © ' . date('Y') . ' International Center for Journalists. All rights reserved. IJNet material may not be reproduced or republished without express written permission.');?></p>
+                      <p><?php print t('Published by the <a href="http://ijnet.org"  style="font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;">International Center for Journalists</a>. For questions or concerns, <a href="http://ijnet.org/about/#contact" style="font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;">contact us</a>.');?></p>
+                      <p><?php print t('Copyright © ' . date('Y') . ' International Center for Journalists. All rights reserved. IJNet material may not be reproduced or republished without express written permission.');?></p>
                     </td>
                   </tr>
 
