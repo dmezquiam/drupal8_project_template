@@ -12,12 +12,16 @@
     td a{color: #28678f;font-weight: bold;text-decoration: none;}
     td a:hover{text-decoration: underline;}
   </style>
-
+  <?php if ($language == 'ar'):?>
+    <span style="direction:rtl">
+  <?php endif ?>
   <center>
 
     <?php print(theme('ijnet_newsletter_content', array('node' => $node, 'social_media_items' => $social_media_items, 'logo' => $logo)));?>
 
   </center>
-
+  <?php if ($language == 'ar'): ?>
+    </span>
+  <?php endif ?>
 </body>
 </html>

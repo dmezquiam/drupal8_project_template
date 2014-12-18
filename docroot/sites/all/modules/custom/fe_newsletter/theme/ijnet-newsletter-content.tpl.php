@@ -84,8 +84,12 @@
                 <table border="0" cellpadding="0" cellspacing="20" width="600">
                   <tr>
                     <td valign="top" width="600">
-                      <p><?php print t('Published by the <a href="http://ijnet.org"  style="font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;">International Center for Journalists</a>. For questions or concerns, <a href="http://ijnet.org/about/#contact" style="font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;">contact us</a>.');?></p>
-                      <p><?php print t('Copyright © ' . date('Y') . ' International Center for Journalists. All rights reserved. IJNet material may not be reproduced or republished without express written permission.');?></p>
+                      <p style="font-size: 12px; font-family: verdana, arial;">
+                      <?php $footer = t('Published by the !ijnet. For questions or concerns, !contact.', array('!ijnet' => '<a href="http://ijnet.org"  style="font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;">' . t('International Center for Journalists') . '</a>', '!contact' => '<a href="http://ijnet.org/about/#contact" style="font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;">' . t('contact us') . '</a>'));
+                        print ($footer);
+                      ?>
+                      </p>
+                      <p style="font-size: 12px; font-family: verdana, arial;"><?php print t('Copyright © ' . date('Y') . ' International Center for Journalists. All rights reserved. IJNet material may not be reproduced or republished without express written permission.');?></p>
                     </td>
                   </tr>
 
@@ -100,4 +104,3 @@
         </td>
       </tr>
     </table>
-

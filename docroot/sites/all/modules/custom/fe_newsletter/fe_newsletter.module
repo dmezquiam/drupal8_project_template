@@ -91,6 +91,7 @@ function _ijnet_newsletter_content_theme_parameters($nid) {
     'node' => $node,
     'social_media_items' => $social_media_items,
     'logo' => $logo,
+    'language' => $node->language,
   );
 
   return $parameters;
@@ -330,9 +331,9 @@ function _fe_newsletter_get_advertisement($nid) {
   if (empty($node->body)) {
     $advertisement->summary = NULL;
   } else {
-    $advertisement->summary = isset($node->body[$language]) ?
+    $advertisement->summary = strip_tags (isset($node->body[$language]) ?
       $node->body[$language][0]['safe_summary'] :
-      $node->body[LANGUAGE_NONE][0]['safe_summary'];
+      $node->body[LANGUAGE_NONE][0]['safe_summary']);
   }
   $advertisement->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
 
