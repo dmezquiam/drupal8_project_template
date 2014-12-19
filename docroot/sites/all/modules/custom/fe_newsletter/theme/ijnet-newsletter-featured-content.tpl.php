@@ -10,7 +10,7 @@
         </h4>
         <p style="padding:0;margin:0; font-family: verdana, arial,sans-serif;"><?php print($featured_content->summary)?></p>
 <?php if (isset($featured_content->author)) : ?>
-        <p style="font-size: 12px; font-family: verdana, arial,sans-serif;"> <?php print t('By');?> <?php print($featured_content->author)?>
+        <p style="font-size: 12px; font-family: verdana, arial,sans-serif;"> <?php print t('By');?> <?php print($featured_content->author)?></p>
 <?php endif; ?>
       </td>
     </tr>
