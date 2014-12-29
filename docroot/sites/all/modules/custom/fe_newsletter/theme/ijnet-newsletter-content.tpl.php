@@ -85,7 +85,7 @@
                   <tr>
                     <td valign="top" width="600">
                       <p style="font-size: 12px; font-family: verdana, arial;">
-                      <?php $footer = t('Published by the !ijnet. For questions or concerns, !contact.', array('!ijnet' => '<a href="http://ijnet.org"  style="font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;">' . t('International Center for Journalists') . '</a>', '!contact' => '<a href="http://ijnet.org/about/#contact" style="font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;">' . t('contact us') . '</a>'));
+                      <?php $footer = t('Published by the !ijnet. For questions or concerns, !contact.', array('!ijnet' => $link_site . t('International Center for Journalists') . '</a>', '!contact' => $link_contact . t('contact us') . '</a>'));
                         print ($footer);
                       ?>
                       </p>

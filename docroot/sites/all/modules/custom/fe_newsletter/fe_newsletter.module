@@ -205,7 +205,8 @@ function template_preprocess_ijnet_newsletter_content(&$vars) {
 
   $vars['newsletter_date'] = _fe_newsletter_format_date($node->created, $node->language);
   $vars['newsletter_images_path'] = drupal_get_path('module', 'fe_newsletter') . '/theme/images/';
-
+  $vars['link_site'] = '<a href="http://ijnet.org/' . $node->language . '"  style="font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;">';
+  $vars['link_contact'] ='<a href="http://ijnet.org/'. $node->language .'/about/#contact-site-form" style="font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;">';
   $vars['featured_contents'] = _fe_newsletter_get_featured_contents($node);
   $vars['advertisements'] = _fe_newsletter_get_advertisements($node);
   $vars['opportunities'] =_fe_newsletter_get_opportunities($node);
