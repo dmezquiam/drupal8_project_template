@@ -10,7 +10,7 @@
     <div class="avatar">
       <a alt="<?php print $author->name; ?>" title="<?php print $author->name; ?>" href=
       "https://twitter.com/<?php print $author->screen_name; ?>"><img src=
-      "<?php print $author->profile_image_url; ?>"></a>
+      "<?php print str_replace("http:", "https:",$author->profile_image_url); ?>"></a>
     </div>
     <div class="timestamp">
       <?php print $status->time_ago; ?>
