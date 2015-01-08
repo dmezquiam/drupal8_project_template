@@ -621,16 +621,11 @@ function fe_news_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<div class="buttons"><a href="/news" class="button-small">READ MORE ARTICLES</a></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content statistics: Total views */
-  $handler->display->display_options['sorts']['totalcount']['id'] = 'totalcount';
-  $handler->display->display_options['sorts']['totalcount']['table'] = 'node_counter';
-  $handler->display->display_options['sorts']['totalcount']['field'] = 'totalcount';
-  $handler->display->display_options['sorts']['totalcount']['order'] = 'DESC';
-  /* Sort criterion: Content statistics: Most recent view */
-  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
-  $handler->display->display_options['sorts']['timestamp']['table'] = 'node_counter';
-  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
-  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  /* Sort criterion: Content statistics: Views this month */
+  $handler->display->display_options['sorts']['monthcount']['id'] = 'monthcount';
+  $handler->display->display_options['sorts']['monthcount']['table'] = 'node_counter';
+  $handler->display->display_options['sorts']['monthcount']['field'] = 'monthcount';
+  $handler->display->display_options['sorts']['monthcount']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -654,15 +649,6 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content statistics: Most recent view */
-  $handler->display->display_options['filters']['timestamp']['id'] = 'timestamp';
-  $handler->display->display_options['filters']['timestamp']['table'] = 'node_counter';
-  $handler->display->display_options['filters']['timestamp']['field'] = 'timestamp';
-  $handler->display->display_options['filters']['timestamp']['operator'] = 'between';
-  $handler->display->display_options['filters']['timestamp']['value']['min'] = '- 30 days';
-  $handler->display->display_options['filters']['timestamp']['value']['max'] = 'now';
-  $handler->display->display_options['filters']['timestamp']['value']['value'] = 'now - 30 days';
-  $handler->display->display_options['filters']['timestamp']['value']['type'] = 'offset';
 
   /* Display: Tagged news (Knight Media) */
   $handler = $view->new_display('block', 'Tagged news (Knight Media)', 'block_1');
