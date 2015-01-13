@@ -103,9 +103,9 @@ function fe_site_config_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        '~*videos' => '~*videos',
         '~videos/topic*' => '~videos/topic*',
         '~user/*' => '~user/*',
+        '~videos' => '~videos',
       ),
     ),
   );
