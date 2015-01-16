@@ -75,11 +75,10 @@
     <?php print $more; ?>
   <?php endif; ?>
 
-  <?php if ($footer): ?>
-    <div class="view-footer">
-      <?php print l( $footer, 'opportunities/ending-soon', array('attributes' => array('class' => array('read-more')))); ?>
-    </div>
-  <?php endif; ?>
+
+  <div class="view-footer">
+    <?php print l( t("View more"), 'opportunities/ending-soon', array('attributes' => array('class' => array('read-more')))); ?>
+  </div>
 
   <?php if ($feed_icon): ?>
     <div class="feed-icon">
