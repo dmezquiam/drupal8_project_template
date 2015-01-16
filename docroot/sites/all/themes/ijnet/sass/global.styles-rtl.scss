@@ -228,3 +228,21 @@ body .dd-pointer {
 .videos-landing-header .topic-select .topic-select-inner .search {
   float: left;
 }
+
+//
+@media (max-width: 480px) {
+  body .two-66-33 > .region-two-66-33-first .region-inner {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  body .at-panel .region {
+    float: right;
+  }
+  body .two-66-33 > .region-two-66-33-second {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .main-content .block-inner {
+    margin-right:0px;
+  }
+}

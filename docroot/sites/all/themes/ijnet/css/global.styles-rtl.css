@@ -280,3 +280,27 @@ body .dd-pointer {
 .videos-landing-header .topic-select .topic-select-inner .search {
   float: left;
 }
+
+@media (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003234}}
+  body .two-66-33 > .region-two-66-33-first .region-inner {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003238}}
+  body .at-panel .region {
+    float: right;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003241}}
+  body .two-66-33 > .region-two-66-33-second {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003245}}
+  .main-content .block-inner {
+    margin-right: 0px;
+  }
+}
