@@ -13,14 +13,7 @@ function fe_chat_field_default_field_instances() {
   // Exported field_instance: 'node-chat-body'
   $field_instances['node-chat-body'] = array(
     'bundle' => 'chat',
-    'default_value' => array(
-      0 => array(
-        'summary' => '',
-        'value' => '<p><iframe frameborder="0" height="600" src="http://embed.scribblelive.com/Embed/v5.aspx?Id=351315" width="100%"></iframe></p>
-',
-        'format' => 'full_html',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -48,6 +41,7 @@ function fe_chat_field_default_field_instances() {
     'settings' => array(
       'display_summary' => 1,
       'entity_translation_sync' => FALSE,
+      'summary_display' => 'default',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -55,6 +49,10 @@ function fe_chat_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 20,
         'summary_display' => 'default',
         'summary_rows' => 5,
