@@ -131,6 +131,7 @@ function fe_user_user_default_permissions() {
     'name' => 'access site-wide contact form',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'contact',
   );
@@ -149,6 +150,7 @@ function fe_user_user_default_permissions() {
     'name' => 'access user contact forms',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'contact',
   );
@@ -2005,6 +2007,7 @@ function fe_user_user_default_permissions() {
     'name' => 'view all user locations',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'location_user',
   );
@@ -2067,6 +2070,7 @@ function fe_user_user_default_permissions() {
     'name' => 'view own user location',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'location_user',
   );
