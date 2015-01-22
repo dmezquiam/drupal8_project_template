@@ -246,3 +246,37 @@ body .dd-pointer {
     margin-right:0px;
   }
 }
+
+.item-list ul.pager li.pager-next,
+.item-list ul.pager li.pager-previous,
+.item-list ul.pager li.pager-item,
+.item-list ul.pager li.pager-current {
+  float: right;
+}
+
+.item-list ul.pager li.pager-item,
+.item-list ul.pager li.pager-current {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.item-list ul.pager li.pager-next,
+.item-list ul.pager li.pager-previous {
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.item-list ul.pager li.pager-item a,
+.item-list ul.pager li.pager-current a {
+  font-size: 18px;
+}
+
+.page-email-bulletin-archive table h4,
+.page-email-bulletin-archive thead h4,
+.page-email-bulletin-archive tbody h4,
+.page-email-bulletin-archive tr h4,
+.page-email-bulletin-archive th h4,
+.page-email-bulletin-archive td h4,
+.page-email-bulletin-archive td p {
+  text-align: right;
+}
