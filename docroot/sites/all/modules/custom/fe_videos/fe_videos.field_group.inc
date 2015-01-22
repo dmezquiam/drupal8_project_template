@@ -52,6 +52,7 @@ function fe_videos_field_group_info() {
     'children' => array(
       0 => 'field_video',
       1 => 'body',
+      2 => 'field_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -78,8 +79,8 @@ function fe_videos_field_group_info() {
     'label' => 'Tabs',
     'weight' => '2',
     'children' => array(
-      0 => 'group_content',
-      1 => 'group_categorization',
+      0 => 'group_categorization',
+      1 => 'group_content',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(

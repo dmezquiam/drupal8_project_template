@@ -107,6 +107,9 @@ function fe_videos_strongarm() {
         'locations' => array(
           'weight' => '5',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(
         'language' => array(

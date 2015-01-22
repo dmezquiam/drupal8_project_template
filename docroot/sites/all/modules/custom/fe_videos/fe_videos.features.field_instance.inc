@@ -101,6 +101,74 @@ function fe_videos_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-video-field_image'
+  $field_instances['node-video-field_image'] = array(
+    'bundle' => 'video',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image',
+    'label' => 'Video image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 1,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => 0,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(
+          'video_thumbnail' => 'video_thumbnail',
+        ),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-video-field_video'
   $field_instances['node-video-field_video'] = array(
     'bundle' => 'video',
@@ -204,6 +272,7 @@ function fe_videos_field_default_field_instances() {
   t('Title');
   t('Topic');
   t('Video');
+  t('Video image');
 
   return $field_instances;
 }

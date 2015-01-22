@@ -67,6 +67,41 @@ function fe_videos_fe_nodequeue_export_fields() {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function fe_videos_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: video_thumbnail.
+  $styles['video_thumbnail'] = array(
+    'name' => 'video_thumbnail',
+    'label' => 'Video thumbnail',
+    'effects' => array(
+      43 => array(
+        'label' => 'Manual Crop: Crop and scale',
+        'help' => 'Crop and scale a user-selected area, respecting the ratio of the destination width and height.',
+        'effect callback' => 'manualcrop_crop_and_scale_effect',
+        'form callback' => 'manualcrop_crop_and_scale_form',
+        'summary theme' => 'manualcrop_crop_and_scale_summary',
+        'module' => 'manualcrop',
+        'name' => 'manualcrop_crop_and_scale',
+        'data' => array(
+          'width' => 259,
+          'height' => 194,
+          'upscale' => 0,
+          'respectminimum' => 1,
+          'onlyscaleifcrop' => 0,
+          'style_name' => 'video_thumbnail',
+        ),
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function fe_videos_node_info() {
