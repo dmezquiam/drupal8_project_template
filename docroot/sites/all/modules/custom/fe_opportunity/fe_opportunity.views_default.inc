@@ -190,7 +190,7 @@ function fe_opportunity_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-  /* Filter criterion: Content: Topic (field_category) */
+  /* Filter criterion: Content: Secondary topics (field_category) */
   $handler->display->display_options['filters']['field_category_tid']['id'] = 'field_category_tid';
   $handler->display->display_options['filters']['field_category_tid']['table'] = 'field_data_field_category';
   $handler->display->display_options['filters']['field_category_tid']['field'] = 'field_category_tid';
@@ -346,7 +346,7 @@ function fe_opportunity_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Topic */
+  /* Field: Content: Secondary topics */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'field_data_field_category';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';

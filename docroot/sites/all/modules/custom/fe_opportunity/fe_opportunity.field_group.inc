@@ -26,6 +26,7 @@ function fe_opportunity_field_group_info() {
       0 => 'field_category',
       1 => 'field_region',
       2 => 'field_tags',
+      3 => 'field_primary_topic',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -138,10 +139,10 @@ function fe_opportunity_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'scheduler_settings',
-      1 => 'group_categorization',
-      2 => 'group_content',
-      3 => 'group_date',
-      4 => 'group_related_content',
+      1 => 'group_date',
+      2 => 'group_related_content',
+      3 => 'group_content',
+      4 => 'group_categorization',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
