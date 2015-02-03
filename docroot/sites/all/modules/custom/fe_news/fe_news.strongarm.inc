@@ -121,7 +121,7 @@ function fe_news_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '9',
+            'weight' => '10',
             'visible' => FALSE,
           ),
           'short_teaser' => array(
