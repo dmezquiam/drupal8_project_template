@@ -117,7 +117,7 @@ function fe_opportunity_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '3',
+            'weight' => '5',
             'visible' => FALSE,
           ),
           'teaser' => array(
