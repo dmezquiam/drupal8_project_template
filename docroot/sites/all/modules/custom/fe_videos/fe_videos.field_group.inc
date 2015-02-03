@@ -24,6 +24,7 @@ function fe_videos_field_group_info() {
     'weight' => '10',
     'children' => array(
       0 => 'field_category',
+      1 => 'field_primary_topic',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
