@@ -476,6 +476,62 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
+  // Exported field_instance: 'node-news-field_primary_topic'
+  $field_instances['node-news-field_primary_topic'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This topic will be displayed at the node page.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+      'node_fields_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'short_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_primary_topic',
+    'label' => 'Primary topic',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_select',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-news-field_related_content'
   $field_instances['node-news-field_related_content'] = array(
     'bundle' => 'news',
@@ -593,7 +649,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 13,
+      'weight' => 33,
     ),
   );
 
@@ -602,7 +658,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'These topics will be used to search and sort the nodes, if there is a primary topic added, it must be repeated here.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -639,7 +695,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topic',
-    'label' => 'Topic',
+    'label' => 'Secondary topics',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -653,7 +709,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 32,
     ),
   );
 
@@ -783,10 +839,13 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
   t('Document');
   t('Enter the user name for the author of this content to make the "About the author" block display next to the content.');
   t('Image');
+  t('Primary topic');
   t('Related Content');
+  t('Secondary topics');
   t('Tags');
+  t('These topics will be used to search and sort the nodes, if there is a primary topic added, it must be repeated here.');
+  t('This topic will be displayed at the node page.');
   t('Title');
-  t('Topic');
   t('Use this field to give attribution to an author that does not have a user account on IJNet.org. <br />
 Example: "John Doe, Editor at Global Publishing, Inc."');
   t('Video');

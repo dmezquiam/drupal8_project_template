@@ -25,6 +25,7 @@ function fe_news_field_group_info() {
     'children' => array(
       0 => 'field_topic',
       1 => 'field_tags',
+      2 => 'field_primary_topic',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -83,9 +84,9 @@ function fe_news_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'scheduler_settings',
-      1 => 'group_news_content',
-      2 => 'group_other_content',
-      3 => 'group_categorization',
+      1 => 'group_categorization',
+      2 => 'group_news_content',
+      3 => 'group_other_content',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
