@@ -73,7 +73,7 @@ function fe_videos_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -94,7 +94,7 @@ function fe_videos_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
@@ -112,7 +112,7 @@ function fe_videos_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -173,13 +173,9 @@ function fe_videos_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-        ),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 6,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -273,7 +269,7 @@ function fe_videos_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
