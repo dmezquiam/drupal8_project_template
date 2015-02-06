@@ -89,7 +89,7 @@
                         print ($footer);
                       ?>
                       </p>
-                      <p style="font-size: 12px; font-family: verdana, arial;"><?php print t('Copyright © 2014 International Center for Journalists. All rights reserved. IJNet material may not be reproduced or republished without express written permission.');?></p>
+                      <p style="font-size: 12px; font-family: verdana, arial;"><?php print t('Copyright © !year International Center for Journalists. All rights reserved. IJNet material may not be reproduced or republished without express written permission.', array('!year' => date('Y')));?></p>
                     </td>
                   </tr>
 
