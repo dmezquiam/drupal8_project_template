@@ -15,7 +15,7 @@ function fe_site_config_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -10,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(
@@ -40,7 +40,7 @@ function fe_site_config_taxonomy_default_vocabularies() {
       'description' => 'Use tags to group articles on similar topics into categories.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -9,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(
@@ -65,7 +65,7 @@ function fe_site_config_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -8,
       'language' => 'und',
       'i18n_mode' => 4,
       'rdf_mapping' => array(

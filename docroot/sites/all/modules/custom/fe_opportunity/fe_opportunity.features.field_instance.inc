@@ -80,13 +80,13 @@ function fe_opportunity_field_default_field_instances() {
     'bundle' => 'training_opportunity',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'These topics will be used to search and sort the nodes, if there is a primary topic added, it must be repeated here.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -97,7 +97,7 @@ function fe_opportunity_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_category',
-    'label' => 'Topic',
+    'label' => 'Secondary topics',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -108,9 +108,10 @@ function fe_opportunity_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => 1,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 33,
     ),
   );
 
@@ -125,7 +126,7 @@ function fe_opportunity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -165,7 +166,7 @@ function fe_opportunity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -268,7 +269,7 @@ function fe_opportunity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -311,7 +312,7 @@ function fe_opportunity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -354,6 +355,46 @@ function fe_opportunity_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-training_opportunity-field_primary_topic'
+  $field_instances['node-training_opportunity-field_primary_topic'] = array(
+    'bundle' => 'training_opportunity',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This topic will be displayed at the node page.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_primary_topic',
+    'label' => 'Primary topic',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_select',
+      'weight' => 32,
+    ),
+  );
+
   // Exported field_instance: 'node-training_opportunity-field_region'
   $field_instances['node-training_opportunity-field_region'] = array(
     'bundle' => 'training_opportunity',
@@ -365,7 +406,7 @@ function fe_opportunity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -390,7 +431,7 @@ function fe_opportunity_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 34,
     ),
   );
 
@@ -406,7 +447,7 @@ Begin typing the title of the the related content to see a list of matching arti
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -451,7 +492,7 @@ Begin typing the title of the the related content to see a list of matching arti
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 10,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -477,7 +518,7 @@ Begin typing the title of the the related content to see a list of matching arti
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 12,
+      'weight' => 35,
     ),
   );
 
@@ -491,10 +532,13 @@ Begin typing the title of the the related content to see a list of matching arti
   t('Link this opportunity to related content, opportunities and blogs on ijnet.org.<br>
 Begin typing the title of the the related content to see a list of matching articles.');
   t('Organization');
+  t('Primary topic');
   t('Region');
   t('Related Content');
+  t('Secondary topics');
   t('Tags');
-  t('Topic');
+  t('These topics will be used to search and sort the nodes, if there is a primary topic added, it must be repeated here.');
+  t('This topic will be displayed at the node page.');
 
   return $field_instances;
 }

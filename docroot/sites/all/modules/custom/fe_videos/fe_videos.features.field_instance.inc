@@ -67,13 +67,13 @@ function fe_videos_field_default_field_instances() {
     'bundle' => 'video',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'These topics will be used to search and sort the nodes, if there is a primary topic added, it must be repeated here.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -84,7 +84,7 @@ function fe_videos_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_category',
-    'label' => 'Topic',
+    'label' => 'Secondary topics',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -94,10 +94,11 @@ function fe_videos_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 33,
     ),
   );
 
@@ -111,7 +112,7 @@ function fe_videos_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -160,6 +161,46 @@ function fe_videos_field_default_field_instances() {
       ),
       'type' => 'image_image',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-video-field_primary_topic'
+  $field_instances['node-video-field_primary_topic'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This topic will be displayed at the node page.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_primary_topic',
+    'label' => 'Primary topic',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_select',
+      'weight' => 32,
     ),
   );
 
@@ -228,7 +269,7 @@ function fe_videos_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -263,8 +304,11 @@ function fe_videos_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Primary topic');
+  t('Secondary topics');
+  t('These topics will be used to search and sort the nodes, if there is a primary topic added, it must be repeated here.');
+  t('This topic will be displayed at the node page.');
   t('Title');
-  t('Topic');
   t('Video');
   t('Video image');
 

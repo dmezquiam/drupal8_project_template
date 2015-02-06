@@ -702,6 +702,7 @@ function fe_user_user_default_permissions() {
     'name' => 'administer users',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'user',
   );

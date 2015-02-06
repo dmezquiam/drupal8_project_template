@@ -110,6 +110,9 @@ function fe_news_strongarm() {
         'scheduler_settings' => array(
           'weight' => '4',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(
         'language' => array(
@@ -118,7 +121,7 @@ function fe_news_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '9',
+            'weight' => '10',
             'visible' => FALSE,
           ),
           'short_teaser' => array(

@@ -1,6 +1,6 @@
 <div class="footer">
   <div class="top-text">
-    &copy; <?php print t('2014 International Center for Journalists')?>
+    &copy; <?php print t('!year International Center for Journalists', array('!year' => date('Y')))?>
   </div>
   <div class="bottom-text">
     <span> 2000 M St. NW, Suite 250 Washington, DC 20036 USA </span> <span> <?php print t('Phone')?>: 202.737.3700 </span> <span> <?php print t('Fax')?>: 202.737.0530 </span> <span> <a href="<?php print url('about',  $options = array('fragment' => 'contact-site-form')); ?>"> <?php print t('Contact us')?> </a></span>

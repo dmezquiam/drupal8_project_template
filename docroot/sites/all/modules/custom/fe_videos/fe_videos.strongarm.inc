@@ -114,7 +114,7 @@ function fe_videos_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '3',
+            'weight' => '4',
             'visible' => FALSE,
           ),
           'teaser' => array(

@@ -16,11 +16,5 @@ function fe_user_user_default_roles() {
     'weight' => 4,
   );
 
-  // Exported role: editor.
-  $roles['editor'] = array(
-    'name' => 'editor',
-    'weight' => 3,
-  );
-
   return $roles;
 }
