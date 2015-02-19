@@ -6,7 +6,7 @@
           <a href="<?php print($opportunity->link)?>" style="color:#28678f; font-size: 14px; font-family: verdana, arial, sans-serif; text-decoration: none;"><?php print($opportunity->title)?></a>
         </h4>
   <?php if (isset($opportunity->summary)) : ?>
-    <p style="font-family: verdana, arial;">
+    <p style="font-family: verdana, arial;  font-size: 12px;">
       <?php print($opportunity->summary)?>
     </p>
   <?php endif; ?>
