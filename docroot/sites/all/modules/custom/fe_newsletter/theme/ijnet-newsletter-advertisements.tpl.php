@@ -1,7 +1,7 @@
 
 <?php if (!empty($advertisements) > 0) : ?>
   <!-- // Begin Body \\ -->
-  <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#f8fdff" style="border: 1px #3c6e8f solid;">
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
     <tr>
       <td valign="top">
         <p style="padding:10px 20px 0px; margin:0;font-size:12px;font-weight:normal;line-height:26px; font-family: verdana, arial,sans-serif;"><?php print t('Advertisements');?></p>
