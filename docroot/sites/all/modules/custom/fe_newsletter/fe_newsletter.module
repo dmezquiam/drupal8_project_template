@@ -282,14 +282,25 @@ function _fe_newsletter_get_featured_content($nid) {
       $node->body[$language][0]['safe_summary'] :
       $node->body[LANGUAGE_NONE][0]['safe_summary'];
   }
+
   $featured_content->author = _fe_newsletter_get_author($nid);
+
   $featured_content->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
 
   return $featured_content;
 }
 
 function _fe_newsletter_get_author($nid) {
-  $author = _fe_news_get_author($nid);
+  $node = node_load($nid);
+
+  if ($node->type == 'video') {
+    $author = new stdClass();
+    $author->name = "IJNET";
+    $author->profile_link = FALSE;
+  }
+  else {
+    $author = _fe_news_get_author($nid);
+  }
 
   $result = $author->profile_link ?
     l($author->name, $author->profile_link) :
@@ -766,3 +777,4 @@ function _fe_newsletter_unsubscribed($email) {
   $contact = $cc->query_contacts($email);
   $success = $cc->delete_contact($contact['id']);
 }
+
