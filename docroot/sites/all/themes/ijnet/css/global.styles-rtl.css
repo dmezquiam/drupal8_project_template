@@ -281,30 +281,35 @@ body .dd-pointer {
   float: left;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003232}}
+.video-list .video-item .node-video h2 {
+  text-align: right;
+}
+
 @media (max-width: 480px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003238}}
   body .two-66-33 > .region-two-66-33-first .region-inner {
     margin-right: 0px;
     margin-left: 0px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003242}}
   body .at-panel .region {
     float: right;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003245}}
   body .two-66-33 > .region-two-66-33-second {
     margin-right: 0px;
     margin-left: 0px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003245}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003249}}
   .main-content .block-inner {
     margin-right: 0px;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003253}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003257}}
 .item-list ul.pager li.pager-next,
 .item-list ul.pager li.pager-previous,
 .item-list ul.pager li.pager-item,
@@ -312,27 +317,27 @@ body .dd-pointer {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003258}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003262}}
 .item-list ul.pager li.pager-item,
 .item-list ul.pager li.pager-current {
   padding-right: 5px;
   padding-left: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003264}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003268}}
 .item-list ul.pager li.pager-next,
 .item-list ul.pager li.pager-previous {
   padding-right: 18px;
   padding-left: 18px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003270}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003274}}
 .item-list ul.pager li.pager-item a,
 .item-list ul.pager li.pager-current a {
   font-size: 18px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003280}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\00003284}}
 .page-email-bulletin-archive table h4,
 .page-email-bulletin-archive thead h4,
 .page-email-bulletin-archive tbody h4,

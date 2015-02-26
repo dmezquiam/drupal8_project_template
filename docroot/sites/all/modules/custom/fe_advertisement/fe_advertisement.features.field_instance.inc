@@ -23,7 +23,7 @@ function fe_advertisement_field_default_field_instances() {
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
           'image_link' => '',
-          'image_style' => 'advertisement',
+          'image_style' => '',
         ),
         'type' => 'image',
         'weight' => 0,
