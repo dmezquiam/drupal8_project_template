@@ -260,6 +260,14 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'youtube',
         ),
       ),
+      'vkontakte' => array(
+        'url' => 'https://vk.com/club8902265',
+        'class' => 'social-icon-vk',
+        'image' => array(
+          'path' => $images_path . 'social_04.png',
+          'alt' => 'vkontakte',
+        ),
+      ),
       'rss' => array(
         'url' => '/rss/blog',
         'class' => 'social-icon-rss',

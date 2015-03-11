@@ -1144,6 +1144,7 @@ ul.action-links {
     .social-icon-gplus    { background: url("#{$path-to-images}/icon_g.png")      no-repeat 0 0; }
     .social-icon-rss      { background: url("#{$path-to-images}/icon_rss.png")    no-repeat 0 0; }
     .social-icon-weibo    { background: url("#{$path-to-images}/icon_weibo.png")  no-repeat 0 0; }
+    .social-icon-vk       { background: url("#{$path-to-images}/icon_vk.png")     no-repeat 0 0; }
   }
 
   .mail-subscribe {
@@ -1737,7 +1738,7 @@ tr.error {}
  * Unpublished nodes
  */
 .node-unpublished {
-  color: transparent;
+  //color: transparent;
   position: relative;
   
   &:before {
