@@ -103,9 +103,9 @@ function fe_chat_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
-        'views-chats-past_chats' => array(
+        'views-chats-past_chats_landing' => array(
           'module' => 'views',
-          'delta' => 'chats-past_chats',
+          'delta' => 'chats-past_chats_landing',
           'region' => 'sidebar_second',
           'weight' => '-7',
         ),

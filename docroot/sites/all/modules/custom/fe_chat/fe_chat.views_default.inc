@@ -184,7 +184,7 @@ function fe_chat_views_default_views() {
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'date-list-block';
@@ -260,6 +260,18 @@ function fe_chat_views_default_views() {
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['nid']['not'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -432,6 +444,121 @@ function fe_chat_views_default_views() {
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   $handler->display->display_options['path'] = 'chats-old';
+
+  /* Display: Past Chats - Chats landing */
+  $handler = $view->new_display('block', 'Past Chats - Chats landing', 'past_chats_landing');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'block-default';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'date-list-block';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h2 class="block-title">
+  PAST CHATS
+</h2>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['label'] = '';
+  $handler->display->display_options['fields']['field_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date']['settings'] = array(
+    'format_type' => 'chat_short_start',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_date_1']['id'] = 'field_date_1';
+  $handler->display->display_options['fields']['field_date_1']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date_1']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date_1']['settings'] = array(
+    'format_type' => 'chat_short_end',
+    'fromto' => 'value2',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_date] - [field_date_1]';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'highlighted-item';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date -  start date (field_date) */
+  $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
+  $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
+  $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
+  $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'chat' => 'chat',
+  );
+  /* Filter criterion: Content: Date -  start date (field_date) */
+  $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
+  $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
+  $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
+  $handler->display->display_options['filters']['field_date_value']['operator'] = '<';
+  $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_date_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $export['chats'] = $view;
 
   return $export;
