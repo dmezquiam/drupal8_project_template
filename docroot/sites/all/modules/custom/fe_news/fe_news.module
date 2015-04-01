@@ -55,8 +55,10 @@ function fe_news_redirect_tags($nid = ''){
   } else return '';
 
   foreach ($tags as $tid => $name) {
-    $url = '/' . $type . '/' . $tid ;
-    $tags_markup .=  '<li class="field-item-odd">' . '<a href="' . $url . '" >' . $name . '</a>';
+    $path = $type . '/' . $tid ;
+    $tag_link = l($name, $path);
+    $tag_markup = '<li class="field-item-odd">' . $tag_link . '</li>';
+    $tags_markup .= $tag_markup;
   }
 
   $tags_markup  .= '</ul></section>';
@@ -189,7 +191,6 @@ function _fe_news_get_last_posts_authors($tid = '') {
       }
     }
   }
-
 
   return theme('last_posts_authors', array('authors' => $authors));
 }
