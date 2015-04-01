@@ -101,11 +101,12 @@ function fe_news_theme() {
       'template' => 'theme/node--news',
     ),
     'last_posts_authors' => array(
-      'variables' => array(
-        'authors' => NULL,
-      ),
       'template' => 'last-posts-authors',
       'path' => drupal_get_path('module', 'fe_news') . '/theme',
+      'variables' => array(
+        'authors' => NULL,
+        'show_more' => NULL,
+      ),
     ),
     'news_topic_block' => array(
       'template' => 'theme/topic-block',
@@ -132,15 +133,13 @@ function fe_news_block_info() {
 /**
  * Implements hook_block_view()
  */
-
 function fe_news_block_view($delta = '') {
   $block = array();
-  $vars = array();
 
   if ($delta == 'last_posts_authors') {
     $block = array(
       'subjet' => NULL,
-      'content' => _fe_news_get_last_posts_authors(),
+      'content' => _fe_news_last_posts_authors_callback(),
     );
   }
   else if ($delta == 'field_topic_block') {
@@ -148,6 +147,16 @@ function fe_news_block_view($delta = '') {
     $block['content'] = _fe_news_get_topics();
   }
   return $block;
+}
+
+function _fe_news_last_posts_authors_callback($tid) {
+  $last_posts_authors = _fe_news_get_last_posts_authors($tid);
+  kpr($last_posts_authors);
+
+  return theme(
+    'last_posts_authors',
+    array('authors' => $last_posts_authors)
+  );
 }
 
 function _fe_news_get_last_posts_authors($tid = '') {
@@ -192,7 +201,7 @@ function _fe_news_get_last_posts_authors($tid = '') {
     }
   }
 
-  return theme('last_posts_authors', array('authors' => $authors));
+  return $authors;
 }
 
 function _fe_news_get_author($nid) {
