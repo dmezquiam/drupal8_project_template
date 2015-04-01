@@ -1,0 +1,16 @@
+Index: includes/common.inc
+===================================================================
+RCS file: /cvs/drupal/drupal/includes/common.inc,v
+retrieving revision 1.1254
+diff -u -r1.1254 common.inc
+--- includes/common.inc 14 Nov 2010 21:04:45 -0000  1.1254
++++ includes/common.inc 16 Nov 2010 21:02:29 -0000
+@@ -6906,7 +6906,7 @@
+ function drupal_explode_tags($tags) {
+   // This regexp allows the following types of user input:
+   // this, "somecompany, llc", "and ""this"" w,o.rks", foo bar
+-  $regexp = '%(?:^|,\ *)("(?>[^"]*)(?>""[^"]* )*"|(?: [^",]*))%x';
++  $regexp = '%(?:^|,|?|?\ *)("(?>[^"]*)(?>""[^"]* )*"|(?: [^",|?|?]*))%xu';
+   preg_match_all($regexp, $tags, $matches);
+   $typed_tags = array_unique($matches[1]);
+ 
