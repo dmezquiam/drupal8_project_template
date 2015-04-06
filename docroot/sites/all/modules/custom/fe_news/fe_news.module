@@ -151,7 +151,7 @@ function fe_news_block_view($delta = '') {
 
 function _fe_news_last_posts_authors_callback($tid) {
   $last_posts_authors = _fe_news_get_last_posts_authors($tid);
-  kpr($last_posts_authors);
+  //kpr($last_posts_authors);
 
   return theme(
     'last_posts_authors',
