@@ -7,6 +7,21 @@
 include_once 'fe_knight_foundation.features.inc';
 
 /**
+ * Implements hook_preprocess_page(&$vars)
+ */
+function fe_knight_foundation_preprocess_page(&$vars) {
+  $last_posts_authors_limit = variable_get('fe_knight_foundation_last_posts_authors_limit', 3);
+  drupal_add_js(
+    array(
+      'fe_knight_foundation' => array('limit' => $last_posts_authors_limit)
+    ),
+    'setting'
+  );
+  $module_path = drupal_get_path('module', 'fe_knight_foundation');
+  drupal_add_js($module_path .'/js/fe_knight_foundation.js');
+}
+
+/**
  * Implements hook_block_info().
  */
 function fe_knight_foundation_block_info() {
@@ -23,10 +38,22 @@ function fe_knight_foundation_block_info() {
 function fe_knight_foundation_block_view($delta = '') {
   $block = array();
   if ($delta == 'knight_authors_tab') {
-    $block['content']  = fe_knight_foundation_get_authors(); 
+    $block['content']  = fe_knight_foundation_last_posts_authors_callback();
     $block['subject'] = '';
   }
   return $block;
+}
+
+function fe_knight_foundation_last_posts_authors_callback() {
+  $last_posts_authors = _fe_knight_foundation_get_last_posts_authors();
+
+  return theme(
+    'last_posts_authors',
+    array(
+      'authors' => $last_posts_authors,
+      'show_more' => TRUE
+    )
+  );
 }
 
 /**
@@ -44,8 +71,9 @@ function fe_knight_foundation_views_query_alter(&$view, &$query) {
   }
 }
 
-function fe_knight_foundation_get_authors() {
-  $topic = array(
+function _fe_knight_foundation_get_last_posts_authors() {
+  global $language;
+  $knight_foundation_topic = array(
     'en' => '913',
     'es' => '914',
     'ru' => '915',
@@ -54,8 +82,13 @@ function fe_knight_foundation_get_authors() {
     'fa' => '919',
     'pt-br' => '918',
   );
-  global $language;
-  return _fe_news_get_last_posts_authors($topic[$language->language]);
+
+  $last_posts_authors =
+    _fe_news_get_last_posts_authors(
+      $knight_foundation_topic[$language->language]
+    );
+
+  return $last_posts_authors;
 }
 
 /**
