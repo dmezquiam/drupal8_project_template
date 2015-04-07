@@ -1,7 +1,0 @@
-name = IJNET Localization
-description = All specific configuration related to localization
-core = 7.x
-package = IJNet
-version = 7.x-1.0
-project = fe_site_localization
-features[features_api][] = api:2

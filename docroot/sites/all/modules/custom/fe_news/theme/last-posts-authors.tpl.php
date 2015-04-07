@@ -34,12 +34,11 @@
       </li>
 <?php endforeach; ?>
 
-<?php if ($show_more): ?>
-      <li class="clearfix">
-  <?php print(l(t('SHOW MORE'), "#", array('attributes' => array('class' => array("show-more", "button-small")), 'external' => TRUE))); ?>
-      </li>
-<?php endif; ?>
-
     </ul>
   </div>
 </div>
+<?php if ($show_more): ?>
+  <div class="block-footer">
+    <?php print(l(t('VIEW MORE'), "#", array('attributes' => array('class' => array("read-more")), 'external' => TRUE))); ?>
+  </div>
+<?php endif; ?>
