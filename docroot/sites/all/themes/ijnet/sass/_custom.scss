@@ -487,6 +487,8 @@
   //$section = sidebar or content
   @mixin quicktabs ($section) {
     position: relative;
+
+    .block { margin-bottom: 0; }
     .block-title {
       color: $color-heading-tabs;
       position: absolute;
@@ -537,8 +539,21 @@
         border-color: $color-line;
         border-width: 1px;
         margin-top: 0px;
+
+        .block-footer {
+          text-align: right;
+          background: $color-line;
+          .read-more {
+            text-transform: uppercase;
+            padding: 1px 10px;
+            color: #fff;
+            &:hover { color: $color-heading-secondary; }
+          }
+        }
       }
     }
+    
+
     @if $section == sidebar {
       .block-title {
         font-size: $font-size-sidebar-heading-tab;
