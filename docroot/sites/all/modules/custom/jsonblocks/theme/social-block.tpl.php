@@ -7,7 +7,7 @@
 	<div class="dropdown">
 		<div class="no-js">
 			<div class="clicker">
-      <h4><?php print t("Subscribe to our email bulletin"); ?></h4>
+        <h4><?php print t("Subscribe to our email bulletin"); ?></h4>
 			</div>
 			<div class="inner-dropdown">
         <?php
