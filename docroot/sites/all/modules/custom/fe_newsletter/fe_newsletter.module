@@ -222,6 +222,14 @@ function fe_newsletter_preprocess_page(&$vars) {
       'file'
     );
   }
+
+  if (current_path() == 'videos') {
+    $module_path = drupal_get_path('module', 'fe_newsletter');
+    drupal_add_js(
+      $module_path . '/js/fe_newsletter_subscribe_videos.js', 'file'
+    );
+
+  }
 }
 
 function _fe_newsletter_format_date($date, $language = 'en') {
@@ -476,10 +484,9 @@ function fe_newsletter_content_form($form, &$form_state) {
 function fe_newsletter_subscribe_form($form, &$form_state) {
   // Make these fields required.
   $form['#attributes']['class'][] = 'subscribe-form';
-  $form['name'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Your name'),
-    '#required' => TRUE,
+
+  $form['intro_text'] = array(
+    '#markup' => '<p>Subscribe to our email bulletin for tips, trends and training opportunities every week.</p>'
   );
   $form['email'] = array(
     '#type' => 'textfield',
@@ -500,6 +507,7 @@ function fe_newsletter_subscribe_form($form, &$form_state) {
     ),
   );
   $form['#suffix'] = '<div id="form-register-message"></div>';
+
   return $form;
 }
 

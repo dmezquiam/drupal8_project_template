@@ -139,8 +139,7 @@
               right: 19px;
             }
             li {
-              a {
-              }
+              a {}
               a.dd-option {
                 cursor: pointer;
                 padding: 2px 5px;
@@ -501,7 +500,7 @@ ul.links {
     }
   }
   .responsive-menus-simple {
-    border-top: 2px solid $color-line-secondary;
+    border-top: solid 2px $color-line-secondary;
     @include border-radius (0px);
     .primary-menu-wrapper {
       margin: 0px;
@@ -1147,6 +1146,8 @@ ul.action-links {
     .social-icon-vk       { background: url("#{$path-to-images}/icon_vk.png")     no-repeat 0 0; }
   }
 
+
+//Mail subscribe
   .mail-subscribe {
     .dropdown {
       position: relative;
@@ -1168,25 +1169,14 @@ ul.action-links {
         }
       }
       .inner-dropdown {
+      	@include clearfix;
+
         background: $color-bg-box-hightlight;
-        margin-top: 3px;
-        position: absolute;
-        z-index: 10;
-        right: 0;
-        left: 0;
+        margin-top: 20px;
         @include box-shadow (1px, 1px, 1px, $color-shadow);
-        @include border-radius (5px 5px 5px 5px);
-        &:before {
-          content: "";
-          width: 0;
-          height: 0;
-          border-left: 6px solid rgba(0, 0, 0, 0);
-          border-right: 6px solid rgba(0, 0, 0, 0);
-          border-bottom: 6px solid $color-bg-box-hightlight;
-          position: absolute;
-          top: -6px;
-          right: 18px;
-        }
+        @include border-radius (15px);
+        &:before {}
+
         .msj-submit {
           position: absolute;
           bottom: 7px;
@@ -1202,22 +1192,38 @@ ul.action-links {
           }
         }
         .subscribe-form {
-          padding: 20px;
+          padding: 20px 20px 45px 20px;
+
+          p {
+          	text-align: center;
+          	font-size: 18px;
+          }
           .form-item {
             margin: 0px 0px 10px 0px;
-            label {}
+            label { 
+            	font-weight: normal;
+            	font-size: 15px;
+  						text-transform: uppercase;
+            }
             input { width: 100%; }
           }
           input[type="submit"] {
             float: right;
             margin-top: 0px;
             margin-bottom: 10px;
+            font-size: 16px;
+  					padding: 2px 13px;
+					  border-radius: 11px;
+					  -ms-border-radius: 11px;
+  					-moz-border-radius: 11px;
+					  -webkit-border-radius: 11px;
           }
           a.archive-link {
             display: block;
             width: 116px;
             float: left;
             margin-top: 5px;
+            font-size: 16px;
           }
         }
         .sorry,
@@ -1226,6 +1232,52 @@ ul.action-links {
         }
       }
     }
+  }
+
+  // Mail subscribe en videos
+  body.section-videos {
+    .mail-subscribe {
+	    .dropdown {
+	      .clicker {
+	        &.active {}
+	        h4 {}
+	      }
+	      .inner-dropdown {
+	        margin-top: 3px;
+	        position: absolute;
+	        z-index: 10;
+	        right: 0;
+	        left: 0;
+	        @include box-shadow (1px, 1px, 1px, $color-shadow);
+	        @include border-radius (5px 5px 5px 5px);
+	        &:before {
+	          content: "";
+	          width: 0;
+	          height: 0;
+	          border-left: 6px solid rgba(0, 0, 0, 0);
+	          border-right: 6px solid rgba(0, 0, 0, 0);
+	          border-bottom: 6px solid $color-bg-box-hightlight;
+	          position: absolute;
+	          top: -6px;
+	          right: 18px;
+	        }
+	        .msj-submit {
+	          &.success {}
+	          &.sorry {}
+	        }
+	        .subscribe-form {
+	          .form-item {
+	            label {}
+	            input {}
+	          }
+	          input[type="submit"] {}
+	          a.archive-link {}
+	        }
+	        .sorry,
+	        .success {}
+	      }
+	    }
+	  }
   }
 
 // Latest Posts Block ==========================================================
@@ -1947,8 +1999,8 @@ div.messages {
 }
 .view-display-id-news_teaser_list {
   .buttons {
-      clear: both;
-      float: right;
+    clear: both;
+    float: right;
   }
 }
 
@@ -2341,8 +2393,6 @@ div.messages {
   .block-title {
     left: 22px;
   }
-
-
 
   //tab twitter
   #quicktabs-tabpage-knight_foundation-1 {
