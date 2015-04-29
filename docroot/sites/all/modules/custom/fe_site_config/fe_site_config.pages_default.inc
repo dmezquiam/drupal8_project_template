@@ -16,7 +16,10 @@ function fe_site_config_default_page_manager_pages() {
   $page->admin_title = 'About Us';
   $page->admin_description = 'The about us page';
   $page->path = 'about';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -395,6 +398,28 @@ function fe_site_config_default_page_manager_pages() {
     $display->content['new-0981a783-8cb5-409a-908a-f7b000fce199'] = $pane;
     $display->panels['brick_66_33_left_below'][1] = 'new-0981a783-8cb5-409a-908a-f7b000fce199';
     $pane = new stdClass();
+    $pane->pid = 'new-052e5e5e-bf5b-469f-9a15-c05feca1fb88';
+    $pane->panel = 'brick_66_33_right_below';
+    $pane->type = 'block';
+    $pane->subtype = 'jsonblocks-latest-posts';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '052e5e5e-bf5b-469f-9a15-c05feca1fb88';
+    $display->content['new-052e5e5e-bf5b-469f-9a15-c05feca1fb88'] = $pane;
+    $display->panels['brick_66_33_right_below'][0] = 'new-052e5e5e-bf5b-469f-9a15-c05feca1fb88';
+    $pane = new stdClass();
     $pane->pid = 'new-2a35932f-486a-413d-a177-9f2e0427d5d7';
     $pane->panel = 'brick_66_33_right_below';
     $pane->type = 'block';
@@ -411,33 +436,11 @@ function fe_site_config_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '2a35932f-486a-413d-a177-9f2e0427d5d7';
     $display->content['new-2a35932f-486a-413d-a177-9f2e0427d5d7'] = $pane;
-    $display->panels['brick_66_33_right_below'][0] = 'new-2a35932f-486a-413d-a177-9f2e0427d5d7';
-    $pane = new stdClass();
-    $pane->pid = 'new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
-    $pane->panel = 'brick_66_33_right_below';
-    $pane->type = 'block';
-    $pane->subtype = 'jsonblocks-facebook-like';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
-    $display->content['new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84'] = $pane;
-    $display->panels['brick_66_33_right_below'][1] = 'new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
+    $display->panels['brick_66_33_right_below'][1] = 'new-2a35932f-486a-413d-a177-9f2e0427d5d7';
     $pane = new stdClass();
     $pane->pid = 'new-b08c06cb-bae9-45ba-834a-ef97c06d1062';
     $pane->panel = 'brick_66_33_right_below';
@@ -514,10 +517,10 @@ function fe_site_config_default_page_manager_pages() {
     $display->content['new-b3a5bf3f-c708-4176-9df3-11dee567fe2f'] = $pane;
     $display->panels['brick_66_33_second'][0] = 'new-b3a5bf3f-c708-4176-9df3-11dee567fe2f';
     $pane = new stdClass();
-    $pane->pid = 'new-052e5e5e-bf5b-469f-9a15-c05feca1fb88';
+    $pane->pid = 'new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
     $pane->panel = 'brick_66_33_second';
     $pane->type = 'block';
-    $pane->subtype = 'jsonblocks-latest-posts';
+    $pane->subtype = 'jsonblocks-facebook-like';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -532,9 +535,9 @@ function fe_site_config_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '052e5e5e-bf5b-469f-9a15-c05feca1fb88';
-    $display->content['new-052e5e5e-bf5b-469f-9a15-c05feca1fb88'] = $pane;
-    $display->panels['brick_66_33_second'][1] = 'new-052e5e5e-bf5b-469f-9a15-c05feca1fb88';
+    $pane->uuid = '5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
+    $display->content['new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84'] = $pane;
+    $display->panels['brick_66_33_second'][1] = 'new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
