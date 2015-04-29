@@ -2302,7 +2302,8 @@ ul.action-links {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031197}}
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form p {
   text-align: center;
-  font-size: 18px;
+  /*letter-spacing: -0.06em;*/
+  font-size: 15px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031201}}
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form .form-item {
@@ -2317,13 +2318,14 @@ ul.action-links {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031208}}
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form .form-item input {
   width: 100%;
+  font-size: 15px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031210}}
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
   float: right;
   margin-top: 0px;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 15px;
   padding: 2px 13px;
   border-radius: 11px;
   -ms-border-radius: 11px;
@@ -2336,8 +2338,49 @@ ul.action-links {
   width: 116px;
   float: left;
   margin-top: 5px;
-  font-size: 16px;
+  font-size: 15px;
+  letter-spacing: -0.06em;
 }
+
+.i18n-fa .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link {
+  direction: ltr;
+}
+
+.i18n-ru .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link {
+  letter-spacing: -0.065em;
+}
+
+.i18n-ar .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link {
+  width: 130px;
+}
+
+.i18n-ar .mail-subscribe .dropdown .inner-dropdown .subscribe-form p {
+  text-align: justify;
+  letter-spacing: -0.06em;
+}
+
+.i18n-en .mail-subscribe .dropdown .inner-dropdown .subscribe-form p {
+  margin: -5px -5px 1.5em;
+}
+
+.i18n-pt-br .mail-subscribe .dropdown .inner-dropdown .subscribe-form p {
+  margin: -5px -5px 1.5em;
+}
+
+.i18n-es .mail-subscribe .dropdown .inner-dropdown .subscribe-form p {
+  margin: -5px -5px 1.5em;
+}
+
+.i18n-fa .mail-subscribe .dropdown .inner-dropdown .subscribe-form p {
+  direction: ltr;
+}
+
+
+.i18n-zh-hans .mail-subscribe .dropdown .inner-dropdown .subscribe-form p {
+  text-align: justify;
+  letter-spacing: -0.06em;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles\.scss}line{font-family:\000031230}}
 .mail-subscribe .dropdown .inner-dropdown .sorry,
 .mail-subscribe .dropdown .inner-dropdown .success {
