@@ -87,7 +87,7 @@ body.sidebar-second .content-inner {
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"],
 .block-lang-dropdown,
 #header-wrapper .region-header {
-  float: left;
+  /*float: left;*/
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/global\.styles-rtl\.scss}line{font-family:\0000371}}

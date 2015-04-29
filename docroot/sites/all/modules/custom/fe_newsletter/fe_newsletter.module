@@ -486,12 +486,13 @@ function fe_newsletter_subscribe_form($form, &$form_state) {
   $form['#attributes']['class'][] = 'subscribe-form';
 
   $form['intro_text'] = array(
-    '#markup' => '<p>'.t('Subscribe to our email bulletin for tips, trends and training opportunities every week.').'</p>'
+    '#markup' => '<p>'.t('Subscribe to our weekly bulletin for tips, trends and training opportunities.').'</p>'
   );
   $form['email'] = array(
     '#type' => 'textfield',
-    '#title' => t('Email address'),
+    //'#title' => t('Email address'),
     '#required' => TRUE,
+    '#attributes' => array('placeholder' => t('EMAIL ADDRESS')),
   );
   $form['archive'] = array(
     '#markup' => '<a href="' . url('email-bulletin-archive') . '" " class="archive-link">' . t('Bulletin Archive') . '</a>',
