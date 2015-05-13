@@ -7453,7 +7453,17 @@ function watchdog_severity_levels() {
 function drupal_explode_tags($tags) {
   // This regexp allows the following types of user input:
   // this, "somecompany, llc", "and ""this"" w,o.rks", foo bar
-  $regexp = '%(?:^|,|?|?\ *)("(?>[^"]*)(?>""[^"]* )*"|(?: [^",|?|?]*))%xu';
+  /*
+  global $language;
+  $language_list = language_list();
+  $predefined_language = $language_list[$language->language];
+  $language_is_rtl =
+    $predefined_language->direction == LANGUAGE_RTL;
+  $regexp = !$language_is_rtl ?
+    '%(?:^|,|?|?\ *)("(?>[^"]*)(?>""[^"]* )*"|(?: [^",|?|?]*))%xu' :
+    '%(?:^|,\ *)("(?>[^"]*)(?>""[^"]* )*"|(?: [^",]*))%x';
+   */
+  $regexp = '%(?:^|,\ *)("(?>[^"]*)(?>""[^"]* )*"|(?: [^",]*))%x';
   preg_match_all($regexp, $tags, $matches);
   $typed_tags = array_unique($matches[1]);
 
