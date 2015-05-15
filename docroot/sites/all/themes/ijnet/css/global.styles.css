@@ -3684,6 +3684,10 @@ div.messages {
   line-height: 16px;
 }
 
+.i18n-pt-br .facebook-like .block-title {
+  letter-spacing: -0.02em;
+}
+
 /* =============================================================================
  *   Email bulletin archive (newsletter)
  * ========================================================================== */
