@@ -175,7 +175,6 @@ function _fe_news_get_last_posts_authors($tid = NULL) {
     foreach($view->result as $index => $content){
       if ((sizeof($authors) < 10) || $tid) {
         $author = _fe_news_get_author($content->nid);
-        kpr($author);
         if (!isset($author->uid)) {
           continue;
         }
