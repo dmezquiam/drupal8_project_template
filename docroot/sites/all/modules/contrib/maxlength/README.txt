@@ -1,12 +1,24 @@
-$Id: README.txt,v 1.2.6.1 2008/09/28 20:27:10 acm Exp $
+Drupal maxlength module:
+------------------------
+Requires - Drupal 7
+License - GPL (see LICENSE)
 
-This module allows administrators to set maximum lengths for the body
-fields of content types, as well as activating a Java Script count down 
-for CCK text fields.
 
-Maximum size for the body and title are on the content type's edit page.
-Enabling the JS count down for CCK fields is done on the fields respective
-configuration pages.
+Overview:
+--------
+This module allows you to set a maximum length for any text field on any form.
 
-Any questions or problems please use the issue queue via the project page
-http://drupal.org/project/maxlength
+Maxlength creates a new Form Property: #maxlength_js which in conjunction
+with #maxlength will enforce, via JavaScript, the maxlength of a textfield or
+textarea and will show the number of characters left.
+
+Using the field setting page, you can limit textfields and textareas. For textfields
+this module will use the "Maximum length" value set in the field settings.
+
+
+Credits:
+-------
+
+Originaly inspired by functionality found in the ed_classified module.
+
+Since branch 7.x-3.x comes uses the original code from maxlength_js.

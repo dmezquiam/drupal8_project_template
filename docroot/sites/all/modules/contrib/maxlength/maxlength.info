@@ -1,11 +1,12 @@
-name = "Maxlength"
-description = "Set a maximum length for body fields."
+name = Maxlength
+description = Limit the number of characters in textfields and textareas and shows the amount of characters left.
 core = 7.x
+package = Fields
 
-
-; Information added by drupal.org packaging script on 2013-10-01
-version = "7.x-1.x-dev"
+files[] = maxlength.test
+; Information added by Drupal.org packaging script on 2015-03-30
+version = "7.x-3.2-beta2"
 core = "7.x"
 project = "maxlength"
-datestamp = "1380586045"
+datestamp = "1427741882"
 
