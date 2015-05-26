@@ -10,9 +10,12 @@ Drupal.maxLength_limit = function (field) {
   }
   var limit = Drupal.settings.maxlength[id];
   var maxlength = $('#maxlength-' + id.substr(5));
+  maxlength.show_count = false;
   maxlength.span_remaining_count = maxlength.find('span.maxlength-counter-remaining');
-  maxlength.span_count = maxlength.find('span.maxlength-count');
-  maxlength.show_count = maxlength.span_count.length;
+  maxlength.find('span.maxlength-count', function() {
+    maxlength.show_count = true;
+    maxlength.span_count = maxlength.find('span.maxlength-count');
+  });
 
   // calculate the remaining count of chars  
   var length = $(field).val().length;

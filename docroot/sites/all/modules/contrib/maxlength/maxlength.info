@@ -4,8 +4,8 @@ core = 7.x
 
 
 ; Information added by drupal.org packaging script on 2013-10-01
-version = "7.x-2.x-dev"
+version = "7.x-1.x-dev"
 core = "7.x"
 project = "maxlength"
-datestamp = "1380586051"
+datestamp = "1380586045"
 
