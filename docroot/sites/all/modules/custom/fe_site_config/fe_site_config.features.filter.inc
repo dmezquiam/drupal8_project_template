@@ -60,11 +60,6 @@ function fe_site_config_filter_default_formats() {
         'status' => 1,
         'settings' => array(),
       ),
-      'twitter_links' => array(
-        'weight' => -47,
-        'status' => 1,
-        'settings' => array(),
-      ),
       'twitter_hashtag' => array(
         'weight' => -45,
         'status' => 1,
@@ -112,11 +107,6 @@ function fe_site_config_filter_default_formats() {
         'status' => 1,
         'settings' => array(),
       ),
-      'twitter_links' => array(
-        'weight' => 0,
-        'status' => 1,
-        'settings' => array(),
-      ),
       'twitter_username' => array(
         'weight' => 0,
         'status' => 1,
@@ -144,6 +134,11 @@ function fe_site_config_filter_default_formats() {
     'weight' => -6,
     'filters' => array(
       'filter_html_escape' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'twitter_links' => array(
         'weight' => 0,
         'status' => 1,
         'settings' => array(),
