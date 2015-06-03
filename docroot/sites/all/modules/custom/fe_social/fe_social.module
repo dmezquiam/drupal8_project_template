@@ -8,6 +8,16 @@
 include_once 'fe_social.features.inc';
 
 /**
+ * Implements hook_preprocess_page(&$vars)
+ */
+function fe_basic_page_preprocess_page(&$vars) {
+  if (drupal_is_front_page()) {
+    $module_path = drupal_get_path('module', 'fe_social');
+    drupal_add_js($module_path .'/js/fe_social.js');
+  }
+}
+
+/**
  * Implements hook_preprocess_node().
  */
 function fe_social_preprocess_node(&$vars) {
