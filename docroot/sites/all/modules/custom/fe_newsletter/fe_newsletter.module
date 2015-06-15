@@ -216,7 +216,6 @@ function template_preprocess_ijnet_newsletter_content(&$vars) {
  * Implements hook_preprocess_page(&$vars)
  */
 function fe_newsletter_preprocess_page(&$vars) {
-  kpr($vars['node']);
   if (arg(0) == 'email-bulletin-archive') {
     drupal_add_js(
       drupal_get_path('module', 'fe_newsletter') . '/js/fe_newsletter.js',
