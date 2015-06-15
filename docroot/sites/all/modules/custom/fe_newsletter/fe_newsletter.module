@@ -216,6 +216,7 @@ function template_preprocess_ijnet_newsletter_content(&$vars) {
  * Implements hook_preprocess_page(&$vars)
  */
 function fe_newsletter_preprocess_page(&$vars) {
+  kpr($vars['node']);
   if (arg(0) == 'email-bulletin-archive') {
     drupal_add_js(
       drupal_get_path('module', 'fe_newsletter') . '/js/fe_newsletter.js',
@@ -658,11 +659,11 @@ function _fe_newsletter_cc_get_message($success_code) {
  * Add node news, videos and avertisements to newsletter on save.
  */
 function fe_newsletter_node_presave($node) {
-
   // Only handle bulletin emails
   if ($node->type != 'bulletin_email') {
     return;
   }
+
   $newsletter_lang = $node->language;
 
   $from_date = isset($node->field_from_date[LANGUAGE_NONE][0]['value']) 
@@ -737,13 +738,13 @@ function fe_newsletter_node_presave($node) {
     }
 
     // add advertisements
-    $num_advs = isset($node->field_number_of_advertisements[0]['value']) ? $node->field_number_of_advertisements[0]['value'] : 4;
-
-    $advs_nids = _fe_newsletter_query_advertisements($newsletter_lang, $num_advs);
-
-    $i = 0;
-    foreach($advs_nids as $nid) {
-      $node->field_advertisements[LANGUAGE_NONE][$i++]['nid'] = $nid;
+    $number_of_ads =
+      isset($node->field_number_of_advertisements[LANGUAGE_NONE][0]['value']) ?
+      $node->field_number_of_advertisements[LANGUAGE_NONE][0]['value'] : 4;
+    $advs_nids =
+      _fe_newsletter_query_advertisements($newsletter_lang, $number_of_ads);
+    foreach($advs_nids as $index => $nid) {
+      $node->field_advertisements[$newsletter_lang][$index]['nid'] = $nid;
     }
   }
 }
