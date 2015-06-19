@@ -1359,10 +1359,14 @@ ul.action-links {
     time {}
   }
 
+  ul,ol li {
+    font-size: 13px;
+  }
+
   ul.links {
 
-    li {}
-    li a {}
+    li { }
+    li a { }
 
     li.node-read-more a {}
     li.comment-add a {}
