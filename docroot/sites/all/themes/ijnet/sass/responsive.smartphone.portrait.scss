@@ -21,6 +21,10 @@ html {
   font-size: 112.5%;
 }
 
+p {
+  font-size: 14px;
+}
+
 div.messages {
 	font-size: $font-size-tiny;
 }
@@ -66,9 +70,15 @@ div.messages {
 	margin-bottom: 0px !important;
 }
 .block-login-block {
-	width: 204px !important;
-	.block-inner {
-		margin-right: 0;
+  width: 204px !important;
+  padding-top: 0;
+  .block-inner {
+    margin-right: 0;
+    margin-left: 10px;
+    
+    .block-content {
+      padding: 17px 6px 0px 0px;
+    }
 	}
 }
 
