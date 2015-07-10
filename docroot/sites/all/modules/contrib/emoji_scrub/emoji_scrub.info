@@ -1,0 +1,5 @@
+name = Emoji Scrub
+description = Scrubs filtered text for emojis
+core = 7.x
+configure = admin/config/content/emoji_scrub
+files[] = emoji_scrub.test
