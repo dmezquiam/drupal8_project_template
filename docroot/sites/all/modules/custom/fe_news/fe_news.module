@@ -149,7 +149,7 @@ function fe_news_block_view($delta = '') {
   return $block;
 }
 
-function _fe_news_last_posts_authors_callback($tid) {
+function _fe_news_last_posts_authors_callback($tid = FALSE) {
   $last_posts_authors = _fe_news_get_last_posts_authors($tid);
 
   return theme(
