@@ -243,11 +243,44 @@ function _fe_news_get_author($nid) {
 }
 
 /**
- * Implements hook_form_alter()
+ * Implements hook_form_alter().
  */
 function fe_news_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'comment_node_news_form') {
     hide($form['author']);
+  }
+
+  if ($form_id == 'news_node_form') {
+    global $language;
+
+    $node = $form['#node'];
+    $node_language = $node->language;
+
+    if ($language->language != $node_language) {
+
+      $voc = taxonomy_vocabulary_machine_name_load('topic');
+      $options = taxonomy_get_tree($voc->vid);
+      $options = i18n_taxonomy_translate_terms($options, $node_language);
+
+      $translate_options = array('_none' => t('- None -'));
+      foreach ($options as $tid => $term) {
+        $translate_options[$tid] = $term->name;
+      }
+
+      $default = array();
+      foreach ($node->field_primary_topic[LANGUAGE_NONE] as $value) {
+        $default[] = $value['tid'];
+      }
+      $form['field_primary_topic'][LANGUAGE_NONE]['#options'] = $translate_options;
+      $form['field_primary_topic'][LANGUAGE_NONE]['#default_value'] = $default;
+
+      $default = array();
+      foreach ($node->field_topic[LANGUAGE_NONE] as $value) {
+        $default[] = $value['tid'];
+      }
+      $form['field_topic'][LANGUAGE_NONE]['#options'] = $translate_options;
+      $form['field_topic'][LANGUAGE_NONE]['#default_value'] = $default;
+    }
   }
 }
 
