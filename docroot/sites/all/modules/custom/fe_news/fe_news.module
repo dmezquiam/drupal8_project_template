@@ -285,6 +285,66 @@ function fe_news_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
+ * Implements hook_query_TAG_alter().
+ */
+function fe_news_query_term_access_alter(QueryAlterableInterface $query) {
+  $path = request_uri();
+  // Remove starting slash (present only in some cases)
+  $path = ltrim($path, '/');
+
+  // Change taxo autocomplete query to look only for terms with language = current node language
+  // Here can be added control for specific vocabulary
+  if (preg_match('|^[a-zA-Z]*/taxonomys/autocomplete(/.*)?|', $path)) {
+    global $language;
+    $referrer = $_SERVER['HTTP_REFERER'];
+
+    if ($referrer) {
+      $referrer = parse_url($referrer);
+      if (isset($referrer['query'])) {
+        $referrer_query = array();
+        $explode_query = explode('&', $referrer['query']);
+        foreach ($explode_query as $value) {
+          $value = explode('=', $value);
+          $referrer_query[$value[0]] = $value[1];
+        }
+      }
+
+      $referrer = explode('/', $referrer['path']);
+      $nid = FALSE;
+      if (is_numeric($referrer[3])) {
+        $nid = $referrer[3];
+      }
+      elseif (isset($referrer_query['translation']) && is_numeric($referrer_query['translation'])) {
+        $nid = $referrer_query['translation'];
+        if (!empty($referrer_query['target'])) {
+          $node_language = $referrer_query['target'];
+        }
+      }
+
+      if ($nid) {
+        $node = node_load($nid);
+        // Here can be added control for specific content type
+        if (!isset($node_language)) {
+          $node_language = $node->language;
+        }
+
+        if ($node_language != $language->language) {
+          if (module_exists('i18n_taxonomy') && ($table_alias = i18n_select_check_table($query, 'taxonomy_term_data', 'tid'))) {
+            $conditions =& $query->conditions();
+            foreach ($conditions as $key => $condition) {
+              if ($condition['field'] == $table_alias . '.language') {
+                unset($conditions[$key]);
+              }
+            }
+            $query->condition($table_alias . '.language', array($node_language, 'und'), 'IN');
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
  * Helper to pull value regardless of language
  */
 function _fe_news_get_safe_value($entity, $field_name) {
