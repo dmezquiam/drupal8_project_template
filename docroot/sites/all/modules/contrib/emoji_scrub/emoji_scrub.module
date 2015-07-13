@@ -1,0 +1,148 @@
+<?php
+/**
+ * @file
+ * Scrubs emojis from filtered text and input fields.
+ */
+
+/**
+ * Implements hook_node_presave().
+ */
+function emoji_scrub_node_presave($node) {
+  if (variable_get('emoji_scrub_type', 'scrub') == 'scrub') {
+    $type = 'node';
+    $bundle = $node->type;
+    $lang = $node->language;
+    $node = emoji_scrub_entity_text_fields($node, $type, $bundle, $lang);
+  }
+}
+
+/**
+ * Implements hook_taxonomy_term_presave().
+ */
+function emoji_scrub_taxonomy_term_presave($term) {
+  if (variable_get('emoji_scrub_type', 'scrub') == 'scrub') {
+    $type = 'taxonomy_term';
+    $bundle = $term->vocabulary_machine_name;
+    $lang = !empty($term->path['language']) ? $term->path['language'] : 'und';
+    $term = emoji_scrub_entity_text_fields($term, $type, $bundle, $lang);
+    // Terms also have a description field.
+    if (!empty($term->description)) {
+      $term->description = _emoji_scrub_adub_dub($term->description);
+    }
+  }
+}
+
+/**
+ * Loop through all the entity text fields and strip the emojis.
+ *
+ * @param object $entity
+ *   Fully loaded entity object.
+ * @param string $type
+ *   Type of entity.
+ * @param string $bundle
+ *   Entity Bundle.
+ * @param string $lang
+ *   Language.
+ *
+ * @return object
+ *   Editted entity to return
+ */
+function emoji_scrub_entity_text_fields($entity, $type, $bundle, $lang) {
+  $fields = field_info_instances($type, $bundle);
+  // Loop through all field instances.
+  foreach ($fields as $field_id => $field) {
+    if ($field['widget']['module'] == 'text') {
+      $entity_field = !empty($entity->$field_id) ? $entity->$field_id : array();
+      if (!empty($entity_field[$lang])) {
+        foreach ($entity_field[$lang] as $k => $v) {
+          $text = $v['value'];
+          if (!empty($text)) {
+            $entity_field[$lang][$k]['value'] = _emoji_scrub_adub_dub($text);
+            $entity->$field_id = $entity_field;
+          }
+        }
+      }
+    }
+  }
+  return $entity;
+}
+
+/**
+ * Custom function to scrub all emojis away.
+ */
+function _emoji_scrub_adub_dub($text, $replace = '') {
+  if ($replace == '') {
+    $replace = variable_get('emoji_scrub_replace', '');
+  }
+  // Regex grabbed from https://www.drupal.org/node/1910376.
+  // @see https://www.drupal.org/node/1910376
+  // @see http://webcollab.sourceforge.net/unicode.html
+  // Reject overly long 2 byte sequences, as well as characters above U+10000
+  // and replace with empty.
+  $regex = '/[\x00-\x08\x10\x0B\x0C\x0E-\x19\x7F]';
+  $regex .= '|[\x00-\x7F][\x80-\xBF]+';
+  $regex .= '|([\xC0\xC1]|[\xF0-\xFF])[\x80-\xBF]*';
+  $regex .= '|[\xC2-\xDF]((?![\x80-\xBF])|[\x80-\xBF]{2,})';
+  $regex .= '|[\xE0-\xEF](([\x80-\xBF](?![\x80-\xBF]))|(?![\x80-\xBF]{2})|[\x80-\xBF]{3,})/S';
+  $stripped_string = preg_replace($regex, $replace, $text);
+  // Reject overly long 3 byte sequences and UTF-16 surrogates and replace
+  // with --.
+  $stripped_string = preg_replace('/\xE0[\x80-\x9F][\x80-\xBF]' . '|\xED[\xA0-\xBF][\x80-\xBF]/S', $replace, $stripped_string);
+  return $stripped_string;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function emoji_scrub_permission() {
+  return array(
+    'administer emoji scrub settings' => array(
+      'title' => t('Alter the emoji scrub settings'),
+      'description' => t('Alter the emoji scrub settings'),
+      'restrict access' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function emoji_scrub_menu() {
+  $items = array();
+
+  $items['admin/config/content/emoji_scrub'] = array(
+    'title' => 'Emoji Scrub Settings',
+    'description' => 'Settings for Emoji Scrub',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('emoji_scrub_settings'),
+    'access arguments' => array('administer emoji scrub settings'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_settings().
+ */
+function emoji_scrub_settings() {
+
+  $form['emoji_scrub_type'] = array(
+    '#type' => 'radios',
+    '#title' => t('Scrub Type'),
+    '#description' => t('Change the setting to gracefully fail with an error message or remove all the emojis on save'),
+    '#default_value' => variable_get('emoji_scrub_type', 'scrub'),
+    '#options' => array(
+      'scrub' => t('Remove all emojis from text'),
+    ),
+    '#weight' => -5,
+  );
+
+  $form['emoji_scrub_replace'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Replacement string for emojis',
+    '#description' => t('The string value here will replace all emojis on the site.'),
+    '#default_value' => variable_get('emoji_scrub_replace', ''),
+  );
+
+  return system_settings_form($form);
+}

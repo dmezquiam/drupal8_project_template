@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * This file holds the install information for Emoji Scrub.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function emoji_scrub_uninstall() {
+  db_delete('variable')
+    ->condition('name', db_like('emoji_scrub_') . '%', 'LIKE')
+    ->execute();
+  cache_clear_all('variables', 'cache');
+}

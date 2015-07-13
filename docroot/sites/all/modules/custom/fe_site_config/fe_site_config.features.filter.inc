@@ -27,12 +27,10 @@ function fe_site_config_filter_default_formats() {
           'filter_html_nofollow' => 1,
         ),
       ),
-      'filter_url' => array(
+      'filter_autop' => array(
         'weight' => 0,
         'status' => 1,
-        'settings' => array(
-          'filter_url_length' => 72,
-        ),
+        'settings' => array(),
       ),
       'twitter_hashtag' => array(
         'weight' => 0,
@@ -41,6 +39,11 @@ function fe_site_config_filter_default_formats() {
       ),
       'twitter_username' => array(
         'weight' => 0,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
         'status' => 1,
         'settings' => array(),
       ),
@@ -55,32 +58,44 @@ function fe_site_config_filter_default_formats() {
     'status' => 1,
     'weight' => -10,
     'filters' => array(
-      'twitter_username' => array(
-        'weight' => -48,
-        'status' => 1,
-        'settings' => array(),
-      ),
-      'twitter_hashtag' => array(
-        'weight' => -45,
-        'status' => 1,
-        'settings' => array(),
-      ),
       'filter_html' => array(
-        'weight' => -44,
+        'weight' => -49,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <img> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <iframe> <p> <h1><h2><h3>',
+          'allowed_html' => '<a> <em> <strong> <cite> <img> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <iframe> <p> <h1><h2><h3><div><span><script>',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),
       ),
+      'filter_autop' => array(
+        'weight' => -48,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'twitter_username' => array(
+        'weight' => -47,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'twitter_hashtag' => array(
+        'weight' => -46,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'filter_url' => array(
+        'weight' => -45,
+        'status' => 1,
+        'settings' => array(
+          'filter_url_length' => 72,
+        ),
+      ),
       'media_filter' => array(
-        'weight' => -43,
+        'weight' => -44,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => -41,
+        'weight' => -40,
         'status' => 1,
         'settings' => array(),
       ),

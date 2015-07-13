@@ -71,6 +71,7 @@ function fe_site_config_wysiwyg_default_profiles() {
           'Source' => 1,
           'PasteFromWord' => 1,
           'RemoveFormat' => 1,
+          'Format' => 1,
           'Iframe' => 1,
           'SpellChecker' => 1,
           'Scayt' => 1,
