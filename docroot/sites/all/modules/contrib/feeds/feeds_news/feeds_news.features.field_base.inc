@@ -32,9 +32,7 @@ function feeds_news_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
+    'settings' => array(),
     'translatable' => 1,
     'type' => 'text_with_summary',
   );
