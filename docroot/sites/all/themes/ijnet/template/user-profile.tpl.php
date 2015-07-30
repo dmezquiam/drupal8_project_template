@@ -40,6 +40,7 @@
      hide($user_profile['user_picture']);
      hide($user_profile['field_twitter']);
      hide($user_profile['twitter']);
+     hide($user_profile['locations']);
      print render($user_profile['user_picture']);
      print render($user_profile);
   ?>
