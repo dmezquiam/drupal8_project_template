@@ -1,41 +1,51 @@
+/* line 7, ../sass/_language_fix.scss */
 .i18n-en .latest-posts-block {
   background: url("../images/bg_latest_post_en.jpg") no-repeat left center;
 }
 
 @media (max-width: 989px) and (min-width: 769px) {
+  /* line 17, ../sass/_language_fix.scss */
   .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
     top: -23px !important;
     left: 29px;
     line-height: normal;
   }
 }
+/* line 26, ../sass/_language_fix.scss */
 .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   top: 5px;
   left: 29px;
   line-height: normal;
 }
+/* line 34, ../sass/_language_fix.scss */
 .i18n-es .latest-posts-block {
   background: url("../images/bg_latest_post_es.jpg") no-repeat left center;
 }
+/* line 39, ../sass/_language_fix.scss */
 .i18n-es.section-knight-media-innovators #block-blockify-blockify-page-title h1 {
   font-size: 25px;
 }
 
+/* line 47, ../sass/_language_fix.scss */
 .i18n-pt-br .block-login-block {
   font-size: 15px;
 }
+/* line 50, ../sass/_language_fix.scss */
 .i18n-pt-br .mail-subscribe .dropdown .clicker h4 {
   font-size: 14px;
 }
+/* line 54, ../sass/_language_fix.scss */
 .i18n-pt-br .latest-posts-block {
   background: url("../images/bg_latest_post_pt.jpg") no-repeat left center;
 }
+/* line 58, ../sass/_language_fix.scss */
 .i18n-pt-br .latest-posts-block .inner-block a {
   line-height: 14px;
   font-size: 12px;
   padding: 13px 44px 13px 16px;
 }
+/* line 64, ../sass/_language_fix.scss */
 .i18n-pt-br .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   width: 270px;
@@ -44,23 +54,29 @@
   line-height: normal;
 }
 
+/* line 76, ../sass/_language_fix.scss */
 .i18n-ru .content-tabs .block-title {
   left: 22px;
 }
+/* line 80, ../sass/_language_fix.scss */
 .i18n-ru .block-top-header-menu {
   width: 65%;
 }
+/* line 81, ../sass/_language_fix.scss */
 .i18n-ru .block-lang-dropdown {
   width: 30%;
 }
+/* line 82, ../sass/_language_fix.scss */
 .i18n-ru .block-top-header-menu .block-content ul.menu li a {
   display: block;
   line-height: 12px;
   margin: 0 4px;
 }
+/* line 89, ../sass/_language_fix.scss */
 .i18n-ru .block-login-block {
   font-size: 14px;
 }
+/* line 95, ../sass/_language_fix.scss */
 .i18n-ru .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   width: 130px;
@@ -68,27 +84,33 @@
   left: 29px;
   line-height: normal;
 }
+/* line 105, ../sass/_language_fix.scss */
 .i18n-ru .latest-posts-block {
   background: url("../images/bg_latest_post_ru.jpg") no-repeat left center;
 }
+/* line 109, ../sass/_language_fix.scss */
 .i18n-ru .latest-posts-block .inner-block a {
   padding: 13px 44px 13px 22px;
   line-height: 14px;
   font-size: 11px;
 }
+/* line 115, ../sass/_language_fix.scss */
 .i18n-ru .block-about-author .button-tiny {
   margin-top: 10px;
 }
 
+/* line 123, ../sass/_language_fix.scss */
 .i18n-ar .latest-posts-block {
   background: url("../images/bg_latest_post_ar.jpg") no-repeat left center;
 }
 
+/* line 131, ../sass/_language_fix.scss */
 .i18n-zh-hans .latest-posts-block {
   background: url("../images/bg_latest_post_zh-hans.jpg") no-repeat left -10px;
   height: 202px;
 }
 
+/* line 140, ../sass/_language_fix.scss */
 .i18n-fa .latest-posts-block {
   background: url("../images/bg_latest_post_fa.jpg") no-repeat left center;
 }
@@ -103,27 +125,33 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 /* DRUPAL ADMIN TOOL BAR */
+/* line 15, ../sass/responsive.smartphone.landscape.scss */
 body #admin-menu {
   font-size: 8px;
 }
 
+/* line 16, ../sass/responsive.smartphone.landscape.scss */
 body.admin-menu {
   margin-top: 21px !important;
 }
 
 /* Increase the body font size on small devices */
+/* line 20, ../sass/responsive.smartphone.landscape.scss */
 html {
   font-size: 112.5%;
 }
 
+/* line 24, ../sass/responsive.smartphone.landscape.scss */
 p {
   font-size: 14px;
 }
 
+/* line 28, ../sass/responsive.smartphone.landscape.scss */
 div.messages {
   font-size: 12px;
 }
 
+/* line 40, ../sass/responsive.smartphone.landscape.scss */
 input[type="email"],
 input[type="tel"],
 input[type="number"],
@@ -139,20 +167,24 @@ input[type="text"] {
 /* =============================================================================
  *   Top BAR
  * ========================================================================== */
+/* line 48, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-lang-dropdown {
   width: 215px;
   float: right;
   clear: none;
 }
+/* line 49, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-lang-dropdown .block-title {
   display: none;
 }
+/* line 54, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-top-header-menu {
   width: 39px;
   height: 38px;
   float: left;
   margin-left: 15px;
 }
+/* line 59, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-top-header-menu .menu {
   display: none;
 }
@@ -160,30 +192,37 @@ input[type="text"] {
 /* =============================================================================
  *   Header
  * ========================================================================== */
+/* line 68, ../sass/responsive.smartphone.landscape.scss */
 #branding {
   width: inherit;
 }
+/* line 70, ../sass/responsive.smartphone.landscape.scss */
 #branding #logo {
   padding: 20px 0px 21px 3px;
 }
 
+/* line 75, ../sass/responsive.smartphone.landscape.scss */
 #block-search-form {
   display: none;
 }
 
+/* line 81, ../sass/responsive.smartphone.landscape.scss */
 .block-support-ijnet,
 .block-login-block {
   margin-bottom: 0px !important;
 }
 
+/* line 84, ../sass/responsive.smartphone.landscape.scss */
 .block-login-block {
   width: 204px !important;
   padding-top: 0;
 }
+/* line 87, ../sass/responsive.smartphone.landscape.scss */
 .block-login-block .block-inner {
   margin-right: 0;
   margin-left: 10px;
 }
+/* line 91, ../sass/responsive.smartphone.landscape.scss */
 .block-login-block .block-inner .block-content {
   padding: 17px 6px 0px 0px;
 }
@@ -192,14 +231,17 @@ input[type="text"] {
  *   Top BAR
  * ========================================================================== */
 /* leaderboard-wrapper ====================================================== */
+/* line 102, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper {
   background: #5b5836;
   border-bottom: 1px solid #3b3923;
 }
+/* line 105, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block {
   margin-bottom: 0px;
 }
 
+/* line 111, ../sass/responsive.smartphone.landscape.scss */
 .block-top-header-menu ul.menu {
   display: none;
 }
@@ -208,31 +250,39 @@ input[type="text"] {
 /* =============================================================================
  *   Item list
  * ========================================================================== */
+/* line 125, ../sass/responsive.smartphone.landscape.scss */
 .article-item-list {
   width: 100%;
   float: left;
   height: auto;
 }
+/* line 693, ../sass/_custom.scss */
 .article-item-list:nth-child(odd) {
   clear: left;
 }
+/* line 723, ../sass/_custom.scss */
 .article-item-list .content:nth-child(odd) {
   margin-right: 10px;
 }
+/* line 724, ../sass/_custom.scss */
 .article-item-list .content:nth-child(even) {
   margin-right: 0px;
 }
+/* line 787, ../sass/_custom.scss */
 .article-item-list .content {
   position: relative;
 }
+/* line 789, ../sass/_custom.scss */
 .article-item-list img {
   width: 100%;
 }
+/* line 792, ../sass/_custom.scss */
 .article-item-list .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
+/* line 796, ../sass/_custom.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -240,11 +290,13 @@ input[type="text"] {
   width: auto;
   border: 1px solid #C0C0C0;
 }
+/* line 803, ../sass/_custom.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
+/* line 807, ../sass/_custom.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -257,10 +309,12 @@ input[type="text"] {
   -ms-border-radius: 0;
   border-radius: 0;
 }
+/* line 818, ../sass/_custom.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
+/* line 830, ../sass/_custom.scss */
 .article-item-list .aricle-title,
 .article-item-list .node-title {
   font-size: 18px;
@@ -271,46 +325,57 @@ input[type="text"] {
   overflow: hidden;
   clear: both;
 }
+/* line 838, ../sass/_custom.scss */
 .article-item-list .aricle-title a,
 .article-item-list .node-title a {
   color: #137a9a;
 }
+/* line 842, ../sass/_custom.scss */
 .article-item-list .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
+/* line 850, ../sass/_custom.scss */
 .article-item-list .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
 }
 
+/* line 130, ../sass/responsive.smartphone.landscape.scss */
 .article-item-list-no-body {
   width: 100%;
   float: left;
   height: auto;
 }
+/* line 740, ../sass/_custom.scss */
 .article-item-list-no-body:nth-child(odd) {
   clear: left;
 }
+/* line 770, ../sass/_custom.scss */
 .article-item-list-no-body .content:nth-child(odd) {
   margin-right: 10px;
 }
+/* line 771, ../sass/_custom.scss */
 .article-item-list-no-body .content:nth-child(even) {
   margin-right: 0px;
 }
+/* line 787, ../sass/_custom.scss */
 .article-item-list-no-body .content {
   position: relative;
 }
+/* line 789, ../sass/_custom.scss */
 .article-item-list-no-body img {
   width: 100%;
 }
+/* line 792, ../sass/_custom.scss */
 .article-item-list-no-body .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
+/* line 796, ../sass/_custom.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -318,11 +383,13 @@ input[type="text"] {
   width: auto;
   border: 1px solid #C0C0C0;
 }
+/* line 803, ../sass/_custom.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
+/* line 807, ../sass/_custom.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -335,10 +402,12 @@ input[type="text"] {
   -ms-border-radius: 0;
   border-radius: 0;
 }
+/* line 818, ../sass/_custom.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
+/* line 830, ../sass/_custom.scss */
 .article-item-list-no-body .aricle-title,
 .article-item-list-no-body .node-title {
   font-size: 18px;
@@ -349,16 +418,19 @@ input[type="text"] {
   overflow: hidden;
   clear: both;
 }
+/* line 838, ../sass/_custom.scss */
 .article-item-list-no-body .aricle-title a,
 .article-item-list-no-body .node-title a {
   color: #137a9a;
 }
+/* line 842, ../sass/_custom.scss */
 .article-item-list-no-body .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
+/* line 850, ../sass/_custom.scss */
 .article-item-list-no-body .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
@@ -367,6 +439,7 @@ input[type="text"] {
 /* =============================================================================
  *   TABS
  * ========================================================================== */
+/* line 138, ../sass/responsive.smartphone.landscape.scss */
 .content-tabs .block-title {
   display: none;
 }
@@ -374,39 +447,48 @@ input[type="text"] {
 /* =============================================================================
  *   Video landing page
  * ========================================================================== */
+/* line 144, ../sass/responsive.smartphone.landscape.scss */
 .pane-jsonblocks-social-block {
   display: none !important;
 }
 
+/* line 145, ../sass/responsive.smartphone.landscape.scss */
 .pane-fe-videos-fe-videos-search .videos-landing-header {
   height: 222px;
 }
 
+/* line 147, ../sass/responsive.smartphone.landscape.scss */
 .pane-fe-videos-fe-videos-search .videos-landing-header .header,
 .pane-fe-videos-fe-videos-search .videos-landing-header .topic-select {
   width: 100%;
 }
 
+/* line 152, ../sass/responsive.smartphone.landscape.scss */
 .pane-views-videos-featured-video {
   margin-bottom: 0px;
 }
 
+/* line 153, ../sass/responsive.smartphone.landscape.scss */
 .view-display-id-featured_video {
   height: 100%;
 }
 
+/* line 154, ../sass/responsive.smartphone.landscape.scss */
 .view-display-id-featured_video iframe {
   height: 280px;
 }
 
+/* line 155, ../sass/responsive.smartphone.landscape.scss */
 .page-videos .view-display-id-featured_video {
   margin-right: 0px;
 }
 
+/* line 156, ../sass/responsive.smartphone.landscape.scss */
 .view-display-id-featured_video {
   padding-right: 15px;
 }
 
+/* line 159, ../sass/responsive.smartphone.landscape.scss */
 .page-videos .pane-views-videos-related-videos-landing .block-inner {
   margin-top: 0px;
   margin-left: 20px;
@@ -415,11 +497,13 @@ input[type="text"] {
   height: auto;
 }
 
+/* line 166, ../sass/responsive.smartphone.landscape.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row {
   width: 50%;
   float: left;
   margin-bottom: 0px;
 }
+/* line 170, ../sass/responsive.smartphone.landscape.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row .node-video {
   margin: 0 5px;
 }
@@ -427,19 +511,23 @@ input[type="text"] {
 /* =============================================================================
  *   Opportunities LANDING
  * ========================================================================== */
+/* line 182, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets #edit-field-category-tid-wrapper,
 .views-exposed-widgets #edit-field-region-tid-wrapper {
   width: 100%;
   padding-right: 0%;
 }
+/* line 187, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets #edit-title-wrapper {
   width: 100%;
   padding: 2% 0% 0 0;
 }
+/* line 191, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets #edit-keys-wrapper {
   padding-right: 0px;
   width: 242px;
 }
+/* line 195, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets .views-submit-button {
   width: 100%;
   text-align: center;
@@ -448,6 +536,7 @@ input[type="text"] {
 /* =============================================================================
  *   User Profile
  * ========================================================================== */
+/* line 139, ../sass/_custom.scss */
 .section-users #content .profile:after {
   content: ".";
   display: block;
@@ -455,24 +544,30 @@ input[type="text"] {
   clear: both;
   visibility: hidden;
 }
+/* line 146, ../sass/_custom.scss */
 * html .section-users #content .profile {
   height: 1px;
 }
+/* line 209, ../sass/responsive.smartphone.landscape.scss */
 .section-users #content .profile .field-name-field-bio {
   width: 100%;
 }
+/* line 211, ../sass/responsive.smartphone.landscape.scss */
 .section-users #content .profile .field-name-field-bio .field-items {
   margin-right: 0px;
   padding-right: 0px;
 }
+/* line 216, ../sass/responsive.smartphone.landscape.scss */
 .section-users #content .profile .user-picture {
   margin: 0px 0 0 15px;
 }
 
+/* line 229, ../sass/responsive.smartphone.landscape.scss */
 .page-search .search-form .form-wrapper {
   width: 100%;
   margin: 0;
 }
+/* line 236, ../sass/responsive.smartphone.landscape.scss */
 .page-search .search-form .form-wrapper input {
   width: 100%;
 }

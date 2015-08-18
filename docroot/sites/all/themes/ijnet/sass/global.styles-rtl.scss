@@ -40,6 +40,23 @@ body.sidebar-second .content-inner {
 }
 
 
+//mobile
+@media only screen and (min-width:0px) and (max-width:480px) {
+  //interior
+  body #content-column, .content-column, div.sidebar {}
+  
+  body .region-sidebar-second {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0px;
+  }
+
+  body.sidebar-second .content-inner {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 // ====================================================
   .field-type-taxonomy-term-reference ul.field-items {
     width: 88%;
