@@ -29,6 +29,18 @@ div.messages {
 	font-size: $font-size-tiny;
 }
 
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="datetime"],
+input[type="month"],
+input[type="search"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+}
+
 /* =============================================================================
  *   Top BAR
  * ========================================================================== */

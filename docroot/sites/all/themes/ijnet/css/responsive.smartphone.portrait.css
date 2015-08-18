@@ -1,51 +1,41 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\000037}}
 .i18n-en .latest-posts-block {
   background: url("../images/bg_latest_post_en.jpg") no-repeat left center;
 }
 
 @media (max-width: 989px) and (min-width: 769px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000317}}
   .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
     top: -23px !important;
     left: 29px;
     line-height: normal;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000326}}
 .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   top: 5px;
   left: 29px;
   line-height: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000334}}
 .i18n-es .latest-posts-block {
   background: url("../images/bg_latest_post_es.jpg") no-repeat left center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000339}}
 .i18n-es.section-knight-media-innovators #block-blockify-blockify-page-title h1 {
   font-size: 25px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000347}}
 .i18n-pt-br .block-login-block {
   font-size: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000350}}
 .i18n-pt-br .mail-subscribe .dropdown .clicker h4 {
   font-size: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000354}}
 .i18n-pt-br .latest-posts-block {
   background: url("../images/bg_latest_post_pt.jpg") no-repeat left center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000358}}
 .i18n-pt-br .latest-posts-block .inner-block a {
   line-height: 14px;
   font-size: 12px;
   padding: 13px 44px 13px 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000364}}
 .i18n-pt-br .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   width: 270px;
@@ -54,29 +44,23 @@
   line-height: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000376}}
 .i18n-ru .content-tabs .block-title {
   left: 22px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000380}}
 .i18n-ru .block-top-header-menu {
   width: 65%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000381}}
 .i18n-ru .block-lang-dropdown {
   width: 30%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000382}}
 .i18n-ru .block-top-header-menu .block-content ul.menu li a {
   display: block;
   line-height: 12px;
   margin: 0 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000389}}
 .i18n-ru .block-login-block {
   font-size: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\0000395}}
 .i18n-ru .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   width: 130px;
@@ -84,33 +68,27 @@
   left: 29px;
   line-height: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\00003105}}
 .i18n-ru .latest-posts-block {
   background: url("../images/bg_latest_post_ru.jpg") no-repeat left center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\00003109}}
 .i18n-ru .latest-posts-block .inner-block a {
   padding: 13px 44px 13px 22px;
   line-height: 14px;
   font-size: 11px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\00003115}}
 .i18n-ru .block-about-author .button-tiny {
   margin-top: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\00003123}}
 .i18n-ar .latest-posts-block {
   background: url("../images/bg_latest_post_ar.jpg") no-repeat left center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\00003131}}
 .i18n-zh-hans .latest-posts-block {
   background: url("../images/bg_latest_post_zh-hans.jpg") no-repeat left -10px;
   height: 202px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_language_fix\.scss}line{font-family:\00003140}}
 .i18n-fa .latest-posts-block {
   background: url("../images/bg_latest_post_fa.jpg") no-repeat left center;
 }
@@ -125,55 +103,57 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 /* DRUPAL ADMIN TOOL BAR */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000315}}
 body #admin-menu {
   font-size: 8px;
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000316}}
 body.admin-menu {
   margin-top: 0px !important;
 }
 
 /* Increase the default font size on small devices */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000320}}
 html {
   font-size: 112.5%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000324}}
 p {
   font-size: 14px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000328}}
 div.messages {
   font-size: 12px;
+}
+
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="datetime"],
+input[type="month"],
+input[type="search"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
 }
 
 /* =============================================================================
  *   Top BAR
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000336}}
 #leaderboard-wrapper .block-lang-dropdown {
   width: 204px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000337}}
 #leaderboard-wrapper .block-lang-dropdown .block-title {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000339}}
 #leaderboard-wrapper .block-lang-dropdown .block-inner {
   margin-right: 9px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000343}}
 #leaderboard-wrapper .block-top-header-menu {
   width: 39px;
   height: 38px;
   margin-left: 13px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000347}}
 #leaderboard-wrapper .block-top-header-menu .menu {
   display: none;
 }
@@ -181,37 +161,30 @@ div.messages {
 /* =============================================================================
  *   Header
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000356}}
 #branding {
   width: inherit;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000358}}
 #branding #logo {
   padding: 20px 0px 21px 3px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000363}}
 #block-search-form {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000369}}
 .block-support-ijnet,
 .block-login-block {
   margin-bottom: 0px !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000372}}
 .block-login-block {
   width: 204px !important;
   padding-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000375}}
 .block-login-block .block-inner {
   margin-right: 0;
   margin-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000379}}
 .block-login-block .block-inner .block-content {
   padding: 17px 6px 0px 0px;
 }
@@ -219,39 +192,31 @@ div.messages {
 /* =============================================================================
  *   Item list
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000389}}
 .article-item-list {
   width: 100%;
   float: left;
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003693}}
 .article-item-list:nth-child(odd) {
   clear: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003731}}
 .article-item-list .content:nth-child(odd) {
   margin-right: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003732}}
 .article-item-list .content:nth-child(even) {
   margin-right: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003787}}
 .article-item-list .content {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003789}}
 .article-item-list img {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003792}}
 .article-item-list .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003796}}
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -259,13 +224,11 @@ div.messages {
   width: auto;
   border: 1px solid #C0C0C0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003803}}
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003807}}
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -278,12 +241,10 @@ div.messages {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003818}}
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003830}}
 .article-item-list .aricle-title,
 .article-item-list .node-title {
   font-size: 18px;
@@ -294,57 +255,46 @@ div.messages {
   overflow: hidden;
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003838}}
 .article-item-list .aricle-title a,
 .article-item-list .node-title a {
   color: #137a9a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003842}}
 .article-item-list .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003850}}
 .article-item-list .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\0000394}}
 .article-item-list-no-body {
   width: 100%;
   float: left;
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003740}}
 .article-item-list-no-body:nth-child(odd) {
   clear: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003778}}
 .article-item-list-no-body .content:nth-child(odd) {
   margin-right: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003779}}
 .article-item-list-no-body .content:nth-child(even) {
   margin-right: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003787}}
 .article-item-list-no-body .content {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003789}}
 .article-item-list-no-body img {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003792}}
 .article-item-list-no-body .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003796}}
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -352,13 +302,11 @@ div.messages {
   width: auto;
   border: 1px solid #C0C0C0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003803}}
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003807}}
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -371,12 +319,10 @@ div.messages {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003818}}
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003830}}
 .article-item-list-no-body .aricle-title,
 .article-item-list-no-body .node-title {
   font-size: 18px;
@@ -387,19 +333,16 @@ div.messages {
   overflow: hidden;
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003838}}
 .article-item-list-no-body .aricle-title a,
 .article-item-list-no-body .node-title a {
   color: #137a9a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003842}}
 .article-item-list-no-body .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003850}}
 .article-item-list-no-body .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
@@ -408,13 +351,11 @@ div.messages {
 /* =============================================================================
  *   TABS
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003103}}
 .sidebar-tabs .block-title,
 .content-tabs .block-title {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003104}}
 .content-tabs .quicktabs-wrapper .quicktabs-tabs li a {
   padding: 5px 20px 4px 20px;
 }
@@ -422,48 +363,39 @@ div.messages {
 /* =============================================================================
  *   Video landing page
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003112}}
 .pane-jsonblocks-social-block {
   display: none !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003113}}
 .pane-fe-videos-fe-videos-search .videos-landing-header {
   height: 222px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003115}}
 .pane-fe-videos-fe-videos-search .videos-landing-header .header,
 .pane-fe-videos-fe-videos-search .videos-landing-header .topic-select {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003120}}
 .pane-views-videos-featured-video {
   margin-bottom: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003121}}
 .view-display-id-featured_video {
   height: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003122}}
 .view-display-id-featured_video iframe {
   height: 200px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003123}}
 .page-videos .view-display-id-featured_video {
   margin-right: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003124}}
 .view-display-id-featured_video {
   padding-right: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003127}}
 .page-videos .pane-views-videos-related-videos-landing .block-inner {
   margin-top: 0px;
   margin-left: 20px;
@@ -472,13 +404,11 @@ div.messages {
   height: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003134}}
 .pane-views-videos-related-videos-landing .block-inner .views-row {
   width: 100%;
   float: left;
   margin-bottom: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003138}}
 .pane-views-videos-related-videos-landing .block-inner .views-row .node-video {
   margin: 0 5px;
 }
@@ -486,23 +416,19 @@ div.messages {
 /* =============================================================================
  *   Opportunities LANDING
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003148}}
 .views-exposed-widgets #edit-field-category-tid-wrapper,
 .views-exposed-widgets #edit-field-region-tid-wrapper {
   width: 100%;
   padding-right: 0%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003153}}
 .views-exposed-widgets #edit-title-wrapper {
   width: 100%;
   padding: 2% 0% 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003157}}
 .views-exposed-widgets #edit-keys-wrapper {
   padding-right: 0px;
   width: 242px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003161}}
 .views-exposed-widgets .views-submit-button {
   width: 100%;
   text-align: center;
@@ -511,7 +437,6 @@ div.messages {
 /* =============================================================================
  *   User Profile
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003139}}
 .section-users #content .profile:after {
   content: ".";
   display: block;
@@ -519,32 +444,26 @@ div.messages {
   clear: both;
   visibility: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/_custom\.scss}line{font-family:\00003146}}
 * html .section-users #content .profile {
   height: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003175}}
 .section-users #content .profile .field-name-field-bio {
   width: 100%;
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003178}}
 .section-users #content .profile .field-name-field-bio .field-items {
   margin-right: 0px;
   padding-right: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003183}}
 .section-users #content .profile .user-picture {
   margin: 0px auto 15px auto;
   float: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003196}}
 .page-search .search-form .form-wrapper {
   width: 100%;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/drupal\/sites\/ijnet\/docroot\/sites\/all\/themes\/ijnet\/sass\/responsive\.smartphone\.portrait\.scss}line{font-family:\00003203}}
 .page-search .search-form .form-wrapper input {
   width: 100%;
 }
