@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Database Backup feature.
+ */
+
+include_once 'fe_database_backup.features.inc';
