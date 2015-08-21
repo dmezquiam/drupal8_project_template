@@ -425,6 +425,7 @@ function fe_chat_views_default_views() {
 
   /* Display: Chats Landing Page */
   $handler = $view->new_display('page', 'Chats Landing Page', 'chats_landing');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
