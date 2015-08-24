@@ -20,8 +20,16 @@ html {
   font-size: 81.3%;
 }
 
-p {
-  font-size: 14px;
+p,
+pre {
+  font-size: $font-size-regular-mobile;
+}
+
+html[dir="rtl"] {
+  p,
+  pre {
+    font-size: $font-size-regular-rtl-mobile;
+  }
 }
 
 input[type="email"],

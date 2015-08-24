@@ -924,7 +924,7 @@
     }
     h2 {
       font-size: $font-size-x-large;
-      margin: 0px 0px 10px 0px;
+      margin: 0px 0px 0px 0px;
       line-height: 26px;
       a {
         color: $color-link-primary;
@@ -932,6 +932,10 @@
     }
     .content {
       margin-left: 126px;
+      .field-name-body {
+        font-size: 15px;
+        font-family: $signika-Light;
+      }
       p {
         margin-bottom: 0px;
       }

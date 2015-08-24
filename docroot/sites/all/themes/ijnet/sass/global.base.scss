@@ -327,6 +327,15 @@ pre {
   color: $color-txt-primary;
   margin: 0 0 1.5em;
 }
+html[dir="rtl"] {
+  p,
+  pre {
+    font-size: $font-size-regular-rtl;
+    line-height: $line-height-regular;
+    color: $color-txt-primary;
+    margin: 0 0 1.5em;
+  }
+}
 
 
 /*

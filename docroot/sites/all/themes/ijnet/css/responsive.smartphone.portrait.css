@@ -142,17 +142,24 @@ html {
   font-size: 112.5%;
 }
 
-/* line 24, ../sass/responsive.smartphone.portrait.scss */
-p {
-  font-size: 14px;
+/* line 25, ../sass/responsive.smartphone.portrait.scss */
+p,
+pre {
+  font-size: 15px;
 }
 
-/* line 28, ../sass/responsive.smartphone.portrait.scss */
+/* line 31, ../sass/responsive.smartphone.portrait.scss */
+html[dir="rtl"] p,
+html[dir="rtl"] pre {
+  font-size: 16px;
+}
+
+/* line 36, ../sass/responsive.smartphone.portrait.scss */
 div.messages {
   font-size: 12px;
 }
 
-/* line 40, ../sass/responsive.smartphone.portrait.scss */
+/* line 48, ../sass/responsive.smartphone.portrait.scss */
 input[type="email"],
 input[type="tel"],
 input[type="number"],
@@ -168,25 +175,25 @@ input[type="text"] {
 /* =============================================================================
  *   Top BAR
  * ========================================================================== */
-/* line 48, ../sass/responsive.smartphone.portrait.scss */
+/* line 56, ../sass/responsive.smartphone.portrait.scss */
 #leaderboard-wrapper .block-lang-dropdown {
   width: 204px;
 }
-/* line 49, ../sass/responsive.smartphone.portrait.scss */
+/* line 57, ../sass/responsive.smartphone.portrait.scss */
 #leaderboard-wrapper .block-lang-dropdown .block-title {
   display: none;
 }
-/* line 51, ../sass/responsive.smartphone.portrait.scss */
+/* line 59, ../sass/responsive.smartphone.portrait.scss */
 #leaderboard-wrapper .block-lang-dropdown .block-inner {
   margin-right: 9px;
 }
-/* line 55, ../sass/responsive.smartphone.portrait.scss */
+/* line 63, ../sass/responsive.smartphone.portrait.scss */
 #leaderboard-wrapper .block-top-header-menu {
   width: 39px;
   height: 38px;
   margin-left: 13px;
 }
-/* line 59, ../sass/responsive.smartphone.portrait.scss */
+/* line 67, ../sass/responsive.smartphone.portrait.scss */
 #leaderboard-wrapper .block-top-header-menu .menu {
   display: none;
 }
@@ -194,37 +201,37 @@ input[type="text"] {
 /* =============================================================================
  *   Header
  * ========================================================================== */
-/* line 68, ../sass/responsive.smartphone.portrait.scss */
+/* line 76, ../sass/responsive.smartphone.portrait.scss */
 #branding {
   width: inherit;
 }
-/* line 70, ../sass/responsive.smartphone.portrait.scss */
+/* line 78, ../sass/responsive.smartphone.portrait.scss */
 #branding #logo {
   padding: 20px 0px 21px 3px;
 }
 
-/* line 75, ../sass/responsive.smartphone.portrait.scss */
+/* line 83, ../sass/responsive.smartphone.portrait.scss */
 #block-search-form {
   display: none;
 }
 
-/* line 81, ../sass/responsive.smartphone.portrait.scss */
+/* line 89, ../sass/responsive.smartphone.portrait.scss */
 .block-support-ijnet,
 .block-login-block {
   margin-bottom: 0px !important;
 }
 
-/* line 84, ../sass/responsive.smartphone.portrait.scss */
+/* line 92, ../sass/responsive.smartphone.portrait.scss */
 .block-login-block {
   width: 204px !important;
   padding-top: 0;
 }
-/* line 87, ../sass/responsive.smartphone.portrait.scss */
+/* line 95, ../sass/responsive.smartphone.portrait.scss */
 .block-login-block .block-inner {
   margin-right: 0;
   margin-left: 10px;
 }
-/* line 91, ../sass/responsive.smartphone.portrait.scss */
+/* line 99, ../sass/responsive.smartphone.portrait.scss */
 .block-login-block .block-inner .block-content {
   padding: 17px 6px 0px 0px;
 }
@@ -232,7 +239,7 @@ input[type="text"] {
 /* =============================================================================
  *   Item list
  * ========================================================================== */
-/* line 101, ../sass/responsive.smartphone.portrait.scss */
+/* line 109, ../sass/responsive.smartphone.portrait.scss */
 .article-item-list {
   width: 100%;
   float: left;
@@ -325,7 +332,7 @@ input[type="text"] {
   margin: 0px 5px 0px 5px;
 }
 
-/* line 106, ../sass/responsive.smartphone.portrait.scss */
+/* line 114, ../sass/responsive.smartphone.portrait.scss */
 .article-item-list-no-body {
   width: 100%;
   float: left;
@@ -421,13 +428,13 @@ input[type="text"] {
 /* =============================================================================
  *   TABS
  * ========================================================================== */
-/* line 115, ../sass/responsive.smartphone.portrait.scss */
+/* line 123, ../sass/responsive.smartphone.portrait.scss */
 .sidebar-tabs .block-title,
 .content-tabs .block-title {
   display: none;
 }
 
-/* line 116, ../sass/responsive.smartphone.portrait.scss */
+/* line 124, ../sass/responsive.smartphone.portrait.scss */
 .content-tabs .quicktabs-wrapper .quicktabs-tabs li a {
   padding: 5px 20px 4px 20px;
 }
@@ -435,48 +442,48 @@ input[type="text"] {
 /* =============================================================================
  *   Video landing page
  * ========================================================================== */
-/* line 124, ../sass/responsive.smartphone.portrait.scss */
+/* line 132, ../sass/responsive.smartphone.portrait.scss */
 .pane-jsonblocks-social-block {
   display: none !important;
 }
 
-/* line 125, ../sass/responsive.smartphone.portrait.scss */
+/* line 133, ../sass/responsive.smartphone.portrait.scss */
 .pane-fe-videos-fe-videos-search .videos-landing-header {
   height: 222px;
 }
 
-/* line 127, ../sass/responsive.smartphone.portrait.scss */
+/* line 135, ../sass/responsive.smartphone.portrait.scss */
 .pane-fe-videos-fe-videos-search .videos-landing-header .header,
 .pane-fe-videos-fe-videos-search .videos-landing-header .topic-select {
   width: 100%;
 }
 
-/* line 132, ../sass/responsive.smartphone.portrait.scss */
+/* line 140, ../sass/responsive.smartphone.portrait.scss */
 .pane-views-videos-featured-video {
   margin-bottom: 0px;
 }
 
-/* line 133, ../sass/responsive.smartphone.portrait.scss */
+/* line 141, ../sass/responsive.smartphone.portrait.scss */
 .view-display-id-featured_video {
   height: 100%;
 }
 
-/* line 134, ../sass/responsive.smartphone.portrait.scss */
+/* line 142, ../sass/responsive.smartphone.portrait.scss */
 .view-display-id-featured_video iframe {
   height: 200px;
 }
 
-/* line 135, ../sass/responsive.smartphone.portrait.scss */
+/* line 143, ../sass/responsive.smartphone.portrait.scss */
 .page-videos .view-display-id-featured_video {
   margin-right: 0px;
 }
 
-/* line 136, ../sass/responsive.smartphone.portrait.scss */
+/* line 144, ../sass/responsive.smartphone.portrait.scss */
 .view-display-id-featured_video {
   padding-right: 15px;
 }
 
-/* line 139, ../sass/responsive.smartphone.portrait.scss */
+/* line 147, ../sass/responsive.smartphone.portrait.scss */
 .page-videos .pane-views-videos-related-videos-landing .block-inner {
   margin-top: 0px;
   margin-left: 20px;
@@ -485,13 +492,13 @@ input[type="text"] {
   height: auto;
 }
 
-/* line 146, ../sass/responsive.smartphone.portrait.scss */
+/* line 154, ../sass/responsive.smartphone.portrait.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row {
   width: 100%;
   float: left;
   margin-bottom: 0px;
 }
-/* line 150, ../sass/responsive.smartphone.portrait.scss */
+/* line 158, ../sass/responsive.smartphone.portrait.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row .node-video {
   margin: 0 5px;
 }
@@ -499,23 +506,23 @@ input[type="text"] {
 /* =============================================================================
  *   Opportunities LANDING
  * ========================================================================== */
-/* line 160, ../sass/responsive.smartphone.portrait.scss */
+/* line 168, ../sass/responsive.smartphone.portrait.scss */
 .views-exposed-widgets #edit-field-category-tid-wrapper,
 .views-exposed-widgets #edit-field-region-tid-wrapper {
   width: 100%;
   padding-right: 0%;
 }
-/* line 165, ../sass/responsive.smartphone.portrait.scss */
+/* line 173, ../sass/responsive.smartphone.portrait.scss */
 .views-exposed-widgets #edit-title-wrapper {
   width: 100%;
   padding: 2% 0% 0 0;
 }
-/* line 169, ../sass/responsive.smartphone.portrait.scss */
+/* line 177, ../sass/responsive.smartphone.portrait.scss */
 .views-exposed-widgets #edit-keys-wrapper {
   padding-right: 0px;
   width: 242px;
 }
-/* line 173, ../sass/responsive.smartphone.portrait.scss */
+/* line 181, ../sass/responsive.smartphone.portrait.scss */
 .views-exposed-widgets .views-submit-button {
   width: 100%;
   text-align: center;
@@ -536,28 +543,28 @@ input[type="text"] {
 * html .section-users #content .profile {
   height: 1px;
 }
-/* line 187, ../sass/responsive.smartphone.portrait.scss */
+/* line 195, ../sass/responsive.smartphone.portrait.scss */
 .section-users #content .profile .field-name-field-bio {
   width: 100%;
   clear: both;
 }
-/* line 190, ../sass/responsive.smartphone.portrait.scss */
+/* line 198, ../sass/responsive.smartphone.portrait.scss */
 .section-users #content .profile .field-name-field-bio .field-items {
   margin-right: 0px;
   padding-right: 0px;
 }
-/* line 195, ../sass/responsive.smartphone.portrait.scss */
+/* line 203, ../sass/responsive.smartphone.portrait.scss */
 .section-users #content .profile .user-picture {
   margin: 0px auto 15px auto;
   float: none;
 }
 
-/* line 208, ../sass/responsive.smartphone.portrait.scss */
+/* line 216, ../sass/responsive.smartphone.portrait.scss */
 .page-search .search-form .form-wrapper {
   width: 100%;
   margin: 0;
 }
-/* line 215, ../sass/responsive.smartphone.portrait.scss */
+/* line 223, ../sass/responsive.smartphone.portrait.scss */
 .page-search .search-form .form-wrapper input {
   width: 100%;
 }

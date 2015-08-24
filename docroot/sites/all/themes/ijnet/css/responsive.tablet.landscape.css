@@ -124,12 +124,19 @@
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
-/* line 14, ../sass/responsive.tablet.landscape.scss */
-p {
-  font-size: 14px;
+/* line 15, ../sass/responsive.tablet.landscape.scss */
+p,
+pre {
+  font-size: 15px;
 }
 
-/* line 26, ../sass/responsive.tablet.landscape.scss */
+/* line 21, ../sass/responsive.tablet.landscape.scss */
+html[dir="rtl"] p,
+html[dir="rtl"] pre {
+  font-size: 16px;
+}
+
+/* line 34, ../sass/responsive.tablet.landscape.scss */
 input[type="email"],
 input[type="tel"],
 input[type="number"],
@@ -145,24 +152,24 @@ input[type="text"] {
 /* =============================================================================
  *   Top BAR
  * ========================================================================== */
-/* line 34, ../sass/responsive.tablet.landscape.scss */
+/* line 42, ../sass/responsive.tablet.landscape.scss */
 #leaderboard-wrapper .block-lang-dropdown {
   width: 215px;
   float: right;
   clear: none;
 }
-/* line 35, ../sass/responsive.tablet.landscape.scss */
+/* line 43, ../sass/responsive.tablet.landscape.scss */
 #leaderboard-wrapper .block-lang-dropdown .block-title {
   display: none;
 }
-/* line 40, ../sass/responsive.tablet.landscape.scss */
+/* line 48, ../sass/responsive.tablet.landscape.scss */
 #leaderboard-wrapper .block-top-header-menu {
   width: 457px;
   height: 38px;
   float: left;
   margin-left: 15px;
 }
-/* line 47, ../sass/responsive.tablet.landscape.scss */
+/* line 55, ../sass/responsive.tablet.landscape.scss */
 #leaderboard-wrapper .block-top-header-menu .block-content ul.menu li a {
   font-size: 11px;
 }
@@ -173,46 +180,46 @@ input[type="text"] {
 /* =============================================================================
  *   Main menu
  * ========================================================================== */
-/* line 64, ../sass/responsive.tablet.landscape.scss */
+/* line 72, ../sass/responsive.tablet.landscape.scss */
 .nav li, .nav ul.menu li {
   font-size: 16px;
 }
-/* line 66, ../sass/responsive.tablet.landscape.scss */
+/* line 74, ../sass/responsive.tablet.landscape.scss */
 .nav li a, .nav ul.menu li a {
   margin: 0 17px;
 }
 
-/* line 72, ../sass/responsive.tablet.landscape.scss */
+/* line 80, ../sass/responsive.tablet.landscape.scss */
 .view-id-view_search_block_user .avatar img {
   width: 80px;
 }
-/* line 74, ../sass/responsive.tablet.landscape.scss */
+/* line 82, ../sass/responsive.tablet.landscape.scss */
 .view-id-view_search_block_user .author-name {
   float: left;
   clear: left;
 }
-/* line 79, ../sass/responsive.tablet.landscape.scss */
+/* line 87, ../sass/responsive.tablet.landscape.scss */
 .view-id-view_search_block_user .job-name {
   float: left;
   clear: left;
 }
-/* line 84, ../sass/responsive.tablet.landscape.scss */
+/* line 92, ../sass/responsive.tablet.landscape.scss */
 .view-id-view_search_block_user .organization {
   float: left;
   clear: left;
 }
-/* line 89, ../sass/responsive.tablet.landscape.scss */
+/* line 97, ../sass/responsive.tablet.landscape.scss */
 .view-id-view_search_block_user .views-field-nothing {
   float: left;
   clear: both;
 }
-/* line 94, ../sass/responsive.tablet.landscape.scss */
+/* line 102, ../sass/responsive.tablet.landscape.scss */
 .view-id-view_search_block_user .bio {
   clear: both;
   padding-top: 5px;
 }
 
-/* line 102, ../sass/responsive.tablet.landscape.scss */
+/* line 110, ../sass/responsive.tablet.landscape.scss */
 .article-item-list {
   width: 50%;
   float: left;
@@ -305,7 +312,7 @@ input[type="text"] {
   margin: 0px 5px 0px 5px;
 }
 
-/* line 107, ../sass/responsive.tablet.landscape.scss */
+/* line 115, ../sass/responsive.tablet.landscape.scss */
 .article-item-list-no-body {
   width: 50%;
   float: left;

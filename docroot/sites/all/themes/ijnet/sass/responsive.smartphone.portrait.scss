@@ -21,8 +21,16 @@ html {
   font-size: 112.5%;
 }
 
-p {
-  font-size: 14px;
+p,
+pre {
+  font-size: $font-size-regular-mobile;
+}
+
+html[dir="rtl"] {
+  p,
+  pre {
+    font-size: $font-size-regular-rtl-mobile;
+  }
 }
 
 div.messages {

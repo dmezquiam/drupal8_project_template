@@ -191,7 +191,7 @@
 /* line 58, ../sass/global.styles.scss */
 .block-top-header-menu .block-content ul.menu li a {
   color: white;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0 10px;
   text-transform: uppercase;
 }
@@ -210,7 +210,7 @@
   margin: 0;
   color: white;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 15px;
   margin-top: 13px;
   margin-left: 6px;
@@ -403,7 +403,7 @@
 /* line 247, ../sass/global.styles.scss */
 .block-support-ijnet .block-inner .support-button .support {
   line-height: 16px;
-  font-size: 13px;
+  font-size: 14px;
 }
 /* line 251, ../sass/global.styles.scss */
 .block-support-ijnet .block-inner .support-button .support-ijnet {
@@ -2302,7 +2302,7 @@ ul.action-links {
 /* line 1197, ../sass/global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form p {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
 }
 /* line 1201, ../sass/global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form .form-item {
@@ -3227,7 +3227,7 @@ div.messages {
 /* line 925, ../sass/_custom.scss */
 .opportunities-list h2 {
   font-size: 20px;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 0px 0px;
   line-height: 26px;
 }
 /* line 929, ../sass/_custom.scss */
@@ -3239,21 +3239,26 @@ div.messages {
   margin-left: 126px;
 }
 /* line 935, ../sass/_custom.scss */
+.opportunities-list .content .field-name-body {
+  font-size: 15px;
+  font-family: "Signika-Light", Arial, Helvetica, sans-serif;
+}
+/* line 939, ../sass/_custom.scss */
 .opportunities-list .content p {
   margin-bottom: 0px;
 }
-/* line 939, ../sass/_custom.scss */
+/* line 943, ../sass/_custom.scss */
 .opportunities-list .buttons {
   clear: both;
   float: right;
 }
 @media (min-width: 0px) and (max-width: 480px) {
-  /* line 944, ../sass/_custom.scss */
+  /* line 948, ../sass/_custom.scss */
   .opportunities-list .node {
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px;
   }
-  /* line 948, ../sass/_custom.scss */
+  /* line 952, ../sass/_custom.scss */
   .opportunities-list .content {
     clear: both;
     padding-top: 12px;
@@ -3344,17 +3349,17 @@ div.messages {
   margin: 0px;
   padding: 0px;
 }
-/* line 962, ../sass/_custom.scss */
+/* line 966, ../sass/_custom.scss */
 .staff-list li {
   margin: 0px 0px 20px 0;
   padding: 0px;
 }
-/* line 965, ../sass/_custom.scss */
+/* line 969, ../sass/_custom.scss */
 .staff-list li .avatar {
   float: left;
   width: 110px;
 }
-/* line 969, ../sass/_custom.scss */
+/* line 973, ../sass/_custom.scss */
 .staff-list li p {
   margin-left: 130px;
 }
@@ -3535,7 +3540,7 @@ div.messages {
   width: 48%;
   padding-right: 2%;
 }
-/* line 994, ../sass/_custom.scss */
+/* line 998, ../sass/_custom.scss */
 #ijnet-salesforce-contact-form .form-item-first-name input,
 #ijnet-salesforce-contact-form .form-item-last-name input,
 #ijnet-salesforce-contact-form .form-item-organization-name input,
@@ -3548,7 +3553,7 @@ div.messages {
   width: 98%;
   padding-right: 2%;
 }
-/* line 994, ../sass/_custom.scss */
+/* line 998, ../sass/_custom.scss */
 #ijnet-salesforce-contact-form .form-item-personal-email input {
   width: 100%;
 }
@@ -3558,7 +3563,7 @@ div.messages {
   width: 98%;
   padding-right: 2%;
 }
-/* line 994, ../sass/_custom.scss */
+/* line 998, ../sass/_custom.scss */
 #ijnet-salesforce-contact-form .form-item-work-email input {
   width: 100%;
 }
@@ -3569,7 +3574,7 @@ div.messages {
   width: 48%;
   padding-right: 2%;
 }
-/* line 994, ../sass/_custom.scss */
+/* line 998, ../sass/_custom.scss */
 #ijnet-salesforce-contact-form .form-item-mobile input,
 #ijnet-salesforce-contact-form .form-item-twitter-handle input {
   width: 100%;
@@ -3580,7 +3585,7 @@ div.messages {
   width: 98%;
   padding-right: 2%;
 }
-/* line 994, ../sass/_custom.scss */
+/* line 998, ../sass/_custom.scss */
 #ijnet-salesforce-contact-form .form-item-mailing-address input {
   width: 100%;
 }
@@ -3590,7 +3595,7 @@ div.messages {
   width: 98%;
   padding-right: 2%;
 }
-/* line 994, ../sass/_custom.scss */
+/* line 998, ../sass/_custom.scss */
 #ijnet-salesforce-contact-form .form-item-city input {
   width: 100%;
 }
@@ -3600,7 +3605,7 @@ div.messages {
   width: 98%;
   padding-right: 2%;
 }
-/* line 994, ../sass/_custom.scss */
+/* line 998, ../sass/_custom.scss */
 #ijnet-salesforce-contact-form .form-item-country input {
   width: 100%;
 }

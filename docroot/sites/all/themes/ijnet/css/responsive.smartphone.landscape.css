@@ -141,17 +141,24 @@ html {
   font-size: 112.5%;
 }
 
-/* line 24, ../sass/responsive.smartphone.landscape.scss */
-p {
-  font-size: 14px;
+/* line 25, ../sass/responsive.smartphone.landscape.scss */
+p,
+pre {
+  font-size: 15px;
 }
 
-/* line 28, ../sass/responsive.smartphone.landscape.scss */
+/* line 31, ../sass/responsive.smartphone.landscape.scss */
+html[dir="rtl"] p,
+html[dir="rtl"] pre {
+  font-size: 16px;
+}
+
+/* line 36, ../sass/responsive.smartphone.landscape.scss */
 div.messages {
   font-size: 12px;
 }
 
-/* line 40, ../sass/responsive.smartphone.landscape.scss */
+/* line 48, ../sass/responsive.smartphone.landscape.scss */
 input[type="email"],
 input[type="tel"],
 input[type="number"],
@@ -167,24 +174,24 @@ input[type="text"] {
 /* =============================================================================
  *   Top BAR
  * ========================================================================== */
-/* line 48, ../sass/responsive.smartphone.landscape.scss */
+/* line 56, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-lang-dropdown {
   width: 215px;
   float: right;
   clear: none;
 }
-/* line 49, ../sass/responsive.smartphone.landscape.scss */
+/* line 57, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-lang-dropdown .block-title {
   display: none;
 }
-/* line 54, ../sass/responsive.smartphone.landscape.scss */
+/* line 62, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-top-header-menu {
   width: 39px;
   height: 38px;
   float: left;
   margin-left: 15px;
 }
-/* line 59, ../sass/responsive.smartphone.landscape.scss */
+/* line 67, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-top-header-menu .menu {
   display: none;
 }
@@ -192,37 +199,37 @@ input[type="text"] {
 /* =============================================================================
  *   Header
  * ========================================================================== */
-/* line 68, ../sass/responsive.smartphone.landscape.scss */
+/* line 76, ../sass/responsive.smartphone.landscape.scss */
 #branding {
   width: inherit;
 }
-/* line 70, ../sass/responsive.smartphone.landscape.scss */
+/* line 78, ../sass/responsive.smartphone.landscape.scss */
 #branding #logo {
   padding: 20px 0px 21px 3px;
 }
 
-/* line 75, ../sass/responsive.smartphone.landscape.scss */
+/* line 83, ../sass/responsive.smartphone.landscape.scss */
 #block-search-form {
   display: none;
 }
 
-/* line 81, ../sass/responsive.smartphone.landscape.scss */
+/* line 89, ../sass/responsive.smartphone.landscape.scss */
 .block-support-ijnet,
 .block-login-block {
   margin-bottom: 0px !important;
 }
 
-/* line 84, ../sass/responsive.smartphone.landscape.scss */
+/* line 92, ../sass/responsive.smartphone.landscape.scss */
 .block-login-block {
   width: 204px !important;
   padding-top: 0;
 }
-/* line 87, ../sass/responsive.smartphone.landscape.scss */
+/* line 95, ../sass/responsive.smartphone.landscape.scss */
 .block-login-block .block-inner {
   margin-right: 0;
   margin-left: 10px;
 }
-/* line 91, ../sass/responsive.smartphone.landscape.scss */
+/* line 99, ../sass/responsive.smartphone.landscape.scss */
 .block-login-block .block-inner .block-content {
   padding: 17px 6px 0px 0px;
 }
@@ -231,17 +238,17 @@ input[type="text"] {
  *   Top BAR
  * ========================================================================== */
 /* leaderboard-wrapper ====================================================== */
-/* line 102, ../sass/responsive.smartphone.landscape.scss */
+/* line 110, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper {
   background: #5b5836;
   border-bottom: 1px solid #3b3923;
 }
-/* line 105, ../sass/responsive.smartphone.landscape.scss */
+/* line 113, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block {
   margin-bottom: 0px;
 }
 
-/* line 111, ../sass/responsive.smartphone.landscape.scss */
+/* line 119, ../sass/responsive.smartphone.landscape.scss */
 .block-top-header-menu ul.menu {
   display: none;
 }
@@ -250,7 +257,7 @@ input[type="text"] {
 /* =============================================================================
  *   Item list
  * ========================================================================== */
-/* line 125, ../sass/responsive.smartphone.landscape.scss */
+/* line 133, ../sass/responsive.smartphone.landscape.scss */
 .article-item-list {
   width: 100%;
   float: left;
@@ -343,7 +350,7 @@ input[type="text"] {
   margin: 0px 5px 0px 5px;
 }
 
-/* line 130, ../sass/responsive.smartphone.landscape.scss */
+/* line 138, ../sass/responsive.smartphone.landscape.scss */
 .article-item-list-no-body {
   width: 100%;
   float: left;
@@ -439,7 +446,7 @@ input[type="text"] {
 /* =============================================================================
  *   TABS
  * ========================================================================== */
-/* line 138, ../sass/responsive.smartphone.landscape.scss */
+/* line 146, ../sass/responsive.smartphone.landscape.scss */
 .content-tabs .block-title {
   display: none;
 }
@@ -447,48 +454,48 @@ input[type="text"] {
 /* =============================================================================
  *   Video landing page
  * ========================================================================== */
-/* line 144, ../sass/responsive.smartphone.landscape.scss */
+/* line 152, ../sass/responsive.smartphone.landscape.scss */
 .pane-jsonblocks-social-block {
   display: none !important;
 }
 
-/* line 145, ../sass/responsive.smartphone.landscape.scss */
+/* line 153, ../sass/responsive.smartphone.landscape.scss */
 .pane-fe-videos-fe-videos-search .videos-landing-header {
   height: 222px;
 }
 
-/* line 147, ../sass/responsive.smartphone.landscape.scss */
+/* line 155, ../sass/responsive.smartphone.landscape.scss */
 .pane-fe-videos-fe-videos-search .videos-landing-header .header,
 .pane-fe-videos-fe-videos-search .videos-landing-header .topic-select {
   width: 100%;
 }
 
-/* line 152, ../sass/responsive.smartphone.landscape.scss */
+/* line 160, ../sass/responsive.smartphone.landscape.scss */
 .pane-views-videos-featured-video {
   margin-bottom: 0px;
 }
 
-/* line 153, ../sass/responsive.smartphone.landscape.scss */
+/* line 161, ../sass/responsive.smartphone.landscape.scss */
 .view-display-id-featured_video {
   height: 100%;
 }
 
-/* line 154, ../sass/responsive.smartphone.landscape.scss */
+/* line 162, ../sass/responsive.smartphone.landscape.scss */
 .view-display-id-featured_video iframe {
   height: 280px;
 }
 
-/* line 155, ../sass/responsive.smartphone.landscape.scss */
+/* line 163, ../sass/responsive.smartphone.landscape.scss */
 .page-videos .view-display-id-featured_video {
   margin-right: 0px;
 }
 
-/* line 156, ../sass/responsive.smartphone.landscape.scss */
+/* line 164, ../sass/responsive.smartphone.landscape.scss */
 .view-display-id-featured_video {
   padding-right: 15px;
 }
 
-/* line 159, ../sass/responsive.smartphone.landscape.scss */
+/* line 167, ../sass/responsive.smartphone.landscape.scss */
 .page-videos .pane-views-videos-related-videos-landing .block-inner {
   margin-top: 0px;
   margin-left: 20px;
@@ -497,13 +504,13 @@ input[type="text"] {
   height: auto;
 }
 
-/* line 166, ../sass/responsive.smartphone.landscape.scss */
+/* line 174, ../sass/responsive.smartphone.landscape.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row {
   width: 50%;
   float: left;
   margin-bottom: 0px;
 }
-/* line 170, ../sass/responsive.smartphone.landscape.scss */
+/* line 178, ../sass/responsive.smartphone.landscape.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row .node-video {
   margin: 0 5px;
 }
@@ -511,23 +518,23 @@ input[type="text"] {
 /* =============================================================================
  *   Opportunities LANDING
  * ========================================================================== */
-/* line 182, ../sass/responsive.smartphone.landscape.scss */
+/* line 190, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets #edit-field-category-tid-wrapper,
 .views-exposed-widgets #edit-field-region-tid-wrapper {
   width: 100%;
   padding-right: 0%;
 }
-/* line 187, ../sass/responsive.smartphone.landscape.scss */
+/* line 195, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets #edit-title-wrapper {
   width: 100%;
   padding: 2% 0% 0 0;
 }
-/* line 191, ../sass/responsive.smartphone.landscape.scss */
+/* line 199, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets #edit-keys-wrapper {
   padding-right: 0px;
   width: 242px;
 }
-/* line 195, ../sass/responsive.smartphone.landscape.scss */
+/* line 203, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets .views-submit-button {
   width: 100%;
   text-align: center;
@@ -548,26 +555,26 @@ input[type="text"] {
 * html .section-users #content .profile {
   height: 1px;
 }
-/* line 209, ../sass/responsive.smartphone.landscape.scss */
+/* line 217, ../sass/responsive.smartphone.landscape.scss */
 .section-users #content .profile .field-name-field-bio {
   width: 100%;
 }
-/* line 211, ../sass/responsive.smartphone.landscape.scss */
+/* line 219, ../sass/responsive.smartphone.landscape.scss */
 .section-users #content .profile .field-name-field-bio .field-items {
   margin-right: 0px;
   padding-right: 0px;
 }
-/* line 216, ../sass/responsive.smartphone.landscape.scss */
+/* line 224, ../sass/responsive.smartphone.landscape.scss */
 .section-users #content .profile .user-picture {
   margin: 0px 0 0 15px;
 }
 
-/* line 229, ../sass/responsive.smartphone.landscape.scss */
+/* line 237, ../sass/responsive.smartphone.landscape.scss */
 .page-search .search-form .form-wrapper {
   width: 100%;
   margin: 0;
 }
-/* line 236, ../sass/responsive.smartphone.landscape.scss */
+/* line 244, ../sass/responsive.smartphone.landscape.scss */
 .page-search .search-form .form-wrapper input {
   width: 100%;
 }

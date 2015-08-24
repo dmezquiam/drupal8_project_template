@@ -129,7 +129,7 @@
 /* DRUPAL ADMIN TOOL BAR */
 /* line 18, ../sass/global.base.scss */
 body #admin-menu {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* line 19, ../sass/global.base.scss */
@@ -445,7 +445,16 @@ mark {
 /* line 324, ../sass/global.base.scss */
 p,
 pre {
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2a2a2a;
+  margin: 0 0 1.5em;
+}
+
+/* line 332, ../sass/global.base.scss */
+html[dir="rtl"] p,
+html[dir="rtl"] pre {
+  font-size: 16px;
   line-height: 20px;
   color: #2a2a2a;
   margin: 0 0 1.5em;
@@ -455,7 +464,7 @@ pre {
  * Corrects font family set oddly in IE6, S4/5, Chrome
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59
  */
-/* line 339, ../sass/global.base.scss */
+/* line 348, ../sass/global.base.scss */
 pre,
 code,
 kbd,
@@ -467,7 +476,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers
  */
-/* line 348, ../sass/global.base.scss */
+/* line 357, ../sass/global.base.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -478,19 +487,19 @@ pre {
  * 1. Addresses CSS quotes not supported in IE6/7
  * 2. Addresses quote property not supported in S4
  */
-/* line 360, ../sass/global.base.scss */
+/* line 369, ../sass/global.base.scss */
 q {
   quotes: none;
 }
 
-/* line 366, ../sass/global.base.scss */
+/* line 375, ../sass/global.base.scss */
 q:before,
 q:after {
   content: '';
   content: none;
 }
 
-/* line 372, ../sass/global.base.scss */
+/* line 381, ../sass/global.base.scss */
 small {
   font-size: 75%;
 }
@@ -499,7 +508,7 @@ small {
  * Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930
  */
-/* line 382, ../sass/global.base.scss */
+/* line 391, ../sass/global.base.scss */
 sub,
 sup {
   font-size: 75%;
@@ -508,12 +517,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 390, ../sass/global.base.scss */
+/* line 399, ../sass/global.base.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 395, ../sass/global.base.scss */
+/* line 404, ../sass/global.base.scss */
 sub {
   bottom: -0.25em;
 }
@@ -524,7 +533,7 @@ sub {
 /*
  * Addresses margins set differently in IE6/7
  */
-/* line 410, ../sass/global.base.scss */
+/* line 419, ../sass/global.base.scss */
 dl,
 menu,
 ol,
@@ -532,7 +541,7 @@ ul {
   margin: 1em 0;
 }
 
-/* line 415, ../sass/global.base.scss */
+/* line 424, ../sass/global.base.scss */
 dd {
   margin: 0 0 0 40px;
 }
@@ -540,7 +549,7 @@ dd {
 /*
  * Addresses paddings set differently in IE6/7
  */
-/* line 425, ../sass/global.base.scss */
+/* line 434, ../sass/global.base.scss */
 menu,
 ol,
 ul {
@@ -550,7 +559,7 @@ ul {
 /*
  * Corrects list images handled incorrectly in IE7
  */
-/* line 434, ../sass/global.base.scss */
+/* line 443, ../sass/global.base.scss */
 nav ul,
 nav ol {
   list-style: none;
@@ -565,7 +574,7 @@ nav ol {
  * 2. Improves image quality when scaled in IE7
  *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
  */
-/* line 449, ../sass/global.base.scss */
+/* line 458, ../sass/global.base.scss */
 img {
   /* border: 0; */
   /* Drupal core already does this, uncomment if you need it */
@@ -575,7 +584,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE9
  */
-/* line 458, ../sass/global.base.scss */
+/* line 467, ../sass/global.base.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -586,7 +595,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE6/7/8/9, S5, O11
  */
-/* line 470, ../sass/global.base.scss */
+/* line 479, ../sass/global.base.scss */
 figure {
   margin: 0;
 }
@@ -594,7 +603,7 @@ figure {
 /* =============================================================================
     Forms
    ========================================================================== */
-/* line 487, ../sass/global.base.scss */
+/* line 496, ../sass/global.base.scss */
 input[type="email"],
 input[type="tel"],
 input[type="number"],
@@ -613,7 +622,7 @@ input[type="text"] {
 /*
  * Corrects margin displayed oddly in IE6/7
  */
-/* line 494, ../sass/global.base.scss */
+/* line 503, ../sass/global.base.scss */
 form {
   margin: 0;
 }
@@ -621,13 +630,13 @@ form {
 /*
  * Define consistent margin, and padding
  */
-/* line 502, ../sass/global.base.scss */
+/* line 511, ../sass/global.base.scss */
 fieldset {
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
-/* line 507, ../sass/global.base.scss */
+/* line 516, ../sass/global.base.scss */
 iframe {
   width: 100%;
 }
@@ -637,7 +646,7 @@ iframe {
  * 2. Corrects text not wrapping in FF3
  * 3. Corrects alignment displayed oddly in IE6/7
  */
-/* line 514, ../sass/global.base.scss */
+/* line 523, ../sass/global.base.scss */
 legend {
   border: 0;
   padding: 0;
@@ -650,7 +659,7 @@ legend {
  * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
  * 3. Improves appearance and consistency in all browsers
  */
-/* line 530, ../sass/global.base.scss */
+/* line 539, ../sass/global.base.scss */
 button,
 input,
 select,
@@ -664,7 +673,7 @@ textarea {
 /*
  * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
  */
-/* line 542, ../sass/global.base.scss */
+/* line 551, ../sass/global.base.scss */
 button,
 input {
   line-height: normal;
@@ -676,7 +685,7 @@ input {
  * 3. Removes inner spacing in IE7 without affecting normal text inputs
  *    Known issue: inner spacing remains in IE6
  */
-/* line 556, ../sass/global.base.scss */
+/* line 565, ../sass/global.base.scss */
 button,
 input[type="button"],
 input[type="reset"],
@@ -757,7 +766,7 @@ input[type="reset"]:hover,
 input[type="submit"]:hover {
   color: white;
 }
-/* line 559, ../sass/global.base.scss */
+/* line 568, ../sass/global.base.scss */
 button.button-normal,
 input[type="button"].button-normal,
 input[type="reset"].button-normal,
@@ -838,7 +847,7 @@ input[type="reset"].button-normal:hover,
 input[type="submit"].button-normal:hover {
   color: white;
 }
-/* line 560, ../sass/global.base.scss */
+/* line 569, ../sass/global.base.scss */
 button.button-small,
 input[type="button"].button-small,
 input[type="reset"].button-small,
@@ -919,7 +928,7 @@ input[type="reset"].button-small:hover,
 input[type="submit"].button-small:hover {
   color: white;
 }
-/* line 561, ../sass/global.base.scss */
+/* line 570, ../sass/global.base.scss */
 button.button-tiny,
 input[type="button"].button-tiny,
 input[type="reset"].button-tiny,
@@ -1000,7 +1009,7 @@ input[type="reset"].button-tiny:hover,
 input[type="submit"].button-tiny:hover {
   color: white;
 }
-/* line 562, ../sass/global.base.scss */
+/* line 571, ../sass/global.base.scss */
 button.button-clean-tiny,
 input[type="button"].button-clean-tiny,
 input[type="reset"].button-clean-tiny,
@@ -1055,7 +1064,7 @@ input[type="submit"].button-clean-tiny:hover {
   filter: none;
 }
 
-/* line 565, ../sass/global.base.scss */
+/* line 574, ../sass/global.base.scss */
 .button-normal {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -1125,7 +1134,7 @@ input[type="submit"].button-clean-tiny:hover {
   color: white;
 }
 
-/* line 569, ../sass/global.base.scss */
+/* line 578, ../sass/global.base.scss */
 .button-small {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -1195,7 +1204,7 @@ input[type="submit"].button-clean-tiny:hover {
   color: white;
 }
 
-/* line 572, ../sass/global.base.scss */
+/* line 581, ../sass/global.base.scss */
 .button-tiny {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -1265,7 +1274,7 @@ input[type="submit"].button-clean-tiny:hover {
   color: white;
 }
 
-/* line 576, ../sass/global.base.scss */
+/* line 585, ../sass/global.base.scss */
 .button-clean-tiny {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -1315,7 +1324,7 @@ input[type="submit"].button-clean-tiny:hover {
 }
 
 /* Re-set default cursor for disabled elements */
-/* line 582, ../sass/global.base.scss */
+/* line 591, ../sass/global.base.scss */
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -1327,7 +1336,7 @@ input[disabled] {
  * 3. Removes excess padding in IE7
  *    Known issue: excess padding remains in IE6
  */
-/* line 594, ../sass/global.base.scss */
+/* line 603, ../sass/global.base.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -1340,7 +1349,7 @@ input[type="radio"] {
  * 1. Addresses appearance set to searchfield in S5, Chrome
  * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
  */
-/* line 606, ../sass/global.base.scss */
+/* line 615, ../sass/global.base.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -1351,7 +1360,7 @@ input[type="search"] {
 /*
  * Removes inner padding and search cancel button in S5, Chrome on OS X
  */
-/* line 618, ../sass/global.base.scss */
+/* line 627, ../sass/global.base.scss */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -1361,20 +1370,20 @@ input[type="search"]::-webkit-search-cancel-button {
  * Removes inner padding and border in FF3+
  * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
  */
-/* line 628, ../sass/global.base.scss */
+/* line 637, ../sass/global.base.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 633, ../sass/global.base.scss */
+/* line 642, ../sass/global.base.scss */
 textarea {
   overflow: auto;
   vertical-align: top;
 }
 
-/* line 638, ../sass/global.base.scss */
+/* line 647, ../sass/global.base.scss */
 select {
   background: white;
   border: 1px solid #c2c2c2;
@@ -1393,7 +1402,7 @@ select {
 /*
  * 1. Remove most spacing between table cells
  */
-/* line 656, ../sass/global.base.scss */
+/* line 665, ../sass/global.base.scss */
 table {
   border: 1px solid;
   border-spacing: 0;
@@ -1410,7 +1419,7 @@ table {
  * see Extensions > Modify Output > Design
  * $gutter-width is set in _base.scss
  */
-/* line 684, ../sass/global.base.scss */
+/* line 693, ../sass/global.base.scss */
 #main-content,
 .block-inner,
 .pane-inner,
@@ -1429,7 +1438,7 @@ div.messages {
  * Panel pages need negative margin equal to the gutter width applied to #content,
  * this is taken care of in theme settings as per above for normal gutters
  */
-/* line 694, ../sass/global.base.scss */
+/* line 703, ../sass/global.base.scss */
 #content .panel-display,
 #content .panel-flexible {
   margin-left: -20px;
@@ -1446,14 +1455,14 @@ div.messages {
  *   the "dissappering images" bug in IE8.
  * - Mapping services such as Google Maps may break also, see below for fixes.
  */
-/* line 712, ../sass/global.base.scss */
+/* line 721, ../sass/global.base.scss */
 img {
   height: auto;
   -ms-interpolation-mode: bicubic;
 }
 
 /* Ethan Marcotte - http://front.ie/l8rJaA */
-/* line 722, ../sass/global.base.scss */
+/* line 731, ../sass/global.base.scss */
 img,
 embed,
 object,
@@ -1462,7 +1471,7 @@ video {
 }
 
 /* Disable flexiblity for IE8 and below */
-/* line 731, ../sass/global.base.scss */
+/* line 740, ../sass/global.base.scss */
 .lt-ie9 img,
 .lt-ie9 object,
 .lt-ie9 embed,
@@ -1471,7 +1480,7 @@ video {
 }
 
 /* Override max-width 100% for map displays */
-/* line 744, ../sass/global.base.scss */
+/* line 753, ../sass/global.base.scss */
 #map img,
 .gmap img,
 .view-gmap img,
@@ -1487,7 +1496,7 @@ video {
     Misc helpers, Accessibility classes etc
    ========================================================================== */
 /* Prevent overflowing content */
-/* line 761, ../sass/global.base.scss */
+/* line 770, ../sass/global.base.scss */
 header[role=banner],
 .content-inner,
 .nav,
@@ -1509,7 +1518,7 @@ header[role=banner],
  * Kellum Method: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
  * Additional helpers from http://html5boilerplate.com/docs/css/
  */
-/* line 777, ../sass/global.base.scss */
+/* line 786, ../sass/global.base.scss */
 .ir {
   /* Kellum Method */
   display: block !important;
@@ -1529,7 +1538,7 @@ header[role=banner],
 }
 
 /* More robust element-invisible and element-focuable classes */
-/* line 797, ../sass/global.base.scss */
+/* line 806, ../sass/global.base.scss */
 .element-invisible {
   border: 0;
   clip: rect(1px 1px 1px 1px);
@@ -1542,7 +1551,7 @@ header[role=banner],
   width: 1px;
 }
 
-/* line 810, ../sass/global.base.scss */
+/* line 819, ../sass/global.base.scss */
 .element-invisible.element-focusable:active,
 .element-invisible.element-focusable:focus {
   clip: auto;
@@ -1553,7 +1562,7 @@ header[role=banner],
 }
 
 /* Shift content offscreen, can be usefull when you reall need to do this */
-/* line 820, ../sass/global.base.scss */
+/* line 829, ../sass/global.base.scss */
 .offscreen {
   position: absolute;
   top: -99999em;
@@ -1564,17 +1573,17 @@ header[role=banner],
 }
 
 /* Hide content from all users */
-/* line 831, ../sass/global.base.scss */
+/* line 840, ../sass/global.base.scss */
 .element-hidden {
   display: none;
 }
 
 /* chosen */
-/* line 836, ../sass/global.base.scss */
+/* line 845, ../sass/global.base.scss */
 .chosen-container-single {
   width: 100% !important;
 }
-/* line 838, ../sass/global.base.scss */
+/* line 847, ../sass/global.base.scss */
 .chosen-container-single .chosen-single {
   border-radius: 0px;
   height: 32px;
@@ -1582,11 +1591,11 @@ header[role=banner],
   background: #fff;
   line-height: 32px;
 }
-/* line 844, ../sass/global.base.scss */
+/* line 853, ../sass/global.base.scss */
 .chosen-container-single .chosen-single div b {
   background-position: 0px 7px;
 }
-/* line 849, ../sass/global.base.scss */
+/* line 858, ../sass/global.base.scss */
 .chosen-container-single.chosen-with-drop .chosen-single div b {
   background-position: -18px 7px;
 }

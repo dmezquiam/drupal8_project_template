@@ -11,8 +11,16 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 
-p { 
-	font-size: 14px;
+p,
+pre {
+  font-size: $font-size-regular-mobile;
+}
+
+html[dir="rtl"] {
+  p,
+  pre {
+    font-size: $font-size-regular-rtl-mobile;
+  }
 }
 
 input[type="email"],
