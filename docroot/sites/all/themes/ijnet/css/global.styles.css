@@ -3242,6 +3242,7 @@ div.messages {
 .opportunities-list .content .field-name-body {
   font-size: 15px;
   font-family: "Signika-Light", Arial, Helvetica, sans-serif;
+  padding-top: 5px;
 }
 /* line 939, ../sass/_custom.scss */
 .opportunities-list .content p {
