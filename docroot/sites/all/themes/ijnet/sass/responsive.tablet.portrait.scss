@@ -17,19 +17,18 @@ body.admin-menu { margin-top: 21px !important; }
 
 /* Increase the body font size on small devices */
 html {
-  font-size: 81.3%;
+	font-size: 81.3%;
 }
 
 p,
 pre {
-  font-size: $font-size-regular-mobile;
+	font-size: $font-size-regular-mobile;
 }
 
-html[dir="rtl"] {
-  p,
-  pre {
-    font-size: $font-size-regular-rtl-mobile;
-  }
+.node {
+	ul,ol {
+		font-size: $font-size-regular-mobile;
+	}
 }
 
 input[type="email"],
@@ -41,7 +40,7 @@ input[type="month"],
 input[type="search"],
 input[type="password"],
 input[type="text"] {
-  width: 100%;
+	width: 100%;
 }
 
 
@@ -103,8 +102,8 @@ input[type="text"] {
 }
 
 .article-item-list-no-body {
-  @include article-item-list-width-no-body (tablet-portrait);
-  @include article-item-list ();
+	@include article-item-list-width-no-body (tablet-portrait);
+	@include article-item-list ();
 }
 
 /* =============================================================================
@@ -142,26 +141,26 @@ input[type="text"] {
 }
 //category-tabs-list
 	.category-tabs-list {
-	  li.category-item {
-	  	width: 50%;
-	  	float: left;
-	  	margin-bottom: 0 !important;
-	  }
+		li.category-item {
+			width: 50%;
+			float: left;
+			margin-bottom: 0 !important;
+		}
 	}
 
 
 
 //Search results are an ordered list so reset the margin
 .page-search {
-  .search-form {
-    .form-wrapper {
-      width: 80%;
-      margin: 0 10%;
-      .form-item-keys {
-        label {}
-        input {}
-      }
-      input {}
-    }
-  }
+	.search-form {
+		.form-wrapper {
+			width: 80%;
+			margin: 0 10%;
+			.form-item-keys {
+				label {}
+				input {}
+			}
+			input {}
+		}
+	}
 }

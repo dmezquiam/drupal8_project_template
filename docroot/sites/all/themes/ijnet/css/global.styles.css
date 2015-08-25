@@ -2440,8 +2440,8 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
   margin-bottom: 20px;
 }
 /* line 1362, ../sass/global.styles.scss */
-.node ul, .node ol li {
-  font-size: 13px;
+.node ul, .node ol {
+  font-size: 14px;
 }
 
 /* line 1382, ../sass/global.styles.scss */
@@ -3242,7 +3242,6 @@ div.messages {
 .opportunities-list .content .field-name-body {
   font-size: 15px;
   font-family: "Signika-Light", Arial, Helvetica, sans-serif;
-  padding-top: 5px;
 }
 /* line 939, ../sass/_custom.scss */
 .opportunities-list .content p {

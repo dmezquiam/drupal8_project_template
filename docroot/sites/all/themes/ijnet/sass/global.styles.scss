@@ -1359,8 +1359,8 @@ ul.action-links {
     time {}
   }
 
-  ul,ol li {
-    font-size: 13px;
+  ul, ol {
+    font-size: $font-size-regular;
   }
 
   ul.links {

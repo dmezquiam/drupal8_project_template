@@ -26,10 +26,9 @@ pre {
   font-size: $font-size-regular-mobile;
 }
 
-html[dir="rtl"] {
-  p,
-  pre {
-    font-size: $font-size-regular-rtl-mobile;
+.node {
+  ul,ol {
+    font-size: $font-size-regular-mobile;
   }
 }
 

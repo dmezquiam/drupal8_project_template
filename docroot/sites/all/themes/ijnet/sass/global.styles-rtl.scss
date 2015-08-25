@@ -1,6 +1,27 @@
+@import "base"; 
+
 //RESET
 ul {
   padding: 0 40px 0 0px;
+}
+
+.node {
+  ul, ol {
+    padding: 0 40px 0 0px;
+    font-size: $font-size-regular-rtl !important;
+  }
+}
+
+@media only screen and (min-width:0px) and (max-width: 989px) {
+  p,
+  pre {
+    font-size: $font-size-regular-rtl-mobile !important;
+  }
+  .node {
+    ul, ol {
+      font-size: $font-size-regular-rtl-mobile !important;
+    }
+  }  
 }
 
 //Layout

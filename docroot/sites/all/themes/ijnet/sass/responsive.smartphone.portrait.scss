@@ -26,15 +26,14 @@ pre {
   font-size: $font-size-regular-mobile;
 }
 
-html[dir="rtl"] {
-  p,
-  pre {
-    font-size: $font-size-regular-rtl-mobile;
-  }
-}
-
 div.messages {
 	font-size: $font-size-tiny;
+}
+
+.node {
+  ul,ol {
+    font-size: $font-size-regular-mobile;
+  }
 }
 
 input[type="email"],
