@@ -1,0 +1,155 @@
+<?php
+
+/* 	
+	Module that enables specific tags in relation to Google Tag manager
+	Depends on datalayer module
+*/
+
+/**
+ * Implements hook_preprocess_node()
+ */
+function ijnet_gtm_preprocess_node(&$variables) {
+
+	global $base_url;
+
+	$node = $variables['node'];
+	$node_types = array('news','video','training_opportunity');
+
+	// Content type is one of the elements in $node_types
+	if (in_array($node->type, $node_types)) {
+		// if it's a node page
+		if ($variables['view_mode'] == 'full') {
+
+
+			// If the node is labeled Knights...
+			$knight = "NO";
+			$fields = array($node->field_primary_topic,$node->field_topic);
+
+			// all the topics of the node (but the knight topic)
+			$tids = array();
+
+			foreach ($fields as $field) {
+				if (!empty($field)) {
+					foreach ($field[LANGUAGE_NONE] as $topic){
+						// saves all different tids
+						if (!in_array($topic, $tids)) {
+							array_push($tids, $topic);
+						}
+						// stores value of knight
+						if (topic_id_is_knight($topic['tid'])) {
+							$knight = "YES";
+							break;
+						}
+
+					}
+				}
+			}
+
+			datalayer_add(array(
+				'Knight' => $knight
+			));
+
+			// loading topics names from the tids
+			$topics = array();
+			foreach ($tids as $tag) {
+				$term = taxonomy_term_load($tag['tid']);
+				$name = strtoupper($term->name);
+
+				array_push($topics, $name);
+			}
+
+			if (!empty($topics)){
+				datalayer_add(array(
+					'Topic' => $topics
+				));
+			} else {
+				datalayer_add(array(
+					'Topic' => 'none'
+				));
+			}
+
+			//node author
+			if ($node->type != 'training_opportunity') {
+				$author = _fe_news_get_author($node->nid);
+
+				if (!empty($author->name)) {
+					datalayer_add(array(
+						'Author' => $author->name
+					));
+				} else {
+					datalayer_add(array(
+						'Author' => 'none'
+					));
+				}
+			}
+
+
+			// node nid and title in english
+			$article_node = "$node->nid " . $node->title;
+
+			if ($node->language != "en") {
+				$original_node = node_load($node->tnid);
+				if ($original_node->language == "en") {
+					$article_node = "$node->nid " . $original_node->title;
+				} 
+			}
+
+			datalayer_add(array(
+				'ArticleNode' => $article_node
+			));
+		}
+	}
+}
+
+// returns true if the topic id corresponds to a Knight topic
+function topic_id_is_knight($tid) {
+	$knight_list = array(913, 914, 915, 916, 917, 918, 919);
+	return in_array($tid, $knight_list);
+}
+
+/**
+ * Implements hook_preprocess_page()
+ */
+function ijnet_gtm_preprocess_page(&$variables) {
+
+	// information about the user
+	$logged_in = $variables['logged_in'] ? 'Signed in' : 'Not signed in';
+
+	datalayer_add(array(
+		'UserStatus' => $logged_in
+	));
+
+
+	$current_path = current_path();
+	// checks if the path matches something like "news/[tid]"
+	preg_match_all('/^(news)\/([0-9]+)$/',$current_path,$matches);
+	
+	if ($matches[1][0]=='news'){
+		$topic_id = ($matches[2][0]);
+
+		$term = taxonomy_term_load($topic_id);
+		$topic_name = $term->name;
+		$topic_page[$topic_id] = $topic_name;
+
+		// stores the topic name of the page
+		datalayer_add(array(
+			'TopicPage' => $topic_page
+		));		
+	
+		// if the topic is Knight it stores the value as TRUE
+		$knight = topic_id_is_knight($topic_id);
+		datalayer_add(array(
+			'Knight' => $knight
+		));
+
+	}
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function ijnet_gtm_user_login(&$edit, $account) { 
+	if (!isset($_POST['form_id']) || $_POST['form_id'] != 'user_pass_reset') {
+		$_GET['destination'] = 'user?first_time=1';
+	}
+}
