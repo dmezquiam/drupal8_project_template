@@ -150,6 +150,6 @@ function ijnet_gtm_preprocess_page(&$variables) {
  */
 function ijnet_gtm_user_login(&$edit, $account) { 
 	if (!isset($_POST['form_id']) || $_POST['form_id'] != 'user_pass_reset') {
-		$_GET['destination'] = 'user?first_time=1';
+		$_GET['destination'] = 'user?login=1';
 	}
 }

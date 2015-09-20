@@ -3,3 +3,5 @@ description = Provide custom labels to datalayer module
 core = 7.x
 package = IJNET
 php = 5.2.4
+
+scripts[] = js/ijnet_gtm.js
