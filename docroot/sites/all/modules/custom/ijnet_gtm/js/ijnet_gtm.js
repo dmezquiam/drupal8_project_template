@@ -1,5 +1,5 @@
 (function ($) {
-  Drupal.behaviors.jinet_gtm = {
+  Drupal.behaviors.ijnet_gtm = {
     attach: function (context, settings) {
       // Check login URL parameter
       if (parse('login') == 1) {
