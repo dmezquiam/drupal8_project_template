@@ -3798,3 +3798,8 @@ div.messages {
 #block-quicktabs-knight-foundation #quicktabs-tabpage-knight_foundation-1 .view-content > div:last-child .twitter-status {
   border-bottom: 0px;
 }
+
+/* line 571, ../sass/global.base.scss */
+.i18n-ru .button-clean-tiny {
+  font-size: 10px;
+}
