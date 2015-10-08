@@ -3799,7 +3799,8 @@ div.messages {
   border-bottom: 0px;
 }
 
+/* modification for the knights author list un ru: text too long*/
 /* line 571, ../sass/global.base.scss */
-.i18n-ru .button-clean-tiny {
+.i18n-ru .button-clean-tiny.knights-list{
   font-size: 10px;
 }
