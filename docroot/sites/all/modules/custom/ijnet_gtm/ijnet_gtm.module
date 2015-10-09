@@ -23,7 +23,15 @@ function ijnet_gtm_preprocess_node(&$variables) {
 
 			// If the node is labeled Knights...
 			$knight = "NO";
-			$fields = array($node->field_primary_topic,$node->field_topic);
+			
+			$fields = array();
+			if (!empty($node->field_primary_topic)) {
+				array_push($fields, $node->field_primary_topic);
+			}
+			if (!empty($node->field_topic)) {
+				array_push($fields, $node->field_topic);
+			}
+			
 
 			// all the topics of the node (but the knight topic)
 			$tids = array();
