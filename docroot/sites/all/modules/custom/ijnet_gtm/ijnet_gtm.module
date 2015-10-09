@@ -124,7 +124,7 @@ function ijnet_gtm_preprocess_page(&$variables) {
 	// checks if the path matches something like "news/[tid]"
 	preg_match_all('/^(news)\/([0-9]+)$/',$current_path,$matches);
 	
-	if ($matches[1][0]=='news'){
+	if (isset($matches[1][0]) && ($matches[1][0]=='news')){
 		$topic_id = ($matches[2][0]);
 
 		$term = taxonomy_term_load($topic_id);
