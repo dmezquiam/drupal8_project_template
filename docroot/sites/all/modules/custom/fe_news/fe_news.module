@@ -181,7 +181,9 @@ function _fe_news_get_last_posts_authors($tid = NULL) {
         $user = user_load($author->uid);
         $show_profile = FALSE;
         if (!empty($user->field_show_profile)) {
-          $show_profile = $user->field_show_profile[$user->language][0]['value'];
+          if (!empty($user->field_show_profile[$user->language][0]['value'])) {
+            $show_profile = $user->field_show_profile[$user->language][0]['value'];
+          }
         }
         if ($show_profile) {
 
