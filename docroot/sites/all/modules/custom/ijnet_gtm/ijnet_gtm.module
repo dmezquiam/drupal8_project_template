@@ -96,10 +96,11 @@ function ijnet_gtm_preprocess_node(&$variables) {
 			$article_node = "$node->nid " . $node->title;
 
 			if ($node->language != "en") {
-				$original_node = node_load($node->tnid);
-				if (($original_node != 0) && ($original_node->language == "en")) {
-					$article_node = "$node->nid " . $original_node->title;
-				} 
+				$translations = (translation_node_get_translations($node->tnid));
+
+				if (!empty($translations['en'])){
+					$article_node = "$node->nid " . $translations['en']->title;
+				}
 			}
 
 			datalayer_add(array(
