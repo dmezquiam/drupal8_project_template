@@ -97,7 +97,7 @@ function ijnet_gtm_preprocess_node(&$variables) {
 
 			if ($node->language != "en") {
 				$original_node = node_load($node->tnid);
-				if ($original_node->language == "en") {
+				if (($original_node != 0) && ($original_node->language == "en")) {
 					$article_node = "$node->nid " . $original_node->title;
 				} 
 			}
