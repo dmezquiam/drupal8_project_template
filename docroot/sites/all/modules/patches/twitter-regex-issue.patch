@@ -1,0 +1,35 @@
+diff --git a/docroot/sites/all/modules/contrib/twitter/twitter.module b/docroot/sites/all/modules/contrib/twitter/twitter.module
+index 4080979..8f4ba7d 100644
+--- a/docroot/sites/all/modules/contrib/twitter/twitter.module
++++ b/docroot/sites/all/modules/contrib/twitter/twitter.module
+@@ -387,12 +387,24 @@ function _twitter_filter_link($text, $filter = NULL) {
+  *   The processed string.
+  */
+ function _twitter_filter_text($text, $prefix, $destination, $class = '') {
+-  $match = '/(?<!\w)' . preg_quote($prefix, '/') . '(\w+)/ui';
+-  if (!empty($class)) {
+-    $class = " class=\"{$class}\"";
+-  }
+-  $replacement = '<a href="' . $destination . '$1"' . $class . '>' . $prefix . '$1</a>';
+-  return preg_replace($match, $replacement, $text);
++
++  $matches = array(
++    '/\>' . $prefix . '(\w+)/ui',
++    '/^' . $prefix . '(\w+)/ui',
++    '/(\s+)' . $prefix . '(\w+)/ui',
++  );
++  $replacements = array(
++    '><a href="' . $destination . '${1}"' . $class . '>' . $prefix . '${1}</a>',
++    '<a href="' . $destination . '${1}"' . $class . '>' . $prefix . '${1}</a>',
++    '${1}<a href="' . $destination . '${2}"' . $class . '>' . $prefix . '${2}</a>',
++  );
++
++   if (!empty($class)) {
++     $class = " class=\"{$class}\"";
++   }
++
++  return preg_replace($matches, $replacements, $text);
++
+ }
+ 
+ /**
