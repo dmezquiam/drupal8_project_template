@@ -1,0 +1,29 @@
+diff --git a/scheduler.install b/scheduler.install
+index fe526ad..e5a76ab 100644
+--- a/scheduler.install
++++ b/scheduler.install
+@@ -104,16 +104,20 @@ function scheduler_update_7100() {
+ 
+   // Grant these roles the 'view scheduled content' permission.
+   if ($roles_to_update = $query->execute()->fetchCol()) {
+-    $query = db_insert('role_permission');
+-    $query->fields(array('rid', 'permission', 'module'));
+     foreach ($roles_to_update as $rid ) {
+-      $query->values(array(
++      $query = db_merge('role_permission');
++      $query->key(array(
+         'rid' => $rid,
+         'permission' => 'view scheduled content',
+         'module' => 'scheduler',
+       ));
++      $query->fields(array(
++        'rid' => $rid,
++        'permission' => 'view scheduled content',
++        'module' => 'scheduler',
++      ));
++      $query->execute();
+     }
+-    $query->execute();
+   }
+ 
+   return format_plural(sizeof($roles_to_update), '1 role updated with view scheduled content permission.', '@count roles updated with view scheduled content permission.');
