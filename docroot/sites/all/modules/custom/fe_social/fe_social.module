@@ -170,14 +170,6 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'twitter',
         ),
       ),
-      'youtube' => array(
-        'url' => 'http://www.youtube.com/ijnetvideo',
-        'class' => 'social-icon-youtube',
-        'image' => array(
-          'path' => $images_path . 'social_03.png',
-          'alt' => 'youtube',
-        ),
-      ),
       'linkedin' => array(
         'url' => 'https://www.linkedin.com/company/5326144?trk=tyah&trkInfo=tarId%3A1409937031161%2Ctas%3Ainternational%20journalists%27%20%2Cidx%3A3-1-4',
         'class' => 'social-icon-in',
@@ -186,12 +178,20 @@ function _fe_social_get_social_media_items($language = 'en') {
           'alt' => 'linkedin',
         ),
       ),
-      'google+' => array(
-        'url' => 'https://plus.google.com/109438369213951959896/posts',
-        'class' => 'social-icon-gplus',
+      'tumblr' => array(
+        'url' => 'http://ijnet-english.tumblr.com/',
+        'class' => 'social-icon-tumblr',
         'image' => array(
-          'path' => $images_path . 'social_05.png',
-          'alt' => 'google+',
+          'path' => $images_path . 'social_07.png',
+          'alt' => 'tumblr',
+        ),
+      ),
+      'youtube' => array(
+        'url' => 'http://www.youtube.com/ijnetvideo',
+        'class' => 'social-icon-youtube',
+        'image' => array(
+          'path' => $images_path . 'social_03.png',
+          'alt' => 'youtube',
         ),
       ),
       'rss' => array(
