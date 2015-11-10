@@ -38,4 +38,12 @@
     });
     return result;
   }
+
+  // Add function to push subscribe to newsletter event
+  $.fn.ijnet_gtm_push_event = function(data) {
+    if (data.event != 'undefined') {
+      dataLayer.push({'event' : data.event});
+    }
+  }
+
 })(jQuery)

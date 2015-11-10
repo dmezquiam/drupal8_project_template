@@ -524,6 +524,12 @@ function fe_newsletter_subscribe_form_ajax_submit($form, $form_state) {
   $commands = array();
   if ($success_code == 200 or $success_code == 210) {
     $commands[] = ajax_command_remove('.subscribe-form');
+    // Send event to GTM if module is enabled
+    if (module_exists('ijnet_gtm')) {
+      // notify GTM
+      $args = array('event' => 'BulletinSubscribe');
+      $commands[] = ajax_command_invoke('body', 'ijnet_gtm_push_event', array($args));
+    }
   }
   $commands[] = ajax_command_replace('#form-register-message', $message);
 
