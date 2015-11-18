@@ -311,7 +311,7 @@ function _fe_newsletter_get_author($nid) {
   }
 
   $result = $author->profile_link ?
-    l($author->name, $author->profile_link) :
+    "<a href=" . url($author->profile_link, array('absolute' => TRUE)) . ">" . $author->name . "</a>" :
     $author->name;
 
   return $result;
