@@ -744,6 +744,33 @@ function fe_news_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'php';
+  $handler->display->display_options['arguments']['tid']['validate_options']['code'] = 'if (!is_numeric($argument)) {
+
+	global $language_content;
+	
+	$query = new EntityFieldQuery;
+	$result = $query
+	  ->entityCondition(\'entity_type\', \'taxonomy_term\')
+	  ->propertyCondition(\'name\', str_replace("-"," ",$argument))
+	  ->propertyCondition(\'vid\', 3)
+	  ->execute();
+
+	if (sizeof($result[\'taxonomy_term\'])) {
+		$tid = key($result[\'taxonomy_term\']);	
+		$curterm = taxonomy_term_load($tid);
+		$globalterm = i18n_taxonomy_term_get_translation($curterm,$language_content->prefix);
+		$usefultid = $globalterm->tid;
+
+  		$handler->argument = $usefultid;
+		return true;
+	} else {
+		return false;
+	}
+} else {
+	return true;
+}';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -950,14 +977,22 @@ function fe_news_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Field: Taxonomy term: Name (translated) */
+  $handler->display->display_options['fields']['name_i18n']['id'] = 'name_i18n';
+  $handler->display->display_options['fields']['name_i18n']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_i18n']['field'] = 'name_i18n';
+  $handler->display->display_options['fields']['name_i18n']['label'] = '';
+  $handler->display->display_options['fields']['name_i18n']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name_i18n']['element_label_colon'] = FALSE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'news/[tid]';
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'news/[name_i18n]';
   $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_type'] = '0';
