@@ -169,6 +169,11 @@ function chosen_element_info_alter(&$info) {
  * Render API callback: Apply Chosen to a select element.
  */
 function chosen_pre_render_select($element) {
+  // Right to Left Support.
+  global $language;
+  if($language->direction == 1) {
+    $element['#attributes']['class'][] = 'chosen-rtl';
+  }
   // If the #chosen FAPI property is set, then add the appropriate class.
   if (isset($element['#chosen'])) {
     if (!empty($element['#chosen'])) {

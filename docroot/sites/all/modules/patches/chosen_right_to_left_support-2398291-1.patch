@@ -1,0 +1,28 @@
+From 0886f1e2bfea88e77d605921913dfe5909c0c1c3 Mon Sep 17 00:00:00 2001
+From: AbdulQader <m.abdulqader@vardot.com>
+Date: Wed, 24 Dec 2014 15:13:19 +0200
+Subject: [PATCH] Issue #2398291: Right to Left Support
+
+---
+ chosen.module | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/chosen.module b/chosen.module
+index e54378d..6d8ddd5 100644
+--- a/chosen.module
++++ b/chosen.module
+@@ -169,6 +169,11 @@ function chosen_element_info_alter(&$info) {
+  * Render API callback: Apply Chosen to a select element.
+  */
+ function chosen_pre_render_select($element) {
++  // Right to Left Support.
++  global $language;
++  if($language->direction == 1) {
++    $element['#attributes']['class'][] = 'chosen-rtl';
++  }
+   // If the #chosen FAPI property is set, then add the appropriate class.
+   if (isset($element['#chosen'])) {
+     if (!empty($element['#chosen'])) {
+-- 
+1.8.3.2
+
