@@ -123,6 +123,11 @@
     .latest-posts-block { 
       background: url('#{$path-to-images}/bg_latest_post_ar.jpg') no-repeat left center;
     }
+
+    .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link,
+    .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
+    	float: right;
+    }
 }
 
 //Chinese
@@ -139,5 +144,9 @@
 	//latest-posts-block 
     .latest-posts-block { 
       background: url('#{$path-to-images}/bg_latest_post_fa.jpg') no-repeat left center;
+    }
+    .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link,
+    .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
+    	float: right;
     }
 }
