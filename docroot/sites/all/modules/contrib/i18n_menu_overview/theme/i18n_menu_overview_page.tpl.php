@@ -9,7 +9,13 @@
   <?php
   $dummy = explode('_', arg(2));
   $menu = isset($menu) ? $menu : $dummy[0];
-  print l(t('Add link'), 'admin/structure/menu/manage/' . $menu . '/add', array('query' => array('destination' => 'admin/structure/' . arg(2))));
+  print l(t('Add link'), 'admin/structure/menu/manage/' . $menu .
+    '/add', array(
+    'query' => array(
+      'destination' => 'admin/structure/' . arg(2),
+      'language_id' => $language_id,
+    ),
+  ));
   ?>
 </div>
 <div class="action_edit">

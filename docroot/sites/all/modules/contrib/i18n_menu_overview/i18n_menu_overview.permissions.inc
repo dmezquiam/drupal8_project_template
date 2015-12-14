@@ -30,6 +30,7 @@ function _i18n_menu_overview_menu_access($menu = NULL) {
   global $language;
 
   if (user_access('administer menu')
+    || user_access('administer all i18n menu overview')
     || user_access('administer '. $menu['menu_name'] . '_' . $language->language)) {
     return TRUE;
   }
@@ -40,6 +41,7 @@ function _i18n_menu_overview_menu_link_access($menu_link = NULL) {
   global $language;
 
   if (user_access('administer menu')
+    || user_access('administer all i18n menu overview')
     || user_access('administer '. $menu_link['menu_name'] . '_' . $language->language)) {
     return TRUE;
   }

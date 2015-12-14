@@ -15,6 +15,12 @@
  * Array @return array.
  */
 function i18n_menu_overview_menulanguage_form($form, &$form_state, $menu = 'main-menu', $language_mnu_links = 'nl') {
+  $form['language_id'] = array(
+    '#type' => 'hidden',
+    '#value' =>
+      $language_mnu_links
+  );
+
   global $menu_admin;
   $form['#attached']['css'] = array(drupal_get_path('module', 'menu') . '/menu.css');
   // Getting it with the query builder.
@@ -24,6 +30,7 @@ function i18n_menu_overview_menulanguage_form($form, &$form_state, $menu = 'main
     $links[] = get_object_vars($item);
   }
 
+  $form['#menu'] = $menu;
   if (!empty($links)) {
     $tree = menu_tree_data($links);
     $node_links = array();
@@ -34,8 +41,6 @@ function i18n_menu_overview_menulanguage_form($form, &$form_state, $menu = 'main
     $menu_admin = FALSE;
 
     $form = array_merge($form, _i18n_menu_overview_menulanguage_form($tree));
-    $form['#menu'] = $menu;
-
     if (element_children($form)) {
       $form['actions'] = array('#type' => 'actions');
       $form['actions']['submit'] = array(
@@ -43,9 +48,15 @@ function i18n_menu_overview_menulanguage_form($form, &$form_state, $menu = 'main
         '#value' => t('Save configuration'),
       );
     }
-    else {
-      $form['#empty_text'] = t('There are no menu links yet. <a href="@link">@link_text</a>.', array('@link' => url('admin/structure/menu/manage/' . $form['#menu']['menu_name'] . '/add'), '@link_text' => t('Add link')));
-    }
+    return $form;
+  }
+  else {
+    drupal_set_message(t('There are no menu links yet. <a href="@link">@link_text</a>.',
+      array(
+        '@link' => url('admin/structure/menu/manage/' .
+          $form['#menu'] . '/add'),
+        '@link_text' => t('Add link')
+      )));
     return $form;
   }
 }
@@ -61,6 +72,8 @@ function i18n_menu_overview_menulanguage_form($form, &$form_state, $menu = 'main
  */
 function theme_i18n_menu_overview_menulanguage_form($variables) {
   $form = $variables['form'];
+
+  $language_id = $form['language_id']['#value'];
 
   drupal_add_tabledrag('menu-overview', 'match', 'parent', 'menu-plid', 'menu-plid', 'menu-mlid', TRUE, MENU_MAX_DEPTH - 1);
   drupal_add_tabledrag('menu-overview', 'order', 'sibling', 'menu-weight');
@@ -114,10 +127,18 @@ function theme_i18n_menu_overview_menulanguage_form($variables) {
   if (empty($the_menu)) {
     drupal_set_message(t('Please make this menu translatable & add an translated link below.'), 'error');
   }
+
   $output = theme('i18n_menu_overview_page', array(
-      'menu' => $the_menu, 'table' => theme('table', array(
-          'header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'menu-overview'))),
-      'remaining_form_elements' => drupal_render_children($form)));
+    'language_id' => $language_id,
+    'menu' => $the_menu,
+    'table' => theme('table', array(
+      'header' => $header,
+      'rows' => $rows,
+      'attributes' => array('id' => 'menu-overview')
+    )),
+    'remaining_form_elements' => drupal_render_children($form)
+  ));
+
   return $output;
 }
 
@@ -185,6 +206,13 @@ function _i18n_menu_overview_menulanguage_form($tree) {
     // Don't show callbacks; these have $item['hidden'] < 0.
     if ($item && $item['hidden'] >= 0) {
       $mlid = 'mlid:' . $item['mlid'];
+      // Update the hidden field as i18n menu will disable not current language menus.
+      $hidden = db_select('menu_links', 'm')
+          ->fields('m', array('hidden'))
+          ->condition('mlid', $item['mlid'],'=')
+          ->execute()
+          ->fetchField();
+      $item['hidden'] = $hidden;
       $form[$mlid]['#item'] = $item;
       $form[$mlid]['#attributes'] = $item['hidden'] ? array('class' => array('menu-disabled')) : array('class' => array('menu-enabled'));
       $form[$mlid]['title']['#markup'] = l($item['title'], $item['href'], $item['localized_options']) . ($item['hidden'] ? ' (' . t('disabled') . ')' : '');
