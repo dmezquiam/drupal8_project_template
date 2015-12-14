@@ -8,6 +8,14 @@
  * Handling specific to a Drupal 7 source for nodes.
  */
 class DrupalNode7Migration extends DrupalNodeMigration {
+
+  /**
+   * Holds the fileMigration attached to this migration.
+   *
+   * @var string
+   */
+  protected $fileMigration;
+
   /**
    * @param array $arguments
    */
@@ -33,6 +41,11 @@ class DrupalNode7Migration extends DrupalNodeMigration {
       $this->addUnmigratedSources(array('body:summary', 'body:format'));
     }
 
+    if (module_exists('media')) {
+      $this->addFieldMapping('body', 'body', FALSE)
+           ->callbacks(array($this, 'remapMediaJson'));
+    }
+
     $this->addSimpleMappings(array('tnid', 'translate'));
   }
 
@@ -48,7 +61,7 @@ class DrupalNode7Migration extends DrupalNodeMigration {
                'status', 'created', 'changed', 'comment', 'promote', 'sticky',
                'tnid', 'translate'))
              ->condition('n.type', $this->sourceType)
-             ->orderBy('n.changed');
+             ->orderBy($this->newOnly ? 'n.nid' : 'n.changed');
     // Join node_counter for Statistics support
     if (Database::getConnection('default', $this->sourceConnection)
         ->schema()->tableExists('node_counter')) {
@@ -108,6 +121,106 @@ class DrupalNode7Migration extends DrupalNodeMigration {
       ->fields(array('tnid' => $node->nid))
       ->condition('nid', $node->nid)
       ->execute();
+  }
+
+  /**
+   * Rewrites the fids contained within media module text json.
+   *
+   * @param array $values
+   *   Incoming text values
+   *
+   * @return array
+   *   The values array.
+   */
+  protected function remapMediaJson($values) {
+    if (!is_array($values)) {
+      $values = array($values);
+    }
+
+    $media_regex = '#\[\[(.*?\"type":"media".*?)\]\]#';
+
+    if (!isset($this->fileMigration)) {
+      $this->fileMigration = $this->findFileMigration();
+    }
+
+    // By this point, if we don't know the file migration we have to bail.
+    if (empty($this->fileMigration)) {
+      return $values;
+    }
+
+    $map = $this->fileMigration->getMap();
+
+    foreach ($values as &$value) {
+      preg_match_all($media_regex, $value, $matches);
+
+      if (empty($matches[1])) {
+        continue;
+      }
+
+      foreach ($matches[1] as $idx => $match) {
+        $media_item = json_decode($match, TRUE);
+
+        if (empty($media_item)) {
+          continue;
+        }
+
+        $fid = $media_item['fid'];
+
+        $destination = $map->lookupDestinationID(array($fid));
+
+        if (empty($destination['destid1'])) {
+          continue;
+        }
+
+        $media_item['fid'] = $destination['destid1'];
+        $replace = '[[' . json_encode($media_item) . ']]';
+
+        $value = str_replace($matches[0][$idx], $replace, $value);
+      }
+    }
+    unset($value);
+
+    return $values;
+  }
+
+  /**
+   * Attempts to find a file migration for this class.
+   *
+   * First it will check for an argument passed in. Then it will look at
+   * the migration's dependencies to try and find something with a destination
+   * which is an instanceof MigrateDestinationFile.
+   *
+   * Returns FALSE if it can't find one.
+   *
+   * @return bool|Migration
+   *   The Migration, or boolean FALSE.
+   */
+  protected function findFileMigration() {
+    if (isset($this->arguments['file_migration'])) {
+      return Migration::getInstance($this->arguments['file_migration']);
+    }
+
+    if (isset($this->arguments['soft_dependencies'])) {
+      foreach ($this->arguments['soft_dependencies'] as $dep) {
+        $migration = Migration::getInstance($dep);
+
+        if ($migration->getDestination() instanceof MigrateDestinationFile) {
+          return $migration;
+        }
+      }
+    }
+
+    if (isset($this->arguments['dependencies'])) {
+      foreach ($this->arguments['dependencies'] as $dep) {
+        $migration = Migration::getInstance($dep);
+
+        if ($migration->getDestination() instanceof MigrateDestinationFile) {
+          return $migration;
+        }
+      }
+    }
+
+    return FALSE;
   }
 
 }

@@ -148,9 +148,7 @@ class DrupalVersion6 extends DrupalVersion {
                 $columns[$field_name . ':title'] = $field_name . '_title';
               }
               if (!empty($global_settings['description_field'])) {
-                $columns[$field_name . ':description'] =
-                  $field_name . '_data';
-                // CESAR: original  $field_name . '_description';
+                $columns[$field_name . ':description'] = $field_name . '_description';
               }
             }
             else {
@@ -306,16 +304,19 @@ class DrupalVersion6 extends DrupalVersion {
                     $row->$index = array($row->$index);
                   }
                   // File field subfields need to be pulled from $data.
-                  if ($display_name == "$field_name:alt") {
+                  if ($display_name == "$field_name:alt" &&
+                      isset($data['alt'])) {
                     $row->{$index}[] = $data['alt'];
                   }
-                  elseif ($display_name == "$field_name:title") {
+                  elseif ($display_name == "$field_name:title" &&
+                          isset($data['title'])) {
                     $row->{$index}[] = $data['title'];
                   }
-                  elseif ($display_name == "$field_name:description") {
+                  elseif ($display_name == "$field_name:description" &&
+                          isset($data['description'])) {
                     $row->{$index}[] = $data['description'];
                   }
-                  else {
+                  elseif (isset($field_row->$column_name)) {
                     $row->{$index}[] = $field_row->$column_name;
                   }
                 }

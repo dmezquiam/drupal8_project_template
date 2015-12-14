@@ -18,8 +18,7 @@ class DrupalFile6Migration extends DrupalFileMigration {
       );
     }
 
-    $this->addFieldMapping('value', 'filepath')
-         ->callbacks(array($this, 'fixUri'));
+    $this->addFieldMapping('value', 'filepath');
     $this->addFieldMapping('destination_file', 'filepath')
       ->callbacks(array($this, 'fixUri'));
     $this->addFieldMapping('timestamp', 'timestamp');
@@ -72,7 +71,7 @@ class DrupalFile6Migration extends DrupalFileMigration {
     $query = Database::getConnection('default', $this->sourceConnection)
              ->select('files', 'f')
              ->fields('f')
-             ->orderBy('timestamp');
+             ->orderBy($this->newOnly ? 'f.fid' : 'f.timestamp');
     return $query;
   }
 
@@ -84,7 +83,12 @@ class DrupalFile6Migration extends DrupalFileMigration {
    * @return mixed
    */
   protected function fixUri($uri) {
+    // Try the legacy path, as best we could determine it.
     $result = str_replace($this->legacyPath, '', $uri);
+    if ($result == $uri) {
+      // That didn't work, so assume the prefix is of the form sites/%/files.
+      $result = preg_replace('|^sites/[^/]+/files/|i', '', $uri);
+    }
     return $result;
   }
 }
@@ -121,8 +125,7 @@ class DrupalPicture6Migration extends DrupalFile6Migration {
     }
 
     // Override these mappings to use 'picture' instead of 'filepath'.
-    $this->addFieldMapping('value', 'picture', FALSE)
-         ->callbacks(array($this, 'fixUri'));
+    $this->addFieldMapping('value', 'picture', FALSE);
     $this->addFieldMapping('destination_file', 'picture', FALSE)
       ->callbacks(array($this, 'fixUri'));
 

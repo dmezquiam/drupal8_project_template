@@ -41,6 +41,8 @@ class DrupalNode6Migration extends DrupalNodeMigration {
 
     $this->addFieldMapping('language', 'language')
          ->defaultValue($this->defaultLanguage);
+    $this->addFieldMapping('body:language', 'language', FALSE)
+         ->defaultValue($this->defaultLanguage);
 
     if (field_info_instance('node', 'body', $this->destinationType)) {
       $this->addFieldMapping('body:summary', 'teaser');
@@ -68,7 +70,7 @@ class DrupalNode6Migration extends DrupalNodeMigration {
                  'uid', 'status', 'created', 'changed', 'comment', 'promote',
                  'moderate', 'sticky', 'tnid', 'translate'))
              ->condition('n.type', $this->sourceType)
-             ->orderBy('n.changed');
+             ->orderBy($this->newOnly ? 'n.nid' : 'n.changed');
     $query->innerJoin('node_revisions', 'nr', 'n.vid=nr.vid');
     $query->fields('nr', array('body', 'teaser', 'format'));
     // Pick up simple CCK fields
@@ -163,11 +165,13 @@ class DrupalNode6Migration extends DrupalNodeMigration {
       if (isset($row->$data_field)) {
         $data = unserialize($row->$data_field);
         $base_field = substr($data_field, 0, strpos($data_field, '_data'));
-        foreach ($data as $key => $value) {
-          $field_name = $base_field . '_' . $key;
-          $row->$field_name = $value;
+        if (!empty($data)) {
+          foreach ($data as $key => $value) {
+            $field_name = $base_field . '_' . $key;
+            $row->$field_name = $value;
+          }
+          unset($row->$data_field);
         }
-        unset($row->$data_field);
       }
     }
     // Convert the default field names to the nice-looking ones.

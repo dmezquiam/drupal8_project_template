@@ -285,7 +285,16 @@ class MigrateD2DWizard extends MigrateUIWizard {
         $site_name = unserialize($site_name);
         if ($site_name) {
           $this->groupTitle = $site_name;
+          if (function_exists('transliteration_get')) {
+            $site_name = transliteration_get($site_name);
+          }
           $this->groupName = preg_replace('/[^A-Za-z0-9]/', '', $site_name);
+          if (strlen($this->groupName) > 9) {
+            $this->groupName = substr(md5($this->groupName), 0, 9);
+          }
+          elseif (empty($this->groupName)) {
+            $this->groupName = substr(md5($site_name), 0, 9);
+          }
         }
         else {
           $this->groupName = $this->groupTitle = 'd' . $this->sourceVersion;
@@ -596,36 +605,52 @@ class MigrateD2DWizard extends MigrateUIWizard {
         '#default_value' => TRUE,
       );
 
-      $form['instructions'] = array(
-        '#prefix' => '<div>',
-        '#markup' => t('To be able to retrieve any uploaded files from your ' .
-          'legacy site, we need to know where to find them. If your legacy site '.
-          'is on the same web server as the destination site, or you have copied '.
-          'your file directory to the web server, please provide the full ' .
-          'file directory - for example, <em>/var/www/drupal/sites/example.com/files/</em>. ' .
-          'Otherwise, we need the web address of that directory. To determine that address: ' .
-          '<ol><li>Please visit a node on the site containing images, or a user ' .
-          'profile with an uploaded picture. Try to find an example where the ' .
-          'full resolution image is displayed.</li> '.
-          '<li>Right-click on the picture and look for an operation such as ' .
-          '<em>View Image</em>.</li> '.
-          '<li>Choose that function and look at the URL of the image - it will ' .
-          'usually look something like ' .
-          '<em>http://example.com/sites/default/files/pictures/picture-3.jpg</em> ' .
-          '(for user pictures) or ' .
-          '<em>http://example.com/sites/default/files/my-photo.jpg</em> ' .
-          '(for files uploaded to nodes).</li> ' .
-          '<li>If you see after the <em>files</em> portion of the path something ' .
-          'like <em>styles</em> or <em>imagecache</em>, you are most likely ' .
-          'looking at an automatically generated variation of the image, not the ' .
-          'original. It will take some trial and error, removing intermediate ' .
-          'portions of the path (such as <em>styles/medium/</em>) to find the ' .
-          'original image.</li> ' .
-          '<li>Please enter the full address of the files directory ' .
-          '(<em>http://example.com/sites/default/files/</em>) below. Leave the ' .
-          'field empty to skip migrating files.</li></ol>'),
-        '#suffix' => '</div>',
-      );
+      if ($this->sourceVersion == 7) {
+        $form['instructions'] = array(
+          '#prefix' => '<div>',
+          '#markup' => t('To be able to retrieve any uploaded files from your ' .
+            'legacy site, we need to know where to find them. If your legacy site '.
+            'is on the same web server as the destination site, or you have copied '.
+            'your file directory to the web server, please provide the full ' .
+            'file directory - for example, <em>/var/www/drupal/sites/example.com/files/</em>. ' .
+            'Otherwise, we need the web address of that directory. To determine that address: ' .
+            '<ol><li>Please visit a node on the site containing images, or a user ' .
+            'profile with an uploaded picture. Try to find an example where the ' .
+            'full resolution image is displayed.</li> '.
+            '<li>Right-click on the picture and look for an operation such as ' .
+            '<em>View Image</em>.</li> '.
+            '<li>Choose that function and look at the URL of the image - it will ' .
+            'usually look something like ' .
+            '<em>http://example.com/sites/default/files/pictures/picture-3.jpg</em> ' .
+            '(for user pictures) or ' .
+            '<em>http://example.com/sites/default/files/my-photo.jpg</em> ' .
+            '(for files uploaded to nodes).</li> ' .
+            '<li>If you see after the <em>files</em> portion of the path something ' .
+            'like <em>styles</em> or <em>imagecache</em>, you are most likely ' .
+            'looking at an automatically generated variation of the image, not the ' .
+            'original. It will take some trial and error, removing intermediate ' .
+            'portions of the path (such as <em>styles/medium/</em>) to find the ' .
+            'original image.</li> ' .
+            '<li>Please enter the full address of the files directory ' .
+            '(<em>http://example.com/sites/default/files/</em>) below. Leave the ' .
+            'field empty to skip migrating files.</li></ol>'),
+          '#suffix' => '</div>',
+        );
+      }
+      else {
+        $form['instructions'] = array(
+          '#prefix' => '<div>',
+          '#markup' => t('To be able to retrieve any uploaded files from your ' .
+            'legacy site, we need to know where to find them. If your legacy site '.
+            'is on the same web server as the destination site, or you have copied '.
+            'your file directory to the web server, please provide the full ' .
+            'file directory - for example, <em>/var/www/drupal/sites/example.com/files/</em>. ' .
+            'Otherwise, please provide the address of your legacy site (e.g., ' .
+            '<em>http://example.com/</em> below. Leave the ' .
+            'field empty to skip migrating files.'),
+          '#suffix' => '</div>',
+        );
+      }
 
       $form['description'] = array(
         '#prefix' => '<div>',
@@ -827,6 +852,10 @@ class MigrateD2DWizard extends MigrateUIWizard {
    * to say yay or nay.
    */
   protected function reviewForm(&$form_state) {
+    // In case we've been going back-and-forth with Previous, make sure we
+    // start with no migrations - all migrations will be added here.
+    $this->migrations = array();
+
     $this->groupArguments = array(
       'encrypted_arguments' => array('source_database'),
       'source_version' => $this->sourceVersion,
@@ -1004,7 +1033,7 @@ class MigrateD2DWizard extends MigrateUIWizard {
           'source_type' => $source_type,
           'destination_type' => $destination_type,
           'description' => t('Migration of @source_type nodes from Drupal @version',
-                   array('@vocabulary' => $source_name,
+                   array('@source_type' => $source_name,
                          '@version' => $this->sourceVersion)),
         );
         if ($this->userMigration) {

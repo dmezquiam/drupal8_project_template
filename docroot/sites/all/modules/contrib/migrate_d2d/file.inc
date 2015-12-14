@@ -86,6 +86,6 @@ abstract class DrupalFileMigration extends DrupalMigration {
       $this->addFieldMapping('uid')
            ->defaultValue($default_uid);
     }
-    $this->addUnmigratedSources(array('filename', 'filemime', 'filesize'));
+    $this->addUnmigratedSources(array('filename', 'filemime', 'filesize', 'urlencode'));
   }
 }
