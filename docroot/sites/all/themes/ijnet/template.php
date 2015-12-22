@@ -96,46 +96,4 @@ function _ijnet_preprocess_comment_get_user($user) {
   return l($username, 'user/'.$user->uid, array('attributes' => $attributes));
 }
 
-/**
- * Implements template_preprocess_search_result
- * @param type $vars
- */
-function ijnet_preprocess_search_result(&$vars) {
-  $node = $vars['result']['node'];
-  $author = '';
-  $authorId = '';
-  $override = FALSE;
-  if ($node->type == 'news') {
-    if (isset($node->field_attribution)) {
-      $author = field_get_items('node',$node,'field_attribution')[0]['value'];
-      $override = TRUE;
-    }
-    if (isset($node->field_byline)) {
-      $authorId = field_get_items('node',$node,'field_byline')[0]['uid'];
-      $authorInfo = user_load($authorId);
-       if (isset($authorInfo) && ($authorId != 0)) {
-        $authorName = field_get_items('user',$authorInfo,'name');
-        $authorUrl = url("user/$authorId");
 
-        $authorScreenName = field_get_items('user',$authorInfo,'field_screen_name')[0]['value'];
-
-        $author = "<a href=\"" . $authorUrl . "\" title=\"View user profile.\" rel=\"author\" class=\"username\" xml:lang=\"\" about=\"" . $authorUrl . "\" typeof=\"sioc:UserAccount\" property=\"foaf:name\" datatype=\"\">$authorScreenName</a>";
-        $override = TRUE;
-      }
-    }
-  } else {
-    $authorId = $node->uid;
-    $authorInfo = user_load($authorId);
-    if (isset($authorInfo) && ($authorId != 0)) {
-      $authorName = field_get_items('user',$authorInfo,'name');
-      $authorUrl = url("user/$authorId");
-      $authorScreenName = field_get_items('user',$authorInfo,'field_screen_name')[0]['value'];
-
-      $author = "<a href=\"" . $authorUrl . "\" title=\"View user profile.\" rel=\"author\" class=\"username\" xml:lang=\"\" about=\"" . $authorUrl . "\" typeof=\"sioc:UserAccount\" property=\"foaf:name\" datatype=\"\">$authorScreenName</a>";
-      $override = TRUE;
-    }
-  }
-  $vars['info_split']['type'] = $vars['result']['type'] . " - ";
-  $vars['info_split']['author'] = $author . " - ";
-  $vars['info_split']['override'] = $override;
-}
