@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ijnet_search_config feature.
+ */
+
+include_once 'ijnet_search_config.features.inc';
