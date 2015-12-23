@@ -174,5 +174,68 @@ function fe_banner_strongarm() {
   $strongarm->value = 1;
   $export['node_submitted_banner'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_banner_ar_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_banner_ar_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_banner_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_banner_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_banner_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_banner_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_banner_fa_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_banner_fa_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_banner_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_banner_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_banner_pt-br_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_banner_pt-br_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_banner_ru_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_banner_ru_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_banner_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_banner_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_banner_zh-hans_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_banner_zh-hans_pattern'] = $strongarm;
+
   return $export;
 }

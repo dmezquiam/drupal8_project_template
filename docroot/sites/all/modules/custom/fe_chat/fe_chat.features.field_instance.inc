@@ -10,7 +10,7 @@
 function fe_chat_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-chat-body'
+  // Exported field_instance: 'node-chat-body'.
   $field_instances['node-chat-body'] = array(
     'bundle' => 'chat',
     'default_value' => NULL,
@@ -62,7 +62,7 @@ function fe_chat_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-chat-field_chat_description'
+  // Exported field_instance: 'node-chat-field_chat_description'.
   $field_instances['node-chat-field_chat_description'] = array(
     'bundle' => 'chat',
     'default_value' => NULL,
@@ -106,7 +106,7 @@ function fe_chat_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-chat-field_date'
+  // Exported field_instance: 'node-chat-field_date'.
   $field_instances['node-chat-field_date'] = array(
     'bundle' => 'chat',
     'deleted' => 0,
@@ -123,6 +123,7 @@ function fe_chat_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -138,6 +139,7 @@ function fe_chat_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -171,7 +173,7 @@ function fe_chat_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-chat-field_image'
+  // Exported field_instance: 'node-chat-field_image'.
   $field_instances['node-chat-field_image'] = array(
     'bundle' => 'chat',
     'deleted' => 0,

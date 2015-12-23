@@ -10,7 +10,7 @@
 function fe_opportunity_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-training_opportunity-body'
+  // Exported field_instance: 'node-training_opportunity-body'.
   $field_instances['node-training_opportunity-body'] = array(
     'bundle' => 'training_opportunity',
     'default_value' => NULL,
@@ -37,9 +37,11 @@ function fe_opportunity_field_default_field_instances() {
           'more_text' => 'Read more',
           'summary_handler' => 'full',
           'trim_length' => 150,
+          'trim_link' => FALSE,
           'trim_options' => array(
             'text' => 'text',
           ),
+          'trim_preserve_tags' => '',
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),
@@ -75,7 +77,7 @@ function fe_opportunity_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_opportunity-field_category'
+  // Exported field_instance: 'node-training_opportunity-field_category'.
   $field_instances['node-training_opportunity-field_category'] = array(
     'bundle' => 'training_opportunity',
     'default_value' => NULL,
@@ -115,7 +117,7 @@ function fe_opportunity_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_opportunity-field_cost'
+  // Exported field_instance: 'node-training_opportunity-field_cost'.
   $field_instances['node-training_opportunity-field_cost'] = array(
     'bundle' => 'training_opportunity',
     'default_value' => NULL,
@@ -156,7 +158,7 @@ function fe_opportunity_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_opportunity-field_date'
+  // Exported field_instance: 'node-training_opportunity-field_date'.
   $field_instances['node-training_opportunity-field_date'] = array(
     'bundle' => 'training_opportunity',
     'deleted' => 0,
@@ -203,7 +205,7 @@ function fe_opportunity_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_opportunity-field_deadline'
+  // Exported field_instance: 'node-training_opportunity-field_deadline'.
   $field_instances['node-training_opportunity-field_deadline'] = array(
     'bundle' => 'training_opportunity',
     'deleted' => 0,
@@ -220,6 +222,7 @@ function fe_opportunity_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -259,7 +262,7 @@ function fe_opportunity_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_opportunity-field_document'
+  // Exported field_instance: 'node-training_opportunity-field_document'.
   $field_instances['node-training_opportunity-field_document'] = array(
     'bundle' => 'training_opportunity',
     'deleted' => 0,
@@ -301,7 +304,7 @@ function fe_opportunity_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_opportunity-field_organization'
+  // Exported field_instance: 'node-training_opportunity-field_organization'.
   $field_instances['node-training_opportunity-field_organization'] = array(
     'bundle' => 'training_opportunity',
     'default_value' => NULL,
@@ -357,7 +360,7 @@ function fe_opportunity_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_opportunity-field_primary_topic'
+  // Exported field_instance: 'node-training_opportunity-field_primary_topic'.
   $field_instances['node-training_opportunity-field_primary_topic'] = array(
     'bundle' => 'training_opportunity',
     'default_value' => NULL,
@@ -397,7 +400,7 @@ function fe_opportunity_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_opportunity-field_region'
+  // Exported field_instance: 'node-training_opportunity-field_region'.
   $field_instances['node-training_opportunity-field_region'] = array(
     'bundle' => 'training_opportunity',
     'default_value' => NULL,
@@ -437,7 +440,7 @@ function fe_opportunity_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_opportunity-field_related_content'
+  // Exported field_instance: 'node-training_opportunity-field_related_content'.
   $field_instances['node-training_opportunity-field_related_content'] = array(
     'bundle' => 'training_opportunity',
     'default_value' => NULL,
@@ -479,7 +482,7 @@ Begin typing the title of the the related content to see a list of matching arti
     ),
   );
 
-  // Exported field_instance: 'node-training_opportunity-field_tags'
+  // Exported field_instance: 'node-training_opportunity-field_tags'.
   $field_instances['node-training_opportunity-field_tags'] = array(
     'bundle' => 'training_opportunity',
     'default_value' => NULL,

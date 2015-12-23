@@ -177,5 +177,61 @@ function fe_chat_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_chat'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_chat_ar_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_chat_ar_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_chat_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_chat_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_chat_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_chat_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_chat_fa_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_chat_fa_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_chat_pt-br_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_chat_pt-br_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_chat_ru_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_chat_ru_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_chat_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_chat_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_chat_zh-hans_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_chat_zh-hans_pattern'] = $strongarm;
+
   return $export;
 }

@@ -10,7 +10,7 @@
 function fe_newsletter_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-bulletin_email-body'
+  // Exported field_instance: 'node-bulletin_email-body'.
   $field_instances['node-bulletin_email-body'] = array(
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
@@ -62,7 +62,7 @@ function fe_newsletter_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bulletin_email-field_advertisements'
+  // Exported field_instance: 'node-bulletin_email-field_advertisements'.
   $field_instances['node-bulletin_email-field_advertisements'] = array(
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
@@ -107,7 +107,7 @@ function fe_newsletter_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bulletin_email-field_from_date'
+  // Exported field_instance: 'node-bulletin_email-field_from_date'.
   $field_instances['node-bulletin_email-field_from_date'] = array(
     'bundle' => 'bulletin_email',
     'deleted' => 0,
@@ -124,6 +124,7 @@ function fe_newsletter_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 9,
@@ -163,7 +164,8 @@ function fe_newsletter_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bulletin_email-field_number_of_advertisements'
+  // Exported field_instance:
+  // 'node-bulletin_email-field_number_of_advertisements'.
   $field_instances['node-bulletin_email-field_number_of_advertisements'] = array(
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
@@ -212,7 +214,7 @@ function fe_newsletter_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bulletin_email-field_opportunities'
+  // Exported field_instance: 'node-bulletin_email-field_opportunities'.
   $field_instances['node-bulletin_email-field_opportunities'] = array(
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
@@ -257,7 +259,7 @@ function fe_newsletter_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bulletin_email-field_other_content'
+  // Exported field_instance: 'node-bulletin_email-field_other_content'.
   $field_instances['node-bulletin_email-field_other_content'] = array(
     'bundle' => 'bulletin_email',
     'default_value' => NULL,

@@ -245,5 +245,68 @@ function fe_newsletter_strongarm() {
   $strongarm->value = 1;
   $export['node_submitted_bulletin_email'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bulletin_email_ar_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_bulletin_email_ar_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bulletin_email_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_bulletin_email_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bulletin_email_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_bulletin_email_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bulletin_email_fa_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_bulletin_email_fa_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bulletin_email_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_bulletin_email_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bulletin_email_pt-br_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_bulletin_email_pt-br_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bulletin_email_ru_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_bulletin_email_ru_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bulletin_email_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_bulletin_email_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bulletin_email_zh-hans_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_bulletin_email_zh-hans_pattern'] = $strongarm;
+
   return $export;
 }

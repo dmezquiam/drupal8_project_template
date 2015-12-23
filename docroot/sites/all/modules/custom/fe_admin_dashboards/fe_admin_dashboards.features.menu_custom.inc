@@ -41,6 +41,5 @@ function fe_admin_dashboards_menu_default_menu_custom() {
   t('Displays possible actions: create content, edit queues.');
   t('Toolbar');
 
-
   return $menus;
 }

@@ -10,21 +10,13 @@
 function fe_banner_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_image_banner'
+  // Exported field_base: 'field_image_banner'.
   $field_bases['field_image_banner'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_image_banner',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -43,14 +35,13 @@ function fe_banner_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_link'
+  // Exported field_base: 'field_link'.
   $field_bases['field_link'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_link',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -74,14 +65,13 @@ function fe_banner_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_type'
+  // Exported field_base: 'field_type'.
   $field_bases['field_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',

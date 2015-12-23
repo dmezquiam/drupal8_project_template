@@ -58,7 +58,7 @@ function fe_social_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Follow @[screen_name] on Twitter';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  /* Field: Twitter: Profile image */
+  /* Field: Twitter Account: Profile image */
   $handler->display->display_options['fields']['profile_image_url']['id'] = 'profile_image_url';
   $handler->display->display_options['fields']['profile_image_url']['table'] = 'twitter_account';
   $handler->display->display_options['fields']['profile_image_url']['field'] = 'profile_image_url';
@@ -83,7 +83,7 @@ function fe_social_views_default_views() {
   $handler->display->display_options['sorts']['created_time']['table'] = 'twitter';
   $handler->display->display_options['sorts']['created_time']['field'] = 'created_time';
   $handler->display->display_options['sorts']['created_time']['order'] = 'DESC';
-  /* Filter criterion: Twitter: Protected status */
+  /* Filter criterion: Twitter Account: Protected status */
   $handler->display->display_options['filters']['protected']['id'] = 'protected';
   $handler->display->display_options['filters']['protected']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['protected']['field'] = 'protected';
@@ -186,12 +186,12 @@ function fe_social_views_default_views() {
   $handler->display->display_options['fields']['twitter_id']['label'] = '';
   $handler->display->display_options['fields']['twitter_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['twitter_id']['element_label_colon'] = FALSE;
-  /* Field: Twitter: Profile image */
+  /* Field: Twitter Account: Profile image */
   $handler->display->display_options['fields']['profile_image_url']['id'] = 'profile_image_url';
   $handler->display->display_options['fields']['profile_image_url']['table'] = 'twitter_account';
   $handler->display->display_options['fields']['profile_image_url']['field'] = 'profile_image_url';
   $handler->display->display_options['fields']['profile_image_url']['label'] = '';
-  /* Field: Twitter: Full name */
+  /* Field: Twitter Account: Full name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'twitter_account';
   $handler->display->display_options['fields']['name']['field'] = 'name';

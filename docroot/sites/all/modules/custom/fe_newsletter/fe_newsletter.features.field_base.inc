@@ -10,21 +10,13 @@
 function fe_newsletter_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_advertisements'
+  // Exported field_base: 'field_advertisements'.
   $field_bases['field_advertisements'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_advertisements',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -57,14 +49,13 @@ function fe_newsletter_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_from_date'
+  // Exported field_base: 'field_from_date'.
   $field_bases['field_from_date'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_from_date',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -88,14 +79,13 @@ function fe_newsletter_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_number_of_advertisements'
+  // Exported field_base: 'field_number_of_advertisements'.
   $field_bases['field_number_of_advertisements'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_number_of_advertisements',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -106,21 +96,13 @@ function fe_newsletter_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_opportunities'
+  // Exported field_base: 'field_opportunities'.
   $field_bases['field_opportunities'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_opportunities',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -153,21 +135,13 @@ function fe_newsletter_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_other_content'
+  // Exported field_base: 'field_other_content'.
   $field_bases['field_other_content'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_other_content',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',

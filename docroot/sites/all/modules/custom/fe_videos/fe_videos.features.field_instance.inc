@@ -10,7 +10,7 @@
 function fe_videos_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-video-body'
+  // Exported field_instance: 'node-video-body'.
   $field_instances['node-video-body'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -62,7 +62,7 @@ function fe_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_category'
+  // Exported field_instance: 'node-video-field_category'.
   $field_instances['node-video-field_category'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -102,7 +102,7 @@ function fe_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_image'
+  // Exported field_instance: 'node-video-field_image'.
   $field_instances['node-video-field_image'] = array(
     'bundle' => 'video',
     'deleted' => 0,
@@ -164,7 +164,7 @@ function fe_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_primary_topic'
+  // Exported field_instance: 'node-video-field_primary_topic'.
   $field_instances['node-video-field_primary_topic'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -204,7 +204,7 @@ function fe_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_video'
+  // Exported field_instance: 'node-video-field_video'.
   $field_instances['node-video-field_video'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -262,7 +262,7 @@ function fe_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-title_field'
+  // Exported field_instance: 'node-video-title_field'.
   $field_instances['node-video-title_field'] = array(
     'bundle' => 'video',
     'default_value' => NULL,

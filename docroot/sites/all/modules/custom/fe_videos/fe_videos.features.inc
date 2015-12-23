@@ -53,6 +53,7 @@ function fe_videos_fe_nodequeue_export_fields() {
     'reference' => 'a:2:{s:9:"languages";s:7:"enabled";s:16:"language_neutral";i:0;}',
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 7,
     'types' => array(
       0 => 'video',
@@ -74,16 +75,9 @@ function fe_videos_image_default_styles() {
 
   // Exported image style: video_thumbnail.
   $styles['video_thumbnail'] = array(
-    'name' => 'video_thumbnail',
     'label' => 'Video thumbnail',
     'effects' => array(
       43 => array(
-        'label' => 'Manual Crop: Crop and scale',
-        'help' => 'Crop and scale a user-selected area, respecting the ratio of the destination width and height.',
-        'effect callback' => 'manualcrop_crop_and_scale_effect',
-        'form callback' => 'manualcrop_crop_and_scale_form',
-        'summary theme' => 'manualcrop_crop_and_scale_summary',
-        'module' => 'manualcrop',
         'name' => 'manualcrop_crop_and_scale',
         'data' => array(
           'width' => 259,

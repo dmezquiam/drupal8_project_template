@@ -10,7 +10,7 @@
 function fe_advertisement_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-advertisement-field_image_ad'
+  // Exported field_instance: 'node-advertisement-field_image_ad'.
   $field_instances['node-advertisement-field_image_ad'] = array(
     'bundle' => 'advertisement',
     'deleted' => 0,
@@ -78,7 +78,7 @@ function fe_advertisement_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-advertisement-field_image_show'
+  // Exported field_instance: 'node-advertisement-field_image_show'.
   $field_instances['node-advertisement-field_image_show'] = array(
     'bundle' => 'advertisement',
     'default_value' => array(

@@ -10,7 +10,7 @@
 function fe_user_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_bio'
+  // Exported field_instance: 'user-user-field_bio'.
   $field_instances['user-user-field_bio'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -61,7 +61,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_blog'
+  // Exported field_instance: 'user-user-field_blog'.
   $field_instances['user-user-field_blog'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -118,7 +118,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_job_title'
+  // Exported field_instance: 'user-user-field_job_title'.
   $field_instances['user-user-field_job_title'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -158,7 +158,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_languages_spoken'
+  // Exported field_instance: 'user-user-field_languages_spoken'.
   $field_instances['user-user-field_languages_spoken'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -200,7 +200,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_location'
+  // Exported field_instance: 'user-user-field_location'.
   $field_instances['user-user-field_location'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -241,7 +241,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_organization_name'
+  // Exported field_instance: 'user-user-field_organization_name'.
   $field_instances['user-user-field_organization_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -281,7 +281,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_organization_website'
+  // Exported field_instance: 'user-user-field_organization_website'.
   $field_instances['user-user-field_organization_website'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -321,7 +321,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_resume'
+  // Exported field_instance: 'user-user-field_resume'.
   $field_instances['user-user-field_resume'] = array(
     'bundle' => 'user',
     'deleted' => 0,
@@ -363,7 +363,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_screen_name'
+  // Exported field_instance: 'user-user-field_screen_name'.
   $field_instances['user-user-field_screen_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -413,7 +413,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_short_bio'
+  // Exported field_instance: 'user-user-field_short_bio'.
   $field_instances['user-user-field_short_bio'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -457,7 +457,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_show_profile'
+  // Exported field_instance: 'user-user-field_show_profile'.
   $field_instances['user-user-field_show_profile'] = array(
     'bundle' => 'user',
     'default_value' => array(
@@ -505,7 +505,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_subscribe'
+  // Exported field_instance: 'user-user-field_subscribe'.
   $field_instances['user-user-field_subscribe'] = array(
     'bundle' => 'user',
     'default_value' => array(
@@ -549,7 +549,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_topic'
+  // Exported field_instance: 'user-user-field_topic'.
   $field_instances['user-user-field_topic'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -593,7 +593,7 @@ function fe_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_twitter'
+  // Exported field_instance: 'user-user-field_twitter'.
   $field_instances['user-user-field_twitter'] = array(
     'bundle' => 'user',
     'default_value' => NULL,

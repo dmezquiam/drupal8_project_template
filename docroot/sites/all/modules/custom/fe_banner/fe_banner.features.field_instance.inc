@@ -10,7 +10,7 @@
 function fe_banner_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-banner-body'
+  // Exported field_instance: 'node-banner-body'.
   $field_instances['node-banner-body'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -61,7 +61,7 @@ function fe_banner_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_image_banner'
+  // Exported field_instance: 'node-banner-field_image_banner'.
   $field_instances['node-banner-field_image_banner'] = array(
     'bundle' => 'banner',
     'deleted' => 0,
@@ -133,7 +133,7 @@ function fe_banner_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_link'
+  // Exported field_instance: 'node-banner-field_link'.
   $field_instances['node-banner-field_link'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -193,7 +193,7 @@ function fe_banner_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_type'
+  // Exported field_instance: 'node-banner-field_type'.
   $field_instances['node-banner-field_type'] = array(
     'bundle' => 'banner',
     'default_value' => array(

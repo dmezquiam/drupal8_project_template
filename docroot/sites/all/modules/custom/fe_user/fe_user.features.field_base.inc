@@ -10,21 +10,13 @@
 function fe_user_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_bio'
+  // Exported field_base: 'field_bio'.
   $field_bases['field_bio'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_bio',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -39,14 +31,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_blog'
+  // Exported field_base: 'field_blog'.
   $field_bases['field_blog'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_blog',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -77,21 +68,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_job_title'
+  // Exported field_base: 'field_job_title'.
   $field_bases['field_job_title'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_job_title',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -107,21 +90,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_languages_spoken'
+  // Exported field_base: 'field_languages_spoken'.
   $field_bases['field_languages_spoken'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_languages_spoken',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -144,14 +119,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_location'
+  // Exported field_base: 'field_location'.
   $field_bases['field_location'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location',
-    'foreign keys' => array(),
     'indexes' => array(
       'lid' => array(
         0 => 'lid',
@@ -237,21 +211,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'location',
   );
 
-  // Exported field_base: 'field_organization_name'
+  // Exported field_base: 'field_organization_name'.
   $field_bases['field_organization_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_organization_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -267,21 +233,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_organization_website'
+  // Exported field_base: 'field_organization_website'.
   $field_bases['field_organization_website'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_organization_website',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -297,21 +255,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_resume'
+  // Exported field_base: 'field_resume'.
   $field_bases['field_resume'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_resume',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -338,21 +288,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_screen_name'
+  // Exported field_base: 'field_screen_name'.
   $field_bases['field_screen_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_screen_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -368,21 +310,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_short_bio'
+  // Exported field_base: 'field_short_bio'.
   $field_bases['field_short_bio'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_short_bio',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -397,14 +331,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_show_profile'
+  // Exported field_base: 'field_show_profile'.
   $field_bases['field_show_profile'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_show_profile',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -424,14 +357,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_subscribe'
+  // Exported field_base: 'field_subscribe'.
   $field_bases['field_subscribe'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_subscribe',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -451,21 +383,13 @@ function fe_user_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_twitter'
+  // Exported field_base: 'field_twitter'.
   $field_bases['field_twitter'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_twitter',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',

@@ -198,7 +198,10 @@ function fe_site_config_default_page_manager_pages() {
   $page->admin_title = 'Landing page';
   $page->admin_description = '';
   $page->path = 'home';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => '',

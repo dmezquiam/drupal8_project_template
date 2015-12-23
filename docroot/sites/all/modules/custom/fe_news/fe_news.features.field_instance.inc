@@ -10,7 +10,7 @@
 function fe_news_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-news-body'
+  // Exported field_instance: 'node-news-body'.
   $field_instances['node-news-body'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -93,7 +93,7 @@ function fe_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_attribution'
+  // Exported field_instance: 'node-news-field_attribution'.
   $field_instances['node-news-field_attribution'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -146,7 +146,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_audio_files'
+  // Exported field_instance: 'node-news-field_audio_files'.
   $field_instances['node-news-field_audio_files'] = array(
     'bundle' => 'news',
     'deleted' => 0,
@@ -208,7 +208,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_byline'
+  // Exported field_instance: 'node-news-field_byline'.
   $field_instances['node-news-field_byline'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -261,7 +261,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_document'
+  // Exported field_instance: 'node-news-field_document'.
   $field_instances['node-news-field_document'] = array(
     'bundle' => 'news',
     'deleted' => 0,
@@ -323,7 +323,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_image'
+  // Exported field_instance: 'node-news-field_image'.
   $field_instances['node-news-field_image'] = array(
     'bundle' => 'news',
     'deleted' => 0,
@@ -425,7 +425,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_image_show'
+  // Exported field_instance: 'node-news-field_image_show'.
   $field_instances['node-news-field_image_show'] = array(
     'bundle' => 'news',
     'default_value' => array(
@@ -480,7 +480,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_primary_topic'
+  // Exported field_instance: 'node-news-field_primary_topic'.
   $field_instances['node-news-field_primary_topic'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -532,7 +532,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_related_content'
+  // Exported field_instance: 'node-news-field_related_content'.
   $field_instances['node-news-field_related_content'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -593,7 +593,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_tags'
+  // Exported field_instance: 'node-news-field_tags'.
   $field_instances['node-news-field_tags'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -653,7 +653,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_topic'
+  // Exported field_instance: 'node-news-field_topic'.
   $field_instances['node-news-field_topic'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -713,7 +713,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_video_reference'
+  // Exported field_instance: 'node-news-field_video_reference'.
   $field_instances['node-news-field_video_reference'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -774,7 +774,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
-  // Exported field_instance: 'node-news-title_field'
+  // Exported field_instance: 'node-news-title_field'.
   $field_instances['node-news-title_field'] = array(
     'bundle' => 'news',
     'default_value' => NULL,

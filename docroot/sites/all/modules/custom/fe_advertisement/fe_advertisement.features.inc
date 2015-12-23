@@ -31,16 +31,9 @@ function fe_advertisement_image_default_styles() {
 
   // Exported image style: advertisement.
   $styles['advertisement'] = array(
-    'name' => 'advertisement',
     'label' => 'Advertisement',
     'effects' => array(
       45 => array(
-        'label' => 'Manual Crop: Custom crop',
-        'help' => 'Crop a freely user-selected area.',
-        'effect callback' => 'manualcrop_crop_effect',
-        'form callback' => 'manualcrop_crop_form',
-        'summary theme' => 'manualcrop_crop_summary',
-        'module' => 'manualcrop',
         'name' => 'manualcrop_crop',
         'data' => array(
           'width' => 100,
@@ -52,13 +45,6 @@ function fe_advertisement_image_default_styles() {
         'weight' => 0,
       ),
       47 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 100,

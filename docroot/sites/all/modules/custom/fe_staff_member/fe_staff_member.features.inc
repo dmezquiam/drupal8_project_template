@@ -44,6 +44,7 @@ function fe_staff_member_fe_nodequeue_export_fields() {
     'reference' => 'a:2:{s:9:"languages";s:7:"enabled";s:16:"language_neutral";i:0;}',
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 7,
     'types' => array(
       0 => 'staff_member',
@@ -65,16 +66,9 @@ function fe_staff_member_image_default_styles() {
 
   // Exported image style: staff_picture.
   $styles['staff_picture'] = array(
-    'name' => 'staff_picture',
     'label' => 'staff_picture',
     'effects' => array(
       40 => array(
-        'label' => 'Manual Crop: Custom crop',
-        'help' => 'Crop a freely user-selected area.',
-        'effect callback' => 'manualcrop_crop_effect',
-        'form callback' => 'manualcrop_crop_form',
-        'summary theme' => 'manualcrop_crop_summary',
-        'module' => 'manualcrop',
         'name' => 'manualcrop_crop',
         'data' => array(
           'width' => 110,
@@ -85,13 +79,6 @@ function fe_staff_member_image_default_styles() {
         'weight' => 0,
       ),
       42 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 110,

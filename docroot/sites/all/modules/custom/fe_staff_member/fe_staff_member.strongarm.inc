@@ -174,5 +174,68 @@ function fe_staff_member_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_staff_member'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_staff_member_ar_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_staff_member_ar_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_staff_member_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_staff_member_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_staff_member_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_staff_member_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_staff_member_fa_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_staff_member_fa_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_staff_member_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_staff_member_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_staff_member_pt-br_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_staff_member_pt-br_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_staff_member_ru_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_staff_member_ru_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_staff_member_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_staff_member_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_staff_member_zh-hans_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_staff_member_zh-hans_pattern'] = $strongarm;
+
   return $export;
 }

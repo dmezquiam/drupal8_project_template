@@ -10,14 +10,13 @@
 function fe_opportunity_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_cost'
+  // Exported field_base: 'field_cost'.
   $field_bases['field_cost'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_cost',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -29,14 +28,13 @@ function fe_opportunity_field_default_field_bases() {
     'type' => 'number_float',
   );
 
-  // Exported field_base: 'field_deadline'
+  // Exported field_base: 'field_deadline'.
   $field_bases['field_deadline'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_deadline',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -60,14 +58,13 @@ function fe_opportunity_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_organization'
+  // Exported field_base: 'field_organization'.
   $field_bases['field_organization'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_organization',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -91,21 +88,13 @@ function fe_opportunity_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_region'
+  // Exported field_base: 'field_region'.
   $field_bases['field_region'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_region',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
