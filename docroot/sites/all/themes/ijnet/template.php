@@ -119,8 +119,8 @@ function ijnet_preprocess_search_result(&$vars) {
        if (isset($authorInfo) && ($authorId != 0)) {
         $authorName = field_get_items('user',$authorInfo,'name');
         $authorUrl = url("user/$authorId");
-
-        $authorScreenName = field_get_items('user',$authorInfo,'field_screen_name')[0]['value'];
+        $authorScreenName_items = field_get_items('user',$authorInfo,'field_screen_name');
+        $authorScreenName = $authorScreenName_items[0]['value'];
 
         $author = "<a href=\"" . $authorUrl . "\" title=\"View user profile.\" rel=\"author\" class=\"username\" xml:lang=\"\" about=\"" . $authorUrl . "\" typeof=\"sioc:UserAccount\" property=\"foaf:name\" datatype=\"\">$authorScreenName</a>";
         $override = TRUE;
@@ -132,7 +132,8 @@ function ijnet_preprocess_search_result(&$vars) {
     if (isset($authorInfo) && ($authorId != 0)) {
       $authorName = field_get_items('user',$authorInfo,'name');
       $authorUrl = url("user/$authorId");
-      $authorScreenName = field_get_items('user',$authorInfo,'field_screen_name')[0]['value'];
+      $authorScreenName_items = field_get_items('user',$authorInfo,'field_screen_name');
+      $authorScreenName = $authorScreenName_items[0]['value'];
 
       $author = "<a href=\"" . $authorUrl . "\" title=\"View user profile.\" rel=\"author\" class=\"username\" xml:lang=\"\" about=\"" . $authorUrl . "\" typeof=\"sioc:UserAccount\" property=\"foaf:name\" datatype=\"\">$authorScreenName</a>";
       $override = TRUE;
