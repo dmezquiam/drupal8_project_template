@@ -108,11 +108,13 @@ function ijnet_preprocess_search_result(&$vars) {
   $override = FALSE;
   if ($node->type == 'news') {
     if (isset($node->field_attribution)) {
-      $author = field_get_items('node',$node,'field_attribution')[0]['value'];
+      $items = field_get_items('node',$node,'field_attribution');
+      $author = $items[0]['value'];
       $override = TRUE;
     }
     if (isset($node->field_byline)) {
-      $authorId = field_get_items('node',$node,'field_byline')[0]['uid'];
+      $author_items = field_get_items('node',$node,'field_byline');
+      $authorId = $author_items[0]['uid'];
       $authorInfo = user_load($authorId);
        if (isset($authorInfo) && ($authorId != 0)) {
         $authorName = field_get_items('user',$authorInfo,'name');
