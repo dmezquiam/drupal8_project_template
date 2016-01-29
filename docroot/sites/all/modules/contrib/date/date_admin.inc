@@ -601,7 +601,7 @@ function date_field_settings_validate(&$form, &$form_state) {
     form_set_value($form['timezone_db'], '', $form_state);
   }
   else {
-    form_set_value($form['timezone_db'], date_get_timezone_db($field['settings']['tz_handling']), $form_state);
+    form_set_value($form['timezone_db'], date_get_timezone_db($field['settings']['tz_handling'], $form['timezone_db']), $form_state);
   }
 
   if ($field['settings']['tz_handling'] != 'none' && !in_array('hour', array_filter($field['settings']['granularity']))) {

@@ -93,51 +93,100 @@ class DateTimezoneTestCase extends DateFieldBasic {
     $should_be = array();
     $edit['title'] = $this->randomName(8);
     $timezones = array('America/Chicago', 'America/Los_Angeles', 'America/New_York');
+    switch ($tz_handling) {
+      // With 'date' timezone handling, event times should be translated to
+      // the display timezone when viewed.
+      case 'date':
+        variable_set('date_default_timezone', 'Europe/Berlin'); // UTC + 2.
+        switch ($max_granularity) {
+          case 'hour':
+          $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][0][timezone][timezone]'] = 'America/Chicago';
+          $should_be[0] = 'Thu, 10/07/2010 - 17 CEST';
 
-    switch ($max_granularity) {
-      case 'hour':
-        $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30';
-        $edit[$field_name . '[und][0][timezone][timezone]'] = 'America/Chicago';
-        $should_be[0] = 'Thu, 10/07/2010 - 10 CDT';
+          $edit[$field_name . '[und][1][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][1][timezone][timezone]'] = 'America/Los_Angeles';
+          $should_be[1] = 'Thu, 10/07/2010 - 19 CEST';
 
-        $edit[$field_name . '[und][1][value][date]'] = '10/07/2010 - 10:30';
-        $edit[$field_name . '[und][1][timezone][timezone]'] = 'America/Los_Angeles';
-        $should_be[1] = 'Thu, 10/07/2010 - 10 PDT';
+          $edit[$field_name . '[und][2][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][2][timezone][timezone]'] = 'America/New_York';
+          $should_be[2] = 'Thu, 10/07/2010 - 16 CEST';
 
-        $edit[$field_name . '[und][2][value][date]'] = '10/07/2010 - 10:30';
-        $edit[$field_name . '[und][2][timezone][timezone]'] = 'America/New_York';
-        $should_be[2] = 'Thu, 10/07/2010 - 10 EDT';
+          break;
+        case 'minute':
+          $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][0][timezone][timezone]'] = 'America/Chicago';
+          $should_be[0] = 'Thu, 10/07/2010 - 17:30 CEST';
 
-        break;
-      case 'minute':
-        $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30';
-        $edit[$field_name . '[und][0][timezone][timezone]'] = 'America/Chicago';
-        $should_be[0] = 'Thu, 10/07/2010 - 10:30 CDT';
+          $edit[$field_name . '[und][1][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][1][timezone][timezone]'] = 'America/Los_Angeles';
+          $should_be[1] = 'Thu, 10/07/2010 - 19:30 CEST';
 
-        $edit[$field_name . '[und][1][value][date]'] = '10/07/2010 - 10:30';
-        $edit[$field_name . '[und][1][timezone][timezone]'] = 'America/Los_Angeles';
-        $should_be[1] = 'Thu, 10/07/2010 - 10:30 PDT';
+          $edit[$field_name . '[und][2][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][2][timezone][timezone]'] = 'America/New_York';
+          $should_be[2] = 'Thu, 10/07/2010 - 16:30 CEST';
 
-        $edit[$field_name . '[und][2][value][date]'] = '10/07/2010 - 10:30';
-        $edit[$field_name . '[und][2][timezone][timezone]'] = 'America/New_York';
-        $should_be[2] = 'Thu, 10/07/2010 - 10:30 EDT';
+          break;
+        case 'second':
+          $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][0][timezone][timezone]'] = 'America/Chicago';
+          $should_be[0] = 'Thu, 10/07/2010 - 17:30:30 CEST';
 
-        break;
-      case 'second':
-        $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30';
-        $edit[$field_name . '[und][0][timezone][timezone]'] = 'America/Chicago';
-        $should_be[0] = 'Thu, 10/07/2010 - 10:30:30 CDT';
+          $edit[$field_name . '[und][1][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][1][timezone][timezone]'] = 'America/Los_Angeles';
+          $should_be[1] = 'Thu, 10/07/2010 - 19:30:30 CEST';
 
-        $edit[$field_name . '[und][1][value][date]'] = '10/07/2010 - 10:30';
-        $edit[$field_name . '[und][1][timezone][timezone]'] = 'America/Los_Angeles';
-        $should_be[1] = 'Thu, 10/07/2010 - 10:30:30 PDT';
+          $edit[$field_name . '[und][2][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][2][timezone][timezone]'] = 'America/New_York';
+          $should_be[2] = 'Thu, 10/07/2010 - 16:30:30 CEST';
+          break;
+      }
+      break;
+      default:
+        switch ($max_granularity) {
+          case 'hour':
+          $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][0][timezone][timezone]'] = 'America/Chicago';
+          $should_be[0] = 'Thu, 10/07/2010 - 10 CDT';
 
-        $edit[$field_name . '[und][2][value][date]'] = '10/07/2010 - 10:30';
-        $edit[$field_name . '[und][2][timezone][timezone]'] = 'America/New_York';
-        $should_be[2] = 'Thu, 10/07/2010 - 10:30:30 EDT';
-        break;
+          $edit[$field_name . '[und][1][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][1][timezone][timezone]'] = 'America/Los_Angeles';
+          $should_be[1] = 'Thu, 10/07/2010 - 10 PDT';
+
+          $edit[$field_name . '[und][2][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][2][timezone][timezone]'] = 'America/New_York';
+          $should_be[2] = 'Thu, 10/07/2010 - 10 EDT';
+
+          break;
+        case 'minute':
+          $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][0][timezone][timezone]'] = 'America/Chicago';
+          $should_be[0] = 'Thu, 10/07/2010 - 10:30 CDT';
+
+          $edit[$field_name . '[und][1][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][1][timezone][timezone]'] = 'America/Los_Angeles';
+          $should_be[1] = 'Thu, 10/07/2010 - 10:30 PDT';
+
+          $edit[$field_name . '[und][2][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][2][timezone][timezone]'] = 'America/New_York';
+          $should_be[2] = 'Thu, 10/07/2010 - 10:30 EDT';
+
+          break;
+        case 'second':
+          $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][0][timezone][timezone]'] = 'America/Chicago';
+          $should_be[0] = 'Thu, 10/07/2010 - 10:30:30 CDT';
+
+          $edit[$field_name . '[und][1][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][1][timezone][timezone]'] = 'America/Los_Angeles';
+          $should_be[1] = 'Thu, 10/07/2010 - 10:30:30 PDT';
+
+          $edit[$field_name . '[und][2][value][date]'] = '10/07/2010 - 10:30';
+          $edit[$field_name . '[und][2][timezone][timezone]'] = 'America/New_York';
+          $should_be[2] = 'Thu, 10/07/2010 - 10:30:30 EDT';
+          break;
+      }
     }
-
     $this->drupalPost('node/add/story', $edit, t('Save'));
     $this->assertText($edit['title'], "Node has been created");
 
@@ -159,6 +208,7 @@ class DateTimezoneTestCase extends DateFieldBasic {
    * @todo.
    */
   public function dateForm($field_name, $field_type, $max_granularity, $tz_handling) {
+    global $user;
     variable_set('date_format_long', 'D, m/d/Y - H:i:s');
     $edit = array();
     $edit['title'] = $this->randomName(8);
@@ -188,6 +238,15 @@ class DateTimezoneTestCase extends DateFieldBasic {
         $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30';
         $edit[$field_name . '[und][0][value2][date]'] = '10/07/2010 - 11:30';
         $should_be = 'Thu, 10/07/2010 - 10:30 to 11:30';
+        // Makes sure the timezone conversion is handled properly with date
+        // fields.
+        // @see https://www.drupal.org/node/998076
+        if ($tz_handling == 'date') {
+          $edit[$field_name . '[und][0][timezone][timezone]'] = 'Asia/Hong_Kong'; // UTC + 8.
+          variable_set('date_default_timezone', 'Europe/Berlin'); // UTC + 2.
+          $user->timezone = 'Europe/Berlin'; // UTC + 2.
+          $should_be = 'Thu, 10/07/2010 - 04:30 to 05:30';
+        }
         break;
       case 'second':
         $edit[$field_name . '[und][0][value][date]'] = '10/07/2010 - 10:30:30';

@@ -331,15 +331,14 @@ function date_field_widget_info() {
  * Implements hook_field_load().
  */
 function date_field_load($entity_type, $entities, $field, $instances, $langcode, &$items, $age) {
-  $timezone_db = date_get_timezone_db($field['settings']['tz_handling']);
   $db_format = date_type_format($field['type']);
   $process = date_process_values($field);
   foreach ($entities as $id => $entity) {
     foreach ($items[$id] as $delta => &$item) {
-      // If the file does not exist, mark the entire item as empty.
+      // If the field is not an array, mark the entire item as empty.
       if (is_array($item)) {
         $timezone = isset($item['timezone']) ? $item['timezone'] : '';
-        $item['timezone'] = date_get_timezone($field['settings']['tz_handling'], $timezone);
+        $timezone_db = date_get_timezone_db($field['settings']['tz_handling'], $timezone);
         $item['timezone_db'] = $timezone_db;
         $item['date_type'] = $field['type'];
         if (!empty($field['settings']['cache_enabled']) && ($delta < $field['settings']['cache_count'] || $field['settings']['cache_count'] == 0)) {
@@ -416,7 +415,7 @@ function date_field_presave($entity_type, $entity, $field, $instance, $langcode,
     $timezone = isset($item['timezone']) ? $item['timezone'] : '';
     if (is_array($item)) {
       $items[$delta]['timezone'] = date_get_timezone($field['settings']['tz_handling'], $timezone);
-      $items[$delta]['timezone_db'] = date_get_timezone_db($field['settings']['tz_handling']);
+      $items[$delta]['timezone_db'] = date_get_timezone_db($field['settings']['tz_handling'], $timezone);
       $items[$delta]['date_type'] = $field['type'];
     }
   }

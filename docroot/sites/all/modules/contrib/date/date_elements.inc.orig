@@ -165,7 +165,7 @@ function date_local_date($item, $timezone, $field, $instance, $part = 'value') {
   */
   // @codingStandardsIgnoreEnd
 
-  $date = new DateObject($value, date_get_timezone_db($field['settings']['tz_handling'], $timezone));
+  $date = new DateObject($value, date_get_timezone_db($field['settings']['tz_handling']));
   $date->limitGranularity($field['settings']['granularity']);
   if (empty($date)) {
     return NULL;
@@ -552,7 +552,7 @@ function date_combo_validate($element, &$form_state) {
   elseif (!form_get_errors()) {
 
     $timezone = !empty($item[$tz_field]) ? $item[$tz_field] : $element['#date_timezone'];
-    $timezone_db = date_get_timezone_db($field['settings']['tz_handling'], $timezone);
+    $timezone_db = date_get_timezone_db($field['settings']['tz_handling']);
     $element[$from_field]['#date_timezone'] = $timezone;
     $from_date = date_input_date($field, $instance, $element[$from_field], $posted[$from_field]);
 
