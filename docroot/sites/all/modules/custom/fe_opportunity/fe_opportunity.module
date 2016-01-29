@@ -55,3 +55,19 @@ function fe_opportunity_form_alter(&$form, &$form_state, $form_id) {
     $form['search_title']['#markup'] = '<h3>' . t('SEARCH OPPORTUNITIES') . '</h3>';
   }
 }
+
+//Returns offset of $timezone to the one from the site. 
+function _fe_opportunity_offset_tz($timezone) {
+  $timeOffset = 0;
+
+  if (isset($timezone)){
+    $timezone_opp = new DateTimeZone($timezone);
+    $timezone_default = new DateTimeZone(variable_get('date_default_timezone'));
+
+    $date_default = new DateTime("now", $timezone_default);
+    $date_opp = new DateTime("now", $timezone_opp);
+
+    $timeOffset = $timezone_default->getOffset($date_opp) - $timezone_opp->getOffset($date_opp);
+  }
+  return $timeOffset;
+}
