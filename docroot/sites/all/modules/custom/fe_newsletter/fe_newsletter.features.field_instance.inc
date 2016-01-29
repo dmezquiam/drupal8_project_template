@@ -67,7 +67,7 @@ function fe_newsletter_field_default_field_instances() {
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'WARNING: All data in this field will be overriden if the dates are changed. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -111,7 +111,7 @@ function fe_newsletter_field_default_field_instances() {
   $field_instances['node-bulletin_email-field_from_date'] = array(
     'bundle' => 'bulletin_email',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'WARNING: The modification of this value once the bulletin is created, <strong>deletes</strong> all existing content references.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -156,6 +156,7 @@ function fe_newsletter_field_default_field_instances() {
         'input_format' => 'Y-m-d H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -219,7 +220,7 @@ function fe_newsletter_field_default_field_instances() {
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'WARNING: All data in this field will be overriden if the dates are changed. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -264,7 +265,7 @@ function fe_newsletter_field_default_field_instances() {
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'News articles and videos you wouuld like to include in this newsletter. If you do not specify anything here then only articles and videos created in the specified time period will be added to the newsletter.',
+    'description' => 'News articles and videos you wouuld like to include in this newsletter. If you do not specify anything here then only articles and videos created in the specified time period will be added to the newsletter. WARNING: All data in this field will be overriden if the dates are changed. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -310,10 +311,12 @@ function fe_newsletter_field_default_field_instances() {
   t('Dates');
   t('Featured Content');
   t('Intro');
-  t('News articles and videos you wouuld like to include in this newsletter. If you do not specify anything here then only articles and videos created in the specified time period will be added to the newsletter.');
+  t('News articles and videos you wouuld like to include in this newsletter. If you do not specify anything here then only articles and videos created in the specified time period will be added to the newsletter. WARNING: All data in this field will be overriden if the dates are changed. ');
   t('Number of Advertisements to display');
   t('Opportunities');
   t('This is an optional text that can be added to the top of the newsletter. Leave blank if you don\'t want to use it.');
+  t('WARNING: All data in this field will be overriden if the dates are changed. ');
+  t('WARNING: The modification of this value once the bulletin is created, <strong>deletes</strong> all existing content references.');
 
   return $field_instances;
 }
