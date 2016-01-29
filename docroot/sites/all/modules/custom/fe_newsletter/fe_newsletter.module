@@ -677,8 +677,26 @@ function fe_newsletter_node_presave($node) {
     ? strtotime($node->field_from_date[LANGUAGE_NONE][0]['value2']) : NULL;
   $to_date += 24*60*60; // Add a day.
 
+  $edit_date = FALSE;
+  if (isset($node->nid)) { //edit
+    $old_node = node_load($node->nid);
+    $old_from_date = isset($old_node->field_from_date[LANGUAGE_NONE][0]['value'])
+    ? strtotime($old_node->field_from_date[LANGUAGE_NONE][0]['value']) : NULL;
+    $old_to_date = isset($old_node->field_from_date[LANGUAGE_NONE][0]['value2'])
+    ? strtotime($old_node->field_from_date[LANGUAGE_NONE][0]['value2']) : NULL;
+    $old_to_date += 24*60*60; // Add a day.
+
+    if ($from_date != $old_from_date || $to_date != $old_to_date) {
+      //reset content
+      $node->field_other_content[LANGUAGE_NONE] = array();
+      $node->field_opportunities[LANGUAGE_NONE] = array();
+      $node->field_advertisements[LANGUAGE_NONE] = array();
+      $edit_date = TRUE;
+    }
+  }
+
   // query news articles and videos
-  if ($node->is_new || ! isset($node->nid)) {
+  if ($node->is_new || ! isset($node->nid) || $edit_date) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', array('news', 'video', 'training_opportunity'), 'IN')
