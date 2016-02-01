@@ -54,6 +54,12 @@ function fe_opportunity_form_alter(&$form, &$form_state, $form_id) {
     $form['#info'] = $title + $form['#info'];
     $form['search_title']['#markup'] = '<h3>' . t('SEARCH OPPORTUNITIES') . '</h3>';
   }
+
+  if ($form_id == 'training_opportunity_node_form') {
+    $lang = $form['language']['#value'];
+    $form['field_deadline'][$lang][0]['timezone']['#default_value']= 'America/New_York';
+    $form['field_deadline']['#disabled'] = TRUE;
+  }
 }
 
 //Returns offset of $timezone to the one from the site. 
