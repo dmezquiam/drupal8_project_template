@@ -1,0 +1,5 @@
+name = Site Updater
+description = Apply all required updates of Ijnet in deploys
+core = 7.x
+package = IJNet
+version = 7.x-1.0
