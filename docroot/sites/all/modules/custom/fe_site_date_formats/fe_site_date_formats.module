@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Site Date Formats feature.
+ */
+
+include_once 'fe_site_date_formats.features.inc';
