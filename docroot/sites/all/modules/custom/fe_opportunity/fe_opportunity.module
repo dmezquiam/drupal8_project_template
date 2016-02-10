@@ -58,7 +58,8 @@ function fe_opportunity_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'training_opportunity_node_form') {
     $lang = $form['language']['#value'];
     $form['field_deadline'][$lang][0]['timezone']['#default_value']= 'America/New_York';
-    $form['field_deadline']['#disabled'] = TRUE;
+    $form['field_deadline'][$lang][0]['timezone']['#disabled'] = TRUE;
+
   }
 }
 
