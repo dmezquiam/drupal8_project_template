@@ -195,7 +195,7 @@ function _fe_social_get_social_media_items($language = 'en') {
         ),
       ),
       'rss' => array(
-        'url' => '/rss/blog',
+        'url' => url('/rss/blog'),
         'class' => 'social-icon-rss',
         'image' => array(
           'path' => $images_path . 'social_06.png',
@@ -237,7 +237,7 @@ function _fe_social_get_social_media_items($language = 'en') {
         ),
       ),
       'rss' => array(
-        'url' => '/rss/blog',
+        'url' => url('/rss/blog'),
         'class' => 'social-icon-rss',
         'image' => array(
           'path' => $images_path . 'social_06.png',
@@ -279,7 +279,7 @@ function _fe_social_get_social_media_items($language = 'en') {
         ),
       ),
       'rss' => array(
-        'url' => '/rss/blog',
+        'url' => url('/rss/blog'),
         'class' => 'social-icon-rss',
         'image' => array(
           'path' => $images_path . 'social_06.png',
@@ -313,7 +313,7 @@ function _fe_social_get_social_media_items($language = 'en') {
         ),
       ),
       'rss' => array(
-        'url' => '/rss/blog',
+        'url' => url('/rss/blog'),
         'class' => 'social-icon-rss',
         'image' => array(
           'path' => $images_path . 'social_06.png',
@@ -347,7 +347,7 @@ function _fe_social_get_social_media_items($language = 'en') {
         ),
       ),
       'rss' => array(
-        'url' => '/rss/blog',
+        'url' => url('/rss/blog'),
         'class' => 'social-icon-rss',
         'image' => array(
           'path' => $images_path . 'social_06.png',
@@ -381,7 +381,7 @@ function _fe_social_get_social_media_items($language = 'en') {
         ),
       ),
       'rss' => array(
-        'url' => '/rss/blog',
+        'url' => url('/rss/blog'),
         'class' => 'social-icon-rss',
         'image' => array(
           'path' => $images_path . 'social_06.png',
@@ -415,7 +415,7 @@ function _fe_social_get_social_media_items($language = 'en') {
         ),
       ),
       'rss' => array(
-        'url' => '/rss/blog',
+        'url' => url('/rss/blog'),
         'class' => 'social-icon-rss',
         'image' => array(
           'path' => $images_path . 'social_06.png',
