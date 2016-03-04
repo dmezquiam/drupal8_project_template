@@ -1,0 +1,31 @@
+diff --git a/i18n_menu_overview_form.inc b/i18n_menu_overview_form.inc
+index 6426b14..19f7032 100755
+--- a/i18n_menu_overview_form.inc
++++ b/i18n_menu_overview_form.inc
+@@ -126,7 +126,7 @@ function theme_i18n_menu_overview_menulanguage_form($variables) {
+   $rows = array();
+   $counter = 1;
+ 
+-  $map_id__counter_data_id = [];
++  $map_id__counter_data_id = array();
+ 
+   foreach (element_children($form) as $mlid) {
+     if (isset($form[$mlid]['hidden'])) {
+@@ -345,7 +345,7 @@ function _i18n_menu_overview_menulanguage_form($tree) {
+  * Returns the domain for a link.
+  */
+ function _i18n_menu_overview_get_domain_for_link($link) {
+-  $domain_ids = [];
++  $domain_ids = array();
+ 
+   if (isset($link['options']['domain_menu_access']['show'])) {
+     // When we have domain_menu_access.
+@@ -364,7 +364,7 @@ function _i18n_menu_overview_get_domain_for_link($link) {
+  * Gets domain names for domain ids.
+  */
+ function _i18n_menu_overview_get_domain_name_for_domain_ids($ids) {
+-  $names = [];
++  $names = array();
+ 
+   $all_domains = domain_domains();
+ 
