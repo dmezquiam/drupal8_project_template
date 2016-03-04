@@ -46,11 +46,42 @@ function i18n_menu_overview_settings() {
     '#default_value' => variable_get(I18N_MENU_OVERVIEW_ADMIN_SETTING_DETAIL_MENU, I18N_MENU_OVERVIEW_DEFAULT_NAME),
   );
 
-  //$form['i18n_menu_overview_hide_default_menu_link'] = array(
-  //  '#type' => 'checkbox',
-  // '#title' => t('EXPERIMENTAL : Do you want to hide the default menu link at :/admin/structure?') ,
-  //  '#default_value' => variable_get('i18n_menu_overview_hide_default_menu_link', TRUE),
-  //);
+  $form['i18n_menu_overview_hide_menu_links_on_node_form'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Hide the menu links on the node edit form?') ,
+    '#default_value' => variable_get('i18n_menu_overview_hide_menu_links_on_node_form', FALSE),
+  );
+
+  $form['i18n_menu_overview_active_trail_fix'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('If you have problems with the active trail of menu links,
+      try this.') ,
+    '#default_value' => variable_get('i18n_menu_overview_active_trail_fix', FALSE),
+  );
+
+  $jquery_update_link = l('Jquery update',
+    'https://www.drupal.org/project/jquery_update',
+      array('attributes' => array('target' => '_blank')));
+
+  $form['i18n_menu_overview_show_filter'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('If you want a filter to be available on the menu table,
+      select this. Image: @image', array('@image' => I18N_MENU_OVERVIEW_FILTER_IMAGE)) ,
+    '#default_value' => variable_get('i18n_menu_overview_show_filter', TRUE),
+    '#description' => t('For this to work you will need to have @jq
+      installed with at least version 1.7 selected for the administrative
+      pages.', array('@jq' => $jquery_update_link))
+  );
+
+  $form['i18n_menu_overview_show_collapse'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('If you want a collapse to be available on the menu table,
+      select this. Image: @image', array('@image' => I18N_MENU_OVERVIEW_COLLAPSE_IMAGE)) ,
+    '#default_value' => variable_get('i18n_menu_overview_show_collapse', TRUE),
+    '#description' => t('For this to work you will need to have @jq
+      installed with at least version 1.7 selected for the administrative pages.',
+      array('@jq' => $jquery_update_link))
+  );
 
   $form['#submit'][] = 'i18n_menu_overview_settings_form_submit';
 

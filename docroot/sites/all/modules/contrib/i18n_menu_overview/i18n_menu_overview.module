@@ -5,11 +5,16 @@
  * displays menus per language
  */
 
+define('I18N_MENU_OVERVIEW', 'i18n_menu_overview');
 define('I18N_MENU_OVERVIEW_DEFAULT_NAME', 'default');
 define('I18N_MENU_OVERVIEW_LOCAL_ACTION', 'local_action');
 define('I18N_MENU_OVERVIEW_MENU_LISTING', 'menu_listing');
 define('I18N_MENU_OVERVIEW_ADMIN_SETTING_DETAIL_MENU', 'i18n_menu_overview_type_of_detail_overview');
 define('I18N_MENU_OVERVIEW_ADMIN_SETTING_STUCTURE_OVERVIEW', 'i18n_menu_overview_type_of_structure_overview');
+define('I18N_MENU_OVERVIEW_FILTER_IMAGE',
+  'https://www.drupal.org/files/Screen%20Shot%202016-01-12%20at%2007.26.29.png');
+define('I18N_MENU_OVERVIEW_COLLAPSE_IMAGE',
+  'https://www.drupal.org/files/Screen%20Shot%202016-01-13%20at%2016.41.14.png');
 
 include_once 'i18n_menu_overview.permissions.inc';
 include_once 'i18n_menu_overview.contextual_link.inc';
@@ -70,6 +75,7 @@ function i18n_menu_overview_menu() {
             $menu_language
           ),
           'file' => 'i18n_menu_overview_form.inc',
+          'access callback' => '_i18n_menu_overview_menu_access',
           'access arguments' => array('administer ' . $menu . '_' . $menu_language),
           'type' => MENU_NORMAL_ITEM,
         );
@@ -92,6 +98,7 @@ function i18n_menu_overview_menu() {
                   $menu_language
                 ),
                 'file' => 'i18n_menu_overview_form.inc',
+                'access callback' => '_i18n_menu_overview_menu_access',
                 'access arguments' => array('administer ' . $menu . '_' . $menu_language),
                 'type' => MENU_NORMAL_ITEM,
               );
@@ -105,6 +112,7 @@ function i18n_menu_overview_menu() {
               'title' => ucfirst($localized_menu_name) . ' : ' . $other_menu_language,
               'page callback' => '_i18n_menu_overview_goto_menu',
               'page arguments' => array($menu, $other_menu_language),
+              'access callback' => '_i18n_menu_overview_menu_access',
               'access arguments' => array('administer ' . $menu . '_' . $other_menu_language),
               'type' => MENU_LOCAL_TASK,
             );
@@ -311,4 +319,128 @@ function i18n_menu_overview_module_implements_alter(&$implementations, $hook) {
       $implementations[$module_name] = $group;
     }
   }
+}
+
+/**
+ * Implements hook_query_TAG_alter().
+ *
+ * Alter preferred_menu_links add a language filter.
+ */
+function i18n_menu_overview_query_preferred_menu_links_alter(QueryAlterableInterface $query) {
+  $fix_active_trail = variable_get('i18n_menu_overview_active_trail_fix',
+    FALSE);
+
+  if ($fix_active_trail) {
+    // To make sure we only touch menu links.
+    $fields = $query->getFields();
+    $tables = $query->getTables();
+    if (isset($fields['link_weight'])
+      && $fields['link_weight']['alias'] == 'link_weight'
+      && isset($tables['m'])
+      && $tables['m']['table'] == 'menu_router') {
+
+      global $language;
+
+      $query->condition('ml.language', $language->language);
+    }
+  }
+}
+
+/**
+ * Because the above isn't sufficient when there are multiple same language
+ * links with the same path this is required to check for current domain.
+ */
+function i18n_menu_overview_menu_block_tree_alter(&$tree, $config) {
+  $fix_active_trail = variable_get('i18n_menu_overview_active_trail_fix',
+    FALSE);
+
+  if ($fix_active_trail) {
+    $active_path = menu_tree_get_path($config['menu_name']);
+
+    if ($item = menu_get_item($active_path)) {
+      global $language;
+
+      $current_path = $item['path'];
+      $current_language = $language->language;
+
+      i18n_menu_overview_parse_menu($tree, $current_path,
+        $current_language);
+    }
+  }
+}
+
+/**
+ * Helper function to traverse the menu and set the active trail correctly.
+ *
+ * @param $tree
+ * @param $current_path
+ * @param $current_language
+ *
+ * @return bool
+ */
+function i18n_menu_overview_parse_menu(&$tree, $current_path, $current_language) {
+  foreach ($tree as $link_item => &$link_value) {
+    if ($link_value['link']['link_path'] == $current_path) {
+      $link_value['link']['in_active_trail'] = TRUE;
+      return TRUE;
+    }
+
+    if (!empty($link_value['below'])
+      && $link_value['link']['language'] == $current_language) {
+
+      $feedback = i18n_menu_overview_parse_menu($link_value['below'],
+        $current_path,
+        $current_language);
+
+      // Also set parent active_trail.
+      if ($feedback) {
+        $link_value['link']['in_active_trail'] = TRUE;
+      }
+    }
+  }
+}
+
+/**
+ * Gets the path to the jquery_filter_table library.
+ *
+ * String @return
+ *   The path to the jquery_filter_table library js file, or FALSE if not found.
+ */
+function i18n_menu_overview_library_path_filtertable() {
+  $library_path = libraries_get_path('jquery_filtertable');
+
+  if (!empty($library_path)) {
+    return $library_path . '/jquery.filtertable.js';
+  }
+  return FALSE;
+}
+
+/**
+ * Gets the path to the BindWithDelay library.
+ *
+ * String @return
+ *   The path to the BindWithDelay library js file, or FALSE if not found.
+ */
+function i18n_menu_overview_library_path_bindwithdelay() {
+  $library_path = libraries_get_path('bind_with_delay');
+
+  if (!empty($library_path)) {
+    return $library_path . '/bindWithDelay.js';
+  }
+  return FALSE;
+}
+
+/**
+ * Gets the path to the jquery.treetable.js library.
+ *
+ * String @return
+ *   The path to the jquery.treetable.js library js file, or FALSE if not found.
+ */
+function i18n_menu_overview_library_path_collapsible_table() {
+  $library_path = libraries_get_path('jquery_treetable');
+
+  if (!empty($library_path)) {
+    return $library_path . '/jquery.treetable.js';
+  }
+  return FALSE;
 }

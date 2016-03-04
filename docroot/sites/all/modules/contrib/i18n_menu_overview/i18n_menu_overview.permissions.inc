@@ -27,12 +27,20 @@ function _i18n_menu_overview_access() {
 }
 
 function _i18n_menu_overview_menu_access($menu = NULL) {
-  global $language;
-
-  if (user_access('administer menu')
-    || user_access('administer all i18n menu overview')
-    || user_access('administer '. $menu['menu_name'] . '_' . $language->language)) {
-    return TRUE;
+  if (is_array($menu)) {
+    global $language;
+    if (user_access('administer menu')
+      || user_access('administer all i18n menu overview')
+      || user_access('administer '. $menu['menu_name'] . '_' . $language->language)) {
+      return TRUE;
+    }
+  }
+  else {
+    if (user_access('administer menu')
+      || user_access('administer all i18n menu overview')
+      || user_access($menu)) {
+      return TRUE;
+    }
   }
   return FALSE;
 }
