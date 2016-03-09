@@ -71,14 +71,7 @@ function _fe_news_return_tags_array($nid = ''){
   global $language;
 
   $node = node_load($nid);
-
-  $tags = array();
-  if (isset($node->field_tags[$language->language])) {
-    $tags = $node->field_tags[$language->language];
-  }
-  elseif (isset($node->field_tags[LANGUAGE_NONE])) {
-    $tags = $node->field_tags[LANGUAGE_NONE];
-  }
+  $tags = field_get_items('node', $node, 'field_tags');
 
   $result = array();
   foreach ($tags as $tag) {
