@@ -162,6 +162,7 @@ function fe_advertisement_views_default_views() {
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '+1 202-349-7625';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['empty'] = '[nothing]';
   $export['advertisement'] = $view;
 
   return $export;
