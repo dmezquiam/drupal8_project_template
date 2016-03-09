@@ -159,7 +159,7 @@ function fe_site_config_views_default_views() {
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
-    'en' => 'en',
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
 
   /* Display: Feed */
@@ -169,6 +169,7 @@ function fe_site_config_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['row_options']['links'] = TRUE;
   $handler->display->display_options['path'] = 'rss/blog';
   $handler->display->display_options['displays'] = array(
     'default' => 'default',
@@ -202,7 +203,7 @@ function fe_site_config_views_default_views() {
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
-    'en' => 'en',
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['path'] = 'rss/opportunities';
   $handler->display->display_options['sitename_title'] = 0;
