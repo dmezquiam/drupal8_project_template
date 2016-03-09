@@ -48,6 +48,40 @@ function i18n_menu_overview_menulanguage_form($form, &$form_state, $menu = 'main
         '#value' => t('Save configuration'),
       );
     }
+
+    $current_module_path = drupal_get_path('module',
+      'i18n_menu_overview');
+
+    $show_filter = variable_get('i18n_menu_overview_show_filter', TRUE);
+    if ($show_filter) {
+      $bind_with_delay_path = i18n_menu_overview_library_path_bindwithdelay();
+      $filter_table_path = i18n_menu_overview_library_path_filtertable();
+    }
+    drupal_add_js(array(I18N_MENU_OVERVIEW => array('filter' => $show_filter)),
+      'setting');
+
+    $show_collapse = variable_get('i18n_menu_overview_show_collapse', TRUE);
+    if ($show_collapse) {
+      $collapsible_table_path = i18n_menu_overview_library_path_collapsible_table();
+    }
+    drupal_add_js(array(I18N_MENU_OVERVIEW => array('collapse' => $show_collapse)),
+      'setting');
+
+    if (isset($bind_with_delay_path)) {
+      $form['#attached']['js'][] = $bind_with_delay_path;
+    }
+
+    if (isset($filter_table_path)) {
+      $form['#attached']['js'][] = $filter_table_path;
+    }
+
+    if (isset($collapsible_table_path)) {
+      $form['#attached']['js'][] = $collapsible_table_path;
+    }
+
+    $form['#attached']['css'][] = $current_module_path . '/css/i18n_menu_overview.css';
+    $form['#attached']['js'][] = $current_module_path . '/js/i18n_menu_overview.js';
+
     return $form;
   }
   else {
@@ -85,7 +119,15 @@ function theme_i18n_menu_overview_menulanguage_form($variables) {
     array('data' => t('Operations'), 'colspan' => '3'),
   );
 
+  if (module_exists('domain')) {
+    array_splice($header, 1, 0, array(t('Domain')));
+  }
+
   $rows = array();
+  $counter = 1;
+
+  $map_id__counter_data_id = array();
+
   foreach (element_children($form) as $mlid) {
     if (isset($form[$mlid]['hidden'])) {
       $element = &$form[$mlid];
@@ -107,8 +149,13 @@ function theme_i18n_menu_overview_menulanguage_form($variables) {
       $element['plid']['#type'] = 'hidden';
 
       $row = array();
+      $title = !empty($element['#item']['link_title']) ?
+        drupal_render($element['title']) :
+        _i18n_menu_overview_get_correct_title_for_row($element);
+
       $row[] = theme('indentation', array(
-          'size' => $element['#item']['depth'] - 1)) . drupal_render($element['title']);
+          'size' => $element['#item']['depth'] - 1)) . $title;
+
       $row[] = array(
         'data' => drupal_render($element['hidden']), 'class' => array('checkbox', 'menu-enabled'));
       $row[] = drupal_render($element['weight']) . drupal_render($element['plid']) . drupal_render($element['mlid']);
@@ -116,7 +163,34 @@ function theme_i18n_menu_overview_menulanguage_form($variables) {
 
       $row = array_merge(array('data' => $row), $element['#attributes']);
       $row['class'][] = 'draggable';
+
+      if (module_exists('domain')) {
+        $domains_for_link
+          = _i18n_menu_overview_get_domain_for_link($element['#item']);
+
+        $domains_string = implode(', ', $domains_for_link);
+        array_splice($row['data'], 1, 0, array($domains_string));
+      }
+
+      // START logic for collapsible tables.
+      $map_id__counter_data_id[$element['#item']['mlid']] = $counter;
+
+      // If parent, set parent ID.
+      if (isset($element['#item']['plid'])
+          && isset($map_id__counter_data_id[$element['#item']['plid']])) {
+        $row['data-tt-parent-id']
+          = $map_id__counter_data_id[$element['#item']['plid']];
+      }
+      // Add data ID.
+      $row['data-tt-id'] = $counter;
+      // Add data-level ID.
+      $row['data-level'] = isset($element['#item']['depth']) ?
+        ($element['#item']['depth'] - 1) : 0;
+      // END logic for collapsible tables.
+
       $rows[] = $row;
+
+      $counter++;
     }
   }
   if (empty($rows)) {
@@ -263,5 +337,64 @@ function _i18n_menu_overview_menulanguage_form($tree) {
       _i18n_menu_overview_menulanguage_form($data['below']);
     }
   }
+
   return $form;
+}
+
+/**
+ * Returns the domain for a link.
+ */
+function _i18n_menu_overview_get_domain_for_link($link) {
+  $domain_ids = array();
+
+  if (isset($link['options']['domain_menu_access']['show'])) {
+    // When we have domain_menu_access.
+    $domain = array_values($link['options']['domain_menu_access']['show']);
+
+    // Todo figure out why the fuck there is a D.
+    foreach ($domain as $d) {
+      $domain_ids[] = str_replace('d', '', $d);
+    }
+  }
+
+  return _i18n_menu_overview_get_domain_name_for_domain_ids($domain_ids);
+}
+
+/**
+ * Gets domain names for domain ids.
+ */
+function _i18n_menu_overview_get_domain_name_for_domain_ids($ids) {
+  $names = array();
+
+  $all_domains = domain_domains();
+
+  if (empty($ids)) {
+    // If you didn't check anything in domain menu access it is visible on
+    // all domains.
+    foreach ($all_domains as $id => $config) {
+      $names[] = $config['sitename'];
+    }
+
+    return $names;
+  }
+
+  foreach ($all_domains as $id => $config) {
+    if (in_array($id, $ids)) {
+      $names[] = $config['sitename'];
+    }
+  }
+
+  return $names;
+}
+
+/**
+ * Gets a correct title for the table row.
+ *
+ * This is the case for the module menu_views;
+ */
+function _i18n_menu_overview_get_correct_title_for_row($element) {
+  if (isset($element['#item']['options']['menu_views']['view'])) {
+    return t('View') . ' : ' .
+      $element['#item']['options']['menu_views']['view']['name'];
+  }
 }

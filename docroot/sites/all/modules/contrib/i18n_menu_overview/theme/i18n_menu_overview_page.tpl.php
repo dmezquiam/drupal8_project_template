@@ -20,7 +20,6 @@
 </div>
 <div class="action_edit">
   <?php
-
   print l(t('Edit menu'), 'admin/structure/menu/manage/' . $menu . '/edit', array('query' => array('destination' => 'admin/structure/' . arg(2))));
   ?>
 </div>
