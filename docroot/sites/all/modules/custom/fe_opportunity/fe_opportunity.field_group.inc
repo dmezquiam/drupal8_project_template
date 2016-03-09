@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function fe_opportunity_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -38,7 +38,7 @@ function fe_opportunity_field_group_info() {
       ),
     ),
   );
-  $export['group_categorization|node|training_opportunity|form'] = $field_group;
+  $field_groups['group_categorization|node|training_opportunity|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -67,7 +67,7 @@ function fe_opportunity_field_group_info() {
       ),
     ),
   );
-  $export['group_content|node|training_opportunity|form'] = $field_group;
+  $field_groups['group_content|node|training_opportunity|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -95,7 +95,7 @@ function fe_opportunity_field_group_info() {
       ),
     ),
   );
-  $export['group_date|node|training_opportunity|form'] = $field_group;
+  $field_groups['group_date|node|training_opportunity|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -123,7 +123,7 @@ function fe_opportunity_field_group_info() {
       ),
     ),
   );
-  $export['group_related_content|node|training_opportunity|form'] = $field_group;
+  $field_groups['group_related_content|node|training_opportunity|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -152,7 +152,15 @@ function fe_opportunity_field_group_info() {
       ),
     ),
   );
-  $export['group_tabs|node|training_opportunity|form'] = $field_group;
+  $field_groups['group_tabs|node|training_opportunity|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Categorization');
+  t('Content');
+  t('Date');
+  t('Related content');
+  t('Tabs');
+
+  return $field_groups;
 }
