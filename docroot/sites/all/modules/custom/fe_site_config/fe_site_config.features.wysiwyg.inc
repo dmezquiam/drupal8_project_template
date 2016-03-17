@@ -120,6 +120,8 @@ function fe_site_config_wysiwyg_default_profiles() {
           'Underline' => 1,
           'BulletedList' => 1,
           'NumberedList' => 1,
+          'BidiLtr' => 1,
+          'BidiRtl' => 1,
           'Outdent' => 1,
           'Indent' => 1,
           'Link' => 1,
@@ -129,9 +131,6 @@ function fe_site_config_wysiwyg_default_profiles() {
           'RemoveFormat' => 1,
           'Format' => 1,
           'Iframe' => 1,
-        ),
-        'oembed' => array(
-          'oembed' => 1,
         ),
         'elfinder' => array(
           'elfinder' => 1,
@@ -150,7 +149,7 @@ function fe_site_config_wysiwyg_default_profiles() {
       'css_path' => '',
       'stylesSet' => '',
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
-      'advanced__active_tab' => 'edit-basic',
+      'advanced__active_tab' => 'edit-paste',
       'forcePasteAsPlainText' => 0,
     ),
     'rdf_mapping' => array(),
