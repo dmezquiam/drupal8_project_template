@@ -63,6 +63,8 @@ function fe_site_config_wysiwyg_default_profiles() {
           'JustifyCenter' => 1,
           'BulletedList' => 1,
           'NumberedList' => 1,
+          'BidiLtr' => 1,
+          'BidiRtl' => 1,
           'Outdent' => 1,
           'Indent' => 1,
           'Link' => 1,
@@ -75,9 +77,6 @@ function fe_site_config_wysiwyg_default_profiles() {
           'Iframe' => 1,
           'SpellChecker' => 1,
           'Scayt' => 1,
-        ),
-        'oembed' => array(
-          'oembed' => 1,
         ),
         'elfinder' => array(
           'elfinder' => 1,
