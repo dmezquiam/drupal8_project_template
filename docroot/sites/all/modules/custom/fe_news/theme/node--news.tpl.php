@@ -82,7 +82,6 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-
   <div class="content"<?php print $content_attributes; ?>>
     <?php hide($content['comments']);
       hide($content['links']);
@@ -116,6 +115,7 @@
       <div class="author">
         <?php print $author; ?> | <?php print $date; ?>
       </div>
+      <?php if ($hide_image == true): hide($content['field_image']); endif ?>
       <?php print render($content); ?>
       <?php print render($url_tags); ?>
     <?php endif ?>
