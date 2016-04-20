@@ -84,7 +84,7 @@
 
 
   <?php if (!$page) :?>
-    <a href="<?php print $path; ?>">
+    <a href="<?php print $path; ?>" target="_blank">
       <div class="opportunities-deadline">
         <?php print "<label class='deadline'>" . t('DEADLINE') . "</label> <div class='opp-date'><label class='month'>" . (isset($deadline_month) ? $deadline_month : '') . "</label><label class='year'>" . (isset($deadline_year) ? $deadline_year : ''). "</label></div>"; ?>
       </div>
@@ -92,7 +92,7 @@
   <?php endif ?>
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" target="_blank"><?php print $title; ?></a></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
