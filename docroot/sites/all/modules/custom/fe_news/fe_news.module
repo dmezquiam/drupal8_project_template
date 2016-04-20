@@ -28,9 +28,12 @@ function fe_news_preprocess_node(&$variables) {
     $tags_url = fe_news_redirect_tags($node->nid);
     $variables['url_tags'] = $tags_url;
 
+    $items_field_hide_image = field_get_items('node', $node, 'field_hide_image_on_node_page');
+    $item_field_hide_image = array_shift($items_field_hide_image);
+    $field_hide_image = $item_field_hide_image['value'];
+    
     $hide_image = false;
-    $field_hide_image = $node->field_hide_image_on_node_page;
-    if ($field_hide_image['und'][0]['value'] == 1) {
+    if ($field_hide_image == 1) {
       $hide_image = true;
     }
 
