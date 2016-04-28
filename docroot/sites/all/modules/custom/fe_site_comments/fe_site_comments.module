@@ -1,0 +1,28 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function fe_site_comments_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  $forms_with_comments = array("comment_node_news_form", "comment_node_video_form");
+
+
+  if (in_array($form_id, $forms_with_comments) && ($user->uid == 0)) {
+    unset($form['comment_body']['und'][0]['#textarea']);
+    unset($form['subject']);
+    unset($form['actions']);
+    _field_extra_fields_pre_render();
+    $form['comment_body']['und'][0]['#default_value']= t('Are you a registered user?');
+    $url_login = url('user/login', array('query' => drupal_get_destination()));
+    $url_register = url('user/register', array('query' => drupal_get_destination()));
+    $form['comment_body']['und'][0]['#description']= t("Please <a href='$url_login'>log in</a> or <a href='$url_register'>register</a> in order to comment this post.");
+  }
+
+}
