@@ -5,7 +5,6 @@ package = IJNet
 version = 7.x-2.0
 project = fe_news
 dependencies[] = fe_block
-dependencies[] = fe_news
 dependencies[] = fe_site_config
 dependencies[] = fe_social
 dependencies[] = features

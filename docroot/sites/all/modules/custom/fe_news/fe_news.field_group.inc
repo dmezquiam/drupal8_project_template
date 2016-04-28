@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function fe_news_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -37,7 +37,7 @@ function fe_news_field_group_info() {
       ),
     ),
   );
-  $export['group_categorization|node|news|form'] = $field_group;
+  $field_groups['group_categorization|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -68,7 +68,7 @@ function fe_news_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_news_content|node|news|form'] = $field_group;
+  $field_groups['group_news_content|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -96,7 +96,7 @@ function fe_news_field_group_info() {
       ),
     ),
   );
-  $export['group_news_tabs|node|news|form'] = $field_group;
+  $field_groups['group_news_tabs|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -128,7 +128,14 @@ function fe_news_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_other_content|node|news|form'] = $field_group;
+  $field_groups['group_other_content|node|news|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Categorization');
+  t('Content');
+  t('Media');
+  t('Tabs');
+
+  return $field_groups;
 }
