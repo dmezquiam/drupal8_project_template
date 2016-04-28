@@ -1,0 +1,11 @@
+How to:
+
+In your custom module <module> folder paste a txt file with the exported code from a menu.
+
+In your <module>.install call function site_menu_loader_import_menu() to import the menu.
+
+Mandatory parameters are:
+	$module_name = a string: <module> machine name
+	$menu_filename = whatever you called your txt file with the exported menu
+	$menu_name = menu machine name, remember to start with "menu-..."
+	$menu_title = menu name, for example: "My menu"

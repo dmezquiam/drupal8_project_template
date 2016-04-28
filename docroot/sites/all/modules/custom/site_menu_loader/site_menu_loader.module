@@ -1,0 +1,34 @@
+<?php
+
+
+// loads and saves menus:
+function site_menu_loader_import_menu($module_name, $menu_filename, $menu_name, $menu_title) {
+  // Menus
+
+  // erases existing menu
+  menu_delete(array('menu_name' => $menu_name));
+
+  // recreates from file
+  menu_save(array('menu_name' => $menu_name, 'title' => $menu_title));
+
+  $module_full_path = DRUPAL_ROOT.'/'.drupal_get_path('module', $module_name);
+  $menu_filename = $module_full_path.'/'.$menu_filename;
+
+  _site_menu_loader_import(
+    $menu_filename, 
+    $menu_name, 
+    array('link_to_content' => TRUE,'remove_menu_items' => TRUE)
+  );
+
+ 
+
+}
+
+function _site_menu_loader_import($file, $menu_name, $options) {
+  //drush_menu_import_import($menu_export_location.'/'.$menu_filename, $menu_name);
+
+  $menu_import_full_path = DRUPAL_ROOT.'/'.drupal_get_path('module', 'menu_import');
+  module_load_include('inc', 'menu_import', $menu_import_full_path.'/includes/import');
+
+  menu_import_file($file, $menu_name, $options);
+}

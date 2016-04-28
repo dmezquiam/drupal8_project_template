@@ -1,0 +1,6 @@
+name = Menu Loader
+description = Contains simple functions to import menus from txt files using menu_import module
+core = 7.x
+package = IJNet
+version = 7.x-1.0
+dependencies[] = menu_import
