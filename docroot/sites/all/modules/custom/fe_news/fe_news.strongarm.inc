@@ -121,7 +121,7 @@ function fe_news_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '10',
+            'weight' => '11',
             'visible' => FALSE,
           ),
           'short_teaser' => array(
@@ -322,7 +322,7 @@ function fe_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'statistics_counter_timestamp';
-  $strongarm->value = 1460997017;
+  $strongarm->value = 1461854608;
   $export['statistics_counter_timestamp'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -343,7 +343,7 @@ function fe_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'statistics_day_timestamp';
-  $strongarm->value = 1460942937;
+  $strongarm->value = 1461811387;
   $export['statistics_day_timestamp'] = $strongarm;
 
   $strongarm = new stdClass();

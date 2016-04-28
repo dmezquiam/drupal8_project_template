@@ -116,6 +116,7 @@ function fe_news_field_group_info() {
       2 => 'field_video_reference',
       3 => 'field_image',
       4 => 'field_image_show',
+      5 => 'field_hide_image_on_node_page',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -105,7 +105,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'node_fields_block' => array(
         'label' => 'hidden',
@@ -204,7 +204,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -219,7 +219,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'node_fields_block' => array(
         'label' => 'hidden',
@@ -319,7 +319,62 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 12,
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_hide_image_on_node_page'.
+  $field_instances['node-news-field_hide_image_on_node_page'] = array(
+    'bundle' => 'news',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'node_fields_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'short_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hide_image_on_node_page',
+    'label' => 'Hide image on Node Page',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 10,
     ),
   );
 
@@ -440,7 +495,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'node_fields_block' => array(
         'label' => 'hidden',
@@ -476,7 +531,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -491,7 +546,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'node_fields_block' => array(
         'label' => 'above',
@@ -664,7 +719,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'node_fields_block' => array(
         'label' => 'inline',
@@ -770,7 +825,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -785,7 +840,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'node_fields_block' => array(
         'label' => 'above',
@@ -841,6 +896,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
   t('Display Image Automatically');
   t('Document');
   t('Enter the user name for the author of this content to make the "About the author" block display next to the content.');
+  t('Hide image on Node Page');
   t('Image');
   t('Primary topic');
   t('Related Content');
