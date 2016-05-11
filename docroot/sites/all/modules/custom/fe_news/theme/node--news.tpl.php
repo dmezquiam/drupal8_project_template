@@ -115,7 +115,7 @@
       <div class="author">
         <?php print $author; ?> | <?php print $date; ?>
       </div>
-      <?php if ($hide_image == true): hide($content['field_image']); endif ?>
+      <?php if ($hide_image == true): hide($content['field_image']); hide($content['field_image_caption']); endif ?>
       <?php print render($content); ?>
       <?php print render($url_tags); ?>
     <?php endif ?>

@@ -25,7 +25,7 @@ function fe_news_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'node_fields_block' => array(
         'label' => 'hidden',
@@ -105,7 +105,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'node_fields_block' => array(
         'label' => 'hidden',
@@ -160,7 +160,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'file_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'node_fields_block' => array(
         'label' => 'above',
@@ -204,7 +204,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -219,7 +219,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'node_fields_block' => array(
         'label' => 'hidden',
@@ -275,7 +275,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'file_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'node_fields_block' => array(
         'label' => 'hidden',
@@ -319,7 +319,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -338,7 +338,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'node_fields_block' => array(
         'label' => 'above',
@@ -374,7 +374,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -480,6 +480,64 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
   );
 
+  // Exported field_instance: 'node-news-field_image_caption'.
+  $field_instances['node-news-field_image_caption'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This text will be shown in the blog post under the main image.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'node_fields_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'short_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image_caption',
+    'label' => 'Image Caption',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-news-field_image_show'.
   $field_instances['node-news-field_image_show'] = array(
     'bundle' => 'news',
@@ -495,7 +553,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'node_fields_block' => array(
         'label' => 'hidden',
@@ -531,7 +589,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -546,7 +604,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'node_fields_block' => array(
         'label' => 'above',
@@ -602,7 +660,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'node_reference_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'node_fields_block' => array(
         'label' => 'hidden',
@@ -663,7 +721,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'node_fields_block' => array(
         'label' => 'above',
@@ -719,7 +777,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'node_fields_block' => array(
         'label' => 'inline',
@@ -783,7 +841,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'node_reference_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'node_fields_block' => array(
         'label' => 'hidden',
@@ -825,7 +883,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -840,7 +898,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'node_fields_block' => array(
         'label' => 'above',
@@ -898,11 +956,13 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
   t('Enter the user name for the author of this content to make the "About the author" block display next to the content.');
   t('Hide image on Node Page');
   t('Image');
+  t('Image Caption');
   t('Primary topic');
   t('Related Content');
   t('Secondary topics');
   t('Tags');
   t('These topics will be used to search and sort the nodes, if there is a primary topic added, it must be repeated here.');
+  t('This text will be shown in the blog post under the main image.');
   t('This topic will be displayed at the node page.');
   t('Title');
   t('Use this field to give attribution to an author that does not have a user account on IJNet.org. <br />

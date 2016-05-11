@@ -703,7 +703,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Field: Area of Interest (field_topic) */
+  /* Filter criterion: Field: Secondary topics (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
