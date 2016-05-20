@@ -62,6 +62,90 @@ function fe_videos_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-video-field_attribution'.
+  $field_instances['node-video-field_attribution'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Use this field to give attribution to an author that does not have a user account on IJNet.org. <br />
+Example: "John Doe, Editor at Global Publishing, Inc."',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_attribution',
+    'label' => 'Attribution',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-video-field_byline'.
+  $field_instances['node-video-field_byline'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter the user name for the author of this content to make the "About the author" block display next to the content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_byline',
+    'label' => 'By line',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'user_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'user_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'user_reference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-video-field_category'.
   $field_instances['node-video-field_category'] = array(
     'bundle' => 'video',
@@ -73,7 +157,7 @@ function fe_videos_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -112,7 +196,7 @@ function fe_videos_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -160,7 +244,7 @@ function fe_videos_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -175,7 +259,7 @@ function fe_videos_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -258,7 +342,7 @@ function fe_videos_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -273,7 +357,7 @@ function fe_videos_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -307,12 +391,17 @@ function fe_videos_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Attribution');
   t('Body');
+  t('By line');
+  t('Enter the user name for the author of this content to make the "About the author" block display next to the content.');
   t('Primary topic');
   t('Secondary topics');
   t('These topics will be used to search and sort the nodes, if there is a primary topic added, it must be repeated here.');
   t('This topic will be displayed at the node page.');
   t('Title');
+  t('Use this field to give attribution to an author that does not have a user account on IJNet.org. <br />
+Example: "John Doe, Editor at Global Publishing, Inc."');
   t('Video');
   t('Video image');
 

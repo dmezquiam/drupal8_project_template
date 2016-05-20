@@ -27,6 +27,7 @@ function fe_videos_default_video_embed_styles() {
       'modestbranding' => 0,
       'iv_load_policy' => '1',
       'autohide' => '2',
+      'class' => '',
     ),
     'vimeo' => array(
       'width' => '640px',
@@ -37,6 +38,7 @@ function fe_videos_default_video_embed_styles() {
       'byline' => 1,
       'autoplay' => 0,
       'loop' => 0,
+      'class' => '',
     ),
     'data__active_tab' => 'edit-data-youtube',
   );
