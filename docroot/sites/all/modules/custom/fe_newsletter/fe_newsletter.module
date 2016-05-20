@@ -87,12 +87,27 @@ function _ijnet_newsletter_content_theme_parameters($nid) {
   $node = node_load($nid);
   $logo = _fe_social_get_ijnet_logo_by_lang($node->language);
   $social_media_items = _fe_social_get_social_media_items($node->language);
+
   $parameters = array(
     'node' => $node,
     'social_media_items' => $social_media_items,
     'logo' => $logo,
     'language' => $node->language,
   );
+
+  $pitch_to_ijnet = ($node->language == 'en') ? TRUE : FALSE;
+  $parameters['pitch_to_ijnet'] = $pitch_to_ijnet;
+
+  if ($pitch_to_ijnet) {
+    $path = drupal_lookup_path("source", 'blog/pitch-ijnet');
+    $node = menu_get_object("node", 1, $path);
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $image = $wrapper->field_image->value();
+
+    $pitch_to_ijnet_image_url = image_style_url('news_wide', $image['uri']);
+
+    $parameters['pitch_to_ijnet_image_url'] = $pitch_to_ijnet_image_url;
+  }
 
   return $parameters;
 }
@@ -143,6 +158,8 @@ function fe_newsletter_theme() {
         'node' => null,
         'social_media_items' => null,
         'logo' => null,
+        'pitch_to_ijnet' => null,
+        'pitch_to_ijnet_image_url' => null,
       ),
       'template' => 'ijnet-newsletter-content',
       'path' => $theme_path,
@@ -160,6 +177,14 @@ function fe_newsletter_theme() {
         'featured_content' => null,
       ),
       'template' => 'ijnet-newsletter-featured-content',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_pitch_to_ijnet' => array(
+      'variables' => array(
+        'pitch_to_ijnet_image_url' => null,
+      ),
+      'template' => 'ijnet-newsletter-pitch-to-ijnet',
       'path' => $theme_path,
     ),
 

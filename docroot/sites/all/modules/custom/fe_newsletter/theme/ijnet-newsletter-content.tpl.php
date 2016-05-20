@@ -72,6 +72,9 @@
   if (count($featured_contents)) {
     print(theme('ijnet_newsletter_featured_contents', array('featured_contents' => $featured_contents)));
   }
+  if (!empty($pitch_to_ijnet)) {
+    print(theme('ijnet_newsletter_pitch_to_ijnet', array('pitch_to_ijnet_image_url' => $pitch_to_ijnet_image_url)));
+  }
   if (count($advertisements)) {
     print(theme('ijnet_newsletter_advertisements', array('advertisements' => $advertisements)));
   }
