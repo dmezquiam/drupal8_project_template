@@ -1321,6 +1321,22 @@ ul.action-links {
 
   // Mail subscribe en videos
   body.section-videos {
+
+    &.page-videos-topic {
+      .mail-subscribe {
+        .dropdown {
+          .inner-dropdown {
+            position: static;
+            margin-top: 20px;
+
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
     .mail-subscribe {
 	    .dropdown {
 	      .clicker {
