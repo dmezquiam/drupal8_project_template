@@ -456,6 +456,12 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['text'] = '[title] [timestamp] ';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Field: User: Screen Name */
   $handler->display->display_options['fields']['field_screen_name']['id'] = 'field_screen_name';
   $handler->display->display_options['fields']['field_screen_name']['table'] = 'field_data_field_screen_name';
@@ -1774,14 +1780,41 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['fields']['field_screen_name']['field'] = 'field_screen_name';
   $handler->display->display_options['fields']['field_screen_name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['field_screen_name']['label'] = 'Created by';
+  $handler->display->display_options['fields']['field_screen_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_screen_name']['alter']['path'] = 'user/[name]';
-  $handler->display->display_options['fields']['field_screen_name']['empty'] = '[name]';
   $handler->display->display_options['fields']['field_screen_name']['type'] = 'title_linked';
   $handler->display->display_options['fields']['field_screen_name']['settings'] = array(
     'title_style' => '_none',
     'title_link' => 'content',
     'title_class' => '',
   );
+  /* Field: Content: By line */
+  $handler->display->display_options['fields']['field_byline']['id'] = 'field_byline';
+  $handler->display->display_options['fields']['field_byline']['table'] = 'field_data_field_byline';
+  $handler->display->display_options['fields']['field_byline']['field'] = 'field_byline';
+  $handler->display->display_options['fields']['field_byline']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_byline']['empty'] = '[field_screen_name]';
+  /* Field: Content: Attribution */
+  $handler->display->display_options['fields']['field_attribution']['id'] = 'field_attribution';
+  $handler->display->display_options['fields']['field_attribution']['table'] = 'field_data_field_attribution';
+  $handler->display->display_options['fields']['field_attribution']['field'] = 'field_attribution';
+  $handler->display->display_options['fields']['field_attribution']['label'] = 'Created by';
+  $handler->display->display_options['fields']['field_attribution']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_attribution']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_attribution']['empty'] = '[field_byline]';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
+  $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_2']['label'] = 'Author shown';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '[field_attribution]';
   /* Field: Content: Language */
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'node';
@@ -2763,13 +2796,14 @@ function fe_admin_dashboards_views_default_views() {
     'field_screen_name' => 'field_screen_name',
     'language' => 'language',
     'changed' => 'changed',
+    'field_date' => 'field_date',
+    'field_deadline' => 'field_deadline',
+    'publish_on' => 'publish_on',
+    'publishcontent' => 'publishcontent',
     'status' => 'status',
     'nid' => 'nid',
     'nothing' => 'nothing',
     'edit_node' => 'edit_node',
-    'field_date' => 'field_date',
-    'field_deadline' => 'field_deadline',
-    'publish_on' => 'publish_on',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -2811,30 +2845,6 @@ function fe_admin_dashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'status' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nothing' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'edit_node' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
     'field_date' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
@@ -2852,6 +2862,35 @@ function fe_admin_dashboards_views_default_views() {
     'publish_on' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'publishcontent' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nid' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -3011,7 +3050,6 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
