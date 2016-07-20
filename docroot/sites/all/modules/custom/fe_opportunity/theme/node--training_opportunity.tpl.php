@@ -95,7 +95,14 @@
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" target="_blank"><?php print $title; ?></a></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
-
+  
+  <?php if ($page) :?>
+  <?php if (isset($date)) :?>
+  <div class="author">
+    <?php print t('Posted on !date', array('!date' => $date)); ?>
+  </div>
+  <?php endif ?>
+  <?php endif ?>
 
   <div class="content"<?php print $content_attributes; ?>>
     <?php

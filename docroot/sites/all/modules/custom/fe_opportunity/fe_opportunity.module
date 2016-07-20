@@ -24,6 +24,9 @@ function fe_opportunity_theme() {
 function fe_opportunity_preprocess_node(&$vars) {
   if ($vars['node']->type == 'training_opportunity') {
     $node = $vars['node'];
+
+    $vars['created'] = date_format($node->created, 'medium');
+
     if ($node->field_deadline && isset($node->field_deadline)) {
       global $language;
       $date = $node->field_deadline[$language->language][0]['value'];
