@@ -98,7 +98,7 @@
   
   <?php if ($page) :?>
   <?php if (isset($date)) :?>
-  <div class="author">
+  <div class="author" style='margin-bottom: 20px;'>
     <?php print t('Posted on !date', array('!date' => $date)); ?>
   </div>
   <?php endif ?>
