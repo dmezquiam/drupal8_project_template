@@ -81,3 +81,15 @@ function _fe_opportunity_offset_tz($timezone) {
   }
   return $timeOffset;
 }
+
+
+/**
+ * Preprocess of function from Calendar module template_preprocess_calendar_datebox
+ */
+function fe_opportunity_preprocess_calendar_datebox(&$vars) {
+
+  if (($vars['mini'] == TRUE) && ($vars['class'] == 'mini-day-on')) {
+    $vars['url'] = "opportunities/day/" . $vars['date'];
+    $vars['link'] = l($vars['day'], $vars['url']);
+  }
+}
