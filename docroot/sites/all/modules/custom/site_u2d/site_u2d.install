@@ -8,9 +8,9 @@ function site_u2d_install() {
  * Implementations of hook_update_N().
  */
 
- /**
-  * 
-  */
-/*function site_u2d_update_7001() {
-
-}*/
+/**
+ * Enable Calendar module
+ */
+function site_u2d_update_7001() {
+  module_enable(array('calendar'));
+}
