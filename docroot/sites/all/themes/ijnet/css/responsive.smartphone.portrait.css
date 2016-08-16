@@ -1,41 +1,51 @@
+/* line 7, ../sass/_language_fix.scss */
 .i18n-en .latest-posts-block {
   background: url("../images/bg_latest_post_en.jpg") no-repeat left center;
 }
 
 @media (max-width: 989px) and (min-width: 769px) {
+  /* line 17, ../sass/_language_fix.scss */
   .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
     top: -23px !important;
     left: 29px;
     line-height: normal;
   }
 }
+/* line 26, ../sass/_language_fix.scss */
 .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   top: 5px;
   left: 29px;
   line-height: normal;
 }
+/* line 34, ../sass/_language_fix.scss */
 .i18n-es .latest-posts-block {
   background: url("../images/bg_latest_post_es.jpg") no-repeat left center;
 }
+/* line 39, ../sass/_language_fix.scss */
 .i18n-es.section-knight-media-innovators #block-blockify-blockify-page-title h1 {
   font-size: 25px;
 }
 
+/* line 47, ../sass/_language_fix.scss */
 .i18n-pt-br .block-login-block {
   font-size: 15px;
 }
+/* line 50, ../sass/_language_fix.scss */
 .i18n-pt-br .mail-subscribe .dropdown .clicker h4 {
   font-size: 14px;
 }
+/* line 54, ../sass/_language_fix.scss */
 .i18n-pt-br .latest-posts-block {
   background: url("../images/bg_latest_post_pt.jpg") no-repeat left center;
 }
+/* line 58, ../sass/_language_fix.scss */
 .i18n-pt-br .latest-posts-block .inner-block a {
   line-height: 14px;
   font-size: 12px;
   padding: 13px 44px 13px 16px;
 }
+/* line 64, ../sass/_language_fix.scss */
 .i18n-pt-br .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   width: 270px;
@@ -44,23 +54,29 @@
   line-height: normal;
 }
 
+/* line 76, ../sass/_language_fix.scss */
 .i18n-ru .content-tabs .block-title {
   left: 22px;
 }
+/* line 80, ../sass/_language_fix.scss */
 .i18n-ru .block-top-header-menu {
   width: 65%;
 }
+/* line 81, ../sass/_language_fix.scss */
 .i18n-ru .block-lang-dropdown {
   width: 30%;
 }
+/* line 82, ../sass/_language_fix.scss */
 .i18n-ru .block-top-header-menu .block-content ul.menu li a {
   display: block;
   line-height: 12px;
   margin: 0 4px;
 }
+/* line 89, ../sass/_language_fix.scss */
 .i18n-ru .block-login-block {
   font-size: 14px;
 }
+/* line 95, ../sass/_language_fix.scss */
 .i18n-ru .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   width: 130px;
@@ -68,37 +84,398 @@
   left: 29px;
   line-height: normal;
 }
+/* line 105, ../sass/_language_fix.scss */
 .i18n-ru .latest-posts-block {
   background: url("../images/bg_latest_post_ru.jpg") no-repeat left center;
 }
+/* line 109, ../sass/_language_fix.scss */
 .i18n-ru .latest-posts-block .inner-block a {
   padding: 13px 44px 13px 22px;
   line-height: 14px;
   font-size: 11px;
 }
+/* line 115, ../sass/_language_fix.scss */
 .i18n-ru .block-about-author .button-tiny {
   margin-top: 10px;
 }
 
+/* line 123, ../sass/_language_fix.scss */
 .i18n-ar .latest-posts-block {
   background: url("../images/bg_latest_post_ar.jpg") no-repeat left center;
 }
+/* line 128, ../sass/_language_fix.scss */
 .i18n-ar .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link,
 .i18n-ar .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
   float: right;
 }
 
+/* line 136, ../sass/_language_fix.scss */
 .i18n-zh-hans .latest-posts-block {
   background: url("../images/bg_latest_post_zh-hans.jpg") no-repeat left -10px;
   height: 202px;
 }
 
+/* line 145, ../sass/_language_fix.scss */
 .i18n-fa .latest-posts-block {
   background: url("../images/bg_latest_post_fa.jpg") no-repeat left center;
 }
+/* line 149, ../sass/_language_fix.scss */
 .i18n-fa .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link,
 .i18n-fa .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
   float: right;
+}
+
+/* line 28, ../sass/_calendar.scss */
+.calendar-calendar {
+  /**/
+}
+/* line 31, ../sass/_calendar.scss */
+.calendar-calendar .year-view td {
+  padding: 4px;
+  background: whitesmoke;
+}
+/* line 36, ../sass/_calendar.scss */
+.calendar-calendar .month-view {
+  /**/
+}
+/* line 39, ../sass/_calendar.scss */
+.calendar-calendar .month-view .date-nav-wrapper {
+  margin: 0;
+}
+/* line 41, ../sass/_calendar.scss */
+.calendar-calendar .month-view .date-nav-wrapper .date-nav {
+  margin: 0;
+  font-size: 17px;
+  background: whitesmoke;
+}
+/* line 53, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini {
+  margin-bottom: 20px;
+}
+/* line 57, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini thead {
+  /**/
+}
+/* line 59, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini thead tr {
+  border: none;
+}
+/* line 61, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini thead tr th {
+  background: #c67b1a;
+  color: white;
+  font-size: 16px;
+  padding: 6px 0;
+  border: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+/* line 73, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody {
+  background: #f6f6f6;
+}
+/* line 76, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr {
+  border: 0px;
+  font-size: 16px;
+}
+/* line 79, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td {
+  vertical-align: middle;
+  padding: 5px 0;
+  background: whitesmoke;
+}
+/* line 85, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td.today .mini-day-off {
+  background: #c67b1a;
+  width: 23px;
+  height: 23px;
+  border-radius: 11%;
+  color: white;
+  text-decoration: none;
+  padding: 5px 3px 2px 4px;
+  text-align: center;
+  margin: 0px 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 97, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td.today .mini-day-off:hover {
+  background: #c67b1a;
+  color: white;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 106, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .calendar-empty {
+  text-align: center;
+}
+/* line 111, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-on {
+  text-align: center;
+}
+/* line 113, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-on a {
+  display: block;
+  background: #e6e6e6;
+  width: 23px;
+  height: 23px;
+  border-radius: 11%;
+  color: #777777;
+  text-decoration: none;
+  padding: 5px 3px 2px 4px;
+  text-align: center;
+  margin: 0px 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 126, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-on a:hover {
+  background: #c67b1a;
+  color: white;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 135, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-off {
+  text-align: center;
+}
+/* line 137, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-off a {
+  /**/
+}
+
+/* line 152, ../sass/_calendar.scss */
+.view-id-opportunities_calendar {
+  /**/
+}
+/* line 154, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header {
+  /**/
+}
+/* line 156, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header h1 {
+  /**/
+}
+/* line 159, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper {
+  /**/
+}
+/* line 161, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav {
+  padding: 0;
+  height: auto;
+  margin: 0;
+}
+/* line 166, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .date-heading {
+  /**/
+}
+/* line 168, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .date-heading h3 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  top: 4px;
+}
+/* line 174, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .date-heading h3 a {
+  color: white;
+}
+/* line 180, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager {
+  background: #3c6e8f;
+  height: 36px;
+  border-radius: 0px;
+}
+/* line 186, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-prev,
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-next {
+  text-align: left;
+  width: 107px;
+  color: white;
+  padding: 8px 7px 6px 7px;
+  background: transparent;
+  top: 0px;
+}
+/* line 193, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-prev a,
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-next a {
+  font-size: 17px;
+  text-transform: uppercase;
+}
+/* line 199, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-prev {
+  left: 0;
+}
+/* line 204, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-next {
+  text-align: right;
+}
+/* line 212, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar {
+  /**/
+}
+/* line 214, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view {
+  /**/
+}
+/* line 216, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full {
+  /**/
+}
+/* line 220, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full thead {
+  /**/
+}
+/* line 222, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full thead tr {
+  /**/
+}
+/* line 224, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full thead tr th {
+  background: #c67b1a;
+  color: white;
+  font-size: 16px;
+  padding: 6px 0;
+  border: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+/* line 238, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody {
+  /**/
+}
+/* line 240, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr {
+  /**/
+  border-bottom: none;
+  border-top: none;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+}
+/* line 252, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box {
+  border: 0px;
+  font-size: 19px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-left: 1px solid #cccccc;
+}
+/* line 260, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box.today {
+  border-top: 2px solid #c67b1a;
+  border-left: 2px solid #c67b1a;
+  border-right: 2px solid #c67b1a;
+  background: #ffe1bb;
+  color: #c67b1a;
+}
+/* line 275, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box.past {
+  background: #f6f6f6;
+  color: #c9c9c9;
+}
+/* line 284, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box.future {
+  background: white;
+  color: black;
+}
+/* line 292, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day {
+  border-bottom: 0px;
+  border: 0;
+  padding: 0;
+}
+/* line 298, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day .monthview {
+  background: #cbcbcb;
+  border-radius: 0;
+  padding: 5px 5px 2px 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+/* line 305, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day .monthview a {
+  color: white;
+}
+/* line 310, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day .monthview .cutoff {
+  border-radius: 0;
+  background: #cbcbcb;
+}
+/* line 320, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .future + .multi-day .monthview {
+  background: #c67b1a;
+}
+/* line 322, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .future + .multi-day .monthview a {
+  color: white;
+}
+/* line 325, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .future + .multi-day .monthview .cutoff {
+  background: #c67b1a;
+}
+/* line 330, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.past {
+  background: #f6f6f6;
+  color: #c9c9c9;
+}
+/* line 336, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today {
+  border-bottom: 2px solid #c67b1a;
+  border-left: 2px solid #c67b1a;
+  border-right: 2px solid #c67b1a;
+  background: #ffe1bb;
+}
+/* line 344, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today + .multi-day .monthview {
+  background: #c67b1a;
+}
+/* line 346, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today + .multi-day .monthview a {
+  color: white;
+}
+/* line 349, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today + .multi-day .monthview .cutoff {
+  background: #c67b1a;
+}
+/* line 355, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.future {
+  background: white;
+  color: black;
+}
+/* line 364, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.single-day td.single-day.past {
+  background: #f6f6f6;
+  color: #c9c9c9;
+}
+/* line 370, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.single-day td.single-day.today {
+  border-bottom: 2px solid #c67b1a;
+  border-left: 2px solid #c67b1a;
+  border-right: 2px solid #c67b1a;
+  background: #ffe1bb;
+}
+/* line 378, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.single-day td.single-day.future {
+  background: white;
+  color: black;
 }
 
 /*
@@ -111,33 +488,40 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 /* DRUPAL ADMIN TOOL BAR */
+/* line 15, ../sass/responsive.smartphone.portrait.scss */
 body #admin-menu {
   font-size: 8px;
   display: none;
 }
 
+/* line 16, ../sass/responsive.smartphone.portrait.scss */
 body.admin-menu {
   margin-top: 0px !important;
 }
 
 /* Increase the default font size on small devices */
+/* line 20, ../sass/responsive.smartphone.portrait.scss */
 html {
   font-size: 112.5%;
 }
 
+/* line 25, ../sass/responsive.smartphone.portrait.scss */
 p,
 pre {
   font-size: 15px;
 }
 
+/* line 29, ../sass/responsive.smartphone.portrait.scss */
 div.messages {
   font-size: 12px;
 }
 
+/* line 34, ../sass/responsive.smartphone.portrait.scss */
 .node ul, .node ol {
   font-size: 15px;
 }
 
+/* line 47, ../sass/responsive.smartphone.portrait.scss */
 input[type="email"],
 input[type="tel"],
 input[type="number"],
@@ -153,20 +537,25 @@ input[type="text"] {
 /* =============================================================================
  *   Top BAR
  * ========================================================================== */
+/* line 55, ../sass/responsive.smartphone.portrait.scss */
 #leaderboard-wrapper .block-lang-dropdown {
   width: 204px;
 }
+/* line 56, ../sass/responsive.smartphone.portrait.scss */
 #leaderboard-wrapper .block-lang-dropdown .block-title {
   display: none;
 }
+/* line 58, ../sass/responsive.smartphone.portrait.scss */
 #leaderboard-wrapper .block-lang-dropdown .block-inner {
   margin-right: 9px;
 }
+/* line 62, ../sass/responsive.smartphone.portrait.scss */
 #leaderboard-wrapper .block-top-header-menu {
   width: 39px;
   height: 38px;
   margin-left: 13px;
 }
+/* line 66, ../sass/responsive.smartphone.portrait.scss */
 #leaderboard-wrapper .block-top-header-menu .menu {
   display: none;
 }
@@ -174,30 +563,37 @@ input[type="text"] {
 /* =============================================================================
  *   Header
  * ========================================================================== */
+/* line 75, ../sass/responsive.smartphone.portrait.scss */
 #branding {
   width: inherit;
 }
+/* line 77, ../sass/responsive.smartphone.portrait.scss */
 #branding #logo {
   padding: 20px 0px 21px 3px;
 }
 
+/* line 82, ../sass/responsive.smartphone.portrait.scss */
 #block-search-form {
   display: none;
 }
 
+/* line 88, ../sass/responsive.smartphone.portrait.scss */
 .block-support-ijnet,
 .block-login-block {
   margin-bottom: 0px !important;
 }
 
+/* line 91, ../sass/responsive.smartphone.portrait.scss */
 .block-login-block {
   width: 204px !important;
   padding-top: 0;
 }
+/* line 94, ../sass/responsive.smartphone.portrait.scss */
 .block-login-block .block-inner {
   margin-right: 0;
   margin-left: 10px;
 }
+/* line 98, ../sass/responsive.smartphone.portrait.scss */
 .block-login-block .block-inner .block-content {
   padding: 17px 6px 0px 0px;
 }
@@ -205,31 +601,39 @@ input[type="text"] {
 /* =============================================================================
  *   Item list
  * ========================================================================== */
+/* line 108, ../sass/responsive.smartphone.portrait.scss */
 .article-item-list {
   width: 100%;
   float: left;
   height: auto;
 }
+/* line 693, ../sass/_custom.scss */
 .article-item-list:nth-child(odd) {
   clear: left;
 }
+/* line 731, ../sass/_custom.scss */
 .article-item-list .content:nth-child(odd) {
   margin-right: 0px;
 }
+/* line 732, ../sass/_custom.scss */
 .article-item-list .content:nth-child(even) {
   margin-right: 0px;
 }
+/* line 787, ../sass/_custom.scss */
 .article-item-list .content {
   position: relative;
 }
+/* line 789, ../sass/_custom.scss */
 .article-item-list img {
   width: 100%;
 }
+/* line 792, ../sass/_custom.scss */
 .article-item-list .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
+/* line 796, ../sass/_custom.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -237,11 +641,13 @@ input[type="text"] {
   width: auto;
   border: 1px solid #C0C0C0;
 }
+/* line 803, ../sass/_custom.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
+/* line 807, ../sass/_custom.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -254,10 +660,12 @@ input[type="text"] {
   -ms-border-radius: 0;
   border-radius: 0;
 }
+/* line 818, ../sass/_custom.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
+/* line 830, ../sass/_custom.scss */
 .article-item-list .aricle-title,
 .article-item-list .node-title {
   font-size: 18px;
@@ -268,46 +676,57 @@ input[type="text"] {
   overflow: hidden;
   clear: both;
 }
+/* line 838, ../sass/_custom.scss */
 .article-item-list .aricle-title a,
 .article-item-list .node-title a {
   color: #137a9a;
 }
+/* line 842, ../sass/_custom.scss */
 .article-item-list .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
+/* line 850, ../sass/_custom.scss */
 .article-item-list .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
 }
 
+/* line 113, ../sass/responsive.smartphone.portrait.scss */
 .article-item-list-no-body {
   width: 100%;
   float: left;
   height: auto;
 }
+/* line 740, ../sass/_custom.scss */
 .article-item-list-no-body:nth-child(odd) {
   clear: left;
 }
+/* line 778, ../sass/_custom.scss */
 .article-item-list-no-body .content:nth-child(odd) {
   margin-right: 0px;
 }
+/* line 779, ../sass/_custom.scss */
 .article-item-list-no-body .content:nth-child(even) {
   margin-right: 0px;
 }
+/* line 787, ../sass/_custom.scss */
 .article-item-list-no-body .content {
   position: relative;
 }
+/* line 789, ../sass/_custom.scss */
 .article-item-list-no-body img {
   width: 100%;
 }
+/* line 792, ../sass/_custom.scss */
 .article-item-list-no-body .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
+/* line 796, ../sass/_custom.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -315,11 +734,13 @@ input[type="text"] {
   width: auto;
   border: 1px solid #C0C0C0;
 }
+/* line 803, ../sass/_custom.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
+/* line 807, ../sass/_custom.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -332,10 +753,12 @@ input[type="text"] {
   -ms-border-radius: 0;
   border-radius: 0;
 }
+/* line 818, ../sass/_custom.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
+/* line 830, ../sass/_custom.scss */
 .article-item-list-no-body .aricle-title,
 .article-item-list-no-body .node-title {
   font-size: 18px;
@@ -346,16 +769,19 @@ input[type="text"] {
   overflow: hidden;
   clear: both;
 }
+/* line 838, ../sass/_custom.scss */
 .article-item-list-no-body .aricle-title a,
 .article-item-list-no-body .node-title a {
   color: #137a9a;
 }
+/* line 842, ../sass/_custom.scss */
 .article-item-list-no-body .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
+/* line 850, ../sass/_custom.scss */
 .article-item-list-no-body .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
@@ -364,11 +790,13 @@ input[type="text"] {
 /* =============================================================================
  *   TABS
  * ========================================================================== */
+/* line 122, ../sass/responsive.smartphone.portrait.scss */
 .sidebar-tabs .block-title,
 .content-tabs .block-title {
   display: none;
 }
 
+/* line 123, ../sass/responsive.smartphone.portrait.scss */
 .content-tabs .quicktabs-wrapper .quicktabs-tabs li a {
   padding: 5px 20px 4px 20px;
 }
@@ -376,39 +804,48 @@ input[type="text"] {
 /* =============================================================================
  *   Video landing page
  * ========================================================================== */
+/* line 131, ../sass/responsive.smartphone.portrait.scss */
 .pane-jsonblocks-social-block {
   display: none !important;
 }
 
+/* line 132, ../sass/responsive.smartphone.portrait.scss */
 .pane-fe-videos-fe-videos-search .videos-landing-header {
   height: 222px;
 }
 
+/* line 134, ../sass/responsive.smartphone.portrait.scss */
 .pane-fe-videos-fe-videos-search .videos-landing-header .header,
 .pane-fe-videos-fe-videos-search .videos-landing-header .topic-select {
   width: 100%;
 }
 
+/* line 139, ../sass/responsive.smartphone.portrait.scss */
 .pane-views-videos-featured-video {
   margin-bottom: 0px;
 }
 
+/* line 140, ../sass/responsive.smartphone.portrait.scss */
 .view-display-id-featured_video {
   height: 100%;
 }
 
+/* line 141, ../sass/responsive.smartphone.portrait.scss */
 .view-display-id-featured_video iframe {
   height: 200px;
 }
 
+/* line 142, ../sass/responsive.smartphone.portrait.scss */
 .page-videos .view-display-id-featured_video {
   margin-right: 0px;
 }
 
+/* line 143, ../sass/responsive.smartphone.portrait.scss */
 .view-display-id-featured_video {
   padding-right: 15px;
 }
 
+/* line 146, ../sass/responsive.smartphone.portrait.scss */
 .page-videos .pane-views-videos-related-videos-landing .block-inner {
   margin-top: 0px;
   margin-left: 20px;
@@ -417,11 +854,13 @@ input[type="text"] {
   height: auto;
 }
 
+/* line 153, ../sass/responsive.smartphone.portrait.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row {
   width: 100%;
   float: left;
   margin-bottom: 0px;
 }
+/* line 157, ../sass/responsive.smartphone.portrait.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row .node-video {
   margin: 0 5px;
 }
@@ -429,19 +868,23 @@ input[type="text"] {
 /* =============================================================================
  *   Opportunities LANDING
  * ========================================================================== */
+/* line 167, ../sass/responsive.smartphone.portrait.scss */
 .views-exposed-widgets #edit-field-category-tid-wrapper,
 .views-exposed-widgets #edit-field-region-tid-wrapper {
   width: 100%;
   padding-right: 0%;
 }
+/* line 172, ../sass/responsive.smartphone.portrait.scss */
 .views-exposed-widgets #edit-title-wrapper {
   width: 100%;
   padding: 2% 0% 0 0;
 }
+/* line 176, ../sass/responsive.smartphone.portrait.scss */
 .views-exposed-widgets #edit-keys-wrapper {
   padding-right: 0px;
   width: 242px;
 }
+/* line 180, ../sass/responsive.smartphone.portrait.scss */
 .views-exposed-widgets .views-submit-button {
   width: 100%;
   text-align: center;
@@ -450,6 +893,7 @@ input[type="text"] {
 /* =============================================================================
  *   User Profile
  * ========================================================================== */
+/* line 139, ../sass/_custom.scss */
 .section-users #content .profile:after {
   content: ".";
   display: block;
@@ -457,26 +901,32 @@ input[type="text"] {
   clear: both;
   visibility: hidden;
 }
+/* line 146, ../sass/_custom.scss */
 * html .section-users #content .profile {
   height: 1px;
 }
+/* line 194, ../sass/responsive.smartphone.portrait.scss */
 .section-users #content .profile .field-name-field-bio {
   width: 100%;
   clear: both;
 }
+/* line 197, ../sass/responsive.smartphone.portrait.scss */
 .section-users #content .profile .field-name-field-bio .field-items {
   margin-right: 0px;
   padding-right: 0px;
 }
+/* line 202, ../sass/responsive.smartphone.portrait.scss */
 .section-users #content .profile .user-picture {
   margin: 0px auto 15px auto;
   float: none;
 }
 
+/* line 215, ../sass/responsive.smartphone.portrait.scss */
 .page-search .search-form .form-wrapper {
   width: 100%;
   margin: 0;
 }
+/* line 222, ../sass/responsive.smartphone.portrait.scss */
 .page-search .search-form .form-wrapper input {
   width: 100%;
 }

@@ -1,26 +1,27 @@
 // Global
 //set defaul urls ===============================
-$path-to-images : 						"../images";
-$path-to-fonts : 						"../fonts";
+$path-to-images : 		"../images";
+$path-to-fonts : 		"../fonts";
 
-$color-bg-general:         				#fff;    // to match the page background, default is white
-$border:      							#ccc;    // all borders set in global.styles - tables, fieldset, primary links
-$highlight:    							#c00;    // required mark, form error highlight, "new" label on comments
-$ultralight:   							#f5f5f5; // table row even, primary link inactive tabs
-$light:        							#eee;    // table row odd active, primary link inactive hover
-$medium_light: 							#ebebeb; // table row even active
-$medium_dark:  							#e5e5e5; // table thead
-$debug:        							rgba(255, 192, 203, 0.5); // Full width wrapper test
+$color-bg-general:		#fff;    // to match the page background, default is white
+$border:      			#ccc;    // all borders set in global.styles - tables, fieldset, primary links
+$highlight:    			#c00;    // required mark, form error highlight, "new" label on comments
+$ultralight:   			#f5f5f5; // table row even, primary link inactive tabs
+$light:        			#eee;    // table row odd active, primary link inactive hover
+$medium_light: 			#ebebeb; // table row even active
+$medium_dark:  			#e5e5e5; // table thead
+$debug:        			rgba(255, 192, 203, 0.5); // Full width wrapper test
+$snow:        			#fff;
 
-$thead:          						$medium_dark;
-$tr_odd:         						$color-bg-general;
-$tr_even:        						$ultralight;
-$tr_odd_active:  						$light;
-$tr_even_active: 						$medium_light;
+$thead:          		$medium_dark;
+$tr_odd:         		$color-bg-general;
+$tr_even:        		$ultralight;
+$tr_odd_active:  		$light;
+$tr_even_active: 		$medium_light;
 
-$primary_task:        					$ultralight;
-$primary_task_hover:  					$light;
-$primary_task_active: 					$color-bg-general;
+$primary_task:      	$ultralight;
+$primary_task_hover:	$light;
+$primary_task_active: 	$color-bg-general;
 
 
 // Gutters ======================================

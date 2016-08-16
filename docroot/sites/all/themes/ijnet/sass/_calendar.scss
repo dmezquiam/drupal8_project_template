@@ -1,0 +1,387 @@
+//configuracion
+//header table
+$header-bg: 						$color-heading-primary;
+$header-txt: 						$snow;
+
+//Dias del mes
+//Dias pasado
+$background-past-day:				#f6f6f6;
+$text-past-day:						#c9c9c9;
+
+//Dia presente
+$background-present-day: 			#ffe1bb;
+$border-present-day:	 			$color-heading-primary;
+$text-present-day:	 				$color-heading-primary;
+
+
+//Dias futuros
+$background-future-day:				$snow;
+$text-future-day:					#000;
+
+//Item opportunities
+$background-opportunities: 			#cbcbcb;
+$text-opportunities:				$snow;
+
+$background-opportunities-future: 	$color-heading-primary;
+$text-opportunities-future:			$snow;
+
+.calendar-calendar {
+	/**/
+	.year-view {
+		td {
+			padding: 4px;
+			background: whitesmoke;
+		}
+	}
+	.month-view {
+		/**/
+
+		.date-nav-wrapper {
+			margin: 0;
+			.date-nav {
+				margin: 0;
+			    font-size: 17px;
+			    background: whitesmoke;
+
+				h3 {
+					a {
+					}
+				}
+			}
+		}
+
+		table.mini {
+			margin-bottom: 20px;
+
+			//dias de la semana
+			thead {
+				/**/
+				tr {
+					border: none;
+					th {
+						background: $header-bg;
+						color: $header-txt;
+						font-size: $font-size-large;
+						padding: 6px 0;
+						border: 0px;
+						font-weight: normal;
+						text-transform: uppercase;
+						line-height: 25px;
+					}
+				}
+			}
+			tbody {
+				background: #f6f6f6;
+
+				tr {
+					border: 0px;
+					font-size: 16px;
+					td {
+						vertical-align: middle;
+						padding: 5px 0;
+						background: whitesmoke;
+						
+						&.today {
+							.mini-day-off {
+								background: $color-heading-primary;
+								width: 23px;
+								height: 23px;
+								border-radius: 11%;
+								color: $snow;
+								text-decoration: none;
+								padding: 5px 3px 2px 4px;
+								text-align: center;
+								margin: 0px 4px;
+								@include transition (all, 0.2s, ease-in-out);
+
+								&:hover {
+									background: $color-heading-primary;
+									color: $snow;
+									@include transition (all, 0.2s, ease-in-out);
+								}
+							}
+						}
+
+						//dia vacío
+						.calendar-empty {
+							text-align: center;
+						}
+						
+						//dia de la fecha
+						.mini-day-on {
+							text-align: center;
+							a {
+								display: block;
+								background: #e6e6e6;
+								width: 23px;
+								height: 23px;
+								border-radius: 11%;
+								color: #777777;
+								text-decoration: none;
+								padding: 5px 3px 2px 4px;
+								text-align: center;
+								margin: 0px 4px;
+								@include transition (all, 0.2s, ease-in-out);
+
+								&:hover {
+									background: $color-heading-primary;
+									color: $snow;
+									@include transition (all, 0.2s, ease-in-out);
+								}
+							}
+						}
+						
+						//dias del mes
+						.mini-day-off {
+							text-align: center;
+							a {
+								/**/
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+//Calendario completo
+.view-id-opportunities_calendar {
+	/**/
+	.view-header {
+		/**/
+		h1 {
+			/**/
+		}
+		.date-nav-wrapper {
+			/**/
+			.date-nav {
+				padding: 0;
+				height: auto;
+				margin: 0;
+
+				.date-heading {
+					/**/
+					h3 {
+						position: absolute;
+						width: 100%;
+						text-align: center;
+						color: $snow;
+						top: 4px;
+						a {
+							color: $snow;
+						}
+					}
+				}
+
+				.pager {
+					background: $color-bg-heading-box-primary;
+					height: 36px;
+					border-radius: 0px;
+
+					.date-prev,
+					.date-next {
+						text-align: left;
+						width: 107px;
+						color: $snow;
+						padding: 8px 7px 6px 7px;
+						background: transparent;
+						top: 0px;
+						a {
+							font-size: 17px;
+							text-transform: uppercase;
+						}
+					}
+
+					.date-prev {
+						left: 0;
+						a {}
+					}
+
+					.date-next {
+						text-align: right;
+						a {}
+					}
+				}
+			}
+		}
+	}
+	.calendar-calendar {
+		/**/
+		.month-view {
+			/**/
+			table.full {
+				/**/
+
+				//dias de la semana
+				thead {
+					/**/
+					tr {
+						/**/
+						th {
+							background: $header-bg;
+							color: $header-txt;
+							font-size: $font-size-large;
+							padding: 6px 0;
+							border: 0px;
+							font-weight: normal;
+							text-transform: uppercase;
+							line-height: 25px;
+						}
+					}
+				}
+
+				//numeros del mes
+				tbody {
+					/**/
+					tr {
+						/**/
+						border-bottom: none;
+						border-top: none;
+						border-left: 1px solid $border;
+						border-right: 1px solid $border;
+						td {
+						}
+					}
+					
+					//numero del mes
+					tr.date-box {
+						td.date-box {
+							border: 0px;
+							font-size: 19px;
+							padding-top: 5px;
+							padding-bottom: 5px;
+							border-left: 1px solid $border;
+
+							//Dia de la fecha
+							&.today {
+								border-top: 2px solid $border-present-day;
+								border-left: 2px solid $border-present-day;
+								border-right: 2px solid $border-present-day;	
+								background: $background-present-day;
+								color: $text-present-day;
+							}
+							.inner {
+								div.day {
+
+								}
+							}
+						}
+
+						//dias pasados
+						td.date-box.past {
+							background: $background-past-day;
+							color: $text-past-day;
+						}
+
+						//dia presente
+						td.date-box.today {}
+
+						//dias futuros
+						td.date-box.future {
+							background: $background-future-day;
+							color: $text-future-day;
+						}
+					}
+
+					//
+					tr.multi-day {
+						.multi-day {
+							border-bottom: 0px;
+							border: 0;
+							padding: 0;
+
+							//Opportunity
+							.monthview {
+								    background: $background-opportunities;
+								    border-radius: 0;
+								    padding: 5px 5px 2px 5px;
+								    font-size: $font-size-tiny;
+								    text-transform: uppercase;
+									margin-bottom: 2px;
+								a {
+									color: $text-opportunities;
+								}
+								
+								//deco
+								.cutoff {
+								    border-radius: 0;
+									background: $background-opportunities;
+								}
+							}
+						}
+						
+
+						//Opportunity colors
+						.future+.multi-day {
+							.monthview {
+								background: $background-opportunities-future;
+								a { color: $text-opportunities-future; }
+								
+								//deco
+								.cutoff { background: $background-opportunities-future; }
+							}
+						}
+
+						//dias pasados
+						td.single-day.past {
+							background: $background-past-day;
+							color: $text-past-day;
+						}
+
+						//dia presente
+						td.single-day.today {
+							border-bottom: 2px solid $border-present-day;
+							border-left: 2px solid $border-present-day;
+							border-right: 2px solid $border-present-day;
+							background: $background-present-day;
+
+							//Opportuniti colors
+							&+.multi-day {
+								.monthview {
+									background: $background-opportunities-future;
+									a { color: $text-opportunities-future; }
+									
+									//deco
+									.cutoff { background: $background-opportunities-future; }
+								}
+							}
+						}
+
+						//dias futuros
+						td.single-day.future {
+							background: $background-future-day;
+							color: $text-future-day;
+						}
+					}
+
+					tr.single-day {
+
+						//dias pasados
+						td.single-day.past {
+							background: $background-past-day;
+							color: $text-past-day;
+						}
+
+						//dia presente
+						td.single-day.today {
+							border-bottom: 2px solid $border-present-day;
+							border-left: 2px solid $border-present-day;
+							border-right: 2px solid $border-present-day;
+							background: $background-present-day;
+						}
+
+						//dias futuros
+						td.single-day.future {
+							background: $background-future-day;
+							color: $text-future-day;
+						}
+					}
+				}
+			}
+		}
+	}
+}

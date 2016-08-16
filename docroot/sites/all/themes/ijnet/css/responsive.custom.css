@@ -1,41 +1,51 @@
+/* line 7, ../sass/_language_fix.scss */
 .i18n-en .latest-posts-block {
   background: url("../images/bg_latest_post_en.jpg") no-repeat left center;
 }
 
 @media (max-width: 989px) and (min-width: 769px) {
+  /* line 17, ../sass/_language_fix.scss */
   .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
     top: -23px !important;
     left: 29px;
     line-height: normal;
   }
 }
+/* line 26, ../sass/_language_fix.scss */
 .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   top: 5px;
   left: 29px;
   line-height: normal;
 }
+/* line 34, ../sass/_language_fix.scss */
 .i18n-es .latest-posts-block {
   background: url("../images/bg_latest_post_es.jpg") no-repeat left center;
 }
+/* line 39, ../sass/_language_fix.scss */
 .i18n-es.section-knight-media-innovators #block-blockify-blockify-page-title h1 {
   font-size: 25px;
 }
 
+/* line 47, ../sass/_language_fix.scss */
 .i18n-pt-br .block-login-block {
   font-size: 15px;
 }
+/* line 50, ../sass/_language_fix.scss */
 .i18n-pt-br .mail-subscribe .dropdown .clicker h4 {
   font-size: 14px;
 }
+/* line 54, ../sass/_language_fix.scss */
 .i18n-pt-br .latest-posts-block {
   background: url("../images/bg_latest_post_pt.jpg") no-repeat left center;
 }
+/* line 58, ../sass/_language_fix.scss */
 .i18n-pt-br .latest-posts-block .inner-block a {
   line-height: 14px;
   font-size: 12px;
   padding: 13px 44px 13px 16px;
 }
+/* line 64, ../sass/_language_fix.scss */
 .i18n-pt-br .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   width: 270px;
@@ -44,23 +54,29 @@
   line-height: normal;
 }
 
+/* line 76, ../sass/_language_fix.scss */
 .i18n-ru .content-tabs .block-title {
   left: 22px;
 }
+/* line 80, ../sass/_language_fix.scss */
 .i18n-ru .block-top-header-menu {
   width: 65%;
 }
+/* line 81, ../sass/_language_fix.scss */
 .i18n-ru .block-lang-dropdown {
   width: 30%;
 }
+/* line 82, ../sass/_language_fix.scss */
 .i18n-ru .block-top-header-menu .block-content ul.menu li a {
   display: block;
   line-height: 12px;
   margin: 0 4px;
 }
+/* line 89, ../sass/_language_fix.scss */
 .i18n-ru .block-login-block {
   font-size: 14px;
 }
+/* line 95, ../sass/_language_fix.scss */
 .i18n-ru .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   width: 130px;
@@ -68,37 +84,398 @@
   left: 29px;
   line-height: normal;
 }
+/* line 105, ../sass/_language_fix.scss */
 .i18n-ru .latest-posts-block {
   background: url("../images/bg_latest_post_ru.jpg") no-repeat left center;
 }
+/* line 109, ../sass/_language_fix.scss */
 .i18n-ru .latest-posts-block .inner-block a {
   padding: 13px 44px 13px 22px;
   line-height: 14px;
   font-size: 11px;
 }
+/* line 115, ../sass/_language_fix.scss */
 .i18n-ru .block-about-author .button-tiny {
   margin-top: 10px;
 }
 
+/* line 123, ../sass/_language_fix.scss */
 .i18n-ar .latest-posts-block {
   background: url("../images/bg_latest_post_ar.jpg") no-repeat left center;
 }
+/* line 128, ../sass/_language_fix.scss */
 .i18n-ar .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link,
 .i18n-ar .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
   float: right;
 }
 
+/* line 136, ../sass/_language_fix.scss */
 .i18n-zh-hans .latest-posts-block {
   background: url("../images/bg_latest_post_zh-hans.jpg") no-repeat left -10px;
   height: 202px;
 }
 
+/* line 145, ../sass/_language_fix.scss */
 .i18n-fa .latest-posts-block {
   background: url("../images/bg_latest_post_fa.jpg") no-repeat left center;
 }
+/* line 149, ../sass/_language_fix.scss */
 .i18n-fa .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link,
 .i18n-fa .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
   float: right;
+}
+
+/* line 28, ../sass/_calendar.scss */
+.calendar-calendar {
+  /**/
+}
+/* line 31, ../sass/_calendar.scss */
+.calendar-calendar .year-view td {
+  padding: 4px;
+  background: whitesmoke;
+}
+/* line 36, ../sass/_calendar.scss */
+.calendar-calendar .month-view {
+  /**/
+}
+/* line 39, ../sass/_calendar.scss */
+.calendar-calendar .month-view .date-nav-wrapper {
+  margin: 0;
+}
+/* line 41, ../sass/_calendar.scss */
+.calendar-calendar .month-view .date-nav-wrapper .date-nav {
+  margin: 0;
+  font-size: 17px;
+  background: whitesmoke;
+}
+/* line 53, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini {
+  margin-bottom: 20px;
+}
+/* line 57, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini thead {
+  /**/
+}
+/* line 59, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini thead tr {
+  border: none;
+}
+/* line 61, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini thead tr th {
+  background: #c67b1a;
+  color: white;
+  font-size: 16px;
+  padding: 6px 0;
+  border: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+/* line 73, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody {
+  background: #f6f6f6;
+}
+/* line 76, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr {
+  border: 0px;
+  font-size: 16px;
+}
+/* line 79, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td {
+  vertical-align: middle;
+  padding: 5px 0;
+  background: whitesmoke;
+}
+/* line 85, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td.today .mini-day-off {
+  background: #c67b1a;
+  width: 23px;
+  height: 23px;
+  border-radius: 11%;
+  color: white;
+  text-decoration: none;
+  padding: 5px 3px 2px 4px;
+  text-align: center;
+  margin: 0px 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 97, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td.today .mini-day-off:hover {
+  background: #c67b1a;
+  color: white;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 106, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .calendar-empty {
+  text-align: center;
+}
+/* line 111, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-on {
+  text-align: center;
+}
+/* line 113, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-on a {
+  display: block;
+  background: #e6e6e6;
+  width: 23px;
+  height: 23px;
+  border-radius: 11%;
+  color: #777777;
+  text-decoration: none;
+  padding: 5px 3px 2px 4px;
+  text-align: center;
+  margin: 0px 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 126, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-on a:hover {
+  background: #c67b1a;
+  color: white;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 135, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-off {
+  text-align: center;
+}
+/* line 137, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-off a {
+  /**/
+}
+
+/* line 152, ../sass/_calendar.scss */
+.view-id-opportunities_calendar {
+  /**/
+}
+/* line 154, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header {
+  /**/
+}
+/* line 156, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header h1 {
+  /**/
+}
+/* line 159, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper {
+  /**/
+}
+/* line 161, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav {
+  padding: 0;
+  height: auto;
+  margin: 0;
+}
+/* line 166, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .date-heading {
+  /**/
+}
+/* line 168, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .date-heading h3 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  top: 4px;
+}
+/* line 174, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .date-heading h3 a {
+  color: white;
+}
+/* line 180, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager {
+  background: #3c6e8f;
+  height: 36px;
+  border-radius: 0px;
+}
+/* line 186, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-prev,
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-next {
+  text-align: left;
+  width: 107px;
+  color: white;
+  padding: 8px 7px 6px 7px;
+  background: transparent;
+  top: 0px;
+}
+/* line 193, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-prev a,
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-next a {
+  font-size: 17px;
+  text-transform: uppercase;
+}
+/* line 199, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-prev {
+  left: 0;
+}
+/* line 204, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-next {
+  text-align: right;
+}
+/* line 212, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar {
+  /**/
+}
+/* line 214, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view {
+  /**/
+}
+/* line 216, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full {
+  /**/
+}
+/* line 220, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full thead {
+  /**/
+}
+/* line 222, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full thead tr {
+  /**/
+}
+/* line 224, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full thead tr th {
+  background: #c67b1a;
+  color: white;
+  font-size: 16px;
+  padding: 6px 0;
+  border: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+/* line 238, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody {
+  /**/
+}
+/* line 240, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr {
+  /**/
+  border-bottom: none;
+  border-top: none;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+}
+/* line 252, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box {
+  border: 0px;
+  font-size: 19px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-left: 1px solid #cccccc;
+}
+/* line 260, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box.today {
+  border-top: 2px solid #c67b1a;
+  border-left: 2px solid #c67b1a;
+  border-right: 2px solid #c67b1a;
+  background: #ffe1bb;
+  color: #c67b1a;
+}
+/* line 275, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box.past {
+  background: #f6f6f6;
+  color: #c9c9c9;
+}
+/* line 284, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box.future {
+  background: white;
+  color: black;
+}
+/* line 292, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day {
+  border-bottom: 0px;
+  border: 0;
+  padding: 0;
+}
+/* line 298, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day .monthview {
+  background: #cbcbcb;
+  border-radius: 0;
+  padding: 5px 5px 2px 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+/* line 305, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day .monthview a {
+  color: white;
+}
+/* line 310, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day .monthview .cutoff {
+  border-radius: 0;
+  background: #cbcbcb;
+}
+/* line 320, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .future + .multi-day .monthview {
+  background: #c67b1a;
+}
+/* line 322, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .future + .multi-day .monthview a {
+  color: white;
+}
+/* line 325, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .future + .multi-day .monthview .cutoff {
+  background: #c67b1a;
+}
+/* line 330, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.past {
+  background: #f6f6f6;
+  color: #c9c9c9;
+}
+/* line 336, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today {
+  border-bottom: 2px solid #c67b1a;
+  border-left: 2px solid #c67b1a;
+  border-right: 2px solid #c67b1a;
+  background: #ffe1bb;
+}
+/* line 344, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today + .multi-day .monthview {
+  background: #c67b1a;
+}
+/* line 346, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today + .multi-day .monthview a {
+  color: white;
+}
+/* line 349, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today + .multi-day .monthview .cutoff {
+  background: #c67b1a;
+}
+/* line 355, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.future {
+  background: white;
+  color: black;
+}
+/* line 364, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.single-day td.single-day.past {
+  background: #f6f6f6;
+  color: #c9c9c9;
+}
+/* line 370, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.single-day td.single-day.today {
+  border-bottom: 2px solid #c67b1a;
+  border-left: 2px solid #c67b1a;
+  border-right: 2px solid #c67b1a;
+  background: #ffe1bb;
+}
+/* line 378, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.single-day td.single-day.future {
+  background: white;
+  color: black;
 }
 
 /*
@@ -117,13 +494,16 @@
  */
 /* Desktops/laptops and up ======================================= */
 @media only screen and (min-width: 769px) {
+  /* line 23, ../sass/responsive.custom.scss */
   .two-66-33 > .region-two-66-33-first {
     width: 100%;
   }
+  /* line 25, ../sass/responsive.custom.scss */
   .two-66-33 > .region-two-66-33-first .region-inner {
     margin-right: 330px;
   }
 
+  /* line 27, ../sass/responsive.custom.scss */
   .two-66-33 > .region-two-66-33-second {
     width: 330px;
     margin-left: -330px;
@@ -131,16 +511,19 @@
 }
 /* Tablet sizes and up =========================================== */
 @media only screen and (min-width: 480px) and (max-width: 691px) {
+  /* line 37, ../sass/responsive.custom.scss */
   #leaderboard-wrapper .block-top-header-menu {
     width: 39px !important;
   }
 
+  /* line 38, ../sass/responsive.custom.scss */
   #leaderboard-wrapper .block-top-header-menu .menu {
     display: none;
   }
 }
 /* @media only screen and (min-width:769px) and (max-width:989px){} */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+  /* line 44, ../sass/responsive.custom.scss */
   .two-66-33 > .region-two-66-33-first,
   .two-66-33 > .region-two-66-33-second {
     float: none;
@@ -163,6 +546,7 @@
    * "Float Region blocks" is an extension for floating blocks in regions, see
    * your themes appearance settings, under the Extensions tab.
    */
+  /* line 69, ../sass/responsive.custom.scss */
   .region[class*="float-blocks"] .block {
     float: none;
     width: 100%;

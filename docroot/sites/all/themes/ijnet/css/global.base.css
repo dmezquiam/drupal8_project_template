@@ -1,41 +1,51 @@
+/* line 7, ../sass/_language_fix.scss */
 .i18n-en .latest-posts-block {
   background: url("../images/bg_latest_post_en.jpg") no-repeat left center;
 }
 
 @media (max-width: 989px) and (min-width: 769px) {
+  /* line 17, ../sass/_language_fix.scss */
   .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
     top: -23px !important;
     left: 29px;
     line-height: normal;
   }
 }
+/* line 26, ../sass/_language_fix.scss */
 .i18n-es .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   top: 5px;
   left: 29px;
   line-height: normal;
 }
+/* line 34, ../sass/_language_fix.scss */
 .i18n-es .latest-posts-block {
   background: url("../images/bg_latest_post_es.jpg") no-repeat left center;
 }
+/* line 39, ../sass/_language_fix.scss */
 .i18n-es.section-knight-media-innovators #block-blockify-blockify-page-title h1 {
   font-size: 25px;
 }
 
+/* line 47, ../sass/_language_fix.scss */
 .i18n-pt-br .block-login-block {
   font-size: 15px;
 }
+/* line 50, ../sass/_language_fix.scss */
 .i18n-pt-br .mail-subscribe .dropdown .clicker h4 {
   font-size: 14px;
 }
+/* line 54, ../sass/_language_fix.scss */
 .i18n-pt-br .latest-posts-block {
   background: url("../images/bg_latest_post_pt.jpg") no-repeat left center;
 }
+/* line 58, ../sass/_language_fix.scss */
 .i18n-pt-br .latest-posts-block .inner-block a {
   line-height: 14px;
   font-size: 12px;
   padding: 13px 44px 13px 16px;
 }
+/* line 64, ../sass/_language_fix.scss */
 .i18n-pt-br .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   width: 270px;
@@ -44,23 +54,29 @@
   line-height: normal;
 }
 
+/* line 76, ../sass/_language_fix.scss */
 .i18n-ru .content-tabs .block-title {
   left: 22px;
 }
+/* line 80, ../sass/_language_fix.scss */
 .i18n-ru .block-top-header-menu {
   width: 65%;
 }
+/* line 81, ../sass/_language_fix.scss */
 .i18n-ru .block-lang-dropdown {
   width: 30%;
 }
+/* line 82, ../sass/_language_fix.scss */
 .i18n-ru .block-top-header-menu .block-content ul.menu li a {
   display: block;
   line-height: 12px;
   margin: 0 4px;
 }
+/* line 89, ../sass/_language_fix.scss */
 .i18n-ru .block-login-block {
   font-size: 14px;
 }
+/* line 95, ../sass/_language_fix.scss */
 .i18n-ru .pane-quicktabs-opportunities-for-journalists .block-title {
   font-size: 13px;
   width: 130px;
@@ -68,37 +84,398 @@
   left: 29px;
   line-height: normal;
 }
+/* line 105, ../sass/_language_fix.scss */
 .i18n-ru .latest-posts-block {
   background: url("../images/bg_latest_post_ru.jpg") no-repeat left center;
 }
+/* line 109, ../sass/_language_fix.scss */
 .i18n-ru .latest-posts-block .inner-block a {
   padding: 13px 44px 13px 22px;
   line-height: 14px;
   font-size: 11px;
 }
+/* line 115, ../sass/_language_fix.scss */
 .i18n-ru .block-about-author .button-tiny {
   margin-top: 10px;
 }
 
+/* line 123, ../sass/_language_fix.scss */
 .i18n-ar .latest-posts-block {
   background: url("../images/bg_latest_post_ar.jpg") no-repeat left center;
 }
+/* line 128, ../sass/_language_fix.scss */
 .i18n-ar .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link,
 .i18n-ar .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
   float: right;
 }
 
+/* line 136, ../sass/_language_fix.scss */
 .i18n-zh-hans .latest-posts-block {
   background: url("../images/bg_latest_post_zh-hans.jpg") no-repeat left -10px;
   height: 202px;
 }
 
+/* line 145, ../sass/_language_fix.scss */
 .i18n-fa .latest-posts-block {
   background: url("../images/bg_latest_post_fa.jpg") no-repeat left center;
 }
+/* line 149, ../sass/_language_fix.scss */
 .i18n-fa .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link,
 .i18n-fa .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
   float: right;
+}
+
+/* line 28, ../sass/_calendar.scss */
+.calendar-calendar {
+  /**/
+}
+/* line 31, ../sass/_calendar.scss */
+.calendar-calendar .year-view td {
+  padding: 4px;
+  background: whitesmoke;
+}
+/* line 36, ../sass/_calendar.scss */
+.calendar-calendar .month-view {
+  /**/
+}
+/* line 39, ../sass/_calendar.scss */
+.calendar-calendar .month-view .date-nav-wrapper {
+  margin: 0;
+}
+/* line 41, ../sass/_calendar.scss */
+.calendar-calendar .month-view .date-nav-wrapper .date-nav {
+  margin: 0;
+  font-size: 17px;
+  background: whitesmoke;
+}
+/* line 53, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini {
+  margin-bottom: 20px;
+}
+/* line 57, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini thead {
+  /**/
+}
+/* line 59, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini thead tr {
+  border: none;
+}
+/* line 61, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini thead tr th {
+  background: #c67b1a;
+  color: white;
+  font-size: 16px;
+  padding: 6px 0;
+  border: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+/* line 73, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody {
+  background: #f6f6f6;
+}
+/* line 76, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr {
+  border: 0px;
+  font-size: 16px;
+}
+/* line 79, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td {
+  vertical-align: middle;
+  padding: 5px 0;
+  background: whitesmoke;
+}
+/* line 85, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td.today .mini-day-off {
+  background: #c67b1a;
+  width: 23px;
+  height: 23px;
+  border-radius: 11%;
+  color: white;
+  text-decoration: none;
+  padding: 5px 3px 2px 4px;
+  text-align: center;
+  margin: 0px 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 97, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td.today .mini-day-off:hover {
+  background: #c67b1a;
+  color: white;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 106, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .calendar-empty {
+  text-align: center;
+}
+/* line 111, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-on {
+  text-align: center;
+}
+/* line 113, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-on a {
+  display: block;
+  background: #e6e6e6;
+  width: 23px;
+  height: 23px;
+  border-radius: 11%;
+  color: #777777;
+  text-decoration: none;
+  padding: 5px 3px 2px 4px;
+  text-align: center;
+  margin: 0px 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 126, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-on a:hover {
+  background: #c67b1a;
+  color: white;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 135, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-off {
+  text-align: center;
+}
+/* line 137, ../sass/_calendar.scss */
+.calendar-calendar .month-view table.mini tbody tr td .mini-day-off a {
+  /**/
+}
+
+/* line 152, ../sass/_calendar.scss */
+.view-id-opportunities_calendar {
+  /**/
+}
+/* line 154, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header {
+  /**/
+}
+/* line 156, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header h1 {
+  /**/
+}
+/* line 159, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper {
+  /**/
+}
+/* line 161, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav {
+  padding: 0;
+  height: auto;
+  margin: 0;
+}
+/* line 166, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .date-heading {
+  /**/
+}
+/* line 168, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .date-heading h3 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  top: 4px;
+}
+/* line 174, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .date-heading h3 a {
+  color: white;
+}
+/* line 180, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager {
+  background: #3c6e8f;
+  height: 36px;
+  border-radius: 0px;
+}
+/* line 186, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-prev,
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-next {
+  text-align: left;
+  width: 107px;
+  color: white;
+  padding: 8px 7px 6px 7px;
+  background: transparent;
+  top: 0px;
+}
+/* line 193, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-prev a,
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-next a {
+  font-size: 17px;
+  text-transform: uppercase;
+}
+/* line 199, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-prev {
+  left: 0;
+}
+/* line 204, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .view-header .date-nav-wrapper .date-nav .pager .date-next {
+  text-align: right;
+}
+/* line 212, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar {
+  /**/
+}
+/* line 214, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view {
+  /**/
+}
+/* line 216, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full {
+  /**/
+}
+/* line 220, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full thead {
+  /**/
+}
+/* line 222, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full thead tr {
+  /**/
+}
+/* line 224, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full thead tr th {
+  background: #c67b1a;
+  color: white;
+  font-size: 16px;
+  padding: 6px 0;
+  border: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+/* line 238, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody {
+  /**/
+}
+/* line 240, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr {
+  /**/
+  border-bottom: none;
+  border-top: none;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+}
+/* line 252, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box {
+  border: 0px;
+  font-size: 19px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-left: 1px solid #cccccc;
+}
+/* line 260, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box.today {
+  border-top: 2px solid #c67b1a;
+  border-left: 2px solid #c67b1a;
+  border-right: 2px solid #c67b1a;
+  background: #ffe1bb;
+  color: #c67b1a;
+}
+/* line 275, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box.past {
+  background: #f6f6f6;
+  color: #c9c9c9;
+}
+/* line 284, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.date-box td.date-box.future {
+  background: white;
+  color: black;
+}
+/* line 292, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day {
+  border-bottom: 0px;
+  border: 0;
+  padding: 0;
+}
+/* line 298, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day .monthview {
+  background: #cbcbcb;
+  border-radius: 0;
+  padding: 5px 5px 2px 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+/* line 305, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day .monthview a {
+  color: white;
+}
+/* line 310, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .multi-day .monthview .cutoff {
+  border-radius: 0;
+  background: #cbcbcb;
+}
+/* line 320, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .future + .multi-day .monthview {
+  background: #c67b1a;
+}
+/* line 322, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .future + .multi-day .monthview a {
+  color: white;
+}
+/* line 325, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day .future + .multi-day .monthview .cutoff {
+  background: #c67b1a;
+}
+/* line 330, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.past {
+  background: #f6f6f6;
+  color: #c9c9c9;
+}
+/* line 336, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today {
+  border-bottom: 2px solid #c67b1a;
+  border-left: 2px solid #c67b1a;
+  border-right: 2px solid #c67b1a;
+  background: #ffe1bb;
+}
+/* line 344, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today + .multi-day .monthview {
+  background: #c67b1a;
+}
+/* line 346, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today + .multi-day .monthview a {
+  color: white;
+}
+/* line 349, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.today + .multi-day .monthview .cutoff {
+  background: #c67b1a;
+}
+/* line 355, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.multi-day td.single-day.future {
+  background: white;
+  color: black;
+}
+/* line 364, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.single-day td.single-day.past {
+  background: #f6f6f6;
+  color: #c9c9c9;
+}
+/* line 370, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.single-day td.single-day.today {
+  border-bottom: 2px solid #c67b1a;
+  border-left: 2px solid #c67b1a;
+  border-right: 2px solid #c67b1a;
+  background: #ffe1bb;
+}
+/* line 378, ../sass/_calendar.scss */
+.view-id-opportunities_calendar .calendar-calendar .month-view table.full tbody tr.single-day td.single-day.future {
+  background: white;
+  color: black;
 }
 
 /*
@@ -113,14 +490,17 @@
  *   element-invisible and focusable styles.
  */
 /* DRUPAL ADMIN TOOL BAR */
+/* line 18, ../sass/global.base.scss */
 body #admin-menu {
   font-size: 14px;
 }
 
+/* line 19, ../sass/global.base.scss */
 body.admin-menu {
   margin-top: 26px !important;
 }
 
+/* line 20, ../sass/global.base.scss */
 #admin-menu .dropdown li ul {
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.72);
 }
@@ -131,6 +511,7 @@ body.admin-menu {
 /*
  * Corrects block display not defined in IE6/7/8/9 & FF3
  */
+/* line 38, ../sass/global.base.scss */
 article,
 aside,
 details,
@@ -148,6 +529,7 @@ summary {
 /*
  * Corrects inline-block display not defined in IE6/7/8/9 & FF3
  */
+/* line 48, ../sass/global.base.scss */
 audio,
 canvas,
 video {
@@ -160,6 +542,7 @@ video {
  * Prevents modern browsers from displaying 'audio' without controls
  * Remove excess height in iOS5 devices
  */
+/* line 59, ../sass/global.base.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -169,6 +552,7 @@ audio:not([controls]) {
  * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
  * Known issue: no IE6 support
  */
+/* line 69, ../sass/global.base.scss */
 [hidden] {
   display: none;
 }
@@ -185,6 +569,7 @@ audio:not([controls]) {
  * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
+/* line 87, ../sass/global.base.scss */
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -197,6 +582,7 @@ html {
 /*
  * 1 . Addresses margins handled incorrectly in IE6/7
  */
+/* line 99, ../sass/global.base.scss */
 body {
   font-size: 87.5%;
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
@@ -213,6 +599,7 @@ body {
 /*
  * Addresses font-family inconsistency between 'textarea' and other form elements.
  */
+/* line 117, ../sass/global.base.scss */
 button,
 input,
 select,
@@ -226,6 +613,7 @@ textarea {
 /* =============================================================================
  *   Links
  * ========================================================================== */
+/* line 128, ../sass/global.base.scss */
 a {
   text-decoration: none;
   -webkit-transition: color 0.2s ease-in-out;
@@ -235,6 +623,7 @@ a {
   transition: color 0.2s ease-in-out;
   color: #137a9a;
 }
+/* line 140, ../sass/global.base.scss */
 a:hover, a:focus {
   outline: 0;
   text-decoration: none;
@@ -244,6 +633,7 @@ a:hover, a:focus {
 /*
  * Addresses outline displayed oddly in Chrome
  */
+/* line 150, ../sass/global.base.scss */
 a:focus {
   outline: thin dotted;
 }
@@ -257,6 +647,7 @@ a:focus {
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
+/* line 166, ../sass/global.base.scss */
 h1 {
   font-size: 29px;
   line-height: 33px;
@@ -265,10 +656,12 @@ h1 {
   font-weight: normal;
   margin: 30px 0px 10px 0px;
 }
+/* line 173, ../sass/global.base.scss */
 h1 a {
   color: #b75f18;
 }
 
+/* line 175, ../sass/global.base.scss */
 h2 {
   font-size: 26px;
   line-height: 30px;
@@ -277,10 +670,12 @@ h2 {
   font-weight: normal;
   margin: 30px 0px 10px 0px;
 }
+/* line 182, ../sass/global.base.scss */
 h2 a {
   color: #b75f18;
 }
 
+/* line 184, ../sass/global.base.scss */
 h3 {
   font-size: 20px;
   line-height: 22px;
@@ -289,10 +684,12 @@ h3 {
   font-weight: bold;
   margin: 30px 0 10px 0;
 }
+/* line 191, ../sass/global.base.scss */
 h3 a {
   color: #b75f18;
 }
 
+/* line 193, ../sass/global.base.scss */
 h4 {
   font-size: 16px;
   line-height: 15px;
@@ -301,10 +698,12 @@ h4 {
   font-weight: bold;
   margin: 30px 0 10px 0;
 }
+/* line 200, ../sass/global.base.scss */
 h4 a {
   color: #b75f18;
 }
 
+/* line 202, ../sass/global.base.scss */
 h5 {
   font-size: 16px;
   line-height: 33px;
@@ -313,10 +712,12 @@ h5 {
   font-weight: bold;
   margin: 10px 0 10px 0;
 }
+/* line 209, ../sass/global.base.scss */
 h5 a {
   color: #b75f18;
 }
 
+/* line 211, ../sass/global.base.scss */
 h6 {
   font-size: 16px;
   line-height: 22px;
@@ -325,6 +726,7 @@ h6 {
   font-weight: bold;
   margin: 5px 0 10px 0;
 }
+/* line 218, ../sass/global.base.scss */
 h6 a {
   color: #b75f18;
 }
@@ -332,26 +734,31 @@ h6 a {
 /* =============================================================================
  *   HTML Elements
  * ========================================================================== */
+/* line 229, ../sass/global.base.scss */
 b.big,
 strong.big {
   color: #137a9a;
   font-size: 16px;
 }
 
+/* line 248, ../sass/global.base.scss */
 blockquote {
   padding: 1em 60px;
   margin: 0px;
   background: url("../images/blockquote.png") no-repeat 0 0;
 }
 
+/* line 260, ../sass/global.base.scss */
 ul {
   color: #2a2a2a;
 }
 
+/* line 262, ../sass/global.base.scss */
 ol {
   color: #2a2a2a;
 }
 
+/* line 281, ../sass/global.base.scss */
 pre,
 code,
 tt,
@@ -364,6 +771,7 @@ var {
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
+/* line 289, ../sass/global.base.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -371,6 +779,7 @@ abbr[title] {
 /*
  * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
  */
+/* line 298, ../sass/global.base.scss */
 b,
 strong {
   font-weight: bold;
@@ -379,6 +788,7 @@ strong {
 /*
  * Addresses styling not present in S5, Chrome
  */
+/* line 306, ../sass/global.base.scss */
 dfn {
   font-style: italic;
 }
@@ -386,6 +796,7 @@ dfn {
 /*
  * Addresses styling not present in IE6/7/8/9
  */
+/* line 314, ../sass/global.base.scss */
 mark {
   background: #ff0;
   color: #000;
@@ -394,6 +805,7 @@ mark {
 /*
  * Addresses margins set differently in IE6/7
  */
+/* line 324, ../sass/global.base.scss */
 p,
 pre {
   font-size: 14px;
@@ -402,6 +814,7 @@ pre {
   margin: 0 0 1.5em;
 }
 
+/* line 332, ../sass/global.base.scss */
 html[dir="rtl"] p,
 html[dir="rtl"] pre {
   font-size: 16px;
@@ -414,6 +827,7 @@ html[dir="rtl"] pre {
  * Corrects font family set oddly in IE6, S4/5, Chrome
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59
  */
+/* line 348, ../sass/global.base.scss */
 pre,
 code,
 kbd,
@@ -425,6 +839,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers
  */
+/* line 357, ../sass/global.base.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -435,16 +850,19 @@ pre {
  * 1. Addresses CSS quotes not supported in IE6/7
  * 2. Addresses quote property not supported in S4
  */
+/* line 369, ../sass/global.base.scss */
 q {
   quotes: none;
 }
 
+/* line 375, ../sass/global.base.scss */
 q:before,
 q:after {
   content: '';
   content: none;
 }
 
+/* line 381, ../sass/global.base.scss */
 small {
   font-size: 75%;
 }
@@ -453,6 +871,7 @@ small {
  * Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930
  */
+/* line 391, ../sass/global.base.scss */
 sub,
 sup {
   font-size: 75%;
@@ -461,10 +880,12 @@ sup {
   vertical-align: baseline;
 }
 
+/* line 399, ../sass/global.base.scss */
 sup {
   top: -0.5em;
 }
 
+/* line 404, ../sass/global.base.scss */
 sub {
   bottom: -0.25em;
 }
@@ -475,6 +896,7 @@ sub {
 /*
  * Addresses margins set differently in IE6/7
  */
+/* line 419, ../sass/global.base.scss */
 dl,
 menu,
 ol,
@@ -482,6 +904,7 @@ ul {
   margin: 1em 0;
 }
 
+/* line 424, ../sass/global.base.scss */
 dd {
   margin: 0 0 0 40px;
 }
@@ -489,6 +912,7 @@ dd {
 /*
  * Addresses paddings set differently in IE6/7
  */
+/* line 434, ../sass/global.base.scss */
 menu,
 ol,
 ul {
@@ -498,6 +922,7 @@ ul {
 /*
  * Corrects list images handled incorrectly in IE7
  */
+/* line 443, ../sass/global.base.scss */
 nav ul,
 nav ol {
   list-style: none;
@@ -512,6 +937,7 @@ nav ol {
  * 2. Improves image quality when scaled in IE7
  *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
  */
+/* line 458, ../sass/global.base.scss */
 img {
   /* border: 0; */
   /* Drupal core already does this, uncomment if you need it */
@@ -521,6 +947,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE9
  */
+/* line 467, ../sass/global.base.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -531,6 +958,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE6/7/8/9, S5, O11
  */
+/* line 479, ../sass/global.base.scss */
 figure {
   margin: 0;
 }
@@ -538,6 +966,7 @@ figure {
 /* =============================================================================
     Forms
    ========================================================================== */
+/* line 496, ../sass/global.base.scss */
 input[type="email"],
 input[type="tel"],
 input[type="number"],
@@ -556,6 +985,7 @@ input[type="text"] {
 /*
  * Corrects margin displayed oddly in IE6/7
  */
+/* line 503, ../sass/global.base.scss */
 form {
   margin: 0;
 }
@@ -563,11 +993,13 @@ form {
 /*
  * Define consistent margin, and padding
  */
+/* line 511, ../sass/global.base.scss */
 fieldset {
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
+/* line 516, ../sass/global.base.scss */
 iframe {
   width: 100%;
 }
@@ -577,6 +1009,7 @@ iframe {
  * 2. Corrects text not wrapping in FF3
  * 3. Corrects alignment displayed oddly in IE6/7
  */
+/* line 523, ../sass/global.base.scss */
 legend {
   border: 0;
   padding: 0;
@@ -589,6 +1022,7 @@ legend {
  * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
  * 3. Improves appearance and consistency in all browsers
  */
+/* line 539, ../sass/global.base.scss */
 button,
 input,
 select,
@@ -602,6 +1036,7 @@ textarea {
 /*
  * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
  */
+/* line 551, ../sass/global.base.scss */
 button,
 input {
   line-height: normal;
@@ -613,6 +1048,7 @@ input {
  * 3. Removes inner spacing in IE7 without affecting normal text inputs
  *    Known issue: inner spacing remains in IE6
  */
+/* line 565, ../sass/global.base.scss */
 button,
 input[type="button"],
 input[type="reset"],
@@ -657,6 +1093,7 @@ input[type="submit"] {
   -ms-border-radius: 12px;
   border-radius: 12px;
 }
+/* line 250, ../sass/_custom.scss */
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -678,18 +1115,21 @@ input[type="submit"]:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
   /* IE6-9 */
 }
+/* line 221, ../sass/_custom.scss */
 button.active,
 input[type="button"].active,
 input[type="reset"].active,
 input[type="submit"].active {
   color: white;
 }
+/* line 222, ../sass/_custom.scss */
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
   color: white;
 }
+/* line 568, ../sass/global.base.scss */
 button.button-normal,
 input[type="button"].button-normal,
 input[type="reset"].button-normal,
@@ -734,6 +1174,7 @@ input[type="submit"].button-normal {
   -ms-border-radius: 12px;
   border-radius: 12px;
 }
+/* line 250, ../sass/_custom.scss */
 button.button-normal:hover,
 input[type="button"].button-normal:hover,
 input[type="reset"].button-normal:hover,
@@ -755,18 +1196,21 @@ input[type="submit"].button-normal:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
   /* IE6-9 */
 }
+/* line 221, ../sass/_custom.scss */
 button.button-normal.active,
 input[type="button"].button-normal.active,
 input[type="reset"].button-normal.active,
 input[type="submit"].button-normal.active {
   color: white;
 }
+/* line 222, ../sass/_custom.scss */
 button.button-normal:hover,
 input[type="button"].button-normal:hover,
 input[type="reset"].button-normal:hover,
 input[type="submit"].button-normal:hover {
   color: white;
 }
+/* line 569, ../sass/global.base.scss */
 button.button-small,
 input[type="button"].button-small,
 input[type="reset"].button-small,
@@ -811,6 +1255,7 @@ input[type="submit"].button-small {
   -ms-border-radius: 12px;
   border-radius: 12px;
 }
+/* line 250, ../sass/_custom.scss */
 button.button-small:hover,
 input[type="button"].button-small:hover,
 input[type="reset"].button-small:hover,
@@ -832,18 +1277,21 @@ input[type="submit"].button-small:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
   /* IE6-9 */
 }
+/* line 221, ../sass/_custom.scss */
 button.button-small.active,
 input[type="button"].button-small.active,
 input[type="reset"].button-small.active,
 input[type="submit"].button-small.active {
   color: white;
 }
+/* line 222, ../sass/_custom.scss */
 button.button-small:hover,
 input[type="button"].button-small:hover,
 input[type="reset"].button-small:hover,
 input[type="submit"].button-small:hover {
   color: white;
 }
+/* line 570, ../sass/global.base.scss */
 button.button-tiny,
 input[type="button"].button-tiny,
 input[type="reset"].button-tiny,
@@ -888,6 +1336,7 @@ input[type="submit"].button-tiny {
   -ms-border-radius: 7px;
   border-radius: 7px;
 }
+/* line 250, ../sass/_custom.scss */
 button.button-tiny:hover,
 input[type="button"].button-tiny:hover,
 input[type="reset"].button-tiny:hover,
@@ -909,18 +1358,21 @@ input[type="submit"].button-tiny:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
   /* IE6-9 */
 }
+/* line 221, ../sass/_custom.scss */
 button.button-tiny.active,
 input[type="button"].button-tiny.active,
 input[type="reset"].button-tiny.active,
 input[type="submit"].button-tiny.active {
   color: white;
 }
+/* line 222, ../sass/_custom.scss */
 button.button-tiny:hover,
 input[type="button"].button-tiny:hover,
 input[type="reset"].button-tiny:hover,
 input[type="submit"].button-tiny:hover {
   color: white;
 }
+/* line 571, ../sass/global.base.scss */
 button.button-clean-tiny,
 input[type="button"].button-clean-tiny,
 input[type="reset"].button-clean-tiny,
@@ -958,6 +1410,7 @@ input[type="submit"].button-clean-tiny {
   background-repeat: no-repeat;
   filter: none;
 }
+/* line 309, ../sass/_custom.scss */
 button.button-clean-tiny:hover,
 input[type="button"].button-clean-tiny:hover,
 input[type="reset"].button-clean-tiny:hover,
@@ -974,6 +1427,7 @@ input[type="submit"].button-clean-tiny:hover {
   filter: none;
 }
 
+/* line 574, ../sass/global.base.scss */
 .button-normal {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -1015,6 +1469,7 @@ input[type="submit"].button-clean-tiny:hover {
   -ms-border-radius: 12px;
   border-radius: 12px;
 }
+/* line 250, ../sass/_custom.scss */
 .button-normal:hover {
   background: #d2782f;
   /* Old browsers */
@@ -1033,13 +1488,16 @@ input[type="submit"].button-clean-tiny:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
   /* IE6-9 */
 }
+/* line 221, ../sass/_custom.scss */
 .button-normal.active {
   color: white;
 }
+/* line 222, ../sass/_custom.scss */
 .button-normal:hover {
   color: white;
 }
 
+/* line 578, ../sass/global.base.scss */
 .button-small {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -1081,6 +1539,7 @@ input[type="submit"].button-clean-tiny:hover {
   -ms-border-radius: 12px;
   border-radius: 12px;
 }
+/* line 250, ../sass/_custom.scss */
 .button-small:hover {
   background: #d2782f;
   /* Old browsers */
@@ -1099,13 +1558,16 @@ input[type="submit"].button-clean-tiny:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
   /* IE6-9 */
 }
+/* line 221, ../sass/_custom.scss */
 .button-small.active {
   color: white;
 }
+/* line 222, ../sass/_custom.scss */
 .button-small:hover {
   color: white;
 }
 
+/* line 581, ../sass/global.base.scss */
 .button-tiny {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -1147,6 +1609,7 @@ input[type="submit"].button-clean-tiny:hover {
   -ms-border-radius: 7px;
   border-radius: 7px;
 }
+/* line 250, ../sass/_custom.scss */
 .button-tiny:hover {
   background: #d2782f;
   /* Old browsers */
@@ -1165,13 +1628,16 @@ input[type="submit"].button-clean-tiny:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lighten($color-bt-bg, 5% )', endColorstr='lighten(#b75f18, 5% )',GradientType=0 );
   /* IE6-9 */
 }
+/* line 221, ../sass/_custom.scss */
 .button-tiny.active {
   color: white;
 }
+/* line 222, ../sass/_custom.scss */
 .button-tiny:hover {
   color: white;
 }
 
+/* line 585, ../sass/global.base.scss */
 .button-clean-tiny {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -1206,6 +1672,7 @@ input[type="submit"].button-clean-tiny:hover {
   background-repeat: no-repeat;
   filter: none;
 }
+/* line 309, ../sass/_custom.scss */
 .button-clean-tiny:hover {
   color: white;
   background-color: #d78644;
@@ -1220,6 +1687,7 @@ input[type="submit"].button-clean-tiny:hover {
 }
 
 /* Re-set default cursor for disabled elements */
+/* line 591, ../sass/global.base.scss */
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -1231,6 +1699,7 @@ input[disabled] {
  * 3. Removes excess padding in IE7
  *    Known issue: excess padding remains in IE6
  */
+/* line 603, ../sass/global.base.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -1243,6 +1712,7 @@ input[type="radio"] {
  * 1. Addresses appearance set to searchfield in S5, Chrome
  * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
  */
+/* line 615, ../sass/global.base.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -1253,6 +1723,7 @@ input[type="search"] {
 /*
  * Removes inner padding and search cancel button in S5, Chrome on OS X
  */
+/* line 627, ../sass/global.base.scss */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -1262,17 +1733,20 @@ input[type="search"]::-webkit-search-cancel-button {
  * Removes inner padding and border in FF3+
  * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
  */
+/* line 637, ../sass/global.base.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
+/* line 642, ../sass/global.base.scss */
 textarea {
   overflow: auto;
   vertical-align: top;
 }
 
+/* line 647, ../sass/global.base.scss */
 select {
   background: white;
   border: 1px solid #c2c2c2;
@@ -1291,6 +1765,7 @@ select {
 /*
  * 1. Remove most spacing between table cells
  */
+/* line 665, ../sass/global.base.scss */
 table {
   border: 1px solid;
   border-spacing: 0;
@@ -1307,6 +1782,7 @@ table {
  * see Extensions > Modify Output > Design
  * $gutter-width is set in _base.scss
  */
+/* line 693, ../sass/global.base.scss */
 #main-content,
 .block-inner,
 .pane-inner,
@@ -1325,6 +1801,7 @@ div.messages {
  * Panel pages need negative margin equal to the gutter width applied to #content,
  * this is taken care of in theme settings as per above for normal gutters
  */
+/* line 703, ../sass/global.base.scss */
 #content .panel-display,
 #content .panel-flexible {
   margin-left: -20px;
@@ -1341,12 +1818,14 @@ div.messages {
  *   the "dissappering images" bug in IE8.
  * - Mapping services such as Google Maps may break also, see below for fixes.
  */
+/* line 721, ../sass/global.base.scss */
 img {
   height: auto;
   -ms-interpolation-mode: bicubic;
 }
 
 /* Ethan Marcotte - http://front.ie/l8rJaA */
+/* line 731, ../sass/global.base.scss */
 img,
 embed,
 object,
@@ -1355,6 +1834,7 @@ video {
 }
 
 /* Disable flexiblity for IE8 and below */
+/* line 740, ../sass/global.base.scss */
 .lt-ie9 img,
 .lt-ie9 object,
 .lt-ie9 embed,
@@ -1363,6 +1843,7 @@ video {
 }
 
 /* Override max-width 100% for map displays */
+/* line 753, ../sass/global.base.scss */
 #map img,
 .gmap img,
 .view-gmap img,
@@ -1378,6 +1859,7 @@ video {
     Misc helpers, Accessibility classes etc
    ========================================================================== */
 /* Prevent overflowing content */
+/* line 770, ../sass/global.base.scss */
 header[role=banner],
 .content-inner,
 .nav,
@@ -1399,6 +1881,7 @@ header[role=banner],
  * Kellum Method: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
  * Additional helpers from http://html5boilerplate.com/docs/css/
  */
+/* line 786, ../sass/global.base.scss */
 .ir {
   /* Kellum Method */
   display: block !important;
@@ -1418,6 +1901,7 @@ header[role=banner],
 }
 
 /* More robust element-invisible and element-focuable classes */
+/* line 806, ../sass/global.base.scss */
 .element-invisible {
   border: 0;
   clip: rect(1px 1px 1px 1px);
@@ -1430,6 +1914,7 @@ header[role=banner],
   width: 1px;
 }
 
+/* line 819, ../sass/global.base.scss */
 .element-invisible.element-focusable:active,
 .element-invisible.element-focusable:focus {
   clip: auto;
@@ -1440,6 +1925,7 @@ header[role=banner],
 }
 
 /* Shift content offscreen, can be usefull when you reall need to do this */
+/* line 829, ../sass/global.base.scss */
 .offscreen {
   position: absolute;
   top: -99999em;
@@ -1450,14 +1936,17 @@ header[role=banner],
 }
 
 /* Hide content from all users */
+/* line 840, ../sass/global.base.scss */
 .element-hidden {
   display: none;
 }
 
 /* chosen */
+/* line 845, ../sass/global.base.scss */
 .chosen-container-single {
   width: 100% !important;
 }
+/* line 847, ../sass/global.base.scss */
 .chosen-container-single .chosen-single {
   border-radius: 0px;
   height: 32px;
@@ -1465,9 +1954,11 @@ header[role=banner],
   background: #fff;
   line-height: 32px;
 }
+/* line 853, ../sass/global.base.scss */
 .chosen-container-single .chosen-single div b {
   background-position: 0px 7px;
 }
+/* line 858, ../sass/global.base.scss */
 .chosen-container-single.chosen-with-drop .chosen-single div b {
   background-position: -18px 7px;
 }
