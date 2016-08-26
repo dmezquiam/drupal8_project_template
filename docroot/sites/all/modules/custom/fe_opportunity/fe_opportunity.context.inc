@@ -13,6 +13,38 @@ function fe_opportunity_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'fe_opportunities_by_day';
+  $context->description = '';
+  $context->tag = 'fe_opportunity';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'opportunities/day/*' => 'opportunities/day/*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-opportunities_views-opps_by_day' => array(
+          'module' => 'views',
+          'delta' => 'opportunities_views-opps_by_day',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('fe_opportunity');
+  $export['fe_opportunities_by_day'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'fe_opportunities_detail';
   $context->description = '';
   $context->tag = 'fe_opportunity';
@@ -106,18 +138,13 @@ function fe_opportunity_context_default_contexts() {
       'values' => array(
         'opportunities*' => 'opportunities*',
         '~opportunities/ending-soon' => '~opportunities/ending-soon',
+        '~opportunities-calendar*' => '~opportunities-calendar*',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-7ac668674197309dfe2ee4f316d2672d' => array(
-          'module' => 'views',
-          'delta' => '7ac668674197309dfe2ee4f316d2672d',
-          'region' => 'content',
-          'weight' => '-9',
-        ),
         'jsonblocks-social-block' => array(
           'module' => 'jsonblocks',
           'delta' => 'social-block',
@@ -135,6 +162,12 @@ function fe_opportunity_context_default_contexts() {
           'delta' => '15275b6301e5dc10a482387ea39a018c',
           'region' => 'sidebar_second',
           'weight' => '-8',
+        ),
+        'views-opportunities_calendar-block_1' => array(
+          'module' => 'views',
+          'delta' => 'opportunities_calendar-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
         ),
       ),
     ),
