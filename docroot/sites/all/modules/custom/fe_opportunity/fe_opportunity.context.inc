@@ -17,6 +17,11 @@ function fe_opportunity_context_default_contexts() {
   $context->description = '';
   $context->tag = 'fe_opportunity';
   $context->conditions = array(
+    'language' => array(
+      'values' => array(
+        'es' => 'es',
+      ),
+    ),
     'path' => array(
       'values' => array(
         'opportunities/day/*' => 'opportunities/day/*',
@@ -35,7 +40,7 @@ function fe_opportunity_context_default_contexts() {
       ),
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -163,16 +168,10 @@ function fe_opportunity_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
-        'views-opportunities_calendar-block_1' => array(
-          'module' => 'views',
-          'delta' => 'opportunities_calendar-block_1',
-          'region' => 'sidebar_second',
-          'weight' => '-7',
-        ),
       ),
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.

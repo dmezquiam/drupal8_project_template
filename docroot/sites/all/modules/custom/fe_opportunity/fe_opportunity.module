@@ -14,8 +14,8 @@ function fe_opportunity_theme() {
     'node__training_opportunity' => array(
       'variables' => array('node' => array()),
       'template' => 'theme/node--training_opportunity',
-    ),  
-  );  
+    ),
+  );
 }
 
 /**
@@ -39,7 +39,7 @@ function fe_opportunity_preprocess_node(&$vars) {
     $vars['path'] = url('node/' . $node->nid);
     $topics = module_invoke('fe_news', 'block_view', 'field_topic_block');
     $vars['topics'] = $topics['content'];
-    
+
     $tags_url = fe_news_redirect_tags($node->nid);
     $vars['url_tags'] = $tags_url;
   }
@@ -66,7 +66,7 @@ function fe_opportunity_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-//Returns offset of $timezone to the one from the site. 
+//Returns offset of $timezone to the one from the site.
 function _fe_opportunity_offset_tz($timezone) {
   $timeOffset = 0;
 
@@ -92,4 +92,27 @@ function fe_opportunity_preprocess_calendar_datebox(&$vars) {
     $vars['url'] = "opportunities/day/" . $vars['date'];
     $vars['link'] = l($vars['day'], $vars['url']);
   }
+}
+
+/**
+ * Implements hook_views_plugins()
+ */
+function fe_opportunity_views_plugins() {
+  $plugins = array(
+    'access' => array(
+      'language' => array(
+        'title' => t('Language'),
+        'help' => t('Custom access by language plugin'),
+        'handler' => 'fe_opportunity_access_plugin',
+        'path' => drupal_get_path('module', 'fe_opportunity/plugins'),
+      ),
+    ),
+  );
+  return $plugins;
+}
+
+function fe_opportunity_access($account = NULL) {
+  global $language;
+  $language_name = $language->language;
+  return ($language_name == 'es');
 }

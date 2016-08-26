@@ -85,3 +85,4 @@ features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][fe_chat] = fe_chat
 features_exclude[dependencies][fe_videos] = fe_videos
 features_exclude[taxonomy][region] = region
+files[] = plugins/fe_opportunity_access_plugin.inc
