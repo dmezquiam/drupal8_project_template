@@ -1,0 +1,25 @@
+--- media.library.js	2013-03-02 02:54:02.000000000 -0500
++++ media.library.js	2013-10-02 13:50:56.000000000 -0400
+@@ -5,14 +5,14 @@
+ Drupal.behaviors.mediaLibrary = {
+   attach: function (context, settings) {
+     var library = new Drupal.media.browser.library(Drupal.settings.media.browser.library);
+-    $('#media-browser-tabset').bind('tabsshow', function (event, ui) {
+-      if (ui.tab.hash === '#media-tab-library') {
++    $('#media-browser-tabset').on('tabsactivate', function (event, ui) {
++      if (ui.newPanel.selector === '#media-tab-library') {
+         // Grab the parameters from the Drupal.settings object
+         var params = {};
+         for (var parameter in Drupal.settings.media.browser.library) {
+           params[parameter] = Drupal.settings.media.browser.library[parameter];
+         }
+-        library.start($(ui.panel), params);
++        library.start($(ui.newPanel), params);
+         $('#scrollbox').bind('scroll', library, library.scrollUpdater);
+       }
+     });
+@@ -182,3 +182,4 @@
+ }
+ 
+ }(jQuery));
++
