@@ -17,6 +17,7 @@ features[context][] = fe_opportunities_by_day
 features[context][] = fe_opportunities_detail
 features[context][] = fe_opportunities_ending_soon
 features[context][] = fe_opportunities_landing
+features[context][] = fe_opportunities_landing_es
 features[ctools][] = context:context:3
 features[ctools][] = field_group:field_group:1
 features[ctools][] = quicktabs:quicktabs:1

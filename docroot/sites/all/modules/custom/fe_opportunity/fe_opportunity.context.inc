@@ -178,5 +178,63 @@ function fe_opportunity_context_default_contexts() {
   t('fe_opportunity');
   $export['fe_opportunities_landing'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'fe_opportunities_landing_es';
+  $context->description = 'Temporal context';
+  $context->tag = 'fe_opportunity';
+  $context->conditions = array(
+    'language' => array(
+      'values' => array(
+        'es' => 'es',
+      ),
+    ),
+    'path' => array(
+      'values' => array(
+        'opportunities*' => 'opportunities*',
+        '~opportunities/ending-soon' => '~opportunities/ending-soon',
+        '~opportunities-calendar*' => '~opportunities-calendar*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'jsonblocks-social-block' => array(
+          'module' => 'jsonblocks',
+          'delta' => 'social-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'views-news-top_story' => array(
+          'module' => 'views',
+          'delta' => 'news-top_story',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+        'views-15275b6301e5dc10a482387ea39a018c' => array(
+          'module' => 'views',
+          'delta' => '15275b6301e5dc10a482387ea39a018c',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'views-opportunities_calendar-block_1' => array(
+          'module' => 'views',
+          'delta' => 'opportunities_calendar-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Temporal context');
+  t('fe_opportunity');
+  $export['fe_opportunities_landing_es'] = $context;
+
   return $export;
 }
