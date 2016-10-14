@@ -709,6 +709,11 @@ class calendar_plugin_style extends views_plugin_style {
 
               $is_multi_day = ($start_ydate < $cur_ydate || $end_ydate > $cur_ydate);
 
+              // TODO: fix by extending class. With timezones and our settings this breakes our markup.
+              // it changes the class "single-day" to "multi-day" and adds unwanted markup. The class "future"
+              // doesn't work as expected. The markup looks good for users away from the site's timezone. Users in
+              // the site's timezone and unautenticated users get the markup wrong.
+              $all_day = FALSE;
               // Does this event span multi-days?
               if ($multiday_theme && ($is_multi_day || $all_day)) {
 
