@@ -1,0 +1,5 @@
+name = Sassy Foundation
+description = ""
+core = 7.x
+package = Sassy Foundation
+version = "7.x-2.0-rc6"
