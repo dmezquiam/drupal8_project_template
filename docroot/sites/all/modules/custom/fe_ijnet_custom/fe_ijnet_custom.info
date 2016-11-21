@@ -1,5 +1,0 @@
-name = Ijnet Custom
-description = ""
-core = 7.x
-package = Ijnet
-version = "7.x-2.0-rc6"
