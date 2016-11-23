@@ -325,16 +325,7 @@ function _fe_newsletter_get_featured_content($nid) {
 
 function _fe_newsletter_get_author($nid) {
   $node = node_load($nid);
-
-  if ($node->type == 'video') {
-    $author = new stdClass();
-    $author->name = "IJNET";
-    $author->profile_link = FALSE;
-  }
-  else {
-    $author = _fe_news_get_author($nid);
-  }
-
+  $author = _fe_news_get_author($nid);
   $result = $author->profile_link ?
     "<a href=" . url($author->profile_link, array('absolute' => TRUE)) . ">" . $author->name . "</a>" :
     $author->name;
