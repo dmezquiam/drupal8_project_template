@@ -14,3 +14,24 @@ function site_u2d_install() {
 function site_u2d_update_7001() {
   module_enable(array('calendar'));
 }
+
+/**
+ * Uninstall missing modules:
+ * botcha, fe_ijnet_custom, moopapi, prepro, recaptcha,
+ * sassy, sassy_compass, sassy_foundation, styles
+ */
+function site_u2d_update_7002() {
+    $modules = array(
+    'botcha',
+    'fe_ijnet_custom',
+    'moopapi',
+    'prepro',
+    'recaptcha',
+    'sassy_foundation',
+    'sassy_compass',
+    'sassy',
+    'styles',
+  );
+
+  drupal_uninstall_modules($modules, FALSE);
+}

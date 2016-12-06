@@ -104,7 +104,7 @@ function fe_opportunity_views_plugins() {
         'title' => t('Language'),
         'help' => t('Custom access by language plugin'),
         'handler' => 'fe_opportunity_access_plugin',
-        'path' => drupal_get_path('module', 'fe_opportunity/plugins'),
+        'path' => drupal_get_path('module', 'fe_opportunity') . '/plugins',
       ),
     ),
   );
