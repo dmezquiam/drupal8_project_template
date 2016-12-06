@@ -104,7 +104,7 @@ function fe_opportunity_views_plugins() {
         'title' => t('Language'),
         'help' => t('Custom access by language plugin'),
         'handler' => 'fe_opportunity_access_plugin',
-        'path' => drupal_get_path('module', 'fe_opportunity/plugins'),
+        'path' => drupal_get_path('module', 'fe_opportunity') . '/plugins',
       ),
     ),
   );
@@ -114,5 +114,5 @@ function fe_opportunity_views_plugins() {
 function fe_opportunity_access($account = NULL) {
   global $language;
   $language_name = $language->language;
-  return ($language_name == 'es');
+  return ($language_name == 'es' || $language_name == 'en');
 }

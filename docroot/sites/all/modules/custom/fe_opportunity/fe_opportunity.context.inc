@@ -19,6 +19,7 @@ function fe_opportunity_context_default_contexts() {
   $context->conditions = array(
     'language' => array(
       'values' => array(
+        'en' => 'en',
         'es' => 'es',
       ),
     ),
@@ -187,6 +188,7 @@ function fe_opportunity_context_default_contexts() {
   $context->conditions = array(
     'language' => array(
       'values' => array(
+        'en' => 'en',
         'es' => 'es',
       ),
     ),
