@@ -239,6 +239,21 @@ function fe_site_config_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    914 => '914',
+    918 => '918',
+    913 => '913',
+    915 => '915',
+    919 => '919',
+    916 => '916',
+    917 => '917',
+  );
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'topic';
   $handler->display->display_options['path'] = 'rss/knights-blog';
   $handler->display->display_options['displays'] = array(
     'default' => 'default',
