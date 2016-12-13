@@ -35,3 +35,10 @@ function site_u2d_update_7002() {
 
   drupal_uninstall_modules($modules, FALSE);
 }
+
+/**
+ * Enable Google Analytics, ijnet_carebot
+ */
+function site_u2d_update_7003() {
+  module_enable(array('googleanalytics', 'ijnet_carebot'));
+}
