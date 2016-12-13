@@ -1,0 +1,6 @@
+name = IJNet Carebot Configuration 
+description = Carebot tracker configuration
+core = 7.x
+package = IJNET
+php = 5.2.4
+dependencies[] = googleanalytics
