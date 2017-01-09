@@ -17,12 +17,6 @@ function fe_opportunity_context_default_contexts() {
   $context->description = '';
   $context->tag = 'fe_opportunity';
   $context->conditions = array(
-    'language' => array(
-      'values' => array(
-        'en' => 'en',
-        'es' => 'es',
-      ),
-    ),
     'path' => array(
       'values' => array(
         'opportunities/day/*' => 'opportunities/day/*',
@@ -169,6 +163,12 @@ function fe_opportunity_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
+        'views-opportunities_calendar-block_1' => array(
+          'module' => 'views',
+          'delta' => 'opportunities_calendar-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
       ),
     ),
   );
@@ -180,7 +180,7 @@ function fe_opportunity_context_default_contexts() {
   $export['fe_opportunities_landing'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'fe_opportunities_landing_es';
   $context->description = 'Temporal context';

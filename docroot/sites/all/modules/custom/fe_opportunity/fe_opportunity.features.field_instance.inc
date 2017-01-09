@@ -23,6 +23,7 @@ function fe_opportunity_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -33,6 +34,7 @@ function fe_opportunity_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -217,6 +219,7 @@ function fe_opportunity_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -496,6 +499,7 @@ Begin typing the title of the the related content to see a list of matching arti
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 2,
