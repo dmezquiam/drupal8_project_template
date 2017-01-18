@@ -23,7 +23,6 @@
 $legacy-support-for-ie6: true;
 $legacy-support-for-ie7: true;
 
-@import "language_fix";
 
 //
 // Partials to be shared with all .scss files.
@@ -45,6 +44,7 @@ $legacy-support-for-ie7: true;
 
 @import '_calendar.scss';
 
+@import "language_fix";
 
 
 
