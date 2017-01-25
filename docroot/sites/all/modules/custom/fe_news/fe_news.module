@@ -29,14 +29,15 @@ function fe_news_preprocess_node(&$variables) {
     $variables['url_tags'] = $tags_url;
 
     $items_field_hide_image = field_get_items('node', $node, 'field_hide_image_on_node_page');
-    $item_field_hide_image = array_shift($items_field_hide_image);
-    $field_hide_image = $item_field_hide_image['value'];
-    
-    $hide_image = false;
-    if ($field_hide_image == 1) {
-      $hide_image = true;
-    }
 
+    $hide_image = false;
+    if (isset($items_field_hide_image) && ! empty($items_field_hide_image)) {
+      $item_field_hide_image = array_shift($items_field_hide_image);
+      $field_hide_image = $item_field_hide_image['value'];
+      if ($field_hide_image == 1) {
+        $hide_image = true;
+      }
+    }
     $variables['hide_image'] = $hide_image;
   }
 }
@@ -85,9 +86,11 @@ function _fe_news_return_tags_array($nid = ''){
   $tags = field_get_items('node', $node, 'field_tags');
 
   $result = array();
-  foreach ($tags as $tag) {
-    $term = taxonomy_term_load($tag['tid']);
-    $result[$tag['tid']] = $term->name;
+  if ($tags != NULL && !empty($tags)){
+    foreach ($tags as $tag) {
+      $term = taxonomy_term_load($tag['tid']);
+      $result[$tag['tid']] = $term->name;
+    }
   }
 
   return $result;

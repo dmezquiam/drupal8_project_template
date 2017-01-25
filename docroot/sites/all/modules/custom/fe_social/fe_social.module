@@ -122,8 +122,13 @@ function fe_social_get_news_og_meta($node) {
   $title = isset($node->title_field[$lang]) ? $node->title_field[$lang][0]['safe_value'] : $node->title_field[LANGUAGE_NONE][0]['safe_value'];
   $url = url('node/' . $node->nid, array('absolute' => TRUE));
   $description = isset($node->body[$lang]) ? strip_tags($node->body[$lang][0]['safe_summary']) : strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
+  if (! empty($node->field_image)) {
   $image_keys = array_keys($node->field_image);
   $image = isset($node->field_image[$lang]) ? file_create_url($node->field_image[$lang][0]['uri']) : file_create_url($node->field_image[$image_keys[0]][0]['uri']);
+  } else {
+    $image_keys = array();
+    $image = '';
+  }
 
   fe_social_add_og_meta_tags($title, $url, $description, $image);
 }
@@ -132,7 +137,12 @@ function fe_social_get_training_opportunity_og_meta($node) {
   $lang = $node->language;
   $title = $node->title;
   $url = url('node/' . $node->nid, array('absolute' => TRUE));
-  $description = isset($node->body[$lang]) ? strip_tags($node->body[$lang][0]['safe_summary']) : strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
+
+  $description = '';
+
+  if (!empty($node->body)) {
+    $description = isset($node->body[$lang]) ? strip_tags($node->body[$lang][0]['safe_summary']) : strip_tags($node->body[LANGUAGE_NONE][0]['safe_summary']);
+  }
   $logo = _fe_social_get_ijnet_logo_by_lang($lang);
   $image = drupal_realpath($logo['path']);
 
@@ -501,8 +511,10 @@ function _fe_social_update_language_form_redirects(&$form, $content_type, $tid) 
   $tids_by_language = _fe_social_get_tids_by_language($tid);
   $languages = language_list();
   $content_type = $content_type == 'videos' ? $content_type . '/topic' : $content_type;
-  foreach ($languages as $lang_code => $language) {
-    $form[$lang_code]['#default_value'] = '/' . $lang_code . '/' . $content_type . '/' . $tids_by_language[$lang_code];
+  if (!empty($tids_by_language)) {
+    foreach ($languages as $lang_code => $language) {
+      $form[$lang_code]['#default_value'] = '/' . $lang_code . '/' . $content_type . '/' . $tids_by_language[$lang_code];
+    }
   }
 }
 
@@ -512,11 +524,12 @@ function _fe_social_get_tids_by_language($tid) {
   $tids_by_language = array();
   $languages = language_list();
   $term = taxonomy_term_load($tid);
-  foreach ($languages as $lang_code => $language) {
-    $term_by_language = i18n_taxonomy_term_get_translation($term, $lang_code);
-    $tids_by_language[$lang_code] = $term_by_language ? $term_by_language->tid : $term->tid;
+  if (isset($term) && !empty($term)) {
+    foreach ($languages as $lang_code => $language) {
+      $term_by_language = i18n_taxonomy_term_get_translation($term, $lang_code);
+      $tids_by_language[$lang_code] = $term_by_language ? $term_by_language->tid : $term->tid;
+    }
   }
-
   return $tids_by_language;
 }
 

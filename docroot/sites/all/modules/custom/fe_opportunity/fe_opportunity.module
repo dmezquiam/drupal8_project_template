@@ -25,7 +25,8 @@ function fe_opportunity_preprocess_node(&$vars) {
   if ($vars['node']->type == 'training_opportunity') {
     $node = $vars['node'];
 
-    $vars['created'] = date_format($node->created, 'medium');
+    $created = $node->created;
+    $vars['created'] = format_date( $created + 0, 'medium');
 
     if ($node->field_deadline && isset($node->field_deadline)) {
       global $language;
