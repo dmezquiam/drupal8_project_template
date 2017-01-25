@@ -2096,7 +2096,7 @@ function format_date($timestamp, $type = 'medium', $format = '', $timezone = NUL
 function date_iso8601($date) {
   // The DATE_ISO8601 constant cannot be used here because it does not match
   // date('c') and produces invalid RDF markup.
-  return date('c', $date);
+  return date('c', $date + 0);
 }
 
 /**
