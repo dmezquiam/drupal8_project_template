@@ -60,130 +60,132 @@ function fe_site_config_default_page_manager_pages() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '1a558c10-00c4-4a1e-966a-85972a1b70f0';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_about_us_panel_context';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-9c433602-66f6-4b4b-8d0a-e78f683e7ab0';
-    $pane->panel = 'brick_66_33_first';
-    $pane->type = 'node';
-    $pane->subtype = 'node';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'nid' => '28',
-      'links' => 1,
-      'leave_node_title' => 0,
-      'identifier' => '',
-      'build_mode' => 'full',
-      'link_node_title' => 0,
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '9c433602-66f6-4b4b-8d0a-e78f683e7ab0';
-    $display->content['new-9c433602-66f6-4b4b-8d0a-e78f683e7ab0'] = $pane;
-    $display->panels['brick_66_33_first'][0] = 'new-9c433602-66f6-4b4b-8d0a-e78f683e7ab0';
-    $pane = new stdClass();
-    $pane->pid = 'new-7f6a9de6-e44d-4b1b-8ffa-ec3f5233d0a2';
-    $pane->panel = 'brick_66_33_first';
-    $pane->type = 'block';
-    $pane->subtype = 'views-staff-block';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '7f6a9de6-e44d-4b1b-8ffa-ec3f5233d0a2';
-    $display->content['new-7f6a9de6-e44d-4b1b-8ffa-ec3f5233d0a2'] = $pane;
-    $display->panels['brick_66_33_first'][1] = 'new-7f6a9de6-e44d-4b1b-8ffa-ec3f5233d0a2';
-    $pane = new stdClass();
-    $pane->pid = 'new-541a5ec9-17e5-4a62-9d8c-736a9ce85514';
-    $pane->panel = 'brick_66_33_first';
-    $pane->type = 'block';
-    $pane->subtype = 'jsonblocks-contact-form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '541a5ec9-17e5-4a62-9d8c-736a9ce85514';
-    $display->content['new-541a5ec9-17e5-4a62-9d8c-736a9ce85514'] = $pane;
-    $display->panels['brick_66_33_first'][2] = 'new-541a5ec9-17e5-4a62-9d8c-736a9ce85514';
-    $pane = new stdClass();
-    $pane->pid = 'new-dcb3e0c9-50c7-4de2-b9a5-f479fb2600dd';
-    $pane->panel = 'brick_66_33_second';
-    $pane->type = 'block';
-    $pane->subtype = 'jsonblocks-social-block';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => 'Connect with IJNET',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'frist-block',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'dcb3e0c9-50c7-4de2-b9a5-f479fb2600dd';
-    $display->content['new-dcb3e0c9-50c7-4de2-b9a5-f479fb2600dd'] = $pane;
-    $display->panels['brick_66_33_second'][0] = 'new-dcb3e0c9-50c7-4de2-b9a5-f479fb2600dd';
-    $pane = new stdClass();
-    $pane->pid = 'new-b61e0ab8-5019-41d2-af8b-e25f268273f9';
-    $pane->panel = 'brick_66_33_second';
-    $pane->type = 'block';
-    $pane->subtype = 'views-banner-banner_partners';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'b61e0ab8-5019-41d2-af8b-e25f268273f9';
-    $display->content['new-b61e0ab8-5019-41d2-af8b-e25f268273f9'] = $pane;
-    $display->panels['brick_66_33_second'][1] = 'new-b61e0ab8-5019-41d2-af8b-e25f268273f9';
+  $pane = new stdClass();
+  $pane->pid = 'new-9c433602-66f6-4b4b-8d0a-e78f683e7ab0';
+  $pane->panel = 'brick_66_33_first';
+  $pane->type = 'node';
+  $pane->subtype = 'node';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'nid' => '28',
+    'links' => 1,
+    'leave_node_title' => 0,
+    'identifier' => '',
+    'build_mode' => 'full',
+    'link_node_title' => 0,
+    'override_title' => 1,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '9c433602-66f6-4b4b-8d0a-e78f683e7ab0';
+  $display->content['new-9c433602-66f6-4b4b-8d0a-e78f683e7ab0'] = $pane;
+  $display->panels['brick_66_33_first'][0] = 'new-9c433602-66f6-4b4b-8d0a-e78f683e7ab0';
+  $pane = new stdClass();
+  $pane->pid = 'new-7f6a9de6-e44d-4b1b-8ffa-ec3f5233d0a2';
+  $pane->panel = 'brick_66_33_first';
+  $pane->type = 'block';
+  $pane->subtype = 'views-staff-block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '7f6a9de6-e44d-4b1b-8ffa-ec3f5233d0a2';
+  $display->content['new-7f6a9de6-e44d-4b1b-8ffa-ec3f5233d0a2'] = $pane;
+  $display->panels['brick_66_33_first'][1] = 'new-7f6a9de6-e44d-4b1b-8ffa-ec3f5233d0a2';
+  $pane = new stdClass();
+  $pane->pid = 'new-541a5ec9-17e5-4a62-9d8c-736a9ce85514';
+  $pane->panel = 'brick_66_33_first';
+  $pane->type = 'block';
+  $pane->subtype = 'jsonblocks-contact-form';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '541a5ec9-17e5-4a62-9d8c-736a9ce85514';
+  $display->content['new-541a5ec9-17e5-4a62-9d8c-736a9ce85514'] = $pane;
+  $display->panels['brick_66_33_first'][2] = 'new-541a5ec9-17e5-4a62-9d8c-736a9ce85514';
+  $pane = new stdClass();
+  $pane->pid = 'new-dcb3e0c9-50c7-4de2-b9a5-f479fb2600dd';
+  $pane->panel = 'brick_66_33_second';
+  $pane->type = 'block';
+  $pane->subtype = 'jsonblocks-social-block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => 'Connect with IJNET',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'frist-block',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'dcb3e0c9-50c7-4de2-b9a5-f479fb2600dd';
+  $display->content['new-dcb3e0c9-50c7-4de2-b9a5-f479fb2600dd'] = $pane;
+  $display->panels['brick_66_33_second'][0] = 'new-dcb3e0c9-50c7-4de2-b9a5-f479fb2600dd';
+  $pane = new stdClass();
+  $pane->pid = 'new-b61e0ab8-5019-41d2-af8b-e25f268273f9';
+  $pane->panel = 'brick_66_33_second';
+  $pane->type = 'block';
+  $pane->subtype = 'views-banner-banner_partners';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'b61e0ab8-5019-41d2-af8b-e25f268273f9';
+  $display->content['new-b61e0ab8-5019-41d2-af8b-e25f268273f9'] = $pane;
+  $display->panels['brick_66_33_second'][1] = 'new-b61e0ab8-5019-41d2-af8b-e25f268273f9';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = 'new-9c433602-66f6-4b4b-8d0a-e78f683e7ab0';
   $handler->conf['display'] = $display;
@@ -332,215 +334,217 @@ function fe_site_config_default_page_manager_pages() {
   $display->cache = array();
   $display->title = 'Landing page';
   $display->uuid = '922079d8-750e-423d-b480-57c9bcf4bc2b';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_landing_page_panel_context';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-c0238527-c20a-45f8-a37b-5974099e38b5';
-    $pane->panel = 'brick_66_33_first';
-    $pane->type = 'block';
-    $pane->subtype = 'views-news-top_story_home';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'c0238527-c20a-45f8-a37b-5974099e38b5';
-    $display->content['new-c0238527-c20a-45f8-a37b-5974099e38b5'] = $pane;
-    $display->panels['brick_66_33_first'][0] = 'new-c0238527-c20a-45f8-a37b-5974099e38b5';
-    $pane = new stdClass();
-    $pane->pid = 'new-16d43a4f-2abd-4fb1-a9b8-6b4dc3d9eba3';
-    $pane->panel = 'brick_66_33_left_below';
-    $pane->type = 'block';
-    $pane->subtype = 'quicktabs-top_stories_on_ijnet';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '16d43a4f-2abd-4fb1-a9b8-6b4dc3d9eba3';
-    $display->content['new-16d43a4f-2abd-4fb1-a9b8-6b4dc3d9eba3'] = $pane;
-    $display->panels['brick_66_33_left_below'][0] = 'new-16d43a4f-2abd-4fb1-a9b8-6b4dc3d9eba3';
-    $pane = new stdClass();
-    $pane->pid = 'new-0981a783-8cb5-409a-908a-f7b000fce199';
-    $pane->panel = 'brick_66_33_left_below';
-    $pane->type = 'block';
-    $pane->subtype = 'quicktabs-opportunities_for_journalists';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '0981a783-8cb5-409a-908a-f7b000fce199';
-    $display->content['new-0981a783-8cb5-409a-908a-f7b000fce199'] = $pane;
-    $display->panels['brick_66_33_left_below'][1] = 'new-0981a783-8cb5-409a-908a-f7b000fce199';
-    $pane = new stdClass();
-    $pane->pid = 'new-052e5e5e-bf5b-469f-9a15-c05feca1fb88';
-    $pane->panel = 'brick_66_33_right_below';
-    $pane->type = 'block';
-    $pane->subtype = 'jsonblocks-latest-posts';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '052e5e5e-bf5b-469f-9a15-c05feca1fb88';
-    $display->content['new-052e5e5e-bf5b-469f-9a15-c05feca1fb88'] = $pane;
-    $display->panels['brick_66_33_right_below'][0] = 'new-052e5e5e-bf5b-469f-9a15-c05feca1fb88';
-    $pane = new stdClass();
-    $pane->pid = 'new-2a35932f-486a-413d-a177-9f2e0427d5d7';
-    $pane->panel = 'brick_66_33_right_below';
-    $pane->type = 'block';
-    $pane->subtype = 'views-advertisement-block';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '2a35932f-486a-413d-a177-9f2e0427d5d7';
-    $display->content['new-2a35932f-486a-413d-a177-9f2e0427d5d7'] = $pane;
-    $display->panels['brick_66_33_right_below'][1] = 'new-2a35932f-486a-413d-a177-9f2e0427d5d7';
-    $pane = new stdClass();
-    $pane->pid = 'new-b08c06cb-bae9-45ba-834a-ef97c06d1062';
-    $pane->panel = 'brick_66_33_right_below';
-    $pane->type = 'block';
-    $pane->subtype = 'views-twitter-tweets_home_block';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'b08c06cb-bae9-45ba-834a-ef97c06d1062';
-    $display->content['new-b08c06cb-bae9-45ba-834a-ef97c06d1062'] = $pane;
-    $display->panels['brick_66_33_right_below'][2] = 'new-b08c06cb-bae9-45ba-834a-ef97c06d1062';
-    $pane = new stdClass();
-    $pane->pid = 'new-89fb2a80-d79b-4637-9d94-9428e93c0f16';
-    $pane->panel = 'brick_66_33_right_below';
-    $pane->type = 'block';
-    $pane->subtype = 'views-cima-cima_home';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '89fb2a80-d79b-4637-9d94-9428e93c0f16';
-    $display->content['new-89fb2a80-d79b-4637-9d94-9428e93c0f16'] = $pane;
-    $display->panels['brick_66_33_right_below'][3] = 'new-89fb2a80-d79b-4637-9d94-9428e93c0f16';
-    $pane = new stdClass();
-    $pane->pid = 'new-b3a5bf3f-c708-4176-9df3-11dee567fe2f';
-    $pane->panel = 'brick_66_33_second';
-    $pane->type = 'block';
-    $pane->subtype = 'jsonblocks-social-block';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => 'Connect with IJNET',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'b3a5bf3f-c708-4176-9df3-11dee567fe2f';
-    $display->content['new-b3a5bf3f-c708-4176-9df3-11dee567fe2f'] = $pane;
-    $display->panels['brick_66_33_second'][0] = 'new-b3a5bf3f-c708-4176-9df3-11dee567fe2f';
-    $pane = new stdClass();
-    $pane->pid = 'new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
-    $pane->panel = 'brick_66_33_second';
-    $pane->type = 'block';
-    $pane->subtype = 'jsonblocks-facebook-like';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
-    $display->content['new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84'] = $pane;
-    $display->panels['brick_66_33_second'][1] = 'new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
+  $pane = new stdClass();
+  $pane->pid = 'new-c0238527-c20a-45f8-a37b-5974099e38b5';
+  $pane->panel = 'brick_66_33_first';
+  $pane->type = 'block';
+  $pane->subtype = 'views-news-top_story_home';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c0238527-c20a-45f8-a37b-5974099e38b5';
+  $display->content['new-c0238527-c20a-45f8-a37b-5974099e38b5'] = $pane;
+  $display->panels['brick_66_33_first'][0] = 'new-c0238527-c20a-45f8-a37b-5974099e38b5';
+  $pane = new stdClass();
+  $pane->pid = 'new-16d43a4f-2abd-4fb1-a9b8-6b4dc3d9eba3';
+  $pane->panel = 'brick_66_33_left_below';
+  $pane->type = 'block';
+  $pane->subtype = 'quicktabs-top_stories_on_ijnet';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '16d43a4f-2abd-4fb1-a9b8-6b4dc3d9eba3';
+  $display->content['new-16d43a4f-2abd-4fb1-a9b8-6b4dc3d9eba3'] = $pane;
+  $display->panels['brick_66_33_left_below'][0] = 'new-16d43a4f-2abd-4fb1-a9b8-6b4dc3d9eba3';
+  $pane = new stdClass();
+  $pane->pid = 'new-0981a783-8cb5-409a-908a-f7b000fce199';
+  $pane->panel = 'brick_66_33_left_below';
+  $pane->type = 'block';
+  $pane->subtype = 'quicktabs-opportunities_for_journalists';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '0981a783-8cb5-409a-908a-f7b000fce199';
+  $display->content['new-0981a783-8cb5-409a-908a-f7b000fce199'] = $pane;
+  $display->panels['brick_66_33_left_below'][1] = 'new-0981a783-8cb5-409a-908a-f7b000fce199';
+  $pane = new stdClass();
+  $pane->pid = 'new-052e5e5e-bf5b-469f-9a15-c05feca1fb88';
+  $pane->panel = 'brick_66_33_right_below';
+  $pane->type = 'block';
+  $pane->subtype = 'jsonblocks-latest-posts';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '052e5e5e-bf5b-469f-9a15-c05feca1fb88';
+  $display->content['new-052e5e5e-bf5b-469f-9a15-c05feca1fb88'] = $pane;
+  $display->panels['brick_66_33_right_below'][0] = 'new-052e5e5e-bf5b-469f-9a15-c05feca1fb88';
+  $pane = new stdClass();
+  $pane->pid = 'new-2a35932f-486a-413d-a177-9f2e0427d5d7';
+  $pane->panel = 'brick_66_33_right_below';
+  $pane->type = 'block';
+  $pane->subtype = 'views-advertisement-block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '2a35932f-486a-413d-a177-9f2e0427d5d7';
+  $display->content['new-2a35932f-486a-413d-a177-9f2e0427d5d7'] = $pane;
+  $display->panels['brick_66_33_right_below'][1] = 'new-2a35932f-486a-413d-a177-9f2e0427d5d7';
+  $pane = new stdClass();
+  $pane->pid = 'new-b08c06cb-bae9-45ba-834a-ef97c06d1062';
+  $pane->panel = 'brick_66_33_right_below';
+  $pane->type = 'block';
+  $pane->subtype = 'views-twitter-tweets_home_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'b08c06cb-bae9-45ba-834a-ef97c06d1062';
+  $display->content['new-b08c06cb-bae9-45ba-834a-ef97c06d1062'] = $pane;
+  $display->panels['brick_66_33_right_below'][2] = 'new-b08c06cb-bae9-45ba-834a-ef97c06d1062';
+  $pane = new stdClass();
+  $pane->pid = 'new-89fb2a80-d79b-4637-9d94-9428e93c0f16';
+  $pane->panel = 'brick_66_33_right_below';
+  $pane->type = 'block';
+  $pane->subtype = 'views-cima-cima_home';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+  );
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '89fb2a80-d79b-4637-9d94-9428e93c0f16';
+  $display->content['new-89fb2a80-d79b-4637-9d94-9428e93c0f16'] = $pane;
+  $display->panels['brick_66_33_right_below'][3] = 'new-89fb2a80-d79b-4637-9d94-9428e93c0f16';
+  $pane = new stdClass();
+  $pane->pid = 'new-b3a5bf3f-c708-4176-9df3-11dee567fe2f';
+  $pane->panel = 'brick_66_33_second';
+  $pane->type = 'block';
+  $pane->subtype = 'jsonblocks-social-block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => 'Connect with IJNET',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'b3a5bf3f-c708-4176-9df3-11dee567fe2f';
+  $display->content['new-b3a5bf3f-c708-4176-9df3-11dee567fe2f'] = $pane;
+  $display->panels['brick_66_33_second'][0] = 'new-b3a5bf3f-c708-4176-9df3-11dee567fe2f';
+  $pane = new stdClass();
+  $pane->pid = 'new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
+  $pane->panel = 'brick_66_33_second';
+  $pane->type = 'block';
+  $pane->subtype = 'jsonblocks-facebook-like';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
+  $display->content['new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84'] = $pane;
+  $display->panels['brick_66_33_second'][1] = 'new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
