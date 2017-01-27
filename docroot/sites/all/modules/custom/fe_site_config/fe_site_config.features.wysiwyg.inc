@@ -15,10 +15,6 @@ function fe_site_config_wysiwyg_default_profiles() {
     'format' => 'filtered_comments',
     'editor' => 'ckeditor',
     'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 1,
-      'add_to_summaries' => 1,
       'theme' => '',
       'language' => 'en',
       'buttons' => array(
@@ -41,6 +37,14 @@ function fe_site_config_wysiwyg_default_profiles() {
       'advanced__active_tab' => 'edit-appearance',
       'forcePasteAsPlainText' => 0,
     ),
+    'preferences' => array(
+      'add_to_summaries' => 1,
+      'default' => 1,
+      'show_toggle' => 1,
+      'user_choose' => 0,
+      'version' => '4.5.7.e98277f',
+    ),
+    'name' => 'formatfiltered_comments',
     'rdf_mapping' => array(),
   );
 
@@ -49,12 +53,6 @@ function fe_site_config_wysiwyg_default_profiles() {
     'format' => 'filtered_html',
     'editor' => 'ckeditor',
     'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 1,
-      'add_to_summaries' => 1,
-      'theme' => '',
-      'language' => 'en',
       'buttons' => array(
         'default' => array(
           'Bold' => 1,
@@ -65,8 +63,6 @@ function fe_site_config_wysiwyg_default_profiles() {
           'NumberedList' => 1,
           'BidiLtr' => 1,
           'BidiRtl' => 1,
-          'Outdent' => 1,
-          'Indent' => 1,
           'Link' => 1,
           'Image' => 1,
           'Blockquote' => 1,
@@ -85,6 +81,8 @@ function fe_site_config_wysiwyg_default_profiles() {
           'media' => 1,
         ),
       ),
+      'theme' => '',
+      'language' => 'en',
       'toolbarLocation' => 'top',
       'resize_enabled' => 1,
       'default_toolbar_grouping' => 0,
@@ -92,12 +90,24 @@ function fe_site_config_wysiwyg_default_profiles() {
       'acf_mode' => 0,
       'acf_allowed_content' => '',
       'css_setting' => 'theme',
+      'css_theme' => 'shiny',
       'css_path' => '',
       'stylesSet' => '',
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
-      'advanced__active_tab' => 'edit-basic',
       'forcePasteAsPlainText' => 0,
+      'pasteFromWordNumberedHeadingToList' => 0,
+      'pasteFromWordPromptCleanup' => 0,
+      'pasteFromWordRemoveFontStyles' => 1,
+      'pasteFromWordRemoveStyles' => 1,
     ),
+    'preferences' => array(
+      'default' => 1,
+      'user_choose' => 0,
+      'show_toggle' => 1,
+      'add_to_summaries' => 1,
+      'version' => '4.5.7.e98277f',
+    ),
+    'name' => 'formatfiltered_html',
     'rdf_mapping' => array(),
   );
 
@@ -106,10 +116,6 @@ function fe_site_config_wysiwyg_default_profiles() {
     'format' => 'full_html',
     'editor' => 'ckeditor',
     'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 1,
-      'add_to_summaries' => 1,
       'theme' => '',
       'language' => 'en',
       'buttons' => array(
@@ -151,6 +157,14 @@ function fe_site_config_wysiwyg_default_profiles() {
       'advanced__active_tab' => 'edit-paste',
       'forcePasteAsPlainText' => 0,
     ),
+    'preferences' => array(
+      'add_to_summaries' => 1,
+      'default' => 1,
+      'show_toggle' => 1,
+      'user_choose' => 0,
+      'version' => '4.5.7.e98277f',
+    ),
+    'name' => 'formatfull_html',
     'rdf_mapping' => array(),
   );
 
