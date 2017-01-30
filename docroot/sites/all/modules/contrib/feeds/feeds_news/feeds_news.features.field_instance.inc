@@ -10,7 +10,7 @@
 function feeds_news_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-feed_item-field_feed_item_description'.
+  // Exported field_instance: 'node-feed_item-field_feed_item_description'
   $field_instances['node-feed_item-field_feed_item_description'] = array(
     'bundle' => 'feed_item',
     'default_value' => NULL,
@@ -20,10 +20,7 @@ function feeds_news_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -43,8 +40,6 @@ function feeds_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
           'trim_length' => 600,
         ),
         'type' => 'text_trimmed',
@@ -57,7 +52,6 @@ function feeds_news_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'display_summary' => 0,
-      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -66,7 +60,6 @@ function feeds_news_field_default_field_instances() {
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
-        'summary_display' => 'default',
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
