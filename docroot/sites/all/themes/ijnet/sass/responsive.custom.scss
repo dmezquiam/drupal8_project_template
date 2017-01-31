@@ -1,6 +1,5 @@
-
-// _base.scss imports _custom.scss and other partials.
-@import "base";
+@import 'variables/vars';
+@import 'mixins/mixin';
 
 /*
  * responsive.custom.css is for custom media queries that are not set via the

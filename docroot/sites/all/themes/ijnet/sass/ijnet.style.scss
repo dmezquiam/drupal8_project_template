@@ -23,28 +23,28 @@
 $legacy-support-for-ie6: true;
 $legacy-support-for-ie7: true;
 
-@import "language_fix";
 
 //
 // Partials to be shared with all .scss files.
 //
-
 @import 'compass/support';                     // Add Compass' IE and vendor prefix support variables.
 @import 'compass/utilities/general/clearfix';  // Better than Drupal's clearfix.
 @import 'compass/utilities/sprites';           // See http://compass-style.org/help/tutorials/spriting/
-@import 'compass/css3';                        // Use one CSS3 mixin instead of multiple vendor prefixes.
+@import 'compass/css3';   
+
+//variables
+@import 'variables/vars.scss';
+
+//mixin
+@import 'mixins/mixin';
 
 
-//
-// Import custom partial - mixins and variables defined for your theme
-//
-@import 'vars';
-@import 'custom';
+@import "ijnet/lt-ie9";
 
+@import "ijnet/global.base";
+@import "ijnet/global.styles";
+@import 'ijnet/calendar';
 
-
-@import '_calendar.scss';
-
-
-
+@import "ijnet/global.styles-rtl";
+@import "ijnet/language-fix";
 
