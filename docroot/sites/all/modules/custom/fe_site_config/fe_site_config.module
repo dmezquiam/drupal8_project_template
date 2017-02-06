@@ -121,7 +121,9 @@ function fe_site_config_menu_alter(&$items) {
   $redirect_to_frontpage = array(
     'node',
     'tags/%',
-    'taxonomy/term/%'
+    'taxonomy/term/%',
+    'topics/%',
+    'region/%'
     );
 
   foreach ($redirect_to_frontpage as $old_url) {
