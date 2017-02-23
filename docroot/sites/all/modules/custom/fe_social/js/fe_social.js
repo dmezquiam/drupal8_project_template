@@ -31,7 +31,7 @@
       social_block_wrapper.height() + facebook_like_wrapper.height();
     
     if (blocks_height < main_content_wrapper.height()) {
-      social_content_wrapper.height(main_content_wrapper.height());
+      social_content_wrapper.height(main_content_wrapper.height() + 22);
       jQuery('.two-66-33.clearfix > div:nth-child(2) .region-inner').css('height', 'inherit');
     }
 
