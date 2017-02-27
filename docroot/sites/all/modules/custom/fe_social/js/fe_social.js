@@ -27,8 +27,10 @@
       jQuery('.two-66-33.clearfix .pane-jsonblocks-social-block');
     var facebook_like_wrapper =
       jQuery('.two-66-33.clearfix .pane-jsonblocks-facebook-like');
+    var connect_wrapper =
+      jQuery('.two-66-33.clearfix .pane-jsonblocks-connect');
     var blocks_height =
-      social_block_wrapper.height() + facebook_like_wrapper.height();
+      social_block_wrapper.height() + facebook_like_wrapper.height() + connect_wrapper.height();
     
     if (blocks_height < main_content_wrapper.height()) {
       social_content_wrapper.height(main_content_wrapper.height() + 22);
@@ -43,7 +45,7 @@
       var facebook_like_wrapper =
         jQuery('.two-66-33.clearfix .pane-jsonblocks-facebook-like');
       var blocks_height =
-        social_block_wrapper.height() + facebook_like_wrapper.height();
+        social_block_wrapper.height() + facebook_like_wrapper.height() + connect_wrapper.height();
       var free_space = social_content_wrapper.height() - blocks_height +20;
       var separator_height = free_space/4;
  
@@ -55,6 +57,7 @@
       jQuery('.two-66-33.clearfix > div:nth-child(2) div.mail-subscribe')
         .css('margin-bottom', separator_height);
       facebook_like_wrapper.css('margin-bottom', separator_height);
+      connect_wrapper.css('margin-bottom', separator_height);
 
     }
     else {

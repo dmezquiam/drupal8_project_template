@@ -109,6 +109,14 @@ function json_blocks_view_social_block() {
   return $block;
 }
 
+function json_blocks_view_connect() {
+  global $language;
+  $all_items = _fe_social_get_social_media_items($language->language);
+  $url = $all_items['facebook']['url'];
+  return array('content' => theme('connect', array('url' => $url)));
+}
+
+
 /**
  * Implements hook_mail_alter().
  */
