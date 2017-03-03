@@ -529,7 +529,26 @@ function fe_site_config_default_page_manager_pages() {
   $pane->type = 'block';
   $pane->subtype = 'jsonblocks-facebook-like';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'site_language',
+        'settings' => array(
+          'language' => array(
+            'en' => 'en',
+            'default' => 0,
+            'es' => 0,
+            'ru' => 0,
+            'ar' => 0,
+            'zh-hans' => 0,
+            'fa' => 0,
+            'pt-br' => 0,
+          ),
+        ),
+        'not' => TRUE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_title' => 0,
     'override_title_text' => '',
@@ -545,6 +564,48 @@ function fe_site_config_default_page_manager_pages() {
   $pane->uuid = '5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
   $display->content['new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84'] = $pane;
   $display->panels['brick_66_33_second'][1] = 'new-5bada2ff-8940-4fc4-9d2a-84d652a8bd84';
+  $pane = new stdClass();
+  $pane->pid = 'new-96af7f67-afa7-4c62-b198-ecc0549067d5';
+  $pane->panel = 'brick_66_33_second';
+  $pane->type = 'block';
+  $pane->subtype = 'jsonblocks-connect';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'site_language',
+        'settings' => array(
+          'language' => array(
+            'en' => 'en',
+            'default' => 0,
+            'es' => 0,
+            'ru' => 0,
+            'ar' => 0,
+            'zh-hans' => 0,
+            'fa' => 0,
+            'pt-br' => 0,
+          ),
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '96af7f67-afa7-4c62-b198-ecc0549067d5';
+  $display->content['new-96af7f67-afa7-4c62-b198-ecc0549067d5'] = $pane;
+  $display->panels['brick_66_33_second'][2] = 'new-96af7f67-afa7-4c62-b198-ecc0549067d5';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
