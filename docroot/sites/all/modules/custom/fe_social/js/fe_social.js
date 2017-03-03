@@ -1,4 +1,3 @@
-
 (function ($) {
 
   Drupal.behaviors.fe_basic_page = {
@@ -23,17 +22,23 @@
     
     var social_content_wrapper =
       jQuery('.two-66-33.clearfix > div:nth-child(2)');
+
     var social_block_wrapper =
       jQuery('.two-66-33.clearfix .pane-jsonblocks-social-block');
+
     var facebook_like_wrapper =
       jQuery('.two-66-33.clearfix .pane-jsonblocks-facebook-like');
-    var blocks_height =
-      social_block_wrapper.height() + facebook_like_wrapper.height();
-    
-    if (blocks_height < main_content_wrapper.height()) {
-      social_content_wrapper.height(main_content_wrapper.height());
-      jQuery('.two-66-33.clearfix > div:nth-child(2) .region-inner').css('height', 'inherit');
+
+    var connect_wrapper =
+      jQuery('.two-66-33.clearfix .pane-jsonblocks-connect');
+
+    if (social_content_wrapper.height() < main_content_wrapper.height()) {
+      social_content_wrapper.height(main_content_wrapper.height() * 1,2);
     }
+    else {
+      main_content_wrapper.height(social_content_wrapper.height() * 1,2);
+    }
+    jQuery('.two-66-33.clearfix > div:nth-child(2) .region-inner').css('height', 'inherit');
 
     var screen_width = $(window).width();
 
@@ -43,10 +48,10 @@
       var facebook_like_wrapper =
         jQuery('.two-66-33.clearfix .pane-jsonblocks-facebook-like');
       var blocks_height =
-        social_block_wrapper.height() + facebook_like_wrapper.height();
-      var free_space = social_content_wrapper.height() - blocks_height +20;
+        social_block_wrapper.height() + facebook_like_wrapper.height() + connect_wrapper.height();
+      var free_space = social_content_wrapper.height() - blocks_height + 20;
       var separator_height = free_space/4;
- 
+
       social_block_wrapper.css('margin-bottom', 0);
       jQuery('.two-66-33.clearfix > div:nth-child(2) > div section div > h2')
         .css('margin-bottom', separator_height);
@@ -55,6 +60,7 @@
       jQuery('.two-66-33.clearfix > div:nth-child(2) div.mail-subscribe')
         .css('margin-bottom', separator_height);
       facebook_like_wrapper.css('margin-bottom', separator_height);
+      connect_wrapper.css('margin-bottom', separator_height);
 
     }
     else {

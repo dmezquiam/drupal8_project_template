@@ -29,5 +29,8 @@
     },
     "knight-foundation": {
       "info": "knight foundation sidebar block"
+    },
+    "connect": {
+      "info": "Connect with IJNet block"
     }
 }
