@@ -8,39 +8,32 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 /* DRUPAL ADMIN TOOL BAR */
-/* line 15, ../sass/responsive.smartphone.landscape.scss */
 body #admin-menu {
   font-size: 8px;
 }
 
-/* line 16, ../sass/responsive.smartphone.landscape.scss */
 body.admin-menu {
   margin-top: 21px !important;
 }
 
 /* Increase the body font size on small devices */
-/* line 20, ../sass/responsive.smartphone.landscape.scss */
 html {
   font-size: 112.5%;
 }
 
-/* line 25, ../sass/responsive.smartphone.landscape.scss */
 p,
 pre {
   font-size: 15px;
 }
 
-/* line 30, ../sass/responsive.smartphone.landscape.scss */
 .node ul, .node ol {
   font-size: 15px;
 }
 
-/* line 35, ../sass/responsive.smartphone.landscape.scss */
 div.messages {
   font-size: 12px;
 }
 
-/* line 47, ../sass/responsive.smartphone.landscape.scss */
 input[type="email"],
 input[type="tel"],
 input[type="number"],
@@ -56,24 +49,20 @@ input[type="text"] {
 /* =============================================================================
  *   Top BAR
  * ========================================================================== */
-/* line 55, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-lang-dropdown {
   width: 215px;
   float: right;
   clear: none;
 }
-/* line 56, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-lang-dropdown .block-title {
   display: none;
 }
-/* line 61, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-top-header-menu {
   width: 39px;
   height: 38px;
   float: left;
   margin-left: 15px;
 }
-/* line 66, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block-top-header-menu .menu {
   display: none;
 }
@@ -81,37 +70,30 @@ input[type="text"] {
 /* =============================================================================
  *   Header
  * ========================================================================== */
-/* line 75, ../sass/responsive.smartphone.landscape.scss */
 #branding {
   width: inherit;
 }
-/* line 77, ../sass/responsive.smartphone.landscape.scss */
 #branding #logo {
   padding: 20px 0px 21px 3px;
 }
 
-/* line 82, ../sass/responsive.smartphone.landscape.scss */
 #block-search-form {
   display: none;
 }
 
-/* line 88, ../sass/responsive.smartphone.landscape.scss */
 .block-support-ijnet,
 .block-login-block {
   margin-bottom: 0px !important;
 }
 
-/* line 91, ../sass/responsive.smartphone.landscape.scss */
 .block-login-block {
   width: 204px !important;
   padding-top: 0;
 }
-/* line 94, ../sass/responsive.smartphone.landscape.scss */
 .block-login-block .block-inner {
   margin-right: 0;
   margin-left: 10px;
 }
-/* line 98, ../sass/responsive.smartphone.landscape.scss */
 .block-login-block .block-inner .block-content {
   padding: 17px 6px 0px 0px;
 }
@@ -120,17 +102,14 @@ input[type="text"] {
  *   Top BAR
  * ========================================================================== */
 /* leaderboard-wrapper ====================================================== */
-/* line 109, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper {
   background: #5b5836;
   border-bottom: 1px solid #3b3923;
 }
-/* line 112, ../sass/responsive.smartphone.landscape.scss */
 #leaderboard-wrapper .block {
   margin-bottom: 0px;
 }
 
-/* line 118, ../sass/responsive.smartphone.landscape.scss */
 .block-top-header-menu ul.menu {
   display: none;
 }
@@ -139,39 +118,31 @@ input[type="text"] {
 /* =============================================================================
  *   Item list
  * ========================================================================== */
-/* line 132, ../sass/responsive.smartphone.landscape.scss */
 .article-item-list {
   width: 100%;
   float: left;
   height: auto;
 }
-/* line 689, ../sass/mixins/_mixin.scss */
 .article-item-list:nth-child(odd) {
   clear: left;
 }
-/* line 719, ../sass/mixins/_mixin.scss */
 .article-item-list .content:nth-child(odd) {
   margin-right: 10px;
 }
-/* line 720, ../sass/mixins/_mixin.scss */
 .article-item-list .content:nth-child(even) {
   margin-right: 0px;
 }
-/* line 783, ../sass/mixins/_mixin.scss */
 .article-item-list .content {
   position: relative;
 }
-/* line 785, ../sass/mixins/_mixin.scss */
 .article-item-list img {
   width: 100%;
 }
-/* line 788, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
-/* line 792, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -179,13 +150,11 @@ input[type="text"] {
   width: auto;
   border: 1px solid #C0C0C0;
 }
-/* line 799, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
-/* line 803, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -198,12 +167,10 @@ input[type="text"] {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-/* line 814, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
-/* line 826, ../sass/mixins/_mixin.scss */
 .article-item-list .aricle-title,
 .article-item-list .node-title {
   font-size: 18px;
@@ -214,57 +181,46 @@ input[type="text"] {
   overflow: hidden;
   clear: both;
 }
-/* line 834, ../sass/mixins/_mixin.scss */
 .article-item-list .aricle-title a,
 .article-item-list .node-title a {
   color: #137a9a;
 }
-/* line 838, ../sass/mixins/_mixin.scss */
 .article-item-list .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
-/* line 846, ../sass/mixins/_mixin.scss */
 .article-item-list .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
 }
 
-/* line 137, ../sass/responsive.smartphone.landscape.scss */
 .article-item-list-no-body {
   width: 100%;
   float: left;
   height: auto;
 }
-/* line 736, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body:nth-child(odd) {
   clear: left;
 }
-/* line 766, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .content:nth-child(odd) {
   margin-right: 10px;
 }
-/* line 767, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .content:nth-child(even) {
   margin-right: 0px;
 }
-/* line 783, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .content {
   position: relative;
 }
-/* line 785, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body img {
   width: 100%;
 }
-/* line 788, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
-/* line 792, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -272,13 +228,11 @@ input[type="text"] {
   width: auto;
   border: 1px solid #C0C0C0;
 }
-/* line 799, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
-/* line 803, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -291,12 +245,10 @@ input[type="text"] {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-/* line 814, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
-/* line 826, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .aricle-title,
 .article-item-list-no-body .node-title {
   font-size: 18px;
@@ -307,19 +259,16 @@ input[type="text"] {
   overflow: hidden;
   clear: both;
 }
-/* line 834, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .aricle-title a,
 .article-item-list-no-body .node-title a {
   color: #137a9a;
 }
-/* line 838, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
-/* line 846, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
@@ -328,7 +277,6 @@ input[type="text"] {
 /* =============================================================================
  *   TABS
  * ========================================================================== */
-/* line 145, ../sass/responsive.smartphone.landscape.scss */
 .content-tabs .block-title {
   display: none;
 }
@@ -336,48 +284,39 @@ input[type="text"] {
 /* =============================================================================
  *   Video landing page
  * ========================================================================== */
-/* line 151, ../sass/responsive.smartphone.landscape.scss */
 .pane-jsonblocks-social-block {
   display: none !important;
 }
 
-/* line 152, ../sass/responsive.smartphone.landscape.scss */
 .pane-fe-videos-fe-videos-search .videos-landing-header {
   height: 222px;
 }
 
-/* line 154, ../sass/responsive.smartphone.landscape.scss */
 .pane-fe-videos-fe-videos-search .videos-landing-header .header,
 .pane-fe-videos-fe-videos-search .videos-landing-header .topic-select {
   width: 100%;
 }
 
-/* line 159, ../sass/responsive.smartphone.landscape.scss */
 .pane-views-videos-featured-video {
   margin-bottom: 0px;
 }
 
-/* line 160, ../sass/responsive.smartphone.landscape.scss */
 .view-display-id-featured_video {
   height: 100%;
 }
 
-/* line 161, ../sass/responsive.smartphone.landscape.scss */
 .view-display-id-featured_video iframe {
   height: 280px;
 }
 
-/* line 162, ../sass/responsive.smartphone.landscape.scss */
 .page-videos .view-display-id-featured_video {
   margin-right: 0px;
 }
 
-/* line 163, ../sass/responsive.smartphone.landscape.scss */
 .view-display-id-featured_video {
   padding-right: 15px;
 }
 
-/* line 166, ../sass/responsive.smartphone.landscape.scss */
 .page-videos .pane-views-videos-related-videos-landing .block-inner {
   margin-top: 0px;
   margin-left: 20px;
@@ -386,13 +325,11 @@ input[type="text"] {
   height: auto;
 }
 
-/* line 173, ../sass/responsive.smartphone.landscape.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row {
   width: 50%;
   float: left;
   margin-bottom: 0px;
 }
-/* line 177, ../sass/responsive.smartphone.landscape.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row .node-video {
   margin: 0 5px;
 }
@@ -400,23 +337,19 @@ input[type="text"] {
 /* =============================================================================
  *   Opportunities LANDING
  * ========================================================================== */
-/* line 189, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets #edit-field-category-tid-wrapper,
 .views-exposed-widgets #edit-field-region-tid-wrapper {
   width: 100%;
   padding-right: 0%;
 }
-/* line 194, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets #edit-title-wrapper {
   width: 100%;
   padding: 2% 0% 0 0;
 }
-/* line 198, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets #edit-keys-wrapper {
   padding-right: 0px;
   width: 242px;
 }
-/* line 202, ../sass/responsive.smartphone.landscape.scss */
 .views-exposed-widgets .views-submit-button {
   width: 100%;
   text-align: center;
@@ -425,7 +358,6 @@ input[type="text"] {
 /* =============================================================================
  *   User Profile
  * ========================================================================== */
-/* line 135, ../sass/mixins/_mixin.scss */
 .section-users #content .profile:after {
   content: ".";
   display: block;
@@ -433,30 +365,24 @@ input[type="text"] {
   clear: both;
   visibility: hidden;
 }
-/* line 142, ../sass/mixins/_mixin.scss */
 * html .section-users #content .profile {
   height: 1px;
 }
-/* line 216, ../sass/responsive.smartphone.landscape.scss */
 .section-users #content .profile .field-name-field-bio {
   width: 100%;
 }
-/* line 218, ../sass/responsive.smartphone.landscape.scss */
 .section-users #content .profile .field-name-field-bio .field-items {
   margin-right: 0px;
   padding-right: 0px;
 }
-/* line 223, ../sass/responsive.smartphone.landscape.scss */
 .section-users #content .profile .user-picture {
   margin: 0px 0 0 15px;
 }
 
-/* line 236, ../sass/responsive.smartphone.landscape.scss */
 .page-search .search-form .form-wrapper {
   width: 100%;
   margin: 0;
 }
-/* line 243, ../sass/responsive.smartphone.landscape.scss */
 .page-search .search-form .form-wrapper input {
   width: 100%;
 }

@@ -10,39 +10,31 @@
 /* =============================================================================
 *   Item list
 * ========================================================================== */
-/* line 19, ../sass/responsive.desktop.scss */
 .article-item-list {
   width: 50%;
   float: left;
   height: 370px;
 }
-/* line 689, ../sass/mixins/_mixin.scss */
 .article-item-list:nth-child(odd) {
   clear: left;
 }
-/* line 695, ../sass/mixins/_mixin.scss */
 .article-item-list .content:nth-child(odd) {
   margin-right: 10px;
 }
-/* line 696, ../sass/mixins/_mixin.scss */
 .article-item-list .content:nth-child(even) {
   margin-right: 0px;
 }
-/* line 783, ../sass/mixins/_mixin.scss */
 .article-item-list .content {
   position: relative;
 }
-/* line 785, ../sass/mixins/_mixin.scss */
 .article-item-list img {
   width: 100%;
 }
-/* line 788, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
-/* line 792, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -50,13 +42,11 @@
   width: auto;
   border: 1px solid #C0C0C0;
 }
-/* line 799, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
-/* line 803, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -69,12 +59,10 @@
   -ms-border-radius: 0;
   border-radius: 0;
 }
-/* line 814, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
-/* line 826, ../sass/mixins/_mixin.scss */
 .article-item-list .aricle-title,
 .article-item-list .node-title {
   font-size: 18px;
@@ -85,57 +73,46 @@
   overflow: hidden;
   clear: both;
 }
-/* line 834, ../sass/mixins/_mixin.scss */
 .article-item-list .aricle-title a,
 .article-item-list .node-title a {
   color: #137a9a;
 }
-/* line 838, ../sass/mixins/_mixin.scss */
 .article-item-list .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
-/* line 846, ../sass/mixins/_mixin.scss */
 .article-item-list .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
 }
 
-/* line 24, ../sass/responsive.desktop.scss */
 .article-item-list-no-body {
   width: 50%;
   float: left;
   height: 270px;
 }
-/* line 736, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body:nth-child(odd) {
   clear: left;
 }
-/* line 742, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .content:nth-child(odd) {
   margin-right: 10px;
 }
-/* line 743, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .content:nth-child(even) {
   margin-right: 0px;
 }
-/* line 783, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .content {
   position: relative;
 }
-/* line 785, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body img {
   width: 100%;
 }
-/* line 788, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
-/* line 792, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -143,13 +120,11 @@
   width: auto;
   border: 1px solid #C0C0C0;
 }
-/* line 799, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
-/* line 803, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -162,12 +137,10 @@
   -ms-border-radius: 0;
   border-radius: 0;
 }
-/* line 814, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
-/* line 826, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .aricle-title,
 .article-item-list-no-body .node-title {
   font-size: 18px;
@@ -178,19 +151,16 @@
   overflow: hidden;
   clear: both;
 }
-/* line 834, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .aricle-title a,
 .article-item-list-no-body .node-title a {
   color: #137a9a;
 }
-/* line 838, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
-/* line 846, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;

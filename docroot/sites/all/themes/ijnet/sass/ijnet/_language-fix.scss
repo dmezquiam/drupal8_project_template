@@ -112,6 +112,19 @@
 	.block-about-author .button-tiny {
 		margin-top: 10px;
 	}
+
+
+	//calendar
+    .view-opportunities-calendar {
+    	.view-header .date-nav-wrapper .date-nav {
+			ul.pager {
+
+				li {
+					width: auto;
+				}
+			}
+    	}
+    }
 }
 
 //Arabic
@@ -125,6 +138,28 @@
     .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
     	float: right;
     }
+
+	//calendar
+    .view-opportunities-calendar {
+    	.view-header .date-nav-wrapper .date-nav {
+			ul.pager {
+
+				li { position: absolute; }
+
+				li.date-prev {
+					right: 0;
+					text-align: right;
+				}
+
+				li.date-next{
+					left: 0;
+					right: 829px;
+					text-align: left;
+				}
+			}
+    	}
+    }
+
 }
 
 //Chinese
@@ -146,4 +181,27 @@
     .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
     	float: right;
     }
+
+    //calendar
+    .view-opportunities-calendar {
+    	.view-header .date-nav-wrapper .date-nav {
+			ul.pager {
+
+				li { position: absolute; }
+
+				li.date-prev {
+					right: 0;
+					text-align: right;
+				}
+
+				li.date-next{
+					left: 0;
+					right: 829px;
+					text-align: left;
+				}
+			}
+    	}
+    }
 }
+
+

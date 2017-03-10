@@ -14,16 +14,13 @@
  */
 /* Desktops/laptops and up ======================================= */
 @media only screen and (min-width: 769px) {
-  /* line 22, ../sass/responsive.custom.scss */
   .two-66-33 > .region-two-66-33-first {
     width: 100%;
   }
-  /* line 24, ../sass/responsive.custom.scss */
   .two-66-33 > .region-two-66-33-first .region-inner {
     margin-right: 330px;
   }
 
-  /* line 26, ../sass/responsive.custom.scss */
   .two-66-33 > .region-two-66-33-second {
     width: 330px;
     margin-left: -330px;
@@ -31,19 +28,16 @@
 }
 /* Tablet sizes and up =========================================== */
 @media only screen and (min-width: 480px) and (max-width: 691px) {
-  /* line 36, ../sass/responsive.custom.scss */
   #leaderboard-wrapper .block-top-header-menu {
     width: 39px !important;
   }
 
-  /* line 37, ../sass/responsive.custom.scss */
   #leaderboard-wrapper .block-top-header-menu .menu {
     display: none;
   }
 }
 /* @media only screen and (min-width:769px) and (max-width:989px){} */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  /* line 43, ../sass/responsive.custom.scss */
   .two-66-33 > .region-two-66-33-first,
   .two-66-33 > .region-two-66-33-second {
     float: none;
@@ -66,7 +60,6 @@
    * "Float Region blocks" is an extension for floating blocks in regions, see
    * your themes appearance settings, under the Extensions tab.
    */
-  /* line 68, ../sass/responsive.custom.scss */
   .region[class*="float-blocks"] .block {
     float: none;
     width: 100%;

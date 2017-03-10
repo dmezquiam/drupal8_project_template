@@ -8,34 +8,28 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 /* DRUPAL ADMIN TOOL BAR */
-/* line 15, ../sass/responsive.tablet.portrait.scss */
 body #admin-menu {
   font-size: 8px;
 }
 
-/* line 16, ../sass/responsive.tablet.portrait.scss */
 body.admin-menu {
   margin-top: 21px !important;
 }
 
 /* Increase the body font size on small devices */
-/* line 19, ../sass/responsive.tablet.portrait.scss */
 html {
   font-size: 81.3%;
 }
 
-/* line 24, ../sass/responsive.tablet.portrait.scss */
 p,
 pre {
   font-size: 15px;
 }
 
-/* line 29, ../sass/responsive.tablet.portrait.scss */
 .node ul, .node ol {
   font-size: 15px;
 }
 
-/* line 42, ../sass/responsive.tablet.portrait.scss */
 input[type="email"],
 input[type="tel"],
 input[type="number"],
@@ -51,24 +45,20 @@ input[type="text"] {
 /* =============================================================================
  *   Top BAR
  * ========================================================================== */
-/* line 51, ../sass/responsive.tablet.portrait.scss */
 #leaderboard-wrapper .block-lang-dropdown {
   width: 215px;
   float: right;
   clear: none;
 }
-/* line 52, ../sass/responsive.tablet.portrait.scss */
 #leaderboard-wrapper .block-lang-dropdown .block-title {
   display: none;
 }
-/* line 57, ../sass/responsive.tablet.portrait.scss */
 #leaderboard-wrapper .block-top-header-menu {
   width: 447px;
   height: 38px;
   float: left;
   margin-left: 15px;
 }
-/* line 64, ../sass/responsive.tablet.portrait.scss */
 #leaderboard-wrapper .block-top-header-menu .block-content ul.menu li a {
   font-size: 11px;
 }
@@ -76,21 +66,17 @@ input[type="text"] {
 /* =============================================================================
  *   Header
  * ========================================================================== */
-/* line 77, ../sass/responsive.tablet.portrait.scss */
 #branding {
   width: inherit;
 }
-/* line 79, ../sass/responsive.tablet.portrait.scss */
 #branding #logo {
   padding: 0px 0px 21px 3px;
 }
 
-/* line 84, ../sass/responsive.tablet.portrait.scss */
 #block-search-form {
   display: none;
 }
 
-/* line 90, ../sass/responsive.tablet.portrait.scss */
 .block-support-ijnet,
 .block-login-block {
   margin-bottom: 0px !important;
@@ -99,39 +85,31 @@ input[type="text"] {
 /* =============================================================================
  *   Item list
  * ========================================================================== */
-/* line 99, ../sass/responsive.tablet.portrait.scss */
 .article-item-list {
   width: 50%;
   float: left;
   height: auto;
 }
-/* line 689, ../sass/mixins/_mixin.scss */
 .article-item-list:nth-child(odd) {
   clear: left;
 }
-/* line 711, ../sass/mixins/_mixin.scss */
 .article-item-list .content:nth-child(odd) {
   margin-right: 10px;
 }
-/* line 712, ../sass/mixins/_mixin.scss */
 .article-item-list .content:nth-child(even) {
   margin-right: 0px;
 }
-/* line 783, ../sass/mixins/_mixin.scss */
 .article-item-list .content {
   position: relative;
 }
-/* line 785, ../sass/mixins/_mixin.scss */
 .article-item-list img {
   width: 100%;
 }
-/* line 788, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
-/* line 792, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -139,13 +117,11 @@ input[type="text"] {
   width: auto;
   border: 1px solid #C0C0C0;
 }
-/* line 799, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
-/* line 803, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -158,12 +134,10 @@ input[type="text"] {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-/* line 814, ../sass/mixins/_mixin.scss */
 .article-item-list .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
-/* line 826, ../sass/mixins/_mixin.scss */
 .article-item-list .aricle-title,
 .article-item-list .node-title {
   font-size: 18px;
@@ -174,57 +148,46 @@ input[type="text"] {
   overflow: hidden;
   clear: both;
 }
-/* line 834, ../sass/mixins/_mixin.scss */
 .article-item-list .aricle-title a,
 .article-item-list .node-title a {
   color: #137a9a;
 }
-/* line 838, ../sass/mixins/_mixin.scss */
 .article-item-list .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
-/* line 846, ../sass/mixins/_mixin.scss */
 .article-item-list .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
 }
 
-/* line 104, ../sass/responsive.tablet.portrait.scss */
 .article-item-list-no-body {
   width: 50%;
   float: left;
   height: auto;
 }
-/* line 736, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body:nth-child(odd) {
   clear: left;
 }
-/* line 758, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .content:nth-child(odd) {
   margin-right: 10px;
 }
-/* line 759, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .content:nth-child(even) {
   margin-right: 0px;
 }
-/* line 783, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .content {
   position: relative;
 }
-/* line 785, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body img {
   width: 100%;
 }
-/* line 788, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic {
   position: absolute;
   top: 6px;
   left: 6px;
 }
-/* line 792, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference {
   margin: 0px 10px 0 0;
   background: rgba(0, 0, 0, 0.52);
@@ -232,13 +195,11 @@ input[type="text"] {
   width: auto;
   border: 1px solid #C0C0C0;
 }
-/* line 799, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li {
   line-height: 10px;
   margin: 0;
   position: relative;
 }
-/* line 803, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a {
   font-size: 12px;
   background: transparent;
@@ -251,12 +212,10 @@ input[type="text"] {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-/* line 814, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .item-list-topic .field-type-taxonomy-term-reference ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
-/* line 826, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .aricle-title,
 .article-item-list-no-body .node-title {
   font-size: 18px;
@@ -267,19 +226,16 @@ input[type="text"] {
   overflow: hidden;
   clear: both;
 }
-/* line 834, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .aricle-title a,
 .article-item-list-no-body .node-title a {
   color: #137a9a;
 }
-/* line 838, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .field-name-body {
   margin: 0px 5px 8px 5px;
   line-height: 16px;
   max-height: 95px;
   overflow: hidden;
 }
-/* line 846, ../sass/mixins/_mixin.scss */
 .article-item-list-no-body .author {
   font-size: 14px;
   margin: 0px 5px 0px 5px;
@@ -288,7 +244,6 @@ input[type="text"] {
 /* =============================================================================
  *   TABS
  * ========================================================================== */
-/* line 112, ../sass/responsive.tablet.portrait.scss */
 .content-tabs .block-title {
   font-size: 9px;
 }
@@ -296,32 +251,26 @@ input[type="text"] {
 /* =============================================================================
  *   Video landing page
  * ========================================================================== */
-/* line 117, ../sass/responsive.tablet.portrait.scss */
 .pane-jsonblocks-social-block {
   display: none !important;
 }
 
-/* line 120, ../sass/responsive.tablet.portrait.scss */
 .pane-views-videos-featured-video {
   margin-bottom: 0px;
 }
 
-/* line 121, ../sass/responsive.tablet.portrait.scss */
 .view-display-id-featured_video {
   height: 100%;
 }
 
-/* line 122, ../sass/responsive.tablet.portrait.scss */
 .page-videos .view-display-id-featured_video {
   margin-right: 0px;
 }
 
-/* line 123, ../sass/responsive.tablet.portrait.scss */
 .view-display-id-featured_video {
   padding-right: 15px;
 }
 
-/* line 126, ../sass/responsive.tablet.portrait.scss */
 .page-videos .pane-views-videos-related-videos-landing .block-inner {
   margin-top: 0px;
   margin-left: 20px;
@@ -330,25 +279,21 @@ input[type="text"] {
   height: auto;
 }
 
-/* line 133, ../sass/responsive.tablet.portrait.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row {
   width: 50%;
   float: left;
   margin-bottom: 0px;
 }
-/* line 137, ../sass/responsive.tablet.portrait.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row .node-video {
   margin: 0 5px;
 }
 
-/* line 144, ../sass/responsive.tablet.portrait.scss */
 .category-tabs-list li.category-item {
   width: 50%;
   float: left;
   margin-bottom: 0 !important;
 }
 
-/* line 156, ../sass/responsive.tablet.portrait.scss */
 .page-search .search-form .form-wrapper {
   width: 80%;
   margin: 0 10%;
