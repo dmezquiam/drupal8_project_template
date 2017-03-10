@@ -54,6 +54,7 @@ features[page_manager_pages][] = dashboard_taxonomies
 features[page_manager_pages][] = dashboard_users
 features[panels_layout][] = dashboard
 features[quicktabs][] = dashboard_taxonomies_quicktab
+features[user_permission][] = access_site_dashboard
 features[views_view][] = last_content
 features[views_view][] = taxonomies_editor
 features[views_view][] = user_information

@@ -665,7 +665,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'node_reference',
         'settings' => array(
           'field_multiple_limit' => -1,
@@ -701,7 +701,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_related_content',
-    'label' => 'Related Content',
+    'label' => 'Related Stories',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -978,7 +978,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
   t('Image');
   t('Image Caption');
   t('Primary topic');
-  t('Related Content');
+  t('Related Stories');
   t('Secondary topics');
   t('Tags');
   t('These topics will be used to search and sort the nodes, if there is a primary topic added, it must be repeated here.');

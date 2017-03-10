@@ -62,7 +62,7 @@ function fe_site_config_filter_default_formats() {
         'weight' => -49,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <img> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <iframe> <p> <h1><h2><h3><div><span><script>',
+          'allowed_html' => '<a> <em> <strong> <cite> <img> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <iframe> <p> <h1><h2><h3> <div><span><script><u> style',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),

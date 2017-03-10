@@ -885,6 +885,8 @@ function fe_opportunity_views_default_views() {
   $handler = $view->new_display('block', 'Ending soon Landing', 'ending_soon_landing_block');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'opportunities-list';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '8';
@@ -1053,6 +1055,8 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['title'] = 'Opportunities';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'opportunities-list';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'opportunities-item clearfix';
@@ -1064,6 +1068,11 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Sort criterion: Content: Deadline (field_deadline) */
   $handler->display->display_options['sorts']['field_deadline_value']['id'] = 'field_deadline_value';
   $handler->display->display_options['sorts']['field_deadline_value']['table'] = 'field_data_field_deadline';
@@ -1080,6 +1089,10 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -1095,6 +1108,7 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'training_opportunity' => 'training_opportunity',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'node';
@@ -1102,11 +1116,19 @@ function fe_opportunity_views_default_views() {
   $handler->display->display_options['filters']['language_1']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  $handler->display->display_options['filters']['language_1']['group'] = 1;
+  /* Filter criterion: Content: Deadline (field_deadline) */
+  $handler->display->display_options['filters']['field_deadline_value_1']['id'] = 'field_deadline_value_1';
+  $handler->display->display_options['filters']['field_deadline_value_1']['table'] = 'field_data_field_deadline';
+  $handler->display->display_options['filters']['field_deadline_value_1']['field'] = 'field_deadline_value';
+  $handler->display->display_options['filters']['field_deadline_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_deadline_value_1']['group'] = 2;
   /* Filter criterion: Content: Deadline (field_deadline) */
   $handler->display->display_options['filters']['field_deadline_value']['id'] = 'field_deadline_value';
   $handler->display->display_options['filters']['field_deadline_value']['table'] = 'field_data_field_deadline';
   $handler->display->display_options['filters']['field_deadline_value']['field'] = 'field_deadline_value';
   $handler->display->display_options['filters']['field_deadline_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_deadline_value']['group'] = 2;
   $handler->display->display_options['filters']['field_deadline_value']['default_date'] = 'now';
   $handler->display->display_options['path'] = 'opportunities/%';
 
@@ -1114,6 +1136,8 @@ function fe_opportunity_views_default_views() {
   $handler = $view->new_display('block', 'Opportunities on a Day', 'opps_by_day');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'opportunities-list';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '8';

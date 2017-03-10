@@ -1,0 +1,326 @@
+[dir="rtl"] {
+
+  //RESET
+  ul {
+    padding: 0 40px 0 0px;
+  }
+
+  .node {
+    ul, ol {
+      padding: 0 40px 0 0px;
+      font-size: $font-size-regular-rtl !important;
+    }
+  }
+
+  @media only screen and (min-width:0px) and (max-width: 989px) {
+    p,
+    pre {
+      font-size: $font-size-regular-rtl-mobile !important;
+    }
+    .node {
+      ul, ol {
+        font-size: $font-size-regular-rtl-mobile !important;
+      }
+    }  
+  }
+
+  //Layout
+  //home
+  body .two-66-33 > .region-two-66-33-first .region-inner {
+    margin-right: 0px;
+    margin-left: 330px;
+  }
+  body .at-panel .region {
+    float: right;
+  }
+  body .two-66-33 > .region-two-66-33-second {
+    margin-right: -330px;
+    margin-left: 0px;
+  }
+  @media only screen and (max-width: 768px) and (min-width: 481px) {
+    body .at-panel .region { float: none; }
+    body .two-66-33 > .region-two-66-33-first .region-inner { margin-left: 0; }
+    body .two-66-33 > .region-two-66-33-second { margin-right: 0; }
+  }
+
+
+  //interior
+  body #content-column, .content-column, div.sidebar {
+    float: right;
+    clear: none;
+  }
+  body .region-sidebar-second {
+    width: 330px;
+    margin-right: -330px;
+    margin-left: 0px;
+  }
+
+  body.sidebar-second .content-inner {
+    margin-left: 330px;
+    margin-right: 0;
+  }
+
+
+  //mobile
+  @media only screen and (min-width:0px) and (max-width:480px) {
+    //interior
+    body #content-column, .content-column, div.sidebar {}
+    
+    body .region-sidebar-second {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0px;
+    }
+
+    body.sidebar-second .content-inner {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  // ====================================================
+    .field-type-taxonomy-term-reference ul.field-items {
+      width: 88%;
+      li { float: right; }
+    }
+    .field-type-taxonomy-term-reference h2.field-label { width: 12%; }
+    
+
+
+    //FLOAT RIGHT =====>
+    .view-display-id-news_teaser_list .buttons,
+    .region-highlighted .field-type-taxonomy-term-reference ul.field-items li,
+    .region-highlighted .field-type-taxonomy-term-reference h2.field-label,
+    .block-top-header-menu,
+    .nav li, .nav ul.menu li,
+    .block-login-block,
+    .block-support-ijnet,
+     #branding,
+    .field-type-taxonomy-term-reference ul.field-items,
+    .field-type-taxonomy-term-reference h2.field-label { float: right !important; }
+
+    //FLOAT LEFT <=====
+    .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"],
+    .block-lang-dropdown,
+    #header-wrapper .region-header { float: left; }
+  // ====================================================
+    
+
+    .block-top-header-menu {
+      margin-left: 0px;
+      margin-right: 23px;
+    }
+
+
+    // Connect with IJNET block
+    .mail-subscribe .dropdown .clicker {
+      background: url("../images/arrow_down.png") no-repeat 0px center;
+    }
+    .mail-subscribe .dropdown .clicker.active {
+      background: url("../images/bt_close.png") no-repeat 0px center;
+    }
+    .mail-subscribe .dropdown .clicker h4 { 
+      margin-left: 18px;
+      margin-right: 0px;
+    }
+  // ====================================================
+
+  //Header Top menu
+    .block-top-header-menu {
+      background-position: right center;
+    }
+    .block-top-header-menu .block-content {
+      padding: 10px 24px 8px 0px;
+    }
+  // ====================================================
+
+  //Header dropdown-language
+  body .dd-pointer {
+    left: 10px;
+    right: initial;
+  }
+  .block-lang-dropdown {
+    background-position: right center;
+  }
+  .block-lang-dropdown .block-inner {
+  }
+
+  .block-lang-dropdown .block-title {
+    float: right;
+    margin-left: 0px;
+    margin-right: 6px;
+  }
+  .block-lang-dropdown .ijnet-language-dropdown {
+    float: left;
+  }
+  .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-options:after {
+    left: 20px;
+    right: initial;
+  }
+  .block-lang-dropdown .ijnet-language-dropdown .form-item .dd-container .dd-options:before {
+    left: 19px;
+    right: initial;
+  }
+  // ====================================================
+
+
+  // Author Block =======================================
+    .block-about-author .avatar {
+      margin-left: 10px;
+    }
+  // ====================================================
+
+  //BROWSE BY block
+    .sidebar-tabs .block-title {
+      right: 26px;
+      left: inherit;
+    }
+    .sidebar-tabs .quicktabs-wrapper .quicktabs-tabs {
+      text-align: left;
+    }
+  // ====================================================
+
+  .sidebar-tabs .author-tabs-list ul li .avatar {
+    margin-right: 0px;
+    margin-left: 10px;
+    float: right;
+  }
+  .sidebar-tabs .author-tabs-list ul li .button {
+    right: 115px;
+    left: inherit;
+  }
+
+  //Header search 
+    #block-search-form .block-inner .form-item-search-block-form {
+      float: right;
+    }
+    #block-search-form .block-inner .form-item-search-block-form input {
+      padding: 11px 9px 6px 9px;
+    }
+    #block-search-form .block-inner #edit-actions {
+      float: left;
+      input {
+        border-radius: 4px 0px 0px 5px;
+        background: #000;
+      }
+    }
+  // ====================================================
+
+  //Facebook block
+    .facebook-like .logo img {
+      float: right;
+      margin-top: 2px;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+  // ====================================================
+
+  //Tabs
+    .content-tabs .quicktabs-wrapper .quicktabs-tabs {
+      text-align: left;
+      margin: 0px 0px 0px 5px;
+    }
+
+    .content-tabs .block-title {
+      left: initial;
+      right: 27px;
+    }
+  // ====================================================
+
+  //Twitter block
+  .twitter-status .avatar { float: right; }
+  .twitter-status .timestamp { float: left; }
+  .twitter-status .name-handle {
+    margin-right: 60px;
+    margin-left: 0px;
+  }
+  // ====================================================
+
+  //OPPORTUNITIES FOR JOURNALISTS 
+  .opportunities-list .opportunities-item .opportunities-deadline {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0px;
+  }
+  .opportunities-list .buttons {
+    float: left;
+  }
+
+  //videos
+  .page-videos .view-display-id-featured_video {
+    margin-right: 0px;
+    margin-left: -20px;
+  }
+  .page-videos .pane-views-videos-related-videos-landing .block-inner {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+
+  .view-display-id-featured_video {
+    padding: 0px 15px 15px 0px;
+  }
+
+  .videos-landing-header .header {
+    float: right;
+  }
+  .videos-landing-header .topic-select .topic-select-inner .search {
+    float: left;
+  }
+
+  .video-list .video-item .node-video h2 {
+    text-align: right;
+  }
+
+  //
+  @media (max-width: 480px) {
+    body .two-66-33 > .region-two-66-33-first .region-inner {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+    body .at-panel .region {
+      float: right;
+    }
+    body .two-66-33 > .region-two-66-33-second {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+    .main-content .block-inner {
+      margin-right:0px;
+    }
+  }
+
+  .item-list ul.pager li.pager-next,
+  .item-list ul.pager li.pager-previous,
+  .item-list ul.pager li.pager-item,
+  .item-list ul.pager li.pager-current {
+    float: right;
+  }
+
+  .item-list ul.pager li.pager-item,
+  .item-list ul.pager li.pager-current {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .item-list ul.pager li.pager-next,
+  .item-list ul.pager li.pager-previous {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .item-list ul.pager li.pager-item a,
+  .item-list ul.pager li.pager-current a {
+    font-size: 18px;
+  }
+
+  .page-email-bulletin-archive table h4,
+  .page-email-bulletin-archive thead h4,
+  .page-email-bulletin-archive tbody h4,
+  .page-email-bulletin-archive tr h4,
+  .page-email-bulletin-archive th h4,
+  .page-email-bulletin-archive td h4,
+  .page-email-bulletin-archive td p {
+    text-align: right;
+  }
+}
+

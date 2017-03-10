@@ -5,3 +5,30 @@
  */
 
 include_once 'fe_admin_dashboards.features.inc';
+
+/*
+ *  implements hook_permission(): adds permission to access the dashboard
+ */
+function fe_admin_dashboards_permission() {
+  return array(
+    'access_site_dashboard' => array(
+      'title' => t('Access the dashboard'),
+      'description' => t(''),
+    ),
+  );
+}
+
+/*
+ *  adds Dashboard link on the admin toolbar
+ */
+function fe_admin_dashboards_set_link() {
+  $item = array(
+    'link_title' => 'Dashboard',
+    'link_path' => 'admin/dashboard',
+    'description' => 'View your dashboard.',
+    'menu_name' => 'management',
+	  'access arguments' => array('access_site_dashboard'),
+    'weight' => -15
+  );
+  menu_link_save($item);
+}

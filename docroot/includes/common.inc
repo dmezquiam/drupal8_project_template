@@ -2057,7 +2057,11 @@ function format_date($timestamp, $type = 'medium', $format = '', $timezone = NUL
   }
 
   // Create a DateTime object from the timestamp.
-  $date_time = date_create('@' . $timestamp);
+  if($timestamp != NULL && !empty($timestamp)){
+    $date_time = date_create('@' . intval($timestamp));
+  }else {
+    $date_time = date_create('@' . time());
+  }
   // Set the time zone for the DateTime object.
   date_timezone_set($date_time, $timezones[$timezone]);
 
@@ -2092,7 +2096,7 @@ function format_date($timestamp, $type = 'medium', $format = '', $timezone = NUL
 function date_iso8601($date) {
   // The DATE_ISO8601 constant cannot be used here because it does not match
   // date('c') and produces invalid RDF markup.
-  return date('c', $date);
+  return date('c', $date + 0);
 }
 
 /**

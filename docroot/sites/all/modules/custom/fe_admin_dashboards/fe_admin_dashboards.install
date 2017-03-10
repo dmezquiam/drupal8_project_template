@@ -1,0 +1,15 @@
+<?php
+
+function fe_admin_dashboards_install() {
+
+}
+
+/**
+ * Implementations of hook_update_N().
+ */
+/**
+ * Add "Dashboard" link to admin toolbar
+ */
+function fe_admin_dashboards_update_7001() {
+  fe_admin_dashboards_set_link();
+}

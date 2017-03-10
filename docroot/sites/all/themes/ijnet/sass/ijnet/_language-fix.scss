@@ -1,0 +1,207 @@
+//English
+.i18n-en {
+	//latest-posts-block 
+	.latest-posts-block { 
+      background: url('#{$path-to-images}/bg_latest_post_en.jpg') no-repeat left center;
+      a:hover {  }
+    }
+}
+
+//Spanish
+.i18n-es {
+	@media (max-width: 989px) and (min-width: 769px) {
+		.pane-quicktabs-opportunities-for-journalists {
+			.block-title {
+				top: -23px !important;
+				left: 29px;
+				line-height: normal;
+			}
+		}
+	}
+	//opportunities tabs
+	.pane-quicktabs-opportunities-for-journalists {
+		.block-title {
+			font-size: 13px;
+			top: 5px;
+			left: 29px;
+			line-height: normal;
+		}
+	}
+	//latest-posts-block 
+    .latest-posts-block { 
+      background: url('#{$path-to-images}/bg_latest_post_es.jpg') no-repeat left center;
+      a:hover {  }
+    }
+
+    &.section-knight-media-innovators #block-blockify-blockify-page-title h1 {
+		font-size: 25px;
+	}
+
+}
+
+//Portugues
+.i18n-pt-br {
+	.block-login-block {
+		font-size: 15px;
+	}
+	.mail-subscribe .dropdown .clicker h4 {
+		font-size: 14px;
+	}
+	//latest-posts-block 
+    .latest-posts-block { 
+      background: url('#{$path-to-images}/bg_latest_post_pt.jpg') no-repeat left center;
+    }
+
+	.latest-posts-block .inner-block a {
+		line-height: 14px;
+		font-size: 12px;
+		padding: 13px 44px 13px 16px;
+	}
+
+	.pane-quicktabs-opportunities-for-journalists .block-title {
+		font-size: 13px;
+		width: 270px;
+		top: 7px;
+		left: 29px;
+		line-height: normal;
+	}
+}
+
+
+//Russia
+.i18n-ru {
+	.content-tabs .block-title {
+		left: 22px;
+	}
+	//Top BAR
+	.block-top-header-menu { width: 65%; }
+	.block-lang-dropdown { width: 30%; }
+	.block-top-header-menu .block-content ul.menu li a {
+		display: block;
+		line-height: 12px;
+		margin: 0 4px;
+	}
+
+	//login block 
+	.block-login-block {
+		font-size: 14px;
+	}
+
+	//opportunities tabs
+	.pane-quicktabs-opportunities-for-journalists {
+		.block-title {
+			font-size: 13px;
+			width: 130px;
+			top: -7px;
+			left: 29px;
+			line-height: normal;
+		}
+	}
+
+	//latest-posts-block 
+    .latest-posts-block { 
+      background: url('#{$path-to-images}/bg_latest_post_ru.jpg') no-repeat left center;
+      a:hover {  }
+    }
+	.latest-posts-block .inner-block a {
+		padding: 13px 44px 13px 22px;
+		line-height: 14px;
+		font-size: 11px;
+	}
+
+	.block-about-author .button-tiny {
+		margin-top: 10px;
+	}
+
+
+	//calendar
+    .view-opportunities-calendar {
+    	.view-header .date-nav-wrapper .date-nav {
+			ul.pager {
+
+				li {
+					width: auto;
+				}
+			}
+    	}
+    }
+}
+
+//Arabic
+.i18n-ar {
+	//latest-posts-block 
+    .latest-posts-block { 
+      background: url('#{$path-to-images}/bg_latest_post_ar.jpg') no-repeat left center;
+    }
+
+    .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link,
+    .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
+    	float: right;
+    }
+
+	//calendar
+    .view-opportunities-calendar {
+    	.view-header .date-nav-wrapper .date-nav {
+			ul.pager {
+
+				li { position: absolute; }
+
+				li.date-prev {
+					right: 0;
+					text-align: right;
+				}
+
+				li.date-next{
+					left: 0;
+					right: 829px;
+					text-align: left;
+				}
+			}
+    	}
+    }
+
+}
+
+//Chinese
+.i18n-zh-hans {
+	//latest-posts-block 
+    .latest-posts-block { 
+      background: url('#{$path-to-images}/bg_latest_post_zh-hans.jpg') no-repeat left -10px;
+      height: 202px;
+    }
+}
+
+//Persian
+.i18n-fa {
+	//latest-posts-block 
+    .latest-posts-block { 
+      background: url('#{$path-to-images}/bg_latest_post_fa.jpg') no-repeat left center;
+    }
+    .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link,
+    .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
+    	float: right;
+    }
+
+    //calendar
+    .view-opportunities-calendar {
+    	.view-header .date-nav-wrapper .date-nav {
+			ul.pager {
+
+				li { position: absolute; }
+
+				li.date-prev {
+					right: 0;
+					text-align: right;
+				}
+
+				li.date-next{
+					left: 0;
+					right: 829px;
+					text-align: left;
+				}
+			}
+    	}
+    }
+}
+
+

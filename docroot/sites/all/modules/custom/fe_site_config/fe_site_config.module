@@ -114,3 +114,28 @@ function fe_site_config_query_term_access_alter(QueryAlterableInterface $query) 
   }
 }
 
+/**
+ * Implements hook_menu_alter.
+ */
+function fe_site_config_menu_alter(&$items) {
+  $redirect_to_frontpage = array(
+    'node',
+    'tags/%',
+    'taxonomy/term/%',
+    'topics/%',
+    'region/%'
+    );
+
+  foreach ($redirect_to_frontpage as $old_url) {
+    $items[$old_url]['access callback'] = TRUE;
+    $items[$old_url]['page callback'] = '_fe_site_config_redirect_to_frontpage';
+    $items[$old_url]['type'] = MENU_CALLBACK;
+  }
+}
+
+
+function _fe_site_config_redirect_to_frontpage() {
+  global $base_url;
+  $redirect = $base_url . url();
+  drupal_goto($path = $redirect);
+}
