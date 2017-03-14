@@ -853,6 +853,17 @@ function fe_user_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create multimedia content'.
+  $permissions['create multimedia content'] = array(
+    'name' => 'create multimedia content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create new directories'.
   $permissions['create new directories'] = array(
     'name' => 'create new directories',
@@ -999,6 +1010,16 @@ function fe_user_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any multimedia content'.
+  $permissions['delete any multimedia content'] = array(
+    'name' => 'delete any multimedia content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any news content'.
   $permissions['delete any news content'] = array(
     'name' => 'delete any news content',
@@ -1112,6 +1133,16 @@ function fe_user_user_default_permissions() {
     'name' => 'delete own feed_item content',
     'roles' => array(
       'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own multimedia content'.
+  $permissions['delete own multimedia content'] = array(
+    'name' => 'delete own multimedia content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -1282,6 +1313,17 @@ function fe_user_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any multimedia content'.
+  $permissions['edit any multimedia content'] = array(
+    'name' => 'edit any multimedia content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any news content'.
   $permissions['edit any news content'] = array(
     'name' => 'edit any news content',
@@ -1425,6 +1467,17 @@ function fe_user_user_default_permissions() {
     'name' => 'edit own feed_item content',
     'roles' => array(
       'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own multimedia content'.
+  $permissions['edit own multimedia content'] = array(
+    'name' => 'edit own multimedia content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -1985,6 +2038,16 @@ function fe_user_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'blogger' => 'blogger',
+      'editor' => 'editor',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished multimedia content'.
+  $permissions['view any unpublished multimedia content'] = array(
+    'name' => 'view any unpublished multimedia content',
+    'roles' => array(
+      'administrator' => 'administrator',
       'editor' => 'editor',
     ),
     'module' => 'view_unpublished',
