@@ -210,11 +210,28 @@ function fe_newsletter_theme() {
       'template' => 'ijnet-newsletter-opportunities',
       'path' => $theme_path,
     ),
+
     'ijnet_newsletter_opportunity' => array(
       'variables' => array(
         'opportunity' => null,
       ),
       'template' => 'ijnet-newsletter-opportunity',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_multimedia_items' => array(
+      'variables' => array(
+        'multimedia_items' => null,
+      ),
+      'template' => 'ijnet-newsletter-multimedia-items',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_multimedia' => array(
+      'variables' => array(
+        'multimedia' => null,
+      ),
+      'template' => 'ijnet-newsletter-multimedia',
       'path' => $theme_path,
     ),
   );
@@ -235,6 +252,7 @@ function template_preprocess_ijnet_newsletter_content(&$vars) {
   $vars['featured_contents'] = _fe_newsletter_get_featured_contents($node);
   $vars['advertisements'] = _fe_newsletter_get_advertisements($node);
   $vars['opportunities'] =_fe_newsletter_get_opportunities($node);
+  $vars['multimedia_items'] = _fe_newsletter_get_multimedia_items($node);
 }
 
 /**
@@ -467,6 +485,58 @@ function _fe_newsletter_classify_opportunities($opportunities) {
   $classified_opportunities[0] = $regions;
 
   return $classified_opportunities;
+}
+
+function _fe_newsletter_get_multimedia_items($node) {
+  $language = $node->language;
+
+  $multimedia_items = array();
+  if (!empty($node->field_multimedia)) {
+    if (isset($node->field_multimedia[$language])) {
+      $multimedia_nids = $node->field_multimedia[$language];
+    }
+    else {
+      $multimedia_nids = $node->field_multimedia[LANGUAGE_NONE];
+    }
+
+    foreach ($multimedia_nids as $nid) {
+      $multimedia = _fe_newsletter_get_multimedia($nid['nid']);
+      if ($multimedia) {
+        $multimedia_items[] = $multimedia;
+      }
+    }
+  }
+
+  return $multimedia_items;
+}
+
+function _fe_newsletter_get_multimedia($nid) {
+  $node = node_load($nid);
+  if (!isset($node->nid)) {
+    return FALSE;
+  }
+  $wrapper = entity_metadata_wrapper('node', $node);
+
+  $multimedia = new stdClass();
+  $multimedia->title = $node->title;
+
+  if (!empty($node->body)) {
+    $body_info = $wrapper->body->value();
+    $multimedia->body = $body_info['value'];
+  }
+  else {
+    $multimedia->body = NULL;
+  }
+
+  if (!empty($node->field_image)) {
+    $image_info = $wrapper->field_image->value();
+    $multimedia->image = $image_info['uri'];
+  }
+  else {
+    $multimedia->field_image = NULL;
+  }
+
+  return $multimedia;
 }
 
 function fe_newsletter_content_form($form, &$form_state) {

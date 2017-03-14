@@ -81,6 +81,9 @@
   if (count($opportunities)) {
     print(theme('ijnet_newsletter_opportunities', array('opportunities' => $opportunities)));
   }
+  if (!empty($multimedia_items)) {
+    print(theme('ijnet_newsletter_multimedia_items', array('multimedia_items' => $multimedia_items)));
+  }
 ?>
 
                 <!-- // Begin Body \\ -->
