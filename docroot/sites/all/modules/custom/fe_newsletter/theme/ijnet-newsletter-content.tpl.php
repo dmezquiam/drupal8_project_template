@@ -78,6 +78,9 @@
   if (count($advertisements)) {
     print(theme('ijnet_newsletter_advertisements', array('advertisements' => $advertisements)));
   }
+  if (!empty($comments)) {
+    print(theme('ijnet_newsletter_comments', array('comments' => $comments)));
+  }
   if (count($opportunities)) {
     print(theme('ijnet_newsletter_opportunities', array('opportunities' => $opportunities)));
   }

@@ -234,6 +234,22 @@ function fe_newsletter_theme() {
       'template' => 'ijnet-newsletter-multimedia',
       'path' => $theme_path,
     ),
+
+    'ijnet_newsletter_comments' => array(
+      'variables' => array(
+        'comments' => null,
+      ),
+      'template' => 'ijnet-newsletter-comments',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_comment' => array(
+      'variables' => array(
+        'comment' => null,
+      ),
+      'template' => 'ijnet-newsletter-comment',
+      'path' => $theme_path,
+    ),
   );
 
   return $themes;
@@ -253,6 +269,7 @@ function template_preprocess_ijnet_newsletter_content(&$vars) {
   $vars['advertisements'] = _fe_newsletter_get_advertisements($node);
   $vars['opportunities'] =_fe_newsletter_get_opportunities($node);
   $vars['multimedia_items'] = _fe_newsletter_get_multimedia_items($node);
+  $vars['comments'] = _fe_newsletter_get_comments($node);
 }
 
 /**
@@ -537,6 +554,45 @@ function _fe_newsletter_get_multimedia($nid) {
   }
 
   return $multimedia;
+}
+
+function _fe_newsletter_get_comments($node) {
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $comments = array();
+  if (!empty($node->field_comments)) {
+    $referenced_comments = $wrapper->field_comments->value();
+    foreach ($referenced_comments as $referenced_comment) {
+      $comment = _fe_newsletter_get_comment($referenced_comment);
+      if ($comment) {
+        $comments[] = $comment;
+      }
+    }
+  }
+
+  return $comments;
+}
+
+function _fe_newsletter_get_comment($referenced_comment) {
+  $language = $referenced_comment->language;
+  $comment = new stdClass();
+  $comment->subject = $referenced_comment->subject;
+  $comment->date = format_date($referenced_comment->created);
+  $comment->author = $referenced_comment->name;
+
+  if (!empty($referenced_comment->comment_body)) {
+    if (isset($referenced_comment->comment_body[$language])) {
+      $body_info = $referenced_comment->comment_body[$language];
+    }
+    else {
+      $body_info = $referenced_comment->comment_body[LANGUAGE_NONE];
+    }
+    $comment->body = $body_info[0]['value'];
+  }
+  else {
+    $comment->body = NULL;
+  }
+
+  return $comment;
 }
 
 function fe_newsletter_content_form($form, &$form_state) {
