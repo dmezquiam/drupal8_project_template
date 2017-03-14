@@ -24,7 +24,7 @@ function fe_multimedia_node_info() {
     'multimedia' => array(
       'name' => t('Multimedia'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Here you can enter the Multimedia content that you want to feature on the Newsletter.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
