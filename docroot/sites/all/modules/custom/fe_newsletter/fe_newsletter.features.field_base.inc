@@ -49,6 +49,52 @@ function fe_newsletter_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
+  // Exported field_base: 'field_comments'.
+  $field_bases['field_comments'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_comments',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'comment_node_advertisement' => 'comment_node_advertisement',
+          'comment_node_banner' => 'comment_node_banner',
+          'comment_node_bulletin_email' => 'comment_node_bulletin_email',
+          'comment_node_chat' => 'comment_node_chat',
+          'comment_node_feed' => 'comment_node_feed',
+          'comment_node_feed_item' => 'comment_node_feed_item',
+          'comment_node_news' => 'comment_node_news',
+          'comment_node_page' => 'comment_node_page',
+          'comment_node_staff_member' => 'comment_node_staff_member',
+          'comment_node_training_opportunity' => 'comment_node_training_opportunity',
+          'comment_node_video' => 'comment_node_video',
+        ),
+      ),
+      'target_type' => 'comment',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_from_date'.
   $field_bases['field_from_date'] = array(
     'active' => 1,

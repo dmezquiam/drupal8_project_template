@@ -23,6 +23,7 @@ function fe_newsletter_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -33,6 +34,7 @@ function fe_newsletter_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -75,6 +77,7 @@ function fe_newsletter_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'node_reference_default',
         'weight' => 8,
@@ -107,6 +110,53 @@ function fe_newsletter_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-bulletin_email-field_comments'.
+  $field_instances['node-bulletin_email-field_comments'] = array(
+    'bundle' => 'bulletin_email',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_comments',
+    'label' => 'Comments',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-bulletin_email-field_from_date'.
   $field_instances['node-bulletin_email-field_from_date'] = array(
     'bundle' => 'bulletin_email',
@@ -119,6 +169,7 @@ function fe_newsletter_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -180,6 +231,7 @@ function fe_newsletter_field_default_field_instances() {
           'decimal_separator' => '.',
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -228,6 +280,7 @@ function fe_newsletter_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'node_reference_default',
         'weight' => 3,
@@ -273,6 +326,7 @@ function fe_newsletter_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'node_reference_default',
         'weight' => 7,
@@ -308,6 +362,7 @@ function fe_newsletter_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Advertisements');
+  t('Comments');
   t('Dates');
   t('Featured Content');
   t('Intro');
