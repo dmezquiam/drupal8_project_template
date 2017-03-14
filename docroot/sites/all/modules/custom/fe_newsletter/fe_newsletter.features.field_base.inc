@@ -82,6 +82,7 @@ function fe_newsletter_field_default_field_bases() {
           'comment_node_chat' => 'comment_node_chat',
           'comment_node_feed' => 'comment_node_feed',
           'comment_node_feed_item' => 'comment_node_feed_item',
+          'comment_node_multimedia' => 'comment_node_multimedia',
           'comment_node_news' => 'comment_node_news',
           'comment_node_page' => 'comment_node_page',
           'comment_node_staff_member' => 'comment_node_staff_member',
@@ -123,6 +124,46 @@ function fe_newsletter_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'datetime',
+  );
+
+  // Exported field_base: 'field_multimedia'.
+  $field_bases['field_multimedia'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_multimedia',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'referenceable_types' => array(
+        'advertisement' => 0,
+        'banner' => 0,
+        'bulletin_email' => 0,
+        'chat' => 0,
+        'feed' => 0,
+        'feed_item' => 0,
+        'multimedia' => 'multimedia',
+        'news' => 0,
+        'page' => 0,
+        'staff_member' => 0,
+        'training_opportunity' => 0,
+        'video' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
   );
 
   // Exported field_base: 'field_number_of_advertisements'.

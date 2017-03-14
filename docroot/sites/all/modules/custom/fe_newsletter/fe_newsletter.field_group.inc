@@ -29,6 +29,7 @@ function fe_newsletter_field_group_info() {
       3 => 'field_other_content',
       4 => 'field_advertisements',
       5 => 'field_comments',
+      6 => 'field_multimedia',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

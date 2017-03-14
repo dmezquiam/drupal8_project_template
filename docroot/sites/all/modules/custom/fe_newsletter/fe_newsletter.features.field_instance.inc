@@ -138,7 +138,7 @@ function fe_newsletter_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_comments',
-    'label' => 'Comments',
+    'label' => 'Comments of the week',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -153,7 +153,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -212,6 +212,52 @@ function fe_newsletter_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-bulletin_email-field_multimedia'.
+  $field_instances['node-bulletin_email-field_multimedia'] = array(
+    'bundle' => 'bulletin_email',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
+        ),
+        'type' => 'node_reference_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_multimedia',
+    'label' => 'Multimedia',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
       'weight' => 6,
     ),
   );
@@ -362,10 +408,11 @@ function fe_newsletter_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Advertisements');
-  t('Comments');
+  t('Comments of the week');
   t('Dates');
   t('Featured Content');
   t('Intro');
+  t('Multimedia');
   t('News articles and videos you wouuld like to include in this newsletter. If you do not specify anything here then only articles and videos created in the specified time period will be added to the newsletter. WARNING: All data in this field will be overriden if the dates are changed. ');
   t('Number of Advertisements to display');
   t('Opportunities');
