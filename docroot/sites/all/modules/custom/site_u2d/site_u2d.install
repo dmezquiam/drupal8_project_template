@@ -49,3 +49,10 @@ function site_u2d_update_7003() {
 function site_u2d_update_7004() {
   module_enable(array('entityreference'));
 }
+
+/**
+ * Enable multimedia
+ */
+function site_u2d_update_7005() {
+  module_enable(array('fe_multimedia'));
+}
