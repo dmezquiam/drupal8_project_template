@@ -99,14 +99,14 @@ function _ijnet_newsletter_content_theme_parameters($nid) {
   $parameters['pitch_to_ijnet'] = $pitch_to_ijnet;
 
   if ($pitch_to_ijnet) {
-    $path = drupal_lookup_path("source", 'blog/pitch-ijnet');
+    $path = drupal_lookup_path("source", 'blog/pitch-ijnet', $node->language);
     $node = menu_get_object("node", 1, $path);
-    $wrapper = entity_metadata_wrapper('node', $node);
-    $image = $wrapper->field_image->value();
-
-    $pitch_to_ijnet_image_url = image_style_url('news_wide', $image['uri']);
-
-    $parameters['pitch_to_ijnet_image_url'] = $pitch_to_ijnet_image_url;
+    if ($node) {
+      $wrapper = entity_metadata_wrapper('node', $node);
+      $image = $wrapper->field_image->value();
+      $pitch_to_ijnet_image_url = image_style_url('news_wide', $image['uri']);
+      $parameters['pitch_to_ijnet_image_url'] = $pitch_to_ijnet_image_url;
+    }
   }
 
   return $parameters;
