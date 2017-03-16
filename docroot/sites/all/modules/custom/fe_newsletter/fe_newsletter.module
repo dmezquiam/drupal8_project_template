@@ -585,6 +585,10 @@ function _fe_newsletter_get_comment($referenced_comment) {
   $comment->date = format_date($referenced_comment->created);
   $comment->author = $referenced_comment->name;
 
+  $related_content = node_load($referenced_comment->nid);
+  $comment->post_title = $related_content->title;
+  $comment->post_url = "/" . drupal_get_path_alias("node/" . $related_content->nid);
+
   if (!empty($referenced_comment->comment_body)) {
     if (isset($referenced_comment->comment_body[$language])) {
       $body_info = $referenced_comment->comment_body[$language];
