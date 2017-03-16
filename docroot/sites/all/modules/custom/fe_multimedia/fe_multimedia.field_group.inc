@@ -25,6 +25,7 @@ function fe_multimedia_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_image',
+      2 => 'field_multimedia_link',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
