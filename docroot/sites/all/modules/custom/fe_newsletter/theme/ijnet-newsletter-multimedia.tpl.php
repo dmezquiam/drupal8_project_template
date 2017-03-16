@@ -14,7 +14,7 @@
     </p>
   <?php endif; ?>
   <?php if (isset($multimedia->link_url)) : ?>
-    <a href="<?php print $multimedia->link_url; ?>">
+    <a href="<?php print $multimedia->link_url; ?>" target="_blank">
       <?php isset($multimedia->link_title) ? print $multimedia->link_title : print t("Go to our site"); ?>
     </a>
   <?php endif; ?>

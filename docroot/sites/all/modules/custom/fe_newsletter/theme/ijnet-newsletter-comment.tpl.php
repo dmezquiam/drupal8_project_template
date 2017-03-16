@@ -13,7 +13,7 @@
   <?php print($comment->date)?> <?php print t("by"); ?> <?php print($comment->author)?>
     <?php if (isset($comment->post_title) && isset($comment->post_url)) : ?>
     <p style="font-family: verdana, arial;  font-size: 12px;">
-      <?print t("In response to"); ?> <a href="<?php print($comment->post_url); ?>"><?php print($comment->post_title)?></a>
+      <?print t("In response to"); ?> <a href="<?php print($comment->post_url); ?>" target="_blank"><?php print($comment->post_title)?></a>
     </p>
     <?php endif; ?>
 
