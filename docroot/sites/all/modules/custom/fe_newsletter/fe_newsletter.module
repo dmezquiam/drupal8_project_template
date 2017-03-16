@@ -553,6 +553,12 @@ function _fe_newsletter_get_multimedia($nid) {
     $multimedia->field_image = NULL;
   }
 
+  if (!empty($node->field_multimedia_link)) {
+    $link = $wrapper->field_multimedia_link->value();
+    $multimedia->link_title = $link['title'];
+    $multimedia->link_url = $link['url'];
+  }
+
   return $multimedia;
 }
 
