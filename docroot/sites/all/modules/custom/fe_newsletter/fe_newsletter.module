@@ -550,7 +550,7 @@ function _fe_newsletter_get_multimedia($nid) {
     $multimedia->image = $image_info['uri'];
   }
   else {
-    $multimedia->field_image = NULL;
+    $multimedia->image = NULL;
   }
 
   if (!empty($node->field_multimedia_link)) {
