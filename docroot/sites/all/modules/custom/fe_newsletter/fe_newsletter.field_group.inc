@@ -85,8 +85,8 @@ function fe_newsletter_field_group_info() {
     'label' => 'Tabs',
     'weight' => '2',
     'children' => array(
-      0 => 'group_newsletter_dates',
-      1 => 'group_newsletter_content',
+      0 => 'group_newsletter_content',
+      1 => 'group_newsletter_dates',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
