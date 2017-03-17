@@ -1,46 +1,42 @@
 <?php foreach ($featured_contents as $index => $featured_content) : ?>
+  <?php // Render the title of section and the first Featured Content ?>
+  <?php if ($index == 0) : ?>
+      <table border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+          <td valign="top" style="padding-left: 0px;">
+            <p style="padding:25px 20px 0px; margin:0;font-size:22px;font-weight:bold;line-height:26px;color: #bf6c2a; font-family: verdana, arial,sans-serif;"><?php print t('Featured on IJNet');?></p>
+          </td>
 
-  <?php if (($index % 2) == 0) : ?>
-
-  <!-- // Begin Body \\ -->
-  <table border="0" cellpadding="0" cellspacing="0" width="600">
-
-    <?php if ($index == 0) : ?>
-
-    <tr>
-      <td valign="top" style="padding-left: 0px;">
-        <p style="padding:25px 20px 0px; margin:0;font-size:22px;font-weight:bold;line-height:26px;color: #bf6c2a; font-family: verdana, arial,sans-serif;"><?php print t('Featured on IJNet');?></p>
-      </td>
-    </tr>
-
-    <?php endif; ?>
-
-    <tr>
-
+          <?php print theme('ijnet_newsletter_first_featured_content', array('featured_content' => $featured_contents[$index]))?>
+        </tr>
+      </table>
+      <?php continue; ?>
   <?php endif; ?>
 
-      <td valign="top" width="280">
-  <?php print theme('ijnet_newsletter_featured_content', array('featured_content' => $featured_contents[$index]))?>
-      </td>
-
-  <?php if (($index % 2) == 1 ) : ?>
-
-    </tr>
-  </table>
-  <!-- // End Body \\ -->
-
+  <?php // For odd elements create the table and his row. ?>
+  <?php if (($index % 2) == 1): ?>
+    <table border="0" cellpadding="0" cellspacing="0" width="600">
+      <tr>
   <?php endif; ?>
 
+  <?php // Render the content. ?>
+    <td valign="top" width="280">
+      <?php print theme('ijnet_newsletter_featured_content', array('featured_content' => $featured_contents[$index]))?>
+    </td>
+
+  <?php // For even elements, close the row and the table. ?>
+  <?php if (($index % 2) == 0 ) : ?>
+      </tr>
+    </table>
+  <?php endif; ?>
 <?php endforeach; ?>
 
-<?php if (($index % 2) == 0  ) : ?>
-      
-        <td valign="top" width="280">
-      </td>
+<?php // If the number of featured contents is odd, ?>
+<?php // create an empty content and close the table. ?>
+<?php if (($index % 2) == 1 && ($index != 0)): ?>
+    <td valign="top" width="280"></td>
     </tr>
   </table>
-  <!-- // End Body \\ -->
-
 <?php endif; ?>
 
   <!-- // Begin Body \\ -->

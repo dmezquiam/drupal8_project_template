@@ -172,6 +172,15 @@ function fe_newsletter_theme() {
       'template' => 'ijnet-newsletter-featured-contents',
       'path' => $theme_path,
     ),
+
+    'ijnet_newsletter_first_featured_content' => array(
+      'variables' => array(
+        'featured_content' => null,
+      ),
+      'template' => 'ijnet-newsletter-first-featured-content',
+      'path' => $theme_path,
+    ),
+
     'ijnet_newsletter_featured_content' => array(
       'variables' => array(
         'featured_content' => null,
