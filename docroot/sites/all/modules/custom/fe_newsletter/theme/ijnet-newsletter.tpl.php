@@ -17,7 +17,7 @@
   <?php endif ?>
   <center>
 
-    <?php print(theme('ijnet_newsletter_content', array('node' => $node, 'social_media_items' => $social_media_items, 'logo' => $logo)));?>
+    <?php print(theme('ijnet_newsletter_content', array('node' => $node, 'social_media_items' => $social_media_items, 'logo' => $logo, 'pitch_to_ijnet' => $pitch_to_ijnet, 'pitch_to_ijnet_image_url' => $pitch_to_ijnet_image_url)));?>
 
   </center>
   <?php if (($language == 'ar') || ($language == 'fa')): ?>
