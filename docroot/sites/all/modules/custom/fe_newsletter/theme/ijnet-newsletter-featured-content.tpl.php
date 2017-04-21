@@ -16,6 +16,3 @@
     </tr>
   </table>
   <!-- // End Module: Top Image with Content \\ -->
-<!-- color: #28678f;
-font-weight: bold;
-text-decoration: none; -->

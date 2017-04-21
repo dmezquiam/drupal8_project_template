@@ -22,15 +22,17 @@
                 </table>
                 <!-- // End Template Header \\ -->
 
-                <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#265775" style="background: #265775 url(<?php print(file_create_url($newsletter_images_path.'bar.jpg'))?>) bottom center repeat-x;"> 
+                <table border="0" cellpadding="0" cellspacing="0" width="600" height="80" bgcolor="#265775" style="background: #265775;border-bottom: 7px solid #deb408;">
                   <tr>
                     <td valign="top" width="280">
 
-                      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-left: 20px; padding-top: 10px;">
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-left: 20px; padding-top: 0px;">
                         <tr>
                           <td valign="top">
 
-                            <p style="margin:10px 0 13px;font-family:Arial,sans-serif;font-size:13px;line-height:20px;text-transform:uppercase;color:#ffffff;-webkit-text-size-adjust:none;"><?php print t('Weekly Bulletin');?><br /><span style="font-size:14px;font-weight:bold;"><?php print($newsletter_date)?></span></p>
+                            <h3 style="margin: 19px 0 5px;font-family: Arial,sans-serif;font-size: 29px;line-height: 32px; color: #fff;font-weight: normal;"><?php print t('Weekly Bulletin');?>
+                            </h3>
+                            <h4 style="font-size: 19px;font-weight: bold;margin: 0 0 20px 0;color: #265775;background: #fff;width: 136px;padding: 4px 8px;"><?php print($newsletter_date)?></h4>
 
                           </td>
                         </tr>
@@ -44,7 +46,7 @@
                         <tr>
                           <td class="news-social" valign="middle" style="padding-top: 15px; padding-right: 15px; text-align: right;">
 
-<?php foreach ($social_media_items as $item) :?>
+                          <?php foreach ($social_media_items as $item) :?>
 
                             <a href="<?php print($item['url'])?>" style="margin-left: 5px; text-decoration: none; font-family: verdana, arial,sans-serif;">
                                 <img src="<?php print(file_create_url($item['image']['path']))?>"
@@ -52,7 +54,7 @@
                                 width="32" height="32" border="0" />
                             </a>
 
-<?php endforeach;?>
+                          <?php endforeach;?>
 
                           </td>
                         </tr>
@@ -68,11 +70,12 @@
             <tr>
               <td align="center" valign="top">
 
+
 <?php
   if (count($featured_contents)) {
     print(theme('ijnet_newsletter_featured_contents', array('featured_contents' => $featured_contents)));
   }
-  if (!empty($pitch_to_ijnet)) {
+  if ($pitch_to_ijnet) {
     print(theme('ijnet_newsletter_pitch_to_ijnet', array('pitch_to_ijnet_image_url' => $pitch_to_ijnet_image_url)));
   }
   if (count($advertisements)) {
@@ -109,7 +112,6 @@
             </tr>
 
             </table>
-          <br />
         </td>
       </tr>
     </table>
