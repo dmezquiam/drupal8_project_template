@@ -28,8 +28,9 @@ function fe_newsletter_field_group_info() {
       2 => 'field_number_of_advertisements',
       3 => 'field_other_content',
       4 => 'field_advertisements',
-      5 => 'field_comments',
-      6 => 'field_multimedia',
+      5 => 'field_multimedia',
+      6 => 'field_comment',
+      7 => 'field_comment_author',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

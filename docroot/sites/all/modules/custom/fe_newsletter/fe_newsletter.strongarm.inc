@@ -189,10 +189,10 @@ function fe_newsletter_strongarm() {
           'weight' => '1',
         ),
         'locations' => array(
-          'weight' => '30',
+          'weight' => '5',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '4',
         ),
       ),
       'display' => array(

@@ -110,8 +110,8 @@ function fe_newsletter_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bulletin_email-field_comments'.
-  $field_instances['node-bulletin_email-field_comments'] = array(
+  // Exported field_instance: 'node-bulletin_email-field_comment'.
+  $field_instances['node-bulletin_email-field_comment'] = array(
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
     'deleted' => 0,
@@ -119,15 +119,14 @@ function fe_newsletter_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
+        'module' => 'text',
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
           'field_multiple_limit_order' => 0,
-          'link' => FALSE,
         ),
-        'type' => 'entityreference_label',
-        'weight' => 10,
+        'type' => 'text_default',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -137,23 +136,88 @@ function fe_newsletter_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_comments',
-    'label' => 'Comments of the week',
+    'field_name' => 'field_comment',
+    'label' => 'Comment of the week',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'text',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
       ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'type' => 'text_textarea',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-bulletin_email-field_comment_author'.
+  $field_instances['node-bulletin_email-field_comment_author'] = array(
+    'bundle' => 'bulletin_email',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
+        ),
+        'type' => 'link_default',
+        'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_comment_author',
+    'label' => 'Comment author',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 'optional',
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 8,
     ),
   );
 
@@ -258,7 +322,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -355,7 +419,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -408,7 +472,8 @@ function fe_newsletter_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Advertisements');
-  t('Comments of the week');
+  t('Comment author');
+  t('Comment of the week');
   t('Dates');
   t('Featured Content');
   t('Intro');

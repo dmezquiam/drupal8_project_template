@@ -49,51 +49,55 @@ function fe_newsletter_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_comments'.
-  $field_bases['field_comments'] = array(
+  // Exported field_base: 'field_comment'.
+  $field_bases['field_comment'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_comments',
+    'field_name' => 'field_comment',
     'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
+      'format' => array(
+        0 => 'format',
       ),
     ),
     'locked' => 0,
-    'module' => 'entityreference',
+    'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'comment_node_advertisement' => 'comment_node_advertisement',
-          'comment_node_banner' => 'comment_node_banner',
-          'comment_node_bulletin_email' => 'comment_node_bulletin_email',
-          'comment_node_chat' => 'comment_node_chat',
-          'comment_node_feed' => 'comment_node_feed',
-          'comment_node_feed_item' => 'comment_node_feed_item',
-          'comment_node_multimedia' => 'comment_node_multimedia',
-          'comment_node_news' => 'comment_node_news',
-          'comment_node_page' => 'comment_node_page',
-          'comment_node_staff_member' => 'comment_node_staff_member',
-          'comment_node_training_opportunity' => 'comment_node_training_opportunity',
-          'comment_node_video' => 'comment_node_video',
-        ),
-      ),
-      'target_type' => 'comment',
     ),
     'translatable' => 0,
-    'type' => 'entityreference',
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_comment_author'.
+  $field_bases['field_comment_author'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_comment_author',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'link',
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'link_field',
   );
 
   // Exported field_base: 'field_from_date'.
@@ -129,7 +133,7 @@ function fe_newsletter_field_default_field_bases() {
   // Exported field_base: 'field_multimedia'.
   $field_bases['field_multimedia'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_multimedia',
