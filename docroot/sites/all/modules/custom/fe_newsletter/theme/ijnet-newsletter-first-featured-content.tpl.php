@@ -1,18 +1,16 @@
-  <!-- // Begin Module: Top Image with Content \\ -->
-<table border="0" cellpadding="20" cellspacing="0" width="100%">
-    <tr>
-      <td valign="top">
-<?php if (isset($featured_content->image)) : ?>
-        <?php print theme('image_style', array('style_name' => 'featured_newsletter_img', 'path' => $featured_content->image)); ?>
-<?php endif; ?>
-        <h4 style="color:#265775; font-size: 13px; margin: 0 0 7px;padding:10px 0 2px; overflow: hidden; max-height: 48px; font-family: verdana, arial,sans-serif;">
-          <a href="<?php print($featured_content->link)?>" style="color:#28678f; font-size: 13px; font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;"><?php print($featured_content->title)?></a>
-        </h4>
-        <p style="padding:0;margin:0; font-family: verdana, arial,sans-serif;"><?php print($featured_content->summary)?></p>
-<?php if (isset($featured_content->author)) : ?>
-        <p style="font-size: 12px; font-family: verdana, arial,sans-serif;"> <?php print t('By');?> <?php print($featured_content->author)?></p>
-<?php endif; ?>
-      </td>
-    </tr>
-  </table>
-  <!-- // End Module: Top Image with Content \\ -->
+<div class="layout one-col fixed-width" style="Margin:0 auto;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word">
+  <div class="layout__inner" style="border-collapse:collapse;display:table;width:100%;background-color:#ffffff">
+    <div class="column" style="text-align:left;color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px)">
+      <div style="font-size:12px;font-style:normal;font-weight:normal" align="center">
+        <?php if (isset($featured_content->image)) : ?>
+        <?php print theme('image_style', array('style_name' => 'newsletter_first', 'path' => $featured_content->image)); ?>
+        <?php endif; ?>
+      </div>
+      <div style="Margin-left:20px;Margin-right:20px;Margin-top:20px;Margin-bottom:24px">
+        <h2 style="Margin-top:0;Margin-bottom:0;font-style:normal;font-weight:normal;color:#28678f;font-size:17px;line-height:26px"><a style="text-decoration:none;color:#bf6c2a" href="<?php print($featured_content->link)?>" target="_blank"><span style="color:#28678f"><?php print($featured_content->title)?></span></a></h2>
+        <p style="Margin-top:16px;Margin-bottom:0">
+        <?php print($featured_content->summary)?>
+      </div>
+    </div>
+  </div>
+</div>

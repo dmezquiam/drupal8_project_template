@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <title><?php print t('IJNet Bulletin');?></title>
 </head>
@@ -13,7 +13,7 @@
     td a:hover{text-decoration: underline;}
   </style>
   <?php if (($language == 'ar') || ($language == 'fa')):?>
-    <span style="direction:rtl">
+  <span style="direction:rtl">
   <?php endif ?>
   <center>
 
@@ -21,7 +21,7 @@
 
   </center>
   <?php if (($language == 'ar') || ($language == 'fa')): ?>
-    </span>
+  </span>
   <?php endif ?>
 </body>
 </html>

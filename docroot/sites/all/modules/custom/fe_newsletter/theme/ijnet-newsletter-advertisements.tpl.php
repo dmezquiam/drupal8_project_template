@@ -1,35 +1,24 @@
 
 <?php if (!empty($advertisements) > 0) : ?>
   <!-- // Begin Body \\ -->
-  <table border="0" cellpadding="0" cellspacing="0" width="600">
-    <tr>
-      <td valign="top">
-        <p style="padding:10px 20px 0px; margin:0;font-size:12px;font-weight:normal;line-height:26px; font-family: verdana, arial,sans-serif;"><?php print t('Advertisements');?></p>
-      </td>
-    </tr>
+<div class="layout one-col fixed-width" style="Margin:0 auto;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word">
+  <div class="layout__inner" style="border-collapse:collapse;display:table;width:100%;background-color:#ffffff">
+    <div class="column" style="text-align:left;color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px)">
+      <div style="Margin-left:20px;Margin-right:20px;Margin-top:24px;Margin-bottom:24px">
+        <h1 style="Margin-top:0;Margin-bottom:0;font-style:normal;font-weight:normal;color:#1e293d;font-size:22px;line-height:31px"><?php print t('Advertisements'); ?></h1>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="layout three-col fixed-width" style="Margin:0 auto;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word">
+  <div class="layout__inner" style="border-collapse:collapse;display:table;width:100%;background-color:#ffffff">
   <?php foreach ($advertisements as $index => $advertisement) : ?>
-
-    <?php if (($index % 2) == 0) : ?>
-    <tr>
-    <?php endif; ?>
-      
-      <td valign="top" width="280">
+    <?php if ($index > 3) { break; } ?>
     <?php print theme('ijnet_newsletter_advertisement', array('advertisement' => $advertisements[$index])) ?>
-      </td>
-
-    <?php if (($index % 2) == 1  ) : ?>
-    </tr>
-    <?php endif; ?>
-
   <?php endforeach; ?>
-
-  <?php if (($index % 2) == 0  ) : ?>
-      <td valign="top" width="280">
-      </td>
-    </tr>
-  <?php endif; ?>
-
-  </table>
+  </div>
+</div>
   <!-- // End Body \\ -->
 <?php endif; ?>
+<div style="line-height:30px;font-size:30px">&nbsp;</div>

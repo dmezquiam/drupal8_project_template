@@ -102,10 +102,8 @@ function _ijnet_newsletter_content_theme_parameters($nid) {
     $path = drupal_lookup_path("source", 'blog/pitch-ijnet', $node->language);
     $node = menu_get_object("node", 1, $path);
     if ($node) {
-      $wrapper = entity_metadata_wrapper('node', $node);
-      $image = $wrapper->field_image->value();
-      $pitch_to_ijnet_image_url = image_style_url('news_wide', $image['uri']);
-      $parameters['pitch_to_ijnet_image_url'] = $pitch_to_ijnet_image_url;
+      $uri = field_get_items('node', $node, 'field_image')[0]['uri'];
+      $parameters['pitch_to_ijnet_image_url'] = $uri;
     }
   }
 
@@ -186,6 +184,14 @@ function fe_newsletter_theme() {
         'featured_content' => null,
       ),
       'template' => 'ijnet-newsletter-featured-content',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_featured_content_mirrored' => array(
+      'variables' => array(
+        'featured_content' => null,
+      ),
+      'template' => 'ijnet-newsletter-featured-content-mirrored',
       'path' => $theme_path,
     ),
 
@@ -352,12 +358,10 @@ function _fe_newsletter_get_featured_content($nid) {
       $node->title_field[$language][0]['safe_value'] :
       $node->title_field[LANGUAGE_NONE][0]['safe_value'];
   }
-  if (empty($node->summary)) {
+  if (empty(field_get_items('node', $node, 'body')[0]['summary'])) {
     $featured_content->summary = NULL;
   } else {
-    $featured_content->title = isset($node->body[$language]) ?
-      $node->body[$language][0]['safe_summary'] :
-      $node->body[LANGUAGE_NONE][0]['safe_summary'];
+    $featured_content->summary = field_get_items('node', $node, 'body')[0]['safe_summary'];
   }
 
   $featured_content->author = _fe_newsletter_get_author($nid);
