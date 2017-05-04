@@ -354,14 +354,23 @@ function _fe_newsletter_get_featured_content($nid) {
   if (empty($node->title_field)) {
     $featured_content->title = NULL;
   } else {
-    $featured_content->title = isset($node->title_field[$language]) ?
+    $title = isset($node->title_field[$language]) ?
       $node->title_field[$language][0]['safe_value'] :
       $node->title_field[LANGUAGE_NONE][0]['safe_value'];
+
+    $featured_content->title = $title;
   }
   if (empty(field_get_items('node', $node, 'body')[0]['summary'])) {
     $featured_content->summary = NULL;
   } else {
-    $featured_content->summary = field_get_items('node', $node, 'body')[0]['safe_summary'];
+    $summary = field_get_items('node', $node, 'body')[0]['safe_summary'];
+    $max_lenght = 90;
+    if (strlen($summary) > $max_lenght){
+      $featured_content->summary = "<p>" . substr(strip_tags($summary), 0, $max_lenght) . "...</p>";
+    } else {
+      $featured_content->summary = $summary;
+    }
+    $featured_content->featured_summary = $summary;
   }
 
   $featured_content->author = _fe_newsletter_get_author($nid);

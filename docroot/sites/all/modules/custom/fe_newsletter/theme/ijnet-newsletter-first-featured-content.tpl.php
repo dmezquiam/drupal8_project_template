@@ -9,7 +9,7 @@
       <div style="Margin-left:20px;Margin-right:20px;Margin-top:20px;Margin-bottom:24px">
         <h2 style="Margin-top:0;Margin-bottom:0;font-style:normal;font-weight:normal;color:#28678f;font-size:17px;line-height:26px"><a style="text-decoration:none;color:#bf6c2a" href="<?php print($featured_content->link)?>" target="_blank"><span style="color:#28678f"><?php print($featured_content->title)?></span></a></h2>
         <p style="Margin-top:16px;Margin-bottom:0">
-        <?php print($featured_content->summary)?>
+        <?php print($featured_content->featured_summary)?>
       </div>
     </div>
   </div>
