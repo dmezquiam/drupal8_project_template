@@ -24,19 +24,14 @@
               <div role="section">
                 <div class="layout fixed-width" style="Margin:0 auto;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word">
                   <div class="layout__inner" style="border-collapse:collapse;display:table;width:100%;background-color:#ffffff">
-
                     <div class="column wide" style="text-align:left;color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:400px;min-width:320px;width:320px;width:calc(8000% - 47600px)">
                       <div style="Margin-left:20px;Margin-right:20px;Margin-top:24px;Margin-bottom:24px">
-                        <h1 class="size-34" style="Margin-top:0;Margin-bottom:0;font-style:normal;font-weight:normal;color:#1e293d;font-size:30px;line-height:38px;font-family:bitter,georgia,serif" lang="x-size-34">
-                          <span class="font-bitter">
-                            <span style="color:#28678f">
-                              <strong>Weekly <span class="il">Bulletin</span></strong></span></span></h1>
+                      <!-- arreglar markup -->
                       </div>
                     </div>
-
                     <div class="column narrow" style="text-align:left;color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:320px;min-width:200px;width:320px;width:calc(72200px - 12000%)">
                       <div style="Margin-left:20px;Margin-right:20px;Margin-top:24px;Margin-bottom:24px">
-                        <p class="size-28" style="Margin-top:0;Margin-bottom:0;font-size:24px;line-height:32px;text-align:right" lang="x-size-28">01/30/2017</p>
+                        <p class="size-28" style="Margin-top:0;Margin-bottom:0;font-size:20px;line-height:20px;text-align:right" lang="x-size-28"><?php print $newsletter_date ?></p>
                       </div>
                     </div>
                   </div>
