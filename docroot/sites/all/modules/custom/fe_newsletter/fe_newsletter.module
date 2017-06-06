@@ -250,6 +250,14 @@ function fe_newsletter_theme() {
       'path' => $theme_path,
     ),
 
+    'ijnet_newsletter_archive' => array(
+      'variables' => array(
+        'archive' => null,
+      ),
+      'template' => 'ijnet-newsletter-archive',
+      'path' => $theme_path,
+    ),
+
     'ijnet_newsletter_comments' => array(
       'variables' => array(
         'comments' => null,
@@ -283,6 +291,7 @@ function template_preprocess_ijnet_newsletter_content(&$vars) {
   $vars['featured_contents'] = _fe_newsletter_get_featured_contents($node);
   $vars['advertisements'] = _fe_newsletter_get_advertisements($node);
   $vars['opportunities'] =_fe_newsletter_get_opportunities($node);
+  $vars['archive'] = _fe_newsletter_get_archived_items($node);
   $vars['multimedia_items'] = _fe_newsletter_get_multimedia_items($node);
   $vars['comments'] = _fe_newsletter_get_comments($node);
 }
@@ -304,6 +313,17 @@ function fe_newsletter_preprocess_page(&$vars) {
       $module_path . '/js/fe_newsletter_subscribe_videos.js', 'file'
     );
 
+  }
+}
+
+/*
+ * Implements hook_form_alter
+ */
+function fe_newsletter_form_alter(&$form, &$form_state, $form_id) {
+  kpr($form_id);
+
+  if ($form_id == 'bulletin_email_node_form') {
+    $form['body']['#type'] = 'hidden';
   }
 }
 
@@ -364,9 +384,9 @@ function _fe_newsletter_get_featured_content($nid) {
     $featured_content->summary = NULL;
   } else {
     $summary = field_get_items('node', $node, 'body')[0]['safe_summary'];
-    $max_lenght = 90;
+    $max_lenght = 500;//90;
     if (strlen($summary) > $max_lenght){
-      $featured_content->summary = "<p>" . substr(strip_tags($summary), 0, $max_lenght) . "...</p>";
+      $featured_content->summary = substr(strip_tags($summary), 0, $max_lenght) . "...";
     } else {
       $featured_content->summary = $summary;
     }
@@ -517,6 +537,24 @@ function _fe_newsletter_classify_opportunities($opportunities) {
   $classified_opportunities[0] = $regions;
 
   return $classified_opportunities;
+}
+
+function _fe_newsletter_get_archived_items($node) {
+  $language = $node->language;
+
+  $archive = array();
+  if (!empty($node->field_from_the_archives)) {
+    $archived_nids = field_get_items('node', $node, 'field_from_the_archives');
+
+    foreach ($archived_nids as $nid) {
+      $content = _fe_newsletter_get_featured_content($nid['nid']);
+      if ($content) {
+        $archive[] = $content;
+      }
+    }
+  }
+
+  return $archive;
 }
 
 function _fe_newsletter_get_multimedia_items($node) {

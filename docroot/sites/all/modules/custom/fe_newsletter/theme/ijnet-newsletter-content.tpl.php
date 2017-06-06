@@ -30,8 +30,8 @@
                       </div>
                     </div>
                     <div class="column narrow" style="text-align:left;color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:320px;min-width:200px;width:320px;width:calc(72200px - 12000%)">
-                      <div style="Margin-left:20px;Margin-right:20px;Margin-top:24px;Margin-bottom:24px">
-                        <p class="size-28" style="Margin-top:0;Margin-bottom:0;font-size:20px;line-height:20px;text-align:right" lang="x-size-28"><?php print $newsletter_date ?></p>
+                      <div style="Margin-left:20px;Margin-right:20px;Margin-top:0px;Margin-bottom:0px">
+                        <p class="size-28" style="Margin-top:4;Margin-bottom:4;font-size:15px;line-height:10px;text-align:right" lang="x-size-28"><?php print $newsletter_date ?></p>
                       </div>
                     </div>
                   </div>
@@ -59,9 +59,14 @@
                     print(theme('ijnet_newsletter_opportunities', array('opportunities' => $opportunities)));
                   }
                 ?>
-                <?php
+                <?php /*
                   if (!empty($multimedia_items)) {
                     print(theme('ijnet_newsletter_multimedia_items', array('multimedia_items' => $multimedia_items)));
+                  } */
+                ?>
+                <?php
+                  if (!empty($archive)) {
+                    print(theme('ijnet_newsletter_archive', array('archive' => $archive)));
                   }
                 ?>
 

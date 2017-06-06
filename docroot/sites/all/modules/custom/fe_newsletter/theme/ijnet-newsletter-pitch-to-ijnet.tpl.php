@@ -6,14 +6,14 @@
       </div>
     </div>
   </div>
-  <?php if (isset($pitch_to_ijnet_image_url)) : ?>
+  <?php /* if (isset($pitch_to_ijnet_image_url)) : ?>
   <div style="font-size:12px;font-style:normal;font-weight:normal" align="center">
     <?php print theme('image_style', array('style_name' => 'newsletter_first', 'path' => $pitch_to_ijnet_image_url)); ?>
   </div>
-  <?php endif; ?>
+  <?php endif; */?>
   <div class="layout__inner" style="border-collapse:collapse;display:table;width:100%;background-color:#ffffff">
     <div class="column" style="text-align:left;color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px)">
-      <div style="Margin-left:20px;Margin-right:20px;Margin-top:20px;Margin-bottom:24px">
+      <div style="Margin-left:20px;Margin-right:20px;Margin-top:0px;Margin-bottom:24px">
         <p style="Margin-top:16px;Margin-bottom:0">
         <?php print t('Want to become an IJNet contributor? We’ve made it easier than ever. Anyone from anywhere in the world can now write and publish an IJNet post.'); ?>
       </div>

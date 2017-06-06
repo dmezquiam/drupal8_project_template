@@ -10,6 +10,7 @@
         <h2 style="Margin-top:0;Margin-bottom:0;font-style:normal;font-weight:normal;color:#28678f;font-size:17px;line-height:26px"><a style="text-decoration:none;color:#bf6c2a" href="<?php print($featured_content->link)?>" target="_blank"><span style="color:#28678f"><?php print($featured_content->title)?></span></a></h2>
         <p style="Margin-top:16px;Margin-bottom:0">
         <?php print($featured_content->featured_summary)?>
+        <!--p style="Margin-top:0;Margin-bottom:0;font-style:normal;font-weight:normal;color:#28678f;font-size:14px;line-height:22px"><?php print(strip_tags($featured_content->summary))?></p-->
       </div>
     </div>
   </div>
