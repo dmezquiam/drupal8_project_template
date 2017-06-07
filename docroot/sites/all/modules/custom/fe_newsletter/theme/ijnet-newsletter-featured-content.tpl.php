@@ -10,9 +10,9 @@
         </div>
       </div>
       <div class="column" style="text-align:left;color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:320px;min-width:300px;width:320px;width:calc(12300px - 2000%)">
-        <div style="Margin-left:20px;Margin-right:20px;Margin-top:24px;Margin-bottom:24px">
+        <div style="Margin-left:20px;Margin-right:20px;Margin-top:24px;Margin-bottom:15px">
           <h2 style="Margin-top:0;Margin-bottom:0;font-style:normal;font-weight:normal;color:#28678f;font-size:17px;line-height:26px"><?php print($featured_content->title)?></h2>
-          <p style="Margin-top:16px;Margin-bottom:0;font-style:normal;font-weight:normal;"><?php print(strip_tags($featured_content->summary))?></p>
+          <p style="Margin-top:5px;Margin-bottom:0;font-style:normal;font-weight:normal;"><?php print($featured_content->summary)?></p>
         </div>
       </div>
       </a>
