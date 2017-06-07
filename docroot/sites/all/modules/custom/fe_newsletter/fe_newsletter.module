@@ -320,8 +320,6 @@ function fe_newsletter_preprocess_page(&$vars) {
  * Implements hook_form_alter
  */
 function fe_newsletter_form_alter(&$form, &$form_state, $form_id) {
-  kpr($form_id);
-
   if ($form_id == 'bulletin_email_node_form') {
     $form['body']['#type'] = 'hidden';
   }
@@ -380,17 +378,19 @@ function _fe_newsletter_get_featured_content($nid) {
 
     $featured_content->title = $title;
   }
-  if (empty(field_get_items('node', $node, 'body')[0]['summary'])) {
-    $featured_content->summary = NULL;
-  } else {
-    $summary = field_get_items('node', $node, 'body')[0]['safe_summary'];
-    $max_lenght = 500;//90;
-    if (strlen($summary) > $max_lenght){
-      $featured_content->summary = substr(strip_tags($summary), 0, $max_lenght) . "...";
-    } else {
-      $featured_content->summary = $summary;
+
+  $news_summary = (!empty(field_get_items('node', $node, 'body')[0]['summary'])) ? strip_tags(field_get_items('node', $node, 'body')[0]['safe_summary']) : NULL;
+  $bulletin_summary = (!empty(field_get_items('node', $node, 'field_bulletin_summary')[0]['value'])) ? field_get_items('node', $node, 'field_bulletin_summary')[0]['value'] : NULL;
+  $featured_content->summary = '';
+  if ($news_summary != NULL) {
+    $featured_content->featured_summary = $news_summary;
+    $featured_content->summary = $news_summary;
+  }
+  if ($bulletin_summary != NULL) {
+    if ($news_summary == NULL) {
+      $featured_content->featured_summary = $bulletin_summary;
     }
-    $featured_content->featured_summary = $summary;
+    $featured_content->summary = $bulletin_summary;
   }
 
   $featured_content->author = _fe_newsletter_get_author($nid);
