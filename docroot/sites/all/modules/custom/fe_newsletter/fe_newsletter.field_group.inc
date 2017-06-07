@@ -28,9 +28,10 @@ function fe_newsletter_field_group_info() {
       2 => 'field_number_of_advertisements',
       3 => 'field_other_content',
       4 => 'field_advertisements',
-      5 => 'field_multimedia',
+      5 => 'field_from_the_archives',
       6 => 'field_comment',
       7 => 'field_comment_author',
+      8 => 'field_featured_content',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

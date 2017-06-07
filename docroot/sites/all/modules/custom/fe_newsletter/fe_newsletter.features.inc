@@ -36,18 +36,23 @@ function fe_newsletter_image_default_styles() {
   $styles['featured_newsletter_img'] = array(
     'label' => 'featured_newsletter_img',
     'effects' => array(
-      31 => array(
-        'name' => 'manualcrop_reuse',
+      39 => array(
+        'name' => 'manualcrop_crop_and_scale',
         'data' => array(
-          'reuse_crop_style' => 'news_wide',
+          'width' => 300,
+          'height' => 210,
+          'upscale' => 1,
+          'respectminimum' => 1,
+          'onlyscaleifcrop' => 0,
+          'style_name' => 'featured_newsletter_img',
         ),
         'weight' => 0,
       ),
-      30 => array(
+      38 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 260,
-          'height' => 130,
+          'width' => 300,
+          'height' => 210,
         ),
         'weight' => 1,
       ),

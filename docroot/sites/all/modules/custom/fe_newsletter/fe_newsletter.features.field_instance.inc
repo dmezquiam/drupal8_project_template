@@ -106,7 +106,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -280,8 +280,8 @@ function fe_newsletter_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bulletin_email-field_multimedia'.
-  $field_instances['node-bulletin_email-field_multimedia'] = array(
+  // Exported field_instance: 'node-bulletin_email-field_from_the_archives'.
+  $field_instances['node-bulletin_email-field_from_the_archives'] = array(
     'bundle' => 'bulletin_email',
     'default_value' => NULL,
     'deleted' => 0,
@@ -296,7 +296,7 @@ function fe_newsletter_field_default_field_instances() {
           'field_multiple_limit_order' => 0,
         ),
         'type' => 'node_reference_default',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -306,8 +306,8 @@ function fe_newsletter_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_multimedia',
-    'label' => 'Multimedia',
+    'field_name' => 'field_from_the_archives',
+    'label' => 'From the archives',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -322,7 +322,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 6,
+      'weight' => 9,
     ),
   );
 
@@ -373,7 +373,7 @@ function fe_newsletter_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -419,7 +419,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -465,7 +465,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -476,8 +476,8 @@ function fe_newsletter_field_default_field_instances() {
   t('Comment of the week');
   t('Dates');
   t('Featured Content');
+  t('From the archives');
   t('Intro');
-  t('Multimedia');
   t('News articles and videos you wouuld like to include in this newsletter. If you do not specify anything here then only articles and videos created in the specified time period will be added to the newsletter. WARNING: All data in this field will be overriden if the dates are changed. ');
   t('Number of Advertisements to display');
   t('Opportunities');

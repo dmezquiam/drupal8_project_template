@@ -145,7 +145,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -209,7 +209,68 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 13,
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_bulletin_summary'.
+  $field_instances['node-news-field_bulletin_summary'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter a brief summary here to display on the bulletin instead of the News summary. An acceptable length (this depends on the length of the News title) should be around 90 chars.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 16,
+      ),
+      'node_fields_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'short_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_bulletin_summary',
+    'label' => 'Bulletin Summary',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 90,
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 12,
     ),
   );
 
@@ -262,7 +323,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'user_reference_autocomplete',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -326,7 +387,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -381,7 +442,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -473,16 +534,17 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'manualcrop_keyboard' => 1,
         'manualcrop_maximize_default_crop_area' => 0,
         'manualcrop_require_cropping' => array(
+          'featured_newsletter_img' => 'featured_newsletter_img',
           'news_square' => 'news_square',
           'news_wide' => 'news_wide',
         ),
         'manualcrop_styles_list' => array(
+          'featured_newsletter_img' => 'featured_newsletter_img',
           'news_square' => 'news_square',
           'news_wide' => 'news_wide',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -546,7 +608,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -601,7 +663,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -716,7 +778,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -903,7 +965,7 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -970,9 +1032,11 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
   t('Attribution');
   t('Audio Files');
   t('Body');
+  t('Bulletin Summary');
   t('By line');
   t('Display Image Automatically');
   t('Document');
+  t('Enter a brief summary here to display on the bulletin instead of the News summary. An acceptable length (this depends on the length of the News title) should be around 90 chars.');
   t('Enter the user name for the author of this content to make the "About the author" block display next to the content.');
   t('Hide image on Node Page');
   t('Image');

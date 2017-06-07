@@ -56,6 +56,7 @@ function fe_news_field_group_info() {
       1 => 'field_attribution',
       2 => 'field_byline',
       3 => 'field_related_content',
+      4 => 'field_bulletin_summary',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -115,9 +116,9 @@ function fe_news_field_group_info() {
       1 => 'field_document',
       2 => 'field_video_reference',
       3 => 'field_image',
-      4 => 'field_image_show',
-      5 => 'field_hide_image_on_node_page',
-      6 => 'field_image_caption',
+      4 => 'field_hide_image_on_node_page',
+      5 => 'field_image_caption',
+      6 => 'field_image_show',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

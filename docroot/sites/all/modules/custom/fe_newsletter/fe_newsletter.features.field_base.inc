@@ -130,13 +130,13 @@ function fe_newsletter_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_multimedia'.
-  $field_bases['field_multimedia'] = array(
+  // Exported field_base: 'field_from_the_archives'.
+  $field_bases['field_from_the_archives'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_multimedia',
+    'field_name' => 'field_from_the_archives',
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -153,8 +153,8 @@ function fe_newsletter_field_default_field_bases() {
         'chat' => 0,
         'feed' => 0,
         'feed_item' => 0,
-        'multimedia' => 'multimedia',
-        'news' => 0,
+        'multimedia' => 0,
+        'news' => 'news',
         'page' => 0,
         'staff_member' => 0,
         'training_opportunity' => 0,
@@ -243,14 +243,16 @@ function fe_newsletter_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'referenceable_types' => array(
-        'article' => 0,
+        'advertisement' => 0,
         'banner' => 0,
         'bulletin_email' => 0,
         'chat' => 0,
         'feed' => 0,
         'feed_item' => 0,
+        'multimedia' => 0,
         'news' => 'news',
         'page' => 0,
+        'staff_member' => 0,
         'training_opportunity' => 0,
         'video' => 'video',
       ),
