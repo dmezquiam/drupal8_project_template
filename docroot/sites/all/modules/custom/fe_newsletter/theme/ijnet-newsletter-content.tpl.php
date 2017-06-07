@@ -24,12 +24,12 @@
               <div role="section">
                 <div class="layout fixed-width" style="Margin:0 auto;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word">
                   <div class="layout__inner" style="border-collapse:collapse;display:table;width:100%;background-color:#ffffff">
-                    <div class="column wide" style="text-align:left;color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:400px;min-width:320px;width:320px;width:calc(8000% - 47600px)">
+                    <div class="column wide" style="color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:400px;min-width:320px;width:320px;width:calc(8000% - 47600px)">
                       <div style="Margin-left:20px;Margin-right:20px;Margin-top:24px;Margin-bottom:24px">
                       <!-- arreglar markup -->
                       </div>
                     </div>
-                    <div class="column narrow" style="text-align:left;color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:320px;min-width:200px;width:320px;width:calc(72200px - 12000%)">
+                    <div class="column narrow" style="color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:320px;min-width:200px;width:320px;width:calc(72200px - 12000%)">
                       <div style="Margin-left:20px;Margin-right:20px;Margin-top:0px;Margin-bottom:0px">
                         <p class="size-28" style="Margin-top:4;Margin-bottom:4;font-size:15px;line-height:10px;text-align:right" lang="x-size-28"><?php print $newsletter_date ?></p>
                       </div>
@@ -73,7 +73,7 @@
                 <div role="contentinfo">
                   <div class="layout email-footer" style="Margin:0 auto;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word">
                     <div class="layout__inner" style="border-collapse:collapse;display:table;width:100%">
-                      <div class="column wide" style="text-align:left;font-size:12px;line-height:19px;color:#99b0b8;font-family:Cabin,Avenir,sans-serif;Float:left;max-width:400px;min-width:320px;width:320px;width:calc(8000% - 47600px)">
+                      <div class="column wide" style="font-size:12px;line-height:19px;color:#99b0b8;font-family:Cabin,Avenir,sans-serif;Float:left;max-width:400px;min-width:320px;width:320px;width:calc(8000% - 47600px)">
                         <div style="Margin-left:20px;Margin-right:20px;Margin-top:10px;Margin-bottom:10px">
                           <div style="font-size:12px;line-height:19px">
                             <div><a href="http://ijnet.org" target="_blank"><span class="il">ijnet</span>.org</a></div>
@@ -82,7 +82,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="column narrow" style="text-align:left;font-size:12px;line-height:19px;color:#99b0b8;font-family:Cabin,Avenir,sans-serif;Float:left;max-width:320px;min-width:200px;width:320px;width:calc(72200px - 12000%)">
+                      <div class="column narrow" style="font-size:12px;line-height:19px;color:#99b0b8;font-family:Cabin,Avenir,sans-serif;Float:left;max-width:320px;min-width:200px;width:320px;width:calc(72200px - 12000%)">
                         <div style="Margin-left:20px;Margin-right:20px;Margin-top:10px;Margin-bottom:10px">
                         </div>
                       </div>
@@ -90,7 +90,7 @@
                   </div>
                   <div class="layout one-col email-footer" style="Margin:0 auto;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word">
                     <div class="layout__inner" style="border-collapse:collapse;display:table;width:100%">
-                      <div class="column" style="text-align:left;font-size:12px;line-height:19px;color:#99b0b8;font-family:Cabin,Avenir,sans-serif;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px)">
+                      <div class="column" style="font-size:12px;line-height:19px;color:#99b0b8;font-family:Cabin,Avenir,sans-serif;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px)">
                         <div style="Margin-left:20px;Margin-right:20px;Margin-top:10px;Margin-bottom:10px">
                           <div style="font-size:12px;line-height:19px">
                             <?php $footer = t('Published by the !ijnet. For questions or concerns, !contact.', array('!ijnet' => $link_site . t('International Center for Journalists') . '</a>', '!contact' => $link_contact . t('contact us') . '</a>'));
