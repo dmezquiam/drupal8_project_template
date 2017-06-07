@@ -34,27 +34,50 @@ function fe_newsletter_image_default_styles() {
 
   // Exported image style: featured_newsletter_img.
   $styles['featured_newsletter_img'] = array(
-    'label' => 'featured_newsletter_img',
+    'label' => 'Newsletter images',
     'effects' => array(
-      39 => array(
-        'name' => 'manualcrop_crop_and_scale',
+      34 => array(
+        'name' => 'manualcrop_reuse',
         'data' => array(
-          'width' => 300,
-          'height' => 210,
-          'upscale' => 1,
-          'respectminimum' => 1,
-          'onlyscaleifcrop' => 0,
-          'style_name' => 'featured_newsletter_img',
+          'reuse_crop_style' => 'newsletter_first',
+          'apply_all_effects' => 1,
         ),
         'weight' => 0,
       ),
-      38 => array(
+      33 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 300,
           'height' => 210,
         ),
         'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: newsletter_first.
+  $styles['newsletter_first'] = array(
+    'label' => 'Newsletter first image',
+    'effects' => array(
+      30 => array(
+        'name' => 'manualcrop_crop_and_scale',
+        'data' => array(
+          'width' => 600,
+          'height' => 420,
+          'upscale' => 1,
+          'respectminimum' => 1,
+          'onlyscaleifcrop' => 0,
+          'style_name' => 'newsletter_first',
+        ),
+        'weight' => 0,
+      ),
+      31 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 600,
+          'height' => 420,
+        ),
+        'weight' => 2,
       ),
     ),
   );
