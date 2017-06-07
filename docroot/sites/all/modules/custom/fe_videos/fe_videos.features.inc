@@ -77,7 +77,7 @@ function fe_videos_image_default_styles() {
   $styles['video_thumbnail'] = array(
     'label' => 'Video thumbnail',
     'effects' => array(
-      43 => array(
+      30 => array(
         'name' => 'manualcrop_crop_and_scale',
         'data' => array(
           'width' => 259,
