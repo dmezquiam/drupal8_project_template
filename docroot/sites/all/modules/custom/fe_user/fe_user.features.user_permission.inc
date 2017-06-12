@@ -90,6 +90,17 @@ function fe_user_user_default_permissions() {
     'module' => 'devel',
   );
 
+  // Exported permission: 'access media browser'.
+  $permissions['access media browser'] = array(
+    'name' => 'access media browser',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
+    ),
+    'module' => 'media',
+  );
+
   // Exported permission: 'access own authorizations'.
   $permissions['access own authorizations'] = array(
     'name' => 'access own authorizations',
@@ -420,6 +431,13 @@ function fe_user_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'manualcrop',
+  );
+
+  // Exported permission: 'administer media browser'.
+  $permissions['administer media browser'] = array(
+    'name' => 'administer media browser',
+    'roles' => array(),
+    'module' => 'media',
   );
 
   // Exported permission: 'administer menu'.
