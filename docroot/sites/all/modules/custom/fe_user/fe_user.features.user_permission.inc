@@ -422,17 +422,6 @@ function fe_user_user_default_permissions() {
     'module' => 'manualcrop',
   );
 
-  // Exported permission: 'administer media'.
-  $permissions['administer media'] = array(
-    'name' => 'administer media',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'blogger' => 'blogger',
-      'editor' => 'editor',
-    ),
-    'module' => 'media',
-  );
-
   // Exported permission: 'administer menu'.
   $permissions['administer menu'] = array(
     'name' => 'administer menu',
@@ -1351,17 +1340,6 @@ function fe_user_user_default_permissions() {
     'module' => 'elfinder',
   );
 
-  // Exported permission: 'edit media'.
-  $permissions['edit media'] = array(
-    'name' => 'edit media',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'blogger' => 'blogger',
-      'editor' => 'editor',
-    ),
-    'module' => 'media',
-  );
-
   // Exported permission: 'edit own advertisement content'.
   $permissions['edit own advertisement content'] = array(
     'name' => 'edit own advertisement content',
@@ -1562,17 +1540,6 @@ function fe_user_user_default_permissions() {
     'name' => 'import feed feeds',
     'roles' => array(),
     'module' => 'feeds',
-  );
-
-  // Exported permission: 'import media'.
-  $permissions['import media'] = array(
-    'name' => 'import media',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'blogger' => 'blogger',
-      'editor' => 'editor',
-    ),
-    'module' => 'media',
   );
 
   // Exported permission: 'import opml feeds'.
@@ -1997,19 +1964,6 @@ function fe_user_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'location',
-  );
-
-  // Exported permission: 'view media'.
-  $permissions['view media'] = array(
-    'name' => 'view media',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'blogger' => 'blogger',
-      'editor' => 'editor',
-    ),
-    'module' => 'media',
   );
 
   // Exported permission: 'view node location table'.
