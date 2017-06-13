@@ -860,6 +860,17 @@ function fe_user_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create multimedia_toolkit content'.
+  $permissions['create multimedia_toolkit content'] = array(
+    'name' => 'create multimedia_toolkit content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create new directories'.
   $permissions['create new directories'] = array(
     'name' => 'create new directories',
@@ -1006,6 +1017,16 @@ function fe_user_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any multimedia_toolkit content'.
+  $permissions['delete any multimedia_toolkit content'] = array(
+    'name' => 'delete any multimedia_toolkit content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any news content'.
   $permissions['delete any news content'] = array(
     'name' => 'delete any news content',
@@ -1119,6 +1140,16 @@ function fe_user_user_default_permissions() {
     'name' => 'delete own feed_item content',
     'roles' => array(
       'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own multimedia_toolkit content'.
+  $permissions['delete own multimedia_toolkit content'] = array(
+    'name' => 'delete own multimedia_toolkit content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -1289,6 +1320,17 @@ function fe_user_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any multimedia_toolkit content'.
+  $permissions['edit any multimedia_toolkit content'] = array(
+    'name' => 'edit any multimedia_toolkit content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any news content'.
   $permissions['edit any news content'] = array(
     'name' => 'edit any news content',
@@ -1421,6 +1463,17 @@ function fe_user_user_default_permissions() {
     'name' => 'edit own feed_item content',
     'roles' => array(
       'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own multimedia_toolkit content'.
+  $permissions['edit own multimedia_toolkit content'] = array(
+    'name' => 'edit own multimedia_toolkit content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'blogger' => 'blogger',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
