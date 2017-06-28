@@ -90,6 +90,13 @@ function fe_user_user_default_permissions() {
     'module' => 'devel',
   );
 
+  // Exported permission: 'access media browser'.
+  $permissions['access media browser'] = array(
+    'name' => 'access media browser',
+    'roles' => array(),
+    'module' => 'media',
+  );
+
   // Exported permission: 'access own authorizations'.
   $permissions['access own authorizations'] = array(
     'name' => 'access own authorizations',
@@ -422,14 +429,10 @@ function fe_user_user_default_permissions() {
     'module' => 'manualcrop',
   );
 
-  // Exported permission: 'administer media'.
-  $permissions['administer media'] = array(
-    'name' => 'administer media',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'blogger' => 'blogger',
-      'editor' => 'editor',
-    ),
+  // Exported permission: 'administer media browser'.
+  $permissions['administer media browser'] = array(
+    'name' => 'administer media browser',
+    'roles' => array(),
     'module' => 'media',
   );
 
@@ -612,15 +615,6 @@ function fe_user_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'system',
-  );
-
-  // Exported permission: 'administer stage_file_proxy settings'.
-  $permissions['administer stage_file_proxy settings'] = array(
-    'name' => 'administer stage_file_proxy settings',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'stage_file_proxy',
   );
 
   // Exported permission: 'administer statistics'.
@@ -1351,17 +1345,6 @@ function fe_user_user_default_permissions() {
     'module' => 'elfinder',
   );
 
-  // Exported permission: 'edit media'.
-  $permissions['edit media'] = array(
-    'name' => 'edit media',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'blogger' => 'blogger',
-      'editor' => 'editor',
-    ),
-    'module' => 'media',
-  );
-
   // Exported permission: 'edit own advertisement content'.
   $permissions['edit own advertisement content'] = array(
     'name' => 'edit own advertisement content',
@@ -1562,17 +1545,6 @@ function fe_user_user_default_permissions() {
     'name' => 'import feed feeds',
     'roles' => array(),
     'module' => 'feeds',
-  );
-
-  // Exported permission: 'import media'.
-  $permissions['import media'] = array(
-    'name' => 'import media',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'blogger' => 'blogger',
-      'editor' => 'editor',
-    ),
-    'module' => 'media',
   );
 
   // Exported permission: 'import opml feeds'.
@@ -1902,6 +1874,15 @@ function fe_user_user_default_permissions() {
     'module' => 'manualcrop',
   );
 
+  // Exported permission: 'use media wysiwyg'.
+  $permissions['use media wysiwyg'] = array(
+    'name' => 'use media wysiwyg',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'media_wysiwyg',
+  );
+
   // Exported permission: 'use page manager'.
   $permissions['use page manager'] = array(
     'name' => 'use page manager',
@@ -1997,19 +1978,6 @@ function fe_user_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'location',
-  );
-
-  // Exported permission: 'view media'.
-  $permissions['view media'] = array(
-    'name' => 'view media',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'blogger' => 'blogger',
-      'editor' => 'editor',
-    ),
-    'module' => 'media',
   );
 
   // Exported permission: 'view node location table'.
