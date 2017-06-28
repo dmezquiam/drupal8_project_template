@@ -31,7 +31,7 @@
                     </div>
                     <div class="column narrow" style="color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:320px;min-width:200px;width:320px;width:calc(72200px - 12000%)">
                       <div style="Margin-left:20px;Margin-right:20px;Margin-top:0px;Margin-bottom:0px">
-                        <p class="size-28" style="Margin-top:4;Margin-bottom:4;font-size:15px;line-height:10px;text-align:right" lang="x-size-28"><?php print $newsletter_date ?></p>
+                        <p class="size-28" style="Margin-top:4px;Margin-bottom:4px;font-size:15px;line-height:10px;text-align:right" lang="x-size-28"><?php print $newsletter_date ?></p>
                       </div>
                     </div>
                   </div>
