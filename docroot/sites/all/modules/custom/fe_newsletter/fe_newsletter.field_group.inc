@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function fe_newsletter_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -28,6 +28,10 @@ function fe_newsletter_field_group_info() {
       2 => 'field_number_of_advertisements',
       3 => 'field_other_content',
       4 => 'field_advertisements',
+      5 => 'field_from_the_archives',
+      6 => 'field_comment',
+      7 => 'field_comment_author',
+      8 => 'field_featured_content',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -40,7 +44,7 @@ function fe_newsletter_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_newsletter_content|node|bulletin_email|form'] = $field_group;
+  $field_groups['group_newsletter_content|node|bulletin_email|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -68,7 +72,7 @@ function fe_newsletter_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_newsletter_dates|node|bulletin_email|form'] = $field_group;
+  $field_groups['group_newsletter_dates|node|bulletin_email|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -83,8 +87,8 @@ function fe_newsletter_field_group_info() {
     'label' => 'Tabs',
     'weight' => '2',
     'children' => array(
-      0 => 'group_newsletter_dates',
-      1 => 'group_newsletter_content',
+      0 => 'group_newsletter_content',
+      1 => 'group_newsletter_dates',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -94,7 +98,13 @@ function fe_newsletter_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_tabs|node|bulletin_email|form'] = $field_group;
+  $field_groups['group_newsletter_tabs|node|bulletin_email|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Content');
+  t('Dates');
+  t('Tabs');
+
+  return $field_groups;
 }

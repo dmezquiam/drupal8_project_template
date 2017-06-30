@@ -99,14 +99,12 @@ function _ijnet_newsletter_content_theme_parameters($nid) {
   $parameters['pitch_to_ijnet'] = $pitch_to_ijnet;
 
   if ($pitch_to_ijnet) {
-    $path = drupal_lookup_path("source", 'blog/pitch-ijnet');
+    $path = drupal_lookup_path("source", 'blog/pitch-ijnet', $node->language);
     $node = menu_get_object("node", 1, $path);
-    $wrapper = entity_metadata_wrapper('node', $node);
-    $image = $wrapper->field_image->value();
-
-    $pitch_to_ijnet_image_url = image_style_url('news_wide', $image['uri']);
-
-    $parameters['pitch_to_ijnet_image_url'] = $pitch_to_ijnet_image_url;
+    if ($node) {
+      $uri = field_get_items('node', $node, 'field_image')[0]['uri'];
+      $parameters['pitch_to_ijnet_image_url'] = $uri;
+    }
   }
 
   return $parameters;
@@ -172,11 +170,28 @@ function fe_newsletter_theme() {
       'template' => 'ijnet-newsletter-featured-contents',
       'path' => $theme_path,
     ),
+
+    'ijnet_newsletter_first_featured_content' => array(
+      'variables' => array(
+        'featured_content' => null,
+      ),
+      'template' => 'ijnet-newsletter-first-featured-content',
+      'path' => $theme_path,
+    ),
+
     'ijnet_newsletter_featured_content' => array(
       'variables' => array(
         'featured_content' => null,
       ),
       'template' => 'ijnet-newsletter-featured-content',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_featured_content_mirrored' => array(
+      'variables' => array(
+        'featured_content' => null,
+      ),
+      'template' => 'ijnet-newsletter-featured-content-mirrored',
       'path' => $theme_path,
     ),
 
@@ -210,11 +225,52 @@ function fe_newsletter_theme() {
       'template' => 'ijnet-newsletter-opportunities',
       'path' => $theme_path,
     ),
+
     'ijnet_newsletter_opportunity' => array(
       'variables' => array(
         'opportunity' => null,
       ),
       'template' => 'ijnet-newsletter-opportunity',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_multimedia_items' => array(
+      'variables' => array(
+        'multimedia_items' => null,
+      ),
+      'template' => 'ijnet-newsletter-multimedia-items',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_multimedia' => array(
+      'variables' => array(
+        'multimedia' => null,
+      ),
+      'template' => 'ijnet-newsletter-multimedia',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_archive' => array(
+      'variables' => array(
+        'archive' => null,
+      ),
+      'template' => 'ijnet-newsletter-archive',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_comments' => array(
+      'variables' => array(
+        'comments' => null,
+      ),
+      'template' => 'ijnet-newsletter-comments',
+      'path' => $theme_path,
+    ),
+
+    'ijnet_newsletter_comment' => array(
+      'variables' => array(
+        'comment' => null,
+      ),
+      'template' => 'ijnet-newsletter-comment',
       'path' => $theme_path,
     ),
   );
@@ -235,6 +291,9 @@ function template_preprocess_ijnet_newsletter_content(&$vars) {
   $vars['featured_contents'] = _fe_newsletter_get_featured_contents($node);
   $vars['advertisements'] = _fe_newsletter_get_advertisements($node);
   $vars['opportunities'] =_fe_newsletter_get_opportunities($node);
+  $vars['archive'] = _fe_newsletter_get_archived_items($node);
+  $vars['multimedia_items'] = _fe_newsletter_get_multimedia_items($node);
+  $vars['comments'] = _fe_newsletter_get_comments($node);
 }
 
 /**
@@ -254,6 +313,15 @@ function fe_newsletter_preprocess_page(&$vars) {
       $module_path . '/js/fe_newsletter_subscribe_videos.js', 'file'
     );
 
+  }
+}
+
+/*
+ * Implements hook_form_alter
+ */
+function fe_newsletter_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'bulletin_email_node_form') {
+    $form['body']['#type'] = 'hidden';
   }
 }
 
@@ -304,16 +372,25 @@ function _fe_newsletter_get_featured_content($nid) {
   if (empty($node->title_field)) {
     $featured_content->title = NULL;
   } else {
-    $featured_content->title = isset($node->title_field[$language]) ?
+    $title = isset($node->title_field[$language]) ?
       $node->title_field[$language][0]['safe_value'] :
       $node->title_field[LANGUAGE_NONE][0]['safe_value'];
+
+    $featured_content->title = $title;
   }
-  if (empty($node->summary)) {
-    $featured_content->summary = NULL;
-  } else {
-    $featured_content->title = isset($node->body[$language]) ?
-      $node->body[$language][0]['safe_summary'] :
-      $node->body[LANGUAGE_NONE][0]['safe_summary'];
+
+  $news_summary = (!empty(field_get_items('node', $node, 'body')[0]['summary'])) ? strip_tags(field_get_items('node', $node, 'body')[0]['safe_summary']) : NULL;
+  $bulletin_summary = (!empty(field_get_items('node', $node, 'field_bulletin_summary')[0]['value'])) ? field_get_items('node', $node, 'field_bulletin_summary')[0]['value'] : NULL;
+  $featured_content->summary = '';
+  if ($news_summary != NULL) {
+    $featured_content->featured_summary = $news_summary;
+    $featured_content->summary = $news_summary;
+  }
+  if ($bulletin_summary != NULL) {
+    if ($news_summary == NULL) {
+      $featured_content->featured_summary = $bulletin_summary;
+    }
+    $featured_content->summary = $bulletin_summary;
   }
 
   $featured_content->author = _fe_newsletter_get_author($nid);
@@ -339,9 +416,7 @@ function _fe_newsletter_get_advertisements($node) {
   $advertisements = array();
   if (empty($node->field_advertisements)) {
   } else {
-    $advertisements_nids = isset($node->field_advertisements[$language]) ?
-      $node->field_advertisements[$language] :
-      $node->field_advertisements[LANGUAGE_NONE];
+    $advertisements_nids = field_get_items('node', $node, 'field_advertisements');
     foreach ($advertisements_nids as $nid) {
       $advertisements[] = _fe_newsletter_get_advertisement($nid['nid']);
     }
@@ -356,23 +431,18 @@ function _fe_newsletter_get_advertisement($nid) {
   $installed_languages = language_list();
 
   $advertisement = new stdClass();
-  if (empty($node->field_image)) {
+  if (empty($node->field_image_ad)) {
     $advertisement->image = NULL;
   } else {
-    $advertisement->image = isset($node->field_image[$language]) ?
-      $node->field_image[$language][0]['uri'] :
-      $node->field_image[LANGUAGE_NONE][0]['uri'];
+    $advertisement->image = field_get_items('node', $node, 'field_image_ad')[0]['uri'];
   }
   $advertisement->title = $node->title;
   if (empty($node->body)) {
     $advertisement->summary = NULL;
   } else {
-    $advertisement->summary = strip_tags (isset($node->body[$language]) ?
-      $node->body[$language][0]['safe_summary'] :
-      $node->body[LANGUAGE_NONE][0]['safe_summary']);
+    $advertisement->summary = strip_tags (field_get_items('node', $node, 'body')[0]['safe_summary']);
   }
   $advertisement->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
-
   return $advertisement;
 }
 
@@ -468,6 +538,97 @@ function _fe_newsletter_classify_opportunities($opportunities) {
 
   return $classified_opportunities;
 }
+
+function _fe_newsletter_get_archived_items($node) {
+  $language = $node->language;
+
+  $archive = array();
+  if (!empty($node->field_from_the_archives)) {
+    $archived_nids = field_get_items('node', $node, 'field_from_the_archives');
+
+    foreach ($archived_nids as $nid) {
+      $content = _fe_newsletter_get_featured_content($nid['nid']);
+      if ($content) {
+        $archive[] = $content;
+      }
+    }
+  }
+
+  return $archive;
+}
+
+function _fe_newsletter_get_multimedia_items($node) {
+  $language = $node->language;
+
+  $multimedia_items = array();
+  if (!empty($node->field_multimedia)) {
+    if (isset($node->field_multimedia[$language])) {
+      $multimedia_nids = $node->field_multimedia[$language];
+    }
+    else {
+      $multimedia_nids = $node->field_multimedia[LANGUAGE_NONE];
+    }
+
+    foreach ($multimedia_nids as $nid) {
+      $multimedia = _fe_newsletter_get_multimedia($nid['nid']);
+      if ($multimedia) {
+        $multimedia_items[] = $multimedia;
+      }
+    }
+  }
+
+  return $multimedia_items;
+}
+
+function _fe_newsletter_get_multimedia($nid) {
+  $node = node_load($nid);
+  if (!isset($node->nid)) {
+    return FALSE;
+  }
+  $wrapper = entity_metadata_wrapper('node', $node);
+
+  $multimedia = new stdClass();
+  $multimedia->title = $node->title;
+
+  if (!empty($node->body)) {
+    $body_info = $wrapper->body->value();
+    $multimedia->body = $body_info['value'];
+  }
+  else {
+    $multimedia->body = NULL;
+  }
+
+  if (!empty($node->field_image)) {
+    $image_info = $wrapper->field_image->value();
+    $multimedia->image = $image_info['uri'];
+  }
+  else {
+    $multimedia->image = NULL;
+  }
+
+  if (!empty($node->field_multimedia_link)) {
+    $link = $wrapper->field_multimedia_link->value();
+    $multimedia->link_title = $link['title'];
+    $multimedia->link_url = $link['url'];
+  }
+
+  return $multimedia;
+}
+
+function _fe_newsletter_get_comments($node) {
+  $comments = array();
+  if (!empty($node->field_comment)) {
+    $comment->body = field_get_items('node', $node, 'field_comment')[0]['value'];
+
+    field_get_items('node', $node, 'field_comment_author')[0]['title'] ? $comment->author = field_get_items('node', $node, 'field_comment_author')[0]['title'] : $comment->author = '';
+    field_get_items('node', $node, 'field_comment_author')[0]['url'] ? $comment->link = field_get_items('node', $node, 'field_comment_author')[0]['url'] : $comment->link = '';
+
+    $comments[] = $comment;
+  }
+
+  return $comments;
+}
+
 
 function fe_newsletter_content_form($form, &$form_state) {
   $nid = arg(1);

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <title><?php print t('IJNet Bulletin');?></title>
 </head>
@@ -13,15 +13,15 @@
     td a:hover{text-decoration: underline;}
   </style>
   <?php if (($language == 'ar') || ($language == 'fa')):?>
-    <span style="direction:rtl">
+  <span style="direction:rtl">
   <?php endif ?>
   <center>
 
-    <?php print(theme('ijnet_newsletter_content', array('node' => $node, 'social_media_items' => $social_media_items, 'logo' => $logo)));?>
+    <?php print(theme('ijnet_newsletter_content', array('node' => $node, 'social_media_items' => $social_media_items, 'logo' => $logo, 'pitch_to_ijnet' => $pitch_to_ijnet, 'pitch_to_ijnet_image_url' => $pitch_to_ijnet_image_url)));?>
 
   </center>
   <?php if (($language == 'ar') || ($language == 'fa')): ?>
-    </span>
+  </span>
   <?php endif ?>
 </body>
 </html>

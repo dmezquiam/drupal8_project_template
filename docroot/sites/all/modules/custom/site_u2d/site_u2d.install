@@ -44,8 +44,23 @@ function site_u2d_update_7003() {
 }
 
 /**
- * Enable fe_multimedia_toolkit
+ * Enable fe_multimedia
  */
 function site_u2d_update_7004() {
+  module_enable(array('fe_multimedia'));
+}
+
+/**
+ * Enable entityreference
+ */
+function site_u2d_update_7005() {
+  module_enable(array('entityreference'));
+}
+
+/**
+ * Enable multimedia_toolkit
+ */
+function site_u2d_update_7006() {
   module_enable(array('fe_multimedia_toolkit'));
 }
+

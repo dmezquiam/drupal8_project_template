@@ -1,21 +1,19 @@
-  <!-- // Begin Module: Top Image with Content \\ -->
-  <table border="0" cellpadding="20" cellspacing="0" width="100%">
-    <tr>
-      <td valign="top">
-<?php if (isset($featured_content->image)) : ?>
-        <?php print theme('image_style', array('style_name' => 'featured_newsletter_img', 'path' => $featured_content->image)); ?>
-<?php endif; ?>
-        <h4 style="color:#265775; font-size: 13px; margin: 0 0 7px;padding:10px 0 2px; overflow: hidden; max-height: 48px; font-family: verdana, arial,sans-serif;">
-          <a href="<?php print($featured_content->link)?>" style="color:#28678f; font-size: 13px; font-family: verdana, arial,sans-serif; font-weight: bold; text-decoration: none;"><?php print($featured_content->title)?></a>
-        </h4>
-        <p style="padding:0;margin:0; font-family: verdana, arial,sans-serif;"><?php print($featured_content->summary)?></p>
-<?php if (isset($featured_content->author)) : ?>
-        <p style="font-size: 12px; font-family: verdana, arial,sans-serif;"> <?php print t('By');?> <?php print($featured_content->author)?></p>
-<?php endif; ?>
-      </td>
-    </tr>
-  </table>
-  <!-- // End Module: Top Image with Content \\ -->
-<!-- color: #28678f;
-font-weight: bold;
-text-decoration: none; -->
+  <div class="layout two-col fixed-width" style="Margin:0 auto;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word">
+    <div class="layout__inner" style="border-collapse:collapse;display:table;width:100%;background-color:#ffffff">
+      <a href="<?php print($featured_content->link)?>" target="_blank">
+      <div class="column" style="color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:320px;min-width:300px;width:320px;width:calc(12300px - 2000%)">          
+        <div style="font-size:12px;font-style:normal;font-weight:normal" align="center">
+          <?php if (isset($featured_content->image)) : ?>
+          <?php print theme('image_style', array('style_name' => 'featured_newsletter_img', 'path' => $featured_content->image)); ?>
+          <?php endif; ?>
+        </div>
+      </div>
+      <div class="column" style="color:#575c66;font-size:14px;line-height:21px;font-family:&quot;Open Sans&quot;,sans-serif;Float:left;max-width:320px;min-width:300px;width:320px;width:calc(12300px - 2000%)">
+        <div style="Margin-left:20px;Margin-right:20px;Margin-top:24px;Margin-bottom:15px">
+          <h2 style="Margin-top:0;Margin-bottom:0;font-style:normal;font-weight:normal;color:#28678f;font-size:17px;line-height:26px"><?php print($featured_content->title)?></h2>
+          <p style="Margin-top:5px;Margin-bottom:0;font-style:normal;font-weight:normal;"><?php print($featured_content->summary)?></p>
+        </div>
+      </div>
+      </a>
+    </div>
+  </div>
