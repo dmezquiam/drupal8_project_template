@@ -6,6 +6,18 @@
 
 include_once 'fe_site_config.features.inc';
 
+
+/**
+ * Implements hook_url_outbound_alter().
+ * https://www.drupal.org/node/2599326#comment-10876408
+ */
+function fe_site_config_url_outbound_alter(&$path, &$options, $original_path) {
+  if (isset($options['script']) && $options['script'] == 'index.php') {
+    $options['script'] = '';
+  }
+}
+
+
 /**
  * Implements hook_form_alter().
  */

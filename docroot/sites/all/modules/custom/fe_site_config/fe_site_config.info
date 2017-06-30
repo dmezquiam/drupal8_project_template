@@ -17,6 +17,7 @@ dependencies[] = lang_dropdown
 dependencies[] = locale
 dependencies[] = manualcrop
 dependencies[] = media
+dependencies[] = media_wysiwyg
 dependencies[] = page_manager
 dependencies[] = quicktabs
 dependencies[] = search
