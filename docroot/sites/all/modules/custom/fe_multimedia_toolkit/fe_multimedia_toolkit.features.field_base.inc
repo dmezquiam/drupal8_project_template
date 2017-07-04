@@ -68,8 +68,8 @@ function fe_multimedia_toolkit_field_default_field_bases() {
       ),
       'view' => array(
         'args' => array(),
-        'display_name' => '',
-        'view_name' => '',
+        'display_name' => 'references_1',
+        'view_name' => 'resources_reference_filter',
       ),
     ),
     'translatable' => 0,
