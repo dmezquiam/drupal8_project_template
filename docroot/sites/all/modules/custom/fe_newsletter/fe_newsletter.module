@@ -102,11 +102,13 @@ function _ijnet_newsletter_content_theme_parameters($nid) {
     $path = drupal_lookup_path("source", 'blog/pitch-ijnet');
     $node = menu_get_object("node", 1, $path);
     $wrapper = entity_metadata_wrapper('node', $node);
-    $image = $wrapper->field_image->value();
+    if (isset($wrapper->field_image)) {
+      $image = $wrapper->field_image->value();
 
-    $pitch_to_ijnet_image_url = image_style_url('news_wide', $image['uri']);
+      $pitch_to_ijnet_image_url = image_style_url('news_wide', $image['uri']);
 
-    $parameters['pitch_to_ijnet_image_url'] = $pitch_to_ijnet_image_url;
+      $parameters['pitch_to_ijnet_image_url'] = $pitch_to_ijnet_image_url;
+    }
   }
 
   return $parameters;
