@@ -41,6 +41,33 @@ function fe_multimedia_toolkit_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_resources|node|multimedia_toolkit|form';
+  $field_group->group_name = 'group_resources';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'multimedia_toolkit';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_tabs';
+  $field_group->data = array(
+    'label' => 'Resources',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_multimedia_resources',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-resources field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_resources|node|multimedia_toolkit|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_tabs|node|multimedia_toolkit|form';
   $field_group->group_name = 'group_tabs';
   $field_group->entity_type = 'node';
@@ -52,6 +79,7 @@ function fe_multimedia_toolkit_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'group_content',
+      1 => 'group_resources',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -67,6 +95,7 @@ function fe_multimedia_toolkit_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
+  t('Resources');
   t('Tabs');
 
   return $field_groups;

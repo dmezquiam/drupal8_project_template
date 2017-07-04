@@ -140,6 +140,59 @@ function fe_multimedia_toolkit_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-multimedia_toolkit-field_multimedia_resources'.
+  $field_instances['node-multimedia_toolkit-field_multimedia_resources'] = array(
+    'bundle' => 'multimedia_toolkit',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Start typing the name of the Resource in the input field.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
+        ),
+        'type' => 'node_reference_default',
+        'weight' => 4,
+      ),
+      'short_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_multimedia_resources',
+    'label' => 'Resources',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-multimedia_toolkit-title_field'.
   $field_instances['node-multimedia_toolkit-title_field'] = array(
     'bundle' => 'multimedia_toolkit',
@@ -201,6 +254,8 @@ function fe_multimedia_toolkit_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Image');
+  t('Resources');
+  t('Start typing the name of the Resource in the input field.');
   t('Title');
 
   return $field_instances;
