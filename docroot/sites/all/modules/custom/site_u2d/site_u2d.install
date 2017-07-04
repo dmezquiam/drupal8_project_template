@@ -64,3 +64,9 @@ function site_u2d_update_7006() {
   module_enable(array('fe_multimedia_toolkit'));
 }
 
+/**
+ * Enable module prepopulate
+ */
+function site_u2d_update_7007() {
+  module_enable(array('prepopulate'));
+}
