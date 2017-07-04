@@ -1,0 +1,12 @@
+diff --git a/prepopulate.module b/prepopulate.module
+index d024385..c61262e 100644
+--- a/prepopulate.module
++++ b/prepopulate.module
+@@ -56,7 +56,6 @@ function _prepopulate_request_walk(&$form, &$request_slice) {
+   $limited_types = array(
+     'actions',
+     'button',
+-    'container',
+     'token',
+     'value',
+     'hidden',
