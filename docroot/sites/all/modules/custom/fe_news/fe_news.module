@@ -392,3 +392,9 @@ function _fe_news_get_topics($nid = '') {
   return '';
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter.
+ */
+function fe_news_form_news_node_form_alter(&$form, &$form_state, $form_id) {
+  hide($form['field_news_type']);
+}
