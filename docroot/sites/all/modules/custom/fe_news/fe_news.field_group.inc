@@ -82,7 +82,7 @@ function fe_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tabs',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'scheduler_settings',
       1 => 'group_categorization',

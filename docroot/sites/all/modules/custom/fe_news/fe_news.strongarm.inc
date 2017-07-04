@@ -132,7 +132,7 @@ function fe_news_strongarm() {
           'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '6',
         ),
       ),
       'display' => array(
