@@ -70,3 +70,34 @@ function site_u2d_update_7006() {
 function site_u2d_update_7007() {
   module_enable(array('prepopulate'));
 }
+
+/**
+ * Set the field_news_type of news ct to 'News'.
+ */
+function site_u2d_update_7008() {
+  $field_type_info = field_info_instance('node', 'field_news_type', 'news');
+  $field_type_exist = !empty($field_type_info);
+
+  if ($field_type_exist) {
+    $result = db_select('node', 'n')
+      ->fields('n', array('nid'))
+      ->condition('type', 'news')
+      ->execute();
+
+    foreach($result as $row) {
+      $news = node_load($row->nid);
+      $news_wrapper = entity_metadata_wrapper('node', $news);
+      $news_type = $news_wrapper->field_news_type->value();
+
+      // If the type of the new is not defined, set it to 1.
+      $type_news_key = '1';
+      if (empty($news_type)) {
+        $news_wrapper->field_news_type->set($type_news_key);
+        $news_wrapper->save();
+      }
+    }
+  }
+  else {
+    throw new DrupalUpdateException('The field field_news_type is missing! Probably you need to revert features.');
+  }
+}
