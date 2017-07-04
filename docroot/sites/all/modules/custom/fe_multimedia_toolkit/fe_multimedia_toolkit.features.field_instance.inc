@@ -149,14 +149,15 @@ function fe_multimedia_toolkit_field_default_field_instances() {
     'description' => 'Start typing the name of the Resource in the input field.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'node_reference',
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
           'field_multiple_limit_order' => 0,
+          'node_reference_view_mode' => 'teaser',
         ),
-        'type' => 'node_reference_default',
+        'type' => 'node_reference_node',
         'weight' => 4,
       ),
       'short_teaser' => array(
