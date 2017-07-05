@@ -1,0 +1,30 @@
+﻿﻿Edit queues {"url":"admin\/dashboard","hidden":true,"expanded":true,"lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_edit-queues:admin\/dashboard"},"weight":"-38"}
+-Staff queue {"url":"admin\/structure\/nodequeue\/6\/view","hidden":true,"expanded":true,"lang":"und","options":{"attributes":{"title":""}},"weight":"-48"}
+-Partners queue {"url":"admin\/structure\/nodequeue\/5\/view","hidden":true,"expanded":true,"lang":"und","options":{"attributes":{"title":""}},"weight":"-49"}
+-Advertisements queue {"url":"admin\/structure\/nodequeue\/3\/view","hidden":true,"expanded":true,"lang":"und","options":{"attributes":{"title":""}},"weight":"-50"}
+Videos {"url":"admin\/dashboard\/content\/videos","lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_videos:admin\/dashboard\/content\/videos"},"weight":"-43"}
+-Add video {"url":"node\/add\/video","expanded":true,"lang":"und","options":{"attributes":{"title":""}},"weight":"-50"}
+Other content {"url":"<nolink>","expanded":true,"lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_other-content:<nolink>"},"weight":"-40"}
+-Taxonomies {"url":"admin\/dashboard\/taxonomies","expanded":true,"lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_taxonomies:admin\/dashboard\/taxonomies"},"weight":"-48"}
+-Staff Members {"url":"admin\/dashboard\/staff","lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_staff-members:admin\/dashboard\/staff"},"weight":"-49"}
+--Add staff member {"url":"node\/add\/staff-member","expanded":true,"lang":"und","options":{"attributes":{"title":""},"alter":true},"weight":"-50"}
+-Basic Pages {"url":"admin\/dashboard\/content\/basic-pages","lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_basic-pages:admin\/dashboard\/content\/basic-pages"},"weight":"-50"}
+--Add basic page {"url":"node\/add\/page","lang":"und","options":{"attributes":{"title":""}},"weight":"-49"}
+News {"url":"admin\/dashboard\/content\/news","lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_news:admin\/dashboard\/content\/news"},"weight":"-46"}
+-Add news {"url":"node\/add\/news","expanded":true,"lang":"und","options":{"attributes":{"title":""},"query":{"edit[field_news_type][und]":"1"}},"weight":"-50"}
+Advertisements {"url":"admin\/dashboard\/content\/advertisements","lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_advertisements:admin\/dashboard\/content\/advertisements"},"weight":"-50"}
+-Add advertisement {"url":"node\/add\/advertisement","expanded":true,"lang":"und","options":{"attributes":{"title":""},"alter":true},"weight":"-50"}
+Opportunities {"url":"admin\/dashboard\/content\/opportunities","lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_opportunities:admin\/dashboard\/content\/opportunities"},"weight":"-45"}
+-Add opportunity {"url":"node\/add\/training-opportunity","expanded":true,"lang":"und","options":{"attributes":{"title":""}},"weight":"-50"}
+Chats {"url":"admin\/dashboard\/content\/chats","lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_chats:admin\/dashboard\/content\/chats"},"weight":"-47"}
+-Add chat {"url":"node\/add\/chat","expanded":true,"lang":"und","options":{"attributes":{"title":""}},"weight":"-50"}
+Bulletin Emails {"url":"admin\/dashboard\/content\/bulletins","lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_bulletin-emails:admin\/dashboard\/content\/bulletins"},"weight":"-48"}
+-Add bulletin email {"url":"node\/add\/bulletin-email","expanded":true,"lang":"und","options":{"attributes":{"title":""},"alter":true},"weight":"-50"}
+Banners {"url":"admin\/dashboard\/content\/banners","lang":"und","options":{"attributes":{"title":""},"identifier":"menu-dashboard_banners:admin\/dashboard\/content\/banners"},"weight":"-49"}
+-Add banner {"url":"node\/add\/banner","expanded":true,"lang":"und","options":{"attributes":{"title":""}},"weight":"-50"}
+Translate interface {"url":"admin\/config\/regional\/translate\/translate","description":"Temporary link to translate interface.","lang":"und","weight":"-39"}
+Listed users {"url":"admin\/dashboard\/users","lang":"und","options":{"attributes":{"title":""}},"weight":"-37"}
+Scheduled content {"url":"admin\/dashboard\/content\/scheduled","expanded":true,"lang":"und","options":{"attributes":{"title":""}},"weight":"-41"}
+Administer comments {"url":"admin\/dashboard\/content\/comments","lang":"und","options":{"attributes":{"title":""}},"weight":"-42"}
+Resources {"url":"admin\/dashboard\/content\/resources","lang":"und","options":{"attributes":{"title":""}},"weight":"-44"}
+-Add resource {"url":"node\/add\/news","expanded":true,"lang":"und","options":{"query":{"edit[field_news_type][und]":"2"},"attributes":{"title":""}},"weight":"-50"}

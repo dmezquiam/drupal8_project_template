@@ -101,3 +101,34 @@ function site_u2d_update_7008() {
     throw new DrupalUpdateException('The field field_news_type is missing! Probably you need to revert features.');
   }
 }
+
+/**
+ * Enable modules: menu_import, site_menu_loader.
+ */
+function site_u2d_update_7009() {
+  $modules = array(
+    'menu_import',
+    'site_menu_loader',
+  );
+
+  module_enable($modules);
+}
+
+/**
+ * Reload Dashboard menu.
+ */
+function site_u2d_update_7010() {
+  $menu_loader_exists = module_exists('site_menu_loader');
+  $menu_import_exists = module_exists('menu_import');
+
+  if ($menu_loader_exists && $menu_import_exists) {
+    $module_name = "fe_admin_dashboards";
+    $menu_filename = "menu/menu-dashboard.txt";
+    $menu_name = "menu-dashboard";
+    $menu_title = "Dashboard menu (editor)";
+    site_menu_loader_import_menu($module_name, $menu_filename, $menu_name, $menu_title);
+  }
+  else {
+    throw new DrupalUpdateException('The following modules need to be enabled: site_menu_loader, menu_import.');
+  }
+}
