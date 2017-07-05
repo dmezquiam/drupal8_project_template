@@ -1,0 +1,16 @@
+﻿Opportunities {"url":"opportunities","lang":"und","options":{"attributes":{"title":""},"alter":true},"weight":"-49"}
+Video {"url":"videos","lang":"und","options":{"attributes":{"title":""},"alter":true},"weight":"-48"}
+Chats {"url":"chats","lang":"und","options":{"attributes":{"title":""},"alter":true},"weight":"-47"}
+About {"url":"about","lang":"und","options":{"attributes":{"title":""},"alter":true},"weight":"-40"}
+News & Resources {"url":"news","lang":"und","options":{"attributes":{"title":""},"alter":true},"weight":"-50"}
+-News {"url":"news","lang":"und","options":{"attributes":{"title":""},"alter":true},"weight":"0"}
+-Resources {"url":"resources","lang":"und","options":{"attributes":{"title":""},"alter":true},"weight":"0"}
+Chats {"url":"chats","lang":"en","options":{"alter":true,"node_type":"page"},"weight":"-47"}
+Chats {"url":"node\/22679","lang":"es","options":{"alter":true,"node_type":"page"},"weight":"-46"}
+Чаты {"url":"node\/22680","lang":"ru","options":{"alter":true,"node_type":"page"},"weight":"-44"}
+دردشات {"url":"node\/22681","lang":"ar","options":{"alter":true,"node_type":"page"},"weight":"-43"}
+交流 {"url":"node\/22682","lang":"zh-hans","options":{"alter":true,"node_type":"page"},"weight":"-41"}
+چت {"url":"node\/22683","lang":"fa","options":{"alter":true,"node_type":"page"},"weight":"-42"}
+Chats {"url":"node\/22684","lang":"pt-br","options":{"alter":true,"node_type":"page"},"weight":"-45"}
+English bulletin Sept. 29 {"url":"content\/english-bulletin-sept-29","hidden":true,"lang":"en","options":{"node_type":"bulletin_email","alter":true,"attributes":{"title":""}},"weight":"0"}
+راهنما {"url":"node\/31227","lang":"fa","options":{"attributes":{"title":""},"alter":true},"weight":"48"}
