@@ -398,3 +398,21 @@ function _fe_news_get_topics($nid = '') {
 function fe_news_form_news_node_form_alter(&$form, &$form_state, $form_id) {
   hide($form['field_news_type']);
 }
+
+/**
+ * Implements hook_page_alter.
+ */
+function fe_news_page_alter(&$page) {
+  // Check if on the url is set the 'edit' attribute.
+  if (isset($_REQUEST['edit']['field_news_type'])) {
+    $news_resource_type = 2;
+    $request = (array) $_REQUEST['edit'];
+    $type_value = $request['field_news_type']['und'];
+
+    // If the field_news_type is set on 2,
+    // change the page title.
+    if ($type_value == $news_resource_type) {
+      drupal_set_title(t('Create Resource'));
+    }
+  }
+}
