@@ -670,7 +670,11 @@ Example: "John Doe, Editor at Global Publishing, Inc."',
   // Exported field_instance: 'node-news-field_news_type'.
   $field_instances['node-news-field_news_type'] = array(
     'bundle' => 'news',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
