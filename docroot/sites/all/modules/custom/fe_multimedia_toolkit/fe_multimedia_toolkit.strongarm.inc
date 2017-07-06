@@ -206,5 +206,68 @@ function fe_multimedia_toolkit_strongarm() {
   $strongarm->value = 1;
   $export['node_submitted_multimedia_toolkit'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_multimedia_toolkit_ar_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_multimedia_toolkit_ar_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_multimedia_toolkit_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_multimedia_toolkit_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_multimedia_toolkit_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_multimedia_toolkit_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_multimedia_toolkit_fa_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_multimedia_toolkit_fa_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_multimedia_toolkit_pattern';
+  $strongarm->value = 'toolkit/[node:title]';
+  $export['pathauto_node_multimedia_toolkit_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_multimedia_toolkit_pt-br_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_multimedia_toolkit_pt-br_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_multimedia_toolkit_ru_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_multimedia_toolkit_ru_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_multimedia_toolkit_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_multimedia_toolkit_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_multimedia_toolkit_zh-hans_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_multimedia_toolkit_zh-hans_pattern'] = $strongarm;
+
   return $export;
 }
