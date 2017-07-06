@@ -186,6 +186,15 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type (field_news_type) */
+  $handler->display->display_options['filters']['field_news_type_value']['id'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['filters']['field_news_type_value']['field'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_news_type_value']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'node';
@@ -193,6 +202,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language_1']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  $handler->display->display_options['filters']['language_1']['group'] = 1;
 
   /* Display: Popular */
   $handler = $view->new_display('block', 'Popular', 'news_popular');
@@ -238,6 +248,15 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type (field_news_type) */
+  $handler->display->display_options['filters']['field_news_type_value']['id'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['filters']['field_news_type_value']['field'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_news_type_value']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
@@ -245,12 +264,14 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  $handler->display->display_options['filters']['language']['group'] = 1;
   /* Filter criterion: Content statistics: Views this month */
   $handler->display->display_options['filters']['monthcount']['id'] = 'monthcount';
   $handler->display->display_options['filters']['monthcount']['table'] = 'node_counter';
   $handler->display->display_options['filters']['monthcount']['field'] = 'monthcount';
   $handler->display->display_options['filters']['monthcount']['operator'] = '>';
   $handler->display->display_options['filters']['monthcount']['value']['value'] = '0';
+  $handler->display->display_options['filters']['monthcount']['group'] = 1;
 
   /* Display: News Landing */
   $handler = $view->new_display('page', 'News Landing', 'news_landing');
@@ -291,6 +312,15 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type (field_news_type) */
+  $handler->display->display_options['filters']['field_news_type_value']['id'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['filters']['field_news_type_value']['field'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_news_type_value']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'node';
@@ -298,6 +328,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language_1']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  $handler->display->display_options['filters']['language_1']['group'] = 1;
   $handler->display->display_options['path'] = 'news/all';
 
   /* Display: Top Story */
@@ -440,6 +471,15 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type (field_news_type) */
+  $handler->display->display_options['filters']['field_news_type_value']['id'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['filters']['field_news_type_value']['field'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_news_type_value']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
@@ -447,6 +487,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  $handler->display->display_options['filters']['language']['group'] = 1;
 
   /* Display: Author latest stories */
   $handler = $view->new_display('block', 'Author latest stories', 'author_latest_stories');
@@ -501,6 +542,15 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type (field_news_type) */
+  $handler->display->display_options['filters']['field_news_type_value']['id'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['filters']['field_news_type_value']['field'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_news_type_value']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
@@ -508,6 +558,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  $handler->display->display_options['filters']['language']['group'] = 1;
 
   /* Display: Top Story Home */
   $handler = $view->new_display('block', 'Top Story Home', 'top_story_home');
@@ -650,6 +701,15 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type (field_news_type) */
+  $handler->display->display_options['filters']['field_news_type_value']['id'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['filters']['field_news_type_value']['field'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_news_type_value']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
@@ -657,6 +717,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  $handler->display->display_options['filters']['language']['group'] = 1;
 
   /* Display: Tagged news (Knight Media) */
   $handler = $view->new_display('block', 'Tagged news (Knight Media)', 'block_1');
@@ -696,6 +757,15 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type (field_news_type) */
+  $handler->display->display_options['filters']['field_news_type_value']['id'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['filters']['field_news_type_value']['field'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_news_type_value']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
@@ -703,6 +773,7 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  $handler->display->display_options['filters']['language']['group'] = 1;
   /* Filter criterion: Field: Area of Interest (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
@@ -716,6 +787,7 @@ function fe_news_views_default_views() {
     918 => '918',
     919 => '919',
   );
+  $handler->display->display_options['filters']['field_topic_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_topic_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
@@ -791,6 +863,13 @@ function fe_news_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
+  );
+  /* Filter criterion: Content: Type (field_news_type) */
+  $handler->display->display_options['filters']['field_news_type_value']['id'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['filters']['field_news_type_value']['field'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['value'] = array(
+    1 => '1',
   );
   $handler->display->display_options['path'] = 'news/%';
   $export['news'] = $view;
