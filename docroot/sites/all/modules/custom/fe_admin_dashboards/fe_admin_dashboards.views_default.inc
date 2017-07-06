@@ -5754,7 +5754,7 @@ function fe_admin_dashboards_views_default_views() {
     5 => 0,
   );
   $handler->display->display_options['filters']['language']['expose']['reduce'] = TRUE;
-  $handler->display->display_options['block_description'] = 'Dashboard: editors Resources view';
+  $handler->display->display_options['block_description'] = 'Dashboard: editors Multimedia Toolkits view';
   $export['last_content'] = $view;
 
   $view = new view();
