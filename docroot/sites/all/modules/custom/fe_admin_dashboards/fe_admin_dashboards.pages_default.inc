@@ -2083,9 +2083,9 @@ admin/dashboard/content/opportunities
     'relationships' => array(),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Dashboard
-News',
+Resources',
     'panels_breadcrumbs_paths' => 'admin/dashboard
-admin/dashboard/content/news
+admin/dashboard/content/resources
 ',
     'panels_breadcrumbs_home' => 1,
     'name' => '',
