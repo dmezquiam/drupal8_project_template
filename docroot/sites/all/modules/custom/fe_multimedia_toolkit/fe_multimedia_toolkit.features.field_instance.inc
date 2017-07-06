@@ -155,7 +155,7 @@ function fe_multimedia_toolkit_field_default_field_instances() {
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
           'field_multiple_limit_order' => 0,
-          'node_reference_view_mode' => 'teaser',
+          'node_reference_view_mode' => 'short_teaser',
         ),
         'type' => 'node_reference_node',
         'weight' => 4,
