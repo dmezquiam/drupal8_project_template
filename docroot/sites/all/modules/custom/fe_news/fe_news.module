@@ -84,9 +84,9 @@ function _fe_news_preprocess_type_resource(&$variables) {
   // First preprocess the node like a node of type News.
   _fe_news_preprocess_type_news($variables);
 
-  // On teaser view mode.
-  if ($variables['teaser']) {
-    $variables['classes_array'][] = 'article-item-list-no-body';
+  // On short_teaser view mode.
+  $view_mode = $variables['view_mode'];
+  if ($view_mode == 'short_teaser') {
     unset($variables['content']['body']);
   }
 }
