@@ -2183,7 +2183,7 @@ admin/dashboard/content/news
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 0,
+    'override_title' => 1,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
@@ -2243,7 +2243,7 @@ admin/dashboard/content/news
   $display->content['new-df6e07d7-533a-403a-a037-0d66af4daa6e'] = $pane;
   $display->panels['side'][1] = 'new-df6e07d7-533a-403a-a037-0d66af4daa6e';
   $display->hide_title = PANELS_TITLE_PANE;
-  $display->title_pane = '0';
+  $display->title_pane = 'new-f49954ae-e8c2-47f2-8817-2c0504b37e10';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['dashboard_nodes_resources'] = $page;
