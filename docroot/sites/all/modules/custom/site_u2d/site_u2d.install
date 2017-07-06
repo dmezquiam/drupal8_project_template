@@ -132,3 +132,38 @@ function site_u2d_update_7010() {
     throw new DrupalUpdateException('The following modules need to be enabled: site_menu_loader, menu_import.');
   }
 }
+
+/**
+ * Add links for News and Resources in Main Menu.
+ */
+function site_u2d_update_7011() {
+  $menu_to_update = "main-menu";
+  $link_to_update = 'News & Resources';
+
+  $plid = site_menu_loader_get_link_mlid($menu_to_update, $link_to_update);
+  if ($plid != -1) {
+    $items = array(
+      array(
+        'link_path' => 'news/all',
+        'link_title' => st('News'),
+        'menu_name' => $menu_to_update,
+        'weight' => -1,
+        'plid' => $plid,
+      ),
+      array(
+        'link_path' => 'resources',
+        'link_title' => st('Resources'),
+        'menu_name' => $menu_to_update,
+        'weight' => 0,
+        'plid' => $plid,
+      ),
+    );
+
+    foreach ($items as $item) {
+      menu_link_save($item);
+    }
+  }
+  else {
+    throw new DrupalUpdateException('The menu link to update was not found.');
+  }
+}
