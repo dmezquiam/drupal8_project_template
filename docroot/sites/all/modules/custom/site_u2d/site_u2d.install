@@ -160,3 +160,10 @@ function site_u2d_update_7010() {
     throw new DrupalUpdateException('The menu link to update was not found.');
   }
 }
+
+/**
+ * Enable module: views_conditional.
+ */
+function site_u2d_update_7011() {
+  module_enable(array('views_conditional'));
+}
