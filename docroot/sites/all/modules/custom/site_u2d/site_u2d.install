@@ -65,16 +65,9 @@ function site_u2d_update_7006() {
 }
 
 /**
- * Enable module prepopulate
- */
-function site_u2d_update_7007() {
-  module_enable(array('prepopulate'));
-}
-
-/**
  * Set the field_news_type of news ct to 'News'.
  */
-function site_u2d_update_7008() {
+function site_u2d_update_7007() {
   $field_type_info = field_info_instance('node', 'field_news_type', 'news');
   $field_type_exist = !empty($field_type_info);
 
@@ -105,7 +98,7 @@ function site_u2d_update_7008() {
 /**
  * Enable modules: menu_import, site_menu_loader.
  */
-function site_u2d_update_7009() {
+function site_u2d_update_7008() {
   $modules = array(
     'menu_import',
     'site_menu_loader',
@@ -117,7 +110,7 @@ function site_u2d_update_7009() {
 /**
  * Reload Dashboard menu.
  */
-function site_u2d_update_7010() {
+function site_u2d_update_7009() {
   $menu_loader_exists = module_exists('site_menu_loader');
   $menu_import_exists = module_exists('menu_import');
 
@@ -136,7 +129,7 @@ function site_u2d_update_7010() {
 /**
  * Add links for News and Resources in Main Menu.
  */
-function site_u2d_update_7011() {
+function site_u2d_update_7010() {
   $menu_to_update = "main-menu";
   $link_to_update = 'News & Resources';
 
@@ -145,14 +138,14 @@ function site_u2d_update_7011() {
     $items = array(
       array(
         'link_path' => 'news/all',
-        'link_title' => st('News'),
+        'link_title' => t('News'),
         'menu_name' => $menu_to_update,
         'weight' => -1,
         'plid' => $plid,
       ),
       array(
         'link_path' => 'resources',
-        'link_title' => st('Resources'),
+        'link_title' => t('Resources'),
         'menu_name' => $menu_to_update,
         'weight' => 0,
         'plid' => $plid,
