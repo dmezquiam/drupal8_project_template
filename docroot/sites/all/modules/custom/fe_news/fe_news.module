@@ -496,3 +496,32 @@ function _fe_news_get_edit_form_node_bundle($page) {
   $content = $page['content']['system_main'];
   return $content['#bundle'];
 }
+
+/**
+ * Implements hook_pathauto_pattern_alter.
+ */
+function fe_news_pathauto_pattern_alter(&$pattern, array &$context) {
+  $is_node = ($context['module'] == 'node');
+  $is_news = ($context['type'] == 'news');
+  if ($is_node && $is_news) {
+    $node = $context['data']['node'];
+    $is_resource = fe_news_is_resource($node);
+    if ($is_resource) {
+      $pattern = 'resource/[node:title]';
+    }
+  }
+}
+
+/**
+ * Returns True if the node is of type Resource.
+ */
+function fe_news_is_resource($node) {
+  $node_wrapper = entity_metadata_wrapper('node', $node);
+  $node_type = $node_wrapper->type->value();
+  $is_resource = FALSE;
+  if ($node_type == 'news') {
+    $news_type = $node_wrapper->field_news_type->value();
+    $is_resource = ($news_type == NEWS_RESOURCE_TYPE_KEY);
+  }
+  return $is_resource;
+}
