@@ -444,9 +444,9 @@ function _fe_news_preprocess_edit_node_page(&$variables) {
 }
 
 function _fe_news_preprocess_edit_news_page(&$variables) {
-  $node_wrapper = entity_metadata_wrapper('node', $variables['node']);
-  $news_type = $node_wrapper->field_news_type->value();
-  if ($news_type == NEWS_RESOURCE_TYPE_KEY) {
+  $is_resource = fe_news_is_resource($variables['node']);
+  if ($is_resource) {
+    $node_wrapper = entity_metadata_wrapper('node', $variables['node']);
     $page_title_prefix = t('Edit Resource');
     $page_title_suffix = $node_wrapper->title->value();
     $variables['title'] = '<em>' . $page_title_prefix . '</em>' . ' ' . $page_title_suffix;
