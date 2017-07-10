@@ -498,6 +498,31 @@ function fe_admin_dashboards_views_default_views() {
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: News Type */
+  $handler->display->display_options['fields']['field_news_type']['id'] = 'field_news_type';
+  $handler->display->display_options['fields']['field_news_type']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['fields']['field_news_type']['field'] = 'field_news_type';
+  $handler->display->display_options['fields']['field_news_type']['ui_name'] = 'News Type';
+  $handler->display->display_options['fields']['field_news_type']['label'] = '';
+  $handler->display->display_options['fields']['field_news_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_news_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_type']['element_default_classes'] = FALSE;
+  /* Field: Views: Views Conditional */
+  $handler->display->display_options['fields']['views_conditional']['id'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['table'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['field'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['label'] = 'Type';
+  $handler->display->display_options['fields']['views_conditional']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_conditional']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['views_conditional']['if'] = 'type';
+  $handler->display->display_options['fields']['views_conditional']['condition'] = '1';
+  $handler->display->display_options['fields']['views_conditional']['equalto'] = 'News';
+  $handler->display->display_options['fields']['views_conditional']['then'] = '[field_news_type]';
+  $handler->display->display_options['fields']['views_conditional']['or'] = '[type]';
+  $handler->display->display_options['fields']['views_conditional']['strip_tags'] = 0;
   /* Field: Content: Language */
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'node';
