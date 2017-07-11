@@ -462,15 +462,41 @@ function _fe_news_preprocess_add_node_page(&$variables) {
 }
 
 function _fe_news_preprocess_add_news_page(&$variables) {
-  // Check if on the url is set the 'edit' attribute.
+  $is_creation_page = _fe_news_is_resource_creation_page();
+  $is_translation_page = _fe_news_is_resource_translation_page();
+
+  if ($is_creation_page || $is_translation_page) {
+    $page_title = t('Create Resource');
+    $variables['title'] = $page_title;
+    drupal_set_title($page_title);
+  }
+}
+
+/**
+ * Returns True if the current page is the
+ * creation page of node Resource.
+ */
+function _fe_news_is_resource_creation_page() {
   if (isset($_REQUEST['type'])) {
     $type_value = $_GET['type'];
-
-    if ($type_value == NEWS_RESOURCE_TYPE_KEY) {
-      $page_title = t('Create Resource');
-      $variables['title'] = $page_title;
-      drupal_set_title($page_title);
-    }
+    return ($type_value == NEWS_RESOURCE_TYPE_KEY);
+  }
+  else {
+    return FALSE;
+  }
+}
+/**
+ * Returns True if the current page is the
+ * translation page of node Resource.
+ */
+function _fe_news_is_resource_translation_page() {
+  if (isset($_REQUEST['translation'])) {
+    $nid_to_translate = $_GET['translation'];
+    $node = node_load($nid_to_translate);
+    return fe_news_is_resource($node);
+  }
+  else {
+    return FALSE;
   }
 }
 
