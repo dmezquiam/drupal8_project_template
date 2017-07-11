@@ -96,14 +96,6 @@ function fe_newsletter_views_default_views() {
     'news' => 'news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Type (field_news_type) */
-  $handler->display->display_options['filters']['field_news_type_value']['id'] = 'field_news_type_value';
-  $handler->display->display_options['filters']['field_news_type_value']['table'] = 'field_data_field_news_type';
-  $handler->display->display_options['filters']['field_news_type_value']['field'] = 'field_news_type_value';
-  $handler->display->display_options['filters']['field_news_type_value']['value'] = array(
-    1 => '1',
-  );
-  $handler->display->display_options['filters']['field_news_type_value']['group'] = 1;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
