@@ -140,25 +140,24 @@ function fe_multimedia_toolkit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-multimedia_toolkit-field_multimedia_resources'.
-  $field_instances['node-multimedia_toolkit-field_multimedia_resources'] = array(
+  // Exported field_instance: 'node-multimedia_toolkit-field_resources_groups'.
+  $field_instances['node-multimedia_toolkit-field_resources_groups'] = array(
     'bundle' => 'multimedia_toolkit',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Start typing the name of the Resource in the input field.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'node_reference',
+        'module' => 'paragraphs',
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
           'field_multiple_limit_order' => 0,
-          'node_reference_view_mode' => 'short_teaser',
+          'view_mode' => 'full',
         ),
-        'type' => 'node_reference_node',
-        'weight' => 4,
+        'type' => 'paragraphs_view',
+        'weight' => 5,
       ),
       'short_teaser' => array(
         'label' => 'above',
@@ -174,23 +173,31 @@ function fe_multimedia_toolkit_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_multimedia_resources',
+    'field_name' => 'field_resources_groups',
     'label' => 'Resources',
     'required' => 0,
     'settings' => array(
+      'add_mode' => 'button',
+      'allowed_bundles' => array(
+        'toolkit_resources' => -1,
+        'toolkit_resources_group' => 'toolkit_resources_group',
+      ),
+      'bundle_weights' => array(
+        'toolkit_resources' => 2,
+        'toolkit_resources_group' => 3,
+      ),
+      'default_edit_mode' => 'open',
       'entity_translation_sync' => FALSE,
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'node_reference',
-      'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'node_reference_autocomplete',
-      'weight' => 4,
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 5,
     ),
   );
 
@@ -251,12 +258,214 @@ function fe_multimedia_toolkit_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'paragraphs_item-toolkit_resources-field_multimedia_resources'.
+  $field_instances['paragraphs_item-toolkit_resources-field_multimedia_resources'] = array(
+    'bundle' => 'toolkit_resources',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'node_reference',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
+          'node_reference_view_mode' => 'short_teaser',
+        ),
+        'type' => 'node_reference_node',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_multimedia_resources',
+    'label' => 'Resources',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-toolkit_resources-field_resources_label'.
+  $field_instances['paragraphs_item-toolkit_resources-field_resources_label'] = array(
+    'bundle' => 'toolkit_resources',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_resources_label',
+    'label' => 'Label',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-toolkit_resources_group-field_resources_group_label'.
+  $field_instances['paragraphs_item-toolkit_resources_group-field_resources_group_label'] = array(
+    'bundle' => 'toolkit_resources_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_resources_group_label',
+    'label' => 'Grouping label',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-toolkit_resources_group-field_resources_grouped'.
+  $field_instances['paragraphs_item-toolkit_resources_group-field_resources_grouped'] = array(
+    'bundle' => 'toolkit_resources_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_resources_grouped',
+    'label' => 'Content',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'button',
+      'allowed_bundles' => array(
+        'toolkit_resources' => 'toolkit_resources',
+        'toolkit_resources_group' => -1,
+      ),
+      'bundle_weights' => array(
+        'toolkit_resources' => 2,
+        'toolkit_resources_group' => 3,
+      ),
+      'default_edit_mode' => 'open',
+      'entity_translation_sync' => FALSE,
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 2,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Content');
+  t('Grouping label');
   t('Image');
+  t('Label');
   t('Resources');
-  t('Start typing the name of the Resource in the input field.');
   t('Title');
 
   return $field_instances;

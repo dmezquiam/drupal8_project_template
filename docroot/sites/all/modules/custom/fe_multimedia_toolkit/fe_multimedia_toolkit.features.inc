@@ -40,3 +40,22 @@ function fe_multimedia_toolkit_node_info() {
   drupal_alter('node_info', $items);
   return $items;
 }
+
+/**
+ * Implements hook_paragraphs_info().
+ */
+function fe_multimedia_toolkit_paragraphs_info() {
+  $items = array(
+    'toolkit_resources' => array(
+      'name' => 'Toolkit Resources',
+      'bundle' => 'toolkit_resources',
+      'locked' => '1',
+    ),
+    'toolkit_resources_group' => array(
+      'name' => 'Toolkit Resources Group',
+      'bundle' => 'toolkit_resources_group',
+      'locked' => '1',
+    ),
+  );
+  return $items;
+}

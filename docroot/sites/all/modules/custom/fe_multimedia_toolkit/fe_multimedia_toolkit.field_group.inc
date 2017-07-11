@@ -52,6 +52,7 @@ function fe_multimedia_toolkit_field_group_info() {
     'weight' => '10',
     'children' => array(
       0 => 'field_multimedia_resources',
+      1 => 'field_resources_groups',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
