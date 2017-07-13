@@ -101,10 +101,6 @@ function _ijnet_newsletter_content_theme_parameters($nid) {
   if ($pitch_to_ijnet) {
     $path = drupal_lookup_path("source", 'blog/pitch-ijnet', $node->language);
     $node = menu_get_object("node", 1, $path);
-    if ($node) {
-      $uri = field_get_items('node', $node, 'field_image')[0]['uri'];
-      $parameters['pitch_to_ijnet_image_url'] = $uri;
-    }
   }
 
   return $parameters;
