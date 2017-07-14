@@ -496,7 +496,7 @@ ul.links {
  * You can target all of these with .nav or div[id$="menu-bar"]
  */
 
-.nav {
+nav.block-superfish {
   clear: both;
   margin: 0;
   background: url("#{$path-to-images}/bg_main_menu.png") repeat 0 0;
@@ -507,24 +507,62 @@ ul.links {
     margin: 0;
     padding: 0;
   }
-
-  li,
-  ul.menu li {
-    display: inline;
-    float: left;
-    list-style: none;
-    padding: 0;
-    height: 52px;
-    border-bottom: 0px solid $color-transparent;
-    font-family: $signika-Light;
-    font-size: $font-size-x-large;
-    @include transition(all, 0.2s, ease-in-out);
-    &:hover,
-    &.active {
-        height: 49px;
-        border-bottom: 3px solid $color-line-secondary;
+  ul.sf-menu.sf-main-menu.sf-horizontal {
+    li {
+      display: inline;
+      float: left;
+      list-style: none;
+      padding: 0;
+      height: 52px;
+      border-bottom: 0px solid $color-transparent;
+      font-family: $signika-Light;
+      font-size: $font-size-x-large;
+      position: relative;
+      @include transition(all, 0.2s, ease-in-out);
+      
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0px;
+        background: $color-line-secondary;
+        @include transition(all, 0.2s, ease-in-out);
+      }
       a {
-        color: $color-line-secondary;
+        cursor: pointer;
+
+        .sf-sub-indicator {
+          left: 0;
+          top: 22px;
+        }
+      }
+      &:hover,
+      &.active {
+        &:before {
+          height: 3px;
+        }
+        a {
+          color: $color-line-secondary;
+        }
+      }
+
+      ul {
+        background: #333;
+        border-radius: 0px;
+        padding: 0 !important;
+        margin-top: 4px;
+
+        li {
+          a {
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+
+          }
+          &:last-child a { 
+            border-bottom: 0px;
+          }
+        }
       }
     }
   }
@@ -555,6 +593,50 @@ ul.links {
 /* =============================================================================
  *   Responsive Menu
  * ========================================================================== */
+#menu-bar {
+  .mean-bar {
+    a.meanmenu-reveal {
+      text-indent: 0;
+      display: block;
+      margin: 0;
+      white-space: nowrap;
+      padding: 15px 10px 12px 10px;
+      color: $color-txt-main-menu;
+      text-transform: uppercase;
+      font-family: $signika-Light;
+      font-size: $font-size-x-large !important;
+      text-align: left !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: auto;
+
+      &.meanclose {
+        //background: #415765;
+      }
+    }
+    nav.mean-nav {
+      background: $color-bg-leaderboard;
+      position: absolute;
+      top: 6px;
+
+      ul {
+        li {
+          a.mean-expand {
+            height: 54px;
+            background: transparent;
+            width: 100%;
+            text-align: left;
+            box-sizing: border-box;
+            padding: 15px 10px 10px 5px !important;
+            border: 0 !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 .responsive-menus.responsified {
   margin: 0;
   background: url("#{$path-to-images}/bg_main_menu.png") repeat 0 0;
@@ -2018,11 +2100,21 @@ div.messages {
  }
 
  .page-videos {
-    .region+.region+.region.region-two-66-33-first { width: 100%; }
-    .region+.region+.region+.region.region-two-66-33-second { width: 0px }
-    .pane-views-videos-related-videos-landing .block-inner { margin-left: 0; padding-left: 20px; margin-top: 68px; }
-    .view-display-id-featured_video { margin-right: -20px; }
-    .page-videos .frist-block {  }
+    .region+.region+.region.region-two-66-33-first { 
+      width: 100%;
+    }
+    .region+.region+.region+.region.region-two-66-33-second { 
+      width: 0px;
+    }
+    .pane-views-videos-related-videos-landing .block-inner { 
+      margin-left: 0; 
+      padding-left: 20px; 
+      margin-top: 68px; 
+    }
+    .view-display-id-featured_video { 
+      margin-right: -20px;
+    }
+    .page-videos .frist-block {}
  }
 
 /* =============================================================================
@@ -2195,7 +2287,10 @@ div.messages {
         margin-bottom: 10px;
         width: 100%;
       }
-      h2 { font-size: 30px; }
+      h2 { 
+
+        font-size: 30px;
+      }
     }
   }
 
@@ -2233,9 +2328,9 @@ div.messages {
  *   About
  * ========================================================================== */
 
- .staff-list {
+.staff-list {
   @include staff-list ();
- }
+}
 
 
 
@@ -2332,28 +2427,28 @@ div.messages {
   margin-bottom: 10px;
   min-height: initial;
  }
-#ijnet-salesforce-contact-form {
-  padding: 14px 20% 20px 20px;
-  background: #f8f6ec;
-  .form-item-first-name,
-  .form-item-last-name,
-  .form-item-organization-name,
-  .form-item-position { @include form-width (50%); }
-  .form-item-personal-email { @include form-width (100%); }
-  .form-item-work-email { @include form-width (100%); }
+  #ijnet-salesforce-contact-form {
+    padding: 14px 20% 20px 20px;
+    background: #f8f6ec;
+    .form-item-first-name,
+    .form-item-last-name,
+    .form-item-organization-name,
+    .form-item-position { @include form-width (50%); }
+    .form-item-personal-email { @include form-width (100%); }
+    .form-item-work-email { @include form-width (100%); }
 
-  .form-item-mobile,
-  .form-item-twitter-handle { @include form-width (50%); }
+    .form-item-mobile,
+    .form-item-twitter-handle { @include form-width (50%); }
 
-  .form-item-mailing-address { @include form-width (100%); }
-  .form-item-city { @include form-width (100%); }
-  .form-item-country { @include form-width (100%); }
-  
-  .description,
-  .form-item-receive-updates {
-    clear: both;
+    .form-item-mailing-address { @include form-width (100%); }
+    .form-item-city { @include form-width (100%); }
+    .form-item-country { @include form-width (100%); }
+    
+    .description,
+    .form-item-receive-updates {
+      clear: both;
+    }
   }
-}
 
 
 
@@ -2385,41 +2480,41 @@ div.messages {
   }
 }
 
-  .connect-ijnet {
-    margin-top: 13px;
-    .view-content {
-      @include clearfix;
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        li {
-          border-bottom: 1px solid $color-line;
-          height: 46px;
-          padding: 0px 0 10px 0;
-          margin-bottom: 10px;
+.connect-ijnet {
+  margin-top: 13px;
+  .view-content {
+    @include clearfix;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        border-bottom: 1px solid $color-line;
+        height: 46px;
+        padding: 0px 0 10px 0;
+        margin-bottom: 10px;
 
-          &:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        &:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+        a {
+          display: block;
+          img {
+            float: left;
+            margin-right: 15px;
           }
-          a {
-            display: block;
-            img {
-              float: left;
-              margin-right: 15px;
-            }
-            h5 {
-              line-height: 45px;
-              color: $color-txt-selected;
-              margin-top: 0;
-            }
+          h5 {
+            line-height: 45px;
+            color: $color-txt-selected;
+            margin-top: 0;
           }
         }
       }
     }
   }
+}
 
 /* =============================================================================
  *   Email bulletin archive (newsletter)
@@ -2564,3 +2659,99 @@ div.messages {
     }
   }
 }
+
+
+//teaser-list-horizontal
+.teaser-list-horizontal {
+  .content-image {
+    float: left;
+    margin-right: 20px;
+    @include breakpoint("tablet-portrait") {
+    }
+
+    @include breakpoint("mobile-landscape") {
+      float: none;
+      margin-right: 0px;
+    }
+
+    @include breakpoint("mobile-portrait") {
+      float: none;
+      margin-right: 0px;
+    }
+
+    img {
+      display: block;
+      line-height: 0;
+      @include transition (all, 0.2s, ease-in-out);
+      @include breakpoint("tablet-portrait") {
+        width: 200px;
+        margin-bottom: 70px;
+      }
+      @include breakpoint("mobile-landscape") {
+        width: 100%;
+        margin-bottom: 0px;
+      }
+
+      @include breakpoint("mobile-portrait") {
+        width: 100%;
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .node-title {
+    h2 {
+      margin: 10px 0px 10px 0px;
+    }
+  }
+  .content-body {}
+}
+
+
+.paragraphs-item-toolkit-resources-group {
+  h2 {
+    margin-top: 10px;
+    .field-name-field-resources-group-label {
+      color: $color-heading-tabs;
+      text-align: center;
+      border-bottom: 1px solid #c2c2c2;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.paragraphs-item-toolkit-resources {
+    margin-bottom: 0px;
+
+
+
+    h3 {
+     // @extend h2;
+    }
+
+    .article-item-list-no-body {
+      max-height: 320px;
+      height: 320px;
+      @include breakpoint("tablet-portrait") {
+        max-height: 270px;
+        height: 270px;
+        .content {
+          margin-right: 0px !important;
+        }
+      }
+      @include breakpoint("mobile-landscape") {
+        max-height: 100%;
+        height: 100%;
+        .content {
+          margin-right: 0px !important;
+        }
+      }
+      @include breakpoint("mobile-portrait") {
+        max-height: 100%;
+        height: 100%;
+        .content {
+          margin-right: 0px !important;
+        }
+      }
+    }
+}
+

@@ -26,7 +26,7 @@
  * @see template_process()
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
     <div class="resources-label">
       <h3><?php print render($content['field_resources_label']); ?></h3>

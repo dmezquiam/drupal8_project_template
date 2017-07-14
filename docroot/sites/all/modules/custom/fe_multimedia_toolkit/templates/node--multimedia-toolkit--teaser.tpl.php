@@ -99,7 +99,7 @@
 
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class='node-title'><?php print render($content['title_field']); ?></div>
   <div class='content-image'><?php print render($content['field_multimedia_image']); ?></div>
+  <div class='node-title'><?php print render($content['title_field']); ?></div>
   <div class='content-body'><?php print render($content['body']); ?></div>
 </article>
