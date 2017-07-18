@@ -101,10 +101,6 @@ function _ijnet_newsletter_content_theme_parameters($nid) {
   if ($pitch_to_ijnet) {
     $path = drupal_lookup_path("source", 'blog/pitch-ijnet', $node->language);
     $node = menu_get_object("node", 1, $path);
-    if ($node) {
-      $uri = field_get_items('node', $node, 'field_image')[0]['uri'];
-      $parameters['pitch_to_ijnet_image_url'] = $uri;
-    }
   }
 
   return $parameters;
@@ -379,8 +375,12 @@ function _fe_newsletter_get_featured_content($nid) {
     $featured_content->title = $title;
   }
 
-  $news_summary = (!empty(field_get_items('node', $node, 'body')[0]['summary'])) ? strip_tags(field_get_items('node', $node, 'body')[0]['safe_summary']) : NULL;
-  $bulletin_summary = (!empty(field_get_items('node', $node, 'field_bulletin_summary')[0]['value'])) ? field_get_items('node', $node, 'field_bulletin_summary')[0]['value'] : NULL;
+  $summary_items = field_get_items('node', $node, 'body');
+  $news_summary = (!empty($summary_items[0]['summary'])) ? strip_tags($summary_items[0]['safe_summary']) : NULL;
+
+  $bulletin_summary_items = field_get_items('node',$node,'field_bulletin_summary');
+  $bulletin_summary = (!empty($bulletin_summary_items[0]['value'])) ? $bulletin_summary_items[0]['value'] : NULL;
+
   $featured_content->summary = '';
   if ($news_summary != NULL) {
     $featured_content->featured_summary = $news_summary;
@@ -434,13 +434,15 @@ function _fe_newsletter_get_advertisement($nid) {
   if (empty($node->field_image_ad)) {
     $advertisement->image = NULL;
   } else {
-    $advertisement->image = field_get_items('node', $node, 'field_image_ad')[0]['uri'];
+    $ad_image_items = field_get_items('node', $node, 'field_image_ad');
+    $advertisement->image = $ad_image_items[0]['uri'];
   }
   $advertisement->title = $node->title;
   if (empty($node->body)) {
     $advertisement->summary = NULL;
   } else {
-    $advertisement->summary = strip_tags (field_get_items('node', $node, 'body')[0]['safe_summary']);
+    $ad_summary_items = field_get_items('node', $node, 'body');
+    $advertisement->summary = strip_tags ($ad_summary_items[0]['safe_summary']);
   }
   $advertisement->link = url('node/' . $nid, array('absolute' => TRUE, 'language' => $installed_languages[$language]));
   return $advertisement;
@@ -618,10 +620,13 @@ function _fe_newsletter_get_multimedia($nid) {
 function _fe_newsletter_get_comments($node) {
   $comments = array();
   if (!empty($node->field_comment)) {
-    $comment->body = field_get_items('node', $node, 'field_comment')[0]['value'];
+    $comment_body = field_get_items('node',$node, 'field_comment');
+    $comment->body = $comment_body[0]['value'];
 
-    field_get_items('node', $node, 'field_comment_author')[0]['title'] ? $comment->author = field_get_items('node', $node, 'field_comment_author')[0]['title'] : $comment->author = '';
-    field_get_items('node', $node, 'field_comment_author')[0]['url'] ? $comment->link = field_get_items('node', $node, 'field_comment_author')[0]['url'] : $comment->link = '';
+    $comment_author =  field_get_items('node', $node, 'field_comment_author');
+    $comment_author[0]['title'] ? $comment->author = $comment_author[0]['title'] : $comment->author = '';
+
+    $comment_author[0]['url'] ? $comment->link = $comment_author[0]['url'] : $comment->link = '';
 
     $comments[] = $comment;
   }
