@@ -116,6 +116,30 @@ function json_blocks_view_connect() {
   return array('content' => theme('connect', array('url' => $url)));
 }
 
+function json_blocks_view_latest_posts() {
+
+/*
+    <a href='<?php print url('knight-media-innovators'); ?>' class="img-button"><?php print t('READ THE LATEST POSTS'); ?></a>
+    <?php global $language; if ($language->language == "en") : ?>
+    <a href='https://tools.ijnet.org' class="img-button"><?php print t('READ THE LATEST POSTS'); ?></a>
+    <?php endif; ?>
+*/
+  global $language;
+  $knights_page_title = t('READ THE LATEST POSTS'); 
+  $knights_page_url = url('knight-media-innovators');
+
+  if ($language->language == "en") {
+    $knights_tool_title = t('READ THE LATEST POSTS');
+    $knights_tool_url = 'https://tools.ijnet.org';
+  }
+  
+  return array('content' => theme('latest-posts', array(
+    'knights_page_url' => $knights_page_url,
+    'knights_page_title' => $knights_page_title,
+    'knights_tool_url' => $knights_tool_url,
+    'knights_tool_title' => $knights_tool_title,
+    )));
+}
 
 /**
  * Implements hook_mail_alter().
