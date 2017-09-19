@@ -22,7 +22,7 @@ function fe_staff_member_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Meet the IJNET Staff';
+  $handler->display->display_options['title'] = 'Meet the IJNet Staff';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -40,7 +40,7 @@ function fe_staff_member_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h3>Meet the IJNET Staff</h3>';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Meet the IJNet Staff</h3>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Relationship: Nodequeue: Queue */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
