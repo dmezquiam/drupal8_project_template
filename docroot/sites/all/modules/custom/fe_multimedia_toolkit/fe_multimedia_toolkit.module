@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * Code for the Multimedia Toolkit feature.
+ */
+
+include_once 'fe_multimedia_toolkit.features.inc';
+
+
+/**
+ * Implements hook_theme()
+ */
+function fe_multimedia_toolkit_theme() {
+  $themes = array(
+    'node__multimedia_toolkit__full' => array(
+      'variables' => array('node' => array()),
+      'template' => 'templates/node--multimedia-toolkit--full',
+    ),
+
+    'node__multimedia_toolkit__teaser' => array(
+      'variables' => array('node' => array()),
+      'template' => 'templates/node--multimedia-toolkit--teaser',
+    ),
+  );
+
+  return $themes;
+}
