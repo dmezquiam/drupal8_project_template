@@ -125,14 +125,14 @@ function json_blocks_view_latest_posts() {
     <?php endif; ?>
 */
   global $language;
-  $knights_page_title = t('READ THE LATEST POSTS'); 
+  $knights_page_title = t('READ THE LATEST POSTS');
   $knights_page_url = url('knight-media-innovators');
 
   if ($language->language == "en") {
-    $knights_tool_title = t('READ THE LATEST POSTS');
+    $knights_tool_title = t('TRY OUR TOOLS');
     $knights_tool_url = 'https://tools.ijnet.org';
   }
-  
+ 
   return array('content' => theme('latest-posts', array(
     'knights_page_url' => $knights_page_url,
     'knights_page_title' => $knights_page_title,
