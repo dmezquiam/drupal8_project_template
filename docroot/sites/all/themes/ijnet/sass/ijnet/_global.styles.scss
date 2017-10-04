@@ -1388,6 +1388,11 @@ ul.action-links {
     position: relative;
     margin: 0 auto;
     .inner-block {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+
       .top-txt {
         label {
           background: $red;
@@ -1396,16 +1401,15 @@ ul.action-links {
         }
       }
       .txt {}
+     
       a {
         display: block;
         width: 180px;
         padding: 10px 44px 10px 16px;
         color: $color-bt-txt;
         font-size: 16px;
-        margin: 0px 0px 0px -120px;
-        position: absolute;
-        bottom: 30px;
         left: 50%;
+        margin: 0 auto 8px auto;
         @include transition (all, 0.2s, ease-in-out);
         background: url('#{$path-to-images}/bt_bg_latest_post.png') no-repeat left center;
         &:hover {
