@@ -6,42 +6,92 @@
 
 include_once 'fe_news.features.inc';
 
+define('NEWS_RESOURCE_TYPE_KEY', 2);
+
 /**
  * Implements hook_preprocess_node()
  */
 function fe_news_preprocess_node(&$variables) {
-  global $base_url;
-
   $node = $variables['node'];
   if ($node->type == 'news') {
-    $author = _fe_news_get_author($node->nid);
-    $variables['author'] = $author->profile_link ?
-      l($author->name, $author->profile_link) :
-      $author->name;
-
-    $href = $base_url . $variables['node_url'];
-    drupal_add_html_head_link(
-      array('rel' => 'canonical', 'href' => $href),
-      TRUE
-    );
-
-    $tags_url = fe_news_redirect_tags($node->nid);
-    $variables['url_tags'] = $tags_url;
-
-    $items_field_hide_image = field_get_items('node', $node, 'field_hide_image_on_node_page');
-
-    $hide_image = false;
-    if (isset($items_field_hide_image) && ! empty($items_field_hide_image)) {
-      $item_field_hide_image = array_shift($items_field_hide_image);
-      $field_hide_image = $item_field_hide_image['value'];
-      if ($field_hide_image == 1) {
-        $hide_image = true;
-      }
-    }
-    $variables['hide_image'] = $hide_image;
+    _fe_news_preprocess_news($variables);
   }
 }
 
+/**
+ * Preprocess news depending of field_news_type.
+ */
+function _fe_news_preprocess_news(&$variables) {
+  $node = $variables['node'];
+  $type = fe_news_get_type($node);
+  switch ($type) {
+    case '1':
+      _fe_news_preprocess_type_news($variables);
+      break;
+    case '2':
+      _fe_news_preprocess_type_resource($variables);
+      break;
+  }
+}
+
+/**
+ * Returns the value of field_news_type.
+ * Returns NULL if the field is not set.
+ */
+function fe_news_get_type($node) {
+  $type = NULL;
+  $node_wrapper = entity_metadata_wrapper('node', $node);
+  if ($node_wrapper) {
+    $type = $node_wrapper->field_news_type->value();
+  }
+  return $type;
+}
+
+/**
+ * Preprocess nodes of type 'News'.
+ */
+function _fe_news_preprocess_type_news(&$variables) {
+  global $base_url;
+  $node = $variables['node'];
+  $author = _fe_news_get_author($node->nid);
+  $variables['author'] = $author->profile_link ?
+    l($author->name, $author->profile_link) :
+    $author->name;
+  $href = $base_url . $variables['node_url'];
+  drupal_add_html_head_link(
+    array('rel' => 'canonical', 'href' => $href),
+    TRUE
+  );
+
+  $tags_url = fe_news_redirect_tags($node->nid);
+  $variables['url_tags'] = $tags_url;
+
+  $items_field_hide_image = field_get_items('node', $node, 'field_hide_image_on_node_page');
+
+  $hide_image = false;
+  if (isset($items_field_hide_image) && ! empty($items_field_hide_image)) {
+    $item_field_hide_image = array_shift($items_field_hide_image);
+    $field_hide_image = $item_field_hide_image['value'];
+    if ($field_hide_image == 1) {
+      $hide_image = true;
+    }
+  }
+  $variables['hide_image'] = $hide_image;
+}
+
+/**
+ * Preprocess nodes of type 'Resources'.
+ */
+function _fe_news_preprocess_type_resource(&$variables) {
+  // First preprocess the node like a node of type News.
+  _fe_news_preprocess_type_news($variables);
+
+  // On short_teaser view mode.
+  $view_mode = $variables['view_mode'];
+  if ($view_mode == 'short_teaser') {
+    unset($variables['content']['body']);
+  }
+}
 
 function fe_news_redirect_tags($nid = ''){
   if ($nid == '') {
@@ -60,7 +110,7 @@ function fe_news_redirect_tags($nid = ''){
 
   if ($node->type == 'news') {
     $type = 'news';
-  }   
+  }
   else if ($node->type == 'training_opportunity') {
     $type = 'opportunities';
   } else return '';
@@ -73,7 +123,7 @@ function fe_news_redirect_tags($nid = ''){
   }
 
   $tags_markup  .= '</ul></section>';
-  
+
   return $tags_markup;
 }
 
@@ -236,11 +286,11 @@ function _fe_news_get_author($nid) {
     $author->uid = $user->uid;
     $author->name = _fe_news_get_safe_value($user, 'field_screen_name');
     $author->profile_link = drupal_get_path_alias('user/' . $user->uid);
-    $author->avatar = isset($user->picture) ? 
+    $author->avatar = isset($user->picture) ?
       theme_image_style(array(
-        'path' => $user->picture->uri, 
-        'style_name' => 'avatar_small_img', 
-        'width' => '110', 
+        'path' => $user->picture->uri,
+        'style_name' => 'avatar_small_img',
+        'width' => '110',
         'height' => '110')
         ) :  null;
     $author->job = _fe_news_get_safe_value($user, 'field_job_title');
@@ -315,22 +365,22 @@ function _fe_news_get_topics($nid = '') {
   }
 
   else if (!empty($node->field_category[LANGUAGE_NONE])) {
-    $tid = ''; 
+    $tid = '';
     foreach ($node->field_category[LANGUAGE_NONE] as $topic) {
       if (!in_array($topic['tid'], $exclusion_list)) {
         $tid = $topic['tid'];
         break;
-      }   
+      }
     }
   }
 
   if ($tid) {
     $term = taxonomy_term_load($tid);
     $name = $term->name;
-    $type = ''; 
+    $type = '';
     if ($node->type == 'news') {
       $type = 'news';
-    }   
+    }
     else if ($node->type == 'training_opportunity') {
       $type = 'opportunities';
     }
@@ -339,8 +389,165 @@ function _fe_news_get_topics($nid = '') {
     }
     $url = '/' . $language->language . '/' . $type . '/' . $tid;
     return theme('news_topic_block', array('name' => $name, 'url' => $url));
-  } 
+  }
 
   return '';
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter.
+ */
+function fe_news_form_news_node_form_alter(&$form, &$form_state, $form_id) {
+  // Hide field_news_type from form.
+  $form['field_news_type']['#access'] = FALSE;
+
+  // Set field_news_type value from url.
+  $news_type = $_GET['type'];
+  $is_valid_type = fe_news_is_valid_type($news_type);
+  if ($is_valid_type) {
+    $form['field_news_type'][LANGUAGE_NONE]['#default_value'] = $news_type;
+  }
+}
+
+/**
+ * Returns True if the type given is a
+ * valid type of News.
+ */
+function fe_news_is_valid_type($type) {
+  $field_type = field_info_field('field_news_type');
+  $allowed_values = list_allowed_values($field_type);
+  $allowed_keys = array_keys($allowed_values);
+  return in_array($type, $allowed_keys);
+}
+
+/**
+ * Implements hook_preprocess_page.
+ */
+function fe_news_preprocess_page(&$variables) {
+  $is_edit_form = _fe_news_is_edit_form($variables['page']);
+  if ($is_edit_form) {
+    $is_node_edition = isset($variables['node']);
+    if ($is_node_edition) {
+      _fe_news_preprocess_edit_node_page($variables);
+    }
+    else {
+      _fe_news_preprocess_add_node_page($variables);
+    }
+  }
+}
+
+function _fe_news_preprocess_edit_node_page(&$variables) {
+  $node = $variables['node'];
+  if ($node->type == 'news') {
+    _fe_news_preprocess_edit_news_page($variables);
+  }
+}
+
+function _fe_news_preprocess_edit_news_page(&$variables) {
+  $is_resource = fe_news_is_resource($variables['node']);
+  if ($is_resource) {
+    $node_wrapper = entity_metadata_wrapper('node', $variables['node']);
+    $page_title_prefix = t('Edit Resource');
+    $page_title_suffix = $node_wrapper->title->value();
+    $variables['title'] = '<em>' . $page_title_prefix . '</em>' . ' ' . $page_title_suffix;
+    drupal_set_title($page_title_prefix . ' ' . $page_title_suffix);
+  }
+}
+
+function _fe_news_preprocess_add_node_page(&$variables) {
+  $node_bundle = _fe_news_get_edit_form_node_bundle($variables['page']);
+  if ($node_bundle == 'news') {
+    _fe_news_preprocess_add_news_page($variables['page']);
+  }
+}
+
+function _fe_news_preprocess_add_news_page(&$variables) {
+  $is_creation_page = _fe_news_is_resource_creation_page();
+  $is_translation_page = _fe_news_is_resource_translation_page();
+
+  if ($is_creation_page || $is_translation_page) {
+    $page_title = t('Create Resource');
+    $variables['title'] = $page_title;
+    drupal_set_title($page_title);
+  }
+}
+
+/**
+ * Returns True if the current page is the
+ * creation page of node Resource.
+ */
+function _fe_news_is_resource_creation_page() {
+  if (isset($_REQUEST['type'])) {
+    $type_value = $_GET['type'];
+    return ($type_value == NEWS_RESOURCE_TYPE_KEY);
+  }
+  else {
+    return FALSE;
+  }
+}
+/**
+ * Returns True if the current page is the
+ * translation page of node Resource.
+ */
+function _fe_news_is_resource_translation_page() {
+  if (isset($_REQUEST['translation'])) {
+    $nid_to_translate = $_GET['translation'];
+    $node = node_load($nid_to_translate);
+    return fe_news_is_resource($node);
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Returns True if the given page is a
+ * node edit form.
+ */
+function _fe_news_is_edit_form($page) {
+  $content = $page['content']['system_main'];
+  if (isset($content['#node_edit_form'])) {
+    $is_edit_form = $content['#node_edit_form'];
+  }
+  else {
+    $is_edit_form = FALSE;
+  }
+  return $is_edit_form;
+}
+
+/**
+ * Returns the page bundle.
+ */
+function _fe_news_get_edit_form_node_bundle($page) {
+  $content = $page['content']['system_main'];
+  return $content['#bundle'];
+}
+
+/**
+ * Implements hook_pathauto_pattern_alter.
+ */
+function fe_news_pathauto_pattern_alter(&$pattern, array &$context) {
+  $is_node = ($context['module'] == 'node');
+  $is_news = ($context['type'] == 'news');
+  if ($is_node && $is_news) {
+    $node = $context['data']['node'];
+    $is_resource = fe_news_is_resource($node);
+    if ($is_resource) {
+      $pattern = 'resource/[node:title]';
+    }
+  }
+}
+
+/**
+ * Returns True if the node is of type Resource.
+ */
+function fe_news_is_resource($node) {
+  $node_wrapper = entity_metadata_wrapper('node', $node);
+  $node_type = $node_wrapper->type->value();
+  $is_resource = FALSE;
+  if ($node_type == 'news') {
+    $news_type = $node_wrapper->field_news_type->value();
+    $is_resource = ($news_type == NEWS_RESOURCE_TYPE_KEY);
+  }
+  return $is_resource;
+}

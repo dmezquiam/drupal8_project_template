@@ -15,12 +15,12 @@ function site_menu_loader_import_menu($module_name, $menu_filename, $menu_name, 
   $menu_filename = $module_full_path.'/'.$menu_filename;
 
   _site_menu_loader_import(
-    $menu_filename, 
-    $menu_name, 
+    $menu_filename,
+    $menu_name,
     array('link_to_content' => TRUE,'remove_menu_items' => TRUE)
   );
 
- 
+
 
 }
 
@@ -31,4 +31,25 @@ function _site_menu_loader_import($file, $menu_name, $options) {
   module_load_include('inc', 'menu_import', $menu_import_full_path.'/includes/import');
 
   menu_import_file($file, $menu_name, $options);
+}
+
+
+/**
+ * Returns the mlid of a menu link.
+ * This function search the link by title.
+ * Returns -1 if the mlid was not found.
+ */
+function site_menu_loader_get_link_mlid($menu_name, $link_title) {
+  $plid = -1;
+  $menu_links = menu_load_links($menu_name);
+  if (!empty($menu_links)) {
+    foreach ($menu_links as $menu_link) {
+      $link_was_found = (strcasecmp($menu_link['link_title'], $link_title) == 0);
+      if ($link_was_found) {
+        $plid = $menu_link['mlid'];
+        break;
+      }
+    }
+  }
+  return $plid;
 }

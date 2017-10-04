@@ -2062,21 +2062,20 @@ ul.links li {
  * You can target all of these with .nav or div[id$="menu-bar"]
  */
 /* line 499, ../sass/ijnet/_global.styles.scss */
-.nav {
+nav.block-superfish {
   clear: both;
   margin: 0;
   background: url("../images/bg_main_menu.png") repeat 0 0;
   border-bottom: 2px solid #eed466;
 }
 /* line 506, ../sass/ijnet/_global.styles.scss */
-.nav ul,
-.nav ul.menu {
+nav.block-superfish ul,
+nav.block-superfish ul.menu {
   margin: 0;
   padding: 0;
 }
-/* line 512, ../sass/ijnet/_global.styles.scss */
-.nav li,
-.nav ul.menu li {
+/* line 511, ../sass/ijnet/_global.styles.scss */
+nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li {
   display: inline;
   float: left;
   list-style: none;
@@ -2085,6 +2084,7 @@ ul.links li {
   border-bottom: 0px solid transparent;
   font-family: "Signika-Light", Arial, Helvetica, sans-serif;
   font-size: 20px;
+  position: relative;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
@@ -2092,21 +2092,55 @@ ul.links li {
   transition: all 0.2s ease-in-out;
 }
 /* line 523, ../sass/ijnet/_global.styles.scss */
-.nav li:hover, .nav li.active,
-.nav ul.menu li:hover,
-.nav ul.menu li.active {
-  height: 49px;
-  border-bottom: 3px solid #eed466;
-}
-/* line 526, ../sass/ijnet/_global.styles.scss */
-.nav li:hover a, .nav li.active a,
-.nav ul.menu li:hover a,
-.nav ul.menu li.active a {
-  color: #eed466;
+nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0px;
+  background: #eed466;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 /* line 533, ../sass/ijnet/_global.styles.scss */
-.nav li a,
-.nav ul.menu li a {
+nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li a {
+  cursor: pointer;
+}
+/* line 536, ../sass/ijnet/_global.styles.scss */
+nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li a .sf-sub-indicator {
+  left: 0;
+  top: 22px;
+}
+/* line 543, ../sass/ijnet/_global.styles.scss */
+nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li:hover:before, nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li.active:before {
+  height: 3px;
+}
+/* line 546, ../sass/ijnet/_global.styles.scss */
+nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li:hover a, nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li.active a {
+  color: #eed466;
+}
+/* line 551, ../sass/ijnet/_global.styles.scss */
+nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li ul {
+  background: #333;
+  border-radius: 0px;
+  padding: 0 !important;
+  margin-top: 4px;
+}
+/* line 558, ../sass/ijnet/_global.styles.scss */
+nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li ul li a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+/* line 562, ../sass/ijnet/_global.styles.scss */
+nav.block-superfish ul.sf-menu.sf-main-menu.sf-horizontal li ul li:last-child a {
+  border-bottom: 0px;
+}
+/* line 571, ../sass/ijnet/_global.styles.scss */
+nav.block-superfish li a,
+nav.block-superfish ul.menu li a {
   display: block;
   margin: 0 15px;
   white-space: nowrap;
@@ -2122,28 +2156,61 @@ ul.links li {
   -moz-text-shadow: 1px 1px 0px black;
   text-shadow: 1px 1px 0px black;
 }
-/* line 544, ../sass/ijnet/_global.styles.scss */
-.nav li a:hover, .nav li a:focus,
-.nav ul.menu li a:hover,
-.nav ul.menu li a:focus {
+/* line 582, ../sass/ijnet/_global.styles.scss */
+nav.block-superfish li a:hover, nav.block-superfish li a:focus,
+nav.block-superfish ul.menu li a:hover,
+nav.block-superfish ul.menu li a:focus {
   padding-bottom: 12px;
   text-decoration: none;
 }
-/* line 550, ../sass/ijnet/_global.styles.scss */
-.nav .block {
+/* line 588, ../sass/ijnet/_global.styles.scss */
+nav.block-superfish .block {
   margin-bottom: 0;
 }
 
 /* =============================================================================
  *   Responsive Menu
  * ========================================================================== */
-/* line 558, ../sass/ijnet/_global.styles.scss */
+/* line 598, ../sass/ijnet/_global.styles.scss */
+#menu-bar .mean-bar a.meanmenu-reveal {
+  text-indent: 0;
+  display: block;
+  margin: 0;
+  white-space: nowrap;
+  padding: 15px 10px 12px 10px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Signika-Light", Arial, Helvetica, sans-serif;
+  font-size: 20px !important;
+  text-align: left !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: auto;
+}
+/* line 617, ../sass/ijnet/_global.styles.scss */
+#menu-bar .mean-bar nav.mean-nav {
+  background: #5b5836;
+  position: absolute;
+  top: 6px;
+}
+/* line 624, ../sass/ijnet/_global.styles.scss */
+#menu-bar .mean-bar nav.mean-nav ul li a.mean-expand {
+  height: 54px;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 15px 10px 10px 5px !important;
+  border: 0 !important;
+}
+
+/* line 640, ../sass/ijnet/_global.styles.scss */
 .responsive-menus.responsified {
   margin: 0;
   background: url("../images/bg_main_menu.png") repeat 0 0;
   border-bottom: 2px solid #eed466;
 }
-/* line 562, ../sass/ijnet/_global.styles.scss */
+/* line 644, ../sass/ijnet/_global.styles.scss */
 .responsive-menus.responsified span.toggler {
   display: block;
   margin: 0;
@@ -2172,11 +2239,11 @@ ul.links li {
   -moz-box-shadow: 0px 0px 0px transparent ;
   box-shadow: 0px 0px 0px transparent ;
 }
-/* line 580, ../sass/ijnet/_global.styles.scss */
+/* line 662, ../sass/ijnet/_global.styles.scss */
 .responsive-menus.responsified span.toggler:hover, .responsive-menus.responsified span.toggler:focus {
   text-decoration: none;
 }
-/* line 584, ../sass/ijnet/_global.styles.scss */
+/* line 666, ../sass/ijnet/_global.styles.scss */
 .responsive-menus.responsified .responsive-menus-simple {
   border-top: solid 2px #eed466;
   -moz-border-radius: 0px;
@@ -2184,19 +2251,19 @@ ul.links li {
   -ms-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 587, ../sass/ijnet/_global.styles.scss */
+/* line 669, ../sass/ijnet/_global.styles.scss */
 .responsive-menus.responsified .responsive-menus-simple .primary-menu-wrapper {
   margin: 0px;
 }
-/* line 592, ../sass/ijnet/_global.styles.scss */
+/* line 674, ../sass/ijnet/_global.styles.scss */
 .responsive-menus.responsified .responsive-menus-simple .primary-menu-wrapper ul li:hover, .responsive-menus.responsified .responsive-menus-simple .primary-menu-wrapper ul li.active {
   background: black;
 }
-/* line 594, ../sass/ijnet/_global.styles.scss */
+/* line 676, ../sass/ijnet/_global.styles.scss */
 .responsive-menus.responsified .responsive-menus-simple .primary-menu-wrapper ul li:last-child a {
   border-bottom: 0px !important;
 }
-/* line 596, ../sass/ijnet/_global.styles.scss */
+/* line 678, ../sass/ijnet/_global.styles.scss */
 .responsive-menus.responsified .responsive-menus-simple .primary-menu-wrapper ul li a {
   color: white;
   display: block;
@@ -2214,21 +2281,21 @@ ul.links li {
 /* =============================================================================
  *   Menus, usually blocks
  * ========================================================================== */
-/* line 619, ../sass/ijnet/_global.styles.scss */
+/* line 701, ../sass/ijnet/_global.styles.scss */
 ul.menu {
   padding-left: 15px;
 }
-/* line 622, ../sass/ijnet/_global.styles.scss */
+/* line 704, ../sass/ijnet/_global.styles.scss */
 ul.menu ul {
   padding-left: 15px;
 }
-/* line 630, ../sass/ijnet/_global.styles.scss */
+/* line 712, ../sass/ijnet/_global.styles.scss */
 ul.menu li {
   margin: 0;
 }
 
 /* If li.content exists it's a problem, so reset the padding */
-/* line 659, ../sass/ijnet/_global.styles.scss */
+/* line 741, ../sass/ijnet/_global.styles.scss */
 .block .menu li.content {
   padding: 0;
 }
@@ -2236,13 +2303,13 @@ ul.menu li {
 /* =============================================================================
  *   Book navigation menu
  * ========================================================================== */
-/* line 676, ../sass/ijnet/_global.styles.scss */
+/* line 758, ../sass/ijnet/_global.styles.scss */
 .book-navigation .page-up {
   /* Prevent text wrapping to a new line, assumes English "up" is used (two characters) */
   min-width: 2em;
   white-space: nowrap;
 }
-/* line 682, ../sass/ijnet/_global.styles.scss */
+/* line 764, ../sass/ijnet/_global.styles.scss */
 .book-navigation .menu {
   margin-left: 0;
 }
@@ -2250,31 +2317,31 @@ ul.menu li {
 /* =============================================================================
  *   Breadcrumbs
  * ========================================================================== */
-/* line 692, ../sass/ijnet/_global.styles.scss */
+/* line 774, ../sass/ijnet/_global.styles.scss */
 #breadcrumb {
   margin: 10px 0;
   /* If the label is set to show in theme settings the label class is added */
 }
-/* line 696, ../sass/ijnet/_global.styles.scss */
+/* line 778, ../sass/ijnet/_global.styles.scss */
 #breadcrumb .breadcrumb-label {
   font-size: 1em;
   display: inline;
   padding-right: 10px;
 }
-/* line 701, ../sass/ijnet/_global.styles.scss */
+/* line 783, ../sass/ijnet/_global.styles.scss */
 #breadcrumb .breadcrumb-label:after {
   content: ":";
 }
-/* line 706, ../sass/ijnet/_global.styles.scss */
+/* line 788, ../sass/ijnet/_global.styles.scss */
 #breadcrumb ol {
   margin: 0;
   padding: 0;
 }
-/* line 711, ../sass/ijnet/_global.styles.scss */
+/* line 793, ../sass/ijnet/_global.styles.scss */
 #breadcrumb .with-breadcrumb-label ol {
   display: inline;
 }
-/* line 715, ../sass/ijnet/_global.styles.scss */
+/* line 797, ../sass/ijnet/_global.styles.scss */
 #breadcrumb li {
   list-style: none;
   display: inline;
@@ -2283,27 +2350,27 @@ ul.menu li {
 /* =============================================================================
  *   Pagers
  * ========================================================================== */
-/* line 742, ../sass/ijnet/_global.styles.scss */
+/* line 824, ../sass/ijnet/_global.styles.scss */
 ul.pager {
   clear: both;
   margin: 0;
   text-align: center;
 }
 
-/* line 748, ../sass/ijnet/_global.styles.scss */
+/* line 830, ../sass/ijnet/_global.styles.scss */
 .item-list ul.pager li {
   margin: 0;
 }
-/* line 750, ../sass/ijnet/_global.styles.scss */
+/* line 832, ../sass/ijnet/_global.styles.scss */
 .item-list ul.pager li.pager-ellipsis {
   display: none;
 }
-/* line 753, ../sass/ijnet/_global.styles.scss */
+/* line 835, ../sass/ijnet/_global.styles.scss */
 .item-list ul.pager li.pager-item a {
   color: #c67b1a;
   font-size: 20px;
 }
-/* line 758, ../sass/ijnet/_global.styles.scss */
+/* line 840, ../sass/ijnet/_global.styles.scss */
 .item-list ul.pager li.pager-previous a, .item-list ul.pager li.pager-next a {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -2372,7 +2439,7 @@ ul.pager {
 .item-list ul.pager li.pager-previous a:hover, .item-list ul.pager li.pager-next a:hover {
   color: white;
 }
-/* line 761, ../sass/ijnet/_global.styles.scss */
+/* line 843, ../sass/ijnet/_global.styles.scss */
 .item-list ul.pager li.pager-current {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -2443,7 +2510,7 @@ ul.pager {
   color: white;
 }
 
-/* line 768, ../sass/ijnet/_global.styles.scss */
+/* line 850, ../sass/ijnet/_global.styles.scss */
 ul.pager li {
   background-image: none;
   display: inline;
@@ -2451,7 +2518,7 @@ ul.pager li {
   padding: .5em;
 }
 
-/* line 776, ../sass/ijnet/_global.styles.scss */
+/* line 858, ../sass/ijnet/_global.styles.scss */
 .block ul.pager li {
   margin: 0;
 }
@@ -2459,7 +2526,7 @@ ul.pager li {
 /* =============================================================================
  *   Skip Navigation
  * ========================================================================== */
-/* line 784, ../sass/ijnet/_global.styles.scss */
+/* line 866, ../sass/ijnet/_global.styles.scss */
 #skip-link {
   left: 50%;
   margin-left: -6.5em;
@@ -2469,7 +2536,7 @@ ul.pager li {
   width: 12em;
   z-index: 50;
 }
-/* line 793, ../sass/ijnet/_global.styles.scss */
+/* line 875, ../sass/ijnet/_global.styles.scss */
 #skip-link a {
   background: #444;
   background: rgba(0, 0, 0, 0.6);
@@ -2480,7 +2547,7 @@ ul.pager li {
   text-align: center;
   text-decoration: none;
 }
-/* line 804, ../sass/ijnet/_global.styles.scss */
+/* line 886, ../sass/ijnet/_global.styles.scss */
 #skip-link a:link, #skip-link a:visited {
   background: #444;
   background: rgba(0, 0, 0, 0.6);
@@ -2491,7 +2558,7 @@ ul.pager li {
   text-align: center;
   text-decoration: none;
 }
-/* line 816, ../sass/ijnet/_global.styles.scss */
+/* line 898, ../sass/ijnet/_global.styles.scss */
 #skip-link a:hover, #skip-link a:focus, #skip-link a:active {
   outline: 0;
 }
@@ -2499,35 +2566,35 @@ ul.pager li {
 /* =============================================================================
  *   Tabs (local tasks)
  * ========================================================================== */
-/* line 827, ../sass/ijnet/_global.styles.scss */
+/* line 909, ../sass/ijnet/_global.styles.scss */
 #tasks {
   margin-bottom: 15px;
 }
 
-/* line 832, ../sass/ijnet/_global.styles.scss */
+/* line 914, ../sass/ijnet/_global.styles.scss */
 ul.primary {
   border-bottom-color: #c2c2c2;
   margin: 20px 0;
   padding: 0 0 0 5px;
 }
-/* line 837, ../sass/ijnet/_global.styles.scss */
+/* line 919, ../sass/ijnet/_global.styles.scss */
 ul.primary li {
   display: block;
   float: left;
   margin: 0 1px -1px;
 }
-/* line 842, ../sass/ijnet/_global.styles.scss */
+/* line 924, ../sass/ijnet/_global.styles.scss */
 ul.primary li.active a {
   color: #c67b1a;
   border-bottom-color: whitesmoke;
   background: whitesmoke;
 }
-/* line 846, ../sass/ijnet/_global.styles.scss */
+/* line 928, ../sass/ijnet/_global.styles.scss */
 ul.primary li.active a:hover {
   border-bottom-color: whitesmoke;
   background: whitesmoke;
 }
-/* line 851, ../sass/ijnet/_global.styles.scss */
+/* line 933, ../sass/ijnet/_global.styles.scss */
 ul.primary li a {
   color: #f0c389;
   background-color: whitesmoke;
@@ -2541,25 +2608,25 @@ ul.primary li a {
   height: 1.5em;
   line-height: 1.5em;
 }
-/* line 865, ../sass/ijnet/_global.styles.scss */
+/* line 947, ../sass/ijnet/_global.styles.scss */
 ul.primary li a:hover, ul.primary li a:focus {
   background-color: whitesmoke;
   color: #c67b1a;
 }
 
-/* line 881, ../sass/ijnet/_global.styles.scss */
+/* line 963, ../sass/ijnet/_global.styles.scss */
 ul.secondary {
   border-bottom: 1px solid #c2c2c2;
   margin: 1em 0 0;
   padding: 0 .3em 1em;
 }
-/* line 886, ../sass/ijnet/_global.styles.scss */
+/* line 968, ../sass/ijnet/_global.styles.scss */
 ul.secondary li {
   border-right: 0;
   list-style: none;
   padding: 0 10px 0 0;
 }
-/* line 893, ../sass/ijnet/_global.styles.scss */
+/* line 975, ../sass/ijnet/_global.styles.scss */
 ul.secondary li a:hover, ul.secondary li a.active {
   border-bottom: none;
   text-decoration: underline;
@@ -2568,7 +2635,7 @@ ul.secondary li a:hover, ul.secondary li a.active {
 /* =============================================================================
  *   Tabs (quicktabs)
  * ========================================================================== */
-/* line 904, ../sass/ijnet/_global.styles.scss */
+/* line 986, ../sass/ijnet/_global.styles.scss */
 .sidebar-tabs {
   position: relative;
 }
@@ -2767,7 +2834,7 @@ ul.secondary li a:hover, ul.secondary li a.active {
   margin-right: 5px;
 }
 
-/* line 909, ../sass/ijnet/_global.styles.scss */
+/* line 991, ../sass/ijnet/_global.styles.scss */
 .content-tabs {
   position: relative;
 }
@@ -2867,7 +2934,7 @@ ul.secondary li a:hover, ul.secondary li a.active {
 /* =============================================================================
  *   Action links
  * ========================================================================== */
-/* line 922, ../sass/ijnet/_global.styles.scss */
+/* line 1004, ../sass/ijnet/_global.styles.scss */
 ul.action-links {
   margin: 20px 0 0;
   list-style: none;
@@ -2888,7 +2955,7 @@ ul.action-links {
 /*
  * Labels are h2 in Adaptivetheme. Use a strong selector to mitigate unwanted ineritance issues
  */
-/* line 955, ../sass/ijnet/_global.styles.scss */
+/* line 1037, ../sass/ijnet/_global.styles.scss */
 .field-label {
   font-size: 1em;
   font-weight: 700;
@@ -2907,7 +2974,7 @@ ul.action-links {
  *   Block Styling
  * ========================================================================== */
 /* Main wrapper for most blocks, block_system_main does not have it */
-/* line 983, ../sass/ijnet/_global.styles.scss */
+/* line 1065, ../sass/ijnet/_global.styles.scss */
 .block {
   margin-bottom: 20px;
 }
@@ -3408,22 +3475,22 @@ ul.action-links {
   border-bottom: 1px solid #deeff5;
 }
 
-/* line 1002, ../sass/ijnet/_global.styles.scss */
+/* line 1084, ../sass/ijnet/_global.styles.scss */
 .block-about-author .avatar {
   float: right;
   width: 41%;
 }
-/* line 1005, ../sass/ijnet/_global.styles.scss */
+/* line 1087, ../sass/ijnet/_global.styles.scss */
 .block-about-author .avatar a {
   display: block;
   line-height: 0px;
   border: solid 3px #3c6e8f;
 }
-/* line 1009, ../sass/ijnet/_global.styles.scss */
+/* line 1091, ../sass/ijnet/_global.styles.scss */
 .block-about-author .avatar a img {
   width: 100%;
 }
-/* line 1017, ../sass/ijnet/_global.styles.scss */
+/* line 1099, ../sass/ijnet/_global.styles.scss */
 .block-about-author .author-name,
 .block-about-author .job-name,
 .block-about-author .sidebar-tabs .author-tabs-list ul li .organization,
@@ -3434,46 +3501,46 @@ ul.action-links {
   width: 56%;
   clear: left;
 }
-/* line 1023, ../sass/ijnet/_global.styles.scss */
+/* line 1105, ../sass/ijnet/_global.styles.scss */
 .block-about-author .author-name {
   margin-bottom: 5px;
   padding-top: 0px;
 }
-/* line 1026, ../sass/ijnet/_global.styles.scss */
+/* line 1108, ../sass/ijnet/_global.styles.scss */
 .block-about-author .author-name a {
   font-size: 20px;
   color: #3c6e8f;
 }
-/* line 1031, ../sass/ijnet/_global.styles.scss */
+/* line 1113, ../sass/ijnet/_global.styles.scss */
 .block-about-author .job-name, .block-about-author .sidebar-tabs .author-tabs-list ul li .organization, .sidebar-tabs .author-tabs-list ul li .block-about-author .organization {
   line-height: 15px;
   margin-bottom: 3px;
 }
-/* line 1035, ../sass/ijnet/_global.styles.scss */
+/* line 1117, ../sass/ijnet/_global.styles.scss */
 .block-about-author .organization {
   margin-bottom: 10px;
 }
-/* line 1038, ../sass/ijnet/_global.styles.scss */
+/* line 1120, ../sass/ijnet/_global.styles.scss */
 .block-about-author .views-field-nothing {
   margin-top: 12px;
 }
-/* line 1041, ../sass/ijnet/_global.styles.scss */
+/* line 1123, ../sass/ijnet/_global.styles.scss */
 .block-about-author .bio {
   clear: both;
   padding-top: 5px;
 }
-/* line 1044, ../sass/ijnet/_global.styles.scss */
+/* line 1126, ../sass/ijnet/_global.styles.scss */
 .block-about-author .bio p {
   margin-bottom: 0;
 }
-/* line 1046, ../sass/ijnet/_global.styles.scss */
+/* line 1128, ../sass/ijnet/_global.styles.scss */
 .block-about-author .button-tiny {
   margin-bottom: 9px;
   border: 0;
   clear: both;
 }
 
-/* line 1056, ../sass/ijnet/_global.styles.scss */
+/* line 1138, ../sass/ijnet/_global.styles.scss */
 .view-advertisement .view-header h3 {
   text-align: center;
   margin: 0;
@@ -3482,83 +3549,83 @@ ul.action-links {
   font-size: 15px;
   font-weight: normal;
 }
-/* line 1064, ../sass/ijnet/_global.styles.scss */
+/* line 1146, ../sass/ijnet/_global.styles.scss */
 .view-advertisement .view-header p {
   margin-bottom: 0px;
   line-height: 15px;
   margin-top: 3px;
 }
-/* line 1071, ../sass/ijnet/_global.styles.scss */
+/* line 1153, ../sass/ijnet/_global.styles.scss */
 .view-advertisement .view-content .advertusement-item-list {
   margin: 0 17px 20px 17px;
   border-bottom: 1px solid #c2c2c2;
   padding-bottom: 20px;
 }
-/* line 1075, ../sass/ijnet/_global.styles.scss */
+/* line 1157, ../sass/ijnet/_global.styles.scss */
 .view-advertisement .view-content .advertusement-item-list p {
   margin-bottom: 0px;
 }
-/* line 1078, ../sass/ijnet/_global.styles.scss */
+/* line 1160, ../sass/ijnet/_global.styles.scss */
 .view-advertisement .view-content .advertusement-item-list .views-field-field-image-ad {
   text-align: center;
 }
-/* line 1082, ../sass/ijnet/_global.styles.scss */
+/* line 1164, ../sass/ijnet/_global.styles.scss */
 .view-advertisement .view-content .advertusement-item-list .views-field-title a {
   font-weight: bold;
   color: #2a2a2a;
 }
-/* line 1088, ../sass/ijnet/_global.styles.scss */
+/* line 1170, ../sass/ijnet/_global.styles.scss */
 .view-advertisement .view-content .advertusement-item-list .views-field-body p {
   color: #137a9a;
 }
-/* line 1092, ../sass/ijnet/_global.styles.scss */
+/* line 1174, ../sass/ijnet/_global.styles.scss */
 .view-advertisement .view-content .advertusement-item-list.views-row-first {
   margin-top: 10px;
 }
-/* line 1095, ../sass/ijnet/_global.styles.scss */
+/* line 1177, ../sass/ijnet/_global.styles.scss */
 .view-advertisement .view-content .advertusement-item-list.views-row-last {
   border-bottom: 0px;
   padding-bottom: 0px;
   margin-bottom: 10px;
 }
 
-/* line 1105, ../sass/ijnet/_global.styles.scss */
+/* line 1187, ../sass/ijnet/_global.styles.scss */
 .view-id-cima {
   border: 1px solid #c2c2c2;
 }
-/* line 1107, ../sass/ijnet/_global.styles.scss */
+/* line 1189, ../sass/ijnet/_global.styles.scss */
 .view-id-cima .view-header {
   height: 46px;
   border-bottom: 1px solid #c2c2c2;
 }
-/* line 1110, ../sass/ijnet/_global.styles.scss */
+/* line 1192, ../sass/ijnet/_global.styles.scss */
 .view-id-cima .view-header p {
   margin-bottom: 0px;
 }
-/* line 1112, ../sass/ijnet/_global.styles.scss */
+/* line 1194, ../sass/ijnet/_global.styles.scss */
 .view-id-cima .cima-item-list {
   padding: 10px 12px;
   border-bottom: 1px solid #c2c2c2;
 }
-/* line 1118, ../sass/ijnet/_global.styles.scss */
+/* line 1200, ../sass/ijnet/_global.styles.scss */
 .view-id-cima .cima-item-list.views-row-last {
   border-bottom: 0px;
 }
-/* line 1122, ../sass/ijnet/_global.styles.scss */
+/* line 1204, ../sass/ijnet/_global.styles.scss */
 .view-id-cima .view-footer {
   border-top: 1px solid #c2c2c2;
   padding: 10px;
 }
-/* line 1125, ../sass/ijnet/_global.styles.scss */
+/* line 1207, ../sass/ijnet/_global.styles.scss */
 .view-id-cima .view-footer p {
   margin-bottom: 0px;
 }
 
-/* line 1134, ../sass/ijnet/_global.styles.scss */
+/* line 1216, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-header {
   position: relative;
 }
-/* line 1136, ../sass/ijnet/_global.styles.scss */
+/* line 1218, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-header .tw-follow {
   margin: 0;
   text-align: center;
@@ -3568,60 +3635,60 @@ ul.action-links {
   width: 100%;
   color: #3c6e8f;
 }
-/* line 1144, ../sass/ijnet/_global.styles.scss */
+/* line 1226, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-header .tw-follow a {
   color: #479FDD;
 }
-/* line 1149, ../sass/ijnet/_global.styles.scss */
+/* line 1231, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-content {
   padding: 40px 15px 0px 15px;
 }
-/* line 1153, ../sass/ijnet/_global.styles.scss */
+/* line 1235, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-content > div:last-child .twitter-status {
   border: 0px;
 }
-/* line 1159, ../sass/ijnet/_global.styles.scss */
+/* line 1241, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-content .twitter-status {
   padding: 0px 0px 10px 0;
   margin-bottom: 10px;
   border-bottom: 1px solid #F1F1F1;
 }
-/* line 1165, ../sass/ijnet/_global.styles.scss */
+/* line 1247, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-content .twitter-status .avatar a {
   display: block;
   line-height: 0;
   border: 1px solid #ccc;
 }
-/* line 1172, ../sass/ijnet/_global.styles.scss */
+/* line 1254, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-content .twitter-status .timestamp {
   margin-top: 4px;
 }
-/* line 1176, ../sass/ijnet/_global.styles.scss */
+/* line 1258, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-content .twitter-status .name-handle .name {
   padding-top: 6px;
   display: block;
 }
-/* line 1180, ../sass/ijnet/_global.styles.scss */
+/* line 1262, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-content .twitter-status .name-handle .handle {
   line-height: 14px;
   display: block;
 }
-/* line 1185, ../sass/ijnet/_global.styles.scss */
+/* line 1267, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-content .twitter-status .text {
   margin: 7px 0px 0px 0px;
   font-size: 13px;
   line-height: 16px;
 }
-/* line 1189, ../sass/ijnet/_global.styles.scss */
+/* line 1271, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-content .twitter-status .text a {
   color: #479FDD;
 }
-/* line 1191, ../sass/ijnet/_global.styles.scss */
+/* line 1273, ../sass/ijnet/_global.styles.scss */
 .view-id-twitter .view-content .twitter-status .actions {
   display: none;
 }
 
-/* line 1200, ../sass/ijnet/_global.styles.scss */
+/* line 1282, ../sass/ijnet/_global.styles.scss */
 .pane-jsonblocks-social-block .block-title {
   font-size: 20px;
   line-height: 22px;
@@ -3631,12 +3698,12 @@ ul.action-links {
   margin: 0px 0px 14px 0px;
 }
 
-/* line 1209, ../sass/ijnet/_global.styles.scss */
+/* line 1291, ../sass/ijnet/_global.styles.scss */
 .social-icons {
   margin: 0 auto;
   display: table;
 }
-/* line 1212, ../sass/ijnet/_global.styles.scss */
+/* line 1294, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon {
   width: 37px;
   height: 37px;
@@ -3648,58 +3715,58 @@ ul.action-links {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 1218, ../sass/ijnet/_global.styles.scss */
+/* line 1300, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon:hover {
   opacity: 0.8;
   filter: alpha(opacity=80);
   /*IE*/
 }
-/* line 1219, ../sass/ijnet/_global.styles.scss */
+/* line 1301, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon:last-child {
   margin-right: 0;
 }
-/* line 1221, ../sass/ijnet/_global.styles.scss */
+/* line 1303, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon-facebook {
   background: url("../images/icon_fb.png") no-repeat 0 0;
 }
-/* line 1222, ../sass/ijnet/_global.styles.scss */
+/* line 1304, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon-twitter {
   background: url("../images/icon_tw.png") no-repeat 0 0;
 }
-/* line 1223, ../sass/ijnet/_global.styles.scss */
+/* line 1305, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon-youtube {
   background: url("../images/icon_yt.png") no-repeat 0 0;
 }
-/* line 1224, ../sass/ijnet/_global.styles.scss */
+/* line 1306, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon-in {
   background: url("../images/icon_in.png") no-repeat 0 0;
 }
-/* line 1225, ../sass/ijnet/_global.styles.scss */
+/* line 1307, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon-gplus {
   background: url("../images/icon_g.png") no-repeat 0 0;
 }
-/* line 1226, ../sass/ijnet/_global.styles.scss */
+/* line 1308, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon-rss {
   background: url("../images/icon_rss.png") no-repeat 0 0;
 }
-/* line 1227, ../sass/ijnet/_global.styles.scss */
+/* line 1309, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon-weibo {
   background: url("../images/icon_weibo.png") no-repeat 0 0;
 }
-/* line 1228, ../sass/ijnet/_global.styles.scss */
+/* line 1310, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon-vk {
   background: url("../images/icon_vk.png") no-repeat 0 0;
 }
-/* line 1229, ../sass/ijnet/_global.styles.scss */
+/* line 1311, ../sass/ijnet/_global.styles.scss */
 .social-icons .social-icon-tumblr {
   background: url("../images/icon_tumblr.png") no-repeat 0 0;
 }
 
-/* line 1235, ../sass/ijnet/_global.styles.scss */
+/* line 1317, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown {
   position: relative;
 }
-/* line 1237, ../sass/ijnet/_global.styles.scss */
+/* line 1319, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .clicker {
   padding: 5px 0;
   margin: 25px auto 10px auto;
@@ -3708,11 +3775,11 @@ ul.action-links {
   background: url("../images/arrow_down.png") no-repeat 251px center;
   cursor: pointer;
 }
-/* line 1244, ../sass/ijnet/_global.styles.scss */
+/* line 1326, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .clicker.active {
   background: url("../images/bt_close.png") no-repeat 251px center;
 }
-/* line 1245, ../sass/ijnet/_global.styles.scss */
+/* line 1327, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .clicker h4 {
   color: black;
   margin: 0px;
@@ -3721,7 +3788,7 @@ ul.action-links {
   margin-right: 32px;
   height: 20px;
 }
-/* line 1254, ../sass/ijnet/_global.styles.scss */
+/* line 1336, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown {
   background: #deeff5;
   margin-top: 20px;
@@ -3745,7 +3812,7 @@ ul.action-links {
 * html .mail-subscribe .dropdown .inner-dropdown {
   height: 1px;
 }
-/* line 1263, ../sass/ijnet/_global.styles.scss */
+/* line 1345, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .msj-submit {
   position: absolute;
   bottom: 7px;
@@ -3754,35 +3821,35 @@ ul.action-links {
   right: 104px;
   line-height: 15px;
 }
-/* line 1272, ../sass/ijnet/_global.styles.scss */
+/* line 1354, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .msj-submit.sorry {
   font-size: 9px;
   color: #F00;
 }
-/* line 1277, ../sass/ijnet/_global.styles.scss */
+/* line 1359, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form {
   padding: 20px 20px 45px 20px;
 }
-/* line 1280, ../sass/ijnet/_global.styles.scss */
+/* line 1362, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form p {
   text-align: center;
   font-size: 16px;
 }
-/* line 1284, ../sass/ijnet/_global.styles.scss */
+/* line 1366, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form .form-item {
   margin: 0px 0px 10px 0px;
 }
-/* line 1286, ../sass/ijnet/_global.styles.scss */
+/* line 1368, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form .form-item label {
   font-weight: normal;
   font-size: 15px;
   text-transform: uppercase;
 }
-/* line 1291, ../sass/ijnet/_global.styles.scss */
+/* line 1373, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form .form-item input {
   width: 100%;
 }
-/* line 1293, ../sass/ijnet/_global.styles.scss */
+/* line 1375, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form input[type="submit"] {
   float: right;
   margin-top: 0px;
@@ -3794,7 +3861,7 @@ ul.action-links {
   -moz-border-radius: 11px;
   -webkit-border-radius: 11px;
 }
-/* line 1304, ../sass/ijnet/_global.styles.scss */
+/* line 1386, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .subscribe-form a.archive-link {
   display: block;
   width: 116px;
@@ -3802,22 +3869,22 @@ ul.action-links {
   margin-top: 5px;
   font-size: 16px;
 }
-/* line 1313, ../sass/ijnet/_global.styles.scss */
+/* line 1395, ../sass/ijnet/_global.styles.scss */
 .mail-subscribe .dropdown .inner-dropdown .sorry,
 .mail-subscribe .dropdown .inner-dropdown .success {
   padding: 20px;
 }
 
-/* line 1326, ../sass/ijnet/_global.styles.scss */
+/* line 1408, ../sass/ijnet/_global.styles.scss */
 body.section-videos.page-videos-topic .mail-subscribe .dropdown .inner-dropdown {
   position: static;
   margin-top: 20px;
 }
-/* line 1330, ../sass/ijnet/_global.styles.scss */
+/* line 1412, ../sass/ijnet/_global.styles.scss */
 body.section-videos.page-videos-topic .mail-subscribe .dropdown .inner-dropdown:before {
   display: none;
 }
-/* line 1344, ../sass/ijnet/_global.styles.scss */
+/* line 1426, ../sass/ijnet/_global.styles.scss */
 body.section-videos .mail-subscribe .dropdown .inner-dropdown {
   margin-top: 3px;
   position: absolute;
@@ -3832,7 +3899,7 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown {
   -ms-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
 }
-/* line 1352, ../sass/ijnet/_global.styles.scss */
+/* line 1434, ../sass/ijnet/_global.styles.scss */
 body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
   content: "";
   width: 0;
@@ -3845,7 +3912,7 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
   right: 18px;
 }
 
-/* line 1383, ../sass/ijnet/_global.styles.scss */
+/* line 1465, ../sass/ijnet/_global.styles.scss */
 .latest-posts-block {
   background: url("../images/bg_latest_post_en.jpg") no-repeat left center;
   height: 260px;
@@ -3854,20 +3921,20 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
   position: relative;
   margin: 0 auto;
 }
-/* line 1390, ../sass/ijnet/_global.styles.scss */
+/* line 1472, ../sass/ijnet/_global.styles.scss */
 .latest-posts-block .inner-block {
   position: absolute;
   bottom: 0px;
   left: 0;
   right: 0;
 }
-/* line 1397, ../sass/ijnet/_global.styles.scss */
+/* line 1479, ../sass/ijnet/_global.styles.scss */
 .latest-posts-block .inner-block .top-txt label {
   background: #cf2106;
   float: left;
   clear: both;
 }
-/* line 1405, ../sass/ijnet/_global.styles.scss */
+/* line 1487, ../sass/ijnet/_global.styles.scss */
 .latest-posts-block .inner-block a {
   display: block;
   width: 180px;
@@ -3883,7 +3950,7 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
   transition: all 0.2s ease-in-out;
   background: url("../images/bt_bg_latest_post.png") no-repeat left center;
 }
-/* line 1415, ../sass/ijnet/_global.styles.scss */
+/* line 1497, ../sass/ijnet/_global.styles.scss */
 .latest-posts-block .inner-block a:hover {
   background: url("../images/bt_bg_latest_post_hover.png") no-repeat left center;
 }
@@ -3891,47 +3958,47 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 /* =============================================================================
  *   Node Styling
  * ========================================================================== */
-/* line 1429, ../sass/ijnet/_global.styles.scss */
+/* line 1511, ../sass/ijnet/_global.styles.scss */
 #panel-page-title,
 #page-title {
   margin: 10px 0px 20px 0px;
   border-bottom: 1px solid #c2c2c2;
 }
 
-/* line 1434, ../sass/ijnet/_global.styles.scss */
+/* line 1516, ../sass/ijnet/_global.styles.scss */
 #block-blockify-blockify-page-title {
   margin-bottom: 0;
 }
-/* line 1437, ../sass/ijnet/_global.styles.scss */
+/* line 1519, ../sass/ijnet/_global.styles.scss */
 #block-blockify-blockify-page-title .block-content {
   border-bottom: 1px solid #c2c2c2;
   margin-bottom: 20px;
 }
-/* line 1440, ../sass/ijnet/_global.styles.scss */
+/* line 1522, ../sass/ijnet/_global.styles.scss */
 #block-blockify-blockify-page-title .block-content h1 {
   margin-bottom: 0px;
   border: 0px;
 }
 
-/* line 1447, ../sass/ijnet/_global.styles.scss */
+/* line 1529, ../sass/ijnet/_global.styles.scss */
 .node {
   margin-bottom: 20px;
 }
-/* line 1465, ../sass/ijnet/_global.styles.scss */
+/* line 1547, ../sass/ijnet/_global.styles.scss */
 .node ul, .node ol {
   font-size: 14px;
 }
 
-/* line 1485, ../sass/ijnet/_global.styles.scss */
+/* line 1567, ../sass/ijnet/_global.styles.scss */
 .content {
   color: black;
 }
-/* line 1487, ../sass/ijnet/_global.styles.scss */
+/* line 1569, ../sass/ijnet/_global.styles.scss */
 .content .author {
   margin-bottom: 27px;
   font-size: 16px;
 }
-/* line 1490, ../sass/ijnet/_global.styles.scss */
+/* line 1572, ../sass/ijnet/_global.styles.scss */
 .content .author span {
   color: #2a2a2a;
 }
@@ -3951,13 +4018,13 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 .view-display-id-news_teaser_list .view-content {
   height: 1px;
 }
-/* line 1503, ../sass/ijnet/_global.styles.scss */
+/* line 1585, ../sass/ijnet/_global.styles.scss */
 .view-display-id-news_popular .view-footer,
 .view-display-id-news_teaser_list .view-footer {
   text-align: right;
 }
 
-/* line 1508, ../sass/ijnet/_global.styles.scss */
+/* line 1590, ../sass/ijnet/_global.styles.scss */
 .node-type-news .field-name-field-image-caption {
   float: right;
   clear: both;
@@ -3965,7 +4032,7 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
   font-size: 10px;
   color: #656565;
 }
-/* line 1516, ../sass/ijnet/_global.styles.scss */
+/* line 1598, ../sass/ijnet/_global.styles.scss */
 .node-type-news .field-name-field-image {
   float: right;
   margin-left: 20px;
@@ -3973,34 +4040,34 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 }
 
 /* Category ================================================================= */
-/* line 1524, ../sass/ijnet/_global.styles.scss */
+/* line 1606, ../sass/ijnet/_global.styles.scss */
 .field-type-taxonomy-term-reference {
   margin: 40px 0 34px 0;
   float: left;
   width: 100%;
 }
-/* line 1528, ../sass/ijnet/_global.styles.scss */
+/* line 1610, ../sass/ijnet/_global.styles.scss */
 .field-type-taxonomy-term-reference h2.field-label {
   float: left;
   margin: 0px;
   text-transform: uppercase;
   color: #2a2a2a;
 }
-/* line 1534, ../sass/ijnet/_global.styles.scss */
+/* line 1616, ../sass/ijnet/_global.styles.scss */
 .field-type-taxonomy-term-reference ul.field-items {
   margin: 0px;
   padding: 0px;
   float: none;
   display: inline;
 }
-/* line 1539, ../sass/ijnet/_global.styles.scss */
+/* line 1621, ../sass/ijnet/_global.styles.scss */
 .field-type-taxonomy-term-reference ul.field-items li {
   margin: 0px;
   padding: 0px;
   float: left;
   list-style-type: none;
 }
-/* line 1544, ../sass/ijnet/_global.styles.scss */
+/* line 1626, ../sass/ijnet/_global.styles.scss */
 .field-type-taxonomy-term-reference ul.field-items li a {
   background: #3c6e8f;
   color: white;
@@ -4023,7 +4090,7 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 }
 
 /* Category ================================================================= */
-/* line 1554, ../sass/ijnet/_global.styles.scss */
+/* line 1636, ../sass/ijnet/_global.styles.scss */
 .region-highlighted .field-type-taxonomy-term-reference {
   margin: 0px 0px -12px 0px;
   float: left;
@@ -4037,18 +4104,18 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 /*
  * Wrapper for the list of comments and its titles
  */
-/* line 1569, ../sass/ijnet/_global.styles.scss */
+/* line 1651, ../sass/ijnet/_global.styles.scss */
 #comments {
   margin: 1.5em 0;
   clear: both;
 }
-/* line 1574, ../sass/ijnet/_global.styles.scss */
+/* line 1656, ../sass/ijnet/_global.styles.scss */
 #comments h2.comment-title {
   margin: 0 0 26px 0;
   font-size: 29px;
   text-transform: uppercase;
 }
-/* line 1580, ../sass/ijnet/_global.styles.scss */
+/* line 1662, ../sass/ijnet/_global.styles.scss */
 #comments h2.comment-form {
   margin: 0;
 }
@@ -4056,7 +4123,7 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 /*
  * Wrapper for a single comment
  */
-/* line 1590, ../sass/ijnet/_global.styles.scss */
+/* line 1672, ../sass/ijnet/_global.styles.scss */
 .comment {
   border: 1px solid #c2c2c2;
   padding: 19px 26px;
@@ -4067,22 +4134,22 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
   color: #2a2a2a;
   margin-bottom: 32px;
 }
-/* line 1596, ../sass/ijnet/_global.styles.scss */
+/* line 1678, ../sass/ijnet/_global.styles.scss */
 .comment .comment-title {
   line-height: 17px;
   margin: 0 0 6px 0;
 }
-/* line 1599, ../sass/ijnet/_global.styles.scss */
+/* line 1681, ../sass/ijnet/_global.styles.scss */
 .comment .comment-title a {
   color: #3c6e8f;
   font-size: 16px;
 }
-/* line 1615, ../sass/ijnet/_global.styles.scss */
+/* line 1697, ../sass/ijnet/_global.styles.scss */
 .comment .submitted {
   font-style: italic;
   margin: 5px 0;
 }
-/* line 1620, ../sass/ijnet/_global.styles.scss */
+/* line 1702, ../sass/ijnet/_global.styles.scss */
 .comment .submitted .username {
   color: black;
 }
@@ -4096,7 +4163,7 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 /*
  * "New" marker for comments that are new for the current user
  */
-/* line 1660, ../sass/ijnet/_global.styles.scss */
+/* line 1742, ../sass/ijnet/_global.styles.scss */
 .new {
   color: #cc0000;
 }
@@ -4104,11 +4171,11 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 /*
  * Nested comments are indented
  */
-/* line 1668, ../sass/ijnet/_global.styles.scss */
+/* line 1750, ../sass/ijnet/_global.styles.scss */
 .indented {
   margin-left: 0px;
 }
-/* line 1670, ../sass/ijnet/_global.styles.scss */
+/* line 1752, ../sass/ijnet/_global.styles.scss */
 .indented .comment {
   margin-left: 40px;
 }
@@ -4119,17 +4186,17 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 /*
  * Wrapper for a form element (or group of form elements) and its label
  */
-/* line 1687, ../sass/ijnet/_global.styles.scss */
+/* line 1769, ../sass/ijnet/_global.styles.scss */
 .form-item input.error,
 .form-item textarea.error,
 .form-item select.error {
   border: 1px solid #cc0000;
 }
-/* line 1691, ../sass/ijnet/_global.styles.scss */
+/* line 1773, ../sass/ijnet/_global.styles.scss */
 .form-item label {
   font-weight: 700;
 }
-/* line 1698, ../sass/ijnet/_global.styles.scss */
+/* line 1780, ../sass/ijnet/_global.styles.scss */
 .form-item .description {
   font-size: 0.85em;
 }
@@ -4137,7 +4204,7 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 /*
  * Highlight marks and form required mark
  */
-/* line 1712, ../sass/ijnet/_global.styles.scss */
+/* line 1794, ../sass/ijnet/_global.styles.scss */
 .marker,
 .form-required {
   color: #cc0000;
@@ -4146,7 +4213,7 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 /*
  * The submit button
  */
-/* line 1726, ../sass/ijnet/_global.styles.scss */
+/* line 1808, ../sass/ijnet/_global.styles.scss */
 .container-inline div,
 .container-inline label {
   display: inline;
@@ -4155,7 +4222,7 @@ body.section-videos .mail-subscribe .dropdown .inner-dropdown:before {
 /*
  * Define consistent borders
  */
-/* line 1734, ../sass/ijnet/_global.styles.scss */
+/* line 1816, ../sass/ijnet/_global.styles.scss */
 fieldset {
   border: 1px solid #c2c2c2;
 }
@@ -4166,7 +4233,7 @@ fieldset {
 /*
  * Buttons used by contrib modules like Media
  */
-/* line 1747, ../sass/ijnet/_global.styles.scss */
+/* line 1829, ../sass/ijnet/_global.styles.scss */
 a.button {
   -webkit-appearance: button;
   -moz-appearance: button;
@@ -4176,7 +4243,7 @@ a.button {
 /*
  * Password confirmation
  */
-/* line 1756, ../sass/ijnet/_global.styles.scss */
+/* line 1838, ../sass/ijnet/_global.styles.scss */
 .password-parent,
 .confirm-parent {
   margin: 0;
@@ -4185,18 +4252,18 @@ a.button {
 /* =============================================================================
  *   Tables
  * ========================================================================== */
-/* line 1765, ../sass/ijnet/_global.styles.scss */
+/* line 1847, ../sass/ijnet/_global.styles.scss */
 table {
   margin: 10px 0;
   padding: 0;
   width: 100%;
 }
-/* line 1770, ../sass/ijnet/_global.styles.scss */
+/* line 1852, ../sass/ijnet/_global.styles.scss */
 table.sticky-header {
   z-index: 10;
 }
 
-/* line 1781, ../sass/ijnet/_global.styles.scss */
+/* line 1863, ../sass/ijnet/_global.styles.scss */
 table,
 thead,
 tbody,
@@ -4206,27 +4273,27 @@ td {
   border-color: #c2c2c2;
 }
 
-/* line 1788, ../sass/ijnet/_global.styles.scss */
+/* line 1870, ../sass/ijnet/_global.styles.scss */
 table,
 td,
 th {
   vertical-align: middle;
 }
 
-/* line 1795, ../sass/ijnet/_global.styles.scss */
+/* line 1877, ../sass/ijnet/_global.styles.scss */
 caption,
 th,
 td {
   text-align: left;
 }
 
-/* line 1800, ../sass/ijnet/_global.styles.scss */
+/* line 1882, ../sass/ijnet/_global.styles.scss */
 thead tr {
   font-weight: 700;
   background-color: #e5e5e5;
 }
 
-/* line 1807, ../sass/ijnet/_global.styles.scss */
+/* line 1889, ../sass/ijnet/_global.styles.scss */
 td,
 th {
   border-bottom: 0;
@@ -4234,29 +4301,29 @@ th {
   padding: 5px 7px;
 }
 
-/* line 1817, ../sass/ijnet/_global.styles.scss */
+/* line 1899, ../sass/ijnet/_global.styles.scss */
 tbody tr {
   border-top: 1px solid #c2c2c2;
 }
 
-/* line 1822, ../sass/ijnet/_global.styles.scss */
+/* line 1904, ../sass/ijnet/_global.styles.scss */
 tr {
   /* Table row striping */
 }
-/* line 1824, ../sass/ijnet/_global.styles.scss */
+/* line 1906, ../sass/ijnet/_global.styles.scss */
 tr.odd {
   background: white;
 }
-/* line 1831, ../sass/ijnet/_global.styles.scss */
+/* line 1913, ../sass/ijnet/_global.styles.scss */
 tr.info, tr.even, tr:nth-child(2n+2) {
   border-bottom: 0;
   background-color: whitesmoke;
 }
-/* line 1840, ../sass/ijnet/_global.styles.scss */
+/* line 1922, ../sass/ijnet/_global.styles.scss */
 tr.odd td.active {
   background-color: #eeeeee;
 }
-/* line 1844, ../sass/ijnet/_global.styles.scss */
+/* line 1926, ../sass/ijnet/_global.styles.scss */
 tr.even td.active {
   background-color: #ebebeb;
 }
@@ -4265,7 +4332,7 @@ tr.even td.active {
  * Forum tables
  * Core sets white-space to nowrap, which makes no sense
  */
-/* line 1870, ../sass/ijnet/_global.styles.scss */
+/* line 1952, ../sass/ijnet/_global.styles.scss */
 #forum td .created,
 #forum td .posts,
 #forum td .topics,
@@ -4278,11 +4345,11 @@ tr.even td.active {
 /* =============================================================================
  *   Messages
  * ========================================================================== */
-/* line 1881, ../sass/ijnet/_global.styles.scss */
+/* line 1963, ../sass/ijnet/_global.styles.scss */
 div.messages {
   margin: 0px;
 }
-/* line 1885, ../sass/ijnet/_global.styles.scss */
+/* line 1967, ../sass/ijnet/_global.styles.scss */
 div.messages ul {
   margin-top: 0;
   margin-bottom: 0;
@@ -4291,11 +4358,11 @@ div.messages ul {
 /*
  * Unpublished nodes
  */
-/* line 1908, ../sass/ijnet/_global.styles.scss */
+/* line 1990, ../sass/ijnet/_global.styles.scss */
 .node-unpublished {
   position: relative;
 }
-/* line 1912, ../sass/ijnet/_global.styles.scss */
+/* line 1994, ../sass/ijnet/_global.styles.scss */
 .node-unpublished:before {
   content: "Unpublished";
   position: absolute;
@@ -4305,13 +4372,13 @@ div.messages ul {
   right: 0;
   padding: 10px 10px;
 }
-/* line 1921, ../sass/ijnet/_global.styles.scss */
+/* line 2003, ../sass/ijnet/_global.styles.scss */
 .node-unpublished .content {
   filter: alpha(opacity=50);
   opacity: 0.5;
 }
 
-/* line 1935, ../sass/ijnet/_global.styles.scss */
+/* line 2017, ../sass/ijnet/_global.styles.scss */
 .node-unpublished p.unpublished,
 .comment-unpublished p.unpublished {
   color: pink;
@@ -4337,33 +4404,33 @@ div.messages ul {
 /* =============================================================================
  *    Maintenance pages
  * ========================================================================== */
-/* line 1946, ../sass/ijnet/_global.styles.scss */
+/* line 2028, ../sass/ijnet/_global.styles.scss */
 .maintenance-page .container {
   padding: 40px 0;
 }
-/* line 1951, ../sass/ijnet/_global.styles.scss */
+/* line 2033, ../sass/ijnet/_global.styles.scss */
 .maintenance-page #site-name,
 .maintenance-page #page-title {
   margin: 0;
 }
 
-/* line 1958, ../sass/ijnet/_global.styles.scss */
+/* line 2040, ../sass/ijnet/_global.styles.scss */
 .db-offline .container {
   margin: 0 auto;
   padding: 40px 0;
   width: 100%;
   max-width: 960px;
 }
-/* line 1965, ../sass/ijnet/_global.styles.scss */
+/* line 2047, ../sass/ijnet/_global.styles.scss */
 .db-offline div.messages {
   margin: 0;
 }
-/* line 1969, ../sass/ijnet/_global.styles.scss */
+/* line 2051, ../sass/ijnet/_global.styles.scss */
 .db-offline #content {
   padding: 20px 0;
 }
 
-/* line 1973, ../sass/ijnet/_global.styles.scss */
+/* line 2055, ../sass/ijnet/_global.styles.scss */
 div.messages {
   word-wrap: break-word;
 }
@@ -4371,7 +4438,7 @@ div.messages {
 /* =============================================================================
  *   Misc overrides for contrib modules
  * ========================================================================== */
-/* line 1982, ../sass/ijnet/_global.styles.scss */
+/* line 2064, ../sass/ijnet/_global.styles.scss */
 .profile .user-picture {
   float: left;
   margin: 0 1em 1em 0;
@@ -4382,23 +4449,23 @@ div.messages {
   position: relative;
 }
 
-/* line 1993, ../sass/ijnet/_global.styles.scss */
+/* line 2075, ../sass/ijnet/_global.styles.scss */
 #admin-menu {
   margin: 0;
   padding: 0;
 }
 
-/* line 1999, ../sass/ijnet/_global.styles.scss */
+/* line 2081, ../sass/ijnet/_global.styles.scss */
 .dev-query {
   background: #eeeeee;
   padding: 30px;
 }
 
-/* line 2005, ../sass/ijnet/_global.styles.scss */
+/* line 2087, ../sass/ijnet/_global.styles.scss */
 #styleguide-header {
   padding: 0 10px;
 }
-/* line 2007, ../sass/ijnet/_global.styles.scss */
+/* line 2089, ../sass/ijnet/_global.styles.scss */
 #styleguide-header .item-list {
   font-family: "Signika-Regular", Arial, Helvetica, sans-serif;
   margin: 0 20px 20px 0;
@@ -4409,26 +4476,26 @@ div.messages {
 /* =============================================================================
  *   Video Page Layout
  * ========================================================================== */
-/* line 2020, ../sass/ijnet/_global.styles.scss */
+/* line 2102, ../sass/ijnet/_global.styles.scss */
 #main-content-header #page-title {
   display: none;
 }
 
-/* line 2025, ../sass/ijnet/_global.styles.scss */
+/* line 2107, ../sass/ijnet/_global.styles.scss */
 .page-videos .region + .region + .region.region-two-66-33-first {
   width: 100%;
 }
-/* line 2026, ../sass/ijnet/_global.styles.scss */
+/* line 2110, ../sass/ijnet/_global.styles.scss */
 .page-videos .region + .region + .region + .region.region-two-66-33-second {
   width: 0px;
 }
-/* line 2027, ../sass/ijnet/_global.styles.scss */
+/* line 2113, ../sass/ijnet/_global.styles.scss */
 .page-videos .pane-views-videos-related-videos-landing .block-inner {
   margin-left: 0;
   padding-left: 20px;
   margin-top: 68px;
 }
-/* line 2028, ../sass/ijnet/_global.styles.scss */
+/* line 2118, ../sass/ijnet/_global.styles.scss */
 .page-videos .view-display-id-featured_video {
   margin-right: -20px;
 }
@@ -4436,80 +4503,80 @@ div.messages {
 /* =============================================================================
  *   Video LANDING
  * ========================================================================== */
-/* line 2035, ../sass/ijnet/_global.styles.scss */
+/* line 2127, ../sass/ijnet/_global.styles.scss */
 .pane-page-title.block {
   margin-bottom: 0px;
 }
 
-/* line 2038, ../sass/ijnet/_global.styles.scss */
+/* line 2130, ../sass/ijnet/_global.styles.scss */
 .pane-fe-videos-fe-videos-search {
   margin-bottom: 0px;
 }
 
-/* line 2042, ../sass/ijnet/_global.styles.scss */
+/* line 2134, ../sass/ijnet/_global.styles.scss */
 .videos-landing-header {
   height: 142px;
 }
-/* line 2044, ../sass/ijnet/_global.styles.scss */
+/* line 2136, ../sass/ijnet/_global.styles.scss */
 .videos-landing-header .header {
   float: left;
   width: 50%;
 }
-/* line 2047, ../sass/ijnet/_global.styles.scss */
+/* line 2139, ../sass/ijnet/_global.styles.scss */
 .videos-landing-header .header .header-inner {
   margin: 0px 10px;
 }
-/* line 2051, ../sass/ijnet/_global.styles.scss */
+/* line 2143, ../sass/ijnet/_global.styles.scss */
 .videos-landing-header .topic-select {
   float: left;
   width: 50%;
 }
-/* line 2054, ../sass/ijnet/_global.styles.scss */
+/* line 2146, ../sass/ijnet/_global.styles.scss */
 .videos-landing-header .topic-select .topic-select-inner {
   margin: 0px 10px;
 }
-/* line 2056, ../sass/ijnet/_global.styles.scss */
+/* line 2148, ../sass/ijnet/_global.styles.scss */
 .videos-landing-header .topic-select .topic-select-inner h3 {
   margin-top: 0px;
 }
-/* line 2059, ../sass/ijnet/_global.styles.scss */
+/* line 2151, ../sass/ijnet/_global.styles.scss */
 .videos-landing-header .topic-select .topic-select-inner #topic-dropdown {
   width: 100%;
   float: left;
   margin-right: 10px;
 }
-/* line 2064, ../sass/ijnet/_global.styles.scss */
+/* line 2156, ../sass/ijnet/_global.styles.scss */
 .videos-landing-header .topic-select .topic-select-inner .search {
   margin-top: 18px;
   float: right;
 }
 
-/* line 2074, ../sass/ijnet/_global.styles.scss */
+/* line 2166, ../sass/ijnet/_global.styles.scss */
 .pane-views-videos-related-videos-landing .block-inner,
 .view-display-id-featured_video {
   background: #f8f6ec;
   height: 680px;
 }
-/* line 2077, ../sass/ijnet/_global.styles.scss */
+/* line 2169, ../sass/ijnet/_global.styles.scss */
 .pane-views-videos-related-videos-landing .block-inner .video-title,
 .view-display-id-featured_video .video-title {
   margin-top: 0px;
 }
-/* line 2080, ../sass/ijnet/_global.styles.scss */
+/* line 2172, ../sass/ijnet/_global.styles.scss */
 .pane-views-videos-related-videos-landing .block-inner iframe,
 .view-display-id-featured_video iframe {
   width: 100%;
 }
 
-/* line 2082, ../sass/ijnet/_global.styles.scss */
+/* line 2174, ../sass/ijnet/_global.styles.scss */
 .view-display-id-featured_video {
   padding: 0px 0px 15px 15px;
 }
-/* line 2084, ../sass/ijnet/_global.styles.scss */
+/* line 2176, ../sass/ijnet/_global.styles.scss */
 .view-display-id-featured_video .view-header {
   padding-top: 15px;
 }
-/* line 2086, ../sass/ijnet/_global.styles.scss */
+/* line 2178, ../sass/ijnet/_global.styles.scss */
 .view-display-id-featured_video .view-content .video-title {
   font-size: 20px;
   line-height: 22px;
@@ -4517,25 +4584,25 @@ div.messages {
   font-weight: bold;
   margin: 10px 0 5px 0;
 }
-/* line 2092, ../sass/ijnet/_global.styles.scss */
+/* line 2184, ../sass/ijnet/_global.styles.scss */
 .view-display-id-featured_video .view-content .video-title a {
   color: #265775;
 }
 
-/* line 2096, ../sass/ijnet/_global.styles.scss */
+/* line 2188, ../sass/ijnet/_global.styles.scss */
 .view-display-id-related_videos_landing {
   margin: 0 15px;
 }
 
-/* line 2099, ../sass/ijnet/_global.styles.scss */
+/* line 2191, ../sass/ijnet/_global.styles.scss */
 .pane-views-videos-related-videos-landing .block-inner {
   padding-top: 15px;
 }
-/* line 2101, ../sass/ijnet/_global.styles.scss */
+/* line 2193, ../sass/ijnet/_global.styles.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row {
   margin-bottom: 30px;
 }
-/* line 2103, ../sass/ijnet/_global.styles.scss */
+/* line 2195, ../sass/ijnet/_global.styles.scss */
 .pane-views-videos-related-videos-landing .block-inner .views-row h2 {
   font-size: 16px;
   line-height: 20px;
@@ -4550,7 +4617,7 @@ div.messages {
   color: #c67b1a;
 }
 
-/* line 2110, ../sass/ijnet/_global.styles.scss */
+/* line 2202, ../sass/ijnet/_global.styles.scss */
 .pane-quicktabs-top-stories-on-ijnet {
   margin-bottom: 80px;
 }
@@ -4613,7 +4680,7 @@ div.messages {
   color: #c67b1a;
 }
 
-/* line 2117, ../sass/ijnet/_global.styles.scss */
+/* line 2209, ../sass/ijnet/_global.styles.scss */
 .view-display-id-news_teaser_list .buttons {
   clear: both;
   float: right;
@@ -4622,59 +4689,59 @@ div.messages {
 /* =============================================================================
  *   Opportunities LANDING
  * ========================================================================== */
-/* line 2126, ../sass/ijnet/_global.styles.scss */
+/* line 2218, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets {
   background: #f8f6ec;
   padding: 15px;
   margin-bottom: 40px;
 }
-/* line 2130, ../sass/ijnet/_global.styles.scss */
+/* line 2222, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets #edit-search-title-wrapper {
   clear: both;
   float: none;
   padding: 0;
 }
-/* line 2134, ../sass/ijnet/_global.styles.scss */
+/* line 2226, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets #edit-search-title-wrapper h3 {
   margin: 0;
 }
-/* line 2139, ../sass/ijnet/_global.styles.scss */
+/* line 2231, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets #edit-field-category-tid-wrapper,
 .views-exposed-widgets #edit-field-region-tid-wrapper {
   width: 32%;
   padding-right: 3%;
 }
-/* line 2142, ../sass/ijnet/_global.styles.scss */
+/* line 2234, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets #edit-field-category-tid-wrapper select,
 .views-exposed-widgets #edit-field-region-tid-wrapper select {
   width: 100%;
 }
-/* line 2145, ../sass/ijnet/_global.styles.scss */
+/* line 2237, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets #edit-title-wrapper {
   width: 67%;
   padding: 2% 2% 0 0;
 }
-/* line 2148, ../sass/ijnet/_global.styles.scss */
+/* line 2240, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets #edit-title-wrapper input {
   width: 100%;
 }
-/* line 2150, ../sass/ijnet/_global.styles.scss */
+/* line 2242, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets #edit-keys-wrapper {
   padding-right: 0px;
   width: 242px;
 }
-/* line 2153, ../sass/ijnet/_global.styles.scss */
+/* line 2245, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets #edit-keys-wrapper input {
   width: 100%;
 }
-/* line 2155, ../sass/ijnet/_global.styles.scss */
+/* line 2247, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets .views-submit-button {
   float: right;
   padding: 28px 0px 0px 0px;
   width: 31%;
   text-align: right;
 }
-/* line 2160, ../sass/ijnet/_global.styles.scss */
+/* line 2252, ../sass/ijnet/_global.styles.scss */
 .views-exposed-widgets .views-submit-button .form-submit {
   margin: 0;
 }
@@ -4755,25 +4822,25 @@ div.messages {
 /* =============================================================================
  *   Opportunities Detail
  * ========================================================================== */
-/* line 2173, ../sass/ijnet/_global.styles.scss */
+/* line 2265, ../sass/ijnet/_global.styles.scss */
 .field-name-field-deadline {
   background: #f8f6ec url("../images/calendar_icon.jpg") no-repeat 10px center;
   padding: 12px 61px;
   margin-bottom: 20px;
   margin-top: 26px;
 }
-/* line 2178, ../sass/ijnet/_global.styles.scss */
+/* line 2270, ../sass/ijnet/_global.styles.scss */
 .field-name-field-deadline h2.field-label {
   margin: 0;
   float: none;
   font-size: 16px;
   margin-left: 5px;
 }
-/* line 2184, ../sass/ijnet/_global.styles.scss */
+/* line 2276, ../sass/ijnet/_global.styles.scss */
 .field-name-field-deadline .field-items {
   margin-left: 5px;
 }
-/* line 2186, ../sass/ijnet/_global.styles.scss */
+/* line 2278, ../sass/ijnet/_global.styles.scss */
 .field-name-field-deadline .field-items span {
   text-transform: uppercase;
 }
@@ -4781,27 +4848,27 @@ div.messages {
 /* =============================================================================
  *   Latest story
  * ========================================================================== */
-/* line 2195, ../sass/ijnet/_global.styles.scss */
+/* line 2287, ../sass/ijnet/_global.styles.scss */
 .view-display-id-top_story_home .view-content > div > a {
   display: block;
   line-height: 0;
 }
-/* line 2198, ../sass/ijnet/_global.styles.scss */
+/* line 2290, ../sass/ijnet/_global.styles.scss */
 .view-display-id-top_story_home .view-content > div > a img {
   margin-bottom: 10px;
   width: 100%;
 }
-/* line 2202, ../sass/ijnet/_global.styles.scss */
+/* line 2294, ../sass/ijnet/_global.styles.scss */
 .view-display-id-top_story_home .view-content > div > a h2 {
   font-size: 30px;
 }
 
-/* line 2207, ../sass/ijnet/_global.styles.scss */
+/* line 2302, ../sass/ijnet/_global.styles.scss */
 .latest-story h2 {
   margin-top: 0px;
   padding: 0 15px;
 }
-/* line 2212, ../sass/ijnet/_global.styles.scss */
+/* line 2307, ../sass/ijnet/_global.styles.scss */
 .latest-story .author,
 .latest-story p {
   padding: 0 15px;
@@ -4811,17 +4878,17 @@ div.messages {
 /* =============================================================================
  *   Chat
  * ========================================================================== */
-/* line 2224, ../sass/ijnet/_global.styles.scss */
+/* line 2319, ../sass/ijnet/_global.styles.scss */
 .section-chats .content .chat-full-date {
   margin-bottom: 2px;
   font-size: 16px;
   font-weight: bold;
 }
-/* line 2230, ../sass/ijnet/_global.styles.scss */
+/* line 2325, ../sass/ijnet/_global.styles.scss */
 .section-chats .field-name-body iframe {
   width: 100%;
 }
-/* line 2231, ../sass/ijnet/_global.styles.scss */
+/* line 2326, ../sass/ijnet/_global.styles.scss */
 .section-chats .field-name-field-chat-description {
   margin-bottom: 30px;
 }
@@ -4829,7 +4896,7 @@ div.messages {
 /* =============================================================================
  *   About
  * ========================================================================== */
-/* line 2240, ../sass/ijnet/_global.styles.scss */
+/* line 2335, ../sass/ijnet/_global.styles.scss */
 .staff-list {
   list-style-type: none;
   margin: 0px;
@@ -4850,7 +4917,7 @@ div.messages {
   margin-left: 130px;
 }
 
-/* line 2247, ../sass/ijnet/_global.styles.scss */
+/* line 2342, ../sass/ijnet/_global.styles.scss */
 .view-display-id-opportunities_landing .view-header {
   margin-bottom: 30px;
 }
@@ -4870,30 +4937,30 @@ div.messages {
 * html .section-users #content .profile {
   height: 1px;
 }
-/* line 2261, ../sass/ijnet/_global.styles.scss */
+/* line 2356, ../sass/ijnet/_global.styles.scss */
 .section-users #content .profile .field-name-field-bio {
   width: 100%;
 }
-/* line 2263, ../sass/ijnet/_global.styles.scss */
+/* line 2358, ../sass/ijnet/_global.styles.scss */
 .section-users #content .profile .field-name-field-bio .field-items {
   margin-right: 183px;
   padding-right: 20px;
 }
-/* line 2268, ../sass/ijnet/_global.styles.scss */
+/* line 2363, ../sass/ijnet/_global.styles.scss */
 .section-users #content .profile .user-picture {
   margin: 0px 0 0 -183px;
   border: 0px;
   float: right;
   width: 183px;
 }
-/* line 2273, ../sass/ijnet/_global.styles.scss */
+/* line 2368, ../sass/ijnet/_global.styles.scss */
 .section-users #content .profile .user-picture a {
   display: block;
   line-height: 0em;
   border: 2px solid;
   text-align: center;
 }
-/* line 2280, ../sass/ijnet/_global.styles.scss */
+/* line 2375, ../sass/ijnet/_global.styles.scss */
 .section-users #content .profile .twitter_link {
   float: left;
   width: 64%;
@@ -4902,7 +4969,7 @@ div.messages {
 /* =============================================================================
  *   THE WINSHIP LEGACY BLOCK
  * ========================================================================== */
-/* line 2294, ../sass/ijnet/_global.styles.scss */
+/* line 2389, ../sass/ijnet/_global.styles.scss */
 .winship-legacy .winship-legacy-inner .block-title {
   text-align: center;
   color: white;
@@ -4911,17 +4978,17 @@ div.messages {
   margin: 0;
   background: #3c6e8f;
 }
-/* line 2302, ../sass/ijnet/_global.styles.scss */
+/* line 2397, ../sass/ijnet/_global.styles.scss */
 .winship-legacy .winship-legacy-inner .content {
   background: #3f525e;
   position: relative;
 }
-/* line 2305, ../sass/ijnet/_global.styles.scss */
+/* line 2400, ../sass/ijnet/_global.styles.scss */
 .winship-legacy .winship-legacy-inner .content img {
   display: table;
   margin: 0 auto;
 }
-/* line 2309, ../sass/ijnet/_global.styles.scss */
+/* line 2404, ../sass/ijnet/_global.styles.scss */
 .winship-legacy .winship-legacy-inner .content p {
   position: absolute;
   bottom: 60px;
@@ -4929,7 +4996,7 @@ div.messages {
   margin: 0 25px;
   line-height: 19px;
 }
-/* line 2316, ../sass/ijnet/_global.styles.scss */
+/* line 2411, ../sass/ijnet/_global.styles.scss */
 .winship-legacy .winship-legacy-inner .content a {
   position: absolute;
   bottom: 17px;
@@ -5006,18 +5073,18 @@ div.messages {
 /* =============================================================================
  *   Contact form
  * ========================================================================== */
-/* line 2335, ../sass/ijnet/_global.styles.scss */
+/* line 2430, ../sass/ijnet/_global.styles.scss */
 .page-contact-ijnet #block-blockify-blockify-page-title {
   margin-bottom: 10px;
   min-height: initial;
 }
 
-/* line 2339, ../sass/ijnet/_global.styles.scss */
+/* line 2434, ../sass/ijnet/_global.styles.scss */
 #ijnet-salesforce-contact-form {
   padding: 14px 20% 20px 20px;
   background: #f8f6ec;
 }
-/* line 2345, ../sass/ijnet/_global.styles.scss */
+/* line 2440, ../sass/ijnet/_global.styles.scss */
 #ijnet-salesforce-contact-form .form-item-first-name,
 #ijnet-salesforce-contact-form .form-item-last-name,
 #ijnet-salesforce-contact-form .form-item-organization-name,
@@ -5033,7 +5100,7 @@ div.messages {
 #ijnet-salesforce-contact-form .form-item-position input {
   width: 100%;
 }
-/* line 2346, ../sass/ijnet/_global.styles.scss */
+/* line 2441, ../sass/ijnet/_global.styles.scss */
 #ijnet-salesforce-contact-form .form-item-personal-email {
   float: left;
   width: 98%;
@@ -5043,7 +5110,7 @@ div.messages {
 #ijnet-salesforce-contact-form .form-item-personal-email input {
   width: 100%;
 }
-/* line 2347, ../sass/ijnet/_global.styles.scss */
+/* line 2442, ../sass/ijnet/_global.styles.scss */
 #ijnet-salesforce-contact-form .form-item-work-email {
   float: left;
   width: 98%;
@@ -5053,7 +5120,7 @@ div.messages {
 #ijnet-salesforce-contact-form .form-item-work-email input {
   width: 100%;
 }
-/* line 2350, ../sass/ijnet/_global.styles.scss */
+/* line 2445, ../sass/ijnet/_global.styles.scss */
 #ijnet-salesforce-contact-form .form-item-mobile,
 #ijnet-salesforce-contact-form .form-item-twitter-handle {
   float: left;
@@ -5065,7 +5132,7 @@ div.messages {
 #ijnet-salesforce-contact-form .form-item-twitter-handle input {
   width: 100%;
 }
-/* line 2352, ../sass/ijnet/_global.styles.scss */
+/* line 2447, ../sass/ijnet/_global.styles.scss */
 #ijnet-salesforce-contact-form .form-item-mailing-address {
   float: left;
   width: 98%;
@@ -5075,7 +5142,7 @@ div.messages {
 #ijnet-salesforce-contact-form .form-item-mailing-address input {
   width: 100%;
 }
-/* line 2353, ../sass/ijnet/_global.styles.scss */
+/* line 2448, ../sass/ijnet/_global.styles.scss */
 #ijnet-salesforce-contact-form .form-item-city {
   float: left;
   width: 98%;
@@ -5085,7 +5152,7 @@ div.messages {
 #ijnet-salesforce-contact-form .form-item-city input {
   width: 100%;
 }
-/* line 2354, ../sass/ijnet/_global.styles.scss */
+/* line 2449, ../sass/ijnet/_global.styles.scss */
 #ijnet-salesforce-contact-form .form-item-country {
   float: left;
   width: 98%;
@@ -5095,7 +5162,7 @@ div.messages {
 #ijnet-salesforce-contact-form .form-item-country input {
   width: 100%;
 }
-/* line 2357, ../sass/ijnet/_global.styles.scss */
+/* line 2452, ../sass/ijnet/_global.styles.scss */
 #ijnet-salesforce-contact-form .description,
 #ijnet-salesforce-contact-form .form-item-receive-updates {
   clear: both;
@@ -5116,27 +5183,27 @@ div.messages {
 * html .facebook-like .view-content {
   height: 1px;
 }
-/* line 2371, ../sass/ijnet/_global.styles.scss */
+/* line 2466, ../sass/ijnet/_global.styles.scss */
 .facebook-like .fb-like {
   margin-left: 55px;
   margin-top: 5px;
   float: left;
   clear: both;
 }
-/* line 2378, ../sass/ijnet/_global.styles.scss */
+/* line 2473, ../sass/ijnet/_global.styles.scss */
 .facebook-like .logo img {
   float: left;
   margin-top: 2px;
   margin-right: 5px;
 }
-/* line 2383, ../sass/ijnet/_global.styles.scss */
+/* line 2478, ../sass/ijnet/_global.styles.scss */
 .facebook-like .logo a {
   color: #354C8C;
   font-size: 16px;
   line-height: 16px;
 }
 
-/* line 2392, ../sass/ijnet/_global.styles.scss */
+/* line 2487, ../sass/ijnet/_global.styles.scss */
 .connect-ijnet {
   margin-top: 13px;
 }
@@ -5152,35 +5219,35 @@ div.messages {
 * html .connect-ijnet .view-content {
   height: 1px;
 }
-/* line 2396, ../sass/ijnet/_global.styles.scss */
+/* line 2491, ../sass/ijnet/_global.styles.scss */
 .connect-ijnet .view-content ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 2400, ../sass/ijnet/_global.styles.scss */
+/* line 2495, ../sass/ijnet/_global.styles.scss */
 .connect-ijnet .view-content ul li {
   border-bottom: 1px solid #c2c2c2;
   height: 46px;
   padding: 0px 0 10px 0;
   margin-bottom: 10px;
 }
-/* line 2406, ../sass/ijnet/_global.styles.scss */
+/* line 2501, ../sass/ijnet/_global.styles.scss */
 .connect-ijnet .view-content ul li:last-child {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 2411, ../sass/ijnet/_global.styles.scss */
+/* line 2506, ../sass/ijnet/_global.styles.scss */
 .connect-ijnet .view-content ul li a {
   display: block;
 }
-/* line 2413, ../sass/ijnet/_global.styles.scss */
+/* line 2508, ../sass/ijnet/_global.styles.scss */
 .connect-ijnet .view-content ul li a img {
   float: left;
   margin-right: 15px;
 }
-/* line 2417, ../sass/ijnet/_global.styles.scss */
+/* line 2512, ../sass/ijnet/_global.styles.scss */
 .connect-ijnet .view-content ul li a h5 {
   line-height: 45px;
   color: #3c6e8f;
@@ -5190,35 +5257,35 @@ div.messages {
 /* =============================================================================
  *   Email bulletin archive (newsletter)
  * ========================================================================== */
-/* line 2432, ../sass/ijnet/_global.styles.scss */
+/* line 2527, ../sass/ijnet/_global.styles.scss */
 .page-email-bulletin-archive table, .page-email-bulletin-archive thead, .page-email-bulletin-archive tbody, .page-email-bulletin-archive tr, .page-email-bulletin-archive th, .page-email-bulletin-archive td {
   border: 0px;
   padding: 0;
   margin: 0;
 }
-/* line 2436, ../sass/ijnet/_global.styles.scss */
+/* line 2531, ../sass/ijnet/_global.styles.scss */
 .page-email-bulletin-archive table h4, .page-email-bulletin-archive thead h4, .page-email-bulletin-archive tbody h4, .page-email-bulletin-archive tr h4, .page-email-bulletin-archive th h4, .page-email-bulletin-archive td h4 {
   margin-top: 10px !important;
 }
-/* line 2440, ../sass/ijnet/_global.styles.scss */
+/* line 2535, ../sass/ijnet/_global.styles.scss */
 .page-email-bulletin-archive .news-social {
   padding: 0 !important;
 }
-/* line 2442, ../sass/ijnet/_global.styles.scss */
+/* line 2537, ../sass/ijnet/_global.styles.scss */
 .page-email-bulletin-archive .news-social a {
   display: inline-block;
   line-height: 0;
 }
-/* line 2447, ../sass/ijnet/_global.styles.scss */
+/* line 2542, ../sass/ijnet/_global.styles.scss */
 .page-email-bulletin-archive table table table > tbody > tr > td {
   padding: 0 10px;
 }
 
-/* line 2452, ../sass/ijnet/_global.styles.scss */
+/* line 2547, ../sass/ijnet/_global.styles.scss */
 .view-newsletter-archive {
   margin: -16px 0;
 }
-/* line 2455, ../sass/ijnet/_global.styles.scss */
+/* line 2550, ../sass/ijnet/_global.styles.scss */
 .view-newsletter-archive .view-grouping .view-grouping-header {
   background: #E6E6E6;
   padding: 6px 15px;
@@ -5234,7 +5301,7 @@ div.messages {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 2466, ../sass/ijnet/_global.styles.scss */
+/* line 2561, ../sass/ijnet/_global.styles.scss */
 .view-newsletter-archive .view-grouping .view-grouping-header:hover, .view-newsletter-archive .view-grouping .view-grouping-header.open {
   background: #303030;
   color: #C7C7C7;
@@ -5243,20 +5310,20 @@ div.messages {
   border-left: 1px solid #303030;
   margin: 0px -16px -1px -16px;
 }
-/* line 2475, ../sass/ijnet/_global.styles.scss */
+/* line 2570, ../sass/ijnet/_global.styles.scss */
 .view-newsletter-archive .view-grouping .view-grouping-content {
   margin: 0 -15px;
 }
-/* line 2477, ../sass/ijnet/_global.styles.scss */
+/* line 2572, ../sass/ijnet/_global.styles.scss */
 .view-newsletter-archive .view-grouping .view-grouping-content .item-list {
   border-bottom: 1px solid #c2c2c2;
   padding: 0px;
 }
-/* line 2480, ../sass/ijnet/_global.styles.scss */
+/* line 2575, ../sass/ijnet/_global.styles.scss */
 .view-newsletter-archive .view-grouping .view-grouping-content .item-list:last-child {
   border: 0px;
 }
-/* line 2483, ../sass/ijnet/_global.styles.scss */
+/* line 2578, ../sass/ijnet/_global.styles.scss */
 .view-newsletter-archive .view-grouping .view-grouping-content .item-list h3 {
   text-transform: uppercase;
   margin-bottom: 0;
@@ -5267,73 +5334,183 @@ div.messages {
   text-shadow: 0px 0px 0px;
   font-weight: normal;
 }
-/* line 2493, ../sass/ijnet/_global.styles.scss */
+/* line 2588, ../sass/ijnet/_global.styles.scss */
 .view-newsletter-archive .view-grouping .view-grouping-content .item-list ul {
   list-style-type: none;
   padding: 0px 0px 0px 28px;
   margin: 5px 0px 5px 0px;
 }
-/* line 2497, ../sass/ijnet/_global.styles.scss */
+/* line 2592, ../sass/ijnet/_global.styles.scss */
 .view-newsletter-archive .view-grouping .view-grouping-content .item-list ul li {
   padding: 0;
   margin: 0;
 }
 
-/* line 2511, ../sass/ijnet/_global.styles.scss */
+/* line 2606, ../sass/ijnet/_global.styles.scss */
 .section-knight-media-innovators #block-blockify-blockify-page-title h1 {
   text-transform: uppercase;
   font-size: 27px;
 }
-/* line 2519, ../sass/ijnet/_global.styles.scss */
+/* line 2614, ../sass/ijnet/_global.styles.scss */
 .section-knight-media-innovators #main-content #block-system-main h3 {
   font-weight: normal;
   margin-top: 0;
   margin-bottom: 2px;
 }
 
-/* line 2528, ../sass/ijnet/_global.styles.scss */
+/* line 2623, ../sass/ijnet/_global.styles.scss */
 #block-jsonblocks-knight-foundation .knight-foundation {
   background-color: #2c2c2c;
   padding: 20px;
 }
-/* line 2531, ../sass/ijnet/_global.styles.scss */
+/* line 2626, ../sass/ijnet/_global.styles.scss */
 #block-jsonblocks-knight-foundation .knight-foundation p {
   color: #FFF;
   margin-bottom: 0;
   padding: 0px;
   font-size: 15px;
 }
-/* line 2536, ../sass/ijnet/_global.styles.scss */
+/* line 2631, ../sass/ijnet/_global.styles.scss */
 #block-jsonblocks-knight-foundation .knight-foundation p a {
   color: #92D7EC;
 }
-/* line 2539, ../sass/ijnet/_global.styles.scss */
+/* line 2634, ../sass/ijnet/_global.styles.scss */
 #block-jsonblocks-knight-foundation .knight-foundation p a:hover {
   color: #137a9a;
 }
 
-/* line 2546, ../sass/ijnet/_global.styles.scss */
+/* line 2641, ../sass/ijnet/_global.styles.scss */
 #block-quicktabs-knight-foundation .block-title {
   left: 22px;
 }
-/* line 2553, ../sass/ijnet/_global.styles.scss */
+/* line 2648, ../sass/ijnet/_global.styles.scss */
 #block-quicktabs-knight-foundation #quicktabs-tabpage-knight_foundation-1 .tw-follow,
 #block-quicktabs-knight-foundation #quicktabs-tabpage-knight_foundation-1 .block-title {
   display: none;
 }
-/* line 2554, ../sass/ijnet/_global.styles.scss */
+/* line 2649, ../sass/ijnet/_global.styles.scss */
 #block-quicktabs-knight-foundation #quicktabs-tabpage-knight_foundation-1 .view-content {
   border: 0px;
   padding-top: 15px;
 }
-/* line 2558, ../sass/ijnet/_global.styles.scss */
+/* line 2653, ../sass/ijnet/_global.styles.scss */
 #block-quicktabs-knight-foundation #quicktabs-tabpage-knight_foundation-1 .view-content > div .twitter-status {
   background: transparent;
   border-bottom: 1px solid #c2c2c2;
 }
-/* line 2563, ../sass/ijnet/_global.styles.scss */
+/* line 2658, ../sass/ijnet/_global.styles.scss */
 #block-quicktabs-knight-foundation #quicktabs-tabpage-knight_foundation-1 .view-content > div:last-child .twitter-status {
   border-bottom: 0px;
+}
+
+/* line 2670, ../sass/ijnet/_global.styles.scss */
+.teaser-list-horizontal .content-image {
+  float: left;
+  margin-right: 20px;
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  /* line 2670, ../sass/ijnet/_global.styles.scss */
+  .teaser-list-horizontal .content-image {
+    float: none;
+    margin-right: 0px;
+  }
+}
+@media (max-width: 320px) {
+  /* line 2670, ../sass/ijnet/_global.styles.scss */
+  .teaser-list-horizontal .content-image {
+    float: none;
+    margin-right: 0px;
+  }
+}
+/* line 2686, ../sass/ijnet/_global.styles.scss */
+.teaser-list-horizontal .content-image img {
+  display: block;
+  line-height: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  /* line 2686, ../sass/ijnet/_global.styles.scss */
+  .teaser-list-horizontal .content-image img {
+    width: 200px;
+    margin-bottom: 70px;
+  }
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  /* line 2686, ../sass/ijnet/_global.styles.scss */
+  .teaser-list-horizontal .content-image img {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 320px) {
+  /* line 2686, ../sass/ijnet/_global.styles.scss */
+  .teaser-list-horizontal .content-image img {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+}
+/* line 2706, ../sass/ijnet/_global.styles.scss */
+.teaser-list-horizontal .node-title h2 {
+  margin: 10px 0px 10px 0px;
+}
+
+/* line 2715, ../sass/ijnet/_global.styles.scss */
+.paragraphs-item-toolkit-resources-group h2 {
+  margin-top: 10px;
+}
+/* line 2717, ../sass/ijnet/_global.styles.scss */
+.paragraphs-item-toolkit-resources-group h2 .field-name-field-resources-group-label {
+  color: #2c4f65;
+  text-align: center;
+  border-bottom: 1px solid #c2c2c2;
+  padding-bottom: 10px;
+}
+
+/* line 2726, ../sass/ijnet/_global.styles.scss */
+.paragraphs-item-toolkit-resources {
+  margin-bottom: 0px;
+}
+/* line 2735, ../sass/ijnet/_global.styles.scss */
+.paragraphs-item-toolkit-resources .article-item-list-no-body {
+  max-height: 320px;
+  height: 320px;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  /* line 2735, ../sass/ijnet/_global.styles.scss */
+  .paragraphs-item-toolkit-resources .article-item-list-no-body {
+    max-height: 270px;
+    height: 270px;
+  }
+  /* line 2741, ../sass/ijnet/_global.styles.scss */
+  .paragraphs-item-toolkit-resources .article-item-list-no-body .content {
+    margin-right: 0px !important;
+  }
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  /* line 2735, ../sass/ijnet/_global.styles.scss */
+  .paragraphs-item-toolkit-resources .article-item-list-no-body {
+    max-height: 100%;
+    height: 100%;
+  }
+  /* line 2748, ../sass/ijnet/_global.styles.scss */
+  .paragraphs-item-toolkit-resources .article-item-list-no-body .content {
+    margin-right: 0px !important;
+  }
+}
+@media (max-width: 320px) {
+  /* line 2735, ../sass/ijnet/_global.styles.scss */
+  .paragraphs-item-toolkit-resources .article-item-list-no-body {
+    max-height: 100%;
+    height: 100%;
+  }
+  /* line 2755, ../sass/ijnet/_global.styles.scss */
+  .paragraphs-item-toolkit-resources .article-item-list-no-body .content {
+    margin-right: 0px !important;
+  }
 }
 
 /* line 28, ../sass/ijnet/_calendar.scss */

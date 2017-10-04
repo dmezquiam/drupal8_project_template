@@ -2038,6 +2038,432 @@ admin/dashboard/content/opportunities
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'dashboard_nodes_resources';
+  $page->task = 'page';
+  $page->admin_title = 'Dashboard: Nodes - Resources';
+  $page->admin_description = '';
+  $page->path = 'admin/dashboard/content/resources';
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+    'plugins' => array(
+      0 => array(
+        'name' => 'perm',
+        'settings' => array(
+          'perm' => 'access_site_dashboard',
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_dashboard_nodes_resources__panel_context_588e1faa-72ae-4149-bc67-28f69760af94';
+  $handler->task = 'page';
+  $handler->subtask = 'dashboard_nodes_resources';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Nodes Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Dashboard
+Resources',
+    'panels_breadcrumbs_paths' => 'admin/dashboard
+admin/dashboard/content/resources
+',
+    'panels_breadcrumbs_home' => 1,
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 'main-row',
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+          1 => 'side',
+        ),
+        'parent' => 'main',
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Center',
+        'width' => '74.96751965502874',
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => '',
+      ),
+      'side' => array(
+        'type' => 'region',
+        'title' => 'Side',
+        'width' => '25.03248034497126',
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => '',
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'side' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'd320a1b0-81f3-4133-b44f-be1ed2a67dd4';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_dashboard_nodes_resources__panel_context_588e1faa-72ae-4149-bc67-28f69760af94';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-1e0b09f8-f4bf-4fcc-ac22-ccf736ef7da4';
+  $pane->panel = 'center';
+  $pane->type = 'block';
+  $pane->subtype = 'block-10';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '1e0b09f8-f4bf-4fcc-ac22-ccf736ef7da4';
+  $display->content['new-1e0b09f8-f4bf-4fcc-ac22-ccf736ef7da4'] = $pane;
+  $display->panels['center'][0] = 'new-1e0b09f8-f4bf-4fcc-ac22-ccf736ef7da4';
+  $pane = new stdClass();
+  $pane->pid = 'new-f49954ae-e8c2-47f2-8817-2c0504b37e10';
+  $pane->panel = 'center';
+  $pane->type = 'block';
+  $pane->subtype = 'views-c2b63e9b0d36036ae73aae41a0ae6d41';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'f49954ae-e8c2-47f2-8817-2c0504b37e10';
+  $display->content['new-f49954ae-e8c2-47f2-8817-2c0504b37e10'] = $pane;
+  $display->panels['center'][1] = 'new-f49954ae-e8c2-47f2-8817-2c0504b37e10';
+  $pane = new stdClass();
+  $pane->pid = 'new-86919b4e-dc99-4604-8396-4042a317178a';
+  $pane->panel = 'side';
+  $pane->type = 'block';
+  $pane->subtype = 'views-user_information-block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Your information',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '86919b4e-dc99-4604-8396-4042a317178a';
+  $display->content['new-86919b4e-dc99-4604-8396-4042a317178a'] = $pane;
+  $display->panels['side'][0] = 'new-86919b4e-dc99-4604-8396-4042a317178a';
+  $pane = new stdClass();
+  $pane->pid = 'new-df6e07d7-533a-403a-a037-0d66af4daa6e';
+  $pane->panel = 'side';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-dashboard';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Available actions',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'df6e07d7-533a-403a-a037-0d66af4daa6e';
+  $display->content['new-df6e07d7-533a-403a-a037-0d66af4daa6e'] = $pane;
+  $display->panels['side'][1] = 'new-df6e07d7-533a-403a-a037-0d66af4daa6e';
+  $display->hide_title = PANELS_TITLE_PANE;
+  $display->title_pane = 'new-f49954ae-e8c2-47f2-8817-2c0504b37e10';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['dashboard_nodes_resources'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'dashboard_nodes_toolkit';
+  $page->task = 'page';
+  $page->admin_title = 'Dashboard: Nodes - Multimedia Toolkit';
+  $page->admin_description = '';
+  $page->path = 'admin/dashboard/content/multimedia-toolkits';
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+    'plugins' => array(
+      0 => array(
+        'name' => 'perm',
+        'settings' => array(
+          'perm' => 'access_site_dashboard',
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_dashboard_nodes_toolkit__panel_context_ffe4bfa4-8993-4e0f-85a1-9eb62f21254d';
+  $handler->task = 'page';
+  $handler->subtask = 'dashboard_nodes_toolkit';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Nodes Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Dashboard
+Multimedia Toolkits',
+    'panels_breadcrumbs_paths' => 'admin/dashboard
+admin/dashboard/content/multimedia-toolkits
+',
+    'panels_breadcrumbs_home' => 1,
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 'main-row',
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+          1 => 'side',
+        ),
+        'parent' => 'main',
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Center',
+        'width' => '74.96751965502874',
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => '',
+      ),
+      'side' => array(
+        'type' => 'region',
+        'title' => 'Side',
+        'width' => '25.03248034497126',
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => '',
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'side' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'd320a1b0-81f3-4133-b44f-be1ed2a67dd4';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_dashboard_nodes_toolkit__panel_context_ffe4bfa4-8993-4e0f-85a1-9eb62f21254d';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-1e0b09f8-f4bf-4fcc-ac22-ccf736ef7da4';
+  $pane->panel = 'center';
+  $pane->type = 'block';
+  $pane->subtype = 'block-10';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '1e0b09f8-f4bf-4fcc-ac22-ccf736ef7da4';
+  $display->content['new-1e0b09f8-f4bf-4fcc-ac22-ccf736ef7da4'] = $pane;
+  $display->panels['center'][0] = 'new-1e0b09f8-f4bf-4fcc-ac22-ccf736ef7da4';
+  $pane = new stdClass();
+  $pane->pid = 'new-dc8041e1-314f-4e68-9024-c7b1389e1389';
+  $pane->panel = 'center';
+  $pane->type = 'block';
+  $pane->subtype = 'views-f74bc4b0d45cc628908efea5ad431e04';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'dc8041e1-314f-4e68-9024-c7b1389e1389';
+  $display->content['new-dc8041e1-314f-4e68-9024-c7b1389e1389'] = $pane;
+  $display->panels['center'][1] = 'new-dc8041e1-314f-4e68-9024-c7b1389e1389';
+  $pane = new stdClass();
+  $pane->pid = 'new-86919b4e-dc99-4604-8396-4042a317178a';
+  $pane->panel = 'side';
+  $pane->type = 'block';
+  $pane->subtype = 'views-user_information-block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Your information',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '86919b4e-dc99-4604-8396-4042a317178a';
+  $display->content['new-86919b4e-dc99-4604-8396-4042a317178a'] = $pane;
+  $display->panels['side'][0] = 'new-86919b4e-dc99-4604-8396-4042a317178a';
+  $pane = new stdClass();
+  $pane->pid = 'new-df6e07d7-533a-403a-a037-0d66af4daa6e';
+  $pane->panel = 'side';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-dashboard';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Available actions',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'df6e07d7-533a-403a-a037-0d66af4daa6e';
+  $display->content['new-df6e07d7-533a-403a-a037-0d66af4daa6e'] = $pane;
+  $display->panels['side'][1] = 'new-df6e07d7-533a-403a-a037-0d66af4daa6e';
+  $display->hide_title = PANELS_TITLE_PANE;
+  $display->title_pane = 'new-dc8041e1-314f-4e68-9024-c7b1389e1389';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['dashboard_nodes_toolkit'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'dashboard_nodes_videos';
   $page->task = 'page';
   $page->admin_title = 'Dashboard: Nodes - Videos';

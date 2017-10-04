@@ -1,0 +1,15 @@
+<?php
+
+function fe_multimedia_toolkit_install() {
+
+}
+
+/**
+ * Implementations of hook_update_N().
+ */
+/**
+ * Enable Paragraphs module
+ */
+function fe_multimedia_toolkit_update_7001() {
+  module_enable(array("paragraphs"));
+}

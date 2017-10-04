@@ -250,6 +250,7 @@ function fe_newsletter_field_default_field_bases() {
         'feed' => 0,
         'feed_item' => 0,
         'multimedia' => 0,
+        'multimedia_toolkit' => 0,
         'news' => 'news',
         'page' => 0,
         'staff_member' => 0,
@@ -258,8 +259,8 @@ function fe_newsletter_field_default_field_bases() {
       ),
       'view' => array(
         'args' => array(),
-        'display_name' => '',
-        'view_name' => '',
+        'display_name' => 'references_1',
+        'view_name' => 'bulletin_featured_content_filter',
       ),
     ),
     'translatable' => 0,

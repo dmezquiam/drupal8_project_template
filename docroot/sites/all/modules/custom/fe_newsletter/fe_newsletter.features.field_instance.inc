@@ -106,7 +106,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -155,7 +155,7 @@ function fe_newsletter_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -217,7 +217,7 @@ function fe_newsletter_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -322,7 +322,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -373,7 +373,7 @@ function fe_newsletter_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -419,7 +419,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -465,7 +465,7 @@ function fe_newsletter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
