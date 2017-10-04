@@ -130,7 +130,7 @@ function json_blocks_view_latest_posts() {
 
   if ($language->language == "en") {
     $knights_tool_title = t('TRY OUR TOOLS');
-    $knights_tool_url = 'https://tools.ijnet.org';
+    $knights_tool_url = 'http://tools.ijnet.org/';
   }
  
   return array('content' => theme('latest-posts', array(
