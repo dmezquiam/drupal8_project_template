@@ -4,3 +4,17 @@ sites/*/settings*.php
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+
+
+# deploy assistance
+sites/all/README
+sites/all/cortar-db.php
+sites/all/deploy.sh
+sites/all/functions.sh
+sites/all/pushear_ijnet.sh
+sites/all/reload-db.sh
+
+# Stage File Proxy
+sites/all/modules/contrib/stage_file_proxy
+
+
