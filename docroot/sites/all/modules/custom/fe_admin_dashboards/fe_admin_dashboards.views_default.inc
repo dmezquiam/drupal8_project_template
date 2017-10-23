@@ -11,6 +11,202 @@ function fe_admin_dashboards_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'dashboard_extras';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Dashboard extras';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Content Statistics';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'type',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['field_news_type']['id'] = 'field_news_type';
+  $handler->display->display_options['fields']['field_news_type']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['fields']['field_news_type']['field'] = 'field_news_type';
+  $handler->display->display_options['fields']['field_news_type']['group_columns'] = array(
+    'value' => 'value',
+  );
+  /* Sort criterion: Content: Type */
+  $handler->display->display_options['sorts']['type']['id'] = 'type';
+  $handler->display->display_options['sorts']['type']['table'] = 'node';
+  $handler->display->display_options['sorts']['type']['field'] = 'type';
+
+  /* Display: Content list */
+  $handler = $view->new_display('page', 'Content list', 'statistics_page');
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'The following displays the count of the existing nodes on the site.';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: View area */
+  $handler->display->display_options['footer']['view']['id'] = 'view';
+  $handler->display->display_options['footer']['view']['table'] = 'views';
+  $handler->display->display_options['footer']['view']['field'] = 'view';
+  $handler->display->display_options['footer']['view']['label'] = 'Nodes without type';
+  $handler->display->display_options['footer']['view']['view_to_insert'] = 'dashboard_extras:block_1';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(Content: Title) */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['group_type'] = 'count';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = '';
+  $handler->display->display_options['fields']['status']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['status']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['status']['alter']['text'] = '[title] [status]';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['status']['type'] = 'published-notpublished';
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['field_news_type']['id'] = 'field_news_type';
+  $handler->display->display_options['fields']['field_news_type']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['fields']['field_news_type']['field'] = 'field_news_type';
+  $handler->display->display_options['fields']['field_news_type']['label'] = '';
+  $handler->display->display_options['fields']['field_news_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_news_type']['alter']['text'] = '[status] ([field_news_type])';
+  $handler->display->display_options['fields']['field_news_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_type']['empty'] = '[status]';
+  $handler->display->display_options['fields']['field_news_type']['group_columns'] = array(
+    'value' => 'value',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'all' => 'all',
+    'advertisement' => 'advertisement',
+    'banner' => 'banner',
+    'page' => 'page',
+    'bulletin_email' => 'bulletin_email',
+    'chat' => 'chat',
+    'feed' => 'feed',
+    'feed_item' => 'feed_item',
+    'multimedia_toolkit' => 'multimedia_toolkit',
+    'news' => 'news',
+    'training_opportunity' => 'training_opportunity',
+    'staff_member' => 'staff_member',
+    'video' => 'video',
+  );
+  $handler->display->display_options['path'] = 'admin/dashboard/content-statistics';
+
+  /* Display: Debug block */
+  $handler = $view->new_display('block', 'Debug block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Nodes without type';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<br>
+<hr>
+<h5>Nodes without type</h5>
+<br> 
+Please contact an administrator if there are nodes without a type. This probably means there was a problem when they were saved, or they belong to a now non-existent content type.';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'advertisement' => 'advertisement',
+    'banner' => 'banner',
+    'page' => 'page',
+    'bulletin_email' => 'bulletin_email',
+    'chat' => 'chat',
+    'feed' => 'feed',
+    'feed_item' => 'feed_item',
+    'multimedia_toolkit' => 'multimedia_toolkit',
+    'training_opportunity' => 'training_opportunity',
+    'staff_member' => 'staff_member',
+    'video' => 'video',
+  );
+  /* Filter criterion: Content: Type (field_news_type) */
+  $handler->display->display_options['filters']['field_news_type_value']['id'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['filters']['field_news_type_value']['field'] = 'field_news_type_value';
+  $handler->display->display_options['filters']['field_news_type_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_news_type_value']['value'] = array(
+    1 => '1',
+    2 => '2',
+  );
+  $export['dashboard_extras'] = $view;
+
+  $view = new view();
   $view->name = 'last_content';
   $view->description = '';
   $view->tag = 'dashboard';
