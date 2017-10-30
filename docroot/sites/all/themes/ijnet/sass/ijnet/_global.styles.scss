@@ -11,6 +11,7 @@
     background: $color-bg-general;
     @include box-shadow (0px, 0px, 20px, $color-shadow);
     padding-top: 20px;
+    min-height: 560px;
   }
 }
 
