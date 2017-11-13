@@ -139,6 +139,29 @@ function fe_admin_dashboards_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-17ff7df3-9c7e-432d-8bcc-0b25977034b4';
+  $pane->panel = 'center';
+  $pane->type = 'block';
+  $pane->subtype = 'quicktabs-dashboard_available_actions_quic';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '17ff7df3-9c7e-432d-8bcc-0b25977034b4';
+  $display->content['new-17ff7df3-9c7e-432d-8bcc-0b25977034b4'] = $pane;
+  $display->panels['center'][0] = 'new-17ff7df3-9c7e-432d-8bcc-0b25977034b4';
+  $pane = new stdClass();
   $pane->pid = 'new-ac97258c-11b6-4473-8816-2269291a8451';
   $pane->panel = 'center';
   $pane->type = 'block';
@@ -157,11 +180,11 @@ function fe_admin_dashboards_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'ac97258c-11b6-4473-8816-2269291a8451';
   $display->content['new-ac97258c-11b6-4473-8816-2269291a8451'] = $pane;
-  $display->panels['center'][0] = 'new-ac97258c-11b6-4473-8816-2269291a8451';
+  $display->panels['center'][1] = 'new-ac97258c-11b6-4473-8816-2269291a8451';
   $pane = new stdClass();
   $pane->pid = 'new-da16754d-ad0f-4ef7-8be3-347ab674a45d';
   $pane->panel = 'center';
@@ -202,11 +225,11 @@ function fe_admin_dashboards_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'da16754d-ad0f-4ef7-8be3-347ab674a45d';
   $display->content['new-da16754d-ad0f-4ef7-8be3-347ab674a45d'] = $pane;
-  $display->panels['center'][1] = 'new-da16754d-ad0f-4ef7-8be3-347ab674a45d';
+  $display->panels['center'][2] = 'new-da16754d-ad0f-4ef7-8be3-347ab674a45d';
   $pane = new stdClass();
   $pane->pid = 'new-68cd379d-89e8-4342-9cbd-e9b6b2689736';
   $pane->panel = 'sidebar';
