@@ -24,6 +24,12 @@ function fe_site_config_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => 'hidden',
+        'status' => 1,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => 'menu_bar',
         'status' => 1,

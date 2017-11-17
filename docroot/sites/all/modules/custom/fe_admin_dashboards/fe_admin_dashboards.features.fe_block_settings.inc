@@ -24,6 +24,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -59,6 +65,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -94,6 +106,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => 'admin/dashboard/taxonomies',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -129,6 +147,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -164,6 +188,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -199,6 +229,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -234,41 +270,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'ijnet' => array(
+      'adminimal' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'ijnet',
+        'theme' => 'adminimal',
         'weight' => 0,
       ),
-      'shiny' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'shiny',
-        'weight' => 0,
-      ),
-      'shinytech' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'shinytech',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['quicktabs-dashboard_taxonomies_quicktab'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'dashboard_taxonomies_quicktab',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'quicktabs',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -304,6 +311,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -341,6 +354,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
       'blogger' => 5,
     ),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -376,6 +395,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -411,6 +436,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -446,6 +477,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
@@ -481,6 +518,12 @@ function fe_admin_dashboards_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,

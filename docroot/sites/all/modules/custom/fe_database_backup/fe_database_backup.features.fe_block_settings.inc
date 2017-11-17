@@ -24,6 +24,12 @@ function fe_database_backup_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
       'ijnet' => array(
         'region' => '',
         'status' => 0,
