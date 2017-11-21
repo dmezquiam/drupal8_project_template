@@ -143,7 +143,8 @@ function fe_admin_dashboards_default_page_manager_pages() {
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(),
+    'style' => 'stylizer',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -160,15 +161,19 @@ function fe_admin_dashboards_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
+    'override_title' => 1,
+    'override_title_text' => ' ',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
+    'style' => 'default',
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'style_title_quicktabs_dashboard',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
@@ -190,7 +195,8 @@ function fe_admin_dashboards_default_page_manager_pages() {
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(),
+    'style' => 'stylizer',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -235,7 +241,8 @@ function fe_admin_dashboards_default_page_manager_pages() {
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(),
+    'style' => 'stylizer',
   );
   $pane->css = array();
   $pane->extras = array();
