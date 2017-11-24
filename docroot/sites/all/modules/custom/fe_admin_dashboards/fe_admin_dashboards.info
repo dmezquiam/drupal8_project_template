@@ -43,6 +43,7 @@ features[menu_custom][] = menu-toolbar
 features[page_manager_pages][] = curstomized_dashboard
 features[quicktabs][] = content_actions_dashboard
 features[quicktabs][] = dashboard_available_actions_quic
+features[quicktabs][] = dashboard_taxonomies_quicktab
 features[quicktabs][] = dashh_bulletin
 features[quicktabs][] = dashh_latest_content
 features[quicktabs][] = dashh_news
