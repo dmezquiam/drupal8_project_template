@@ -175,3 +175,11 @@ function site_u2d_update_7011() {
 function site_u2d_update_7112() {
   module_enable(array('admin_menu_toolbar', 'quicktabs_tabstyles'));
 }
+
+/**
+ * Enable admin theme: subtheme_adminimal_theme.
+ */
+function site_u2d_update_7113() {
+  variable_set('admin_theme', 'subtheme_adminimal_theme');
+}
+
