@@ -1,0 +1,9 @@
+name = Custom Subtheme Adminimal
+description = Custom subtheme of Adminimal theme.
+core = 7.x
+base theme = adminimal
+
+
+stylesheets[all][] = css/navlist.css
+scripts[all] = js/quicktabs.js
+
