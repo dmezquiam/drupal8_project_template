@@ -131,29 +131,6 @@ function fe_admin_dashboards_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-68cd379d-89e8-4342-9cbd-e9b6b2689736';
-  $pane->panel = 'center';
-  $pane->type = 'block';
-  $pane->subtype = 'views-user_information-block';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Your information',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(),
-    'style' => 'stylizer',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '68cd379d-89e8-4342-9cbd-e9b6b2689736';
-  $display->content['new-68cd379d-89e8-4342-9cbd-e9b6b2689736'] = $pane;
-  $display->panels['center'][0] = 'new-68cd379d-89e8-4342-9cbd-e9b6b2689736';
-  $pane = new stdClass();
   $pane->pid = 'new-17ff7df3-9c7e-432d-8bcc-0b25977034b4';
   $pane->panel = 'center';
   $pane->type = 'block';
@@ -175,11 +152,34 @@ function fe_admin_dashboards_default_page_manager_pages() {
     'css_class' => 'style_title_quicktabs_dashboard',
   );
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '17ff7df3-9c7e-432d-8bcc-0b25977034b4';
   $display->content['new-17ff7df3-9c7e-432d-8bcc-0b25977034b4'] = $pane;
-  $display->panels['center'][1] = 'new-17ff7df3-9c7e-432d-8bcc-0b25977034b4';
+  $display->panels['center'][0] = 'new-17ff7df3-9c7e-432d-8bcc-0b25977034b4';
+  $pane = new stdClass();
+  $pane->pid = 'new-68cd379d-89e8-4342-9cbd-e9b6b2689736';
+  $pane->panel = 'center';
+  $pane->type = 'block';
+  $pane->subtype = 'views-user_information-block';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Your information',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(),
+    'style' => 'stylizer',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '68cd379d-89e8-4342-9cbd-e9b6b2689736';
+  $display->content['new-68cd379d-89e8-4342-9cbd-e9b6b2689736'] = $pane;
+  $display->panels['center'][1] = 'new-68cd379d-89e8-4342-9cbd-e9b6b2689736';
   $pane = new stdClass();
   $pane->pid = 'new-ac97258c-11b6-4473-8816-2269291a8451';
   $pane->panel = 'center';

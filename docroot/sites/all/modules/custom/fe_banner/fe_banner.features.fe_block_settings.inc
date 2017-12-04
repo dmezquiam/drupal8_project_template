@@ -48,6 +48,12 @@ function fe_banner_default_fe_block_settings() {
         'theme' => 'shinytech',
         'weight' => 0,
       ),
+      'subtheme_adminimal_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'subtheme_adminimal_theme',
+        'weight' => 0,
+      ),
     ),
     'title' => 'Our partners',
     'visibility' => 0,
