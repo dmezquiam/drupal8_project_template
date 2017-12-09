@@ -183,3 +183,10 @@ function site_u2d_update_7113() {
   variable_set('admin_theme', 'subtheme_adminimal_theme');
 }
 
+/**
+ * Enable module: mailchimp.
+ */
+function site_u2d_update_7114() {
+  module_enable(array('mailchimp'));
+}
+
