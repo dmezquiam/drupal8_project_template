@@ -243,7 +243,7 @@ function fe_newsletter_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'referenceable_types' => array(
-        'advertisement' => 0,
+        'article' => 0,
         'banner' => 0,
         'bulletin_email' => 0,
         'chat' => 0,
@@ -253,7 +253,6 @@ function fe_newsletter_field_default_field_bases() {
         'multimedia_toolkit' => 0,
         'news' => 'news',
         'page' => 0,
-        'staff_member' => 0,
         'training_opportunity' => 0,
         'video' => 'video',
       ),

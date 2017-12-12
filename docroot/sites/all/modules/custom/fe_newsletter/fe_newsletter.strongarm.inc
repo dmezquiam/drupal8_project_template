@@ -238,6 +238,13 @@ function fe_newsletter_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'mailchimp_api_key';
+  $strongarm->value = '1337a91f397e25bc07346d7f95aadcd3-us17';
+  $export['mailchimp_api_key'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_bulletin_email';
   $strongarm->value = array();
   $export['menu_options_bulletin_email'] = $strongarm;

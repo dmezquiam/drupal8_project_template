@@ -6,8 +6,11 @@
 
 include_once 'fe_newsletter.features.inc';
 
-
 define('FE_NEWSLETTER_MAX_ARTICLES',    100);
+
+ // To MailChimp conexion
+require 'mc/src/Client.php';
+require 'mc/vendor/autoload.php';
 
 /**
  * Implements hook_menu()
@@ -327,7 +330,7 @@ function _fe_newsletter_format_date($date, $language = 'en') {
     $date,
     $type = 'custom',
     $format,
-    $timezone = null, 
+    $timezone = null,
     $langcode = $language
   );
 
@@ -421,7 +424,7 @@ function _fe_newsletter_get_advertisements($node) {
       $advertisements[] = _fe_newsletter_get_advertisement($nid['nid']);
     }
   }
-  
+
   return $advertisements;
 }
 
@@ -642,8 +645,8 @@ function fe_newsletter_content_form($form, &$form_state) {
   $parameters = _ijnet_newsletter_content_theme_parameters($nid);
   $newsletter_content = theme('ijnet_newsletter', $parameters);
   $newsletter_link =
-    '<div id="newsletter-link"><a href="' . 
-    url('email-bulletin/' .  $nid) . 
+    '<div id="newsletter-link"><a href="' .
+    url('email-bulletin/' .  $nid) .
     '" target="_blank">' . t("View the Newsletter") . '</a></div>';
 
   $form['newsletter_content'] = array(
@@ -720,92 +723,70 @@ function fe_newsletter_subscribe_form_ajax_submit($form, $form_state) {
   return $output;
 }
 
+
 function _fe_newsletter_cc_subscribe_contact($contact) {
   if(_fe_newsletter_cc_contact_exist($contact->email)) {
-    $success_code = _fe_newsletter_cc_update_list($contact) ? 210 : 211;
-  } else {
+    // Does nothing, just shows a message that the contact already exists
+    $success_code = _fe_newsletter_cc_subscribe_list($contact) ? 210 : 211;
+  }
+  else {
+    // If not exist, add it.
     $success_code = _fe_newsletter_cc_subscribe_list($contact) ? 200 : 201;
   }
-
   return $success_code;
 }
 
-function _fe_newsletter_cc_get_connection() {
-  $action_type = 'contact';
-  $cc_object = constant_contact_create_object();
-  $cc_object->set_action_type($action_type);
-
-  return $cc_object;
-}
-
+// If the contact(email) already exist
 function _fe_newsletter_cc_contact_exist($email) {
-  $cc = _fe_newsletter_cc_get_connection();
-  $contact = $cc->query_contacts($email);
-  $exist = $contact && ($contact['Status'] == 'Active');
+  $mc_api_key = variable_get('mailchimp_api_key');
+  $mc = new src\Client\Client($mc_api_key);
+  $list_id = _fe_newsletter_get_cc_list_id();
 
+  $exist = $mc->isSubscribed($list_id, $email);
   return $exist;
 }
 
-function _fe_newsletter_cc_get_contact($email) {
-  $cc = _fe_newsletter_cc_get_connection();
-  $contact = $cc->query_contacts($email);
-  $contact = $cc->get_contact($contact['id']);
-
-  return $contact;
-}
-
+// Add Contact to MailChimp List by default language of the site.
 function _fe_newsletter_cc_subscribe_list($contact) {
-  $cc = _fe_newsletter_cc_get_connection();
   $list_id = _fe_newsletter_get_cc_list_id();
-  $fields = array(
-    'EmailType' => 'HTML',
-    'FirstName' => $contact->name,
+
+  // Get MailChimp Api Key from Database
+  $mc_api_key = variable_get('mailchimp_api_key');
+
+  $mc = new src\Client\Client($mc_api_key);
+  $success = $mc->subscribeToList(
+    $list_id,
+    $contact->email,
+    [
+        'FNAME' => '',
+        'LNAME' => '',
+    ],
+    false
   );
-  $cc_contact = $cc->query_contacts($contact->email);
-  $status = array('Removed', 'Do Not Mail');
-  $cc_contact && (in_array($cc_contact['Status'], $status)) ?
-    $success = $cc->update_contact($cc_contact['id'], $contact->email, array($list_id), $fields) :
-    $success = $cc->create_contact($contact->email, array($list_id), $fields) ;
 
-  return $success;
+  return (bool)$success;
 }
 
-function _fe_newsletter_cc_update_list($contact) {
-  $cc = _fe_newsletter_cc_get_connection();
-  $cc_contact = _fe_newsletter_cc_get_contact($contact->email);
-  $list_id = _fe_newsletter_get_cc_list_id();
-  if (in_array($list_id, $cc_contact['lists'])) {
-    $success = false;
-  } else {
-    $lists = array_merge(array($list_id), $cc_contact['lists']);
-    $fields = array(
-      'EmailType' => 'HTML',
-      'FirstName' => $contact->name,
-    );
-    $success = $cc->update_contact($cc_contact['id'], $contact->email, $lists, $fields);
-  }
-
-  return $success;
-}
-
+// Get de MailChimp ID List
 function _fe_newsletter_get_cc_list_id() {
   global $language;
 
-  $cc_lists = array(
-    'und' => 1316537398,
-    'en' =>  1316537398,
-    'es' =>  1265529464,
-    'ru' =>  1833122425,
-    'pt-br' => 1485709704,
-    'zh-hans' => 1876266686,
-    'ar' =>  1385780866,
-    'fa' =>  1321747649,
+  $mc_lists = array(
+    'und' => 'd71e0ded42', //English
+    'en' =>  'd71e0ded42', //English
+    'es' =>  '2dbcc1ac9d', //Spanish
+    'ru' =>  '487009f079', //Russian
+    'pt-br' => '965012cd2d', //Portuguese
+    'zh-hans' => 'dee2c0b25c', //Chinese (Simplified)
+    'ar' =>  '817512bb14', //Arabic
+    'fa' =>  '07cb7b68dc', //Persian
   );
-  $list_id = $cc_lists[$language->language];
+  $list_id = $mc_lists[$language->language];
 
   return $list_id;
 }
 
+// Show messages
 function _fe_newsletter_cc_get_message($success_code) {
   $cc_messages = array(
     200 => array(
@@ -853,9 +834,9 @@ function fe_newsletter_node_presave($node) {
 
   $newsletter_lang = $node->language;
 
-  $from_date = isset($node->field_from_date[LANGUAGE_NONE][0]['value']) 
+  $from_date = isset($node->field_from_date[LANGUAGE_NONE][0]['value'])
     ? strtotime($node->field_from_date[LANGUAGE_NONE][0]['value']) : NULL;
-  $to_date  = isset($node->field_from_date[LANGUAGE_NONE][0]['value2']) 
+  $to_date  = isset($node->field_from_date[LANGUAGE_NONE][0]['value2'])
     ? strtotime($node->field_from_date[LANGUAGE_NONE][0]['value2']) : NULL;
   $to_date += 24*60*60; // Add a day.
 
@@ -988,8 +969,110 @@ function fe_newsletter_user_update(&$edit, $account, $category) {
 }
 
 function _fe_newsletter_unsubscribed($email) {
+  $list_id = _fe_newsletter_get_cc_list_id();
+
+  // Get MailChimp Api Key from Database
+  $mc_api_key = variable_get('mailchimp_api_key');
+
+  $mc = new src\Client\Client($mc_api_key);
+  $bool = $mc->unsubscribeFromList($list_id, $email);
+}
+
+
+/*function _fe_newsletter_unsubscribed($email) {
   $cc = _fe_newsletter_cc_get_connection();
   $contact = $cc->query_contacts($email);
   $success = $cc->delete_contact($contact['id']);
-}
+}*/
 
+
+/*function _fe_newsletter_cc_subscribe_contact($contact) {
+  if(_fe_newsletter_cc_contact_exist($contact->email)) {
+    $success_code = _fe_newsletter_cc_update_list($contact) ? 210 : 211;
+  } else {
+    $success_code = _fe_newsletter_cc_subscribe_list($contact) ? 200 : 201;
+  }
+
+  return $success_code;
+}*/
+
+
+/*function _fe_newsletter_cc_contact_exist($email) {
+  $cc = _fe_newsletter_cc_get_connection();
+  $contact = $cc->query_contacts($email);
+  $exist = $contact && ($contact['Status'] == 'Active');
+
+  return $exist;
+}*/
+
+
+/*function _fe_newsletter_cc_get_contact($email) {
+  $cc = _fe_newsletter_cc_get_connection();
+  $contact = $cc->query_contacts($email);
+  $contact = $cc->get_contact($contact['id']);
+
+  return $contact;
+}*/
+
+/*function _fe_newsletter_cc_get_connection() {
+  $action_type = 'contact';
+  $cc_object = constant_contact_create_object();
+  $cc_object->set_action_type($action_type);
+
+  return $cc_object;
+}*/
+
+
+/*function _fe_newsletter_cc_subscribe_list($contact) {
+  $cc = _fe_newsletter_cc_get_connection();
+  $list_id = _fe_newsletter_get_cc_list_id();
+  $fields = array(
+    'EmailType' => 'HTML',
+    'FirstName' => $contact->name,
+  );
+  $cc_contact = $cc->query_contacts($contact->email);
+  $status = array('Removed', 'Do Not Mail');
+  $cc_contact && (in_array($cc_contact['Status'], $status)) ?
+    $success = $cc->update_contact($cc_contact['id'], $contact->email, array($list_id), $fields) :
+    $success = $cc->create_contact($contact->email, array($list_id), $fields) ;
+
+return $success;
+}*/
+
+
+/*function _fe_newsletter_cc_update_list($contact) {
+  $cc = _fe_newsletter_cc_get_connection();
+  $cc_contact = _fe_newsletter_cc_get_contact($contact->email);
+  $list_id = _fe_newsletter_get_cc_list_id();
+  if (in_array($list_id, $cc_contact['lists'])) {
+    $success = false;
+  } else {
+    $lists = array_merge(array($list_id), $cc_contact['lists']);
+    $fields = array(
+      'EmailType' => 'HTML',
+      'FirstName' => $contact->name,
+    );
+    $success = $cc->update_contact($cc_contact['id'], $contact->email, $lists, $fields);
+  }
+
+  return $success;
+}*/
+
+
+/*function _fe_newsletter_get_cc_list_id() {
+  global $language;
+
+  $cc_lists = array(
+    'und' => 1316537398,
+    'en' =>  1316537398,
+    'es' =>  1265529464,
+    'ru' =>  1833122425,
+    'pt-br' => 1485709704,
+    'zh-hans' => 1876266686,
+    'ar' =>  1385780866,
+    'fa' =>  1321747649,
+  );
+  $list_id = $cc_lists[$language->language];
+
+  return $list_id;
+}*/
